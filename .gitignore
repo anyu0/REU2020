@@ -1,0 +1,15 @@
+.DS_Store
+*.aux
+*.bbl
+*.log
+*.out
+*.gz
+*.toc
+*.bcf
+*.blg
+main.pdf
+*.xml
+*.div
+*.lyx~
+*.lyx#
+*.dvi
