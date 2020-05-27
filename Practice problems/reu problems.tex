@@ -133,7 +133,34 @@
 \section{Weak convergence}
 
 	\subsection*{Problem 5}
-	
+	(1)$\phi_{n}(t)=\mathbb{E}[e^{itY_{n}}]=\sum\limits_{k=0}^{\infty}p_{n}(1-p_{n})^{k}e^{itp_{n}k}=\frac{p_{n}}{1-(1-p_{n})e^{itp_{n}}}$. Then, $$\lim\limits_{n\rightarrow\infty}\phi_{n}(t)=\lim\limits_{x\rightarrow 0}\frac{x}{1-(1-x)e^{itx}}=\lim\limits_{x\rightarrow 0}\frac{1}{1-it(1-x)e^{itx}}(\text{L'Hospital})=\frac{1}{1-it},$$
+which is the characteristic function of exponential random variable with parameter $1$. Therefore, $Y_{n}$ weakly converges to $Z\sim Exp(1)$.\\
+(2) Notice that 
+\begin{align*}
+\frac{d}{d q_{n}}\mathbb{E}[Y_{n}^{k-1}]&=\frac{d}{d q_{n}}[\sum_{x=0}^{\infty}p_{n}^{k-1}x^{k-1}p_{n}q_{n}^{x}]=	\sum_{x=0}^{\infty}x^{k-1}[-kp_{n}^{k-1}q_{n}^{x}+p_{n}^{k}x q_{n}^{x-1}]\\
+&=-\frac{k}{p_{n}}\sum_{x=0}^{\infty}(p_{n}x)^{k-1}p_{n}q_{n}^{x}+\frac{1}{p_{n}q_{n}}\sum_{x=0}^{\infty}(p_{n}x)^{k}p_{n}q_{n}^{x}\\
+&=-\frac{k}{p_{n}}\mathbb{E}[Y_{n}^{k-1}]+\frac{1}{p_{n}q_{n}}\mathbb{E}[Y_{n}^{k}]
+\end{align*}
+Therefore, we have $$\mathbb{E}[Y_{n}^{k}]=p_{n}q_{n}\frac{d}{d q_{n}}\mathbb{E}[Y_{n}^{k-1}]+k\cdot q_{n}\mathbb{E}[Y^{k-1}]$$
+Let $p_{n}\rightarrow 0$, we get $\lim\limits_{n\rightarrow\infty}\mathbb{E}[Y_{n}^{k}]=k\cdot \lim\limits_{n\rightarrow\infty}\mathbb{E}[Y_{n}^{k-1}]$.
+Since $\lim\limits_{n\rightarrow\infty}\mathbb{E}[Y_{n}]=\lim\limits_{n\rightarrow\infty}p_{n}\cdot\frac{1-p_{n}}{p_{n}}=1$, we obtain: $$\lim\limits_{n\rightarrow\infty}\mathbb{E}[Y_{n}^k]=k!$$
+which is the $k$-$th$ moment of exponential random variable with parameter $1$.
+
+
+(3) For a bounded continuous function $f$ which is bounded by $M$, $$\mathbb{E}[f(Y_{n})]=\sum_{k=0}^{\infty}f(kp_{n})p_{n}(1-p_{n})^{k}\leqslant \frac{M(1-p_{n})}{p_{n}}$$ is well-defined.
+Notice that $(1-p_{n})^{k}=e^{kln(1-p_{n})}=e^{-kp_{n}+o(p_{n})}=e^{-kp_{n}}(1+o(p_{n}))$, so $$\mathbb{E}[f(Y_{n})]=\sum_{k=0}^{\infty}f(kp_{n})p_{n}e^{-kp_{n}}+\sum_{k=0}^{\infty}f(kp_{n})p_{n}e^{-kp_{n}}o(p_{n})$$
+For the first term, $$\lim_{n\rightarrow\infty}\sum_{k=0}^{\infty}f(kp_{n})p_{n}e^{-kp_{n}}=\int_{0}^{\infty}f(x)e^{-x}dx=\mathbb{E}[f(Y)]$$
+by definition of integral, and here we use the continuity of function $f$. For the second term, it converges to $0$. Thus, $\mathbb{E}[f(Y_{n})]\xrightarrow{n\rightarrow\infty}\mathbb{E}[f(Y)]$.\\
+(4) Consider $\frac{1}{p_{n}}\cdot p_{n}(1-p_{n})^{k_{n}}$, where $k_{n}=x\cdot\frac{1}{p_{n}}$. Notice that $\frac{1}{p_{n}}\cdot p_{n}(1-p_{n})^{k_{n}}=e^{\frac{x}{p_{n}}ln(1-p_{n})}=e^{\frac{x}{p_{n}}}(-p_{n}+o(p_{n}))=e^{-x+o(1)}$. Consider 
+\begin{align*}
+	\mathbb{P}(a\leqslant Y_{n}\leqslant b) &= \mathbb{P}(\frac{a}{p_{n}}\leqslant X_{n}\leqslant \frac{b}{p_{n}})\\
+	&=\sum_{k=m_{n}}^{M_{n}}\mathbb{P}(X_{n}=k)\quad(\text{where $m_n=[\frac{a}{p_{n}}]+1$, $M_{n}=[\frac{b}{p_{n}}]$})\\
+	&= \sum_{k=m_{n}}^{M_{n}}p_{n}e^{x_{k}+o(1)}\quad(\text{where $x_{k}=p_{n}k$ and $x_{k}-x_{k-1}=p_{n}$})\\
+	&\approx\sum_{k=m_{n}}^{M_{n}}\int_{x_{k}-\frac{1}{2}p_{n}}^{x_{k}+\frac{1}{2}p_{n}}e^{-x}dx=\int_{x_{m_{n}}-\frac{1}{2}p_{n}}^{x_{M_{n}}+\frac{1}{2}p_{n}}e^{-x}dx\\
+	& \rightarrow \int_{a}^{b}e^{-x}dx\quad(\text{as $n\rightarrow\infty$})
+\end{align*}
+Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-\infty}^{x}e^{-u}du$.
+
 	\subsection*{Problem 6}
 	
 	\subsection*{Problem 7}
