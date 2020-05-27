@@ -132,16 +132,97 @@
 
 \section{Weak convergence}
 
-	\subsection*{Problem 5}
-	
-	\subsection*{Problem 6}
-	
-	\subsection*{Problem 7}
+\subsection*{Problem 5}
+(1)$\phi_{n}(t)=\mathbb{E}[e^{itY_{n}}]=\sum\limits_{k=0}^{\infty}p_{n}(1-p_{n})^{k}e^{itp_{n}k}=\frac{p_{n}}{1-(1-p_{n})e^{itp_{n}}}$. Then, $$\lim\limits_{n\rightarrow\infty}\phi_{n}(t)=\lim\limits_{x\rightarrow 0}\frac{x}{1-(1-x)e^{itx}}=\lim\limits_{x\rightarrow 0}\frac{1}{1-it(1-x)e^{itx}}(\text{L'Hospital})=\frac{1}{1-it},$$
+which is the characteristic function of exponential random variable with parameter $1$. Therefore, $Y_{n}$ weakly converges to $Z\sim Exp(1)$.\\
+(2) Notice that 
+\begin{align*}
+\frac{d}{d q_{n}}\mathbb{E}[Y_{n}^{k-1}]&=\frac{d}{d q_{n}}[\sum_{x=0}^{\infty}p_{n}^{k-1}x^{k-1}p_{n}q_{n}^{x}]=	\sum_{x=0}^{\infty}x^{k-1}[-kp_{n}^{k-1}q_{n}^{x}+p_{n}^{k}x q_{n}^{x-1}]\\
+&=-\frac{k}{p_{n}}\sum_{x=0}^{\infty}(p_{n}x)^{k-1}p_{n}q_{n}^{x}+\frac{1}{p_{n}q_{n}}\sum_{x=0}^{\infty}(p_{n}x)^{k}p_{n}q_{n}^{x}\\
+&=-\frac{k}{p_{n}}\mathbb{E}[Y_{n}^{k-1}]+\frac{1}{p_{n}q_{n}}\mathbb{E}[Y_{n}^{k}]
+\end{align*}
+Therefore, we have $$\mathbb{E}[Y_{n}^{k}]=p_{n}q_{n}\frac{d}{d q_{n}}\mathbb{E}[Y_{n}^{k-1}]+k\cdot q_{n}\mathbb{E}[Y^{k-1}]$$
+Let $p_{n}\rightarrow 0$, we get $\lim\limits_{n\rightarrow\infty}\mathbb{E}[Y_{n}^{k}]=k\cdot \lim\limits_{n\rightarrow\infty}\mathbb{E}[Y_{n}^{k-1}]$.
+Since $\lim\limits_{n\rightarrow\infty}\mathbb{E}[Y_{n}]=\lim\limits_{n\rightarrow\infty}p_{n}\cdot\frac{1-p_{n}}{p_{n}}=1$, we obtain: $$\lim\limits_{n\rightarrow\infty}\mathbb{E}[Y_{n}^k]=k!$$
+which is the $k$-$th$ moment of exponential random variable with parameter $1$.
+
+
+(3) For a bounded continuous function $f$ which is bounded by $M$, $$\mathbb{E}[f(Y_{n})]=\sum_{k=0}^{\infty}f(kp_{n})p_{n}(1-p_{n})^{k}\leqslant \frac{M(1-p_{n})}{p_{n}}$$ is well-defined.
+Notice that $(1-p_{n})^{k}=e^{kln(1-p_{n})}=e^{-kp_{n}+o(p_{n})}=e^{-kp_{n}}(1+o(p_{n}))$, so $$\mathbb{E}[f(Y_{n})]=\sum_{k=0}^{\infty}f(kp_{n})p_{n}e^{-kp_{n}}+\sum_{k=0}^{\infty}f(kp_{n})p_{n}e^{-kp_{n}}o(p_{n})$$
+For the first term, $$\lim_{n\rightarrow\infty}\sum_{k=0}^{\infty}f(kp_{n})p_{n}e^{-kp_{n}}=\int_{0}^{\infty}f(x)e^{-x}dx=\mathbb{E}[f(Y)]$$
+by definition of integral, and here we use the continuity of function $f$. For the second term, it converges to $0$. Thus, $\mathbb{E}[f(Y_{n})]\xrightarrow{n\rightarrow\infty}\mathbb{E}[f(Y)]$.\\
+(4) Consider $\frac{1}{p_{n}}\cdot p_{n}(1-p_{n})^{k_{n}}$, where $k_{n}=x\cdot\frac{1}{p_{n}}$. Notice that $\frac{1}{p_{n}}\cdot p_{n}(1-p_{n})^{k_{n}}=e^{\frac{x}{p_{n}}ln(1-p_{n})}=e^{\frac{x}{p_{n}}}(-p_{n}+o(p_{n}))=e^{-x+o(1)}$. Consider 
+\begin{align*}
+\mathbb{P}(a\leqslant Y_{n}\leqslant b) &= \mathbb{P}(\frac{a}{p_{n}}\leqslant X_{n}\leqslant \frac{b}{p_{n}})\\
+&=\sum_{k=m_{n}}^{M_{n}}\mathbb{P}(X_{n}=k)\quad(\text{where $m_n=[\frac{a}{p_{n}}]+1$, $M_{n}=[\frac{b}{p_{n}}]$})\\
+&= \sum_{k=m_{n}}^{M_{n}}p_{n}e^{x_{k}+o(1)}\quad(\text{where $x_{k}=p_{n}k$ and $x_{k}-x_{k-1}=p_{n}$})\\
+&\approx\sum_{k=m_{n}}^{M_{n}}\int_{x_{k}-\frac{1}{2}p_{n}}^{x_{k}+\frac{1}{2}p_{n}}e^{-x}dx=\int_{x_{m_{n}}-\frac{1}{2}p_{n}}^{x_{M_{n}}+\frac{1}{2}p_{n}}e^{-x}dx\\
+& \rightarrow \int_{a}^{b}e^{-x}dx\quad(\text{as $n\rightarrow\infty$})
+\end{align*}
+Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-\infty}^{x}e^{-u}du$.
+
+\subsection*{Problem 6}
+(1)\begin{align*}
+\phi_{n}(t)&= \mathbb{E}[e^{itX_{n}}]=\sum_{k=0}^{N_{n}}\binom{N_{n}}{k}p_n^{k}(1-p_n)^{N_{n}-k}e^{itk}\\
+&=(p_{n}e^{it}+(1-p_n))^{N_{n}}\\
+&=e^{N_{n}ln(1+p_{n}(e^{it}-1))}
+\end{align*}
+As $p_n\rightarrow 0$, $N_{n}\rightarrow\infty$, $p_{n}N_{n}\rightarrow \lambda$, we have $ln(1+p_{n}(e^{it}-1))\rightarrow p_{n}(e^{it}-1)$, and $\lim\limits_{n\rightarrow\infty}\phi_{n}(t)= e^{\lim\limits_{n\rightarrow\infty}N_{n}p_{n}(e^{it}-1)}=e^{\lambda (e^{it}-1)}$, which is the characteristic function of Poisson distribution. Thus, $X_{n}$ weakly converges to Poisson random variable with parameter $\lambda$.\\
+(2) Denote $$P_{k,n}=\frac{N_{n}!}{k!(N_{n}-k)!}\cdot p_{n}^{k}(1-p_{n})^{N_{n}-k}=\frac{(p_{n}N_{n})^{k}}{k!}\cdot \frac{N_{n}!}{N_{n}^{k}(N_{n}-k)!}(1-p_{n})^{N_{n}-k}$$
+Notice that $\frac{N_{n}!}{N_{n}^{k}(N_{n}-k)!}=\frac{N_{n}}{N_{n}}\cdot\frac{N_{n}-1}{N_{n}}\cdot\dots\cdot\frac{N_{n}-k+1}{N_{n}}\rightarrow 1$, as $N_{n}\rightarrow\infty$;\\ 
+$(1-p_{n})^{N_{n}-k}=e^{(N_{n}-k)ln(1-p_{n})}=e^{(N_{n}-k)(-p_{n}+o(p_{n}))}\rightarrow e^{-\lambda}$, as $n\rightarrow\infty$; \\ and $\frac{(p_{n}N_{n})^{k}}{k!}\rightarrow\frac{\lambda^{k}}{k!}$. Therefore, $P_{k,n}\rightarrow\frac{\lambda^{k}}{k!}e^{-\lambda}$ as $n\rightarrow\infty$. Then, $\mathbb{P}(X_{n}\leqslant x)=\sum_{k=1}^{[x]}P_{k,n}$. Let $n\rightarrow\infty$, $\mathbb{P}(X_{n}\leqslant x)=\sum_{k=1}^{[x]}P_{k,n}\rightarrow\sum_{k=1}^{[x]}\frac{\lambda^{k}}{k!}e^{-\lambda}$ is the distribution of Poisson random variable.
+
+\subsection*{Problem 7}
+(1)
+\begin{align*}
+\phi_{n}(t)&=\mathbb{E}[e^{itY_{n}}]=\sum_{k=0}^{\infty}e^{-n}\frac{n^k}{k!}e^{it\frac{k-n}{\sqrt{n}}}\\
+&=\sum_{k=0}^{\infty}\frac{(ne^{it\frac{1}{\sqrt{n}}})^{k}}{k!}e^{-it\sqrt{n}-n}\\
+&=e^{-it\sqrt{n}-n+ne^{it\frac{1}{\sqrt{n}}}}
+\end{align*}
+Notice that $n(e^{it\frac{1}{\sqrt{n}}}-1)-it\sqrt{n}=n(it\frac{1}{\sqrt{n}}+\frac{1}{2}(it\frac{1}{\sqrt{n}})^2+o(\frac{1}{n}))-it\sqrt{n}=-\frac{1}{2}t^2+o(1)$. Therefore, $\phi_{n}(t)\rightarrow e^{-\frac{1}{2}t^2}$ as $n\rightarrow\infty$, which is the characteristic function of standard normal random variable.\\
+(2) Let us consider $\lim\limits_{n\rightarrow\infty}\sqrt{n}\frac{n^{k_{n}}}{k_{n}!}e^{-n}$, where $k_{n}=x\sqrt{n}+n$. By Stirling's formula, $n!\sim\sqrt{2\pi n}n^{n}e^{-n}$. Then,
+\begin{align*}
+\sqrt{n}\frac{n^{k_{n}}}{k_{n}!}e^{-n} &\sim \sqrt{n}\frac{n^{k_{n}}}{\sqrt{2\pi k_{n}}k_{n}^{k_{n}}e^{-k_{n}}} e^{-n}\\
+&=\frac{\sqrt{n}}{\sqrt{2\pi k_{n}}}(\frac{n}{k_{n}})^{k_{n}}e^{k_{n}-n}\\
+&=\frac{\sqrt{n}}{\sqrt{2\pi k_{n}}}e^{k_{n}ln(\frac{n}{k_{n}})+k_{n}-n}
+\end{align*}
+Notice that $k_{n}=x\sqrt{n}+n\sim O(n)$, we know $\lim\limits_{n\rightarrow\infty}\frac{\sqrt{n}}{\sqrt{k_{n}}}=1$;
+\begin{align*}
+k_{n}ln(\frac{n}{k_{n}})&=k_{n}ln(1-\frac{k_{n}-n}{k_{n}})\quad(\frac{k_{n}-n}{k_{n}}=\frac{x}{x+\sqrt{n}}\sim O(\frac{1}{\sqrt{n}}))\\
+&=k_{n}(-\frac{k_{n}-n}{k_{n}}-\frac{1}{2}(\frac{k_{n}-n}{k_{n}})^{2}+o(\frac{1}{n}))\\
+&=-k_{n}+n-\frac{1}{2}\frac{n x^2}{x\sqrt{n}+n}+o(1)\\
+&=-k_{n}+n-\frac{1}{2}x^2+o(1)
+\end{align*}
+Therefore, $\sqrt{n}\frac{n^{k_{n}}}{k_{n}!}e^{-n}=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2+o(1)}$.\\
+Next, consider: $\mathbb{P}(a\leqslant Y_{n}\leqslant b)=\mathbb{P}(a\sqrt{n}+n\leqslant X_{n}\leqslant b_{n}+n)$. Denote $m_{n}=[a\sqrt{n}+n]+1$, $M_{n}=[b\sqrt{n}+n]$, then
+\begin{align*}
+\mathbb{P}(a\leqslant Y_{n}\leqslant b)&=\sum_{k=m_{n}}^{M_{n}}\mathbb{P}(X_{n}=k)\\
+&=\sum_{k=m_{n}}^{M_{n}}\frac{1}{\sqrt{n}}\frac{1}{\sqrt{2\pi}}e^{-\frac{x_{k}^2}{2}+o(1)}\quad(\text{where $x_{k}=\frac{k-n}{\sqrt{n}}$, $x_{k}-x_{k-1}=\frac{1}{\sqrt{n}}$})\\
+&\approx \sum_{k=m_{n}}^{M_{n}}\int_{x_{k}-\frac{1}{2\sqrt{n}}}^{x_{k}+\frac{1}{2\sqrt{n}}} \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx\\
+&=\int_{x_{m_{n}}-\frac{1}{2\sqrt{n}}}^{x_{M_{n}}+\frac{1}{2\sqrt{n}}} \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx\\
+& \rightarrow \int_{a}^{b}\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx
+\end{align*}
+Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-\infty}^{x}\frac{1}{\sqrt{2\pi}}e^{-\frac{u^2}{2}}du$.\\
+(3) Suppose $Z_{1},Z_{2},\dots, Z_{n}$, \emph{I.I.D}, are Poisson random variables with parameter $1$. Then, $X_{n}=\sum\limits_{k=1}^{n}Z_{k}\sim Poisson(n)$, and $\mathbb{E}(X_{n})=n$, $Var(X_{n})=n$. By Central Limit Theorem, $\frac{X_{n}-n}{\sqrt{n}}\xrightarrow{d}\mathcal{N}(0,1)$.
 
 
 \section{Tightness}
 
 	\subsection*{Problem 8}
+	
+		Let $\Lambda\subset\mathbb{R}$ be an interval and $\Sigma = \llbracket 1, N\rrbracket$ with $N\in\mathbb{N}\cup\{\infty\}$. Consider the maps 
+		\[
+		\pi_i : C(\Sigma\times\Lambda) \to C(\Lambda), \quad \pi_i(F)(x) = F(i,x), \quad i\in\Sigma.
+		\]
+		Since $C(X)$ with the topology of compact convergence is metrizable by problem 1, to show that the $\pi_i$ are continuous, it suffices to show that if $f_n\to f$ in $C(\Sigma\times\Lambda)$, then $\pi_i(f_n)\to \pi_i(f)$ in $C(\Lambda)$. But this is immediate, since if $f_n\to f$ uniformly on compact subsets of $\Sigma\times\Lambda$, then in particular $f_n(i,\cdot)\to f(i,\cdot)$ uniformly on compact subsets of $\Lambda$.
+		
+		Let $\mathcal{L}^n$ be a sequence of $\Sigma$-indexed line ensembles on $\Lambda$, i.e., each $\mathcal{L}^n$ is a $C(\Sigma\times\Lambda)$-valued random variable on a probability space $(\Omega,\mathcal{F},\mathbb{P})$. Let $X_i^n := \pi_i(\mathcal{L}^n)$. If $A$ is a Borel set in $C(\Lambda)$, then $(X_i^n)^{-1}(A) = (\mathcal{L}^n)^{-1}(\pi_i^{-1}(A))$. Note $\pi_i^{-1}(A)\in\mathcal{C}_\Sigma$ since $\pi_i$ is continuous, so it follows that $(X_i^n)^{-1}(A)\in\mathcal{F}$. Thus $X_i^n$ is a $C(\Lambda)$-valued random variable.
+		
+		Suppose the sequence $(\mathcal{L}^n)$ is tight. Then $(\mathcal{L}^n)$ is relatively compact, that is, every subsequence $(\mathcal{L}^{n_k})$ has a further subsequence $(\mathcal{L}^{n_{k_\ell}})$ converging weakly to some $\mathcal{L}$. Then for each $i\in\Sigma$, since $\pi_i$ is continuous, the subsequence $(\pi_i(\mathcal{L}^{n_{k_\ell}}))$ of $(\pi_i(\mathcal{L}^{n_k}))$ converges weakly to $\pi_i(\mathcal{L})$ by the continuous mapping theorem. Thus every subsequence of $(\pi_i(\mathcal{L}^n))$ has a convergent subsequence. Since $C(\Lambda)$ is a Polish space by the argument in problem 1, Prohorov's theorem implies that each $(\pi_i(\mathcal{L}^n))$ is tight.
+		
+		Conversely, suppose $(\pi_i(\mathcal{L}^n))$ is tight for all $i\in\Sigma$. Then for each $i$, every subsequence $(\pi_i(\mathcal{L}^{n_k}))$ has a further subsequence $(\pi_i(\mathcal{L}^{n_{k_\ell}})$ converging weakly to some $\mathcal{L}_i$. By diagonalizing the subsequences $(n_{k_\ell})$, we obtain a sequence that works for all $i$, so that $\pi_i(\mathcal{L}^{n_{k_\ell}})\implies \mathcal{L}_i$ for all $i$ simultaneously. If $Q^n$ is the law of $\mathcal{L}^n$ as above and $Q_i$ is the law of $\mathcal{L}_i$, we claim that $Q^{n_{k_\ell}}$ converges weakly to the product measure $Q_1 \otimes Q_2 \otimes \cdots$.
+		
+		Since $C(\Sigma\times\Lambda)$ is homeomorphic to $\prod_{i\in\Sigma} C(\Lambda)$, we can identify the sequence of random variables $(\mathcal{L}_i)_{i\in\Sigma}$ with an element of $C(\Sigma\times\Lambda)$. Then $\mathcal{L}^{n_{k_\ell}}\implies (\mathcal{L}_i)_{i\in\Sigma}$.
 	
 	\subsection*{Problem 9}
 
