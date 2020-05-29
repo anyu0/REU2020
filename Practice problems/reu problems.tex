@@ -68,11 +68,11 @@
 		
 		Next, we show that $(C(\Sigma\times\Lambda), d)$ is a complete metric space. Let $(f_n)_{n\geq 1}$ be Cauchy with respect to $d$. Then we claim that $(f_n)$ must be Cauchy with respect to $d_n'$, on each $K_n$. Indeed, $d(f_\ell, f_m) \geq 2^{-n}d_n'(f_\ell, f_m)$, so if $(f_n)$ were not Cauchy with respect to $d_n'$, it would not be Cauchy with respect to $d$ either. Thus $(f_n)$ is uniformly Cauchy on each $K_n$, and hence converges uniformly to a limit $f^{K_n}$ on each $K_n$. Since the limit must be unique at each point of $\Sigma\times\Lambda$, we have $f^{K_n}(x) = f^{K_m}(x)$ if $x\in K_n\cap K_m$. Since $\bigcup K_n = \Sigma\times\Lambda$, we obtain a well-defined function $f$ on all of $\Sigma\times\Lambda$ given by $f(x)=f^{K_n}(x)$, where $x\in K_n$. Given any compact $K\subset \Sigma\times\Lambda$, if $n$ is large enough so that $K\subset K_n$, then because $f_n \to f^{K_n} = f|_{K_n}$ uniformly on $K_n$, we have $f_n \to f^{K_n}|_K = f|_K$ uniformly on $K$. That is, for any $K\subset\Sigma\times\Lambda$ compact and $\epsilon>0$, we have $f_n \in B_K(f,\epsilon)$ for all sufficiently large $n$. Therefore $(f_n)$ converges to $f$ in the topology of compact convergence, and equivalently in the metric $d$.
 		
-		Lastly, we prove separability, following example 1.3 in Billingsley, \textit{Convergence of Probability Measures}. For each pair of positive integers $n,k$, let $D_{n,k}$ be the subcollection of $C(\Sigma\times\Lambda)$ consisting of polygonal functions that are piecewise linear on $\{j\}\times I_{n,k,i}$ for each $j\in\Sigma_n$ and each subinterval 
+		Lastly, we prove separability, c.f. example 1.3 in Billingsley, \textit{Convergence of Probability Measures}. For each pair of positive integers $n,k$, let $D_{n,k}$ be the subcollection of $C(\Sigma\times\Lambda)$ consisting of polygonal functions that are piecewise linear on $\{j\}\times I_{n,k,i}$ for each $j\in\Sigma_n$ and each subinterval 
 		\[
 		I_{n,k,i} := [a_n+\tfrac{i-1}{k}(b_n-a_n), a_n+\tfrac{i}{k}(b_n-a_n)], \quad 1\leq i\leq k,
 		\] 
-		taking rational values at the endpoints of these subintervals, and extended linearly to all of $\Lambda = [a,b]$. Then $D := \bigcup_{n,k} D_{n,k}$ is countable, and we claim that it is dense in the topology of compact convergence. To see this, let $K\subset\Sigma\times\Lambda$ be compact, $f\in C(\Sigma\times\Lambda)$, and $\epsilon>0$, and choose $n$ so that $K\subset K_n$. Since $f$ is uniformly continuous on $K_n$, we can choose $k$ large enough so that $|f(j,t) - f(j, a_n + \frac{i}{k}(b_n-a_n))| < \epsilon/2$ for $j\in\Sigma_n$ and $1\leq i\leq k$. We then choose $g\in \bigcup_k D_{n,k}$ with $|g(j,a_n + \frac{i}{k}(b_n-a_n)) - f(j,a_n + \frac{i}{k}(b_n-a_n))| < \epsilon/2$. Then $f(j,t)$ is within $\epsilon$ of both $g(j,a_n + \frac{i-1}{k}(b_n-a_n))$ and $g(j,a_n + \frac{i}{k}(b_n-a_n))$. Since $g(j,t)$ lies between these two values, $f(j,t)$ is with $\epsilon$ of $g(j,t)$ as well. In summary,
+		taking rational values at the endpoints of these subintervals, and extended linearly to all of $\Lambda = [a,b]$. Then $D := \bigcup_{n,k} D_{n,k}$ is countable, and we claim that it is dense in the topology of compact convergence. To see this, let $K\subset\Sigma\times\Lambda$ be compact, $f\in C(\Sigma\times\Lambda)$, and $\epsilon>0$, and choose $n$ so that $K\subset K_n$. Since $f$ is uniformly continuous on $K_n$, we can choose $k$ large enough so that for $0\leq i\leq k$, if $t\in I_{n,k,i}$, then $|f(j,t) - f(j, a_n + \frac{i}{k}(b_n-a_n))| < \epsilon/2$ for all $j\in\Sigma_n$. We then choose $g\in \bigcup_k D_{n,k}$ with $|g(j,a_n + \frac{i}{k}(b_n-a_n)) - f(j,a_n + \frac{i}{k}(b_n-a_n))| < \epsilon/2$. Then $f(j,t)$ is within $\epsilon$ of both $g(j,a_n + \frac{i-1}{k}(b_n-a_n))$ and $g(j,a_n + \frac{i}{k}(b_n-a_n))$. Since $g(j,t)$ lies between these two values, $f(j,t)$ is with $\epsilon$ of $g(j,t)$ as well. In summary,
 		\[
 		\sup_{(j,t)\in K} |f(j,t)-g(j,t)| \leq \sup_{(j,t)\in K_n} |f(j,t)-g(j,t)| < \epsilon,
 		\] 
@@ -211,10 +211,64 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 
 	\subsection*{Problem 8}
 	
+		Let $\Lambda\subset\mathbb{R}$ be an interval and $\Sigma = \llbracket 1, N\rrbracket$ with $N\in\mathbb{N}\cup\{\infty\}$. Consider the maps 
+		\[
+		\pi_i : C(\Sigma\times\Lambda) \to C(\Lambda), \quad \pi_i(F)(x) = F(i,x), \quad i\in\Sigma.
+		\]
+		Since $C(X)$ with the topology of compact convergence is metrizable by problem 1, to show that the $\pi_i$ are continuous, it suffices to show that if $f_n\to f$ in $C(\Sigma\times\Lambda)$, then $\pi_i(f_n)\to \pi_i(f)$ in $C(\Lambda)$. But this is immediate, since if $f_n\to f$ uniformly on compact subsets of $\Sigma\times\Lambda$, then in particular $f_n(i,\cdot)\to f(i,\cdot)$ uniformly on compact subsets of $\Lambda$.
 		
+		Let $(\mathcal{L}^n)$ be a sequence of $\Sigma$-indexed line ensembles on $\Lambda$, i.e., each $\mathcal{L}^n$ is a $C(\Sigma\times\Lambda)$-valued random variable on a probability space $(\Omega,\mathcal{F},\mathbb{P})$. Let $X_i^n := \pi_i(\mathcal{L}^n)$. If $A$ is a Borel set in $C(\Lambda)$, then $(X_i^n)^{-1}(A) = (\mathcal{L}^n)^{-1}(\pi_i^{-1}(A))$. Note $\pi_i^{-1}(A)\in\mathcal{C}_\Sigma$ since $\pi_i$ is continuous, so it follows that $(X_i^n)^{-1}(A)\in\mathcal{F}$. Thus $X_i^n$ is a $C(\Lambda)$-valued random variable.
+		
+		Suppose the sequence $(\mathcal{L}^n)$ is tight. Then $(\mathcal{L}^n)$ is relatively compact, that is, every subsequence $(\mathcal{L}^{n_k})$ has a further subsequence $(\mathcal{L}^{n_{k_\ell}})$ converging weakly to some $\mathcal{L}$. Then for each $i\in\Sigma$, since $\pi_i$ is continuous, the subsequence $(\pi_i(\mathcal{L}^{n_{k_\ell}}))$ of $(\pi_i(\mathcal{L}^{n_k}))$ converges weakly to $\pi_i(\mathcal{L})$ by the continuous mapping theorem. Thus every subsequence of $(\pi_i(\mathcal{L}^n))$ has a convergent subsequence. Since $C(\Lambda)$ is a Polish space by the argument in problem 1, Prohorov's theorem implies that each $(\pi_i(\mathcal{L}^n))$ is tight.
+		
+		Conversely, suppose $(\pi_i(\mathcal{L}^n))$ is tight for all $i\in\Sigma$. Then for each $i$, every subsequence $(\pi_i(\mathcal{L}^{n_k}))$ has a further subsequence $(\pi_i(\mathcal{L}^{n_{k_\ell}}))$ converging weakly to some $\mathcal{L}_i$. By diagonalizing the subsequences $(n_{k_\ell})$, we obtain a sequence that works for all $i$, so that $\pi_i(\mathcal{L}^{n_{k_\ell}})\implies \mathcal{L}_i$ for all $i$ simultaneously. Note that $C(\Sigma\times\Lambda)$ is homeomorphic to $\prod_{i\in\Sigma} C(\Lambda)$ with the product topology, with $f\in C(\Sigma\times\Lambda)$ identified with $(\pi_i(f))_{i\in\Sigma}$. It is not hard to see this by observing that the compact subsets $K$ of $\Sigma\times\Lambda$ are of the form $S\times I$, for $S$ finite and $I$ compact. Thus the homeomorphism identifies the basis elements $B_K(f,\epsilon)$ in $C(\Sigma\times\Lambda)$ with products of open sets $U_i$ in $C(\Lambda)$, such that if $i\notin S$ then simply $U_i = C(\Lambda)$; since $S$ is finite, these products $\prod_i U_i$ are basis elements of the product topology.
+				 
+		Consequently, we can identify the sequence of random variables $\mathcal{L} = (\mathcal{L}_i)_{i\in\Sigma}$ with an element of $C(\Sigma\times\Lambda)$. We argue that $\mathcal{L}^{n_{k_\ell}}\implies \mathcal{L}$. Let $U$ be a basis element in the product topology, i.e., $U = \prod_{i\in\Sigma} U_i$, with each $U_i$ open in $C(\Lambda)$ and all but finitely many $U_i = C(\Lambda)$. Without loss of generality, assume these finitely many $U_i\neq C(\Lambda)$ are $U_1,\dots,U_m$. Then
+		\[
+		\mathbb{P}(X \in U) = \mathbb{P}(\pi_1(X) \in U_1, \dots, \pi_m(X) \in U_m) = \prod_{i=1}^m \mathbb{P}(\pi_i(X)\in U_i).
+		\]
+		Therefore, since $\pi_i(\mathcal{L}^{n_{k_\ell}}) \implies \mathcal{L}_i$ for each $i$,
+		\begin{align*}
+		\limsup_{\ell\to\infty} \mathbb{P}(\mathcal{L}^{n_{k_\ell}} \in U) &\leq \prod_{i=1}^m \limsup_{\ell\to\infty} \mathbb{P}(\pi_i(\mathcal{L}^{n_{k_\ell}})\in U_i) \leq \prod_{i=1}^m \mathbb{P}(\mathcal{L}_i \in U_i) = \mathbb{P}(\mathcal{L}\in U).
+		\end{align*}
+		Now by the same argument as in problem 2, since $C(\Sigma\times\Lambda)$ is a second countable metric space, every open set is a union of countably many sets of the form of $U$. It follows from countable additivity that the condition above holds if $U$ is replaced by an arbitrary open set. This proves that $\mathcal{L}^{n_{k_\ell}} \implies \mathcal{L}$ as desired. Hence $(\mathcal{L}^n)$ is relatively compact, and it follows from Prohorov's theorem  once again that $(\mathcal{L}^n)$ is tight. This completes the proof.
 		
 	
 	\subsection*{Problem 9}
+	
+		Recall that Theorem 7.3 from Billingsley states that a sequence $(P_n)$ of probability measures on $C[0,1]$ with the uniform topology is tight if and only if the following hold:
+		\begin{align}
+			\lim_{a\to\infty} \limsup_{n\to\infty} P_n(|x(0)|\geq a) &= 0 \\
+			\lim_{\delta\to 0} \limsup_{n\to\infty} P_n\left(\sup_{|s-t|\leq\delta} |x(s)-x(t)| \geq \epsilon\right) &= 0, \quad \forall\,\epsilon>0.
+		\end{align}
+		
+		We will find analogous necessary and sufficient conditions for the tightness of $(\mathcal{L}^n)$ on $C(\Sigma\times\Lambda)$ in problem 8. It suffices to find conditions for the tightness of the sequences $(\mathcal{L}^n_i) := (\pi_i(\mathcal{L}^n_i))$ on $C(\Lambda)$, with $i\in\Sigma$. Note $C(\Lambda)$ has the topology of uniform convergence on compact sets, so we must work on the level of compact subsets of $\Lambda$. Consider the compact exhaustion $\Lambda = \bigcup_k [a_k,b_k]$ as in problem 1. Recall that $[a_1,b_1]\subseteq [a_2,b_2]\subseteq\cdots$, so $a_1\in [a_k,b_k]$ for all $k$. We argue that $(\mathcal{L}^n_i)$ is tight if and only if for every $k\geq 1$, we have
+		\begin{enumerate}[label=(\roman*)]
+			
+			\item 
+			\[
+			\lim_{a\to\infty} \limsup_{n\to\infty}\, \pr(|\mathcal{L}^n_i(a_1)|\geq a) = 0.
+			\]
+			
+			\item For all $\epsilon>0$,
+			\[
+			\lim_{\delta\to 0} \limsup_{n\to\infty}\, \pr\bigg(\sup_{\substack{x,y\in [a_k,b_k], \\ |x-y|\leq\delta}} |\mathcal{L}^n_i(x) - \mathcal{L}^n_i(y)| \geq \epsilon\bigg) = 0.
+			\]
+			
+		\end{enumerate}
+	
+		By replacing $[0,1]$ with $[a_k,b_k]$ and 0 with $a_1$, we see by Theorem 7.3 that these conditions imply that the sequences $(\mathcal{L}^n_i|_{[a_k,b_k]})_n$ are tight, hence relatively compact in the uniform topology on $C[a_k,b_k]$, for every $i\in\Sigma$ and $k\geq 1$. Thus every subsequence $(\mathcal{L}^{n_m}_i|_{[a_k,b_k]})_m$ has a further subsequence $(\mathcal{L}^{n_{m_\ell}}_i|_{[a_k,b_k]})_\ell$ converging weakly to some $\mathcal{L}_i|_{[a_k,b_k]}$. We claim that we can patch these $\mathcal{L}_i|_{[a_k,b_k]}$ together to obtain a well-defined random variable $\mathcal{L}_i$ on all of $C(\Lambda)$, such that $\mathcal{L}_i^{n_{m_\ell}}|_{[a_k,b_k]} \implies \mathcal{L}_i|_{[a_k,b_k]}$ on every $C[a_k,b_k]$ with the uniform topology. To see this, note that this $\mathcal{L}_i$ is uniquely determined by its fdd's, according to problem 2. Given any finite collection of points in $\Lambda$, if we take $k$ large enough so that all of these points are in $[a_k,b_k]$, then the corresponding fdd is determined by that of $\mathcal{L}_i|_{[a_k,b_k]}$. Moreover, uniqueness of weak limits in distribution implies that this fdd agrees with that of $\mathcal{L}_i|_{[a_\ell,b_\ell]}$ for any $\ell\geq k$. Thus we have specified well-defined fdd's for $\mathcal{L}_i$, which determines $\mathcal{L}_i$ on all of $C(\Lambda)$. By construction, the restriction of $\mathcal{L}_i$ to any $[a_k,b_k]$ is equal to $\mathcal{L}_i|_{[a_k,b_k]}$ in distribution, so the desired property holds.
+		
+		If $K\subset\Lambda$ is any compact set, then by taking $k$ large enough so that $K\subset [a_k,b_k]$, we also obtain weak convergence of $\mathcal{L}_i|_K$ in the uniform topology on $C(K)$. Let $B_K(f,\epsilon)$ be a basis element in $C(\Lambda)$, and let $B_\epsilon(f)$ denote the corresponding ball in the uniform topology. Then
+		\begin{align*}
+		\limsup_{\ell\to\infty}\,\mathbb{P}(\mathcal{L}^{n_{m_\ell}}_i \in B_K(f,\epsilon)) &= \limsup_{\ell\to\infty}\,\mathbb{P}(\mathcal{L}^{n_{m_\ell}}_i|_K \in B_\epsilon(f))\\
+		& \leq \mathbb{P}(\mathcal{L}_i|_K \in B_\epsilon(f)) = \mathbb{P}(\mathcal{L}_i \in B_K(f,\epsilon)).
+		\end{align*}
+		The inequality follows from weak convergence in the uniform topology on $C(K)$. Since every open set in $C(\Lambda)$ can be written as a countable union of sets $B_K(f,\epsilon)$ (see problem 2), it follows from countable additivity that
+		\[
+		\limsup_{\ell\to\infty}\,\mathbb{P}(\mathcal{L}^{n_{m_\ell}}_i \in U) \leq \mathbb{P}(\mathcal{L}_i \in U)
+		\]
+		for any $U$ open in $C(\Lambda)$. Therefore $(\mathcal{L}_i^{n_{m_\ell}})_\ell$ converges weakly to $\mathcal{L}_i$, proving that $(\mathcal{L}^n_i)_n$ is relatively compact, hence tight, for every $i\in\Sigma$. Therefore $(\mathcal{L}^n)_n$ is tight by problem 8.
 
 
 \section{Lozenge tilings of the hexagon}
