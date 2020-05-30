@@ -307,7 +307,7 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 		\]
 		Therefore, since $\pi_i(\mathcal{L}^{n_{k_\ell}}) \implies \mathcal{L}_i$ for each $i$,
 		\begin{align*}
-		\limsup_{\ell\to\infty} \mathbb{P}(\mathcal{L}^{n_{k_\ell}} \in U) &\leq \prod_{i=1}^m \limsup_{\ell\to\infty} \mathbb{P}(\pi_i(\mathcal{L}^{n_{k_\ell}})\in U_i) \leq \prod_{i=1}^m \mathbb{P}(\mathcal{L}_i \in U_i) = \mathbb{P}(\mathcal{L}\in U).
+		\liminf_{\ell\to\infty} \mathbb{P}(\mathcal{L}^{n_{k_\ell}} \in U) &\geq \prod_{i=1}^m \liminf_{\ell\to\infty} \mathbb{P}(\pi_i(\mathcal{L}^{n_{k_\ell}})\in U_i) \geq \prod_{i=1}^m \mathbb{P}(\mathcal{L}_i \in U_i) = \mathbb{P}(\mathcal{L}\in U).
 		\end{align*}
 		Now by the same argument as in problem 2, since $C(\Sigma\times\Lambda)$ is a second countable metric space, every open set is a union of countably many sets of the form of $U$. It follows from countable additivity that the condition above holds if $U$ is replaced by an arbitrary open set. This proves that $\mathcal{L}^{n_{k_\ell}} \implies \mathcal{L}$ as desired. Hence $(\mathcal{L}^n)$ is relatively compact, and it follows from Prohorov's theorem  once again that $(\mathcal{L}^n)$ is tight. This completes the proof.
 		
@@ -335,18 +335,18 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 			
 		\end{enumerate}
 	
-		By replacing $[0,1]$ with $[a_k,b_k]$ and 0 with $a_1$, we see by Theorem 7.3 that these conditions imply that the sequences $(\mathcal{L}^n_i|_{[a_k,b_k]})_n$ are tight, hence relatively compact in the uniform topology on $C[a_k,b_k]$, for every $i\in\Sigma$ and $k\geq 1$. Thus every subsequence $(\mathcal{L}^{n_m}_i|_{[a_k,b_k]})_m$ has a further subsequence $(\mathcal{L}^{n_{m_\ell}}_i|_{[a_k,b_k]})_\ell$ converging weakly to some $\mathcal{L}_i|_{[a_k,b_k]}$. We claim that we can patch these $\mathcal{L}_i|_{[a_k,b_k]}$ together to obtain a well-defined random variable $\mathcal{L}_i$ on all of $C(\Lambda)$, such that $\mathcal{L}_i^{n_{m_\ell}}|_{[a_k,b_k]} \implies \mathcal{L}_i|_{[a_k,b_k]}$ on every $C[a_k,b_k]$ with the uniform topology. To see this, note that this $\mathcal{L}_i$ is uniquely determined by its fdd's, according to problem 2. Given any finite collection of points in $\Lambda$, if we take $k$ large enough so that all of these points are in $[a_k,b_k]$, then the corresponding fdd is determined by that of $\mathcal{L}_i|_{[a_k,b_k]}$. Moreover, uniqueness of weak limits in distribution implies that this fdd agrees with that of $\mathcal{L}_i|_{[a_\ell,b_\ell]}$ for any $\ell\geq k$. Thus we have specified well-defined fdd's for $\mathcal{L}_i$, which determines $\mathcal{L}_i$ on all of $C(\Lambda)$. By construction, the restriction of $\mathcal{L}_i$ to any $[a_k,b_k]$ is equal to $\mathcal{L}_i|_{[a_k,b_k]}$ in distribution, so the desired property holds.
+		By replacing $[0,1]$ with $[a_k,b_k]$ and 0 with $a_1$, we see by Theorem 7.3 that these conditions imply that the restricted sequences $(\mathcal{L}^n_i|_{[a_k,b_k]})_n$ are tight, hence relatively compact in the uniform topology on $C[a_k,b_k]$, for every $i\in\Sigma$ and $k\geq 1$. Thus every subsequence $(\mathcal{L}^{n_m}_i|_{[a_k,b_k]})_m$ has a further subsequence $(\mathcal{L}^{n_{m_\ell}}_i|_{[a_k,b_k]})_\ell$ converging weakly to some $\mathcal{L}_i^{[a_k,b_k]}$. We claim that we can patch these $\mathcal{L}_i^{[a_k,b_k]}$ together to obtain a well-defined random variable $\mathcal{L}_i$ on all of $C(\Lambda)$, such that $\mathcal{L}_i|_{[a_k,b_k]} = \mathcal{L}_i^{[a_k,b_k]}$ for every $k$. To see this, note that this $\mathcal{L}_i$ is uniquely determined by its fdd's, according to problem 2. Given any finite collection $A=\{x_1,\dots,x_j\}$ of points in $\Lambda$, if we take $k$ large enough so that $A \subset [a_k,b_k]$, then the corresponding fdd $\{\mathcal{L}_i(x_1)\in B_1, \dots, \mathcal{L}_i(x_j) \in B_j\}$ is determined by that of $\mathcal{L}_i^{[a_k,b_k]}$. Moreover, uniqueness of weak limits in distribution implies that this fdd agrees with that of $\mathcal{L}_i^{[a_\ell,b_\ell]}$ whenever $A\subset[a_\ell,b_\ell]$. Thus we have specified well-defined fdd's for $\mathcal{L}_i$, which determines $\mathcal{L}_i$ on all of $C(\Lambda)$. By construction, the restriction of $\mathcal{L}_i$ to any $[a_k,b_k]$ is equal to $\mathcal{L}_i^{[a_k,b_k]}$ in distribution.
 		
-		If $K\subset\Lambda$ is any compact set, then by taking $k$ large enough so that $K\subset [a_k,b_k]$, we also obtain weak convergence of $\mathcal{L}_i|_K$ in the uniform topology on $C(K)$. Let $B_K(f,\epsilon)$ be a basis element in $C(\Lambda)$, and let $B_\epsilon(f)$ denote the corresponding ball in the uniform topology. Then
+		In particular, we see that $\mathcal{L}_i^{n_{m_\ell}}|_{[a_k,b_k]} \implies \mathcal{L}_i|_{[a_k,b_k]}$ in the uniform topology on $C[a_k,b_k]$, for every $k$. If $K\subset\Lambda$ is any compact set, then by taking $k$ large enough so that $K\subset [a_k,b_k]$, we also find $\mathcal{L}_i^{n_{m_\ell}}|_K \implies \mathcal{L}_i|_K$ in the uniform topology on $C(K)$. Let $B_K(f,\epsilon)$ be a basis element in $C(\Lambda)$, and let $B_\epsilon(f|_K)$ denote the corresponding ball in the uniform topology on $C(K)$. Then
 		\begin{align*}
-		\limsup_{\ell\to\infty}\,\mathbb{P}(\mathcal{L}^{n_{m_\ell}}_i \in B_K(f,\epsilon)) &= \limsup_{\ell\to\infty}\,\mathbb{P}(\mathcal{L}^{n_{m_\ell}}_i|_K \in B_\epsilon(f))\\
-		& \leq \mathbb{P}(\mathcal{L}_i|_K \in B_\epsilon(f)) = \mathbb{P}(\mathcal{L}_i \in B_K(f,\epsilon)).
+		\liminf_{\ell\to\infty}\,\mathbb{P}(\mathcal{L}^{n_{m_\ell}}_i \in B_K(f,\epsilon)) &= \liminf_{\ell\to\infty}\,\mathbb{P}(\mathcal{L}^{n_{m_\ell}}_i|_K \in B_\epsilon(f|_K))\\
+		& \geq \mathbb{P}(\mathcal{L}_i|_K \in B_\epsilon(f|_K)) = \mathbb{P}(\mathcal{L}_i \in B_K(f,\epsilon)).
 		\end{align*}
 		The inequality follows from weak convergence in the uniform topology on $C(K)$. Since every open set in $C(\Lambda)$ can be written as a countable union of sets $B_K(f,\epsilon)$ (see problem 2), it follows from countable additivity that
 		\[
-		\limsup_{\ell\to\infty}\,\mathbb{P}(\mathcal{L}^{n_{m_\ell}}_i \in U) \leq \mathbb{P}(\mathcal{L}_i \in U)
+		\liminf_{\ell\to\infty}\,\mathbb{P}(\mathcal{L}^{n_{m_\ell}}_i \in U) \geq \mathbb{P}(\mathcal{L}_i \in U)
 		\]
-		for any $U$ open in $C(\Lambda)$. Therefore $(\mathcal{L}_i^{n_{m_\ell}})_\ell$ converges weakly to $\mathcal{L}_i$, proving that $(\mathcal{L}^n_i)_n$ is relatively compact, hence tight, for every $i\in\Sigma$. Therefore $(\mathcal{L}^n)_n$ is tight by problem 8.
+		for any $U$ open in $C(\Lambda)$. Therefore $(\mathcal{L}_i^{n_{m_\ell}})_\ell$ converges weakly to $\mathcal{L}_i$, proving that $(\mathcal{L}^n_i)_n$ is relatively compact, hence tight, for every $i\in\Sigma$. Therefore $(\mathcal{L}^n)$ is tight by problem 8.
 
 
 \section{Lozenge tilings of the hexagon}
@@ -395,7 +395,7 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 		Now we  know $y_{j}^{i+1}$ is the first horizontal particle such that $y_j^i<y_j^{i+1}$, so then we get that $y_j^i\geq y_{j+1}^{i+1}$, meaning we get that $y_j^{i+1}>y_j^i\geq y_j^{i+1}$. 
 		
 		In particular this inequality gives us $y_j^{i+1}-i+j-0.5>y_j^i-i+j-0.5>y^{i+1}_{j+1}-i+j-0.5$. 
-		This means we find $y_j^{i+1}-i+j-0.5>\lambda_j^i>\lambda_{j+1}^{i+1}$ by the definition of $\lambda_j^i.
+		This means we find $y_j^{i+1}-i+j-0.5>\lambda_j^i>\lambda_{j+1}^{i+1}$ by the definition of $\lambda_j^i$.
 		This also gives us that $\lambda_j^{i+1}>\lambda_j^i-1$, and because they are integers, we find that this implies $\lambda_j^{i+1}\geq\lambda_j^i$, and thus $\lambda^i\preceq \lambda^{i+1}$.
 		
 		Now we can find that if we let $f$ map $\omega\in \Omega$, the set of possible extended tilings of the $A\times B \times C$ hexagon into $$GT_\mu:=\{(\lambda^1,\cdots,\lambda^{B+C})\mid \lambda^{B+C}=(A^C)=\mu, \lambda^i\in \mathbb{Y}^i, \lambda^i\preceq \lambda^{i+1} \text{ for } i=1, \cdots , B+C-1\}$$ with $f(\omega)=(\lambda^1(\omega), \cdots, \lambda^{B+C}(\omega))$. 

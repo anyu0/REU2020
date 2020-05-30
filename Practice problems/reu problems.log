@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  29 MAY 2020 16:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  29 MAY 2020 23:10
 entering extended mode
 **"./reu problems.tex"
 ("reu problems.tex"
@@ -323,38 +323,172 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 26.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4] [5]
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+ []
+
+
+Overfull \hbox (102.4516pt too wide) detected at line 147
+\OML/cmm/m/it/12 det [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 det [] \OT1/cmr/m/n/
+12 = \OML/cmm/m/it/12 x[] [] x[]det []
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--156
+
+ []
+
+
+Overfull \hbox (13.2941pt too wide) detected at line 164
+\OML/cmm/m/it/12 Q\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 ) = (\OMS/
+cmsy/m/n/12  \OT1/cmr/m/n/12 1)[]\OML/cmm/m/it/12 detV\OT1/cmr/m/n/12 (\OML/cmm
+/m/it/12 x[]; []  ; x[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 a \OMS/cmsy/m/n/12   
+\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) [] (\OML/cmm/m/it/12 a \OMS/cmsy/m/n/12  
+ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 detV\OT1/cmr/m/n/12 (
+\OML/cmm/m/it/12 x[]; []  ; x[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x[] \OMS/cmsy
+/m/n/12   \OML/cmm/m/it/12 a\OT1/cmr/m/n/12 ) [] (\OML/cmm/m/it/12 x[] \OMS/cms
+y/m/n/12   \OML/cmm/m/it/12 a\OT1/cmr/m/n/12 )
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 172--174
 
  []
 
-[6] [7] [8] [9] [10] ("reu problems.aux") ) 
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ¦ in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
+
+ []
+
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ¦ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ¦ in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--201
+
+ []
+
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
+
+ []
+
+[9] [10] [11] [12] [13] [14] [15] [16] ("reu problems.aux") ) 
 Here is how much of TeX's memory you used:
- 3480 strings out of 493320
- 47629 string characters out of 3138925
- 126124 words of memory out of 3000000
- 6951 multiletter control sequences out of 15000+200000
- 11910 words of font info for 46 fonts, out of 3000000 for 9000
+ 3481 strings out of 493320
+ 47644 string characters out of 3138925
+ 124124 words of memory out of 3000000
+ 6952 multiletter control sequences out of 15000+200000
+ 12217 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,13n,32p,1533b,242s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbo
-ls/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/
-msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary10.p
-fb>
-Output written on "reu problems.pdf" (10 pages, 218021 bytes).
+ 39i,13n,32p,1539b,242s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ho
+ekwater/stmary10.pfb>
+Output written on "reu problems.pdf" (16 pages, 247685 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
+ 114 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
