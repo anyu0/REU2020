@@ -477,6 +477,13 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 		We know that $s_{\nu^{(i)}/\nu^{(i-1)}}(1^{(i)})=0$ unless $\nu^{(i)}/\nu^{(i-1)}$ is a horizontal strip, in which case it is equal to $x^{|\nu^{i}-\nu^{i-1}|}$ [Macdonald, 72]. 
 		We note that $(n)\in GT_\mu$ if and only if each $\nu^{(i)}-\nu^{(i-1)}$ is a horizontal strip, as this occurs if and only if $\nu^{(i)}\succeq \nu^{(i-1)}$. 
 		This means that we find that $$s_\mu(1^{(B+C)})=\sum_{(\nu\in GT_\mu)}\prod_{i=1} 1^{|\nu^{(i)}-\nu^{(i-1)}|}=\sum_{(\nu)\in GT_\mu} 1=|GT_\mu|$$ Therefore we have found that $s_\mu(1^{(B+C)})=|GT_\mu|$
+		
+		Now, using the result of problem 4, we find that 
+		\begin{align*}s_\mu(1^{(B+C)})&=\prod_{1\leq i\leq j\leq B+C}\frac{\mu_i-\mu_j+j-i}{j-i}\\
+		&=\prod_{1\leq i\leq j \leq C}\frac{\mu_i-\mu_j+j-i}{j-i}\cdot\prod_{1\leq i \leq C<j\leq B+C} \frac{\mu_i-\mu_j+j-i}{j-i} \cdot \prod_{C\leq i\leq j \leq B+C}\frac{\mu_i-\mu_j+j-i}{j-i}\\
+		&=\prod_{1\leq i\leq j \leq C}\frac{A-A+j-i}{j-i}\cdot\prod_{1\leq i \leq C<j\leq B+C} \frac{A-0+j-i}{j-i} \cdot \prod_{C\leq i\leq j \leq B+C}\frac{0-0+j-i}{j-i}\\
+		&=\prod_{(i,j)\in E} \frac{A+j-i}{j-i}
+		\end{align*} where $E=\llbracket{0,C}\rrbracket \times \llbracket C+1, B+C\rrbracket$
 	\subsection*{Problem 11}
 
 \end{document}
