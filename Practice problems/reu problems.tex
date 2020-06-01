@@ -224,14 +224,14 @@ s_\lambda(x_1,\dots,x_n) = \begin{dcases}
 \]
 are symmetric polynomials that are homogeneous and compute their degree.\\ 
 
-Note that in both the numerator and denominator, if we swap two variables $x_i$ and $x_j$, then we are simply swapping two rows in the matrices. This introduces minus signs in both determinants, which cancel when we divide. Since the 2-cycles generate $S_n$, this proves that $s_\lambda$ is symmetric.\\
+Note that both the numerator and denominator are polynomials in the $x_i$. Furthermore, if we swap two variables $x_i$ and $x_j$ in either of the determinants, then we are simply swapping two rows in the matrices, which introduces minus signs in both determinants. Since the 2-cycles generate $S_n$, this proves that the numerator and denominator are both skew-symmetric polynomials. In fact, up to a minus sign, the denominator is the Vandermonde determinant $P_V$, since $[x_i^{n-j}]$ is obtained from $[x_i^j]$ by swapping columns. Thus the quotient $s_\lambda$ is a symmetric polynomial by problem 3.\\
 
-
-Consider $[a_{ij}]$. From the determinant expansion formula, we know that the determinant is $$\sum(-1)^\sigma \prod _i a_{i, \sigma(i)}$$\\
-
-Let $M = [x_i^{\lambda_j + n - j}]_{i,j=1}^n$ be the matrix in the numerator. Then from the determinant expansion for $M$, each term of the numerator has the same degree: $\sum_{j=1}^n (\lambda_j + n - j)$. Consider the degree of the denominator (special case where $\lambda_j = 0$ for each $j$ ): the degree is $\sum_{j=1}^n (n - j)$.\\
-
-Then the degree of $s_\lambda$ is $\sum_{j=1}^n (\lambda_j + n - j) - \sum _{j=1}^n (n - j) = \sum_{j=1}^n \lambda_j$. \\ \\
+Now let $c$ be a constant, and observe
+\begin{align*}
+s_\lambda(cx_1,\dots,cx_n) &= \frac{\det[c^{\lambda_j+n-j}x_i^{\lambda_j+n-j}]}{\det[c^{n-j}x_i^{n-j}]} = \frac{\prod_{j=1}^n c^{\lambda_j+n-j}}{\prod_{j=1}^n c^{n-j}} \frac{\det[x_i^{\lambda_j+n-j}]}{\det[x_i^{n-j}]}\\
+&= c^{|\lambda|} s_\lambda(x_1,\dots,x_n),
+\end{align*}
+where $|\lambda| = \sum_{j=1}^n \lambda_j$. The second equality follows by factoring out the constants multiplying each column. This proves that $s_\lambda$ is a homogeneous polynomial of degree $|\lambda| = \sum_{j=1}^n \lambda_j$.
 
 
 b.) Compute $s_\lambda(1, q, \cdots, q^{n-1}

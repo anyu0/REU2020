@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  31 MAY 2020 19:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  1 JUN 2020 17:53
 entering extended mode
 **"./reu problems.tex"
 ("reu problems.tex"
@@ -491,26 +491,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 227--228
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 237--239
 
  []
@@ -530,7 +510,17 @@ Overfull \hbox (10.6808pt too wide) in paragraph at lines 501--501
 [] 
  []
 
-[18] ("reu problems.aux") ) 
+[18]
+Overfull \hbox (20.55244pt too wide) in paragraph at lines 559--559
+[] 
+ []
+
+[19]
+Overfull \hbox (42.7747pt too wide) in paragraph at lines 566--566
+[] 
+ []
+
+[20] ("reu problems.aux") ) 
 Here is how much of TeX's memory you used:
  4021 strings out of 493320
  57062 string characters out of 3138925
@@ -538,7 +528,7 @@ Here is how much of TeX's memory you used:
  7482 multiletter control sequences out of 15000+200000
  12217 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,16n,32p,1539b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,16n,32p,1539b,246s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.p
@@ -553,9 +543,9 @@ msy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary10.pfb>
-Output written on "reu problems.pdf" (18 pages, 255684 bytes).
+Output written on "reu problems.pdf" (20 pages, 265456 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
+ 127 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
