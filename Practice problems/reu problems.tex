@@ -499,6 +499,8 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 		&=\prod_{1\leq i\leq j \leq C}\frac{A-A+j-i}{j-i}\cdot\prod_{1\leq i \leq C<j\leq B+C} \frac{A-0+j-i}{j-i} \cdot \prod_{C\leq i\leq j \leq B+C}\frac{0-0+j-i}{j-i}\\
 		&=\prod_{(i,j)\in E} \frac{A+j-i}{j-i}
 		\end{align*} where $E=\llbracket{0,C}\rrbracket \times \llbracket C+1, B+C\rrbracket$
+		
+
 	\subsection*{Problem 11}
 		The reasoning from the previous problem may be extended using the same proof to apply to a generic partition $\lambda$ which fits the conditions in the definition of $GT_\lambda$, which is to say that $GT_\lambda=s_\lambda(1^N)$ for the appropriate $N$ value.
 	 Therefore we can find that if we wish to calculate the probability of $\mathbb{P}(\ell_1, \ell_2,\cdots \ell_N)$, then we can find that this value should equal (with an abuse of notation)\[\mathbb P(\ell_1,\cdots \ell_N)=\frac{\#[\text{Tilings between 0 and }(\ell,N)]\cdot \#[\text{Tilings between } (\ell,N) \text{ and } (\mu,B+C)]}{s_\mu(1^{B+C})}
@@ -524,7 +526,7 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 	\]
 	since in the mirror image the fixed line is at position $C$ instead of $\min(B,C)=B$, and the particles for $\ell$ are moved $B-C$ positions upwards by the additional $B-C$ lozenges placed below the bottom line from the original tiling to fill the aditional region in the inverse mirroring. 
 	
-	Now, if we let $\lambda_j=\ell_j+j-N=y_j^N-(N-j)-\frac{1}{2}$ and we let $\lambda'_j=\ell_j'+j-N$, these both correspond to our $\lambda$ definition from the previous problem, and therefore we can find that, if we let $M=\max{(B,C)}$
+	Now, if we let $\lambda_j=\ell_j+j-N=y_j^N-(N-j)-\frac{1}{2}$ and we let $\lambda'_j=\ell_j'+j-M$, these both correspond to our $\lambda$ definition from the previous problem, and therefore we can find that, if we let $M=\max{(B,C)}$
 	
 	\[
 	\mathbb{P}(\ell_1,\cdots \ell_N)=\frac{s_\lambda(1^N)s_{\lambda'}(1^M)}{s_\mu(1^{(B+C)})}
@@ -532,7 +534,7 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 	If we expand this using the results of the first section, we find that this is equal to 
 	\begin{align*}
 \frac{s_\lambda(1^N)s_{\lambda'}(1^M)}{s_\mu(1^{(B+C)})}&=\frac{\prod_{1\leq i \leq j \leq N}\frac{\lambda_i-\lambda_j+j-i}{j-i}\prod_{1\leq i\leq j\leq M}\frac{\lambda'_i-\lambda'_j+j-i}{j-i}}{\prod_{1\leq i\leq j\leq B+C}\frac{\mu_i-\mu_j+j-i}{j-i}}\\
-&=\frac{\prod_{1\leq i \leq j \leq N}\frac{\ell_i+i-N-\ell_j-j+N+j-i}{j-i}\prod_{1\leq i\leq j\leq M}\frac{\ell'_i+i-N-\ell'_j-j+N+j-i}{j-i}}{\prod_{1\leq i\leq j\leq B+C}\frac{\mu_i-\mu_j+j-i}{j-i}}\\
+&=\frac{\prod_{1\leq i \leq j \leq N}\frac{\ell_i+i-N-\ell_j-j+N+j-i}{j-i}\prod_{1\leq i\leq j\leq M}\frac{\ell'_i+i-M-\ell'_j-j+M+j-i}{j-i}}{\prod_{1\leq i\leq j\leq B+C}\frac{\mu_i-\mu_j+j-i}{j-i}}\\
 &=\frac{\prod_{1\leq i \leq j \leq N}\frac{\ell_i-\ell_j}{j-i}\prod_{1\leq i \leq j \leq M}\frac{\ell'_i-\ell'_j}{j-i}}{\prod_{1\leq i\leq j \leq B+C}\frac{\mu_i-\mu_j+j-i}{j-i}}
 	\end{align*}
 	Now there are two different cases which determine the value of $\ell_i'$ and $\ell_j'$, so we must consider two cases separately. 
@@ -543,9 +545,9 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 	\prod_{1\leq i \leq B < j \leq C}\frac{\ell_i-B+j}{j-i}
 	\prod_{B< i\leq j \leq C}\frac{j-i}{j-i}\\
 	&=\prod_{1\leq i \leq j \leq B}\frac{\ell_i-\ell_j}{j-i}\prod_{1\leq i\leq B,1\leq j \leq C-B}\frac{\ell_i+j}{B+j-i}\\
-	&=\left(\prod_{1\leq i \leq j \leq N}\frac{\ell_i-\ell_j}{j-i}\right)\prod_{1\leq i \leq B}w_1(\ell_i)
+	&=\left(\prod_{1\leq i \leq j \leq N}\frac{\ell_i-\ell_j}{j-i}\right)\prod_{1\leq i \leq B}w_1(\ell_i)\cdot \frac{(C-i)!}{(B-i)!}
 	\end{align*}
-	where $w_1(\ell_i)=\prod_{1\leq j\leq C-B}\frac{\ell_i+j}{B+j-i}=\frac{(\ell_i-B+C)!}{\ell_i!}\cdot \frac{(B-i)!}{(C-i)!}=\frac{(\ell_i-N+M)!}{\ell_i!}\cdot \frac{(N-i)!}{(M-i)!}$.
+	where $w_1(\ell_i)=\prod_{1\leq j\leq C-B}\frac{\ell_i+j}{B+j-i}=\frac{(\ell_i-B+C)!}{\ell_i!}$
 	
 	Secondly, in the case where $C\leq B$ we find that this expression is equal to  \begin{align*}
 	\prod_{1\leq i \leq j \leq M}\frac{\ell'_i-\ell'_j}{j-i}
@@ -555,14 +557,15 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 	&=\left(\prod_{1\leq i \leq B-C < j \leq B}\frac{A+B-i-\ell_{j-B+C}}{j-i}\right)
 	\prod_{1\leq i\leq j \leq C}\frac{\ell_{i}-\ell_{j}}{j-i}\\
 	&=\prod_{1\leq i \leq B-C, 1\leq j \leq C}\frac{A+B-\ell_j-i}{B-C+j-i}\prod_{1\leq i\leq j \leq C}\frac{\ell_{i}-\ell_{j}}{j-i}\\
-	&=\left(\prod_{1\leq i \leq j \leq N}\frac{\ell_i-\ell_j}{j-i}\right)\prod_{1\leq j \leq C}w_2(\ell_j)
+	&=\left(\prod_{1\leq i \leq j \leq N}\frac{\ell_i-\ell_j}{j-i}\right)\prod_{1\leq j \leq C}w_2(\ell_j)\cdot \frac{j!}{(B-C+j-1)!}
 	\end{align*}
-	where $w_2(\ell_j)=\prod_{1\leq i \leq B-C}\frac{B+A-\ell_j-i}{B-C+j-i}=\frac{(B+A-\ell_j-1)!}{(A+C-\ell_j-1)!}\cdot \frac{j!}{(B-C+j-1)!}$
+	where $w_2(\ell_j)=\prod_{1\leq i \leq B-C}\frac{B+A-\ell_j-i}{B-C+j-i}=\frac{(B+A-\ell_j-1)!}{(A+C-\ell_j-1)!}$
 	
 	This means we can calculate the values for \begin{align*}
 	\mathbb{P}(\ell_1,\cdots,\ell_n)&=
 	\frac{\prod_{1\leq i \leq j \leq N}\frac{\ell_i-\ell_j}{j-i}\prod_{1\leq i \leq j \leq M}\frac{\ell'_i-\ell'_j}{j-i}}{\prod_{1\leq i \leq C<j\leq B+C} \frac{A+j-i}{j-i}}\\
-	&=\frac{1}{\prod_{1\leq i < j \leq N} {j-i}\prod_{1\leq i < j \leq M}j-i\prod_{1\leq i \leq C<j\leq B+C} \frac{A+j-i}{j-i}}\left(\prod_{1\leq i \leq j \leq N} (\ell_i-\ell_j)^2\right)\prod_{1\leq i \leq N} w(\ell_i)
+	&=\frac{\prod_{i=1}^B \frac{(C-i)!}{(B-i)!}}{\prod_{1\leq i < j \leq N} {j-i}\prod_{1\leq i < j \leq M}j-i\prod_{1\leq i \leq C<j\leq B+C} \frac{A+j-i}{j-i}}\left(\prod_{1\leq i \leq j \leq N} (\ell_i-\ell_j)^2\right)\prod_{1\leq i \leq N} w_1(\ell_i) \quad \\&\text{if } C>B, \text{ or}\\
+	&=\frac{\prod_{i=1}^C\frac{j!}{(B-C+j-1)!}}{\prod_{1\leq i < j \leq N} {j-i}\prod_{1\leq i < j \leq M}j-i\prod_{1\leq i \leq C<j\leq B+C} \frac{A+j-i}{j-i}}\left(\prod_{1\leq i \leq j \leq N} (\ell_i-\ell_j)^2\right)\prod_{1\leq i \leq N} w_1(\ell_i) \\&\text{if } B\geq C
 	\end{align*}
 
 \end{document}
