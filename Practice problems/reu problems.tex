@@ -697,7 +697,7 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 		\begin{align*}
 		\mathbb{P}\left( \Delta(T,B-A) \geq T^{1/4} - 1 \right) & \leq e^{-a(T^{1/4} - 1)} \ex\Big[ e^{a\Delta(T,B-A)} \Big]\\
 		&\leq C \exp\left[ -a(T^{1/4}-1) + \alpha(\log T)^2 + \frac{|B-A-pT|^2}{T} \right]\\
-		&\leq C \exp\left[ -a(T^{1/4}-1) + \alpha(\log T)^2 + |M_2-M_1|^2 + \frac{1}{T} \right]\\
+		&\leq C \exp\left[ -a(T^{1/4}-1) + \alpha(\log T)^2 + (M_2-M_1)^2 + \frac{1}{T} \right]\\
 		&= O(e^{-T^{1/4}}).
 		\end{align*}
 		Thus we can choose $W_0$ large enough, depending on $p$ and $M_2-M_1$, so that if $T \geq W_0$, then this probability does not exceed $1/6$. Combining this with the above inequalities completes the proof.
@@ -711,6 +711,31 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 	\end{lemma}
 	
 	\begin{proof}
+		
+		As in the previous proof, it follows from Lemma 3.1 that
+		\[
+		\mathbb{P}^{0,T,0,y}_{Ber}\Big( \inf_{s \in [ 0, T]}\big( \ell(s) -  ps \big) \leq -AT^{1/2} \Big) \leq \mathbb{P}^{0,T,0,B}_{Ber}\Big( \inf_{s \in [ 0, T]}\big( \ell(s) -  ps \big) \leq -AT^{1/2} \Big),
+		\]
+		where $B=\lfloor pT - MT^{1/2}\rfloor$. By Theorem 3.3, there is a probability space $(\Omega,\mathcal{F},\mathbb{P})$ supporting a random variable $\ell^{(T,B)}$ whose law under $\mathbb{P}$ is that of $\ell$, and a Brownian bridge $B^\sigma$ with variance $\sigma^2 = p(1-p)$. Therefore
+		\begin{align*}
+		&\mathbb{P}^{0,T,0,B}_{Ber}\Big( \inf_{s \in [ 0, T]}\big( \ell(s) -  ps \big) \leq -AT^{1/2} \Big) = \mathbb{P}\Big( \inf_{s \in [ 0, T]}\big( \ell^{(T,B)}(s) -  ps \big) \leq -AT^{1/2} \Big)\\
+		\leq \; & \mathbb{P}\Big( \inf_{s \in [ 0, T]}  \sqrt{T}B^\sigma_{s/T} \leq -\frac{1}{2}AT^{1/2} \Big) + \mathbb{P}\Big( \sup_{s\in [0,T]} \Big|\sqrt{T} B^\sigma_{s/T} + ps - \ell^{(T,B)}(s) \Big| \geq \frac{1}{2}AT^{1/2} \Big)\\
+		\leq \; & \mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}B^\sigma_{s/T} \geq \frac{1}{2}AT^{1/2} \Big) + \mathbb{P}\Big(\Delta(T,B) \geq \frac{1}{4}AT^{1/2}\Big) + \mathbb{P}\Big(\sup_{s\in[0,T]}\Big| ps - \frac{s}{T}\cdot B \Big| \geq \frac{1}{4}AT^{1/2}\Big).
+		\end{align*}
+		For the first term in the last line, we used the fact that $B^\sigma$ and $-B^\sigma$ have the same distribution. To estimate the first term, note that $\sqrt{T}B^\sigma_{s/T} = \sigma^2\sqrt{T}(W_{s/T} - W_1)$, where $W$ is a Wiener process on $[0,1]$. Hence
+		\begin{align*}
+		\mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}B^\sigma_{s/T} \geq \frac{1}{2}AT^{1/2} \Big) &\leq \mathbb{P}\Big( \sigma^2\max_{s\in[0,T]} \sqrt{T}\,W_{s/T} \geq \frac{1}{4}AT^{1/2} \Big) + \mathbb{P}\Big( \sigma^2\sqrt{T}\,W_1 \leq -\frac{1}{4}AT^{1/2} \Big)\\
+		&= \mathbb{P}\Big( \sigma^2\big|\sqrt{T}\,W_{T/T}\big| \geq \frac{1}{4}AT^{1/2} \Big) + \mathbb{P}\Big( \sigma^2W_1 \leq -\frac{1}{4}A \Big)\\
+		&= 3\,\mathbb{P}\Big( W_1 \geq \frac{A}{4p(p-1)} \Big).
+		\end{align*} 
+		The equality in the second line follows from the reflection principle, since $\sqrt{T}\,W_{s/T}$ is a standard Wiener process on $[0,T]$, and the third line follows by symmetry. Since $W_1\sim\mathcal{N}(0,1)$, we can choose $A$ large enough depending on $p$ and $\epsilon$ so that this probability is bounded above by $\epsilon/3$. 
+		
+		For the second term, a similar calculation as in the previous proof using Theorem 3.3 shows that it is $O(e^{-T^{1/2}})$. In particular, we can choose $W_1$ depending on $M,p,\epsilon$ so that this term is also $\leq\epsilon/3$ for $T\geq W_1$. For the last term, observe from the definition of $B$ that
+		\begin{align*}
+		\mathbb{P}\Big(\sup_{s\in[0,T]}\Big| ps - \frac{s}{T}\cdot B \Big| \geq \frac{1}{2}AT^{1/2}\Big) &\leq \mathbb{P}\Big(\sup_{s\in[0,T]}\Big| ps - \frac{pT-MT^{1/2}}{T}\cdot s \Big| - 1 \geq \frac{1}{2}AT^{1/2} \Big)\\
+		&= \mathbb{P}\Big( MT^{1/2} - 1 \geq \frac{1}{2}AT^{1/2}\Big) = \mathbb{P}\Big( T \leq \Big(\frac{1}{2}A - M\Big)^{-2}\Big).
+		\end{align*}
+		If necessary, we enlarge $A$ depending on $M$ and $\epsilon$ so that $(\frac{1}{2}A-M)^{-2} \leq \epsilon/3$. Adding the three terms gives (4) for $T\geq W_1$.
 		
 	\end{proof}
 
