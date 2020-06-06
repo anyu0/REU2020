@@ -729,13 +729,13 @@ Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqsla
 		\leq \; & \mathbb{P}\Big( \inf_{s \in [ 0, T]}  \sqrt{T}B^\sigma_{s/T} \leq -\frac{1}{2}AT^{1/2} \Big) + \mathbb{P}\Big( \sup_{s\in [0,T]} \Big|\sqrt{T} B^\sigma_{s/T} + ps - \ell^{(T,B)}(s) \Big| \geq \frac{1}{2}AT^{1/2} \Big)\\
 		\leq \; & \mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}B^\sigma_{s/T} \geq \frac{1}{2}AT^{1/2} \Big) + \mathbb{P}\Big(\Delta(T,B) \geq \frac{1}{4}AT^{1/2}\Big) + \mathbb{P}\Big(\sup_{s\in[0,T]}\Big| ps - \frac{s}{T}\cdot B \Big| \geq \frac{1}{4}AT^{1/2}\Big).
 		\end{align*}
-		For the first term in the last line, we used the fact that $B^\sigma$ and $-B^\sigma$ have the same distribution. To estimate the first term, note that $\sqrt{T}B^\sigma_{s/T} = \sigma^2\sqrt{T}(W_{s/T} - W_1)$, where $W$ is a Wiener process on $[0,1]$. Hence
+		For the first term in the last line, we used the fact that $B^\sigma$ and $-B^\sigma$ have the same distribution. To estimate the first term, note that $\sqrt{T}B^\sigma_{s/T} = \sigma\sqrt{T}(W_{s/T} - W_1)$, where $W$ is a standard Brownian motion on $[0,1]$. Hence
 		\begin{align*}
-		\mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}B^\sigma_{s/T} \geq \frac{1}{2}AT^{1/2} \Big) &\leq \mathbb{P}\Big( \sigma^2\max_{s\in[0,T]} \sqrt{T}\,W_{s/T} \geq \frac{1}{4}AT^{1/2} \Big) + \mathbb{P}\Big( \sigma^2\sqrt{T}\,W_1 \leq -\frac{1}{4}AT^{1/2} \Big)\\
-		&= \mathbb{P}\Big( \sigma^2\big|\sqrt{T}\,W_{T/T}\big| \geq \frac{1}{4}AT^{1/2} \Big) + \mathbb{P}\Big( \sigma^2W_1 \leq -\frac{1}{4}A \Big)\\
-		&= 3\,\mathbb{P}\Big( W_1 \geq \frac{A}{4p(p-1)} \Big).
+		\mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}B^\sigma_{s/T} \geq \frac{1}{2}AT^{1/2} \Big) &\leq \mathbb{P}\Big( \sigma\max_{s\in[0,T]} \sqrt{T}\,W_{s/T} \geq \frac{1}{4}AT^{1/2} \Big) + \mathbb{P}\Big( \sigma\sqrt{T}\,W_1 \leq -\frac{1}{4}AT^{1/2} \Big)\\
+		&= \mathbb{P}\Big( \sigma\big|\sqrt{T}\,W_{T/T}\big| \geq \frac{1}{4}AT^{1/2} \Big) + \mathbb{P}\Big( \sigma W_1 \leq -\frac{1}{4}A \Big)\\
+		&= 3\,\mathbb{P}\Big( W_1 \geq \frac{A}{4\sqrt{p(p-1)}} \Big).
 		\end{align*} 
-		The equality in the second line follows from the reflection principle, since $\sqrt{T}\,W_{s/T}$ is a standard Wiener process on $[0,T]$, and the third line follows by symmetry. Since $W_1\sim\mathcal{N}(0,1)$, we can choose $A$ large enough depending on $p$ and $\epsilon$ so that this probability is bounded above by $\epsilon/3$. 
+		The equality in the second line follows from the reflection principle, since $\sqrt{T}\,W_{s/T}$ is a standard Brownian motion on $[0,T]$, and the third line follows by symmetry. Since $W_1\sim\mathcal{N}(0,1)$, we can choose $A$ large enough depending on $p$ and $\epsilon$ so that this probability is bounded above by $\epsilon/3$. 
 		
 		For the second term, a similar calculation as in the previous proof using Theorem 3.3 shows that it is $O(e^{-T^{1/2}})$. In particular, we can choose $W_1$ depending on $M,p,\epsilon$ so that this term is also $\leq\epsilon/3$ for $T\geq W_1$. For the last term, observe from the definition of $B$ that
 		\begin{align*}
@@ -750,10 +750,36 @@ Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqsla
 		\begin{equation}\label{halfEq2S4}
 		\mathbb{P}^{0,T,x,y}_{Ber}\bigg( \ell( T/2 )  \geq \frac{M_2T^{1/2} + p T}{2} - T^{1/4} \bigg) \geq (1/2) (1 - \Phi^{v}(M_1 + M_2) ),
 		\end{equation}
-		where $\Phi^{v}$ is the cumulative distribution function  of a Gaussian random variable with mean $0$ and variance $v = p(1-p)$.
+		where $\Phi^{v}$ is the cumulative distribution function  of a Gaussian random variable with mean $0$ and variance $v = p(1-p)/4$.
 	\end{lemma}
 	
 	\begin{proof}
+		
+		We have
+		\begin{align*}
+		\mathbb{P}^{0,T,x,y}_{Ber}\bigg( \ell( T/2 )  \geq \frac{M_2T^{1/2} + p T}{2} - T^{1/4} \bigg) &\geq \mathbb{P}^{0,T,0,B-A}_{Ber}\bigg( \ell( T/2 ) + A  \geq \frac{M_2T^{1/2} + p T}{2} - T^{1/4} \bigg)\\
+		&= \mathbb{P}\bigg( \ell^{(T,B-A)}( T/2 ) + A  \geq \frac{M_2T^{1/2} + p T}{2} - T^{1/4} \bigg),
+		\end{align*}
+		with $A = \lfloor -M_1T^{1/2}\rfloor$, $B = \lfloor pT-M_1T^{1/2}\rfloor$, and $\mathbb{P}$, $\ell^{(T,B-A)}$, and $B^\sigma$ provided by Theorem 3.3. We rewrite the expression on the second line as
+		\begin{align*}
+		& \mathbb{P}\bigg( \bigg[\ell^{(T,B-A)}( T/2 ) -\sqrt{T}\,B^\sigma_{1/2} - \frac{B-A}{2}\bigg] + \sqrt{T}\,B^\sigma_{1/2}  \geq -A - \frac{B-A}{2} + \frac{M_2T^{1/2} + p T}{2} - T^{1/4} \bigg).
+		\end{align*}
+		We have
+		\begin{align*}
+		-A - \frac{B-A}{2} + \frac{M_2T^{1/2} + p T}{2} - T^{1/4} & \leq M_1T^{1/2} + 1 - \frac{pT-1}{2} + \frac{M_2T^{1/2} + p T}{2} - T^{1/4}\\
+		&\leq (M_1 + M_2)T^{1/2} - T^{1/4} + 2.
+		\end{align*}
+		Thus the probability in question is bounded below by
+		\begin{align*}
+		& \mathbb{P}\bigg( \bigg[\ell^{(T,B-A)}( T/2 ) -\sqrt{T}\,B^\sigma_{1/2} - \frac{B-A}{2}\bigg] + \sqrt{T}\,B^\sigma_{1/2}  \geq (M_1 + M_2)T^{1/2} - T^{1/4} + 2 \bigg)\\
+		\geq \; & \mathbb{P}\bigg( \sqrt{T}\,B^\sigma_{1/2} \geq (M_1 + M_2)T^{1/2} \quad \mathrm{and} \quad \Delta(T,B-A) < T^{1/4} - 2 \bigg)\\
+		\geq \; & \mathbb{P}\big( B^\sigma_{1/2} \geq M_1 + M_2 \big) - \mathbb{P}\big( \Delta(T,B-A) \geq T^{1/4} - 2 \big).
+		\end{align*}
+		Note that $B^\sigma_{1/2} = \sigma(W_{1/2} - \frac{1}{2}W_1)$ for a standard Brownian motion $W$ on $[0,1]$. Thus $B^\sigma_{1/2}$ is Gaussian with mean 0 and variance $\sigma^2(1/2-(1/2)^2) = \sigma^2/4$. In particular, the first term in the last line is equal to
+		\[
+		1 - \Phi^v(M_1+M_2),
+		\]
+		where $\Phi^v$ is the cdf for a Gaussian random variable with mean 0 and variance $v=\sigma^2/4 = p(1-p)/4$. For the second term, a similar argument as in the above shows that it is $O(e^{-T^{1/4}})$. In particular, we can choose $W_2$ depending on $M_1,M_2$, and $p$ so that if $T\geq W_2$, then the second term is less than 1/2 the first term. This gives the lower bound in (5).
 		
 	\end{proof}
 
