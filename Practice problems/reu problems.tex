@@ -571,6 +571,13 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 	\subsection*{Problem 13}
 
 	\subsection*{Problem 14}
+	By Cauchy identity, we have $$\sum_{\lambda}s_{\lambda}(a^{N})s_{\lambda}(b^{N})=\prod_{1\leqslant i,j\leqslant N}(1-ab)^{-1}=(1-ab)^{-N^2}$$ Therefore, $z_{N}(a,b)=(1-ab)^{-N^2}$. By Problem 4, Schur symmetric function is a homogeneous polynomial with degree $|\lambda|$. Thus, $s_{\lambda}(a^{N})=a^{\sum_{i=1}^{n}\lambda_{i}}s_{\lambda}(1^{N})$ and $s_{\lambda}(b^{N})=b^{\sum_{i=1}^{n}\lambda_{i}}s_{\lambda}(1^{N})$. Then,
+	\begin{align*}
+		\mathbb{P}(\lambda)&\propto s_{\lambda}(a^{N})\cdot s_{\lambda}(b^{N})=(ab)^{\sum_{i=1}^{n}\lambda_{i}}(s_{\lambda}(1^{N}))^{2}=(ab)^{\sum_{i=1}^{N}(\ell_{i}+i-N)}\Big[\prod_{1\leqslant i<j\leqslant N}\frac{\lambda_{i}-\lambda_{j}+j-i}{j-i}\Big]^{2}\\&=(ab)^{(\sum_{i=1}^{n}\ell_{i})-\frac{1}{2}N(N-1)}\Big[\prod_{1\leqslant i<j\leqslant N}\frac{\ell_{i}-\ell_{j}}{j-i}\Big]^{2}\\&=(ab)^{-\frac{1}{2}N(N-1)}\prod_{1\leqslant i<j\leqslant N} \frac{1}{(j-i)^{2}}\cdot \prod_{1\leqslant i<j\leqslant N}(\ell_{i}-\ell_{j})^{2}\cdot\prod_{i=1}^{N}(ab)^{\ell_{i}}
+	\end{align*}
+Let $x_{i}=\frac{\ell_{i}}{n}$, we have $(ab)^{-\ell_{i}}=e^{-\frac{\ell_{i}}{n}}=e^{-x_{i}}$. Denote $\omega(x_{i})=e^{-x_{i}}$ and then
+$$\rho(x_{1},x_{2},\dots,x_{N})\propto\prod_{1\leqslant i<j \leqslant N}(x_{i}-x_{j})^2\prod_{i=1}^{N}\omega(x_{i})$$
+Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqslant i<j \leqslant N}(x_{i}-x_{j})^2\prod_{i=1}^{N}e^{-x_{i}}$.
 
 
 \section{Couplings}
