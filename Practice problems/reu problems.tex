@@ -727,22 +727,20 @@ Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqsla
 		\begin{align*}
 		&\mathbb{P}^{0,T,0,B}_{Ber}\Big( \inf_{s \in [ 0, T]}\big( \ell(s) -  ps \big) \leq -AT^{1/2} \Big) = \mathbb{P}\Big( \inf_{s \in [ 0, T]}\big( \ell^{(T,B)}(s) -  ps \big) \leq -AT^{1/2} \Big)\\
 		\leq \; & \mathbb{P}\Big( \inf_{s \in [ 0, T]}  \sqrt{T}B^\sigma_{s/T} \leq -\frac{1}{2}AT^{1/2} \Big) + \mathbb{P}\Big( \sup_{s\in [0,T]} \Big|\sqrt{T} B^\sigma_{s/T} + ps - \ell^{(T,B)}(s) \Big| \geq \frac{1}{2}AT^{1/2} \Big)\\
-		\leq \; & \mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}B^\sigma_{s/T} \geq \frac{1}{2}AT^{1/2} \Big) + \mathbb{P}\Big(\Delta(T,B) \geq \frac{1}{4}AT^{1/2}\Big) + \mathbb{P}\Big(\sup_{s\in[0,T]}\Big| ps - \frac{s}{T}\cdot B \Big| \geq \frac{1}{4}AT^{1/2}\Big).
+		\leq \; & \mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}B^\sigma_{s/T} \geq \frac{1}{2}AT^{1/2} \Big) + \mathbb{P}\Big(\Delta(T,B) \geq \frac{1}{2}AT^{1/2} - MT^{1/2} - 1\Big).
 		\end{align*}
-		For the first term in the last line, we used the fact that $B^\sigma$ and $-B^\sigma$ have the same distribution. To estimate the first term, note that $\sqrt{T}B^\sigma_{s/T} = \sigma\sqrt{T}(W_{s/T} - W_1)$, where $W$ is a standard Brownian motion on $[0,1]$. Hence
+		For the first term in the last line, we used the fact that $B^\sigma$ and $-B^\sigma$ have the same distribution. For the second term, we used the fact that
+		\begin{align*}
+		\sup_{s\in[0,T]}\Big| ps - \frac{s}{T}\cdot B \Big| &\leq \sup_{s\in[0,T]}\Big| ps - \frac{pT-MT^{1/2}}{T}\cdot s \Big| + 1 = MT^{1/2} + 1.
+		\end{align*} To estimate the first term, note that $\sqrt{T}B^\sigma_{s/T} = \sigma\sqrt{T}(W_{s/T} - W_1)$, where $W$ is a standard Brownian motion on $[0,1]$. Hence
 		\begin{align*}
 		\mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}B^\sigma_{s/T} \geq \frac{1}{2}AT^{1/2} \Big) &\leq \mathbb{P}\Big( \sigma\max_{s\in[0,T]} \sqrt{T}\,W_{s/T} \geq \frac{1}{4}AT^{1/2} \Big) + \mathbb{P}\Big( \sigma\sqrt{T}\,W_1 \leq -\frac{1}{4}AT^{1/2} \Big)\\
 		&= \mathbb{P}\Big( \sigma\big|\sqrt{T}\,W_{T/T}\big| \geq \frac{1}{4}AT^{1/2} \Big) + \mathbb{P}\Big( \sigma W_1 \leq -\frac{1}{4}A \Big)\\
 		&= 3\,\mathbb{P}\Big( W_1 \geq \frac{A}{4\sqrt{p(p-1)}} \Big).
 		\end{align*} 
-		The equality in the second line follows from the reflection principle, since $\sqrt{T}\,W_{s/T}$ is a standard Brownian motion on $[0,T]$, and the third line follows by symmetry. Since $W_1\sim\mathcal{N}(0,1)$, we can choose $A$ large enough depending on $p$ and $\epsilon$ so that this probability is bounded above by $\epsilon/3$. 
+		The equality in the second line follows from the reflection principle, since $\sqrt{T}\,W_{s/T}$ is a standard Brownian motion on $[0,T]$, and the third line follows by symmetry. Since $W_1\sim\mathcal{N}(0,1)$, we can choose $A$ large enough depending on $p$ and $\epsilon$ so that this probability is bounded above by $\epsilon/2$. 
 		
-		For the second term, a similar calculation as in the previous proof using Theorem 3.3 shows that it is $O(e^{-T^{1/2}})$. In particular, we can choose $W_1$ depending on $M,p,\epsilon$ so that this term is also $\leq\epsilon/3$ for $T\geq W_1$. For the last term, observe from the definition of $B$ that
-		\begin{align*}
-		\mathbb{P}\Big(\sup_{s\in[0,T]}\Big| ps - \frac{s}{T}\cdot B \Big| \geq \frac{1}{2}AT^{1/2}\Big) &\leq \mathbb{P}\Big(\sup_{s\in[0,T]}\Big| ps - \frac{pT-MT^{1/2}}{T}\cdot s \Big| - 1 \geq \frac{1}{2}AT^{1/2} \Big)\\
-		&= \mathbb{P}\Big( MT^{1/2} - 1 \geq \frac{1}{2}AT^{1/2}\Big) = \mathbb{P}\Big( T \leq \Big(\frac{1}{2}A - M\Big)^{-2}\Big).
-		\end{align*}
-		If necessary, we enlarge $A$ depending on $M$ and $\epsilon$ so that $(\frac{1}{2}A-M)^{-2} \leq \epsilon/3$. Adding the three terms gives (4) for $T\geq W_1$.
+		For the second term, a similar calculation as in the proof of Lemma 3.5, using Theorem 3.3, shows that it is $O(e^{-T^{1/2}})$. In particular, we can choose $W_1$ depending on $M,p,\epsilon$ so that this term is also $\leq\epsilon/2$ for $T\geq W_1$. Adding the two terms gives (4).
 		
 	\end{proof}
 
@@ -785,11 +783,33 @@ Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqsla
 
 	\begin{lemma}\label{LemmaAwayS4} Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $x, y\in \mathbb{Z}$ such that $T \geq y-x \geq 0$, and suppose that $\ell$ has distribution $\mathbb{P}^{0,T,x,y}_{Ber}$. Then we can find $W_3 = W_3(p) \in \mathbb{N}$ such that for $T \geq W_3$, $ x \geq T^{1/2}$, $ y \geq pT +  T^{1/2}$
 		\begin{equation}\label{awayS4}
-		\mathbb{P}^{0,T,x,y}_{Ber}\Big( \inf_{s \in [0,T]} \big( \ell(s) -ps \big)+ T^{1/4} \geq 0 \Big) \geq \frac{1}{2} \left(1 - \exp\left(\frac{-1}{2p(1-p)}\right)\right).
+		\mathbb{P}^{0,T,x,y}_{Ber}\Big( \inf_{s \in [0,T]} \big( \ell(s) -ps \big)+ T^{1/4} \geq 0 \Big) \geq \frac{1}{2} \left(1 - \exp\left(-\frac{2}{p(1-p)}\right)\right).
 		\end{equation}
 	\end{lemma}
 	
 	\begin{proof}
+		
+		We have
+		\begin{align*}
+		& \mathbb{P}^{0,T,x,y}_{Ber}\Big( \inf_{s \in [0,T]} \big( \ell(s) -ps \big)+ T^{1/4} \geq 0 \Big) \\
+		\geq \; & \mathbb{P}^{0,T,0,B-A}_{Ber}\Big( \inf_{s \in [0,T]} \big( \ell(s) + A -ps \big)+ T^{1/4} \geq 0 \Big)\\
+		= \; & \mathbb{P}\Big( \inf_{s \in [0,T]} \big( \ell^{(T,B-A)}(s) -ps \big) \geq - T^{1/4} - A \Big)\\
+		\geq \; & \mathbb{P}\Big( \inf_{s \in [0,T]} \big( \ell^{(T,B-A)}(s) - \frac{s}{T}\cdot(B-A) \big) \geq - T^{1/4} - T^{1/2} + 2 \Big),
+		\end{align*}
+		with $A = \lfloor T^{1/2}\rfloor$, $B = \lfloor pT + T^{1/2}\rfloor$, and $\mathbb{P}$, $\ell^{(T,B-A)}$, and $B^\sigma$ provided by Theorem 3.3. In the last line, we used the facts that $|A-T^{1/2}|\leq 1$ and $|p-(B-A)/T|\leq 1$. The last line is bounded below by
+		\begin{align*}
+		&\mathbb{P}\Big( \inf_{s\in[0,T]} \sqrt{T}\,B^\sigma_{s/T} \geq - T^{1/2} \quad \mathrm{and} \quad \Delta(T,B-A) < T^{1/2} - 2 \Big)\\
+		\geq \; & \mathbb{P}\Big( \max_{s\in[0,T]} B^\sigma_{s/T} \leq 1 \Big) - \mathbb{P}\Big( \Delta(T,B-A) \geq T^{1/2} - 2 \Big).
+		\end{align*}
+		To compute the first term, note that if $B^1$ is a Brownian bridge with variance 1 on $[0,1]$, then $\sigma \sqrt{T}\,B^1_{s/T}$ on $[0,T]$ has the same distribution as $B^\sigma_{s/T}$. Hence
+		\begin{align*}
+		\mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}\,B^\sigma_{s/T} \leq T^{1/2} \Big) &= 1 - \mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}\,B^1_{s/T} \geq T^{1/2}/\sigma \Big) = 1 - e^{-2(T^{1/2}/\sigma)^2/T}\\ 
+		&= 1- \exp\left(-\frac{2}{p(1-p)}\right).
+		\end{align*}
+		For the second equality, see (3.40) in Chapter 4 of Karatzas \& Shreve, \textit{Brownian Motion and Stochastic Calculus}.
+		
+		The second term is $O(e^{-T^{1/2}})$ by Theorem 3.3, so we can choose $W_3$ large enough depending on $p$ so that this term is less than 1/2 the first term for $T\geq W_3$. This implies (6).
+		
 		
 	\end{proof}
 
