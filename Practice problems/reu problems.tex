@@ -1,5 +1,4 @@
 \documentclass[12pt]{article}
-\usepackage{ragged2e}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsthm, hhline, enumitem}
 \usepackage{stmaryrd, mathtools}
@@ -569,6 +568,46 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 	\subsection*{Problem 12}
 
 	\subsection*{Problem 13}
+
+$$\omega(l_i) = \frac{(A + B - l_i - 1)! \times (l_i + C - N)!}{(A + N - l_i - 1)! \times l_i!}$$
+
+We can rewrite $\omega(l_i)$ as
+$$(A + B - l_i - 1)! = \frac{(A + B)!}{\prod_{0 \leq k \leq l_i}(A + B - k)}$$
+$$ (C - N + l_i)! = (C - N - 1)! \prod_{0 \leq k \leq l_i}(C - N + k)$$
+$$(A + N - l_i - 1)! = \frac{(A + N -1)!}{\prod_{0 \leq k \leq l_i}(A + N -1 -k)}$$
+
+Also,
+
+$$\frac{(A +B - l_i 1)! (l_i + C - N)!}{(A + N - l_i - 1)! l_i!}$$
+$$=\frac{(A + B)!}{\prod_{0 \leq k \leq l_i} (A + B - k)} \times (C - N - 1)! \prod_{0 \leq k \leq l_i} (C - N + k) \times \frac{\prod_{0 \leq k \leq l_i}(A + N - 1 - k)}{(A + N - 1)!} \times \frac{1}{l_i!}$$
+
+Now, $N$, and the $l_i$ are constants, while $A$, $B$, $C$ all go to infinity, with $\frac{A_n C_n}{B_n}$ going to $t$. Rewrite the above as
+
+$$\frac{(A+ B)! \times (C-N - 1)!}{(A + N- 1)!} \times \prod_{0 \leq k \leq l_i} \frac{(C-N + k)\times (A+N-1-k)}{(A + B - k)}$$
+
+Consider the limit
+
+$$\lim_{n \rightarrow \infty} \prod_{0 \leq k \leq l_i} \frac{(C_n - N + k)\times (A_n + N - 1 - k)}{(A_n + B_n - k)} = \prod_{0 \leq k \leq l_i} \lim_{n \rightarrow \infty} \frac{(C_n - N + k)\times (A_n + N - 1 - k)}{(A_n + B_n - k)}$$
+
+$$\lim_{n \rightarrow \infty} \frac{(C_n - N + k)\times (A_n + N - 1 - k)}{(A_n + B_n - k)} = \lim_{n \rightarrow \infty}\frac{\frac{(C_n - N + k) \times (A_n + N - 1 - k)}{(A_n C_n )}}{\frac{(A_n + B_n - k)}{(A_n C_n)}}$$
+
+$$= \lim_{n \rightarrow \infty} \frac{( 1 - (N - k)}{C_n} \times \frac{\frac{( 1 - (N - 1 - k)}{A_n}}{\frac{1}{C_n} + \frac{1}{t} + \frac{k}{A_n C_n}} = \lim_{n \rightarrow \infty} \frac{1}{\frac{1}{t}} = t$$
+
+Then
+
+$$\lim_{n \rightarrow \infty} \prod_{0 \leq k \leq l_i} \frac{(C_n - N + k)\times (A_n+N-1-k)}{(A_n + B_n - k)} = t^{l_i + 1} $$\\
+
+Now, we want to find
+
+$$\lim_{n \rightarrow \infty} \frac{(A_n+ B_n)! \times (C_n-N - 1)!}{(A_n + N- 1)!}$$
+$$\log \left( \frac{(A+B)! \times (C - N - 1)!}{(A + N - 1)!}\right) 
+= \log((A+B)!) + \log((C-N-1)!) - \log(( A + N - 1)!)$$ \\
+
+By Stirling's Formula:
+
+$$\log(n!) = n\log(n) - n + O(\log(n))$$
+
+...
 
 	\subsection*{Problem 14}
 	By Cauchy identity, we have $$\sum_{\lambda}s_{\lambda}(a^{N})s_{\lambda}(b^{N})=\prod_{1\leqslant i,j\leqslant N}(1-ab)^{-1}=(1-ab)^{-N^2}$$ Therefore, $z_{N}(a,b)=(1-ab)^{-N^2}$. By Problem 4, Schur symmetric function is a homogeneous polynomial with degree $|\lambda|$. Thus, $s_{\lambda}(a^{N})=a^{\sum_{i=1}^{n}\lambda_{i}}s_{\lambda}(1^{N})$ and $s_{\lambda}(b^{N})=b^{\sum_{i=1}^{n}\lambda_{i}}s_{\lambda}(1^{N})$. Then,
