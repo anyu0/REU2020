@@ -779,7 +779,11 @@ Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqsla
 		\end{align*} 
 		The equality in the second line follows from the reflection principle, since $\sqrt{T}\,W_{s/T}$ is a standard Brownian motion on $[0,T]$, and the third line follows by symmetry. Since $W_1\sim\mathcal{N}(0,1)$, we can choose $A$ large enough depending on $p$ and $\epsilon$ so that this probability is bounded above by $\epsilon/2$. 
 		
-		For the second term, a similar calculation as in the proof of Lemma 3.5, using Theorem 3.3, shows that it is $O(e^{-T^{1/2}})$. In particular, we can choose $W_1$ depending on $M,p,\epsilon$ so that this term is also $\leq\epsilon/2$ for $T\geq W_1$. Adding the two terms gives (4).
+		For the second term, it follows from Theorem 3.3 and Chebyshev's inequality that
+		\begin{align*}
+		\mathbb{P}\Big(\Delta(T,B) \geq \Big(\frac{A}{2} - M\Big)T^{1/2} - 1\Big) &\leq C\exp\Big[-a\Big(\frac{A}{2}- M\Big)T^{1/2} + a + \alpha(\log T)^2 + M^2 + \frac{1}{T}\Big].
+		\end{align*}
+		If we take $A > 2M$, then this is $O(e^{-T^{1/2}})$, and then we can find $W_1$ large enough depending on $M,p,\epsilon$ so that this term is also $\leq\epsilon/2$ for $T\geq W_1$. Adding the two terms gives (4).
 		
 	\end{proof}
 
@@ -797,7 +801,7 @@ Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqsla
 		\mathbb{P}^{0,T,x,y}_{Ber}\bigg( \ell( T/2 )  \geq \frac{M_2T^{1/2} + p T}{2} - T^{1/4} \bigg) &\geq \mathbb{P}^{0,T,0,B-A}_{Ber}\bigg( \ell( T/2 ) + A  \geq \frac{M_2T^{1/2} + p T}{2} - T^{1/4} \bigg)\\
 		&= \mathbb{P}\bigg( \ell^{(T,B-A)}( T/2 ) + A  \geq \frac{M_2T^{1/2} + p T}{2} - T^{1/4} \bigg),
 		\end{align*}
-		with $A = \lfloor -M_1T^{1/2}\rfloor$, $B = \lfloor pT-M_1T^{1/2}\rfloor$, and $\mathbb{P}$, $\ell^{(T,B-A)}$, and $B^\sigma$ provided by Theorem 3.3. We rewrite the expression on the second line as
+		with $A = \lfloor -M_1T^{1/2}\rfloor$, $B = \lfloor pT-M_1T^{1/2}\rfloor$, and $\mathbb{P}$, and $\ell^{(T,B-A)}$ provided by Theorem 3.3. If $B^\sigma$ is as in Theorem 3.3, we can rewrite the expression on the second line as
 		\begin{align*}
 		& \mathbb{P}\bigg( \bigg[\ell^{(T,B-A)}( T/2 ) -\sqrt{T}\,B^\sigma_{1/2} - \frac{B-A}{2}\bigg] + \sqrt{T}\,B^\sigma_{1/2}  \geq -A - \frac{B-A}{2} + \frac{M_2T^{1/2} + p T}{2} - T^{1/4} \bigg).
 		\end{align*}
@@ -816,7 +820,7 @@ Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqsla
 		\[
 		1 - \Phi^v(M_1+M_2),
 		\]
-		where $\Phi^v$ is the cdf for a Gaussian random variable with mean 0 and variance $v=\sigma^2/4 = p(1-p)/4$. For the second term, a similar argument as in the above shows that it is $O(e^{-T^{1/4}})$. In particular, we can choose $W_2$ depending on $M_1,M_2$, and $p$ so that if $T\geq W_2$, then the second term is less than 1/2 the first term. This gives the lower bound in (5).
+		where $\Phi^v$ is the cdf for a Gaussian random variable with mean 0 and variance $v=\sigma^2/4 = p(1-p)/4$. For the second term, the same argument as in the proof of Lemma 3.5 shows that it is $O(e^{-T^{1/4}})$. In particular, we can choose $W_2$ depending on $M_1,M_2$, and $p$ so that the second term is less than 1/2 the first term for $T\geq W_2$. This proves (5).
 		
 	\end{proof}
 
@@ -835,7 +839,7 @@ Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqsla
 		= \; & \mathbb{P}\Big( \inf_{s \in [0,T]} \big( \ell^{(T,B-A)}(s) -ps \big) \geq - T^{1/4} - A \Big)\\
 		\geq \; & \mathbb{P}\Big( \inf_{s \in [0,T]} \big( \ell^{(T,B-A)}(s) - \frac{s}{T}\cdot(B-A) \big) \geq - T^{1/4} - T^{1/2} + 2 \Big),
 		\end{align*}
-		with $A = \lfloor T^{1/2}\rfloor$, $B = \lfloor pT + T^{1/2}\rfloor$, and $\mathbb{P}$, $\ell^{(T,B-A)}$, and $B^\sigma$ provided by Theorem 3.3. In the last line, we used the facts that $|A-T^{1/2}|\leq 1$ and $|p-(B-A)/T|\leq 1$. The last line is bounded below by
+		with $A = \lfloor T^{1/2}\rfloor$, $B = \lfloor pT + T^{1/2}\rfloor$, and $\mathbb{P}$, and $\ell^{(T,B-A)}$ provided by Theorem 3.3. In the last line, we used the facts that $|A-T^{1/2}|\leq 1$ and $|p-(B-A)/T|\leq 1$. With $B^\sigma$ as in Theorem 3.3, the last line is bounded below by
 		\begin{align*}
 		&\mathbb{P}\Big( \inf_{s\in[0,T]} \sqrt{T}\,B^\sigma_{s/T} \geq - T^{1/2} \quad \mathrm{and} \quad \Delta(T,B-A) < T^{1/2} - 2 \Big)\\
 		\geq \; & \mathbb{P}\Big( \max_{s\in[0,T]} B^\sigma_{s/T} \leq 1 \Big) - \mathbb{P}\Big( \Delta(T,B-A) \geq T^{1/2} - 2 \Big).
@@ -847,7 +851,7 @@ Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqsla
 		\end{align*}
 		For the second equality, see (3.40) in Chapter 4 of Karatzas \& Shreve, \textit{Brownian Motion and Stochastic Calculus}.
 		
-		The second term is $O(e^{-T^{1/2}})$ by Theorem 3.3, so we can choose $W_3$ large enough depending on $p$ so that this term is less than 1/2 the first term for $T\geq W_3$. This implies (6).
+		The second term is $O(e^{-T^{1/2}})$ by the same argument as in the proof of Lemma 3.5, so we can choose $W_3$ large enough depending on $p$ so that this term is less than 1/2 the first term for $T\geq W_3$. This implies (6).
 		
 		
 	\end{proof}
@@ -864,6 +868,25 @@ Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqsla
 	\end{lemma}
 	
 	\begin{proof}
+		
+		We have
+		\[
+		\mathbb{P}^{0,T,0,y}_{Ber}\Big( w\big({f^\ell},\delta\big) \geq \epsilon \Big) = \mathbb{P}\Big( w\big(f^{\ell^{(N,y)}},\delta\big) \geq \epsilon \Big),
+		\]
+		with $\mathbb{P}$, $f^{\ell^{(N,y)}}$. If $B^\sigma$ is the Brownian bridge provided by Theorem 3.3, then
+		\begin{align*}
+		w\big(f^{\ell^{(N,y)}},\delta\big) &= T^{-1/2} \sup_{\substack{x,y \in [0,1]\\ |x-y| \leq \delta}} \Big| \ell^{(N,y)}(xT) - pxT - \ell^{(N,y)}(yT) + pyT \Big|\\
+		&\leq T^{-1/2} \sup_{\substack{x,y \in [0,1]\\ |x-y| \leq \delta}} \Big| \sqrt{T}\,B^\sigma_x + xy - pxT - \sqrt{T}\,B^\sigma_y - y^2 + pyT \Big|\\
+		&\qquad + T^{-1/2}\cdot\Big|\sqrt{T}\,B^\sigma_x + xy - \ell^{(N,y)}(xT)\Big| + T^{-1/2}\cdot\Big|\sqrt{T}\,B^\sigma_y + y^2 - \ell^{(N,y)}(yT)\Big|\\
+		&\leq \sup_{\substack{x,y \in [0,1]\\ |x-y| \leq \delta}} \Big| B^\sigma_x - B^\sigma_y + T^{-1/2} (y-pT)(x-y)\Big| + 2T^{-1/2}\Delta(T,y)\\
+		&\leq w\big(B^\sigma,\delta\big) + M\delta + 2T^{-1/2}\Delta(T,y).
+		\end{align*}
+		The last line follows from the assumption that $|y-pT|\leq MT^{1/2}$. Thus
+		\begin{align*}
+		\mathbb{P}\Big( w\big(f^{\ell^{(N,y)}},\delta\big) \geq \epsilon \Big) &\leq \mathbb{P}\Big( w\big(B^\sigma,\delta\big) + M\delta + 2T^{-1/2}\Delta(T,y) \geq \epsilon \Big)\\
+		&\leq \mathbb{P}\Big( w\big(B^\sigma,\delta\big) + M\delta \geq \epsilon/2 \Big) + \mathbb{P}\Big( \Delta(T,y) \geq \epsilon\, T^{1/2}/2 \Big).
+		\end{align*}
+		The last term is $O(e^{-T^{1/2}})$ by the argument in the proof of Lemma 3.5, so we can choose $W_4$ large enough depending on $M,p,\epsilon,\eta$ so that this term is $\leq\eta/2$ for $T\geq W_4$. Since $B^\sigma$ is a.s. uniformly continuous on the compact interval $[0,1]$, $w(B^\sigma,\delta) \to 0$ as $\delta\to 0$. Thus we can find $\delta_0>0$ small enough depending on $\epsilon,\eta$ so that $w(B^\sigma,\delta_0) < \epsilon/2$ with probability at least $1-\eta/2$. Then with $\delta = \min(\delta_0, \epsilon/4M)$, the first term is $\leq\eta/2$ as well. This implies (8).
 		
 	\end{proof}
 	
