@@ -697,7 +697,72 @@ Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqsla
 \section{Avoiding Bernoulli line ensembles}
 
 	\section*{Problem 16}
-	
+	Let $\Omega(0,T,\bar x^T, \bar y ^T)$ be the set of all non intersecting Bernoulli line ensembles from $\bar x^T$ to $\bar y^T$ then we may find that for each line ensemble $\mathfrak{B}\in \Omega(0,T,\bar x^T,\bar y^T)$ with $\mathfrak B=(B_1,...,B_k)$, we may define $\lambda_i(\mathfrak B):=(B_1(i),B_2(i),...,B_k(i))$. 
+This is a partition since by the definition of avoiding Bernoulli line ensembles, we have the inequality $B_\alpha(i)>B_\beta(i)$ if $\alpha<\beta$. 
+Now because $B_\alpha(i+1)-B_\alpha(i)\in \{0,1\}$ we know that $B_\alpha(i+1)\geq B_\alpha(i)$ but also since $B_\alpha(i+1)\in \mathbb{Z}$ and $B_{\alpha+1}<B_\alpha(i+1)$ (strictly) by the earlier stated inequality, we know that$B_{\alpha+1}+1\leq B_\alpha(i+1)$ and so we find that 
+\[B_{\alpha+1}(i+1)\leq B_\alpha(i)\leq B_\alpha(i+1)\]
+We therefore find that for all $i$, $\lambda_i\preceq \lambda_{i+1}$. Note that if we plug in $i=0$, we get $\lambda_0=\bar x^T$ and $\lambda_T=\bar y^T$.
+
+Now, let us define the set 
+\[TB_{\kappa/\mu}^T:=\{(\lambda_0,...,\lambda_T)\mid \lambda_0=\mu, \lambda_T=\kappa, \lambda_i\preceq\lambda_{i+1}\}\] 
+Now, if we take $f:\Omega(0,T,\bar x^T, \bar y ^T)\to TB_{\kappa/\mu}^T$ with $f(\mathfrak{B})= (\lambda_0(\mathfrak{B}),\cdots \lambda_T(\mathfrak{B}))$. We find that this function is in fact a bijection. 
+
+First, as proof for injectivity, suppose that there are two Bernoulli line ensembles, $\mathfrak{B}, \mathfrak{B}'\in \Omega(0,T,\bar x^T, \bar y ^T)$ such that $\mathfrak{B}\neq \mathfrak{B'}$.
+Because Bernoulli line ensembles are determined by their values at integer times, we find that this would imply that there exists some $(q,r)$ such that $0\leq r\leq T$, $0\leq q \leq k$ and $B_q(r)\neq B'_q(r)$ where $B_q$ and $B_q'$ are components of $\mathfrak{B}$ and $\mathfrak{B'}$ respectively. 
+This implies that $\lambda_r(\mathfrak B)\neq \lambda_r'(\mathfrak{B'})$, and so we have injectivity. 
+
+Now, surjectivity follows since for any $\bar\lambda=(\lambda_0,...,\lambda_T)$ we may define $\mathfrak{B}(\bar{\lambda})=(B_1(\bar\lambda),...,B_k(\bar\lambda))$ where $B_r(\bar\lambda)(i)=\lambda_i^r$ where $\lambda_i^r$ is the $i$\textit{th} entry of $\lambda_r$. The restrictions on $TB_{\kappa/\mu}^T$ ensure that each $\mathfrak{B}(\bar\lambda)\in \Omega(0,T,\bar x^T,\bar y^T)$, and so $f(\mathfrak B(\bar{\lambda}))=(\lambda_0,\cdots \lambda_T)$ by the definition $\mathfrak{B}(\bar\lambda)$. 
+
+We can proceed to use Macdonald Chapter 1, Section 5, Equation (11) to show that, in a very similar way to practice problem 10, we get that 
+\[s_{\kappa/\mu}(1^T)=\sum_{(\nu)}\prod_{i=1}^n s_{\nu^{(i)}/\nu^{i-1}}=\sum_{(\nu)} 1=\lvert TB_{\mu/\kappa}^T\rvert\]
+
+Therefore, we can find that 
+\begin{align*}
+\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)
+&=\frac{\lvert \Omega(0,\lfloor Tt\rfloor, \bar x^T, \lambda)\rvert\cdot \lvert \Omega(\lfloor Tt\rfloor ,T, \lambda, \bar y^T)\rvert}{\lvert \Omega(0, T, \bar x^T, \bar y^T)\rvert}\\
+&=\frac{s_{\lambda/\bar x^T}(1^{\floor{Tt}})\cdot s_{\bar y^T/\lambda}(1^{T-\floor{Tt}})}{s_{\bar y^T/\bar x^T}(1^T)}
+\end{align*}
+
+Now, if we use the Jacobi-Trudi formula on this expression and the identity from Macdonald, page 26 i.e. that $h_r(1^n)=\binom{n+k-1}{k}$, we get the resulting equation 
+\begin{align*}
+\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)
+&=\frac{\det\left(h_{\lambda_i^T-x_j^T+j-i}(1^{\floor{tT}})\right)_{1=i,j}^k\cdot\det\left(h_{y_i^T-\lambda_j^T+j-i}(1^{T-\floor{Tt}})\right)_{1=i,j}^k}{\det\left(h_{\lambda_i^T-x_j^T+j-i}(1^T)\right)_{1=i,j}^k}\\
+&=\frac{\det\left(\frac{\left(\lambda_i^T-x_j^T+j-i+\floor{tT}-1\right)!}{\left(\floor{Tt}-1\right)!\left(\lambda_i^T-x_j^T+j-i\right)!}\right)_{i,j=1}^k\det\left(\frac{\left(y_i^T-\lambda_j^T+j-i+T-\floor{tT}-1\right)!}{\left(T-\floor{Tt}-1\right)!\left(y_i^T-\lambda_j^T+j-i\right)!}\right)_{i,j=1}^k}{\det\left(\frac{\left(y_i^T-x_j^T+j-i+T-1\right)!}{\left(T-1\right)!\left(y_i^T-x_j^T+j-i\right)!}\right)_{i,j=1}^k}
+\end{align*}
+
+Now we can find using Sterling's formula that this expression is equal in the limit to 
+\[
+\frac{\det\left(\frac{\sqrt{2\pi}(\lambda_i^T-x_j^T+j-i+\floor{tT}-1)^{\lambda_i^T-x_j^T+j-i+\floor{tT}-1/2}e^{-\lambda_i^T+x_j^T-j+i-\floor{tT}+1}}{\sqrt{2\pi}(\floor{tT}-1)^{\floor{Tt}-1/2}e^{-\floor{Tt}+1}\cdot \sqrt{2\pi}(\lambda_i^T-x_j^T+j-i)^{\lambda_i^T-x_j^T+j-i+1/2}e^{-\lambda_i^T+x_j^T-j+i}}\right)_{1=i,j}^k
+\det\left(\frac{\left(y_i^T-\lambda_j^T+j-i+T-\floor{tT}-1\right)!}{\left(T-\floor{Tt}-1\right)!\left(y_i^T-\lambda_j^T+j-i\right)!}\right)_{i,j=1}^k}
+{\det\left(\frac{\sqrt{2\pi}(y_i^T-x_j^T+j-i+{T}-1)^{y_i^T-x_j^T+j-i+{T}-1/2}e^{-y_i^T+x_j^T-j+i-{T}+1}}{\sqrt{2\pi}({T}-1)^{{T}-1/2}e^{-{T}+1}\cdot \sqrt{2\pi}(y_i^T-x_j^T+j-i)^{\lambda_i^T-x_j^T+j-i+1/2}e^{-\lambda_i^T+x_j^T-j+i}}\right)_{1=i,j}^k}
+\]
+\[
+=\frac{
+	\det\left(\frac{
+		(\lambda_i-x_j^T+j-i+\floor{tT}-1)^{\lambda_i-x_j^T+j-i+\floor{tT}-1/2}}{\sqrt{2\pi}(\floor{tT}-1)^{\floor{Tt}-1/2}(\lambda_i-x_j^T+j-i)^{\lambda_i-x_j^T+j-i+1/2}}\right)_{1=i,j}^k
+	\det\left(\frac{(y_i^T-\lambda_j+j-i+T-\floor{tT}-1)^{y_i^T-\lambda_j+j-i+T-\floor{tT}-1/2}}{\sqrt{2\pi}(T-\floor{tT}-1)^{T-\floor{Tt}-1/2}(y_i^T-\lambda_j^T+j-i)^{y_i^T-\lambda_j+j-i+1/2}}\right)_{1=i,j}^k
+	}
+{\det\left(\frac{
+		(y_i^T-x_j^T+j-i+T-1)^{y_i^T-x_j^T+j-i+{T}-1/2}}{\sqrt{2\pi}(T-1)^{T-1/2}(y_i^T-x_j^T+j-i)^{y_i^T-x_j^T+j-i+1/2}}\right)_{1=i,j}^k}
+\]
+
+Now if we take $\lambda_i=z_i\sqrt{T}+ptT$ and we consider each of the determinants individually (for the sake of the margins of this document), we find that the expression is equal to $ABC^{-1}$ where
+\begin{align*}
+A&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det
+	\left(e^{(\sqrt{T}(z_i-a_j)+T(t+pt))\log(\sqrt{T}(z_i-a_j)+T(t+pt))-tT\log(tT)-((z_i-a_j)\sqrt{T}+ptT)\log((z_i-a_j)\sqrt{T}+ptT)}
+	\right)_{1=i,j}^k\\
+	&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det\left(e^{T\left(\left(\frac{z_i-a_j}{\sqrt{T}}+pt+t\right)\left(\log\left(\frac{z_i-a_j}{(t)\sqrt T}+p+1\right)+\log (tT)\right)-t\log(tT)-\left(\frac{z_i-a_j}{\sqrt{T}}+pt\right)\left(\log\left(\frac{z_i-a_j}{t\sqrt T}+p\right)+\log(tT)\right)\right)}\right)_{1=i,j}^k\\
+	&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det\left(e^{T\left(\left(\frac{z_i-a_j}{\sqrt{T}}+pt\right)\log(\frac{\frac{z_i-a_j}{t\sqrt{T}}+p+1}{\frac{z_i-a_j}{t\sqrt{T}}+p})+t\log\left(\frac{z_i-a_j}{t\sqrt{T}}+p+1\right)\right)}
+	\right)_{1=i,j}^k\\
+	&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det\left(e^{Tt\log(\frac{z_i-a_j}{t\sqrt{T}}+p+1)}\right)_{1=i,j}^k
+	\\
+	B&=\lim_{T\to\infty} (2\pi)^{-\frac k2}
+	\det\left(e^{\left(
+	\sqrt{T}(b_i-z_i)
+	\right)}
+	\right)_{1=i,j}^k
+\end{align*}
+
 	\section*{Lemmas from Section 3.2}
 	
 	\begin{lemma}\label{LemmaHalfS4} Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $x, y\in \mathbb{Z}$ such that $T \geq y-x \geq 0$, and suppose that $\ell$ has distribution $\mathbb{P}^{0,T,x,y}_{Ber}$. Let $M_1, M_2 \in \mathbb{R}$ be given. Then we can find $W_0 = W_0(p,M_2 - M_1) \in \mathbb{N}$ such that for $T \geq W_0$, $x \geq M_1 T^{1/2}$, $y \geq pT + M_2 T^{1/2}$ and $s \in [0,T]$ we have
