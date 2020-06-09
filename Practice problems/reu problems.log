@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  8 JUN 2020 21:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  9 JUN 2020 15:52
 entering extended mode
 **"./reu problems.tex"
 ("reu problems.tex"
@@ -632,7 +632,7 @@ Here is how much of TeX's memory you used:
  7474 multiletter control sequences out of 15000+200000
  12925 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,16n,32p,1539b,246s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,16n,32p,1649b,246s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Program Files/
@@ -649,7 +649,7 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9
 s/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/hoekwater/stmary10.pfb>
-Output written on "reu problems.pdf" (35 pages, 1003791 bytes).
+Output written on "reu problems.pdf" (35 pages, 1003805 bytes).
 PDF statistics:
  183 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
