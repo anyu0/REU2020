@@ -569,6 +569,76 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 	and the expression of $M$, $s_{\mu}(1^{B+C})$, $P_{3}$, and $\omega(\ell_{i})$ are given above.
 	
 	\subsection*{Problem 12}
+	
+	From the previous problem, we have the probability distribution
+	\begin{equation}\label{Eqn1}
+	\mathbb{P}(\ell_1, \dots, \ell_N) = \frac{1}{Z} \prod_{1 \leq i < j \leq N} (\ell_i - \ell_j)^2 \prod_{i = 1}^Nw(\ell_i),
+	\end{equation}
+	where $l_i=x_id_2\sqrt{L}+d_1L$, and
+	\begin{equation}\label{Eqn2}
+	w(l_i) = \frac{(A+B-l_i-1)! (l_i+C-N)!}{(A+N-l_i-1)!l_i!} 
+	\end{equation}
+	By Sterling's Approximation,
+	\begin{align*}
+	&(A+B-l_i-1)!  \\
+	=& \left[(a+b-d_1)L-x_id_2\sqrt{L}-1\right]! \\
+	\to& \sqrt{2\pi\left[(a+b-d_1)L-x_id_2\sqrt{L}-1\right]} 
+	\exp \left[-(a+b-d_1)L+x_id_2\sqrt{L}+1\right] \\
+	& \exp\left[ \left((a+b-d_1)L-x_id_2\sqrt{L}-1\right) \ln{\left((a+b-d_1)L-x_id_2\sqrt{L}-1\right)} \right] 
+	\end{align*}
+	Using Taylor expansion,
+	\begin{align*}
+	&\ln{\left((a+b-d_1)L-x_id_2\sqrt{L}-1\right)} \\
+	=& \ln(a+b-d_1)L-\frac{x_id_2}{(a+b-d_1)\sqrt{L}}-\frac{x_i^2d_2^2}{2(a+b-d_1)^2L}+O(\frac{1}{L})
+	\end{align*}
+	The exponent becomes
+	\begin{align*}
+	&\left((a+b-d_1)L-x_id_2\sqrt{L}-1\right) \ln{\left((a+b-d_1)L-x_id_2\sqrt{L}-1\right)}\\
+	=& \left((a+b-d_1)L-x_id_2\sqrt{L}-1\right) 
+	\left( \ln(a+b-d_1)L-\frac{x_id_2}{(a+b-d_1)\sqrt{L}}-\frac{x_i^2d_2^2}{2(a+b-d_1)^2L}+O(\frac{1}{L}) \right) \\
+	=& (a+b-d_1)L\ln(a+b-d_1)L - x_id_2 \sqrt{L}\ln(a+b-d_1)L-x_id_2\sqrt{L} + \frac{x_i^2d_2^2}{2(a+b-d_1)} + O(\frac{1}{\sqrt{L}})
+	\end{align*}
+	Similarly, we can calculate the exponent for other factorials
+	\begin{align*}
+	& \left( (c+d_1)L+x_id_2\sqrt{L}-N \right) \ln\left( (c+d_1)L+x_id_2\sqrt{L}-N \right)\\
+	=& (c+d_1)L \ln(c+d_1)L+x_id_2\sqrt{L}\ln(c+d_1)L-N\ln(c+d_1)L+x_id_2\sqrt{L}-N-\frac{x_i^2d_2^2}{2(c+d_1)} + O(\frac{1}{\sqrt{L}})
+	\\
+	& \left( (a-d_1)L-x_id_2\sqrt{L}+N-1 \right) \ln\left( (a-d_1)L-x_id_2\sqrt{L}+N-1 \right)\\
+	=& (a-d_1)L \ln(a-d_1)L-x_id_2\sqrt{L}\ln(a-d_1)L+(N-1)\ln(a-d_1)L-x_id_2\sqrt{L}\\
+	&\qquad +(N-1)-\frac{x_i^2d_2^2}{2(a-d_1)} + O(\frac{1}{\sqrt{L}})
+	\\
+	& \left( d_1L+x_id_2\sqrt{L} \right)\ln\left( d_1L+x_id_2\sqrt{L} \right) \\
+	=& d_1L\ln(d_1L)+x_id_2\sqrt{L}\ln(d_1L)+x_id_2\sqrt{L}+\frac{x_i^2d_2^2}{2d_1} + O(\frac{1}{\sqrt{L}})
+	\end{align*}
+	Substitution into \label{Eqn2} yields the limit
+	\begin{align*}
+	& \sqrt{\frac{\left((a+b-d_1)L-x_id_2\sqrt{L}-1\right)\left( (c+d_1)L+x_id_2\sqrt{L}-N \right)}
+		{\left( (a-d_1)L-x_id_2\sqrt{L}+N-1 \right)\left( d_1L+x_id_2\sqrt{L} \right)}} \exp\left(2N-(b+c)L\right) \\ 
+	& \exp\Big[
+	(a+b-d_1)L\ln(a+b-d_1)L - x_id_2 \sqrt{L}\ln(a+b-d_1)L-x_id_2\sqrt{L}\\
+	&\qquad + \frac{x_i^2d_2^2}{2(a+b-d_1)} 
+	+ (c+d_1)L \ln(c+d_1)L+x_id_2\sqrt{L}\ln(c+d_1)L-N\ln(c+d_1)L\\
+	&\qquad +x_id_2\sqrt{L}-N-\frac{x_i^2d_2^2}{2(c+d_1)} 
+	- (a-d_1)L \ln(a-d_1)L  +x_id_2\sqrt{L}\ln(a-d_1)L\\
+	&\qquad-(N-1)\ln(a-d_1)L+x_id_2\sqrt{L}-(N-1)+\frac{x_i^2d_2^2}{2(a-d_1)} 
+	- d_1L\ln(d_1L)-x_id_2\sqrt{L}\ln(d_1L)\\
+	&\qquad-x_id_2\sqrt{L}-\frac{x_i^2d_2^2}{2d_1} + O(\frac{1}{\sqrt{L}})
+	\Big] \\
+	\to&  \exp\left(2N-(b+c)L\right)
+	\exp\left(\frac{x_i^2d_2^2}{2}(\frac{1}{a+b-d_1}-\frac{1}{c+d_1}+\frac{1}{a-d_1}-\frac{1}{2d_1})\right)\\
+	&\qquad\cdot
+	\exp\left(x_id_2\sqrt{L} \ln\frac{(c+d_1)(a-d_1)}{(a+b-d_1)d_1}\right)
+	\end{align*}
+	Solving equations
+	\begin{align*}
+	\frac{(c+d_1)(a-d_1)}{(a+b-d_1)d_1} =& \ 1 \\
+	\frac{x_i^2d_2^2}{2}(\frac{1}{a+b-d_1}-\frac{1}{c+d_1}+\frac{1}{a-d_1}-\frac{1}{d_1}) =& -\frac{x_i^2}{2}
+	\end{align*}
+	we obtain
+	\begin{align*}
+	d_1 &= \frac{ac}{b+c} \\
+	d_2 &= \sqrt{\frac{abc(a+b+c)}{(b^2-c^2)(2a+b+c)}}
+	\end{align*}
 
 	\subsection*{Problem 13}
 

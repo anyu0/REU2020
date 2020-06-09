@@ -49,7 +49,8 @@ Similarly, we can calculate the exponent for other factorials
 	=& (c+d_1)L \ln(c+d_1)L+x_id_2\sqrt{L}\ln(c+d_1)L-N\ln(c+d_1)L+x_id_2\sqrt{L}-N-\frac{x_i^2d_2^2}{2(c+d_1)} + O(\frac{1}{\sqrt{L}})
 \\
 	& \left( (a-d_1)L-x_id_2\sqrt{L}+N-1 \right) \ln\left( (a-d_1)L-x_id_2\sqrt{L}+N-1 \right)\\
-	=& (a-d_1)L \ln(a-d_1)L-x_id_2\sqrt{L}\ln(a-d_1)L+(N-1)\ln(a-d_1)L-x_id_2\sqrt{L}+(N-1)-\frac{x_i^2d_2^2}{2(a-d_1)} + O(\frac{1}{\sqrt{L}})
+	=& (a-d_1)L \ln(a-d_1)L-x_id_2\sqrt{L}\ln(a-d_1)L+(N-1)\ln(a-d_1)L-x_id_2\sqrt{L}\\
+	&\qquad +(N-1)-\frac{x_i^2d_2^2}{2(a-d_1)} + O(\frac{1}{\sqrt{L}})
 \\
 	& \left( d_1L+x_id_2\sqrt{L} \right)\ln\left( d_1L+x_id_2\sqrt{L} \right) \\
 	=& d_1L\ln(d_1L)+x_id_2\sqrt{L}\ln(d_1L)+x_id_2\sqrt{L}+\frac{x_i^2d_2^2}{2d_1} + O(\frac{1}{\sqrt{L}})
@@ -58,14 +59,19 @@ Substitution into \label{Eqn2} yields the limit
 \begin{align*}
 	& \sqrt{\frac{\left((a+b-d_1)L-x_id_2\sqrt{L}-1\right)\left( (c+d_1)L+x_id_2\sqrt{L}-N \right)}
 	{\left( (a-d_1)L-x_id_2\sqrt{L}+N-1 \right)\left( d_1L+x_id_2\sqrt{L} \right)}} \exp\left(2N-(b+c)L\right) \\ 
-	& \exp\left[
-	 (a+b-d_1)L\ln(a+b-d_1)L - x_id_2 \sqrt{L}\ln(a+b-d_1)L-x_id_2\sqrt{L} + \frac{x_i^2d_2^2}{2(a+b-d_1)} 
-	+ (c+d_1)L \ln(c+d_1)L+x_id_2\sqrt{L}\ln(c+d_1)L-N\ln(c+d_1)L+x_id_2\sqrt{L}-N-\frac{x_i^2d_2^2}{2(c+d_1)} 
-	- (a-d_1)L \ln(a-d_1)L+x_id_2\sqrt{L}\ln(a-d_1)L-(N-1)\ln(a-d_1)L+x_id_2\sqrt{L}-(N-1)+\frac{x_i^2d_2^2}{2(a-d_1)} 
-	- d_1L\ln(d_1L)-x_id_2\sqrt{L}\ln(d_1L)-x_id_2\sqrt{L}-\frac{x_i^2d_2^2}{2d_1} + O(\frac{1}{\sqrt{L}})
-	\right] \\
+	& \exp\Big[
+	 (a+b-d_1)L\ln(a+b-d_1)L - x_id_2 \sqrt{L}\ln(a+b-d_1)L-x_id_2\sqrt{L}\\
+	 &\qquad + \frac{x_i^2d_2^2}{2(a+b-d_1)} 
+	+ (c+d_1)L \ln(c+d_1)L+x_id_2\sqrt{L}\ln(c+d_1)L-N\ln(c+d_1)L\\
+	&\qquad +x_id_2\sqrt{L}-N-\frac{x_i^2d_2^2}{2(c+d_1)} 
+	- (a-d_1)L \ln(a-d_1)L  +x_id_2\sqrt{L}\ln(a-d_1)L\\
+	&\qquad-(N-1)\ln(a-d_1)L+x_id_2\sqrt{L}-(N-1)+\frac{x_i^2d_2^2}{2(a-d_1)} 
+	- d_1L\ln(d_1L)-x_id_2\sqrt{L}\ln(d_1L)\\
+	&\qquad-x_id_2\sqrt{L}-\frac{x_i^2d_2^2}{2d_1} + O(\frac{1}{\sqrt{L}})
+	\Big] \\
 	\to&  \exp\left(2N-(b+c)L\right)
-	\exp\left(\frac{x_i^2d_2^2}{2}(\frac{1}{a+b-d_1}-\frac{1}{c+d_1}+\frac{1}{a-d_1}-\frac{1}{2d_1})\right)
+	\exp\left(\frac{x_i^2d_2^2}{2}(\frac{1}{a+b-d_1}-\frac{1}{c+d_1}+\frac{1}{a-d_1}-\frac{1}{2d_1})\right)\\
+	&\qquad\cdot
 	\exp\left(x_id_2\sqrt{L} \ln\frac{(c+d_1)(a-d_1)}{(a+b-d_1)d_1}\right)
 \end{align*}
 Solving equations
