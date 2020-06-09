@@ -689,7 +689,7 @@ $$\log(n!) = n\log(n) - n + O(\log(n))$$
 	\end{align*}
 Let $x_{i}=\frac{\ell_{i}}{n}$, we have $(ab)^{-\ell_{i}}=e^{-\frac{\ell_{i}}{n}}=e^{-x_{i}}$. Denote $\omega(x_{i})=e^{-x_{i}}$ and then
 $$\rho(x_{1},x_{2},\dots,x_{N})\propto\prod_{1\leqslant i<j \leqslant N}(x_{i}-x_{j})^2\prod_{i=1}^{N}\omega(x_{i})$$
-Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqslant i<j \leqslant N}(x_{i}-x_{j})^2\prod_{i=1}^{N}e^{-x_{i}}$.
+Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqslant i<j \leqslant N}(x_{i}-x_{j})^2\prod_{i=1}^{N}e^{-x_{i}}=\frac{1}{N!}\prod_{i=0}^{N-1}(i!)^2$, and this follows from Selberg's Integral.
 
 
 \section{Couplings}
