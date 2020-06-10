@@ -295,79 +295,89 @@ since $n(n-1)$ is always even.
 
 
 	\subsection*{Problem 5}
-	(1)$\phi_{n}(t)=\mathbb{E}[e^{itY_{n}}]=\sum\limits_{k=0}^{\infty}p_{n}(1-p_{n})^{k}e^{itp_{n}k}=\frac{p_{n}}{1-(1-p_{n})e^{itp_{n}}}$. Then, $$\lim\limits_{n\rightarrow\infty}\phi_{n}(t)=\lim\limits_{x\rightarrow 0}\frac{x}{1-(1-x)e^{itx}}=\lim\limits_{x\rightarrow 0}\frac{1}{1-it(1-x)e^{itx}}(\text{L'Hospital})=\frac{1}{1-it},$$
-which is the characteristic function of exponential random variable with parameter $1$. Therefore, $Y_{n}$ weakly converges to $Z\sim Exp(1)$.\\
-(2) Notice that 
+	(1)Suppose $\phi_{n}=\mathbb{E}[e^{itY_{n}}]$ is the characteristic function of the random variable $Y_{n}=p_{n}\cdot X_{n}$ given in the problem. Then, we have $\phi_{n}(t)=\mathbb{E}[e^{itY_{n}}]=\sum\limits_{k=0}^{\infty}p_{n}(1-p_{n})^{k}e^{itp_{n}k}=\frac{p_{n}}{1-(1-p_{n})e^{itp_{n}}}$. Let $n\rightarrow\infty$, $$\lim\limits_{n\rightarrow\infty}\phi_{n}(t)=\lim\limits_{x\rightarrow 0}\frac{x}{1-(1-x)e^{itx}}=\lim\limits_{x\rightarrow 0}\frac{1}{1-it(1-x)e^{itx}}(\text{L'Hopital})=\frac{1}{1-it},$$
+which is the characteristic function of exponential random variable with parameter $1$. By L\'{e}vy's continuity Theorem, $Y_{n}$ weakly converges to $Z\sim Exp(1)$.\\
+(2) Denote $q_{n}=1-p_{n}$. Notice that 
 \begin{align*}
 \frac{d}{d q_{n}}\mathbb{E}[Y_{n}^{k-1}]&=\frac{d}{d q_{n}}[\sum_{x=0}^{\infty}p_{n}^{k-1}x^{k-1}p_{n}q_{n}^{x}]=	\sum_{x=0}^{\infty}x^{k-1}[-kp_{n}^{k-1}q_{n}^{x}+p_{n}^{k}x q_{n}^{x-1}]\\
 &=-\frac{k}{p_{n}}\sum_{x=0}^{\infty}(p_{n}x)^{k-1}p_{n}q_{n}^{x}+\frac{1}{p_{n}q_{n}}\sum_{x=0}^{\infty}(p_{n}x)^{k}p_{n}q_{n}^{x}\\
 &=-\frac{k}{p_{n}}\mathbb{E}[Y_{n}^{k-1}]+\frac{1}{p_{n}q_{n}}\mathbb{E}[Y_{n}^{k}]
 \end{align*}
-Therefore, we have $$\mathbb{E}[Y_{n}^{k}]=p_{n}q_{n}\frac{d}{d q_{n}}\mathbb{E}[Y_{n}^{k-1}]+k\cdot q_{n}\mathbb{E}[Y^{k-1}]$$
-Let $p_{n}\rightarrow 0$, we get $\lim\limits_{n\rightarrow\infty}\mathbb{E}[Y_{n}^{k}]=k\cdot \lim\limits_{n\rightarrow\infty}\mathbb{E}[Y_{n}^{k-1}]$.
+For the second equality, we notice that the infinite sum is actually $p_{n}^{k}\mathbb{E}[X_{n}^{k}]$, which is finite since geometric random variable has finite moment of any order.  By Fubini's Theorem, we can interchange the order of differentiation and infinite sum. Also, since $\mathbb{E}[Y_{n}^{k}]$ is finite for any fixed $n,k\in \mathbb{Z}^{+}$, the derivative $\frac{d}{d q_{n}}\mathbb{E}[Y_{n}^{k}]$ exists for any $n,k\in \mathbb{Z}^{+}$. Then, we get $$\mathbb{E}[Y_{n}^{k}]=p_{n}q_{n}\frac{d}{d q_{n}}\mathbb{E}[Y_{n}^{k-1}]+k\cdot q_{n}\mathbb{E}[Y^{k-1}]$$
+Let $p_{n}\rightarrow 0$, then $q_{n}\rightarrow 1$ and we get $\lim\limits_{n\rightarrow\infty}\mathbb{E}[Y_{n}^{k}]=k\cdot \lim\limits_{n\rightarrow\infty}\mathbb{E}[Y_{n}^{k-1}]$.
 Since $\lim\limits_{n\rightarrow\infty}\mathbb{E}[Y_{n}]=\lim\limits_{n\rightarrow\infty}p_{n}\cdot\frac{1-p_{n}}{p_{n}}=1$, we obtain: $$\lim\limits_{n\rightarrow\infty}\mathbb{E}[Y_{n}^k]=k!$$
 which is the $k$-$th$ moment of exponential random variable with parameter $1$.
 
 
-(3) For a bounded continuous function $f$ which is bounded by $M$, $$\mathbb{E}[f(Y_{n})]=\sum_{k=0}^{\infty}f(kp_{n})p_{n}(1-p_{n})^{k}\leqslant \frac{M(1-p_{n})}{p_{n}}$$ is well-defined.
-Notice that $(1-p_{n})^{k}=e^{kln(1-p_{n})}=e^{-kp_{n}+o(p_{n})}=e^{-kp_{n}}(1+o(p_{n}))$, so $$\mathbb{E}[f(Y_{n})]=\sum_{k=0}^{\infty}f(kp_{n})p_{n}e^{-kp_{n}}+\sum_{k=0}^{\infty}f(kp_{n})p_{n}e^{-kp_{n}}o(p_{n})$$
-For the first term, $$\lim_{n\rightarrow\infty}\sum_{k=0}^{\infty}f(kp_{n})p_{n}e^{-kp_{n}}=\int_{0}^{\infty}f(x)e^{-x}dx=\mathbb{E}[f(Y)]$$
-by definition of integral, and here we use the continuity of function $f$. For the second term, it converges to $0$. Thus, $\mathbb{E}[f(Y_{n})]\xrightarrow{n\rightarrow\infty}\mathbb{E}[f(Y)]$.\\
-(4) Consider $\frac{1}{p_{n}}\cdot p_{n}(1-p_{n})^{k_{n}}$, where $k_{n}=x\cdot\frac{1}{p_{n}}$. Notice that $\frac{1}{p_{n}}\cdot p_{n}(1-p_{n})^{k_{n}}=e^{\frac{x}{p_{n}}ln(1-p_{n})}=e^{\frac{x}{p_{n}}}(-p_{n}+o(p_{n}))=e^{-x+o(1)}$. Consider 
+(3) For a bounded continuous function $f:[0,\infty)\rightarrow\mathbb{R}$ which is bounded by $M$, $$\mathbb{E}[|f(Y_{n})|]=\sum_{k=0}^{\infty}|f(kp_{n})|p_{n}(1-p_{n})^{k}\leqslant M$$ is well-defined.
+Notice that $(1-p_{n})^{k}=e^{kln(1-p_{n})}=e^{-kp_{n}+o(p_{n})}=e^{-kp_{n}}(1+o(p_{n}))$ by Taylor's Expansion, so $$\mathbb{E}[f(Y_{n})]=\sum_{k=0}^{\infty}f(kp_{n})p_{n}e^{-kp_{n}}+\sum_{k=0}^{\infty}f(kp_{n})p_{n}e^{-kp_{n}}o(p_{n})$$
+Note that, $$\lim_{n\rightarrow\infty}\sum_{k=0}^{\infty}f(kp_{n})p_{n}e^{-kp_{n}}=\int_{0}^{\infty}f(x)e^{-x}dx=\mathbb{E}[f(Y)]$$
+by definition of Riemann integral, and the boundedness and continuity of function $f$. Here, $Y$ is an exponential random variable with parameter $1$. Furthermore, the second term converges to $0$ when $n\rightarrow\infty$ because $\sum_{k=0}^{\infty}f(kp_{n})p_{n}e^{-kp_{n}}\leqslant p_{n}M$. Thus, $\mathbb{E}[f(Y_{n})]\xrightarrow{n\rightarrow\infty}\mathbb{E}[f(Y)]$.\\
+(4) Take two real numbers $a<b$ and consider the probability
 \begin{align*}
 	\mathbb{P}(a\leqslant Y_{n}\leqslant b) &= \mathbb{P}(\frac{a}{p_{n}}\leqslant X_{n}\leqslant \frac{b}{p_{n}})\\
-	&=\sum_{k=m_{n}}^{M_{n}}\mathbb{P}(X_{n}=k)\quad(\text{where $m_n=[\frac{a}{p_{n}}]+1$, $M_{n}=[\frac{b}{p_{n}}]$})\\
-	&= \sum_{k=m_{n}}^{M_{n}}p_{n}e^{x_{k}+o(1)}\quad(\text{where $x_{k}=p_{n}k$ and $x_{k}-x_{k-1}=p_{n}$})\\
-	&\approx\sum_{k=m_{n}}^{M_{n}}\int_{x_{k}-\frac{1}{2}p_{n}}^{x_{k}+\frac{1}{2}p_{n}}e^{-x}dx=\int_{x_{m_{n}}-\frac{1}{2}p_{n}}^{x_{M_{n}}+\frac{1}{2}p_{n}}e^{-x}dx\\
+	&=\sum_{k=m_{n}}^{M_{n}}\mathbb{P}(X_{n}=k)\quad(\text{where $m_n=\lfloor\frac{a}{p_{n}}\rfloor +1$, $M_{n}=\lfloor\frac{b}{p_{n}}\rfloor$})
+	\end{align*}
+Notice that $\mathbb{P}(X_{n}=k)=\mathbb{P}(Y_{n}=kp_{n})= \mathbb{P}(Y_{n}=x_{k})$, where $x_{k}=k\cdot p_{n}$. On the other hand, $\mathbb{P}(X_{n}=k)=p_{n}(1-p_{n})^{k} = p_{n}(1-p_{n})^{\frac{x_{k}}{p_{n}}} = p_{n} e^{-x_{k}+o(1)}$. This is because $(1-p_{n})^{\frac{x_{k}}{p_{n}}}=e^{\frac{x_{k}}{p_{n}}ln(1-p_{n})}=e^{\frac{x_{k}}{p_{n}}(-p_{n}+o(p_{n}))}=e^{-x_{k}+o(1)}$ by Taylor's expansion. Then,
+\begin{align*}
+	\mathbb{P}(a\leqslant Y_{n}\leqslant b) &= \sum_{k=m_{n}}^{M_{n}}p_{n}e^{x_{k}+o(1)}\quad(\text{where $x_{k}=p_{n}k$ and $x_{k}-x_{k-1}=p_{n}$})\\
+	&\approx\sum_{k=m_{n}}^{M_{n}}\int_{x_{k}-\frac{1}{2}p_{n}}^{x_{k}+\frac{1}{2}p_{n}}e^{-x}dx\quad(\text{by definition of Riemann integral})\\
+	&=\int_{x_{m_{n}}-\frac{1}{2}p_{n}}^{x_{M_{n}}+\frac{1}{2}p_{n}}e^{-x}dx\\
 	& \rightarrow \int_{a}^{b}e^{-x}dx\quad(\text{as $n\rightarrow\infty$})
 \end{align*}
-Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-\infty}^{x}e^{-u}du$.
+Let $a\rightarrow -\infty$, we get $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-\infty}^{x}e^{-u}du$.
+
 
 	\subsection*{Problem 6}
-	(1)\begin{align*}
+	(1) Suppose $\phi_{n}(t)$ is the characteristic function of random variable $X_{n}$ given in the problem. Then,
+	\begin{align*}
 	\phi_{n}(t)&= \mathbb{E}[e^{itX_{n}}]=\sum_{k=0}^{N_{n}}\binom{N_{n}}{k}p_n^{k}(1-p_n)^{N_{n}-k}e^{itk}\\
 	&=(p_{n}e^{it}+(1-p_n))^{N_{n}}\\
 	&=e^{N_{n}ln(1+p_{n}(e^{it}-1))}
 \end{align*}
-As $p_n\rightarrow 0$, $N_{n}\rightarrow\infty$, $p_{n}N_{n}\rightarrow \lambda$, we have $ln(1+p_{n}(e^{it}-1))\rightarrow p_{n}(e^{it}-1)$, and $\lim\limits_{n\rightarrow\infty}\phi_{n}(t)= e^{\lim\limits_{n\rightarrow\infty}N_{n}p_{n}(e^{it}-1)}=e^{\lambda (e^{it}-1)}$, which is the characteristic function of Poisson distribution. Thus, $X_{n}$ weakly converges to Poisson random variable with parameter $\lambda$.\\
+As $p_n\rightarrow 0$, $N_{n}\rightarrow\infty$, $p_{n}N_{n}\rightarrow \lambda$, we have $ln(1+p_{n}(e^{it}-1))=p_{n}(e^{it}-1)+o(p_{n})$ by Taylor's expansion, and $\phi_{n}(t)= e^{N_{n}(p_{n}(e^{it}-1)+o(p_{n}))}=e^{\lambda (e^{it}-1)+o(1)}$. Let $n\rightarrow\infty$, we have $\phi_{n}(t)\rightarrow e^{\lambda (e^{it}-1)}$, which is the characteristic function of Poisson distribution. Thus, by L\'{e}vy's continuity Theorem,  $X_{n}$ weakly converges to Poisson random variable with parameter $\lambda$.\\
 (2) Denote $$P_{k,n}=\frac{N_{n}!}{k!(N_{n}-k)!}\cdot p_{n}^{k}(1-p_{n})^{N_{n}-k}=\frac{(p_{n}N_{n})^{k}}{k!}\cdot \frac{N_{n}!}{N_{n}^{k}(N_{n}-k)!}(1-p_{n})^{N_{n}-k}$$
 Notice that $\frac{N_{n}!}{N_{n}^{k}(N_{n}-k)!}=\frac{N_{n}}{N_{n}}\cdot\frac{N_{n}-1}{N_{n}}\cdot\dots\cdot\frac{N_{n}-k+1}{N_{n}}\rightarrow 1$, as $N_{n}\rightarrow\infty$;\\ 
 
 	$(1-p_{n})^{N_{n}-k}=e^{(N_{n}-k)ln(1-p_{n})}=e^{(N_{n}-k)(-p_{n}+o(p_{n}))}\rightarrow e^{-\lambda}$, as $n\rightarrow\infty$; \\ and $\frac{(p_{n}N_{n})^{k}}{k!}\rightarrow\frac{\lambda^{k}}{k!}$. Therefore, $P_{k,n}\rightarrow\frac{\lambda^{k}}{k!}e^{-\lambda}$ as $n\rightarrow\infty$. Then, $\mathbb{P}(X_{n}\leqslant x)=\sum_{k=1}^{[x]}P_{k,n}$. Let $n\rightarrow\infty$, $\mathbb{P}(X_{n}\leqslant x)=\sum_{k=1}^{[x]}P_{k,n}\rightarrow\sum_{k=1}^{[x]}\frac{\lambda^{k}}{k!}e^{-\lambda}$ is the distribution of Poisson random variable.
 
 	\subsection*{Problem 7}
-(1)
+(1)Let $\phi_{n}(t)$ be the characteristic function of random variable $Y_{n}$ given in the problem. Then,
 \begin{align*}
 \phi_{n}(t)&=\mathbb{E}[e^{itY_{n}}]=\sum_{k=0}^{\infty}e^{-n}\frac{n^k}{k!}e^{it\frac{k-n}{\sqrt{n}}}\\
 &=\sum_{k=0}^{\infty}\frac{(ne^{it\frac{1}{\sqrt{n}}})^{k}}{k!}e^{-it\sqrt{n}-n}\\
-&=e^{-it\sqrt{n}-n+ne^{it\frac{1}{\sqrt{n}}}}
+&=e^{-it\sqrt{n}-n+ne^{it\frac{1}{\sqrt{n}}}} = e^{n(e^{it\frac{1}{\sqrt{n}}}-1)-it\sqrt{n}}
 \end{align*}
-Notice that $n(e^{it\frac{1}{\sqrt{n}}}-1)-it\sqrt{n}=n(it\frac{1}{\sqrt{n}}+\frac{1}{2}(it\frac{1}{\sqrt{n}})^2+o(\frac{1}{n}))-it\sqrt{n}=-\frac{1}{2}t^2+o(1)$. Therefore, $\phi_{n}(t)\rightarrow e^{-\frac{1}{2}t^2}$ as $n\rightarrow\infty$, which is the characteristic function of standard normal random variable.\\
-(2) Let us consider $\lim\limits_{n\rightarrow\infty}\sqrt{n}\frac{n^{k_{n}}}{k_{n}!}e^{-n}$, where $k_{n}=x\sqrt{n}+n$. By Stirling's formula, $n!\sim\sqrt{2\pi n}n^{n}e^{-n}$. Then,
+Notice that $n(e^{it\frac{1}{\sqrt{n}}}-1)-it\sqrt{n}=n(it\frac{1}{\sqrt{n}}+\frac{1}{2}(it\frac{1}{\sqrt{n}})^2+o(\frac{1}{n}))-it\sqrt{n}=-\frac{1}{2}t^2+o(1)$ by Taylor's expansion. Therefore, $\phi_{n}(t)\rightarrow e^{-\frac{1}{2}t^2}$ as $n\rightarrow\infty$, which is the characteristic function of standard Guassian random variable. By L\'{e}vy's continuity Theorem,  $Y_{n}$ weakly converges to a standard Gaussian random variable.\\
+(2) Take two real numbers $a<b$, and consider the probability
+\begin{align*}
+	\mathbb{P}(a\leqslant Y_{n}\leqslant b)&=\mathbb{P}(a\sqrt{n}+n\leqslant X_{n}\leqslant b_{n}+n)\\
+	&= \sum_{k=m_{n}}^{M_{n}}\mathbb{P}(X_{n}=k)\quad(\text{where $m_{n}=[a\sqrt{n}+n]+1$, $M_{n}=[b\sqrt{n}+n]$})\\
+	\end{align*}
+Notice that $\mathbb{P}(X_{n}=k)=\mathbb{P}(Y_{n}=\frac{k-n}{\sqrt{n}})=\mathbb{P}(Y_{n}=x_{k})$, where $x_{k}=\frac{k-n}{\sqrt{n}}$, $x_{k}-x_{k-1}=\frac{1}{\sqrt{n}}$ and $m_{n}\leqslant k \leqslant M_{n}$. On the other hand, $\mathbb{P}(X_{n}=k)=\frac{1}{\sqrt{n}}\cdot \sqrt{n}\frac{n^{k_{n}}}{k_{n}!}e^{-n}$. Denote $k_{n}=\sqrt{n}\frac{n^{k_{n}}}{k_{n}!}e^{-n}$. By Stirling's formula, 
 \begin{align*}
 \sqrt{n}\frac{n^{k_{n}}}{k_{n}!}e^{-n} &\sim \sqrt{n}\frac{n^{k_{n}}}{\sqrt{2\pi k_{n}}k_{n}^{k_{n}}e^{-k_{n}}} e^{-n}\\
 &=\frac{\sqrt{n}}{\sqrt{2\pi k_{n}}}(\frac{n}{k_{n}})^{k_{n}}e^{k_{n}-n}\\
-&=\frac{\sqrt{n}}{\sqrt{2\pi k_{n}}}e^{k_{n}ln(\frac{n}{k_{n}})+k_{n}-n}
+&=\frac{\sqrt{n}}{\sqrt{2\pi k_{n}}}e^{k_{n}ln(\frac{n}{k_{n}})+k_{n}-n}\\
 \end{align*}
-Notice that $k_{n}=x\sqrt{n}+n\sim O(n)$, we know $\lim\limits_{n\rightarrow\infty}\frac{\sqrt{n}}{\sqrt{k_{n}}}=1$;
+Since $k_{n}=x\sqrt{n}+n$, we have $\lim\limits_{n\rightarrow\infty}\frac{\sqrt{n}}{\sqrt{k_{n}}}=1$; On the other hand,
 \begin{align*}
 	k_{n}ln(\frac{n}{k_{n}})&=k_{n}ln(1-\frac{k_{n}-n}{k_{n}})\quad(\frac{k_{n}-n}{k_{n}}=\frac{x}{x+\sqrt{n}}\sim O(\frac{1}{\sqrt{n}}))\\
-	&=k_{n}(-\frac{k_{n}-n}{k_{n}}-\frac{1}{2}(\frac{k_{n}-n}{k_{n}})^{2}+o(\frac{1}{n}))\\
+	&=k_{n}(-\frac{k_{n}-n}{k_{n}}-\frac{1}{2}(\frac{k_{n}-n}{k_{n}})^{2}+o(\frac{1}{n}))\quad(\text{Taylor's expansion})\\
 	&=-k_{n}+n-\frac{1}{2}\frac{n x^2}{x\sqrt{n}+n}+o(1)\\
 	&=-k_{n}+n-\frac{1}{2}x^2+o(1)
 \end{align*}
-Therefore, $\sqrt{n}\frac{n^{k_{n}}}{k_{n}!}e^{-n}=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2+o(1)}$.\\
-Next, consider: $\mathbb{P}(a\leqslant Y_{n}\leqslant b)=\mathbb{P}(a\sqrt{n}+n\leqslant X_{n}\leqslant b_{n}+n)$. Denote $m_{n}=[a\sqrt{n}+n]+1$, $M_{n}=[b\sqrt{n}+n]$, then
+The last equality holds because $\frac{nx^2}{x\sqrt{n}+n}=x^2-\frac{x^3\sqrt{n}}{x\sqrt{n}+n}=x^2+o(1)$. Therefore, we obtain $k_{n}=\sqrt{n}\frac{n^{k_{n}}}{k_{n}!}e^{-n}=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2+o(1)}$.\\
+Plug this result into the first equation, we get
 \begin{align*}
-	\mathbb{P}(a\leqslant Y_{n}\leqslant b)&=\sum_{k=m_{n}}^{M_{n}}\mathbb{P}(X_{n}=k)\\
-	&=\sum_{k=m_{n}}^{M_{n}}\frac{1}{\sqrt{n}}\frac{1}{\sqrt{2\pi}}e^{-\frac{x_{k}^2}{2}+o(1)}\quad(\text{where $x_{k}=\frac{k-n}{\sqrt{n}}$, $x_{k}-x_{k-1}=\frac{1}{\sqrt{n}}$})\\
-	&\approx \sum_{k=m_{n}}^{M_{n}}\int_{x_{k}-\frac{1}{2\sqrt{n}}}^{x_{k}+\frac{1}{2\sqrt{n}}} \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx\\
+\mathbb{P}(a\leqslant Y_{n}\leqslant b)&=\sum_{k=m_{n}}^{M_{n}}\frac{1}{\sqrt{n}}\frac{1}{\sqrt{2\pi}}e^{-\frac{x_{k}^2}{2}+o(1)} \\
+&\approx \sum_{k=m_{n}}^{M_{n}}\int_{x_{k}-\frac{1}{2\sqrt{n}}}^{x_{k}+\frac{1}{2\sqrt{n}}} \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx\quad(\text{by definition of Riemann integral})\\
 	&=\int_{x_{m_{n}}-\frac{1}{2\sqrt{n}}}^{x_{M_{n}}+\frac{1}{2\sqrt{n}}} \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx\\
-	& \rightarrow \int_{a}^{b}\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx
+	& \rightarrow \int_{a}^{b}\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx\text{, as $n\rightarrow\infty$.}
 \end{align*}
-Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-\infty}^{x}\frac{1}{\sqrt{2\pi}}e^{-\frac{u^2}{2}}du$.\\
-(3) Suppose $Z_{1},Z_{2},\dots, Z_{n}$, \emph{I.I.D}, are Poisson random variables with parameter $1$. Then, $X_{n}=\sum\limits_{k=1}^{n}Z_{k}\sim Poisson(n)$, and $\mathbb{E}(X_{n})=n$, $Var(X_{n})=n$. By Central Limit Theorem, $\frac{X_{n}-n}{\sqrt{n}}\xrightarrow{d}\mathcal{N}(0,1)$.
+Let $a\rightarrow -\infty$, we get $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-\infty}^{x}\frac{1}{\sqrt{2\pi}}e^{-\frac{u^2}{2}}du$. Hence, $Y_{n}$ weakly converges to a standard normal random variable.\\
 
+(3) Suppose $Z_{1},Z_{2},\dots, Z_{n}$, are \emph{I.I.D} Poisson random variables with parameter $1$. Then, $X_{n}=\sum\limits_{k=1}^{n}Z_{k}\sim Poisson(n)$, where $\mathbb{E}(X_{n})=n$ and $Var(X_{n})=n$. By Central Limit Theorem, $\frac{X_{n}-n}{\sqrt{n}}\xrightarrow{d}\mathcal{N}(0,1)$.
 \section{Tightness}
 
 	\subsection*{Problem 8}
@@ -506,8 +516,8 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 		
 
 	\subsection*{Problem 11}
-	Denote $\ell=(\ell_{1},\ell_{2},\dots,\ell_{N})$, where $\ell_{j}=y_{j}^{N}$. Define the partition $\lambda^{\ell}$: $\lambda^{\ell}_{j}=y_{j}^{N}-((N-j)+\frac{1}{2})=\ell_{j}-(N-j)$, $j=1,2\dots,N$, and $\lambda_{j}^{\ell}=0$ if $j>N$, just as what we did in Problem 10 when defining partition $\lambda$. Since we assign a uniform probability measure on random lozenge tilings, \emph{i.e.}, every outcome of tiling has the same probabilities, we conclude $$\mathbb P(\ell_1,\cdots \ell_N)=\frac{\#\{\text{Tilings between $(0,0)$ and $(N,\lambda^{\ell})$}\}\cdot \#\{\text{Tilings between $(N,\lambda^{\ell})$ and $(B+C,\mu)$}\}}{s_\mu(1^{B+C})}$$
-	where $\mu=A^{C}$ is a deterministic partition we derived in Problem $10$. The pair $(\cdot,\cdot)$ in the statement specifies the first coordinate of the particles, and the corresponding partition of that coordinate. More specifically, $(0,0)$ means that on the $0$-$th$ vertical line we have a zero partition; $(N,\lambda^{\ell})$ means on the $N$-$th$ vertical line we have a partition $\lambda^{\ell}$.\\
+	Denote $\ell=(\ell_{1},\ell_{2},\dots,\ell_{N})$, where $\ell_{j}=y_{j}^{N}$. Define the partition $\lambda^{\ell}$: $\lambda^{\ell}_{j}=y_{j}^{N}-((N-j)+\frac{1}{2})=\ell_{j}-(N-j)$, $j=1,2\dots,N$, and $\lambda_{j}^{\ell}=0$ if $j>N$, just as what we did in Problem 10 when defining partition $\lambda$. Since we assign a uniform probability measure on random lozenge tilings, \emph{i.e.}, every outcome of tiling has the same probability, we conclude $$\mathbb P(\ell_1,\cdots \ell_N)=\frac{\#\{\text{Tilings between $(0,0)$ and $(N,\lambda^{\ell})$}\}\cdot \#\{\text{Tilings between $(N,\lambda^{\ell})$ and $(B+C,\mu)$}\}}{s_\mu(1^{B+C})}$$
+	where $\mu=A^{C}$ is the deterministic partition we derived in Problem $10$. The pair $(\cdot,\cdot)$ in the statement specifies the first coordinate of the particles, and the corresponding partition of that coordinate. More specifically, $(0,0)$ means that on the $0$-$th$ vertical line we have a zero partition; $(N,\lambda^{\ell})$ means on the $N$-$th$ vertical line we have a partition $\lambda^{\ell}$.\\
 	Using the result of Problem $10$, we know $$\#\{\text{Tilings between $(0,0)$ and $(N,\lambda^{\ell})$}\}=s_{\lambda^{\ell}}(1^{N})=\prod_{1\leqslant i<j\leqslant N}\frac{\lambda^{\ell}_{i}-\lambda^{\ell}_{j}+j-i}{j-i}=\prod_{1\leqslant i<j\leqslant N}\frac{\ell_{i}-\ell_{j}}{j-i}$$
 	$$s_{\mu}(1^{B+C})=\prod_{i=1}^{C}\prod_{j=C+1}^{B+C}\frac{A+j-i}{j-i}$$
 	For \#\{Tilings between $(N,\lambda^{\ell})$ and $(B+C,\mu)$\}, we consider a tiling from the right to the left, as the picture demonstrates.
@@ -517,9 +527,9 @@ Therefore, $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y_{n}\leqslant x)=\int_{-
 	\end{figure}  
 	From the picture, we can see the following several facts:
 	(\romannumeral 1) Focused on the $n$-th vertical line, the left hand side of it is a tiling from the left to the right, and the right hand side of it is a tiling from the right to the left if we extend the tiling region as the picture does.\\
-	(\romannumeral 2) The left hand side(green dots) is a tiling from $(0,0)$ to $(N,\lambda^{\ell})$, while the right hand side(red dots) is a tiling from $(0,0)$ to $(B+C-N,\lambda^{\prime})$, if we look at it in the opposite direction(from the right to the left). Here, $\lambda^{\prime}$ is a new partition we are going to investigate in the following reasonings. For now we can easily observe that the extended $N$-$th$ vertical line, or the $(B+C-N)$-$th$ vertical line from the right to the left, contains $B+C-N$ particles. There are $B-N$ particles above and $C-N$ particles below the hexagon region, which are specified in the picture. Also, the hexagon region contains $N$ particles of the original tiling from the left to the right.\\
+	(\romannumeral 2) The left hand side(green dots) is a tiling from $(0,0)$ to $(N,\lambda^{\ell})$, while the right hand side(red dots) is a tiling from $(0,0)$ to $(B+C-N,\lambda^{\prime})$, if we look at it in the opposite direction(from the right to the left). Here, $\lambda^{\prime}$ is a new partition that we will investigate in the next paragraph. For now we can easily observe that the extended $N$-$th$ vertical line, or the $(B+C-N)$-$th$ vertical line from the right to the left, contains $B+C-N$ particles. There are $B-N$ particles above and $C-N$ particles below the hexagon region, which are specified in the picture. Also, the hexagon region contains $N$ particles of the original tiling from the left to the right.\\
 	(\romannumeral 3) From the construction of the tiling and the ``converse tiling'' in the opposite direction, we can find that there is a bijection between tiling from $(N,\lambda^{\ell})$ to $(B+C,\mu)$ and tiling from $(0,0)$ to $(B+C-N,\lambda^{\prime})$. Therefore, to compute the number of tilings from $(N,\lambda^{\ell})$ to $(B+C,\mu)$ is equivalent to compute the number of tilings from $(0,0)$ to $(B+C-N,\lambda^{\prime})$.\\
-	\par Next, let's try to figure out the new partition $\lambda^{\prime}$. In the following reasonings, we consider the ``converse tiling'' and use the corresponding coordinates. We denote the second coordinates of the particles on the $(B+C-N)$-$th$ vertical line by $y^{B+C-N}_{i}$ from the top to the bottom, $i=1,2,\dots,B+C-N$. Denote $\ell^{\prime}_{i}=y^{B+C-N}_{i}-\frac{1}{2}$, and it's easy to check: 
+	\par Next, let's find the new partition $\lambda^{\prime}$. In the following proof, we consider the ``converse tiling'' and use the corresponding coordinates. We denote the second coordinates of the particles on the $(B+C-N)$-$th$ vertical line by $y^{B+C-N}_{i}$ from the top to the bottom, $i=1,2,\dots,B+C-N$. Denote $\ell^{\prime}_{i}=y^{B+C-N}_{i}-\frac{1}{2}$, and it's easy to check: 
 	$$
 	\ell^{\prime}_{i}=
 	\begin{cases}
