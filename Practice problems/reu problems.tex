@@ -562,10 +562,10 @@ Let $a\rightarrow -\infty$, we get $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y
 	\end{align*}
 	Notice that only $P_{2}$ and $P_{5}$ contain the term $\ell_{i}$, and we have 
 	\begin{align*}
-	P_{2}\cdot P_{5} &= \prod_{i=1}^{N}\frac{(A+B-\ell_{i}-1)!(\ell_{i}+C-N)!}{(A+N-\ell_{i}-1)!\ell_{i}!}\cdot\prod_{i=1}^{N}\frac{(j-1)!(N-i)!}{(j+B-N-1)!(C-i)!}\\
+	P_{2}\cdot P_{5} &= \prod_{i=1}^{N}\frac{(A+B-\ell_{i}-1)!(\ell_{i}+C-N)!}{(A+N-\ell_{i}-1)!\ell_{i}!}\cdot\prod_{i=1}^{N}\frac{(i-1)!(N-i)!}{(i+B-N-1)!(C-i)!}\\
 	&=\Big[\prod_{i=1}^{N}\omega(\ell_{i})\Big]\cdot M
 	\end{align*} 
-	where $$M=\prod_{i=1}^{N}\frac{(j-1)!(N-i)!}{(j+B-N-1)!(C-i)!}$$ and $$\omega(\ell_{i})=\frac{(A+B-\ell_{i}-1)!(\ell_{i}+C-N)!}{(A+N-\ell_{i}-1)!\ell_{i}!}$$
+	where $$M=\prod_{i=1}^{N}\frac{(i-1)!(N-i)!}{(i+B-N-1)!(C-i)!}$$ and $$\omega(\ell_{i})=\frac{(A+B-\ell_{i}-1)!(\ell_{i}+C-N)!}{(A+N-\ell_{i}-1)!\ell_{i}!}$$
 	To sum up,
 	\begin{align*}
 	\mathbb P(\ell_1,\cdots \ell_N)&=\frac{s_{\lambda^{\ell}}(1^{N})\prod_{k=1}^{6}P_{k}}{s_{\mu}(1^{B+C})}=\frac{(s_{\lambda^{\ell}}(1^{N}))^{2}\cdot P3\cdot P2\cdot P5}{s_{\mu}(1^{B+C})}\\
