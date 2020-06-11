@@ -777,7 +777,7 @@ Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqsla
 
 \section{Avoiding Bernoulli line ensembles}
 
-	\section*{Problem 16}
+	\subsection*{Problem 16}
 	Let $\Omega(0,T,\bar x^T, \bar y ^T)$ be the set of all non intersecting Bernoulli line ensembles from $\bar x^T$ to $\bar y^T$ then we may find that for each line ensemble $\mathfrak{B}\in \Omega(0,T,\bar x^T,\bar y^T)$ with $\mathfrak B=(B_1,...,B_k)$, we may define $\lambda_i(\mathfrak B):=(B_1(i),B_2(i),...,B_k(i))$. 
 This is a partition since by the definition of avoiding Bernoulli line ensembles, we have the inequality $B_\alpha(i)>B_\beta(i)$ if $\alpha<\beta$. 
 Now because $B_\alpha(i+1)-B_\alpha(i)\in \{0,1\}$ we know that $B_\alpha(i+1)\geq B_\alpha(i)$ but also since $B_\alpha(i+1)\in \mathbb{Z}$ and $B_{\alpha+1}<B_\alpha(i+1)$ (strictly) by the earlier stated inequality, we know that$B_{\alpha+1}+1\leq B_\alpha(i+1)$ and so we find that 
@@ -844,7 +844,7 @@ A&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det
 	\right)_{1=i,j}^k
 \end{align*}
 
-	\section*{Lemmas from Section 3.2}
+	\subsection*{Lemmas from Section 3.2}
 	
 	\begin{lemma}\label{LemmaHalfS4} Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $x, y\in \mathbb{Z}$ such that $T \geq y-x \geq 0$, and suppose that $\ell$ has distribution $\mathbb{P}^{0,T,x,y}_{Ber}$. Let $M_1, M_2 \in \mathbb{R}$ be given. Then we can find $W_0 = W_0(p,M_2 - M_1) \in \mathbb{N}$ such that for $T \geq W_0$, $x \geq M_1 T^{1/2}$, $y \geq pT + M_2 T^{1/2}$ and $s \in [0,T]$ we have
 		\begin{equation}\label{halfEq1S4}
@@ -1035,6 +1035,38 @@ A&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det
 		The last term is $O(e^{-T^{1/2}})$ by the argument in the proof of Lemma 3.5, so we can choose $W_4$ large enough depending on $M,p,\epsilon,\eta$ so that this term is $\leq\eta/2$ for $T\geq W_4$. Since $B^\sigma$ is a.s. uniformly continuous on the compact interval $[0,1]$, $w(B^\sigma,\delta) \to 0$ as $\delta\to 0$. Thus we can find $\delta_0>0$ small enough depending on $\epsilon,\eta$ so that $w(B^\sigma,\delta_0) < \epsilon/2$ with probability at least $1-\eta/2$. Then with $\delta = \min(\delta_0, \epsilon/4M)$, the first term is $\leq\eta/2$ as well. This implies (8).
 		
 	\end{proof}
+
+
+\subsection*{Problem 17}
+
+
+\subsection*{Problem 18}
+
+	Fix $p\in(0,1)$, $k\in\mathbb{N}$. Let $\vec{x}^T = (x_1^T,\dots,x_k^T)$ and $\vec{y}^T = (y_1^T,\dots,y_k^T)$ be sequences in $\mathfrak{W}_k$ with $0\leq y_i^T - x_i^T \leq T$ for each $i$, and let $(L_1,\dots,L_k)$ be a line ensemble with law $\mathbb{P}^{0,T,\vec{x}^T,\vec{y}^T}_{avoid, Ber}$.  We aim to find a constant $A>0$ depending on $p$ and $k$ so that for any $M_1, M_2 > 0$, there exists a $T_0 \in \mathbb{N}$ depending on $p,k,M_1,M_2$ such that if $T\geq T_0$, $x_k^T \geq M_1\sqrt{T}$, and $y_k^T \geq pT + M_2\sqrt{T}$, then
+	\[
+	P := \mathbb{P}^{0,T,\vec{x}^T,\vec{y}^T}_{avoid, Ber} \Big( L_k(T/2) - pT/2 \leq \frac{M_1+M_2}{2} - A\sqrt{T} \Big) < \frac{1}{2}.
+	\]
+	
+	The idea of the following argument is to use monotone coupling to first lower each curve so that adjacent pairs of endpoints are a distance of roughly $\sqrt{T}$ apart, and then raise the endpoints of the top $k-1$ curves so that each curve has a characteristic slope of roughly $pT$. We then observe that $P$ can be computed by assuming the $L_i$ are independent and conditioning on the event of non-intersection. We bound the probability above when $L_k$ is independent of the other curves, and use strong coupling for each curve with Brownian bridges to argue that the probability of non-intersection is high.
+	
+	We first note that Lemma 3.1 allows us to assume without loss of generality that $x_k^T = \floor{M_1\sqrt{T}}$ and $y_k^T = \floor{pT + M_2\sqrt{T}}$, as this will only increase $P$. (For details, see the proof of Lemma 3.5.) We can then adjust the endpoints according to
+	\[
+	x_i^T{}' = x_i^T - C(i-1)\sqrt{T}, \quad y_i^T{}' = y_i^T - C(i-1)\sqrt{T},
+	\]
+	where $C$ is a constant to be chosen later depending on $p$. Then by monotone coupling,
+	\[
+	P \leq \mathbb{P}^{0,T,\vec{x}^T{}',\vec{y}^T{}'}_{avoid, Ber} \Big( L_k(T/2) - pT/2 \leq \frac{M_1+M_2}{2} - A\sqrt{T} \Big) < \frac{1}{2}.
+	\]
+	We take $A = C(r+k-1)$, for some $r>0$ to be chosen later depending on $p$. We now apply monotone coupling to ensure that $|y_i^T{}' - x_i^T{}' - pT| \leq 1$ for $1\leq i\leq k-1$. Namely, we first increase either $x_{k-1}^T{}'$ or $y_{k-1}^T{}'$, depending on whether the difference is greater than $pT + 1$ or smaller than $pT - 1$. We then do the same with $L_{k-2}$, ensuring that the endpoints remain at a distance of at least $C\sqrt{T}$ from the endpoints of $L_{k-1}$.
+
+
+\subsection*{Problem 19}
+
+
+\subsection*{Problem 20}
+
+
+\section{$(\alpha, p, \lambda)$-good sequences}
 	
 	
 \end{document}
