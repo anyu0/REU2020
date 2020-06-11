@@ -582,7 +582,16 @@ Let $a\rightarrow -\infty$, we get $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y
 	and the expression of $M$, $s_{\mu}(1^{B+C})$, $P_{3}$, and $\omega(\ell_{i})$ are given above.
 	
 	\subsection*{Problem 12}
-
+Step 1. We find the normalization constant by solving
+\begin{align*}
+	\int_{-\infty}^{-\infty} \dots \int_{-\infty}^{-\infty} 
+	 \frac{1}{Z_N} \prod_{1 \leq i < j \leq N} (x_i - x_j)^2 \prod_{i = 1}^N e^{-\frac{x_i}{2}} dx_1\dots dx_N = 1
+\end{align*}
+By Mehta's integral, the constant is given by
+\begin{align*}
+	Z_N = (2\pi)^{\frac{N}{2}} \prod_{i=1}^N i!
+\end{align*}
+Step 2. Calculate $d_1$ and $d_2$. \\
 From the previous problem, we have the probability distribution
 \begin{equation}\label{Eqn1}
 	\mathbb{P}(\ell_1, \dots, \ell_N) = \frac{1}{Z} \prod_{1 \leq i < j \leq N} (\ell_i - \ell_j)^2 \prod_{i = 1}^Nw(\ell_i),
