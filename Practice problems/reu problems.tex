@@ -4,6 +4,7 @@
 \usepackage{stmaryrd, mathtools}
 \usepackage{amsmath, amssymb, graphicx}
 \usepackage{mathtools}
+\usepackage{bbm}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 \newtheorem*{lemma*}{Lemma}
@@ -691,13 +692,39 @@ $$\log(n!) = n\log(n) - n + O(\log(n))$$
 ...
 
 	\subsection*{Problem 14}
-	By Cauchy identity, we have $$\sum_{\lambda}s_{\lambda}(a^{N})s_{\lambda}(b^{N})=\prod_{1\leqslant i,j\leqslant N}(1-ab)^{-1}=(1-ab)^{-N^2}$$ Therefore, $z_{N}(a,b)=(1-ab)^{-N^2}$. By Problem 4, Schur symmetric function is a homogeneous polynomial with degree $|\lambda|$. Thus, $s_{\lambda}(a^{N})=a^{\sum_{i=1}^{n}\lambda_{i}}s_{\lambda}(1^{N})$ and $s_{\lambda}(b^{N})=b^{\sum_{i=1}^{n}\lambda_{i}}s_{\lambda}(1^{N})$. Then,
+In this problem, we mimic the process in Problem 12 to prove the weak convergence of the random vector $(X_{1},\dots,X_{N})$, where $X_{i}=\frac{\ell_{i}}{n}$, $i=1,\dots,N$. Take real numbers $u_{1},\dots, u_{N}$ and $v_{1},\dots, v_{N}$ such that $u_{i}<v_{i}$ for $i=1,\dots, N$, and consider the probability: 
+\begin{align*}
+\mathbb{P}(u_{1}\leqslant X_{1} \leqslant v_{1}, \dots,  u_{N}\leqslant X_{N} \leqslant v_{N})&=\mathbb{P}(nu_{i}\leqslant \ell_{i} \leqslant nv_{i}, i=1,\dots, N)	\\
+&=\sum_{t^{(1)}=\lfloor nu_{1}\rfloor+1}^{\lfloor nv_{1}\rfloor}\dots \sum_{t^{(N)}=\lfloor nu_{N}\rfloor+1}^{\lfloor nv_{N}\rfloor}\mathbb{P}(\ell_{1}=t^{(1)},\dots,\ell_{N}=t^{(N)})\\
+&=\sum_{t^{(1)}=\lfloor nu_{1}\rfloor+1}^{\lfloor nv_{1}\rfloor}\dots \sum_{t^{(N)}=\lfloor nu_{N}\rfloor+1}^{\lfloor nv_{N}\rfloor}\mathbb{P}(X_{1}=s_{t^{(1)}},\dots, X_{N}=s_{t^{(N)}})
+\end{align*}
+where $s_{t^{(i)}}=\frac{t^{(i)}}{n}$, and $s_{t^{(i)}}-s_{t^{(i)}-1}=\frac{1}{n}$ for every $\lfloor nu_{i}\rfloor +2\leqslant t^{(i)}\leqslant \lfloor nv_{i}\rfloor$ and every $i=1,\dots, N$.\\
+\textbf{We claim that}, $(n)^{N}\mathbb{P}(X_{1}=s_{t^{(1)}},\dots,X_{N}=s_{t^{(N)}})\rightarrow \rho(s_{t^{(1)}},\dots, s_{t^{(N)}})$ as $n\rightarrow\infty$, where $$\rho(x_1,\dots, x_{N})=\frac{1}{\prod_{j=0}^{N-1}(j!)^{2}}\prod_{1\leqslant i<j\leqslant N}(x_{i}-x_{j})^2\prod_{i=1}^{N}e^{-x_{i}}\mathbbm{1}_{\{x1,\dots, x_{N}\geqslant 0\}}$$ 
+Notice that $\rho(x_1,\dots, x_{N})$ is a probability density function because it integrates to $1$ over $[0,\infty]^{N}$ by Selberg's Integral(\emph{Corollary 2.5.9, Random Matrix, Zeitouni}). We will prove this claim later.\\
+Denote $m^{L}_{i}=\lfloor nu_{i}\rfloor+1$, and $M^{L}_{i}=\lfloor nv_{i}\rfloor$. If our claim holds, then
+\begin{align*}
+	\mathbb{P}(u_{i}\leqslant X_{i} \leqslant v_{i}, i=1, \dots, N)&=\sum_{t^{(1)}=m_{1}^{L}}^{M_{1}^{L}}\dots\sum_{t^{(N)}=m_{N}^{L}}^{M_{N}^{L}}(\frac{1}{n})^{N}(\rho(s_{t^{(1)}},\dots, s_{t^{(N)}})+o(1))\\
+	&\approx \sum_{t^{(1)}=m_{1}^{L}}^{M_{1}^{L}}\dots\sum_{t^{(N)}=m_{N}^{L}}^{M_{N}^{L}}\int_{s_{t^{(1)}}-\frac{1}{2n}}^{s_{t^{(1)}}+\frac{1}{2n}}\dots\int_{s_{t^{(N)}}-\frac{1}{2n}}^{s_{t^{(N)}}+\frac{1}{2n}}\rho(x_1,\dots, x_{N})dx_{1}\dots dx_{N}\\
+	& = \int_{s_{m^{L}_{1}}-\frac{1}{2n}}^{s_{M^{L}_{1}}+\frac{1}{2n}}\dots\int_{s_{m^{L}_{N}}-\frac{1}{2n}}^{s_{M^{L}_{N}}+\frac{1}{2n}}\rho(x_1,\dots, x_{N})dx_{1}\dots dx_{N}\\
+	& \rightarrow \int_{u_{1}}^{v_{1}}\dots\int_{u_{N}}^{v_{N}}\rho(x_1,\dots, x_{N})dx_{1}\dots dx_{N}
+\end{align*}
+where the approximation in the second line uses the definition of Riemann integral.
+Let $u_{i}\rightarrow -\infty$, we get $$\mathbb{P}(X_{i} \leqslant v_{i}, i=1, \dots, N)\xrightarrow{n\rightarrow\infty} \int_{-\infty}^{v_{1}}\dots\int_{-\infty}^{v_{N}}\rho(x_1,\dots, x_{N})dx_{1}\dots dx_{N}$$ which means the random vector $(X_{1},\dots,X_{N})$ weakly converges to a continuous distribution with density $\rho(x_{1},\dots,x_{N})$.\\
+Now we prove our previous claim. By Cauchy identity, we have $$\sum_{\lambda}s_{\lambda}(a^{N})s_{\lambda}(b^{N})=\prod_{1\leqslant i,j\leqslant N}(1-ab)^{-1}=(1-ab)^{-N^2}$$ Therefore, the normalized constant $Z_{N}(a,b)$ in the problem equals to $(1-ab)^{-N^2}$. By Problem 4, Schur symmetric function is a homogeneous polynomial with degree $|\lambda|$. Thus, $s_{\lambda}(a^{N})=a^{\sum_{i=1}^{N}\lambda_{i}}s_{\lambda}(1^{N})$ and $s_{\lambda}(b^{N})=b^{\sum_{i=1}^{N}\lambda_{i}}s_{\lambda}(1^{N})$. Then,
 	\begin{align*}
-		\mathbb{P}(\lambda)&\propto s_{\lambda}(a^{N})\cdot s_{\lambda}(b^{N})=(ab)^{\sum_{i=1}^{n}\lambda_{i}}(s_{\lambda}(1^{N}))^{2}=(ab)^{\sum_{i=1}^{N}(\ell_{i}+i-N)}\Big[\prod_{1\leqslant i<j\leqslant N}\frac{\lambda_{i}-\lambda_{j}+j-i}{j-i}\Big]^{2}\\&=(ab)^{(\sum_{i=1}^{n}\ell_{i})-\frac{1}{2}N(N-1)}\Big[\prod_{1\leqslant i<j\leqslant N}\frac{\ell_{i}-\ell_{j}}{j-i}\Big]^{2}\\&=(ab)^{-\frac{1}{2}N(N-1)}\prod_{1\leqslant i<j\leqslant N} \frac{1}{(j-i)^{2}}\cdot \prod_{1\leqslant i<j\leqslant N}(\ell_{i}-\ell_{j})^{2}\cdot\prod_{i=1}^{N}(ab)^{\ell_{i}}
+		\mathbb{P}(\lambda)&= (1-ab)^{N^2}\cdot s_{\lambda}(a^{N})\cdot s_{\lambda}(b^{N})=(1-ab)^{N^2}(ab)^{\sum_{i=1}^{N}\lambda_{i}}(s_{\lambda}(1^{N}))^{2}\\
+		&=(1-ab)^{N^2}(ab)^{\sum_{i=1}^{N}(\ell_{i}+i-N)}\prod_{1\leqslant i<j\leqslant N}\Big[\frac{\lambda_{i}-\lambda_{j}+j-i}{j-i}\Big]^{2}\\
+		&=(1-ab)^{N^2}(ab)^{(\sum_{i=1}^{n}\ell_{i})-\frac{1}{2}N(N-1)}\prod_{1\leqslant i<j\leqslant N}\Big[\frac{\ell_{i}-\ell_{j}}{j-i}\Big]^{2}\\
+		&=(1-ab)^{N^2}(ab)^{-\frac{1}{2}N(N-1)}\prod_{i=0}^{N-1} \frac{1}{(j!)^{2}}\cdot \prod_{1\leqslant i<j\leqslant N}(\ell_{i}-\ell_{j})^{2}\cdot\prod_{i=1}^{N}(ab)^{\ell_{i}}
 	\end{align*}
-Let $x_{i}=\frac{\ell_{i}}{n}$, we have $(ab)^{-\ell_{i}}=e^{-\frac{\ell_{i}}{n}}=e^{-x_{i}}$. Denote $\omega(x_{i})=e^{-x_{i}}$ and then
-$$\rho(x_{1},x_{2},\dots,x_{N})\propto\prod_{1\leqslant i<j \leqslant N}(x_{i}-x_{j})^2\prod_{i=1}^{N}\omega(x_{i})$$
-Thus, the constant $Z_{N}=\int_{0}^{\infty}\dots\int_{0}^{\infty}\prod_{1\leqslant i<j \leqslant N}(x_{i}-x_{j})^2\prod_{i=1}^{N}e^{-x_{i}}=\frac{1}{N!}\prod_{i=0}^{N-1}(i!)^2$, and this follows from Selberg's Integral.
+Moreover,
+\begin{align*}
+	&(n)^{N}\mathbb{P}(X_{1}=s_{t^{(1)}},\dots,X_{N}=s_{t^{(N)}})=(n)^{N}\mathbb{P}(\ell_{1}=t^{(1)},\dots,\ell_{N}=t^{(N)})\\
+	&= n^{N}(1-ab)^{N^2}(ab)^{-\frac{1}{2}N(N-1)}\prod_{i=0}^{N-1} \frac{1}{(j!)^{2}}\cdot \prod_{1\leqslant i<j\leqslant N}(t^{(i)}-t^{(j)})^{2}\cdot\prod_{i=1}^{N}(ab)^{t_{(i)}}\\
+	&= n^{N}(1-e^{-\frac{1}{n}})^{N^2}(e^{-\frac{1}{n}})^{-\frac{1}{2}N(N-1)}\prod_{i=0}^{N-1}\frac{1}{(j!)^2}\prod_{1\leqslant i<j\leqslant N}(s_{t^{(i)}}-s_{t^{(j)}})^{2}\cdot n^{N(N-1)}\cdot\prod_{i=1}^{N}e^{-\frac{t^{(i)}}{n}}\\
+	&= K \prod_{i=0}^{N-1}\frac{1}{(j!)^2}\prod_{1\leqslant i<j\leqslant N}(s_{t^{(i)}}-s_{t^{(j)}})^{2}\prod_{i=1}^{N}e^{-s_{t^{(i)}}}
+\end{align*}
+where $K=n^{N^2}(1-e^{-\frac{1}{n}})^{N^2}(e^{-\frac{1}{n}})^{-\frac{1}{2}N(N-1)}$. Denote $x=e^{-\frac{1}{n}}$, then $$K=(1-x)^{N^2}x^{-\frac{1}{2}N(N-1)}(-\frac{1}{lnx})^{N^2}=x^{-\frac{1}{2}N(N-1)}(\frac{x-1}{lnx})^{N^2}$$ When $n\rightarrow\infty$, we have $x\rightarrow 1$ and $K\rightarrow 1$. Thus $(n)^{N}\mathbb{P}(X_{1}=s_{t^{(1)}},\dots,X_{N}=s_{t^{(N)}})\rightarrow\rho(s_{t^{(1)}},\dots,s_{t^{(N)}})$, and we proved our claim. In addition, the two quantities that the problem requires us to find are: $V(x)=x$ and $Z_{N}=\prod_{i=0}^{N-1}\frac{1}{(j!)^2}$.
 
 
 \section{Couplings}
