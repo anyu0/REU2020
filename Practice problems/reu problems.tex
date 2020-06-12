@@ -582,7 +582,17 @@ Let $a\rightarrow -\infty$, we get $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y
 	and the expression of $M$, $s_{\mu}(1^{B+C})$, $P_{3}$, and $\omega(\ell_{i})$ are given above.
 	
 	\subsection*{Problem 12}
-
+	
+Step 1. We find the normalization constant by solving
+\begin{align*}
+\int_{-\infty}^{-\infty} \dots \int_{-\infty}^{-\infty} 
+\frac{1}{Z_N} \prod_{1 \leq i < j \leq N} (x_i - x_j)^2 \prod_{i = 1}^N e^{-\frac{x_i}{2}} dx_1\dots dx_N = 1
+\end{align*}
+By Mehta's integral, the constant is given by
+\begin{align*}
+Z_N = (2\pi)^{\frac{N}{2}} \prod_{i=1}^N i!
+\end{align*}
+Step 2. Calculate $d_1$ and $d_2$. \\
 From the previous problem, we have the probability distribution
 \begin{equation}\label{Eqn1}
 	\mathbb{P}(\ell_1, \dots, \ell_N) = \frac{1}{Z} \prod_{1 \leq i < j \leq N} (\ell_i - \ell_j)^2 \prod_{i = 1}^Nw(\ell_i),
@@ -854,22 +864,33 @@ Now we can find using Sterling's formula that this expression is equal in the li
 		(y_i^T-x_j^T+j-i+T-1)^{y_i^T-x_j^T+j-i+{T}-1/2}}{\sqrt{2\pi}(T-1)^{T-1/2}(y_i^T-x_j^T+j-i)^{y_i^T-x_j^T+j-i+1/2}}\right)_{1=i,j}^k}
 \]
 
-Now if we take $\lambda_i=z_i\sqrt{T}+ptT$ and we consider each of the determinants individually (for the sake of the margins of this document), we find that the expression is equal to $ABC^{-1}$ where
+Now if we take $\lambda_i=z_i\sqrt{T}+ptT$ and we consider each of the determinants individually (for the sake of the margins of this document), we find that the expression is approximately (and unrigorously) equal to $ABC^{-1}$ where each letter is one of the determinants in the formula above. Therefore, we get
 \begin{align*}
-A&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det
+A&=(2\pi)^{-\frac k2}\det
 	\left(e^{(\sqrt{T}(z_i-a_j)+T(t+pt))\log(\sqrt{T}(z_i-a_j)+T(t+pt))-tT\log(tT)-((z_i-a_j)\sqrt{T}+ptT)\log((z_i-a_j)\sqrt{T}+ptT)}
 	\right)_{1=i,j}^k\\
-	&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det\left(e^{T\left(\left(\frac{z_i-a_j}{\sqrt{T}}+pt+t\right)\left(\log\left(\frac{z_i-a_j}{(t)\sqrt T}+p+1\right)+\log (tT)\right)-t\log(tT)-\left(\frac{z_i-a_j}{\sqrt{T}}+pt\right)\left(\log\left(\frac{z_i-a_j}{t\sqrt T}+p\right)+\log(tT)\right)\right)}\right)_{1=i,j}^k\\
-	&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det\left(e^{T\left(\left(\frac{z_i-a_j}{\sqrt{T}}+pt\right)\log(\frac{\frac{z_i-a_j}{t\sqrt{T}}+p+1}{\frac{z_i-a_j}{t\sqrt{T}}+p})+t\log\left(\frac{z_i-a_j}{t\sqrt{T}}+p+1\right)\right)}
+	&=(2\pi)^{-\frac k2}\det\left(e^{T\left(\left(\frac{z_i-a_j}{\sqrt{T}}+pt+t\right)\left(\log\left(\frac{z_i-a_j}{(t)\sqrt T}+p+1\right)+\log (tT)\right)-t\log(tT)-\left(\frac{z_i-a_j}{\sqrt{T}}+pt\right)\left(\log\left(\frac{z_i-a_j}{t\sqrt T}+p\right)+\log(tT)\right)\right)}\right)_{1=i,j}^k\\
+	&=(2\pi)^{-\frac k2}\det\left(e^{T\left(\left(\frac{z_i-a_j}{\sqrt{T}}+pt\right)\log(\frac{\frac{z_i-a_j}{t\sqrt{T}}+p+1}{\frac{z_i-a_j}{t\sqrt{T}}+p})+t\log\left(\frac{z_i-a_j}{t\sqrt{T}}+p+1\right)\right)}
 	\right)_{1=i,j}^k\\
-	&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det\left(e^{Tt\log(\frac{z_i-a_j}{t\sqrt{T}}+p+1)}\right)_{1=i,j}^k
-	\\
-	B&=\lim_{T\to\infty} (2\pi)^{-\frac k2}
-	\det\left(e^{\left(
-	\sqrt{T}(b_i-z_i)
-	\right)}
-	\right)_{1=i,j}^k
+	&=(2\pi)^{-\frac{k}{2}}\det\left(e^{Tt\left(\log\left(\frac{z_i-a_j}{(p+1)t\sqrt{T}}+1\right)+\log(p+1)\right)}\right)_{1=i,j}^k\\
+	&=(2\pi)^{-\frac{k}{2}}\det\left(e^{Tt\log(p+1)}e^{Tt\log\left(\frac{z_i-a_j}{(p+1)t\sqrt{T}}+1\right)}\right)_{1=i,j}^k\\
+	&=(2\pi)^{-\frac{k}{2}}(p+1)^{kTt}\det\left(e^{Tt\log\left(\frac{z_i-a_j}{(p+1)t\sqrt{T}}+1\right)}\right)_{1=i,j}^k
 \end{align*}
+Doing very similar calculations we may find that 
+\begin{align*}B&=(2\pi)^{-k/2}(p+1)^{(1-t)kT}\det\left(e^{kT\log\left(\frac{b_i-z_j}{(p+1)(1-t)\sqrt{T}}+1\right)}\right)_{1=i,j}^k\\
+C&=(2\pi)^{-\frac k2}(p+1)^{kT}\det\left( e^{T\log\left(\frac{b_i-a_j}{(1+p)\sqrt T}+1\right)}\right)_{1=i,j}^k
+\end{align*}
+
+Therefore, the product $ABC^{-1}$ gives us the expression $$\frac{(2\pi)^{-\frac{k}{2}}\det\left(e^{Tt\log\left(\frac{z_i-a_j}{(p+1)t\sqrt{T}}+1\right)}\right)_{1=i,j}^k\cdot\det\left(e^{kT\log\left(\frac{b_i-z_j}{(p+1)(1-t)\sqrt{T}}+1\right)}\right)_{1=i,j}^k }{\det\left( e^{T\log\left(\frac{b_i-a_j}{(1+p)\sqrt T}+1\right)}\right)_{1=i,j}^k}$$
+
+Using the Taylor series $\log(x+1)=\sum_{i=1}^\infty \frac{(-1)^{i-1}}{i}x^i$ and taking the limit of the expression as $T\to \infty$, we get that the above expression equals in the limit
+$$\lim_{T\to \infty}(2\pi)^{-\frac k2}\frac{
+	\det\left(e^{\frac{\sqrt{T}(z_i-a_j)}{p+1}-\frac{z_i^2+a_j^2}{2t(p+1)^2}+\frac{z_ia_j}{t(p+1)^2}}\right)_{1=i,j}^k
+	\det\left(e^{\frac{\sqrt{T}(b_i-z_j)}{p+1}-\frac{b_i^2+z_j^2}{2t(p+1)^2}+\frac{b_iz_j}{t(p+1)^2}}\right)_{1=i,j}^k}
+{	\det\left(e^{\frac{\sqrt{T}(b_i-a_j)}{p+1}-\frac{b_i^2+a_j^2}{2t(p+1)^2}+\frac{b_ia_j}{t(p+1)^2}}\right)_{1=i,j}^k}$$
+
+This seems to go to infinity, since the top should roughly have a growth rate of $T^k$ while the bottom should roughly have $T^{k/2}$, so it seems to me like we have done something wrong, yet I don't know what. 
+
 
 	\subsection*{Lemmas from Section 3.2}
 	
@@ -1074,17 +1095,87 @@ A&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det
 	P := \mathbb{P}^{0,T,\vec{x}^T,\vec{y}^T}_{avoid, Ber} \Big( L_k(T/2) - pT/2 \leq \frac{M_1+M_2}{2} - A\sqrt{T} \Big) < \frac{1}{2}.
 	\]
 	
-	The idea of the following argument is to use monotone coupling to first lower each curve so that adjacent pairs of endpoints are a distance of roughly $\sqrt{T}$ apart, and then raise the endpoints of the top $k-1$ curves so that each curve has a characteristic slope of roughly $pT$. We then observe that $P$ can be computed by assuming the $L_i$ are independent and conditioning on the event of non-intersection. We bound the probability above when $L_k$ is independent of the other curves, and use strong coupling for each curve with Brownian bridges to argue that the probability of non-intersection is high.
+	The idea of the following argument is to use monotone coupling to first lower each curve so that adjacent pairs of endpoints are a distance of roughly $\sqrt{T}$ apart. We then observe that $P$ can be computed by assuming the $L_i$ are independent and conditioning on the event of non-intersection. We bound the probability above when $L_k$ is independent of the other curves, and use strong coupling for each curve with Brownian bridges to argue that the probability of non-intersection is high.
 	
 	We first note that Lemma 3.1 allows us to assume without loss of generality that $x_k^T = \floor{M_1\sqrt{T}}$ and $y_k^T = \floor{pT + M_2\sqrt{T}}$, as this will only increase $P$. (For details, see the proof of Lemma 3.5.) We can then adjust the endpoints according to
 	\[
 	x_i^T{}' = x_i^T - C(i-1)\sqrt{T}, \quad y_i^T{}' = y_i^T - C(i-1)\sqrt{T},
 	\]
-	where $C$ is a constant to be chosen later depending on $p$. Then by monotone coupling,
+	where $C$ is a constant to be chosen later depending on $p,k$. Then by monotone coupling,
 	\[
 	P \leq \mathbb{P}^{0,T,\vec{x}^T{}',\vec{y}^T{}'}_{avoid, Ber} \Big( L_k(T/2) - pT/2 \leq \frac{M_1+M_2}{2} - A\sqrt{T} \Big) < \frac{1}{2}.
 	\]
-	We take $A = C(r+k-1)$, for some $r>0$ to be chosen later depending on $p$. We now apply monotone coupling to ensure that $|y_i^T{}' - x_i^T{}' - pT| \leq 1$ for $1\leq i\leq k-1$. Namely, we first increase either $x_{k-1}^T{}'$ or $y_{k-1}^T{}'$, depending on whether the difference is greater than $pT + 1$ or smaller than $pT - 1$. We then do the same with $L_{k-2}$, ensuring that the endpoints remain at a distance of at least $C\sqrt{T}$ from the endpoints of $L_{k-1}$. We repeat this process for the remaining curves. Since we have only raised the endpoints of the top $k-1$ curves, and the event for $P$ depends only on $L_k$, 
+	(We abuse notation here by using $L_k$ again to refer to the line ensemble with lowered endpoints.) We take $A = Ck$. Rewriting the probability in the above inequality, we see that
+	\[
+	P \leq \frac{\mathbb{P}^{0,T,x_k^T{}',y_k^T{}'}_{Ber} \Big( L_k(T/2) - pT/2 \leq \frac{M_1+M_2}{2} - A\sqrt{T} \Big)}{\mathbb{P}^{0,T,\vec{x}^T{}',\vec{y}^T{}'}_{Ber}(E)},
+	\]
+	where $\mathbb{P}^{0,T,\vec{x}^T{}',\vec{y}^T{}'}_{Ber}$ denotes the law of $k$ independent upright paths with endpoints at $x_i^T{}', y_i^T{}'$, and
+	\[
+	E = \{L_1(s) > \cdots > L_k(s)\;\textrm{for all}\;s \in \llbracket 0, T\rrbracket \}.
+	\]
+	We first estimate the numerator. If $\vec{z}^T = \vec{y}^T{}' - \vec{x}^T{}'$, then using the assumption that $x_k^T{}' \leq M_1\sqrt{T} + 1 - C(k-1)\sqrt{T}$, we see that the numerator is equal to
+	\begin{align*}
+	&\mathbb{P}^{0,T,0,z_k^T}_{Ber} \Big( L_k(T/2) - pT/2 + M_1\sqrt{T} - C(k-1)\sqrt{T} \leq \frac{M_1+M_2}{2} - Ck\sqrt{T} + 1\Big) \\
+	= \; & \mathbb{P} \Big( \ell^{(0,z^T_k)}(T/2) - pT/2 + M_1\sqrt{T} \leq \frac{M_1+M_2}{2} - C\sqrt{T} + 1\Big).
+	\end{align*}
+	Here, $\mathbb{P}$ and $\ell^{(0,z_k^T)}$ are provided by Theorem 3.3, which also gives a Brownian bridge $B^{\sigma}$ with variance $\sigma^2 = p(1-p)$. Since $z^T \geq pT + (M_2 - M_1)\sqrt{T} - 1$, the second line above is
+	\begin{align*}
+	\leq \; & \mathbb{P} \Big( \ell^{(0,z^T_k)}(T/2) - z^T/2 \leq \frac{M_1+M_2}{2}(1-\sqrt{T}) - C\sqrt{T} + 2\Big)\\
+	\leq \; & \mathbb{P} \Big( \sqrt{T}\,B^{\sigma}_{1/2} \leq \frac{M_1+M_2}{2}(1-\sqrt{T}) - C\sqrt{T} + 2\Big)\\
+	&\quad + \mathbb{P}\Big(\Delta(0,z^T) \geq \frac{M_1+M_2}{4}(\sqrt{T}-1) + C\sqrt{T}/2 + 1\Big).
+	\end{align*}
+	The first term is bounded above by
+	\begin{align*}
+	\mathbb{P} \Big( B^{\sigma}_{1/2} \geq  \frac{C}{2} - \frac{M_1 + M_2 + 1}{4\sqrt{T}}\Big).
+	\end{align*}
+	Note that $B_{1/2}^{\sigma}\sim\mathcal{N}(0,p(p-1)/4)$, so we can take $C$ large enough depending on $p$ so that $\mathbb{P}(B_{1/2}^{\sigma} \geq C/4) < 1/8$. In particular, using a standard tail bound for the normal distribution, we have
+	\[
+	\mathbb{P}(B_{1/2}^{\sigma} \geq C/4) \leq \frac{4\sigma}{C}\frac{e^{-C^2/8\sigma^2}}{\sqrt{2\pi}} \leq \frac{1}{\sqrt{2\pi}C}e^{-C^2/2} < \frac{1}{2e^2} < \frac{1}{4}
+	\]
+	if $C\geq 2$. We then take $T_{00}$ large enough depending on $M_1,M_2,p,k$ so that $(M_1+M_2+1)/\sqrt{T_{00}}\leq C$. Then this quantity is $<1/8$ for $T\geq T_{00}$. For the second term above, Theorem 3.3 and Chebyshev's inequality show that it is $O(e^{-\sqrt{T}})$. (See the proof of Lemma 3.5 for details.) Thus we can take $T_{01}$ depending on $M_1,M_2,p$ so that this term is also $<1/8$. In summary, we have
+	\[
+	\mathbb{P}^{0,T,x_k^T{}',y_k^T{}'}_{Ber} \Big( L_k(T/2) - pT/2 \leq \frac{M_1+M_2}{2} - A\sqrt{T} \Big) < \frac{1}{4}
+	\]
+	for $T\geq\max(T_{00},T_{01})$.
+	
+	We now bound from below the probability of the event $E$. For $1\leq i\leq k$, define
+	\[
+	p_i = \begin{cases}
+	z_i^T/T, & \mathrm{if}\;z_i^T \in (0,T),\\
+	1/\sqrt{T}, & \mathrm{if}\;z_i^T = 0,\\
+	1 - 1/\sqrt{T}, & \mathrm{if}\;z_i^T = T.
+	\end{cases}
+	\] 
+	Then $p_i\in(0,1)$ for $T>1$ and in particular $|z_i^T - p_i T|\leq \sqrt{T}$ for all $i$. Let $\ell^{(0,z^T_i)}$ be paths with the same laws as $L_i$ shifted down by $x_i^T{}'$ under measures $\mathbb{P}_i$, as provided by Theorem 3.3. Let $B^{\sigma_i}$ be Brownian bridges with variance $\sigma_i^2 = p_i(1-p_i)$ coupled with $L_i$. Then
+	\begin{align*}
+	\mathbb{P}^{0,T,\vec{x}^T{}',\vec{y}^T{}'}_{Ber}(E) &\geq \mathbb{P}^{0,T,0,\vec{z}^T}_{Ber} \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(0,z_i^T)}(s) - \frac{s}{T}z_i^T\Big| < \frac{C-1}{2}\sqrt{T},\; 1\leq i\leq k \Big)\\
+	&= \prod_{i=1}^k \Big[ 1 - \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(0,z_i^T)}(s) - \frac{s}{T}z_i^T\Big| \geq \frac{C-1}{2}\sqrt{T} \Big) \Big].
+	\end{align*}
+	Now
+	\begin{align*}
+	&\mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(0,z_i^T)}(s) - \frac{s}{T}z_i^T\Big| \geq \frac{C-1}{2}\sqrt{T} \Big)\\
+	\leq \; & \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} |\sqrt{T}\,B^{\sigma_i}_{s/T}| \geq \frac{C-1}{4}\sqrt{T}\Big) + \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\sqrt{T}\,B^{\sigma_i}_{s/T} + \frac{s}{T}z_i^T - \ell^{(0,z_i^T)}(s)\Big| \geq \frac{C-1}{4}\sqrt{T} \Big).
+	\end{align*}
+	The first term is equal to
+	\[
+	2\exp\Big( - \frac{2}{\sigma_i^2}\Big(\frac{C-1}{4}\Big)^2\Big) \leq 2e^{-(C-1)^2/2}.
+	\]
+	This follows from (3.40) in Chapter 4 of Karatzas \& Shreve, and the fact that $\sigma_i^2 \leq 1/4$. The second term is $O(e^{-\sqrt{T}})$ by Chebyshev's inequality and Theorem 3.3 since $|z_i^T-p_iT|^2/T \leq 1$, so we can find $T_{02}$ depending on $p,k$ so that this probability is $< e^{-(C-1)^2/2}$ for $T\geq T_{02}$. Then
+	\[
+	\mathbb{P}^{0,T,\vec{x}^T{}',\vec{y}^T{}'}_{Ber}(E) \geq \big(1 - 3e^{-(C-1)^2/2}\big)^k \geq 1/2,
+	\]
+	if $C$ is chosen large enough depending on $k$. In particular, this holds if
+	\[
+	C = 1 + \sqrt{2\log\frac{3}{1-2^{-1/k}}}.
+	\] 
+	Note that then $ C \geq 1 + \sqrt{2\log 3} > 2$, so this $C$ works in the above as well. 
+	
+	In summary, with this choice of $A = Ck$ and with $T_0 = \max(T_{00}, T_{01}, T_{02})$, which depends on $p,k,M_1,M_2$, we have
+	\[
+	\mathbb{P}^{0,T,\vec{x}^T,\vec{y}^T}_{avoid, Ber} \Big( L_k(T/2) - pT/2 \leq \frac{M_1+M_2}{2} - A\sqrt{T} \Big) < \frac{1/4}{1/2} = \frac{1}{2}
+	\]
+	for $T\geq T_0$. 
+	
 
 
 \subsection*{Problem 19}
