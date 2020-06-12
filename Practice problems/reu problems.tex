@@ -863,22 +863,33 @@ Now we can find using Sterling's formula that this expression is equal in the li
 		(y_i^T-x_j^T+j-i+T-1)^{y_i^T-x_j^T+j-i+{T}-1/2}}{\sqrt{2\pi}(T-1)^{T-1/2}(y_i^T-x_j^T+j-i)^{y_i^T-x_j^T+j-i+1/2}}\right)_{1=i,j}^k}
 \]
 
-Now if we take $\lambda_i=z_i\sqrt{T}+ptT$ and we consider each of the determinants individually (for the sake of the margins of this document), we find that the expression is equal to $ABC^{-1}$ where
+Now if we take $\lambda_i=z_i\sqrt{T}+ptT$ and we consider each of the determinants individually (for the sake of the margins of this document), we find that the expression is approximately (and unrigorously) equal to $ABC^{-1}$ where each letter is one of the determinants in the formula above. Therefore, we get
 \begin{align*}
-A&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det
+A&=(2\pi)^{-\frac k2}\det
 	\left(e^{(\sqrt{T}(z_i-a_j)+T(t+pt))\log(\sqrt{T}(z_i-a_j)+T(t+pt))-tT\log(tT)-((z_i-a_j)\sqrt{T}+ptT)\log((z_i-a_j)\sqrt{T}+ptT)}
 	\right)_{1=i,j}^k\\
-	&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det\left(e^{T\left(\left(\frac{z_i-a_j}{\sqrt{T}}+pt+t\right)\left(\log\left(\frac{z_i-a_j}{(t)\sqrt T}+p+1\right)+\log (tT)\right)-t\log(tT)-\left(\frac{z_i-a_j}{\sqrt{T}}+pt\right)\left(\log\left(\frac{z_i-a_j}{t\sqrt T}+p\right)+\log(tT)\right)\right)}\right)_{1=i,j}^k\\
-	&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det\left(e^{T\left(\left(\frac{z_i-a_j}{\sqrt{T}}+pt\right)\log(\frac{\frac{z_i-a_j}{t\sqrt{T}}+p+1}{\frac{z_i-a_j}{t\sqrt{T}}+p})+t\log\left(\frac{z_i-a_j}{t\sqrt{T}}+p+1\right)\right)}
+	&=(2\pi)^{-\frac k2}\det\left(e^{T\left(\left(\frac{z_i-a_j}{\sqrt{T}}+pt+t\right)\left(\log\left(\frac{z_i-a_j}{(t)\sqrt T}+p+1\right)+\log (tT)\right)-t\log(tT)-\left(\frac{z_i-a_j}{\sqrt{T}}+pt\right)\left(\log\left(\frac{z_i-a_j}{t\sqrt T}+p\right)+\log(tT)\right)\right)}\right)_{1=i,j}^k\\
+	&=(2\pi)^{-\frac k2}\det\left(e^{T\left(\left(\frac{z_i-a_j}{\sqrt{T}}+pt\right)\log(\frac{\frac{z_i-a_j}{t\sqrt{T}}+p+1}{\frac{z_i-a_j}{t\sqrt{T}}+p})+t\log\left(\frac{z_i-a_j}{t\sqrt{T}}+p+1\right)\right)}
 	\right)_{1=i,j}^k\\
-	&=\lim_{T\to\infty}(2\pi)^{-\frac k2}\det\left(e^{Tt\log(\frac{z_i-a_j}{t\sqrt{T}}+p+1)}\right)_{1=i,j}^k
-	\\
-	B&=\lim_{T\to\infty} (2\pi)^{-\frac k2}
-	\det\left(e^{\left(
-	\sqrt{T}(b_i-z_i)
-	\right)}
-	\right)_{1=i,j}^k
+	&=(2\pi)^{-\frac{k}{2}}\det\left(e^{Tt\left(\log\left(\frac{z_i-a_j}{(p+1)t\sqrt{T}}+1\right)+\log(p+1)\right)}\right)_{1=i,j}^k\\
+	&=(2\pi)^{-\frac{k}{2}}\det\left(e^{Tt\log(p+1)}e^{Tt\log\left(\frac{z_i-a_j}{(p+1)t\sqrt{T}}+1\right)}\right)_{1=i,j}^k\\
+	&=(2\pi)^{-\frac{k}{2}}(p+1)^{kTt}\det\left(e^{Tt\log\left(\frac{z_i-a_j}{(p+1)t\sqrt{T}}+1\right)}\right)_{1=i,j}^k
 \end{align*}
+Doing very similar calculations we may find that 
+\begin{align*}B&=(2\pi)^{-k/2}(p+1)^{(1-t)kT}\det\left(e^{kT\log\left(\frac{b_i-z_j}{(p+1)(1-t)\sqrt{T}}+1\right)}\right)_{1=i,j}^k\\
+C&=(2\pi)^{-\frac k2}(p+1)^{kT}\det\left( e^{T\log\left(\frac{b_i-a_j}{(1+p)\sqrt T}+1\right)}\right)_{1=i,j}^k
+\end{align*}
+
+Therefore, the product $ABC^{-1}$ gives us the expression $$\frac{(2\pi)^{-\frac{k}{2}}\det\left(e^{Tt\log\left(\frac{z_i-a_j}{(p+1)t\sqrt{T}}+1\right)}\right)_{1=i,j}^k\cdot\det\left(e^{kT\log\left(\frac{b_i-z_j}{(p+1)(1-t)\sqrt{T}}+1\right)}\right)_{1=i,j}^k }{\det\left( e^{T\log\left(\frac{b_i-a_j}{(1+p)\sqrt T}+1\right)}\right)_{1=i,j}^k}$$
+
+Using the Taylor series $\log(x+1)=\sum_{i=1}^\infty \frac{(-1)^{i-1}}{i}x^i$ and taking the limit of the expression as $T\to \infty$, we get that the above expression equals in the limit
+$$\lim_{T\to \infty}(2\pi)^{-\frac k2}\frac{
+	\det\left(e^{\frac{\sqrt{T}(z_i-a_j)}{p+1}-\frac{z_i^2+a_j^2}{2t(p+1)^2}+\frac{z_ia_j}{t(p+1)^2}}\right)_{1=i,j}^k
+	\det\left(e^{\frac{\sqrt{T}(b_i-z_j)}{p+1}-\frac{b_i^2+z_j^2}{2t(p+1)^2}+\frac{b_iz_j}{t(p+1)^2}}\right)_{1=i,j}^k}
+{	\det\left(e^{\frac{\sqrt{T}(b_i-a_j)}{p+1}-\frac{b_i^2+a_j^2}{2t(p+1)^2}+\frac{b_ia_j}{t(p+1)^2}}\right)_{1=i,j}^k}$$
+
+This seems to go to infinity, since the top should roughly have a growth rate of $T^k$ while the bottom should roughly have $T^{k/2}$, so it seems to me like we have done something wrong, yet I don't know what. 
+
 
 	\subsection*{Lemmas from Section 3.2}
 	
