@@ -162,7 +162,9 @@ $$\begin{bmatrix} 1 &x_2 & x_2^2 & \cdots & x_2^{k-1} \\ \vdots & \vdots & \vdot
 
 In the second case, suppose $x_i \neq 0$ for all $i$ and $x_i$ are distinct. Let
 $$Q(a) = det \begin{bmatrix} 1 & a & a^2 & \cdots & a^{k} \\ 1 &x_2 & x_2^2 & \cdots & x_2^{k} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 &x_{k+1} & x_{k+1}^2 & \cdots & x_{k+1}^{k} \end{bmatrix}$$
-for $a \in \mathbb{R}$. Then the polynomial $Q(a)$ has degree at most $k$. For the roots of this polynomial, note that $Q(x_i) = 0$ ($i \geq 2$), so $Q(a) = C(x_2, \cdots, x_{k+1}) (a - x_2) \cdots (a - x_{k+1})$, where $C(x_2, \cdots, x_{k+1})$ is a constant that only depends on $x_2, \cdots, x_{k+1}$. Then $Q(0) = (-1)^k x_2 \cdots x_{k+1} C(x_2, \cdots, x_{k+1})$.\\
+for $a \in \mathbb{R}$. Then the polynomial $Q(a)$ has degree at most $k$: When we compute the determinant, no power of $a$ in the first row is multiplied with any other power of $a$, so the degree of $Q(a)$ w.r.t. $a$ is at most the degree of the highest power of $a$ in the first row, which is $k$.\\
+
+For the roots of this polynomial, note that $Q(x_i) = 0$ ($i \geq 2$), so $Q(a) = C(x_2, \cdots, x_{k+1}) (a - x_2) \cdots (a - x_{k+1})$, where $C(x_2, \cdots, x_{k+1})$ is a constant that only depends on $x_2, \cdots, x_{k+1}$. Then $Q(0) = (-1)^k x_2 \cdots x_{k+1} C(x_2, \cdots, x_{k+1})$.\\
 
 Note that we also have that
 $$ Q(0) = det \begin{bmatrix} 1 & 0 & 0 & \cdots & 0 \\ 1 &x_2 & x_2^2 & \cdots & x_2^{k} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 &x_{k+1} & x_{k+1}^2 & \cdots & x_{k+1}^{k} \end{bmatrix} = det \begin{bmatrix}  x_2 & x_2^2 & \cdots & x_2^{k} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ x_{k+1} & x_{k+1}^2 & \cdots & x_{k+1}^{k} \end{bmatrix}$$
@@ -198,11 +200,13 @@ We want to show that $(x_j - x_i)$ divides $P$ as well for each $(i,j)$ such tha
 We know that for $R$ a unique factorization domain (UFD), $p_1$ and $p_2$ irreducible elements of $R$ such that $(p_1) \neq (p_2)$, then if both $p_1$ and $p_2$ divide $r$ ($r$ in $R$), then $p_1p_2$ divides $r$.\\
 
 Since $\mathbb{R}[x_1, \dots, x_n]$ is a UFD, and each polynomial $(x_j - x_i)$ is irreducible. For any distinct $(i, j)$ not equal to $(k, l)$, 
-$(x_k - x_l)$ is coprime to $(x_j -x_i)$. Thus if each $(x_j-x_i)$ divides $P$, then $P_V = \prod_{i < j} (x_j - x_i)$ divides $P$. Now let
-$$S = \mathbb{R}[x_1, x_2, \dots, x_{j-1}, x_{j+1} , \dots, x_n],$$
-so that
-$$\mathbb{R}[x_1, \dots, x_n] = S[x_j],$$
-so $P$ is a skew-symmetric polynomial in $S[x_j]$.\\
+$(x_k - x_l)$ is coprime to $(x_j -x_i)$. Thus if each $(x_j-x_i)$ divides $P$, then $P_V = \prod_{i < j} (x_j - x_i)$ divides $P$. \\
+
+%Now let
+%$$S = \mathbb{R}[x_1, x_2, \dots, x_{j-1}, x_{j+1} , \dots, x_n],$$
+%so that
+%$$\mathbb{R}[x_1, \dots, x_n] = S[x_j],$$
+%so $P$ is a skew-symmetric polynomial in $S[x_j]$.\\
 
 To show that $x_j-x_i$ divides $P$, note that $S = \mathbb{R}[x_1,\dots,x_n]/(x_j-x_i)$. Thus the quotient homomorphism 
 \begin{align*}
