@@ -585,84 +585,182 @@ Let $a\rightarrow -\infty$, we get $\lim\limits_{n\rightarrow\infty}\mathbb{P}(Y
 	\end{align*}
 	and the expression of $M$, $s_{\mu}(1^{B+C})$, $P_{3}$, and $\omega(\ell_{i})$ are given above.
 	
-	\subsection*{Problem 12}
-	
-Step 1. We find the normalization constant by solving
+\subsection*{Problem 12}
+\textbf{Step 1:} Denote $X_{i}=\frac{\ell_{i}-d_{1}L}{d_{2}\sqrt{L}}$. Take real numbers $u_{1},\dots, u_{N}$ and $v_{1},\dots, v_{N}$ such that $u_{i}<v_{i}$ for $i=1,\dots, N$, and consider the probability: 
 \begin{align*}
-\int_{-\infty}^\infty \dots \int_{-\infty}^\infty
-\frac{1}{Z_N} \prod_{1 \leq i < j \leq N} (x_i - x_j)^2 \prod_{i = 1}^N e^{-\frac{x_i}{2}} dx_1\dots dx_N = 1
+\mathbb{P}(u_{1}\leqslant X_{1} \leqslant v_{1}, \dots,  u_{N}\leqslant X_{N} \leqslant v_{N})=\mathbb{P}(u_{i}d_{2}\sqrt{L}+d_{1}L\leqslant \ell_{i} \leqslant v_{i}d_{2}\sqrt{L}+d_{1}L, i=1,\dots, N)	
 \end{align*}
-By Mehta's integral, the constant is given by
+Denote $m_{i}^{L}=\lfloor u_{i}d_2\sqrt{L}+d_{1}L\rfloor+1$ and $m_{i}^{L}=\lfloor v_{i}d_2\sqrt{L}+d_{1}L\rfloor$. Since $\ell_{i}$'s can only take integer values, the probability can be written as:
 \begin{align*}
-Z_N = (2\pi)^{\frac{N}{2}} \prod_{i=1}^N i!
+\mathbb{P}(u_{i}\leqslant X_{i} \leqslant v_{i}, i=1, \dots, N)&=\sum_{t^{(1)}=m_{1}^{L}}^{M_{1}^{L}}\dots\sum_{t^{(N)}=m_{N}^{L}}^{M_{N}^{L}}\mathbb{P}(\ell_{1}=t^{(1)},\dots,\ell_{N}=t^{(N)}) \\&= \sum_{t^{(1)}=m_{1}^{L}}^{M_{1}^{L}}\dots\sum_{t^{(N)}=m_{N}^{L}}^{M_{N}^{L}}\mathbb{P}(X_{1}=\frac{t^{(1)}-d_{1}L}{d_{2}\sqrt{L}},\dots,X_{N}=\frac{t^{(N)}-d_{1}L}{d_{2}\sqrt{L}})\\
+&= \sum_{t^{(1)}=m_{1}^{L}}^{M_{1}^{L}}\dots\sum_{t^{(N)}=m_{N}^{L}}^{M_{N}^{L}}\mathbb{P}(X_{1}=s_{t^{(1)}},\dots,X_{N}=s_{t^{(N)}})
 \end{align*}
-Step 2. Calculate $d_1$ and $d_2$. \\
-From the previous problem, we have the probability distribution
-\begin{equation}\label{Eqn1}
-	\mathbb{P}(\ell_1, \dots, \ell_N) = \frac{1}{Z} \prod_{1 \leq i < j \leq N} (\ell_i - \ell_j)^2 \prod_{i = 1}^Nw(\ell_i),
-\end{equation}
-where $l_i=x_id_2\sqrt{L}+d_1L$, and
-\begin{equation}\label{Eqn2}
-	w(l_i) = \frac{(A+B-l_i-1)! (l_i+C-N)!}{(A+N-l_i-1)!l_i!} 
-\end{equation}
-By Sterling's Approximation,
+where $s_{t^{(i)}}=\frac{t^{(i)}-d_{1}L}{d_{2}\sqrt{L}}$, and $s_{t^{(i)}}-s_{t^{(i)}-1}=\frac{1}{d_{2}\sqrt{L}}$ for every $m_{i}^{L}+2\leqslant t^{(i)}\leqslant M_{i}^{L}$ and every $i=1,\dots, N$.\\
+\textbf{We claim that}, we can find proper values for $d_1$ and $d_{2}$, such that $(d_{2}\sqrt{L})^{N}\mathbb{P}(X_{1}=s_{t^{(1)}},\dots,X_{N}=s_{t^{(N)}})\rightarrow \rho(s_{t^{(1)}},\dots, s_{t^{(N)}})$ as $L\rightarrow\infty$, where $$\rho(x_1,\dots, x_{N})=\frac{1}{(2\pi)^{\frac{N}{2}}\prod_{j=0}^{N-1}(j!)}\prod_{1\leqslant i<j\leqslant N}(x_{i}-x_{j})^2\prod_{i=1}^{N}e^{-\frac{x_{i}^2}{2}}$$ 
+Notice that $\rho(x_1,\dots, x_{N})$ is a probability density function because it integrates to $1$ over $\mathbb{R}^{N}$ by Selberg's Integral(\emph{Corollary 2.5.9, Random Matrix, Zeitouni}). We'll prove this claim in Step $2$ and $3$.\\
+If our claim holds, then
 \begin{align*}
-	&(A+B-l_i-1)!  \\
-	=& \left[(a+b-d_1)L-x_id_2\sqrt{L}-1\right]! \\
-	\to& \sqrt{2\pi\left[(a+b-d_1)L-x_id_2\sqrt{L}-1\right]} 
-	\exp \left[-(a+b-d_1)L+x_id_2\sqrt{L}+1\right] \\
-	& \exp\left[ \left((a+b-d_1)L-x_id_2\sqrt{L}-1\right) \ln{\left((a+b-d_1)L-x_id_2\sqrt{L}-1\right)} \right] 
+	\mathbb{P}(u_{i}\leqslant X_{i} \leqslant v_{i}, i=1, \dots, N)&=\sum_{t^{(1)}=m_{1}^{L}}^{M_{1}^{L}}\dots\sum_{t^{(N)}=m_{N}^{L}}^{M_{N}^{L}}(\frac{1}{d_{2}\sqrt{L}})^{N}(\rho(s_{t^{(1)}},\dots, s_{t^{(N)}})+o(1))\\
+	&\approx \sum_{t^{(1)}=m_{1}^{L}}^{M_{1}^{L}}\dots\sum_{t^{(N)}=m_{N}^{L}}^{M_{N}^{L}}\int_{s_{t^{(1)}}-\frac{1}{2d_{2}\sqrt{L}}}^{s_{t^{(1)}}+\frac{1}{2d_{2}\sqrt{L}}}\dots\int_{s_{t^{(N)}}-\frac{1}{2d_{2}\sqrt{L}}}^{s_{t^{(N)}}+\frac{1}{2d_{2}\sqrt{L}}}\rho(x_1,\dots, x_{N})dx_{1}\dots dx_{N}\\
+	& = \int_{s_{m^{L}_{1}}-\frac{1}{2d_{2}\sqrt{L}}}^{s_{M^{L}_{1}}+\frac{1}{2d_{2}\sqrt{L}}}\dots\int_{s_{m^{L}_{N}}-\frac{1}{2d_{2}\sqrt{L}}}^{s_{M^{L}_{N}}+\frac{1}{2d_{2}\sqrt{L}}}\rho(x_1,\dots, x_{N})dx_{1}\dots dx_{N}\\
+	& \rightarrow \int_{u_{1}}^{v_{1}}\dots\int_{u_{N}}^{v_{N}}\rho(x_1,\dots, x_{N})dx_{1}\dots dx_{N}
 \end{align*}
-Using Taylor expansion,
+where the approximation in the second line uses the definition of Riemann integral.
+Let $u_{i}\rightarrow -\infty$, we get $$\mathbb{P}(X_{i} \leqslant v_{i}, i=1, \dots, N)\xrightarrow{L\rightarrow\infty} \int_{-\infty}^{v_{1}}\dots\int_{-\infty}^{v_{N}}\rho(x_1,\dots, x_{N})dx_{1}\dots dx_{N}$$ which means the random vector $(X_{1},\dots,X_{N})$ weakly converges to a continuous distribution with density $\rho(x_{1},\dots,x_{N})$.\\
+\textbf{Step 2:} Now we start to prove our claim. In this step, we do some further computation about normalized constant $Z$ based on Problem 11.
+From Problem 11 we know:
 \begin{align*}
-	&\ln{\left((a+b-d_1)L-x_id_2\sqrt{L}-1\right)} \\
-	=& \ln(a+b-d_1)L-\frac{x_id_2}{(a+b-d_1)\sqrt{L}}-\frac{x_i^2d_2^2}{2(a+b-d_1)^2L}+O(\frac{1}{L})
+	Z=\frac{M\cdot P_{3}}{s_{\mu}(1^{B+C})}\prod_{1\leqslant i<j\leqslant N}\frac{1}{(j-i)^{2}}
 \end{align*}
-The exponent becomes
+Compute each part:
 \begin{align*}
-	&\left((a+b-d_1)L-x_id_2\sqrt{L}-1\right) \ln{\left((a+b-d_1)L-x_id_2\sqrt{L}-1\right)}\\
-	=& \left((a+b-d_1)L-x_id_2\sqrt{L}-1\right) 
-	\left( \ln(a+b-d_1)L-\frac{x_id_2}{(a+b-d_1)\sqrt{L}}-\frac{x_i^2d_2^2}{2(a+b-d_1)^2L}+O(\frac{1}{L}) \right) \\
-	=& (a+b-d_1)L\ln(a+b-d_1)L - x_id_2 \sqrt{L}\ln(a+b-d_1)L-x_id_2\sqrt{L} + \frac{x_i^2d_2^2}{2(a+b-d_1)} + O(\frac{1}{\sqrt{L}})
+	P_{3} &= \prod_{i\in I_{1},j\in I_{3}}\frac{A+j-i}{j-i} = \prod_{i=1}^{B-N}\frac{(A+B+C-N-i)!/(A+B-i)!}{(B+C-N-i)!/(B-i)!}\\ &=\prod_{j=0}^{B-N-1}\frac{(A+C+j)!(N+j)!}{(C+j)!(A+N+j)!}\quad(\text{let $j=B-N-i$})\\
+	M &=\prod_{i=1}^{N}\frac{(i-1)!(N-i)!}{(B-N+i-1)!(C-i)!}\\
+	s_{\mu}(1^{B+C})&=\prod_{i=1}^{C}\prod_{j=C+1}^{B+C}\frac{A+j-i}{j-i}=\prod_{i=1}^{C}\frac{(A+B+C-i)!/(A+C-i)!}{(B+C-i)!/(C-i)!}\\ &= \prod_{j=0}^{C-1}\frac{(A+B+j)!j!}{(A+j)!(B+j)!}\quad(\text{let $j=C-i$})
 \end{align*}
-Similarly, we can calculate the exponent for other factorials
+Notice that the product of two terms---$\prod_{j=0}^{B-N-1}(A+C+j)!$ in $P_{3}$ and $\prod_{j=0}^{C-1}(A+j)!$ in $s_{\mu}(1^{B+C})$, is $\prod_{j=0}^{B+C-N-1}(A+j)!$, and similarly we can corporate other terms in $P_{3}$ and $s_{\mu}(1^{B+C})$ ($(N+j)!$ in $P_{3}$ and $(B+j)!$ in $s_{\mu}(1^{B+C})$; $(C+j)!$ in $P_{3}$ and $j!$ in $s_{\mu}(1^{B+C})$; $(A+N+j)!$ in $P_{3}$ and $(A+B+j)!$ in $s_{\mu}(1^{B+C})$), and we finally get: 
 \begin{align*}
-	& \left( (c+d_1)L+x_id_2\sqrt{L}-N \right) \ln\left( (c+d_1)L+x_id_2\sqrt{L}-N \right)\\
-	=& (c+d_1)L \ln(c+d_1)L+x_id_2\sqrt{L}\ln(c+d_1)L-N\ln(c+d_1)L+x_id_2\sqrt{L}-N-\frac{x_i^2d_2^2}{2(c+d_1)} + O(\frac{1}{\sqrt{L}})
-\\
-	& \left( (a-d_1)L-x_id_2\sqrt{L}+N-1 \right) \ln\left( (a-d_1)L-x_id_2\sqrt{L}+N-1 \right)\\
-	=& (a-d_1)L \ln(a-d_1)L-x_id_2\sqrt{L}\ln(a-d_1)L+(N-1)\ln(a-d_1)L-x_id_2\sqrt{L}\\
-	&\qquad +(N-1)-\frac{x_i^2d_2^2}{2(a-d_1)} + O(\frac{1}{\sqrt{L}})
-\\
-	& \left( d_1L+x_id_2\sqrt{L} \right)\ln\left( d_1L+x_id_2\sqrt{L} \right) \\
-	=& d_1L\ln(d_1L)+x_id_2\sqrt{L}\ln(d_1L)+x_id_2\sqrt{L}+\frac{x_i^2d_2^2}{2d_1} + O(\frac{1}{\sqrt{L}})
+	\frac{P_{3}}{s_{\mu}(1^{B+C})}&=\prod_{i=0}^{B+C-N-1}\frac{(A+i)!(N+i)!}{i!(A+N+i)!}=\prod_{i=0}^{B+C-N-1}\frac{i+1}{i+A+1}\cdot\frac{i+2}{A+i+2}\dots\frac{i+N}{i+A+N}\\
+	&= \prod_{i=0}^{B+C-N-1}\prod_{k=1}^{N}\frac{i+k}{i+A+k}=\prod_{k=1}^{N}\frac{(B+C-N-1+k)!/(k-1)!}{(A+B+C-N-1+k)!/(A+k-1)!}\\ &= \prod_{k=1}^{N}\frac{(B+C-N-1+k)!(A+k-1)!}{(A+B+C-N-1+k)!}\cdot\prod_{j=0}^{N-1}\frac{1}{j!}
 \end{align*}
-Summing the four exponents yields
+Note that the numerator of $M$ is actually $\prod_{j=0}^{N-1}(j!)^{2}$, which cancel the $\prod_{1\leqslant i<j\leqslant N}\frac{1}{(j-i)^{2}}$ in the expression of $Z^{-1}$. Therefore, 
 \begin{align*}
-	&(a+b-d_1)L\ln(a+b-d_1)L + ((c+d_1)L-N) \ln(c+d_1)L\\
-	&\qquad- ((a-d_1)L-N+1)\ln(a-d_1)L - d_1L\ln(d_1L) \\
-	&\qquad- x_id_2 \sqrt{L}\ln(a+b-d_1)L + x_id_2\sqrt{L}\ln(c+d_1)L + x_id_2\sqrt{L}\ln(a-d_1)L - x_id_2\sqrt{L}\ln(d_1L)\\
-	&\qquad+ \frac{x_i^2d_2^2}{2(a+b-d_1)} +\frac{x_i^2d_2^2}{2(c+d_1)} -\frac{x_i^2d_2^2}{2(a-d_1)} -\frac{x_i^2d_2^2}{2d_1} + O(\frac{1}{\sqrt{L}})
+	Z^{-1}&=\frac{M\cdot P_{3}}{s_{\mu}(1^{B+C})}\prod_{1\leqslant i<j\leqslant N}\frac{1}{(j-i)^{2}}=\frac{M\cdot P_{3}}{s_{\mu}(1^{B+C})}\prod_{j=0}^{N-1}\frac{1}{(j!)^2}\\
+	&= \prod_{i=1}^{N}\frac{(B+C-N-1+i)!(A+i-1)!}{(A+B+C-N-1+i)!(B-N+i-1)!(C-i)!}\prod_{j=0}^{N-1}\frac{1}{j!}:= K\cdot\prod_{j=0}^{N-1}\frac{1}{j!}
 \end{align*}
-Substitution into the weight function yields the limit
+Now we further compute $K$. We extract out the smallest factorial in each of these products of factorials:
 \begin{align*}
-	w(l_i) \to& \ L^{(b+c)L-1}
-	\frac{(a+b-d_1)^{(a+b-d_1)L} (c+d_1)^{(c+d_1)L-N}}{(a-d_1)^{(a-d_1)L-N+1} d_1^{d_1L}} \exp\left(2N-(b+c)L\right)\\
-	&\qquad\cdot
-	\exp\left(\frac{x_i^2d_2^2}{2}(\frac{1}{a+b-d_1}+\frac{1}{c+d_1}-\frac{1}{a-d_1}-\frac{1}{d_1})\right)\\
-	&\qquad\cdot
-	\exp\left(x_id_2\sqrt{L} \ln\frac{(c+d_1)(a-d_1)}{(a+b-d_1)d_1}\right)
-\end{align*}
-Solving equations
+	&\prod_{i=1}^{N}(A+i-1)!=(A!)^{N}\prod_{i=1}^{N-1}\prod_{j=1}^{i}(A+j)\\
+	&\prod_{i=1}^{N}(B+C-N+i-1)!=(B+C-N!)^{N}\prod_{i=1}^{N-1}\prod_{j=1}^{i}(B+C-N+j)\\
+	&\prod_{i=1}^{N}(A+B+C-N+i-1)!=((A+B+C-N)!)^{N}\prod_{i=1}^{N-1}\prod_{j=1}^{i}(A+B+C-N+j)\\
+	&\prod_{i=1}^{N}(B-N+i-1)!=((B-N)!)^{N}\prod_{i=1}^{N-1}\prod_{j=1}^{i}(B-N+j)\\
+	&\prod_{i=1}^{N}(C-i)!=((C-N)!)^{N}\prod_{i=1}^{N-1}\prod_{j=1}^{i}(C-N+j)\\
+	\end{align*}
+Therefore, $K$ can be written as: $$K=\Big[\frac{(B+C-N)!A!}{(B-N)!(C-N)!(A+B+C-N)!}\Big]^{N}\prod_{i=1}^{N-1}\prod_{j=1}^{i}\frac{(B+C-N+j)(A+j)}{(B-N+j)(C-N+j)(A+B+C-N+j)}$$
+Since $A=\lfloor aL \rfloor$, $B=\lfloor bL \rfloor$, $C=\lfloor cL \rfloor$, when $L\rightarrow\infty$, we have:
+$$\prod_{i=1}^{N-1}\prod_{j=1}^{i}\frac{(B+C-N+j)(A+j)}{(B-N+j)(C-N+j)(A+B+C-N+j)}\rightarrow\Big[\frac{a(b+c)}{bc(a+b+c)}L^{-1}\Big]^{\frac{N(N-1)}{2}}$$
+By Stirling's Formula,
 \begin{align*}
-	\frac{(c+d_1)(a-d_1)}{(a+b-d_1)d_1} =& \ 1 \\
-	 \frac{x_i^2d_2^2}{2}(\frac{1}{a+b-d_1}+\frac{1}{c+d_1}-\frac{1}{a-d_1}-\frac{1}{d_1}) =& -\frac{x_i^2}{2}
+	&\frac{(B+C-N)!A!}{(A+B+C-N)!} \sim \frac{\sqrt{2\pi}\sqrt{B+C-N}(B+C-N)^{B+C-N}e^{-(B+C-N)}\sqrt{2\pi}\sqrt{A}(A)^{A}e^{-A}}{\sqrt{2\pi}\sqrt{A+B+C-N}(A+B+C-N)^{A+B+C-N}e^{-(A+B+C-N)}}\\
+	&= \sqrt{2\pi}\sqrt{\frac{A(B+C-N)}{A+B+C-N}} (\frac{B+C-N}{A+B+C-N})^{B+C-N}(\frac{A}{A+B+C-N})^{A}\\
+	&\sim \sqrt{2\pi}\sqrt{\frac{a(b+c)}{a+b+c}}\cdot\sqrt{L}\cdot \\ & exp\{(B+C-N)ln(B+C-N)+AlnA-(A+B+C-N)ln(A+B+C-N)\}
 \end{align*}
-we obtain
+Note that 
 \begin{align*}
-	d_1 &= \frac{ac}{b+c} \\
-	d_2 &= \sqrt{\frac{abc(a+b+c)}{(b+c)^3}}
+	(B+C-N)ln(B+C-N)&=(B+C-N)ln(1-\frac{N}{B+C})+(B+C-N)ln(B+C)\\
+	 &\sim (B+C-N)(-\frac{N}{B+C})+(B+C)ln(B+C)-Nln(B+C)\\
+	 & \sim -N+(b+c)L\cdot ln((b+c)L)-Nln((b+c)L)
 \end{align*}
+Similarly, $AlnA\sim aL\cdot ln(aL)$, and $(A+B+C-N)ln(A+B+C-N)\sim -N+(a+b+c)L\cdot ln((a+b+c)L)-Nln((a+b+c)L)$. Then
+$$ \frac{(B+C-N)!A!}{(A+B+C-N)!} \sim \sqrt{2\pi}\sqrt{\frac{a(b+c)}{a+b+c}}(alna+(b+c)ln(b+c)-(a+b+c)ln(a+b+c))\cdot L+N\cdot ln(\frac{a+b+c}{b+c})$$
+Following this procedure, we compute another quantity:
+\begin{align*}
+&\frac{(B-N)!(C-N)!}{(B+C-2N)!} \sim \sqrt{2\pi}\sqrt{\frac{bc}{b+c}}\sqrt{L}\cdot exp\{(blnb+clnc-(b+c)ln(b+c))\cdot L+N\cdot ln\frac{(b+c)^{2}}{bc}\}
+\end{align*}
+Therefore, $$\Big[\frac{(B+C-N)!A!(B+C-2N)!}{(B-N)!(C-N)!(A+B+C-N)!}\Big] \sim \sqrt{\frac{a(b+c)^{2}}{bc(a+b+c)}}\cdot exp\{(S_{0}(a,b,c))\cdot L+N\cdot ln(\frac{bc(a+b+c)}{(b+c)^{3}})\}$$
+where $S_{0}(a,b,c)=alna+(b+c)ln(b+c)-(a+b+c)ln(a+b+c)-blnb-clnc+(b+c)ln(b+c)$.
+Using Stirling's formula to $(B+C-2N)!$ we get:
+$$(B+C-2N)!\sim \sqrt{2\pi}\sqrt{b+c}\sqrt{L}\cdot exp\{-2N+(b+c)L\cdot ln((b+c)L)-2Nln((b+c)L)-(B+C-2N)\}$$
+Then,
+\begin{align*}
+	&\frac{(B+C-N)!A!}{(B-N)!(C-N)!(A+B+C-N)!}=\Big[\frac{(B+C-N)!A!(B+C-2N)!}{(B-N)!(C-N)!(A+B+C-N)!}\Big]/(B+C-2N)!\\
+	&\sim (2\pi)^{-\frac{1}{2}}\sqrt{\frac{a(b+c)}{bc(a+b+c)}}\cdot L^{-\frac{1}{2}}\cdot exp\{S_{1}(a,b,c)\cdot L-(b+c)L\cdot lnL+2N+2Nln((b+c)L)\\
+	&+(B+C-2N)+N\cdot ln(\frac{bc(a+b+c)}{(b+c)^3})\}
+\end{align*}
+where $S_{1}(a,b,c)=alna+(b+c)ln(b+c)-(a+b+c)ln(a+b+c)-blnb-clnc$.
+Combining the computation above, we get:
+\begin{align*}
+	K &\sim \Big[\frac{(B+C-N)!A!}{(B-N)!(C-N)!(A+B+C-N)!}\Big]^{N}\Big[\frac{a(b+c)}{bc(a+b+c)}L^{-1}\Big]^{\frac{N(N-1)}{2}}\\
+	&\sim (2\pi)^{-\frac{N}{2}}\Big[\sqrt{\frac{a(b+c)}{bc(a+b+c)}}\Big]^{N}\cdot L^{-\frac{N}{2}}\cdot (exp\{P(a,b,c,N,L)\})^{N}\cdot\Big[\frac{a(b+c)}{bc(a+b+c)}L^{-1}\Big]^{\frac{N(N-1)}{2}}\\
+	&= \sim (2\pi)^{-\frac{N}{2}}\Big[\sqrt{\frac{a(b+c)}{bc(a+b+c)}}L^{-\frac{1}{2}}\Big]^{N^2}\cdot (exp\{P(a,b,c,N,L)\})^{N}
+\end{align*}
+where $P(a,b,c,N,L)=S_{1}(a,b,c)\cdot L-(b+c)L\cdot lnL+2Nln((b+c)L)+(B+C)+N\cdot ln(\frac{bc(a+b+c)}{(b+c)^3})$.\\
+\textbf{Step 3:} In this step, we find the proper $d_{1}$ and $d_{2}$ and prove our claim.\\
+In Problem 11, we get $$\omega(\ell_{i})=\frac{(A+B-\ell_{i}-1)!(\ell_{i}+C-N)!}{(A+N-\ell_{i}-1)!\ell_{i}!}$$ Using Stirling's formula, we obtain:
+\begin{align*}
+	\omega(\ell_{i})&\sim \sqrt{\frac{(A+B-\ell_{i}-1)(\ell_{i}+C-N)}{(A+N-\ell_{i}-1)\ell_{i}}}\cdot exp\{(A+B-\ell_{i}-1)ln(A+B-\ell_{i}-1)\\ 
+	& + (\ell_{i}+C-N)ln(\ell_{i}+C-N)-(A+N-\ell_{i}-1)ln(A+N-\ell_{i}-1)-\ell_{i}ln(\ell_{i})\\
+	& -(B+C-2N)\}
+\end{align*}
+Since $\ell_{i}=x_{i}d_{2}\sqrt{L}+d_{1}L$, $A=\lfloor aL \rfloor$, $B=\lfloor bL \rfloor$, $C=\lfloor cL \rfloor$, when $l\rightarrow\infty$, we have $$\sqrt{\frac{(A+B-\ell_{i}-1)(\ell_{i}+C-N)}{(A+N-\ell_{i}-1)\ell_{i}}}\rightarrow \sqrt{\frac{(a+b-d_{1})(c+d_{1})}{(a-d_{1})d_{1}}}$$
+For the terms in the exponent, we first get rid of all the constants(using Taylor's expansion):
+\begin{align*}
+	&(A+B-\ell_{i}-1)ln(A+B-\ell_{i}-1)\sim (A+B-\ell_{i})ln(A+B-\ell_{i})-ln(A+B-\ell_{i})-1\\
+	& (\ell_{i}+C-N)ln(\ell_{i}+C-N)\sim (\ell_{i}+C)ln(\ell_{i}+C)-Nln(\ell_{i}+C)-N\\
+	& (A+N-\ell_{i}-1)ln(A+N-\ell_{i}-1)\sim (A-\ell_{i})ln(A-\ell_{i})+(N-1)ln(A-\ell_{i})+(N-1)
+\end{align*}
+Notice that
+\begin{align*}
+	& A+B-\ell_{i} = (a+b-d_1)L-x_{i}d_{2}\sqrt{L}+O(1)
+\end{align*}
+and 
+\begin{align*}
+	ln(A+B-\ell_{i}) &= ln(a+b-d_1)L+ln(1-\frac{x_{i}d_{2}}{(a+b-d_{1})\sqrt{L}}+O(\frac{1}{L}))\\
+	&= ln(a+b-d_1)L - \frac{x_{i}d_{2}}{(a+b-d_{1})\sqrt{L}}-\frac{1}{2}\frac{x_{i}^2d_{2}^2}{(a+b-d_{1})^2 L} + O(\frac{1}{L})
+\end{align*}
+Then,
+\begin{align*}
+	&(A+B-\ell_{i})ln(A+B-\ell_{i})\sim \\
+	&(a+b-d_{1})L\cdot ln((a+b-d_{1})L)-d_{2}x_{i}\sqrt{L}+\frac{1}{2}\frac{d_{2}^2 x_{i}^2}{a+b-d_{1}}-d_{2}x_{i}\sqrt{L}\cdot ln((a+b-d_{1})L)
+\end{align*}
+Similarly, we compute other terms($(A+B-\ell_{i})ln(A+B-\ell_{i})$,$(\ell_{i}+C)ln(\ell_{i}+C)$, $(A-\ell_{i})ln(A-\ell_{i})$, $\ell_{i}ln(\ell_{i})$) in the exponential part of $\omega(\ell_{i})$. Plug them into the formula of $\omega(\ell_{i})$, we get its exponential part:
+\begin{align*}
+	&exp\{(a+b-d_{1})L\cdot ln((a+b-d_{1})L)+(c+d_{1})L\cdot ln((c+d_{1})L)-(a-d_{1})L\cdot ln((a-d_{1})L)-\\
+	& d_{1}L\cdot ln(d_{1}L)-2N-ln((a+b-d_{1})L)-Nln((d_{1}+c)L)-(N-1)ln((a-d_{1})L)-(B+C-2N)\\
+	&+d_{2}x_{i}\sqrt{L}ln\frac{(c+d_{1})(a-d_{1})}{(a+b-d_{1})d_{1}}+\frac{1}{2}d_{2}^{2}x_{i}^{2}[\frac{1}{a+b-d_{1}}+\frac{1}{c+d_{1}}-\frac{1}{a-d_{1}}-\frac{1}{d_{1}}]\}
+\end{align*}
+Let 
+\begin{equation*}
+\left\{
+\begin{array}{lr}
+\frac{(c+d_{1})(a-d_{1})}{(a+b-d_{1})d_{1}}=1 &  \\
+(\frac{1}{a+b-d_{1}}+\frac{1}{c+d_{1}}-\frac{1}{a-d_{1}}-\frac{1}{d_{1}})d_{2}^2=-1 &
+\end{array}	
+\right.
+\end{equation*}
+Solve this equation we get
+\begin{equation*}
+\left\{
+\begin{array}{lr}
+d_{1}=\frac{ac}{b+c} &  \\
+d_{2}=\sqrt{\frac{abc(a+b+c)}{(b+c)^3}} &
+\end{array}	
+\right.
+\end{equation*}
+and we finally get
+$$\omega(\ell_{i})\sim \sqrt{\frac{(a+b-d_{1})(c+d_{1})}{(a-d_{1})d_{1}}}exp\{S_{2}(a,b,c,L)-\frac{1}{2}x_{i}^{2}\}=\frac{a+b+c}{a}\cdot exp\{S_{2}(a,b,c,L)-\frac{1}{2}x_{i}^{2}\}$$
+where $S_{2}(a,b,c,L)=(a+b-d_{1})L\cdot ln((a+b-d_{1})L)+(c+d_{1})L\cdot ln((c+d_{1})L)-(a-d_{1})L\cdot ln((a-d_{1})L)-d_{1}L\cdot ln(d_{1}L)-ln((a+b-d_{1})L)-Nln((d_{1}+c)L)-(N-1)ln((a-d_{1})L)-(B+C)$.\\
+Combining the computation results \textbf{Step 2}, we get
+\begin{align*}
+	&(d_{2}\sqrt{L})^{N}\mathbb{P}(\ell_{1},\dots,\ell_{N})=(d_{2}\sqrt{L})^{N}\frac{1}{Z}\prod_{1\leqslant i <j\leqslant N}(\ell_{i}-\ell_{j})^{2}\prod_{i=1}^{N}\omega(\ell_{i})\\
+	&=(d_{2}\sqrt{L})^{N^2}K\cdot\prod_{j=0}^{N-1}\frac{1}{j!}\Big[\prod_{1\leqslant i <j\leqslant N}(x_{i}-x_{j})^{2}\Big](\frac{a+b+c}{a})^{N}exp\{N\cdot S_{2}(a,b,c,L)\}\cdot\prod_{i=1}^{N}e^{-\frac{x_{i}^{2}}{2}}
+\end{align*}
+Notice that
+\begin{align*}
+	&K\cdot(d_{2}\sqrt{L})^{N^2}\cdot exp\{N\cdot S_{2}(a,b,c,L)\} \sim (2\pi)^{-\frac{N}{2}}\Big[\sqrt{\frac{a(b+c)}{bc(a+b+c)}}L^{-\frac{1}{2}}\cdot d_{2}\sqrt{L} \Big]^{N^2}\cdot\\
+	& exp\{N(P(a,b,c,N,L)+S_{2}(a,b,c,L))\}
+\end{align*}
+Plug $d_{1}$ into $S_{2}(a,b,c,L)$ we get:
+\begin{align*}
+	& S_{2}(a,b,c,L)=\Big[\frac{b(a+b+c)}{b+c}ln(\frac{b(a+b+c)}{b+c})+\frac{c(a+b+c)}{b+c}ln(\frac{c(a+b+c)}{b+c})-\frac{ab}{b+c}ln(\frac{ab}{b+c})\\
+	& -\frac{ac}{b+c}ln(\frac{ac}{b+c})\Big]\cdot L+(b+c)\cdot L\cdot lnL -ln(\frac{b(a+b+c)}{b+c})-Nln(d_{1}+c) -(N-1)ln(a-d_{1})\\
+	&-2N\cdot lnL-(B+C)
+\end{align*}
+Add $P(a,b,c,N,L)$ and $S_{2}(a,b,c,L)$, we will find the coefficients of term $L$, $L\cdot LlnL$, and $lnL$ equal to zero. Then, we are left with: 
+\begin{align*}
+	&P(a,b,c,N,L)+S_{2}(a,b,c,L)= -ln(\frac{b(a+b+c)}{b+c})-Nln(\frac{c(a+b+c)}{b+c})-Nln(\frac{ab}{b+c})+ln(\frac{ab}{b+c})\\
+	& +N\cdot ln(\frac{bc(a+b+c)}{(b+c)^3}) = ln(\frac{a}{a+b+c})-Nln(\frac{a}{b+c})
+\end{align*}
+Therefore, 
+\begin{align*}
+	&K\cdot(d_{2}\sqrt{L})^{N^2}\cdot exp\{N\cdot S_{2}(a,b,c,L)\} \sim (2\pi)^{-\frac{N}{2}}\Big[\sqrt{\frac{a(b+c)}{bc(a+b+c)}}L^{-\frac{1}{2}}\cdot d_{2}\sqrt{L} \Big]^{N^2}\cdot\\
+	& (\frac{a}{a+b+c})^{N}\cdot (\frac{b+c}{a})^{N^2}=(2\pi)^{-\frac{N}{2}}(\frac{a}{a+b+c})^{N}
+\end{align*}
+Finally, we obtain
+\begin{align*}
+	&(d_{2}\sqrt{L})^{N}\mathbb{P}(\ell_{1},\dots,\ell_{N})\xrightarrow{L\rightarrow\infty}\frac{1}{(2\pi)^{\frac{N}{2}}\prod_{j=0}^{N-1}(j!)}\prod_{1\leqslant i<j\leqslant N}(x_{i}-x_{j})^2\prod_{i=1}^{N}e^{-\frac{x_{i}^2}{2}}
+\end{align*}
+Following the logic of \textbf{Step 1}, we conclude that the random vector $(X_{1},\dots,X_{N})$ weakly converges to the continuous distribution with density $\rho(x_{1},\dots,x_{N})$ as given above. In addition, the quantities that the problem requires us to find are: $d_{1}=\frac{ac}{b+c}$, $d_{2}=\sqrt{\frac{abc(a+b+c)}{(b+c)^3}}$, $Z_{N}=(2\pi)^{\frac{N}{2}}\prod_{j=0}^{N-1}(j!)$.
 
 	
 	\subsection*{Problem 13}
