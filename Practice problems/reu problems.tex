@@ -7,8 +7,13 @@
 \usepackage{bbm}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
 \newtheorem*{lemma*}{Lemma}
 \newtheorem*{theorem*}{Theorem}
+{ \theoremstyle{remark}
+	\newtheorem{remark}[theorem]{Remark}}
+{ \theoremstyle{definition}
+	\newtheorem{definition}[theorem]{Definition}}
 \DeclareMathOperator{\ex}{\mathbb{E}}
 \DeclareMathOperator{\pr}{\mathbb{P}}
 \DeclareMathOperator{\cov}{cov}
@@ -1287,6 +1292,167 @@ This seems to go to infinity, since the top should roughly have a growth rate of
 
 
 \section{$(\alpha, p, \lambda)$-good sequences}
+
+\subsection*{Problem 21}
+
+
+\subsection*{Lemmas from Section 4.2}
+
+	
+	We first establish some notation. Let $a,b,t_1,t_2,z_1,z_2 \in \mathbb{Z}$ be given such that $t_1 + 1 < t_2$, $0\leq z_2 - z_1 \leq t_2 - t_1$, $0\leq b-a \leq t_2 - t_1$, $z_1\leq a$, and $z_2\leq b$. Let $\ell\in\Omega(t_1,t_2,a,b)$ and $\ell_{bot}\in\Omega(t_1,t_2,z_1,z_2)$. We write $A(\ell,\ell_{bot})$ for the event that $\ell \geq \ell_{bot}$. Thus $\mathbb{P}^{t_1,t_2,a,b,\infty,\ell_{bot}}_{avoid,Ber}(\ell) = \mathbb{P}^{t_1,t_2,a,b}_{Ber}(\ell\,|\,A(\ell,\ell_{bot}))$. We now establish some auxiliary results which will be used in the proof of Lemma 4.2.
+	
+	\begin{lemma}
+		If $a\leq k_1\leq k_2\leq a + T - t_1$, then with notation as above,
+		\[
+		\mathbb{P}^{t_1, t_2, a, b}_{Ber}\big( A(\ell,\ell_{bot})\,\big|\,\ell(T) = k_1\big) \leq \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) = k_2\big).
+		\]
+	\end{lemma}
+
+	\begin{remark}
+		This lemma essentially states that a path $\ell$ is more likely to lie above $\ell_{bot}$ if its value at a point $T$ is increased. A more general result is proven in Lemma 4.1 of Corwin-Dimitrov.
+	\end{remark}
+
+	\begin{proof}
+		Let $\ell_1$ be a random path distributed according to $\mathbb{P}^{t_1, t_2, a, b}_{Ber}$ conditioned on $\ell_1(T) = k_1$. We can identify $\ell_1$ with a sequence of $+$'s and $-$'s of length $t_2-t_1$, where a $+$ in the $i$th position means that $\ell_1(t_1+i+1)-\ell_1(t_1+i) = 1$, and a $-$ means that $\ell_1(t_1+i+1)-\ell_1(t_1+i) = 0$. [Maybe include Figure 9 from Corwin-Dimitrov here.] In this representation, the value of $\ell_1(T)$ is $a$ plus the number of $+$'s in the first $T-t_1$ slots, and the value of $\ell_1(t_2)$ is $a$ plus the total number of $+$'s. Note that we must have exactly $(k_1-a)$ $+$'s in the first $T-t_1$ slots, and $(b-k_1)$ $+$'s in the last $t_2-T$ slots. We pick uniformly at random $(k_2-k_1)$ $-$'s in the first $T-t_1$ slots and change them to $+$'s, then pick randomly $(k_2-k_1)$ $+$'s in the last $t_2-T$ slots and change them to $-$'s. This defines a new path $\ell_2$. Since there are now $k_2-a$ $+$'s in the first $T-t_1$ slots, we have $\ell_2(T) = k_2$, and we still have $\ell_2(t_2) = b$ since the number of $+$'s is unchanged. Thus we see that $\ell_2$ is distributed according to $\mathbb{P}^{t_1,t_2,a,b}_{Ber}$ conditioned on $\ell_2(T) = k_2$. 
+		
+		Now suppose that $\ell_1 \in A(\ell,\ell_{bot})$, i.e., $\ell_1 \geq \ell_{bot}$. We claim that $\ell_2 \geq \ell_1$ on all of $[t_1,t_2]$. To see this, note that for any $s\in\llbracket t_1, t_2\rrbracket$, $\ell_2(s) - \ell_1(s)$ is equal to the number of $+$'s in the first $s-t_1$ slots of the sequence representing $\ell_2$, minus the corresponding number for $\ell_1$. If $s\leq T$, this difference is clearly positive by construction. The difference is equal to $k_2 - k_1 \geq 0$ at $s = T$, and the difference then decreases monotonically as $s$ increases to $t_2$, since we have removed exactly $k_2-k_1$ $+$'s from the last $t_2-T$ slots. The difference is of course 0 at $s = t_2$, so this proves the claim. It follows that
+		\[
+		\mathbf{1}_{A(\ell_1,\ell_{bot})} \leq \mathbf{1}_{A(\ell_2,\ell_{bot})}.
+		\]
+		Now taking expectations of both sides and recalling the distributions of $\ell_1,\ell_2$ proves the lemma.
+	\end{proof}
+
+
+	\begin{cor}
+		Let $T\in\llbracket t_1, t_2\rrbracket$, and let $A, B$ be nonempty sets of integers such that $a \leq \alpha \leq \beta \leq a+T-t_1$ for all $\alpha\in A, \beta\in B$. Then
+		\[
+		\mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) \in A\big) \leq \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) \in B\big).
+		\]
+	\end{cor}
+
+	\begin{proof}
+		We have
+		\begin{align*}
+			& \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) \in A\big) = \sum_{\alpha\in A} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) = \alpha\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)}\\
+			= \; & \sum_{\alpha\in A}\sum_{\beta\in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) = \alpha\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)} \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)}\\
+			\leq \; & \sum_{\alpha\in A}\sum_{\beta\in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) = \beta\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)} \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)}\\
+			= \; & \sum_{\beta \in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) = \beta\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)} = \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) \in B\big).
+		\end{align*}
+		The inequality in the third line follows from the previous Lemma.
+	\end{proof}
+
+	\begin{cor}
+		Let $\alpha \leq a + T - t_1$. Then
+		\begin{align*}
+		\mathbb{P}^{t_1,t_2,a,b,\infty,\ell_{bot}}_{avoid,Ber} \big(\ell(T)\geq\alpha) &\geq \mathbb{P}^{t_1,t_2,a,b}_{Ber} (\ell(T)\geq \alpha),\\
+		\mathbb{P}^{t_1,t_2,a,b,\infty,\ell_{bot}}_{avoid,Ber} (\ell(T)\leq\alpha) &\leq \mathbb{P}^{t_1,t_2,a,b}_{Ber} (\ell(T)\leq \alpha).
+		\end{align*}
+	\end{cor}
+
+	\begin{proof}
+		We write $\mathbb{P} := \mathbb{P}^{t_1,t_2,a,b}_{Ber}$ for brevity. Using Bayes' theorem repeatedly, we find
+		\begin{align*}
+		\mathbb{P}(\ell(T)\geq\alpha\,|\,A(\ell,\ell_{bot})) &= \frac{\mathbb{P}(A(\ell,\ell_{bot})\,|\,\ell(T)\geq\alpha) \mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(A(\ell,\ell_{bot}))}\\ 
+		&\geq \frac{\mathbb{P}(A(\ell,\ell_{bot})\,|\,\ell(T) < \alpha) \mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(A(\ell,\ell_{bot}))}\\
+		&= \big(1 - \mathbb{P}(\ell(T)\geq\alpha\,|\,A(\ell,\ell_{bot})\big)\cdot\frac{\mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell(T) < \alpha)}.
+		\end{align*}
+		The inequality in the second line follows from the previous Corollary. It follows that
+		\[
+		\mathbb{P}(\ell(T)\geq\alpha\,|\,A(\ell,\ell_{bot})) \geq \frac{\mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell(T)\geq\alpha) + \mathbb{P}(\ell(T) < \alpha)} = \mathbb{P}(\ell(T)\geq\alpha).
+		\]
+		This proves the first inequality. The second follows immediately by taking complements.
+	\end{proof}
+
+	In order to formulate some of the lemmas below it will be convenient to adopt the following notation: for any $r > 0$
+	\begin{equation*}\label{eqsts}
+	t^{\pm}_1 =\lfloor \pm (r+1) N^{\alpha} \rfloor,\quad t^{\pm}_2 = \lfloor \pm (r+2)N^{\alpha} \rfloor,\quad \textrm{and } t_3^{\pm} = \lfloor \pm (r+3)N^{\alpha} \rfloor.
+	\end{equation*}
+
+	\begin{lemma}
+		For each $\epsilon > 0$ there exist $R_1=R_1(\epsilon) > 0$ and $N_2= N_2(\epsilon)$ such that for $N \geq N_2$ 
+		$$\mathbb{P}\Big( \sup_{s \in [ -t_3, t_3] }\big| L^N_1(s) - p s \big| \geq  R_1N^{\alpha/2} \Big) < \epsilon.$$
+	\end{lemma}
+
+	\begin{proof}
+		Note that $\sup[-(L_1^N(s)-ps)] = -\inf[L_1^N(s)-ps]$, so the probability in question is bounded above by
+		\[
+		\mathbb{P}\Big( \sup_{s \in [ -t_3,t_3] }\big[ L^N_1(s) - p s \big] \geq  R_1N^{\alpha/2} \Big) + \mathbb{P}\Big( \inf_{s \in [ -t_3, t_3] }\big[ L^N_1(s) - p s \big] \leq  -R_1N^{\alpha/2} \Big).
+		\]
+		\textbf{Step 1:} Let us begin with the first term. Set $s_1 = \lfloor rN^\alpha\rfloor$. We define events 
+		\[
+		E(M) = \Big\{\big|L_1^N(-t_3) + pt_3\big| > MN^{\alpha/2}\Big\}, \quad F(M) = \Big\{L_1^N(-s_1) > -ps_1 + MN^{\alpha/2} \Big\},
+		\]
+		\[
+		G(M) = \Bigg\{\sup_{s\in[0,t_3]} \big[L_1^N(s) - ps \big] \geq (6r+22)(2r+6)^{1/2}(M+1)N^{\alpha/2} \Bigg\}.
+		\]
+		For $a,b\in\mathbb{Z}$, $s\in\{0,\dots,t_3\}$, and $\ell_{bot}\in\Omega(-t_3,s,z_1,z_2)$ with $z_1\leq a$, $z_2\leq b$, we also define $E(a,b,s,\ell_{bot})$ to be the event that $L_1^N(-t_3) = a$, $L_1^N(s) = b$, and $L_2^N$ agrees with $\ell_{bot}$ on $[-t_3,s]$. 
+		
+		We claim that the set $G(M) \setminus E(M)$ can be written as a \textit{countable disjoint} union of sets $E(a,b,s,\ell_{bot})$. Let $D(M)$ be the set of tuples $(a,b,s,\ell_{bot})$ satisfying
+		\begin{enumerate}[label=(\arabic*)]
+			
+			\item $0\leq s\leq t_3$,
+			
+			\item $0\leq b-a \leq s + t_3$, $|a + pt_3| \leq MN^{\alpha/2}$, and $b-ps > (6r+22)(2r+6)^{1/2}(M+1)N^{\alpha/2}$,
+			
+			\item $z_1\leq a, z_2\leq b$, and $\ell_{bot}\in\Omega(-t_3, s, z_1, z_2)$.
+			
+		\end{enumerate}
+		Conditions (1) and (2) show that the union of these sets $E(a,b,s,\ell_{bot})$ for $(a,b,s,\ell_{bot})\in D(M)$ is $G(M)\setminus E(M)$. Observe that $D(M)$ is countable, since there are finitely many possible choices of $s$, countably many $a,b$ and $z_1,z_2$ for each $s$, and finitely many $\ell_{bot}$ for each $z_1,z_2$. Moreover, the sets $E(a,b,s,\ell_{bot})$ are clearly pairwise disjoint for distinct tuples in $D(M)$. This proves the claim.
+		
+		Now by one-point tightness of $L_1^N$, we can choose $M$ large enough depending on $\epsilon$ so that
+		\[
+		\mathbb{P}(E(M)) < \epsilon/8, \quad \mathbb{P}(F(M)) < \epsilon/24
+		\]
+		for all $N\in\mathbb{N}$. If $(a,b,s,\ell_{bot})\in D(M)$, then
+		\begin{align*}
+		\mathbb{P}^{-t_3,s,a,b}_{Ber}\Big( \ell(-s_1) > -ps_1 + MN^{\alpha/2}\Big) &= \mathbb{P}^{0,s+t_3,0,b-a}_{Ber}\Big(\ell(t_3-s_1) + a \geq -ps_1 + MN^{\alpha/2}\Big)\\
+		&\geq \mathbb{P}^{0,s+t_3,0,b-a}_{Ber}\Big(\ell(t_3-s_1) \geq p(t_3-s_1) + 2MN^{\alpha/2}\Big).
+		\end{align*}
+		The inequality follows from the assumption in (2) that $a+pt_3 \geq -MN^{\alpha/2}$. Moreover, since $b-ps > (6r+22)(2r+6)^{1/2}(M+1)N^{\alpha/2}$ and $a+pt_3 \leq MN^{\alpha/2}$, we have 
+		\[
+		b-a \geq p(s+t_3) + (6r+21)(2r+6)^{1/2}(M+1)N^{\alpha/2} \geq p(s+t_3) + (6r+21)(M+1)(s+t_3)^{1/2}.
+		\]  
+		 The second inequality follows since $s+t_3 \leq 2t_3 \leq (2r+6)N^{\alpha}$. It follows from Lemma 3.5 with $M_1 = 0$, $M_2 = (6r+21)(M+1)$ that for sufficiently large $N$, we have
+		\[
+		 \mathbb{P}^{0,s+t_3,0,b-a}_{Ber}\Big(\ell(t_3-s_1) \geq \frac{t_3 - s_1}{s+t_3}[p(s+t_3) + (6r+21)(M+1) N^{\alpha/2}] - (s+t_3)^{1/4}\Big) \geq 1/3,
+		\]
+		for all $(a,b,s,\ell_{bot}) \in D(R_1)$ simultaneously. Note that $\frac{t_3-s_1}{s+t_3} \geq \frac{N^\alpha - 1}{(2r+6)N^\alpha} \geq \frac{1}{2r+7}$
+		for large $N$. Hence $\frac{t_3 - s_1}{s+t_3}[p(s+t_3) + M_2 N^{\alpha/2}] - (s+t_3)^{1/4} \geq p(s+t_3) + 3(M+1)N^{\alpha/2} - (s+t_3)^{1/4}\geq p(s+t_3) + 2MN^{\alpha/2}$ for all large enough $N$. We conclude from the above that
+		\[
+		\mathbb{P}^{-t_3,s,a,b}_{Ber}\Big(\ell(-s_1) > -ps_1 + MN^{\alpha/2}\Big) \geq 1/3
+		\]
+		uniformly in $a,b$ for large $N$. Now by the Gibbs property for $L^N$, we have for any $\ell\in\Omega(-t_3,s,a,b)$ that
+		\[
+		\mathbb{P}(L_1^N|_{[-t_3,s]} = \ell\,|\,E(a,b,s,\ell_{bot})) = \mathbb{P}^{-t_3,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}(\ell).
+		\]
+		Hence by Corollary 2,
+		\begin{align*}
+		&\mathbb{P}\big( L_1^N(-s_1) > -ps_1 + MN^{\alpha/2}\,\big|\,E(a,b,s,\ell_{bot})\big)\\
+		= \; & \sum_{\ell\in\Omega(-t_3,s,a,b)} \mathbb{P}^{-t_3,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}(\ell)\cdot \mathbb{P}^{-t_3,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}\big(\ell(-s_1) > -ps_1 + MN^{\alpha/2}\big)\\
+		\geq \; & \sum_{\ell\in\Omega(-t_3,s,a,b)} \mathbb{P}^{-t_3,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}(\ell)\cdot \mathbb{P}^{-t_3,s,a,b}_{Ber}\big(\ell(-s_1) > -ps_1 + MN^{\alpha/2}\big)\\
+		\geq \; & \frac{1}{3}\sum_{\ell\in\Omega(-t_3,s,a,b)} \mathbb{P}^{-t_3,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}(\ell) = \frac{1}{3}.
+		\end{align*}
+		Note once again that this bound holds independent of $a,b$ for all sufficiently large $N$. It follows that
+		\[
+		\epsilon/24 > \mathbb{P}(F(M)) \geq \sum_{(a,b,s,\ell_{bot})\in D(M)} \mathbb{P}(F(M)\cap E(a,b,s,\ell_{bot}))
+		\]
+		\[
+		= \sum_{(a,b,s,\ell_{bot})\in D(M)} \mathbb{P}(F(M)\,|\, E(a,b,s,\ell_{bot}))\mathbb{P}(E(a,b,s,\ell_{bot})) \geq \frac{1}{3}\mathbb{P}(G(M)\setminus E(M))
+		\]
+		for large $N$. Since in addition $\mathbb{P}(E(M)) < \epsilon/4$, we find that
+		\[
+		\mathbb{P}\Big( \sup_{s \in [0,t_3] }\big[ L^N_1(s) - p s \big] \geq  (6r+22)(2r+6)^{1/2}(M+1)N^{\alpha/2} \Big) = \mathbb{P}(G(M)) < \epsilon/4
+		\]
+		for large enough $N$. A similar argument proves the same inequality with $[-t_3,0]$ in place of $[0,t_3]$. Thus we can find an $N_{20} = N_{20}(\epsilon)$ so that
+		\[
+		\mathbb{P}\Big( \sup_{s \in [-t_3,t_3] }\big[ L^N_1(s) - p s \big] \geq  R_1N^{\alpha/2} \Big) < \epsilon/2
+		\]
+		for all $N\geq N_{20}$, with $R_1 = (6r+22)(2r+6)^{1/2}(M+1)$.\\
+		
+		\noindent\textbf{Step 2:} [Use Lemma 3.7]
+	
+	\end{proof}
+	
 	
 	
 \end{document}
