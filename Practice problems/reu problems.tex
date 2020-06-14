@@ -917,11 +917,11 @@ where $K=n^{N^2}(1-e^{-\frac{1}{n}})^{N^2}(e^{-\frac{1}{n}})^{-\frac{1}{2}N(N-1)
 \section{Avoiding Bernoulli line ensembles}
 
 	\subsection*{Problem 16}
-	Let $\Omega(0,T,\bar x^T, \bar y ^T)$ be the set of all non intersecting Bernoulli line ensembles from $\bar x^T$ to $\bar y^T$ then we may find that for each line ensemble $\mathfrak{B}\in \Omega(0,T,\bar x^T,\bar y^T)$ with $\mathfrak B=(B_1,...,B_k)$, we may define $\lambda_i(\mathfrak B):=(B_1(i),B_2(i),...,B_k(i))$. 
-This is a partition since by the definition of avoiding Bernoulli line ensembles, we have the inequality $B_\alpha(i)>B_\beta(i)$ if $\alpha<\beta$. 
+	Let $\Omega(0,T,\bar x^T, \bar y ^T)$ be the set of all non intersecting Bernoulli line ensembles from $\bar x^T$ to $\bar y^T$. For each line ensemble $\mathfrak{B}\in \Omega(0,T,\bar x^T,\bar y^T)$ with $\mathfrak B=(B_1,...,B_k)$, we may define $\lambda_i(\mathfrak B):=(B_1(i),B_2(i),...,B_k(i))$. 
+The $\lambda_i$ form partitions since by the definition of avoiding Bernoulli line ensembles, we have the inequality $B_\alpha(i)>B_\beta(i)$ if $\alpha<\beta$. 
 Now because $B_\alpha(i+1)-B_\alpha(i)\in \{0,1\}$ we know that $B_\alpha(i+1)\geq B_\alpha(i)$ but also since $B_\alpha(i+1)\in \mathbb{Z}$ and $B_{\alpha+1}<B_\alpha(i+1)$ (strictly) by the earlier stated inequality, we know that$B_{\alpha+1}+1\leq B_\alpha(i+1)$ and so we find that 
 \[B_{\alpha+1}(i+1)\leq B_\alpha(i)\leq B_\alpha(i+1)\]
-We therefore find that for all $i$, $\lambda_i\preceq \lambda_{i+1}$. Note that if we plug in $i=0$, we get $\lambda_0=\bar x^T$ and $\lambda_T=\bar y^T$.
+We therefore find that for all $i$, $\lambda_i\preceq \lambda_{i+1}$. Note that when $i=0$, we get $\lambda_0=\bar x^T$ and $\lambda_T=\bar y^T$.
 
 Now, let us define the set 
 \[TB_{\kappa/\mu}^T:=\{(\lambda_0,...,\lambda_T)\mid \lambda_0=\mu, \lambda_T=\kappa, \lambda_i\preceq\lambda_{i+1}\}\] 
