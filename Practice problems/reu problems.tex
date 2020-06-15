@@ -1026,22 +1026,23 @@ Similarly,
 	& det(h_{y_{i}^{T}-x_{j}^{T}-i+j})\sim [(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p}}\sqrt{T}^{-1}\cdot exp\{S_{3}(p,t,T)-ln(p+1)\}]^{k}(\frac{p+1}{p})^{\sum_{i=1}^{k}(b_{i}-a_{i}))\cdot\sqrt{T}}\cdot \\
 	& det(exp\{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^2\})_{i,j=1}^{k}
 	\end{align*}
-where $c_{2}(p,t,T)=\frac{1}{p(p+1)(1-t)}$.
+where $c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}$.
 Notice that $S_{1}(p,t,T)+S_{2}(p,t,T)-S_{3}(p,t,T)=0$. Combine three determinants above, we get
 \begin{align*}
 	& \pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)\sim \\
 	& (2\pi)^{-\frac{k}{2}}\Big[\sqrt{\frac{p+1}{pt(1-t)}}\Big]^{k}\cdot T^{-\frac{k}{2}} \cdot exp\{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}(a_{i}^2+z_{i}^2)-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^{2})\}\cdot\\
 	& exp\{-kln(p+1)\}\cdot \frac{det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\cdot det(e^{c_{2}(p,t)b_{i}z_{j}})_{i,j=1}^{k}}{det(exp\{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}\})_{i,j=1}^{k}}\\
 	&= (2\pi)^{-\frac{k}{2}}\Big[\sqrt{\frac{1}{p(p+1)t(1-t)}}\Big]^{k}\cdot T^{-\frac{k}{2}}\cdot exp\{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}a_{i}^2-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}b_{i}^2\}\\
-	& \frac{det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\cdot det(e^{c_{2}(p,t)b_{i}z_{j}})_{i,j=1}^{k}}{det(exp\{\frac{1}{p(p+1)}a_{i}b_{j}\})_{i,j=1}^{k}})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^2}
+	& \frac{det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\cdot det(e^{c_{2}(p,t)b_{i}z_{j}})_{i,j=1}^{k}}{det(exp\{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}\})_{i,j=1}^{k}})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^2}
 \end{align*}
 where $c_{3}(t,p)=\frac{1}{2p(p+1)t(1-t)}$.
 Therefore, $(\sqrt{T})^{k}\cdot\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)$ converges to $\rho(x_{1},\dots,x_{k})$ as given above, and 
 \begin{align*}
-	c_{1}(p,t)&=\frac{1}{p(p+1)t}, \quad c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}, \quad c_{3}(p,t)=\frac{1}{2p(p+1)t(1-t)}\\
-	Z&=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot exp\{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}+c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}\}det(exp\{\frac{1}{p(p+1)}a_{i}b_{j}\})_{i,j=1}^{k}
+	&c_{1}(p,t)=\frac{1}{p(p+1)t}, \quad c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}, \quad c_{3}(p,t)=\frac{1}{2p(p+1)t(1-t)}\\
+	&Z=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot exp\{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}+c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}\}det(exp\{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}\})_{i,j=1}^{k}
 \end{align*}
 Thus, we prove our claim. 
+
 
 
 	\subsection*{Lemmas from Section 3.2}
