@@ -931,7 +931,7 @@ where $K=n^{N^2}(1-e^{-\frac{1}{n}})^{N^2}(e^{-\frac{1}{n}})^{-\frac{1}{2}N(N-1)
 
 \section{Avoiding Bernoulli line ensembles}
 
-		\subsection*{Problem 16}
+				\subsection*{Problem 16}
 \textbf{Step 1:} In this step we prove the equality:
 $$\mathbb{P}(L_{1}(\lfloor tT \rfloor) = \lambda_{1}, \cdots, L_{k}(\lfloor tT \rfloor) = \lambda_{k})=\frac{s_{\lambda/\mu}(1^{\lfloor tT \rfloor})\cdot s_{\kappa/\lambda}(1^{T-\lfloor tT \rfloor})}{s_{\kappa/\mu}(1^{T})}$$ where $\lambda_{1}>\lambda_{2}>\cdots >\lambda_{k}$ are positive integers, $s_{\lambda/\mu}$ denote skew Schur polynomials and they are specialized in all parameters equal to $1$. The $\mu$ partition is just the vector $\vec{x}^{T}$ and the $\kappa$ partition should be $\vec{y}^{T}$.
 
@@ -994,7 +994,7 @@ Then,
 \end{align*}
 Therefore, 
 \begin{align*}
-	&(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!\sim \sqrt{2\pi}\sqrt{ptT}\cdot exp\{(-i+j-1) + \\
+	&(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!\sim \sqrt{2\pi}\sqrt{(p+1)tT}\cdot exp\{(-i+j-1) + \\
 	&((p+1)tT)ln((p+1)tT)+(z_{i}-a_{j})\sqrt{T}\cdot ln((p+1)tT)+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}+\\
 	& (-i+j-1)ln((p+1)tT)-((z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1)\}
 \end{align*}
@@ -1026,7 +1026,7 @@ Similarly,
 	& det(h_{y_{i}^{T}-x_{j}^{T}-i+j})\sim [(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p}}\sqrt{T}^{-1}\cdot exp\{S_{3}(p,t,T)-ln(p+1)\}]^{k}(\frac{p+1}{p})^{\sum_{i=1}^{k}(b_{i}-a_{i}))\cdot\sqrt{T}}\cdot \\
 	& det(exp\{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^2\})_{i,j=1}^{k}
 	\end{align*}
-where $c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}$.
+where $c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}$, $S_{2}(p,t,T)=((p+1)(1-t)T)ln((p+1)tT)-(p(1-t)T)ln(ptT)-((1-t)T)ln((1-t)T)$, $S_{3}(p,t,T)=((p+1)T)ln((p+1)tT)-(pT)ln(pT)-TlnT$.
 Notice that $S_{1}(p,t,T)+S_{2}(p,t,T)-S_{3}(p,t,T)=0$. Combine three determinants above, we get
 \begin{align*}
 	& \pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)\sim \\
@@ -1042,7 +1042,6 @@ Therefore, $(\sqrt{T})^{k}\cdot\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(
 	&Z=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot exp\{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}+c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}\}det(exp\{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}\})_{i,j=1}^{k}
 \end{align*}
 Thus, we prove our claim. 
-
 
 
 	\subsection*{Lemmas from Section 3.2}
