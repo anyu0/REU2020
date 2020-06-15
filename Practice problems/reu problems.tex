@@ -770,43 +770,55 @@ Following the logic of \textbf{Step 1}, we conclude that the random vector $(X_{
 	
 	\subsection*{Problem 13}
 
-$$\omega(l_i) = \frac{(A + B - l_i - 1)! \times (l_i + C - N)!}{(A + N - l_i - 1)! \times l_i!}$$
+Define a probability distribution on $N$-tuples as
+$$P_N(l_1, \cdots, l_N) = \frac{\omega(l_1, \cdots, l_N)}{Z_N}$$
+where $Z_N$ is the sum of the weights
+$$\omega(l_1, \cdots, l_N) = \prod_{1 \leq i < j \leq N} (l_i - l_j)^2 \prod_{i = 1}^N \frac{t^{l_i}}{l_i !}$$
+Note that this sum is finite, since
+$$\sum_{l_1 > l_2 > \cdots > l_n \geq 0} \omega(l_1, \cdots, l_N) \leq \sum_{l_1 = N-1}^\infty l_1^{N^2} \frac{C_1 + A_1^{Nl_1}}{l_1!}$$\\
 
-We can rewrite $\omega(l_i)$ as
-$$(A + B - l_i - 1)! = \frac{(A + B)!}{\prod_{0 \leq k \leq l_i}(A + B - k)}$$
-$$ (C - N + l_i)! = (C - N - 1)! \prod_{0 \leq k \leq l_i}(C - N + k)$$
-$$(A + N - l_i - 1)! = \frac{(A + N -1)!}{\prod_{0 \leq k \leq l_i}(A + N -1 -k)}$$
+In the problem, we are given that $A_k, B_k, C_k \in \mathbb{N}$, with $\lim_{k \rightarrow \infty} A_k = \lim_{k \rightarrow \infty} B_k = \lim_{k \rightarrow \infty} C_k = \infty$ and $\lim_{k \rightarrow \infty} \frac{A_k C_k}{B_k} = t$. From problem 11, we have that
+$$P(l_1, \cdots, l_N) = \frac{1}{Z} \prod_{1 \leq i < j \leq N} (l_i - l_j)^2 \prod_{i = 1}^N \omega(l_i)$$
+where
+$$\omega(y) = \frac{(y + C - N)!(A + B - y - 1)!}{y!(A + N - y - 1)!}$$
+Now notice that
+$$\frac{(y + C_k - N) ! (A_k + B_k - y + 1)!}{y! (A_k + N - y - 1)!}$$
+$$= \frac{A_K + B_k - 1)! (C_k - N)!}{(A_k + N - 1)!} \frac{(A_k + N - 1) \cdots (A_k + N - y) (C_k - N + 1)}{y! (A_k + B_k - 1) \cdots (A_k + B_k - y)}$$\\
 
-Also,
+Hence we can write
+$$P_k(l_1, \cdots, l_N) = \frac{1}{Z_k} \prod_{1 \leq i < j \leq N}(l_i - l_j)^2 \prod_{i = 1}^N \omega_k (l_i)$$
+where
+$$\omega_k(y) = \frac{A_K + B_k - 1)! (C_k - N)!}{(A_k + N - 1)!} \frac{(A_k + N - 1) \cdots (A_k + N - y) (C_k - N + 1)}{y! (A_k + B_k - 1) \cdots (A_k + B_k - y)}$$\\
 
-$$\frac{(A +B - l_i 1)! (l_i + C - N)!}{(A + N - l_i - 1)! l_i!}$$
-$$=\frac{(A + B)!}{\prod_{0 \leq k \leq l_i} (A + B - k)} \times (C - N - 1)! \prod_{0 \leq k \leq l_i} (C - N + k) \times \frac{\prod_{0 \leq k \leq l_i}(A + N - 1 - k)}{(A + N - 1)!} \times \frac{1}{l_i!}$$
+Notice that $\lim_{k \rightarrow \infty} \omega_k(y) = \frac{t^k}{y!} \forall y$, since 
+$$\omega(y) = \frac{(y + C - N)!(A + B - y - 1)!}{y!(A + N - y - 1)!}$$
+and
+$$\lim_{k \rightarrow \infty} \frac{A_k C_k}{B_k} = t$$\\
 
-Now, $N$, and the $l_i$ are constants, while $A$, $B$, $C$ all go to infinity, with $\frac{A_n C_n}{B_n}$ going to $t$. Rewrite the above as
+Also note that
+$$\frac{\omega_k (y+1)}{\omega_k (y)} \leq \frac{1}{2}$$
+for $y \geq y_0$, $k\geq k_0$. Hence there exists a constant $C$, s.t. $\omega_k(y) \leq C 2^{-y}$ for $k \geq k_0$, $y \geq y_0$. Combining the last two inequalities, we get that
+$$\prod_{1 \leq i <  \leq N} (j - i)^2 \prod_{i = 1}^N \frac{t^i}{i !} \leq \liminf_{k \rightarrow \infty} Z_k \leq \limsup_{k \rightarrow \infty} Z_k \leq \sum_{l_i = N - 1}^\infty l_i^{N^2} C^N 2^{-l_i}..., \forall k$$
+so $Z_k$ is bounded uniformly for all $k$.\\
 
-$$\frac{(A+ B)! \times (C-N - 1)!}{(A + N- 1)!} \times \prod_{0 \leq k \leq l_i} \frac{(C-N + k)\times (A+N-1-k)}{(A + B - k)}$$
+Now, if in addition to $Z_K$ being bounded uniformly, we can show that $P_k$ is a tight sequence of measures, it suffices to show that each subsequential limit is $P_N$ to prove our claim that
+$$P_N(l_1, \cdots, l_N) = \frac{\omega(l_1, \cdots, l_N)}{Z_N}$$
 
-Consider the limit
-
-$$\lim_{n \rightarrow \infty} \prod_{0 \leq k \leq l_i} \frac{(C_n - N + k)\times (A_n + N - 1 - k)}{(A_n + B_n - k)} = \prod_{0 \leq k \leq l_i} \lim_{n \rightarrow \infty} \frac{(C_n - N + k)\times (A_n + N - 1 - k)}{(A_n + B_n - k)}$$
-
-$$\lim_{n \rightarrow \infty} \frac{(C_n - N + k)\times (A_n + N - 1 - k)}{(A_n + B_n - k)} = \lim_{n \rightarrow \infty}\frac{\frac{(C_n - N + k) \times (A_n + N - 1 - k)}{(A_n C_n )}}{\frac{(A_n + B_n - k)}{(A_n C_n)}}$$
-
-$$= \lim_{n \rightarrow \infty} \frac{( 1 - (N - k)}{C_n} \times \frac{\frac{( 1 - (N - 1 - k)}{A_n}}{\frac{1}{C_n} + \frac{1}{t} + \frac{k}{A_n C_n}} = \lim_{n \rightarrow \infty} \frac{1}{\frac{1}{t}} = t$$
-
+Let $\epsilon > 0$ be given. We want to show that the distribution of $l_1$ under $P_k$ is tight. We know that for all $k$, $Z_k < \infty$, $\exists c$, s.t. $Z_k \geq c$ and 
+$$\sum_{l_1 = N}^\infty l_1^N C^N 2^{-l_1} C < c \epsilon$$
 Then
+$$P_k(l_1 \geq M) = \frac{1}{Z_k} \sum_{l_1 > \cdots > l_n > 0, l_1 \geq M} \prod_{1\leq i < j \leq M}(l_i - l_j)^2 \prod_{k = 1}^N \omega_k(l_i) \leq \frac{1}{c} c \epsilon < \epsilon$$
+which proves the tightness of $l_1$ under $P_k$.\\
 
-$$\lim_{n \rightarrow \infty} \prod_{0 \leq k \leq l_i} \frac{(C_n - N + k)\times (A_n+N-1-k)}{(A_n + B_n - k)} = t^{l_i + 1} $$\\
+To prove the convergence of every subsequence to $P_N$, we let $k_p$ be a subsequence with $P_{k_p}$ converging weakly to some measure $P'$. If we assume that $Z_{k_p}$ converges to some constant $Z'$, then weak convergence implies that 
+$$\lim_{p \rightarrow \infty} P_{k_p} (l_1, \cdots, l_N) = P'(l_1, \cdots, l_N)$$
+for all $l_1 > \cdots > l_N \geq 0$. Earlier, we showed that
+$$\lim_{k \rightarrow \infty} \omega_k(y) = \frac{t^k}{y!}$$
+so that
+$$P'(l_1, \cdots, l_N) = \frac{1}{Z'} \prod_{1 \leq i < j \leq N} (l_i - l_j)^2 \prod_{i = 1}^N \frac{t^{l_i}}{l_i !}$$\\
 
-Now, we want to find
+Then $Z' = Z^N$, since $P'$ is a probability measure, so $P'$ is the same as $P^N$, hence all subsequential limits of $P_k$ must be $P^N$. This completes the proof.
 
-$$\lim_{n \rightarrow \infty} \frac{(A_n+ B_n)! \times (C_n-N - 1)!}{(A_n + N- 1)!}$$
-$$\log \left( \frac{(A+B)! \times (C - N - 1)!}{(A + N - 1)!}\right) 
-= \log((A+B)!) + \log((C-N-1)!) - \log(( A + N - 1)!)$$ \\
-
-$$\log(n!) = n\log(n) - n + O(\log(n))$$
-
-...
 
 \subsection*{Problem 14}
 In this problem, we mimic the process in Problem 12 to prove the weak convergence of the random vector $(X_{1},\dots,X_{N})$, where $X_{i}=\frac{\ell_{i}}{n}$, $i=1,\dots,N$. Take real numbers $u_{1},\dots, u_{N}$ and $v_{1},\dots, v_{N}$ such that $u_{i}<v_{i}$ for $i=1,\dots, N$, and consider the probability: 
@@ -919,10 +931,12 @@ where $K=n^{N^2}(1-e^{-\frac{1}{n}})^{N^2}(e^{-\frac{1}{n}})^{-\frac{1}{2}N(N-1)
 
 \section{Avoiding Bernoulli line ensembles}
 
-	\subsection*{Problem 16}
-	Let $\Omega(0,T,\bar x^T, \bar y ^T)$ be the set of all non intersecting Bernoulli line ensembles from $\bar x^T$ to $\bar y^T$. For each line ensemble $\mathfrak{B}\in \Omega(0,T,\bar x^T,\bar y^T)$ with $\mathfrak B=(B_1,...,B_k)$, we may define $\lambda_i(\mathfrak B):=(B_1(i),B_2(i),...,B_k(i))$. 
-The $\lambda_i$ form partitions since by the definition of avoiding Bernoulli line ensembles, we have the inequality $B_\alpha(i)>B_\beta(i)$ if $\alpha<\beta$. 
-Now because $B_\alpha(i+1)-B_\alpha(i)\in \{0,1\}$ we know that $B_\alpha(i+1)\geq B_\alpha(i)$ but also since $B_\alpha(i+1)\in \mathbb{Z}$ and $B_{\alpha+1}<B_\alpha(i+1)$ (strictly) by the earlier stated inequality, we know that$B_{\alpha+1}+1\leq B_\alpha(i+1)$ and so we find that 
+		\subsection*{Problem 16}
+\textbf{Step 1:} In this step we prove the equality:
+$$\mathbb{P}(L_{1}(\lfloor tT \rfloor) = \lambda_{1}, \cdots, L_{k}(\lfloor tT \rfloor) = \lambda_{k})=\frac{s_{\lambda/\mu}(1^{\lfloor tT \rfloor})\cdot s_{\kappa/\lambda}(1^{T-\lfloor tT \rfloor})}{s_{\kappa/\mu}(1^{T})}$$ where $\lambda_{1}>\lambda_{2}>\cdots >\lambda_{k}$ are positive integers, $s_{\lambda/\mu}$ denote skew Schur polynomials and they are specialized in all parameters equal to $1$. The $\mu$ partition is just the vector $\vec{x}^{T}$ and the $\kappa$ partition should be $\vec{y}^{T}$.
+
+	Let $\Omega(0,T,\vec{x}^T, \vec{y}^T)$ be the set of all non-intersecting Bernoulli line ensembles from $\vec{x}^T$ to $\vec{y}^T$. For each line ensemble $\mathfrak{B}\in \Omega(0,T,\bar x^T,\bar y^T)$ with $\mathfrak B=(B_1,...,B_k)$, we may define $\lambda_i(\mathfrak B):=(B_1(i),B_2(i),...,B_k(i))$, where $1 \leqslant i\leqslant T$ is an integer. The $\lambda_i$ form partitions since by the definition of avoiding Bernoulli line ensembles, we have the inequality $B_\alpha(i)>B_\beta(i)$ if $\alpha<\beta$. 
+Now because $B_\alpha(i+1)-B_\alpha(i)\in \{0,1\}$ we know that $B_\alpha(i+1)\geq B_\alpha(i)$ but also since $B_\alpha(i+1)\in \mathbb{Z}$ and $B_{\alpha+1}(i+1)<B_\alpha(i+1)$ (strictly) by the earlier stated inequality, we know that $B_{\alpha+1}(i+1)+1\leq B_\alpha(i+1)$ and so we find that 
 \[B_{\alpha+1}(i+1)\leq B_\alpha(i)\leq B_\alpha(i+1)\]
 We therefore find that for all $i$, $\lambda_i\preceq \lambda_{i+1}$. Note that when $i=0$, we get $\lambda_0=\bar x^T$ and $\lambda_T=\bar y^T$.
 
@@ -941,60 +955,93 @@ We can proceed to use Macdonald Chapter 1, Section 5, Equation (11) to show that
 
 Therefore, we can find that 
 \begin{align*}
-\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)
-&=\frac{\lvert \Omega(0,\lfloor Tt\rfloor, \bar x^T, \lambda)\rvert\cdot \lvert \Omega(\lfloor Tt\rfloor ,T, \lambda, \bar y^T)\rvert}{\lvert \Omega(0, T, \bar x^T, \bar y^T)\rvert}\\
-&=\frac{s_{\lambda/\bar x^T}(1^{\floor{Tt}})\cdot s_{\bar y^T/\lambda}(1^{T-\floor{Tt}})}{s_{\bar y^T/\bar x^T}(1^T)}
+&\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)
+=\frac{\lvert \Omega(0,\lfloor Tt\rfloor, \vec{x}^T, \lambda)\rvert\cdot \lvert \Omega(\lfloor Tt\rfloor ,T, \lambda, \vec{y}^T)\rvert}{\lvert \Omega(0, T, \vec{x}^T, \vec{y}^T)\rvert}\\
+&=\frac{s_{\lambda/\vec{x}^T}(1^{\floor{Tt}})\cdot s_{\vec{y}^T/\lambda}(1^{T-\floor{Tt}})}{s_{\vec{y}^T/\vec{x}^T}(1^T)}
 \end{align*}
-
-Now, if we use the Jacobi-Trudi formula on this expression and the identity from Macdonald, page 26 i.e. that $h_r(1^n)=\binom{n+k-1}{k}$, we get the resulting equation 
+\textbf{Step 2:} In this step, we prove the weak convergence of random vector $(Z_{1},\dots,Z_{k})$, where $Z_{i}=\frac{L_{i}(tT)-ptT}{\sqrt{T}}$. Following similar steps in Problem 12 and Problem 14, we only need to prove that we can find proper constants $Z$, $c_{1}$, $c_{2}$, $c_{3}$ depending on $p,t,\vec{a},\vec{b}$, such that $\sqrt{T}^{k}\cdot \pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)\xrightarrow{T\rightarrow \infty} \rho(z_{1},\cdots z_{k})$, where $$\rho(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot det[e^{c_1(t,p)a_{i}z_{j}}]_{i,j=1}^{k}\cdot det[e^{c_2(t,p)b_{i}z_{j}}]_{i,j=1}^{k}\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}$$ The following paragraphs will prove this claim.\\
+By Jacobi-Trudi formula, we can conclude:
 \begin{align*}
-\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)
-&=\frac{\det\left(h_{\lambda_i^T-x_j^T+j-i}(1^{\floor{tT}})\right)_{1=i,j}^k\cdot\det\left(h_{y_i^T-\lambda_j^T+j-i}(1^{T-\floor{Tt}})\right)_{1=i,j}^k}{\det\left(h_{\lambda_i^T-x_j^T+j-i}(1^T)\right)_{1=i,j}^k}\\
-&=\frac{\det\left(\frac{\left(\lambda_i^T-x_j^T+j-i+\floor{tT}-1\right)!}{\left(\floor{Tt}-1\right)!\left(\lambda_i^T-x_j^T+j-i\right)!}\right)_{i,j=1}^k\det\left(\frac{\left(y_i^T-\lambda_j^T+j-i+T-\floor{tT}-1\right)!}{\left(T-\floor{Tt}-1\right)!\left(y_i^T-\lambda_j^T+j-i\right)!}\right)_{i,j=1}^k}{\det\left(\frac{\left(y_i^T-x_j^T+j-i+T-1\right)!}{\left(T-1\right)!\left(y_i^T-x_j^T+j-i\right)!}\right)_{i,j=1}^k}
+\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)=\frac{\det\left(h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})\right)_{i,j=1}^k\cdot\det\left(h_{y_i^T-\lambda_j+j-i}(1^{T-\floor{Tt}})\right)_{i,j=1}^k}{\det\left(h_{y_i^{T}-x_j^T+j-i}(1^T)\right)_{i,j=1}^k}	
 \end{align*}
-
-Now we can find using Sterling's formula that this expression is equal in the limit to 
-\[
-\frac{\det\left(\frac{\sqrt{2\pi}(\lambda_i^T-x_j^T+j-i+\floor{tT}-1)^{\lambda_i^T-x_j^T+j-i+\floor{tT}-1/2}e^{-\lambda_i^T+x_j^T-j+i-\floor{tT}+1}}{\sqrt{2\pi}(\floor{tT}-1)^{\floor{Tt}-1/2}e^{-\floor{Tt}+1}\cdot \sqrt{2\pi}(\lambda_i^T-x_j^T+j-i)^{\lambda_i^T-x_j^T+j-i+1/2}e^{-\lambda_i^T+x_j^T-j+i}}\right)_{1=i,j}^k
-\det\left(\frac{\left(y_i^T-\lambda_j^T+j-i+T-\floor{tT}-1\right)!}{\left(T-\floor{Tt}-1\right)!\left(y_i^T-\lambda_j^T+j-i\right)!}\right)_{i,j=1}^k}
-{\det\left(\frac{\sqrt{2\pi}(y_i^T-x_j^T+j-i+{T}-1)^{y_i^T-x_j^T+j-i+{T}-1/2}e^{-y_i^T+x_j^T-j+i-{T}+1}}{\sqrt{2\pi}({T}-1)^{{T}-1/2}e^{-{T}+1}\cdot \sqrt{2\pi}(y_i^T-x_j^T+j-i)^{\lambda_i^T-x_j^T+j-i+1/2}e^{-\lambda_i^T+x_j^T-j+i}}\right)_{1=i,j}^k}
-\]
-\[
-=\frac{
-	\det\left(\frac{
-		(\lambda_i-x_j^T+j-i+\floor{tT}-1)^{\lambda_i-x_j^T+j-i+\floor{tT}-1/2}}{\sqrt{2\pi}(\floor{tT}-1)^{\floor{Tt}-1/2}(\lambda_i-x_j^T+j-i)^{\lambda_i-x_j^T+j-i+1/2}}\right)_{1=i,j}^k
-	\det\left(\frac{(y_i^T-\lambda_j+j-i+T-\floor{tT}-1)^{y_i^T-\lambda_j+j-i+T-\floor{tT}-1/2}}{\sqrt{2\pi}(T-\floor{tT}-1)^{T-\floor{Tt}-1/2}(y_i^T-\lambda_j^T+j-i)^{y_i^T-\lambda_j+j-i+1/2}}\right)_{1=i,j}^k
-	}
-{\det\left(\frac{
-		(y_i^T-x_j^T+j-i+T-1)^{y_i^T-x_j^T+j-i+{T}-1/2}}{\sqrt{2\pi}(T-1)^{T-1/2}(y_i^T-x_j^T+j-i)^{y_i^T-x_j^T+j-i+1/2}}\right)_{1=i,j}^k}
-\]
-
-Now if we take $\lambda_i=z_i\sqrt{T}+ptT$ and we consider each of the determinants individually (for the sake of the margins of this document), we find that the expression is approximately (and unrigorously) equal to $ABC^{-1}$ where each letter is one of the determinants in the formula above. Therefore, we get
+We first compute the first determiant in the numerator. Using the identity for complete symmetric functions from Macdonald, page 26 i.e. that $h_r(1^n)=\binom{n+r-1}{r}$, we get the resulting equation 
 \begin{align*}
-A&=(2\pi)^{-\frac k2}\det
-	\left(e^{(\sqrt{T}(z_i-a_j)+T(t+pt))\log(\sqrt{T}(z_i-a_j)+T(t+pt))-tT\log(tT)-((z_i-a_j)\sqrt{T}+ptT)\log((z_i-a_j)\sqrt{T}+ptT)}
-	\right)_{1=i,j}^k\\
-	&=(2\pi)^{-\frac k2}\det\left(e^{T\left(\left(\frac{z_i-a_j}{\sqrt{T}}+pt+t\right)\left(\log\left(\frac{z_i-a_j}{(t)\sqrt T}+p+1\right)+\log (tT)\right)-t\log(tT)-\left(\frac{z_i-a_j}{\sqrt{T}}+pt\right)\left(\log\left(\frac{z_i-a_j}{t\sqrt T}+p\right)+\log(tT)\right)\right)}\right)_{1=i,j}^k\\
-	&=(2\pi)^{-\frac k2}\det\left(e^{T\left(\left(\frac{z_i-a_j}{\sqrt{T}}+pt\right)\log(\frac{\frac{z_i-a_j}{t\sqrt{T}}+p+1}{\frac{z_i-a_j}{t\sqrt{T}}+p})+t\log\left(\frac{z_i-a_j}{t\sqrt{T}}+p+1\right)\right)}
-	\right)_{1=i,j}^k\\
-	&=(2\pi)^{-\frac{k}{2}}\det\left(e^{Tt\left(\log\left(\frac{z_i-a_j}{(p+1)t\sqrt{T}}+1\right)+\log(p+1)\right)}\right)_{1=i,j}^k\\
-	&=(2\pi)^{-\frac{k}{2}}\det\left(e^{Tt\log(p+1)}e^{Tt\log\left(\frac{z_i-a_j}{(p+1)t\sqrt{T}}+1\right)}\right)_{1=i,j}^k\\
-	&=(2\pi)^{-\frac{k}{2}}(p+1)^{kTt}\det\left(e^{Tt\log\left(\frac{z_i-a_j}{(p+1)t\sqrt{T}}+1\right)}\right)_{1=i,j}^k
+h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})&=\frac{(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!}{(\lambda_{i}-x_{j}^{T}-i+j)!(\lfloor tT \rfloor -1)!}
 \end{align*}
-Doing very similar calculations we may find that 
-\begin{align*}B&=(2\pi)^{-k/2}(p+1)^{(1-t)kT}\det\left(e^{kT\log\left(\frac{b_i-z_j}{(p+1)(1-t)\sqrt{T}}+1\right)}\right)_{1=i,j}^k\\
-C&=(2\pi)^{-\frac k2}(p+1)^{kT}\det\left( e^{T\log\left(\frac{b_i-a_j}{(1+p)\sqrt T}+1\right)}\right)_{1=i,j}^k
+By Stirling's formula,
+\begin{align*}
+	&(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!\sim \sqrt{2\pi}\sqrt{\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1}\cdot \\ & exp\{(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)ln(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)-(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)\}
 \end{align*}
-
-Therefore, the product $ABC^{-1}$ gives us the expression $$\frac{(2\pi)^{-\frac{k}{2}}\det\left(e^{Tt\log\left(\frac{z_i-a_j}{(p+1)t\sqrt{T}}+1\right)}\right)_{1=i,j}^k\cdot\det\left(e^{kT\log\left(\frac{b_i-z_j}{(p+1)(1-t)\sqrt{T}}+1\right)}\right)_{1=i,j}^k }{\det\left( e^{T\log\left(\frac{b_i-a_j}{(1+p)\sqrt T}+1\right)}\right)_{1=i,j}^k}$$
-
-Using the Taylor series $\log(x+1)=\sum_{i=1}^\infty \frac{(-1)^{i-1}}{i}x^i$ and taking the limit of the expression as $T\to \infty$, we get that the above expression equals in the limit
-$$\lim_{T\to \infty}(2\pi)^{-\frac k2}\frac{
-	\det\left(e^{\frac{\sqrt{T}(z_i-a_j)}{p+1}-\frac{z_i^2+a_j^2}{2t(p+1)^2}+\frac{z_ia_j}{t(p+1)^2}}\right)_{1=i,j}^k
-	\det\left(e^{\frac{\sqrt{T}(b_i-z_j)}{p+1}-\frac{b_i^2+z_j^2}{2t(p+1)^2}+\frac{b_iz_j}{t(p+1)^2}}\right)_{1=i,j}^k}
-{	\det\left(e^{\frac{\sqrt{T}(b_i-a_j)}{p+1}-\frac{b_i^2+a_j^2}{2t(p+1)^2}+\frac{b_ia_j}{t(p+1)^2}}\right)_{1=i,j}^k}$$
-
-This seems to go to infinity, since the top should roughly have a growth rate of $T^k$ while the bottom should roughly have $T^{k/2}$, so it seems to me like we have done something wrong, yet I don't know what. 
+Since $\lambda_{i}=z_{i}\sqrt{T}+ptT$ and $x_{i}^{T}\sim a_{i}\sqrt{T}$, we get $\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1\sim (z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1$. Then,
+\begin{align*}
+	&(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)ln(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)\sim [(z_{i}-a_{j})\sqrt{T}+(p+1)tT-i+j-1]\cdot \\
+	&ln(\frac{(z_{i}-a_{j})\sqrt{T}+(p+1)tT-i+j-1}{(z_{i}-a_{j})\sqrt{T}+(p+1)tT})+[(z_{i}-a_{j})\sqrt{T}+(p+1)tT]\cdot ln((z_{i}-a_{j})\sqrt{T}+(p+1)tT)\\
+	& +(-i+j-1)ln((z_{i}-a_{j})\sqrt{T}+(p+1)tT)\\
+	&\sim [(z_{i}-a_{j})\sqrt{T}+(p+1)tT-i+j-1]\cdot ln(1+\frac{-i+j-1}{(z_{i}-a_{j})\sqrt{T}+(p+1)tT})+[(z_{i}-a_{j})\sqrt{T}+(p+1)tT]\cdot\\
+	&ln((z_{i}-a_{j})\sqrt{T}+(p+1)tT)+ (-i+j-1)ln((p+1)tT)\\
+	& \sim (-i+j-1) + [(z_{i}-a_{j})\sqrt{T}+(p+1)tT]\cdot ln((z_{i}-a_{j})\sqrt{T}+(p+1)tT)+(-i+j-1)ln((p+1)tT)
+\end{align*}
+Now we further compute the term $[(z_{i}-a_{j})\sqrt{T}+(p+1)tT]\cdot ln((z_{i}-a_{j})\sqrt{T}+(p+1)tT)$. Notice that
+\begin{align*}
+	ln((z_{i}-a_{j})\sqrt{T}+(p+1)tT)&= ln((p+1)tT)+ln(1+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}})\\
+	&\sim ln((p+1)tT)+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{(p+1)^{2}t^{2}T}
+\end{align*}
+Then, 
+\begin{align*}
+	& [(z_{i}-a_{j})\sqrt{T}+(p+1)tT]\cdot ln((z_{i}-a_{j})\sqrt{T}+(p+1)tT)\\
+	&\sim[(z_{i}-a_{j})\sqrt{T}+(p+1)tT]\cdot [ln((p+1)tT)+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{(p+1)^{2}t^{2}T}]\\
+	&\sim ((p+1)tT)ln((p+1)tT)+(z_{i}-a_{j})\sqrt{T}\cdot ln((p+1)tT)+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}
+\end{align*}
+Therefore, 
+\begin{align*}
+	&(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!\sim \sqrt{2\pi}\sqrt{ptT}\cdot exp\{(-i+j-1) + \\
+	&((p+1)tT)ln((p+1)tT)+(z_{i}-a_{j})\sqrt{T}\cdot ln((p+1)tT)+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}+\\
+	& (-i+j-1)ln((p+1)tT)-((z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1)\}
+\end{align*}
+Similarly, 
+\begin{align*}
+&(\lambda_{i}-x_{j}^{T}-i+j)!\sim \sqrt{2\pi}\sqrt{ptT}\cdot exp\{(-i+j) + (ptT)ln(ptT)+(z_{i}-a_{j})\sqrt{T}\cdot ln(ptT)+(z_{i}-a_{j})\sqrt{T}\\
+& +\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{pt}+(-i+j)ln(ptT)-((z_{i}-a_{j})\sqrt{T} + ptT-i+j)\}\\
+&(\lfloor tT \rfloor-1)!\sim (tT)ln(tT)-1-ln(tT)
+\end{align*}
+Therefore,
+\begin{align*}
+	&h_{\lambda_{i}-x^{T}_{j}+j-i}(1^{\lfloor tT \rfloor}) \sim \sqrt{2\pi}^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}\cdot exp\{((p+1)tT)ln((p+1)tT)-(ptT)ln(ptT)-(tT)ln(tT)\\
+	& +(-i+j)ln(\frac{p+1}{p})-ln(p+1)+(z_{i}-a_{j})\sqrt{T}\cdot ln(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^{2}}{p(p+1)t}\}
+\end{align*}
+Denote $S_{1}(p,t,T)=((p+1)tT)ln((p+1)tT)-(ptT)ln(ptT)-(tT)ln(tT)$. Then, the determinant
+\begin{align*}
+	&det(h_{\lambda_{i}-x_{j}-i+j})_{i,j=1}^{k} \sim [(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}exp\{S_{1}(p,t,T)-ln(p+1)\}]^{k}\cdot \\
+	& det(exp\{(-i+j)ln(\frac{p+1}{p})+(z_{i}-a_{j})\sqrt{T}\cdot ln(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{p(p+1)t}\})\\
+	&= [(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}exp\{S_{1}(p,t,T)-ln(p+1)\}]^{k}\cdot (\frac{p+1}{p})^{-(\sum_{i=1}^{k}i)} (\frac{p+1}{p})^{(\sum_{j=1}^{k}j)}\\
+	& (\frac{p+1}{p})^{-(\sum_{j=1}^{k}a_{j})\cdot\sqrt{T}}\cdot (\frac{p+1}{p})^{(\sum_{i=1}^{k}z_{i})\cdot\sqrt{T}}exp\{-\frac{1}{2p(p+1)t}(\sum_{i=1}^{k}(a_{i}^2+z_{i}^2))\}det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\\
+	& = [(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}exp\{S_{1}(p,t,T)-ln(p+1)\}]^{k}(\frac{p+1}{p})^{\sum_{i=1}^{k}(z_{i}-a_{i}))\cdot\sqrt{T}}\cdot \\
+	& exp\{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}(a_{i}^2+z_{i}^2)\}\cdot det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}
+\end{align*}
+where $c_{1}(p,t)=\frac{1}{p(p+1)t}$.\\
+Similarly,
+\begin{align*}
+	&det(h_{y_{i}-\lambda_{j}-i+j})\sim [(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p(1-t)}}\sqrt{T}^{-1}\cdot exp\{S_{2}(p,t,T)-ln(p+1)\}]^{k}(\frac{p+1}{p})^{\sum_{i=1}^{k}(b_{i}-z_{i}))\cdot\sqrt{T}}\cdot \\
+	& exp\{-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^2)\}\cdot det(e^{c_{2}(p,t)b_{i}z_{j}})_{i,j=1}^{k}\\
+	& det(h_{y_{i}^{T}-x_{j}^{T}-i+j})\sim [(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p}}\sqrt{T}^{-1}\cdot exp\{S_{3}(p,t,T)-ln(p+1)\}]^{k}(\frac{p+1}{p})^{\sum_{i=1}^{k}(b_{i}-a_{i}))\cdot\sqrt{T}}\cdot \\
+	& det(exp\{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^2\})_{i,j=1}^{k}
+	\end{align*}
+where $c_{2}(p,t,T)=\frac{1}{p(p+1)(1-t)}$.
+Notice that $S_{1}(p,t,T)+S_{2}(p,t,T)-S_{3}(p,t,T)=0$. Combine three determinants above, we get
+\begin{align*}
+	& \pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)\sim \\
+	& (2\pi)^{-\frac{k}{2}}\Big[\sqrt{\frac{p+1}{pt(1-t)}}\Big]^{k}\cdot T^{-\frac{k}{2}} \cdot exp\{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}(a_{i}^2+z_{i}^2)-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^{2})\}\cdot\\
+	& exp\{-kln(p+1)\}\cdot \frac{det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\cdot det(e^{c_{2}(p,t)b_{i}z_{j}})_{i,j=1}^{k}}{det(exp\{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}\})_{i,j=1}^{k}}\\
+	&= (2\pi)^{-\frac{k}{2}}\Big[\sqrt{\frac{1}{p(p+1)t(1-t)}}\Big]^{k}\cdot T^{-\frac{k}{2}}\cdot exp\{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}a_{i}^2-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}b_{i}^2\}\\
+	& \frac{det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\cdot det(e^{c_{2}(p,t)b_{i}z_{j}})_{i,j=1}^{k}}{det(exp\{\frac{1}{p(p+1)}a_{i}b_{j}\})_{i,j=1}^{k}})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^2}
+\end{align*}
+where $c_{3}(t,p)=\frac{1}{2p(p+1)t(1-t)}$.
+Therefore, $(\sqrt{T})^{k}\cdot\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)$ converges to $\rho(x_{1},\dots,x_{k})$ as given above, and 
+\begin{align*}
+	c_{1}(p,t)&=\frac{1}{p(p+1)t}, \quad c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}, \quad c_{3}(p,t)=\frac{1}{2p(p+1)t(1-t)}\\
+	Z&=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot exp\{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}+c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}\}det(exp\{\frac{1}{p(p+1)}a_{i}b_{j}\})_{i,j=1}^{k}
+\end{align*}
+Thus, we prove our claim. 
 
 
 	\subsection*{Lemmas from Section 3.2}

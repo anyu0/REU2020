@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  15 JUN 2020 10:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  15 JUN 2020 11:02
 entering extended mode
 **"./reu problems.tex"
 ("reu problems.tex"
@@ -635,56 +635,76 @@ Overfull \hbox (26.70662pt too wide) in paragraph at lines 758--758
  []
 
 [28]
-Overfull \hbox (8.10036pt too wide) detected at line 791
-[] [] [] \OT1/cmr/m/n/12 = [] [] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 799--800
+Underfull \hbox (badness 10000) in paragraph at lines 778--779
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 805--806
+Underfull \hbox (badness 10000) in paragraph at lines 786--787
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 791--792
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 796--797
 
  []
 
 [29]
-Overfull \hbox (13.40244pt too wide) in paragraph at lines 817--817
-[] 
+Underfull \hbox (badness 10000) in paragraph at lines 801--803
+
  []
 
-LaTeX Font Info:    Try loading font information for U+bbm on input line 819.
-("C:\Program Files\MiKTeX 2.9\tex\latex\bbm\ubbm.fd"
-File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)
-Overfull \hbox (23.32402pt too wide) in paragraph at lines 827--827
-[] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 810--812
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 818--819
+
  []
 
 [30]
-LaTeX Font Info:    Try loading font information for U+euf on input line 854.
+Overfull \hbox (13.40244pt too wide) in paragraph at lines 829--829
+[] 
+ []
+
+LaTeX Font Info:    Try loading font information for U+bbm on input line 831.
+("C:\Program Files\MiKTeX 2.9\tex\latex\bbm\ubbm.fd"
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
+Overfull \hbox (23.32402pt too wide) in paragraph at lines 839--839
+[] 
+ []
+
+[31]
+LaTeX Font Info:    Try loading font information for U+euf on input line 866.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [31]
-Underfull \hbox (badness 10000) in paragraph at lines 857--858
+) [32]
+Underfull \hbox (badness 10000) in paragraph at lines 869--870
 
  []
 
 
-Overfull \hbox (8.22258pt too wide) in paragraph at lines 869--870
+Overfull \hbox (8.22258pt too wide) in paragraph at lines 881--882
 []$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X[]\OT1/cmr/m/n/12 )$ is ir-re-ducible and
  has as an in-vari-ant dis-tri-bu-tion the uni-form mea-sure $\U/msb/m/n/12 P[]
 $\OT1/cmr/m/n/12 , 
  []
 
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 902--903
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 914--915
 
  []
 
-[33] [34]
-Overfull \hbox (23.44943pt too wide) in paragraph at lines 937--938
+[34] [35]
+Overfull \hbox (23.44943pt too wide) in paragraph at lines 951--952
 []\OT1/cmr/m/n/12 Now, sur-jec-tiv-ity fol-lows since for any $[] = (\OML/cmm/m
 /it/12 []; :::; []\OT1/cmr/m/n/12 )$ we may de-fine $\U/euf/m/n/12 B\OT1/cmr/
 m/n/12 ([]) = (\OML/cmm/m/it/12 B[]\OT1/cmr/m/n/12 ([])\OML/cmm/m/it/12 ; :::; 
@@ -692,81 +712,101 @@ B[]\OT1/cmr/m/n/12 ([]))$
  []
 
 
-Overfull \hbox (64.26654pt too wide) in paragraph at lines 954--954
+Overfull \hbox (37.7275pt too wide) in paragraph at lines 966--966
 [] 
  []
 
 
-Overfull \hbox (67.00752pt too wide) detected at line 961
-[]
- []
-
-
-Overfull \hbox (78.68854pt too wide) detected at line 970
-\OT1/cmr/m/n/12 = []
- []
-
-
-Overfull \hbox (34.4645pt too wide) in paragraph at lines 983--983
+Overfull \hbox (19.16411pt too wide) in paragraph at lines 974--974
 [] 
  []
 
-[35] [36] [37] [38]
-Overfull \hbox (0.9824pt too wide) in paragraph at lines 1078--1078
+[36]
+Overfull \hbox (60.73927pt too wide) in paragraph at lines 983--983
 [] 
  []
 
 
-Overfull \hbox (1.37186pt too wide) in paragraph at lines 1084--1084
+Overfull \hbox (44.87357pt too wide) in paragraph at lines 1006--1006
 [] 
  []
 
-[39]
-Overfull \hbox (8.99876pt too wide) in paragraph at lines 1106--1106
+[37]
+Overfull \hbox (44.35086pt too wide) in paragraph at lines 1011--1011
 [] 
  []
 
-[40] [41] [42] [43]
-Overfull \hbox (9.92892pt too wide) in paragraph at lines 1263--1263
+
+Overfull \hbox (19.45128pt too wide) in paragraph at lines 1028--1028
 [] 
  []
 
-[44] [45] [46] [47]
-Underfull \hbox (badness 10000) in paragraph at lines 1447--1449
+
+Overfull \hbox (3.01326pt too wide) in paragraph at lines 1037--1037
+[] 
+ []
+
+[38]
+Overfull \hbox (28.36841pt too wide) in paragraph at lines 1043--1043
+[] 
+ []
+
+[39] [40]
+Overfull \hbox (0.9824pt too wide) in paragraph at lines 1125--1125
+[] 
+ []
+
+
+Overfull \hbox (1.37186pt too wide) in paragraph at lines 1131--1131
+[] 
+ []
+
+[41]
+Overfull \hbox (8.99876pt too wide) in paragraph at lines 1153--1153
+[] 
+ []
+
+[42] [43] [44] [45]
+Overfull \hbox (9.92892pt too wide) in paragraph at lines 1310--1310
+[] 
+ []
+
+[46] [47] [48] [49] [50]
+Underfull \hbox (badness 10000) in paragraph at lines 1494--1496
 
  []
 
-[48] [49] ("reu problems.aux") ) 
+[51] ("reu problems.aux") ) 
 Here is how much of TeX's memory you used:
  4089 strings out of 493320
  57828 string characters out of 3138925
- 142384 words of memory out of 3000000
+ 140384 words of memory out of 3000000
  7530 multiletter control sequences out of 15000+200000
  16739 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,18n,32p,1671b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Christian Serio\AppData\Local\MiKTeX
-\2.9\fonts\pk\ljfour\public\bbm\dpi600\bbm12.pk><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-ti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary10.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary8.pfb>
-Output written on "reu problems.pdf" (49 pages, 1080922 bytes).
+ <C:\Users\Christian Serio\AppData\Local\MiKTeX\2.9\
+fonts\pk\ljfour\public\bbm\dpi600\bbm12.pk><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
+6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary10.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary8.pfb>
+Output written on "reu problems.pdf" (51 pages, 1085760 bytes).
 PDF statistics:
- 243 PDF objects out of 1000 (max. 8388607)
+ 249 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
