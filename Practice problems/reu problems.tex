@@ -955,9 +955,9 @@ We can proceed to use Macdonald Chapter 1, Section 5, Equation (11) to show that
 
 Therefore, we can find that 
 \begin{align*}
-&\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)
-=\frac{\lvert \Omega(0,\lfloor Tt\rfloor, \vec{x}^T, \lambda)\rvert\cdot \lvert \Omega(\lfloor Tt\rfloor ,T, \lambda, \vec{y}^T)\rvert}{\lvert \Omega(0, T, \vec{x}^T, \vec{y}^T)\rvert}\\
-&=\frac{s_{\lambda/\vec{x}^T}(1^{\floor{Tt}})\cdot s_{\vec{y}^T/\lambda}(1^{T-\floor{Tt}})}{s_{\vec{y}^T/\vec{x}^T}(1^T)}
+\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)
+=&{}\frac{\lvert \Omega(0,\lfloor Tt\rfloor, \vec{x}^T, \lambda)\rvert\cdot \lvert \Omega(\lfloor Tt\rfloor ,T, \lambda, \vec{y}^T)\rvert}{\lvert \Omega(0, T, \vec{x}^T, \vec{y}^T)\rvert}\\
+=&{}\frac{s_{\lambda/\vec{x}^T}(1^{\floor{Tt}})\cdot s_{\vec{y}^T/\lambda}(1^{T-\floor{Tt}})}{s_{\vec{y}^T/\vec{x}^T}(1^T)}
 \end{align*}
 \textbf{Step 2:} In this step, we prove the weak convergence of random vector $(Z_{1},\dots,Z_{k})$, where $Z_{i}=\frac{L_{i}(tT)-ptT}{\sqrt{T}}$. Following similar steps in Problem 12 and Problem 14, we only need to prove that we can find proper constants $Z$, $c_{1}$, $c_{2}$, $c_{3}$ depending on $p,t,\vec{a},\vec{b}$, such that $\sqrt{T}^{k}\cdot \pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)\xrightarrow{T\rightarrow \infty} \rho(z_{1},\cdots z_{k})$, where $$\rho(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot det[e^{c_1(t,p)a_{i}z_{j}}]_{i,j=1}^{k}\cdot det[e^{c_2(t,p)b_{i}z_{j}}]_{i,j=1}^{k}\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}$$ The following paragraphs will prove this claim.\\
 By Jacobi-Trudi formula, we can conclude:
@@ -968,80 +968,85 @@ We first compute the first determiant in the numerator. Using the identity for c
 \begin{align*}
 h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})&=\frac{(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!}{(\lambda_{i}-x_{j}^{T}-i+j)!(\lfloor tT \rfloor -1)!}
 \end{align*}
-By Stirling's formula,
+By Stirling's formula, $(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!$ is approximately equal to
 \begin{align*}
-	&(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!\sim \sqrt{2\pi}\sqrt{\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1}\cdot \\ & exp\{(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)ln(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)-(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)\}
+\sqrt{2\pi}\sqrt{\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1}\cdot  e^{(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)ln(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)-(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)}
 \end{align*}
-Since $\lambda_{i}=z_{i}\sqrt{T}+ptT$ and $x_{i}^{T}\sim a_{i}\sqrt{T}$, we get $\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1\sim (z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1$. Then,
+Additionally, since $\lambda_{i}=z_{i}\sqrt{T}+ptT$ and $x_{i}^{T}\sim a_{i}\sqrt{T}$, we get \[\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1\sim (z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1\]
+Then,	if $(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)\log(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)=A$,
 \begin{align*}
-	&(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)ln(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)\sim [(z_{i}-a_{j})\sqrt{T}+(p+1)tT-i+j-1]\cdot \\
-	&ln(\frac{(z_{i}-a_{j})\sqrt{T}+(p+1)tT-i+j-1}{(z_{i}-a_{j})\sqrt{T}+(p+1)tT})+[(z_{i}-a_{j})\sqrt{T}+(p+1)tT]\cdot ln((z_{i}-a_{j})\sqrt{T}+(p+1)tT)\\
-	& +(-i+j-1)ln((z_{i}-a_{j})\sqrt{T}+(p+1)tT)\\
-	&\sim [(z_{i}-a_{j})\sqrt{T}+(p+1)tT-i+j-1]\cdot ln(1+\frac{-i+j-1}{(z_{i}-a_{j})\sqrt{T}+(p+1)tT})+[(z_{i}-a_{j})\sqrt{T}+(p+1)tT]\cdot\\
-	&ln((z_{i}-a_{j})\sqrt{T}+(p+1)tT)+ (-i+j-1)ln((p+1)tT)\\
-	& \sim (-i+j-1) + [(z_{i}-a_{j})\sqrt{T}+(p+1)tT]\cdot ln((z_{i}-a_{j})\sqrt{T}+(p+1)tT)+(-i+j-1)ln((p+1)tT)
+A\sim&\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT-i+j-1\right]\cdot\log\left(\frac{(z_{i}-a_{j})\sqrt{T}+(p+1)tT-i+j-1}{(z_{i}-a_{j})\sqrt{T}+(p+1)tT}\right)\\&+\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)\\
+	& +(-i+j-1)\log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)\\
+	\sim & \left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT-i+j-1\right]\cdot \log\left(1+\frac{-i+j-1}{(z_{i}-a_{j})\sqrt{T}+(p+1)tT}\right)\\
+	& +\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot
+	\log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)+ (-i+j-1)\log\left((p+1)tT\right)\\
+	\sim&  \left(-i+j-1\right) + \left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)\\&+(-i+j-1)\log\left((p+1)tT\right)
 \end{align*}
-Now we further compute the term $[(z_{i}-a_{j})\sqrt{T}+(p+1)tT]\cdot ln((z_{i}-a_{j})\sqrt{T}+(p+1)tT)$. Notice that
+Now we further compute the term $\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)$. Notice that
 \begin{align*}
-	ln((z_{i}-a_{j})\sqrt{T}+(p+1)tT)&= ln((p+1)tT)+ln(1+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}})\\
-	&\sim ln((p+1)tT)+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{(p+1)^{2}t^{2}T}
+	\log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)&= \log\left((p+1)tT\right)+\log\left(1+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}\right)\\
+	&\sim \log((p+1)tT)+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{(p+1)^{2}t^{2}T}
 \end{align*}
 Then, 
 \begin{align*}
-	& [(z_{i}-a_{j})\sqrt{T}+(p+1)tT]\cdot ln((z_{i}-a_{j})\sqrt{T}+(p+1)tT)\\
-	&\sim[(z_{i}-a_{j})\sqrt{T}+(p+1)tT]\cdot [ln((p+1)tT)+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{(p+1)^{2}t^{2}T}]\\
-	&\sim ((p+1)tT)ln((p+1)tT)+(z_{i}-a_{j})\sqrt{T}\cdot ln((p+1)tT)+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}
+	& \left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)\\
+	&\sim\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \left[\log((p+1)tT)+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{(p+1)^{2}t^{2}T}\right]\\
+	&\sim \left((p+1)tT)\log((p+1)tT\right)+(z_{i}-a_{j})\sqrt{T}\cdot \log((p+1)tT)+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}
 \end{align*}
-Therefore, 
+Therefore, we find that $(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!\sim$
 \begin{align*}
-	&(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!\sim \sqrt{2\pi}\sqrt{(p+1)tT}\cdot exp\{(-i+j-1) + \\
-	&((p+1)tT)ln((p+1)tT)+(z_{i}-a_{j})\sqrt{T}\cdot ln((p+1)tT)+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}+\\
-	& (-i+j-1)ln((p+1)tT)-((z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1)\}
+	\sqrt{2\pi}\sqrt{(p+1)tT}\cdot \text{Exp}&\{(-i+j-1) + ((p+1)tT)\log((p+1)tT)+(z_{i}-a_{j})\sqrt{T}\cdot ((p+1)tT)\\
+	&+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}+(-i+j-1)\log((p+1)tT)\\&-\left((z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1\right)\}
 \end{align*}
-Similarly, 
+Similarly, $(\lambda_{i}-x_{j}^{T}-i+j)!\sim$
 \begin{align*}
-&(\lambda_{i}-x_{j}^{T}-i+j)!\sim \sqrt{2\pi}\sqrt{ptT}\cdot exp\{(-i+j) + (ptT)ln(ptT)+(z_{i}-a_{j})\sqrt{T}\cdot ln(ptT)+(z_{i}-a_{j})\sqrt{T}\\
-& +\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{pt}+(-i+j)ln(ptT)-((z_{i}-a_{j})\sqrt{T} + ptT-i+j)\}\\
-&(\lfloor tT \rfloor-1)!\sim (tT)ln(tT)-1-ln(tT)
+\sqrt{2\pi}\sqrt{ptT}\cdot \text{Exp}&\{(-i+j) + (ptT)\log(ptT)+(z_{i}-a_{j})\sqrt{T}\cdot \log(ptT)+(z_{i}-a_{j})\sqrt{T}\\
+& +\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{pt}+(-i+j)\log(ptT)-((z_{i}-a_{j})\sqrt{T} + ptT-i+j)\}
+\end{align*} and the final term: $$
+(\lfloor tT \rfloor-1)!\sim (tT)\log(tT)-1-ln(tT)$$
+Therefore $h_{\lambda_{i}-x^{T}_{j}+j-i}(1^{\lfloor tT \rfloor})\sim$
+\begin{align*}
+	\sqrt{2\pi}^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}\cdot \text{Exp}&\bigg\{\vphantom((p+1)tT)\log((p+1)tT)-(ptT)\log(ptT)-(tT)\log(tT)\\
+	& +(-i+j)\log(\frac{p+1}{p})-ln(p+1)+(z_{i}-a_{j})\sqrt{T}\cdot \log(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^{2}}{p(p+1)t}\bigg\}
 \end{align*}
-Therefore,
-\begin{align*}
-	&h_{\lambda_{i}-x^{T}_{j}+j-i}(1^{\lfloor tT \rfloor}) \sim \sqrt{2\pi}^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}\cdot exp\{((p+1)tT)ln((p+1)tT)-(ptT)ln(ptT)-(tT)ln(tT)\\
-	& +(-i+j)ln(\frac{p+1}{p})-ln(p+1)+(z_{i}-a_{j})\sqrt{T}\cdot ln(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^{2}}{p(p+1)t}\}
-\end{align*}
-Denote $S_{1}(p,t,T)=((p+1)tT)ln((p+1)tT)-(ptT)ln(ptT)-(tT)ln(tT)$. Then, the determinant
-\begin{align*}
-	&det(h_{\lambda_{i}-x_{j}-i+j})_{i,j=1}^{k} \sim [(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}exp\{S_{1}(p,t,T)-ln(p+1)\}]^{k}\cdot \\
-	& det(exp\{(-i+j)ln(\frac{p+1}{p})+(z_{i}-a_{j})\sqrt{T}\cdot ln(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{p(p+1)t}\})\\
-	&= [(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}exp\{S_{1}(p,t,T)-ln(p+1)\}]^{k}\cdot (\frac{p+1}{p})^{-(\sum_{i=1}^{k}i)} (\frac{p+1}{p})^{(\sum_{j=1}^{k}j)}\\
-	& (\frac{p+1}{p})^{-(\sum_{j=1}^{k}a_{j})\cdot\sqrt{T}}\cdot (\frac{p+1}{p})^{(\sum_{i=1}^{k}z_{i})\cdot\sqrt{T}}exp\{-\frac{1}{2p(p+1)t}(\sum_{i=1}^{k}(a_{i}^2+z_{i}^2))\}det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\\
-	& = [(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}exp\{S_{1}(p,t,T)-ln(p+1)\}]^{k}(\frac{p+1}{p})^{\sum_{i=1}^{k}(z_{i}-a_{i}))\cdot\sqrt{T}}\cdot \\
-	& exp\{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}(a_{i}^2+z_{i}^2)\}\cdot det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}
+Denote $S_{1}(p,t,T)=\big((p+1)tT)\log((p+1)tT\big)-(ptT)\log(ptT)-(tT)\log(tT)$. Then, the determinant 
+\begin{align*} 
+\det(h_{\lambda_{i}-x_{j}-i+j})_{i,j=1}^{k} \sim&\left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}e^{S_{1}(p,t,T)-\log(p+1)}\right]^{k}\\
+&\cdot
+	 \det\left(e^{(-i+j)\log(\frac{p+1}{p})+(z_{i}-a_{j})\sqrt{T}\cdot \log(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{p(p+1)t}}\right)\\
+	=&\left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}e^{S_{1}(p,t,T)-\log(p+1)}\right]^{k}\cdot \left(\frac{p+1}{p}\right)^{\sum_{j=1}^k j-\sum_{i=1}^{k}i} \\
+	 &\cdot\left(\frac{p+1}{p}\right)^{\left(\sum_{i=1}^{k}z_{i}-\sum_{j=1}^{k}a_{j}\right)\cdot\sqrt{T}}\cdot \cdot e^{-\frac{1}{2p(p+1)t}(\sum_{i=1}^{k}(a_{i}^2+z_{i}^2))}\det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\\
+	 =& \left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}e^{S_{1}(p,t,T)-\log(p+1)}\right]^{k}\left(\frac{p+1}{p}\right)^{\sum_{i=1}^{k}(z_{i}-a_{i}))\cdot\sqrt{T}} \\
+	&\cdot e^{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}(a_{i}^2+z_{i}^2)}\cdot \det\left(e^{c_{1}(p,t)z_{i}a_{j}}\right)_{i,j=1}^{k}
 \end{align*}
 where $c_{1}(p,t)=\frac{1}{p(p+1)t}$.\\
 Similarly,
 \begin{align*}
-	&det(h_{y_{i}-\lambda_{j}-i+j})\sim [(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p(1-t)}}\sqrt{T}^{-1}\cdot exp\{S_{2}(p,t,T)-ln(p+1)\}]^{k}(\frac{p+1}{p})^{\sum_{i=1}^{k}(b_{i}-z_{i}))\cdot\sqrt{T}}\cdot \\
-	& exp\{-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^2)\}\cdot det(e^{c_{2}(p,t)b_{i}z_{j}})_{i,j=1}^{k}\\
-	& det(h_{y_{i}^{T}-x_{j}^{T}-i+j})\sim [(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p}}\sqrt{T}^{-1}\cdot exp\{S_{3}(p,t,T)-ln(p+1)\}]^{k}(\frac{p+1}{p})^{\sum_{i=1}^{k}(b_{i}-a_{i}))\cdot\sqrt{T}}\cdot \\
-	& det(exp\{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^2\})_{i,j=1}^{k}
+	\det \left(h_{y_{i}-\lambda_{j}-i+j}\right)\sim& \left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p(1-t)}}\sqrt{T}^{-1}\cdot e^{S_{2}(p,t,T)-ln(p+1)}\right]^{k}\left(\frac{p+1}{p}\right)^{\sum_{i=1}^{k}(b_{i}-z_{i})\cdot\sqrt{T}} \\
+	& \cdot e^{-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^2)}\cdot \det\left(e^{c_{2}(p,t)b_{i}z_{j}}\right)_{i,j=1}^{k}\\
+	\det(h_{y_{i}^{T}-x_{j}^{T}-i+j})\sim& \left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p}}\sqrt{T}^{-1}\cdot e^{S_{3}(p,t,T)-ln(p+1)}\right]^{k}\left(\frac{p+1}{p}\right)^{\sum_{i=1}^{k}(b_{i}-a_{i})\cdot\sqrt{T}} \\
+	&\cdot \det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^2}\right)_{i,j=1}^{k}
 	\end{align*}
-where $c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}$, $S_{2}(p,t,T)=((p+1)(1-t)T)ln((p+1)tT)-(p(1-t)T)ln(ptT)-((1-t)T)ln((1-t)T)$, $S_{3}(p,t,T)=((p+1)T)ln((p+1)tT)-(pT)ln(pT)-TlnT$.
+where we have the functions of $p,t$ and $T$:
+\begin{align*}c_{2}(p,t)&=\frac{1}{p(p+1)(1-t)}\\
+S_{2}(p,t,T)&=((p+1)(1-t)T)\log((p+1)tT)-(p(1-t)T)\log(ptT)-((1-t)T)\log((1-t)T)\\ 
+S_{3}(p,t,T)&=((p+1)T)\log((p+1)tT)-(pT)\log(pT)-T\log T\end{align*}
 Notice that $S_{1}(p,t,T)+S_{2}(p,t,T)-S_{3}(p,t,T)=0$. Combine three determinants above, we get
 \begin{align*}
-	& \pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)\sim \\
-	& (2\pi)^{-\frac{k}{2}}\Big[\sqrt{\frac{p+1}{pt(1-t)}}\Big]^{k}\cdot T^{-\frac{k}{2}} \cdot exp\{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}(a_{i}^2+z_{i}^2)-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^{2})\}\cdot\\
-	& exp\{-kln(p+1)\}\cdot \frac{det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\cdot det(e^{c_{2}(p,t)b_{i}z_{j}})_{i,j=1}^{k}}{det(exp\{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}\})_{i,j=1}^{k}}\\
-	&= (2\pi)^{-\frac{k}{2}}\Big[\sqrt{\frac{1}{p(p+1)t(1-t)}}\Big]^{k}\cdot T^{-\frac{k}{2}}\cdot exp\{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}a_{i}^2-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}b_{i}^2\}\\
-	& \frac{det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\cdot det(e^{c_{2}(p,t)b_{i}z_{j}})_{i,j=1}^{k}}{det(exp\{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}\})_{i,j=1}^{k}})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^2}
+	& \pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)\\
+	\sim & (2\pi)^{-\frac{k}{2}}\left[\sqrt{\frac{p+1}{pt(1-t)}}\right]^{k}\cdot T^{-\frac{k}{2}} \cdot e^{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}(a_{i}^2+z_{i}^2)-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^{2})}\\
+	& \cdot e^{-k\log(p+1}\cdot \frac{\det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\cdot \det(e^{c_{2}(p,t)b_{i}z_{j}})_{i,j=1}^{k}}{\det(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}})_{i,j=1}^{k}}\\
+	= &(2\pi)^{-\frac{k}{2}}\left[\sqrt{\frac{1}{p(p+1)t(1-t)}}\right]^{k}\cdot T^{-\frac{k}{2}}\cdot e^{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}a_{i}^2-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}b_{i}^2}\\
+	& \cdot\frac{\det\left(e^{c_{1}(p,t)z_{i}a_{j}}\right)_{i,j=1}^{k}\cdot \det\left(e^{c_{2}(p,t)b_{i}z_{j}}\right)_{i,j=1}^{k}}{\det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right)_{i,j=1}^{k}})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^2}
 \end{align*}
 where $c_{3}(t,p)=\frac{1}{2p(p+1)t(1-t)}$.
 Therefore, $(\sqrt{T})^{k}\cdot\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)$ converges to $\rho(x_{1},\dots,x_{k})$ as given above, and 
 \begin{align*}
 	&c_{1}(p,t)=\frac{1}{p(p+1)t}, \quad c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}, \quad c_{3}(p,t)=\frac{1}{2p(p+1)t(1-t)}\\
-	&Z=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot exp\{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}+c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}\}det(exp\{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}\})_{i,j=1}^{k}
+	&Z=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot e^{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}}\cdot e^{c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}}\det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right)_{i,j=1}^{k}
 \end{align*}
 Thus, we prove our claim. 
+
 
 
 	\subsection*{Lemmas from Section 3.2}
