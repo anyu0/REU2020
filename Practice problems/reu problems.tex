@@ -1540,7 +1540,7 @@ Thus, we prove our claim.
 		x''_i &= x'_i - \lceil C(i-1)N^{\alpha/2}\rceil - \lfloor -paN^\alpha - MN^{\alpha/2}\rfloor,\\
 		y''_i &= y'_i - \lceil C(i-1)N^{\alpha/2}\rceil - \floor{-paN^\alpha - MN^{\alpha/2}},
 		\end{align*}
-		where $C$ is a constant to be determined later. Then the last probability is equal to
+		where $C$ is a constant to be determined later. Then the last probability is equal to (ignoring floors/ceilings for now)
 		\begin{align*}
 		& \mathbb{P}^{0, (a+b)N^\alpha, \vec{x}\,'', \vec{y}\,''}_{avoid, Ber} \Big( \inf_{s\in[0,(a+b)N^\alpha]} (L_k'(s) + C(k-1)N^{\alpha/2} - paN^\alpha - MN^{\alpha/2} - p(s-aN^\alpha)) \leq -R_2N^{\alpha/2} \Big)\\
 		= \; & \mathbb{P}^{0, (a+b)N^\alpha, \vec{x}\,'', \vec{y}\,''}_{avoid, Ber} \Big( \inf_{s\in[0,(a+b)N^\alpha]} (L_k'(s) - ps) \leq -(R_2+C(k-1)-M)N^{\alpha/2} \Big).
@@ -1558,7 +1558,7 @@ Thus, we prove our claim.
 		& \mathbb{P}^{0, (a+b)N^\alpha, x_k'', y_k''}_{Ber} \Big( \inf_{s\in[0,(a+b)N^\alpha]} (\ell(s) - ps) \leq -(R_2+C(k-1)-M)N^{\alpha/2} \Big)\\
 		= \; & \mathbb{P}^{0, (a+b)N^\alpha, 0, z_k}_{Ber} \Big( \inf_{s\in[0,(a+b)N^\alpha]} (\ell(s) - ps) \leq -(R_2 -M) N^{\alpha/2} \Big).
 		\end{align*}
-		Since $z_k\geq p(a+b)N^{\alpha/2}$, Lemma 3.7 allows us to find $R_2>0$ depending on $\epsilon$ and $N_3\in\mathbb{N}$ depending on $p,\epsilon$ so that this probability is $<\epsilon/4$ for all $N\geq N_3$.
+		Since $z_k\geq p(a+b)N^{\alpha/2}$, Lemma 3.7 allows us to find $R_2>0$ depending on $\epsilon$ so that this probability is $<\epsilon/4$ for all large $N$ depending on $p,\epsilon$.
 		
 		We now bound from below the probability of the event $F$. Write $T = (a+b)N^\alpha$. For $1\leq i\leq k$, define
 		\[
@@ -1570,27 +1570,27 @@ Thus, we prove our claim.
 		\] 
 		Then $p_i\in(0,1)$ as long as $T>1$ and in particular $|z_i - p_i T|\leq \sqrt{T}$ for all $i$. Let $\ell^{(0,z_i)}$ be paths with the same laws as $L'_i$ shifted down by $x_i{}''$ under measures $\mathbb{P}_i$, as provided by Theorem 3.3. Let $B^{\sigma_i}$ be Brownian bridges with variance $\sigma_i^2 = p_i(1-p_i)$ coupled with $L'_i$. Then
 		\begin{align*}
-		\mathbb{P}^{0,T,\vec{x}\,'', \vec{y}\,''}_{Ber}(E) &\geq \mathbb{P}^{0,T,0,\vec{z}}_{Ber} \Big( \sup_{s\in\llbracket 0, (a+b)N^\alpha\rrbracket} \Big|\ell^{(0,z_i)}(s) - \frac{s}{T}z_i\Big| < \frac{C-1}{2}\sqrt{T},\; 1\leq i\leq k \Big)\\
-		&= \prod_{i=1}^k \Big[ 1 - \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(0,z_i)}(s) - \frac{s}{T}z_i\Big| \geq \frac{C-1}{2}\sqrt{T} \Big) \Big].
+		\mathbb{P}^{0,T,\vec{x}\,'', \vec{y}\,''}_{Ber}(F) &\geq \mathbb{P}^{0,T,0,\vec{z}}_{Ber} \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(0,z_i)}(s) - \frac{s}{T}z_i\Big| < \frac{CN^{\alpha/2}}{2},\; 1\leq i\leq k \Big)\\
+		&= \prod_{i=1}^k \Big[ 1 - \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(0,z_i)}(s) - \frac{s}{T}z_i\Big| \geq \frac{C}{2\sqrt{a+b}}\sqrt{T} \Big) \Big].
 		\end{align*}
-		Now
+		Write $C' = C/2\sqrt{a+b}$. Then
 		\begin{align*}
-		&\mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(0,z_i)}(s) - \frac{s}{T}z_i\Big| \geq \frac{C-1}{2}\sqrt{T} \Big)\\
-		\leq \; & \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} |\sqrt{T}\,B^{\sigma_i}_{s/T}| \geq \frac{C-1}{4}\sqrt{T}\Big) + \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\sqrt{T}\,B^{\sigma_i}_{s/T} + \frac{s}{T}z_i - \ell^{(0,z_i^T)}(s)\Big| \geq \frac{C-1}{4}\sqrt{T} \Big).
+		&\mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(0,z_i)}(s) - \frac{s}{T}z_i\Big| \geq C'\sqrt{T} \Big)\\
+		\leq \; & \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} |\sqrt{T}\,B^{\sigma_i}_{s/T}| \geq \frac{C'}{2}\sqrt{T}\Big) + \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\sqrt{T}\,B^{\sigma_i}_{s/T} + \frac{s}{T}z_i - \ell^{(0,z_i^T)}(s)\Big| \geq \frac{C'}{2}\sqrt{T} \Big).
 		\end{align*}
 		The first term is equal to
 		\[
-		2\exp\Big( - \frac{2}{\sigma_i^2}\Big(\frac{C-1}{4}\Big)^2\Big) \leq 2e^{-(C-1)^2/2}.
+		2\exp\Big( - \frac{2}{\sigma_i^2}\Big(\frac{C'}{2}\Big)^2\Big) \leq 2e^{-C^2/2(a+b)}.
 		\]
-		This follows from (3.40) in Chapter 4 of Karatzas \& Shreve, and the fact that $\sigma_i^2 \leq 1/4$. The second term is $O(e^{-\sqrt{T}})$ by Chebyshev's inequality and Theorem 3.3 since $|z_i-p_iT|^2/T \leq 1$, so we can find $T_{02}$ depending on $p,k$ so that this probability is $< e^{-(C-1)^2/2}$ for $T\geq T_{02}$. Then
+		This follows from (3.40) in Chapter 4 of Karatzas \& Shreve, and the fact that $\sigma_i^2 \leq 1/4$. The second term is $O(e^{-\sqrt{T}})$ by Chebyshev's inequality and Theorem 3.3 since $|z_i-p_iT|^2/T \leq 1$, so we can find $T_0$ depending on $p,k$ so that this probability is $< e^{-C^2/2(a+b)}$ for $T\geq T_0$. Then
 		\[
-		\mathbb{P}^{0,T,\vec{x}\,'',\vec{y}\,''}_{Ber}(F) \geq \big(1 - 3e^{-(C-1)^2/2}\big)^k \geq 1/2,
+		\mathbb{P}^{0,T,\vec{x}\,'',\vec{y}\,''}_{Ber}(F) \geq \big(1 - 3e^{-C^2/2(a+b)}\big)^k \geq 1/2,
 		\]
-		if $C$ is chosen large enough depending on $k$. In particular, this holds if
+		if $C$ is chosen large enough depending on $k$. In particular, since $a+b \leq 2R$, this holds if
 		\[
-		C = 1 + \sqrt{2\log\frac{3}{1-2^{-1/k}}}.
+		C = \sqrt{4R\log\frac{3}{1-2^{-1/k}}}.
 		\]
-		It follows that the probability in () is $< 2\cdot \epsilon/4 = \epsilon/2$ for sufficiently large $N$. Thus
+		It follows that the probability in () is $< 2\cdot \epsilon/4 = \epsilon/2$ for sufficiently large $N$ depending on $p,k,\epsilon$, independent of $a,b,\vec{x},\vec{y}$. Thus we can find $N_3 = N_3(p,k,\epsilon)\in\mathbb{N}$ so that for all $N\geq N_3$,
 		\[
 		\mathbb{P}(A_N(R_2)\cap B_N(M,R)) \leq \frac{\epsilon}{2}\sum_{(a,b,\vec{x},\vec{y})\in D_N(M)} \mathbb{P}(E(a,b,\vec{x},\vec{y})) \leq \frac{\epsilon}{2}.
 		\]
