@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  15 JUN 2020 11:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  18 JUN 2020 00:30
 entering extended mode
 **"./reu problems.tex"
 ("reu problems.tex"
@@ -716,97 +716,87 @@ Overfull \hbox (37.7275pt too wide) in paragraph at lines 966--966
 [] 
  []
 
-
-Overfull \hbox (19.16411pt too wide) in paragraph at lines 974--974
-[] 
- []
-
 [36]
-Overfull \hbox (60.73927pt too wide) in paragraph at lines 983--983
+Overfull \hbox (20.38396pt too wide) in paragraph at lines 984--984
 [] 
  []
 
 
-Overfull \hbox (44.87357pt too wide) in paragraph at lines 1006--1006
+Overfull \hbox (0.16147pt too wide) in paragraph at lines 1000--1000
 [] 
  []
 
 [37]
-Overfull \hbox (44.35086pt too wide) in paragraph at lines 1011--1011
-[] 
- []
-
-
-Overfull \hbox (19.45128pt too wide) in paragraph at lines 1028--1028
-[] 
- []
-
-
-Overfull \hbox (3.01326pt too wide) in paragraph at lines 1037--1037
+Overfull \hbox (57.39629pt too wide) in paragraph at lines 1011--1011
 [] 
  []
 
 [38]
-Overfull \hbox (28.36841pt too wide) in paragraph at lines 1043--1043
+Overfull \hbox (9.90034pt too wide) in paragraph at lines 1033--1033
 [] 
  []
 
-[39] [40]
-Overfull \hbox (0.9824pt too wide) in paragraph at lines 1125--1125
+[39] [40] [41]
+Overfull \hbox (0.9824pt too wide) in paragraph at lines 1130--1130
 [] 
  []
 
 
-Overfull \hbox (1.37186pt too wide) in paragraph at lines 1131--1131
+Overfull \hbox (1.37186pt too wide) in paragraph at lines 1136--1136
 [] 
  []
 
-[41]
-Overfull \hbox (8.99876pt too wide) in paragraph at lines 1153--1153
+[42]
+Overfull \hbox (8.99876pt too wide) in paragraph at lines 1158--1158
 [] 
  []
 
-[42] [43] [44] [45]
-Overfull \hbox (9.92892pt too wide) in paragraph at lines 1310--1310
+[43] [44] [45] [46]
+Overfull \hbox (9.92892pt too wide) in paragraph at lines 1315--1315
 [] 
  []
 
-[46] [47] [48] [49] [50]
-Underfull \hbox (badness 10000) in paragraph at lines 1494--1496
-
+[47] [48] [49] [50] [51]
+Overfull \hbox (44.2381pt too wide) in paragraph at lines 1547--1547
+[] 
  []
 
-[51] ("reu problems.aux") ) 
+[52]
+Overfull \hbox (6.1589pt too wide) in paragraph at lines 1580--1580
+[] 
+ []
+
+[53] [54] ("reu problems.aux") ) 
 Here is how much of TeX's memory you used:
- 4089 strings out of 493320
- 57828 string characters out of 3138925
- 140384 words of memory out of 3000000
- 7530 multiletter control sequences out of 15000+200000
+ 4090 strings out of 493320
+ 57838 string characters out of 3138925
+ 139393 words of memory out of 3000000
+ 7531 multiletter control sequences out of 15000+200000
  16739 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,18n,32p,1671b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Christian Serio\AppData\Local\MiKTeX\2.9\
-fonts\pk\ljfour\public\bbm\dpi600\bbm12.pk><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
-6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary8.pfb>
-Output written on "reu problems.pdf" (51 pages, 1085760 bytes).
+ <C:\Users\Christian Serio\AppData\Local\MiKTeX
+\2.9\fonts\pk\ljfour\public\bbm\dpi600\bbm12.pk><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+ti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary10.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary8.pfb>
+Output written on "reu problems.pdf" (54 pages, 1101307 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
+ 258 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
