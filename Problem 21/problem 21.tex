@@ -1,0 +1,94 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsthm, hhline, enumitem}
+\usepackage{stmaryrd, mathtools}
+\usepackage{amsmath, amssymb, graphicx}
+\usepackage{mathtools}
+\usepackage{bbm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{theorem*}{Theorem}
+{ \theoremstyle{remark}
+	\newtheorem{remark}[theorem]{Remark}}
+{ \theoremstyle{definition}
+	\newtheorem{definition}[theorem]{Definition}}
+\DeclareMathOperator{\ex}{\mathbb{E}}
+\DeclareMathOperator{\pr}{\mathbb{P}}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\begin{document}
+	
+	\begin{center}
+		\large\textbf{Problem 21}
+	\end{center}
+
+	This is a rough argument for Problem 21 in the special case when $k=2$. Fix $r>0$ and $R>r$; assume that $r,R\in\mathbb{Z}N^\alpha$ for simplicity. Define events
+	\begin{align*}
+	A &= \left\{L_1^N\left(\frac{R+r}{2}\,N^\alpha\right) - pN^\alpha\,\frac{R+r}{2} + \lambda\left(\frac{R+r}{2}\right)^2 N^{\alpha/2} < -\phi(\epsilon)N^{\alpha/2}\right\},\\
+	B &= \left\{\max_{x\in[r,R]} \left(L_2^N(xN^\alpha) - pxN^\alpha\right) < -R_2N^{\alpha/2} \right\}.
+	\end{align*}
+	We aim to bound $\mathbb{P}(B)$, using the fact that $\mathbb{P}(A) \leq 2\epsilon$ for large enough $N$ by one-point tightness. Recall that with probability $>1-2\epsilon$, we have 
+	\begin{align*}
+	& prN^\alpha - (\lambda r^2+\phi(\epsilon))N^{\alpha/2} < L_1^N(rN^\alpha) <  prN^\alpha - (\lambda r^2-\phi(\epsilon))N^{\alpha/2},\\
+	& pRN^\alpha - (\lambda R^2+\phi(\epsilon))N^{\alpha/2} < L_2^N(RN^\alpha) <  pRN^\alpha - (\lambda R^2-\phi(\epsilon))N^{\alpha/2}
+	\end{align*}
+	Let $F$ denote the subset of $B$ for which these two inequalities hold. Then 
+	\[
+	\mathbb{P}(B) \leq \mathbb{P}(F) + 2\epsilon,
+	\]
+	so it suffices to bound $\mathbb{P}(F)$. To do so, we argue that there is a constant $c>0$ independent of $\epsilon$ (maybe $c=1/4$) such that
+	\[
+	\mathbb{P}(A\,|\,F) > c
+	\]
+	for large enough $R$ and $R_2$. Let $D$ denote the set of pairs $(\vec{x},\vec{y})$, with $\vec{x},\vec{y}\in\mathfrak{W}_2$, satisfying 
+	\begin{enumerate}[label=(\arabic*)]
+		
+		\item $0\leq y_i - x_i \leq (R-r)N^\alpha$,
+		
+		\item $prN^\alpha - (\lambda r^2+\phi(\epsilon))N^{\alpha/2} < x_1 <  prN^\alpha - (\lambda r^2-\phi(\epsilon))N^{\alpha/2}$ and $pRN^\alpha - (\lambda R^2+\phi(\epsilon))N^{\alpha/2} < x_2 <  pRN^\alpha - (\lambda R^2-\phi(\epsilon))N^{\alpha/2}$,
+		
+		\item $x_2 < prN^\alpha - R_2N^{\alpha/2}$ and $y_2 < pRN^\alpha - R_2N^{\alpha/2}$. 
+		
+	\end{enumerate}
+
+	Let $E(\vec{x},\vec{y})$ denote the subset of $F$ consisting of $L^N$ for which $L_i^N(rN^\alpha) = x_i$ and $L_i^N(RN^\alpha)=y_i$ for $i=1,2$, and $L_1^N(s) > L_2^N(s)$ for all $s$. Then $D$ is countable, the $E(\vec{x},\vec{y})$ are pairwise disjoint, and $F = \bigcup_{(\vec{x},\vec{y})\in D} E(\vec{x},\vec{y})$. Suppose we can show that $\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) > c$ for all $(\vec{x},\vec{y})\in D$. Then
+	\begin{align*}
+	\mathbb{P}(A\,|\,F) &= \sum_{(\vec{x},\vec{y})\in D} \frac{\mathbb{P}(A\,|\,E(\vec{x},\vec{y}))\mathbb{P}(E(\vec{x},\vec{y}))}{\mathbb{P}(F)} \geq c\cdot\frac{\sum_{(\vec{x},\vec{y})\in D} \mathbb{P}(E(\vec{x},\vec{y}))}{\mathbb{P}(F)} = c.
+	\end{align*}
+	
+	We now try to find a lower bound for $\mathbb{P}(A\,|\,E(\vec{x},\vec{y}))$. We have
+	\begin{align*}
+	\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) &= \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{avoid,Ber} (A\,|\,F) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (A\cap\{L_1 > L_2\}\,|\,F)\\
+	&\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (A\,|\,F) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 > L_2\,|\,F)\big)\\
+	&= \mathbb{P}^{rN^\alpha, RN^\alpha,x_1,y_1}_{Ber} (A) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 > L_2\,|\,F)\big)
+	\end{align*}
+	In the last line, we used the fact that $A$ and $F$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. (Do we also need the Gibbs property here to replace $\vec{x},\vec{y}$ with $x_1,y_1$?) We can bound the first term using a lemma similar to those proven in Section 3. We would need a statement to the effect that  with some positive probability, say at least $1/3$, $L_1(\frac{R+r}{2}N^\alpha)$ does not lie far above the midpoint of the line segment connecting $L_1(rN^\alpha)$ and $L_1(RN^\alpha)$. Note that this midpoint is close to $\lambda(\frac{R^2+r^2}{2})N^{\alpha/2}$, and
+	\[
+	 \frac{R^2+r^2}{2} - \left(\frac{R+r}{2}\right)^2 = \frac{R^2 + r^2 - 2rR}{4} = O(R^2)
+	\]
+	for fixed $r$. Thus for large enough $R$, $A$ will hold as long as $L_1(\frac{R+r}{2}N^\alpha)$ is not far above the midpoint of the segment connecting $L_1(rN^\alpha)$ and $L_1(RN^\alpha)$, giving a lower bound of $1/3$ on $\mathbb{P}^{rN^\alpha, RN^\alpha,x_1,y_1}_{Ber}(A)$.
+	
+	It remains to bound $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 > L_2\,|\,F)$. We have
+	\begin{align*}
+	\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 > L_2\,|\,F) &\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} \left(\inf_{x\in[r,R]} L_1(xN^\alpha) > pxN^\alpha - R_2N^{\alpha/2}\,\Big|\,F\right)\\
+	&= \mathbb{P}^{rN^\alpha, RN^\alpha,x_1,y_1}_{Ber} \left(\inf_{x\in[r,R]} L_1(xN^\alpha) > pxN^\alpha - R_2N^{\alpha/2}\right).
+	\end{align*}
+	Again, we used the fact that $L_1$ and $L_2$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. We can bound the quantity in the second line using monotone coupling to fix $x_1,y_1$, and then using strong coupling with a Brownian bridge. For large $R_2$, we can make this probability $>11/12$. However, the argument seems to break down at the first inequality if $k>2$, because then the event $F$ doesn't tell us anything about how low $L_2$ is.
+	
+	Combining our estimates, we get
+	\[
+	\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) \geq \frac{1}{3} - \frac{1}{12} = \frac{1}{4}.
+	\]
+	Hence $\mathbb{P}(A\,|\,F) \geq 1/4$. It follows that
+	\[
+	\mathbb{P}(F) \leq 4\mathbb{P}(A) \leq 8\epsilon
+	\]
+	for large enough $N$, $R$, $R_2$. 
+	
+
+\end{document}

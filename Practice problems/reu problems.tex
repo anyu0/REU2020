@@ -1505,27 +1505,27 @@ Thus, we prove our claim.
 		\[
 		A_N(R_2) = \left\{\inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2N^{\alpha/2}\right\}
 		\]
-		\[
-		B_N(M,R) = \left\{ \max_{x\in [r+2, R]} \big(L^N_k(xN^\alpha) - pxN^\alpha\big) > -MN^{\alpha/2} \right\}.
-		\]
+		\begin{align*}
+		B_N(M,R) &= \left\{ \max_{x\in [r+2, R]} \big(L^N_k(xN^\alpha) - pxN^\alpha\big) > -MN^{\alpha/2} \right\}\\
+		&\qquad \cap \left\{ \max_{x\in [-R, -r-2]} \big(L^N_k(xN^\alpha) - pxN^\alpha\big) > -MN^{\alpha/2} \right\}.
+		\end{align*}
 		We aim to bound $\mathbb{P}(A_N(R_2))$. By problem 21, given $\epsilon > 0$, we can find $M,R>0$ and $N_0\in\mathbb{N}$ large enough so that $\mathbb{P}(B_N^c(M,R)) < \epsilon/2$ for all $N\geq N_0$. Then
 		\begin{align*}
 		\mathbb{P}(A_N(R_2)) &\leq \mathbb{P}(A_N(R_2)\cap B_N(M,R)) + \epsilon/2
 		\end{align*}
-		Thus it suffices to bound $\mathbb{P}(A_N(R_2)\cap B_N(M,R))$. For $a,b\in\mathbb{Z}$, $\vec{x},\vec{y}\in\mathfrak{W}_k$, we define $E(a,b,\vec{x},\vec{y})$ to be the event that $L_i^N(-aN^\alpha) = x_i$ and $L_i^N(bN^\alpha) = y_i$ for $1\leq i\leq k$.
+		Thus it suffices to bound $\mathbb{P}(A_N(R_2)\cap B_N(M,R))$. For $a,b>0$, $\vec{x},\vec{y}\in\mathfrak{W}_k$, we define $E(a,b,\vec{x},\vec{y})$ to be the event that $L_i^N(-aN^\alpha) = x_i$ and $L_i^N(bN^\alpha) = y_i$ for $1\leq i\leq k$, and $L_1^N(s) > \cdots > L_k^N(s)$ for all $s\in[-RN^\alpha,RN^\alpha]$.
 		
 		We claim that $B_N(M,R)$ can be written as a countable disjoint union of sets $E(a,b,\vec{x},\vec{y})$. Let $D_N(M)$ be the collection of tuples $(a,b,\vec{x},\vec{y})$ satisfying 
-		\begin{enumerate}[label=(\roman*)]
+		\begin{enumerate}[label=(\arabic*)]
 			
-			\item $a,b \in [r,R]$,
+			\item $a,b \in [r,R]\cap\mathbb{Q}$,
 			
 			\item $0 \leq y_i - x_i \leq (a+b)N^\alpha$, $x_k + paN^\alpha > - MN^{\alpha/2}$, and $y_k - pbN^\alpha > - MN^{\alpha/2}$.
 			
 			\item If $c > a$ and $d>b$, then $L_k^N(-cN^\alpha) + pcN^\alpha \leq -MN^{\alpha/2}$ and $L_k^N(dN^\alpha) - pdN^\alpha \leq -MN^{\alpha/2}$.
 			
 		\end{enumerate} 
-		As in the proof of Lemma 4.2, we see that $D_N(M)$ is countable. The third condition ensures that the $E(a,b,\vec{x},\vec{y})$ are pairwise disjoint, and the second condition shows that their union over $D_N(M)$ is all of $B_N(M,R)$.
-		We have
+		Since the $a,b$ are rational, the $x_i,y_i$ are integers, and there are finitely many choices of $L_i^N$ on $[-aN^\alpha, bN^\alpha]$ given $a,b,x_i,y_i$, we see that $D_N(M)$ is countable. The third condition ensures that the $E(a,b,\vec{x},\vec{y})$ are pairwise disjoint. To see that their union over $D_N(M)$ is all of $B_N(M,R)$, note that $B_N(M,R)$ occurs if and only if there is a first time $-a$ and a last time $b$ when $L_k^N(sN^\alpha)-psN^\alpha$ crosses $-MN^{\alpha/2}$, and we can assume these times are rational by continuity of $L_k^N$. We have
 		\begin{align*}
 		&\mathbb{P}(A_N(R_2) \cap B_N(M,R)) = \sum_{(a,b,\vec{x},\vec{y})\in D_N(M)} \mathbb{P}(A_N(R_2)\,|\,E(a,b,\vec{x},\vec{y}))\mathbb{P}(E(a,b,\vec{x},\vec{y})).
 		\end{align*}
@@ -1580,13 +1580,13 @@ Thus, we prove our claim.
 		\end{align*}
 		The first term is equal to
 		\[
-		2\exp\Big( - \frac{2}{\sigma_i^2}\Big(\frac{C'}{2}\Big)^2\Big) \leq 2e^{-C^2/2(a+b)}.
+		2\exp\left( - \frac{2}{\sigma_i^2}\Big(\frac{C'}{2}\Big)^2\right) \leq 2e^{-C^2/2(a+b)} \leq 2e^{-C^2/4R}.
 		\]
-		This follows from (3.40) in Chapter 4 of Karatzas \& Shreve, and the fact that $\sigma_i^2 \leq 1/4$. The second term is $O(e^{-\sqrt{T}})$ by Chebyshev's inequality and Theorem 3.3 since $|z_i-p_iT|^2/T \leq 1$, so we can find $T_0$ depending on $p,k$ so that this probability is $< e^{-C^2/2(a+b)}$ for $T\geq T_0$. Then
+		This follows from (3.40) in Chapter 4 of Karatzas \& Shreve, and the facts that $\sigma_i^2 \leq 1/4$ and $a+b\leq 2R$. The second term is $O(e^{-\sqrt{T}})$ by Chebyshev's inequality and Theorem 3.3 since $|z_i-p_iT|^2/T \leq 1$, so we can find $T_0$ depending on $p,k$ so that this probability is $< e^{-C^2/4R}$ for $T\geq T_0$. Then
 		\[
-		\mathbb{P}^{0,T,\vec{x}\,'',\vec{y}\,''}_{Ber}(F) \geq \big(1 - 3e^{-C^2/2(a+b)}\big)^k \geq 1/2,
+		\mathbb{P}^{0,T,\vec{x}\,'',\vec{y}\,''}_{Ber}(F) \geq \big(1 - 3e^{-C^2/4R}\big)^k \geq 1/2,
 		\]
-		if $C$ is chosen large enough depending on $k$. In particular, since $a+b \leq 2R$, this holds if
+		if $C$ is chosen large enough depending on $k$. In particular, this holds if
 		\[
 		C = \sqrt{4R\log\frac{3}{1-2^{-1/k}}}.
 		\]
