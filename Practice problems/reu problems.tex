@@ -1243,6 +1243,102 @@ Thus, we prove our claim.
 
 
 \subsection*{Problem 17}
+Suppose $(L_{1},\cdots,L_{k})$ is a Bernoulli avoiding line ensemble whose distribution is $\mathbb{P}_{avoid, Ber}^{0,T,\vec{x}^{T},\vec{y}^{T}}$, starting with $\vec{x}^{T}=(\vec{x}^{T}_{1},\cdots,\vec{x}^{T}_{k})$ and ending with $\vec{y}^{T}=(\vec{y}^{T}_{1},\cdots,\vec{y}^{T}_{k})$. We also have $$\lim_{T\rightarrow\infty}\frac{\vec{x}_{i}^{T}}{\sqrt{T}}=a_{i}, \quad\lim_{T\rightarrow\infty}\frac{\vec{y}_{i}^{T}-ptT}{\sqrt{T}}=b_{i}$$ where $a_{1}>a_{2}>\cdots> a_{k}$ and $b_{1}>b_{2}>\cdots> b_{k}$. In problem 16, we have derived that the random vector $Z^{T}=(Z_{1},Z_{2},\dots,Z_{k})$ weakly converges to the continuous distribution with density $\rho(z_{1},z_{2},\cdots,z_{k})$, where $Z_{i}=\frac{L_{i}(\lfloor tT \rfloor)-ptT}{\sqrt{T}}$ and 
+$$\rho(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot det[e^{c_1(t,p)a_{i}z_{j}}]_{i,j=1}^{k}\cdot det[e^{c_2(t,p)b_{i}z_{j}}]_{i,j=1}^{k}\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}$$ with the normalized constant 
+\begin{align*}
+	&Z=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot e^{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}+c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}} \det(e^{-\frac{1}{2}c(p)(b_{i}-a_{j})^{2}})_{i,j=1}^{k}\\
+	& =(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot e^{(c_{1}(t,p)-\frac{c(p)}{2})\sum_{i=1}^{k}a_{i}^{2}+(c_{2}(t,p)-\frac{c(p)}{2})\sum_{i=1}^{k}b_{i}^{2}}\det(e^{c(p)a_{i}b_{j}})_{i,j=1}^{k}
+\end{align*}
+and constants $$c_{1}(p,t)=\frac{1}{p(p+1)t},\ c_{2}(p,t)=\frac{1}{p(p+1)(1-t)},\ c_{3}(p,t)=\frac{1}{2p(p+1)t(1-t)},\ c(p)=\frac{1}{p(p+1)}$$
+Since the limit distribution of $(Z_{1},\cdots,Z_{k})$ is a continuous distribution, we know the probability of the event $\{\exists i,j\in\{1,\cdots,k \}\text{ such that }z_{i}=z_{j}\}$ is zero, so that we can assume $z_{1},\cdots,z_{k}$ are distinct real numbers in the following discussion.\\
+In problem 17, we are given $a_{1}\geqslant a_{2}\geqslant\cdots\geqslant a_{k}$, $b_{1}\geqslant b_{2}\geqslant\cdots\geqslant b_{k}$. Thus, three determinants $\det[e^{c_1(t,p)a_{i}z_{j}}]_{i,j=1}^{k}$, $\det[e^{c_2(t,p)b_{i}z_{j}}]_{i,j=1}^{k}$, and $\det(e^{c(p)a_{i}b_{j}})_{i,j=1}^{k}$ might be zero and we need to make some adjustment to our previous results in Problem 16. Now we formalize our problem.
+Denote
+\begin{align*}
+	&\vec{a}_{0}=(\underbrace{\alpha_{1},\cdots,\alpha_{1}}_{m_{1}},\cdots,\underbrace{\alpha_{p},\cdots,\alpha_{p}}_{m_{p}})\\
+	&\vec{b}_{0}=(\underbrace{\beta_{1},\cdots,\beta_{1}}_{n_{1}},\cdots,,\underbrace{\beta_{p},\cdots,\beta_{p}}_{n_{q}})
+\end{align*}
+
+where $\alpha_{1}>\alpha_{2}>\cdots>\alpha_{p}$, $\beta_{1}>\beta_{2}>\cdots>\beta_{q}$ and $\sum_{i=1}^{p}\alpha_{i}=\sum_{i=1}^{q}\beta_{i}=k$. Denote $\vec{a}=(a_{1},\cdots,a_{k})$, $\vec{b}=(b_{1},\cdots,b_{k})$. Also denote $\vec{a}^{(1)}=(a_{1},\cdots,a_{m_1})$, $\vec{a}^{(2)}=(a_{m_{1}+1},\cdots,a_{m_1+m_2})$, $\cdots$, $\vec{a}^{(p)}=(a_{m_1+\cdots+m_{p-1}+1},\cdots, a_{m_1+\cdots+m_{p}})$ and $\vec{a}=(\vec{a}^{(1)},\cdots,\vec{a}^{(p)})$. That is, we divide the vector $\vec{a}$ into $p$ parts according to the form of $\vec{a_{0}}$. Similarly, we write $\vec{b}=(b^{(1)},\cdots,b^{(q)})$ according to the shape of $\vec{b}_{0}$. We will keep using similar notations in the following discussion, when we need to divide the vector according to the shape of $\vec{a}_{0}$ and $\vec{b}_{0}$. Next, denote
+\begin{align*}
+	f(a_{1},\cdots,a_{k})\equiv f(\vec{a})&=\det[e^{c_1(t,p)a_{i}z_{j}}]_{i,j=1}^{k},\quad g(b_{1},\cdots,b_{k})\equiv g(\vec{b})=\det[e^{c_2(t,p)b_{i}z_{j}}]_{i,j=1}^{k}\\
+	&h(a_{1},\cdots,a_{k},b_{1},\cdots,b_{k})\equiv h(\vec{a},\vec{b})=\det[e^{c(p)a_{i}b_{j}}]_{i,j=1}^{k}
+\end{align*} 
+and it's not difficult to see that they are all smooth multi-variable functions with respect to the corresponding vectors. In this problem, we want to find the following limit:
+\begin{equation*}
+	\lim_{\vec{a}\rightarrow \vec{a}_{0},\vec{b}\rightarrow \vec{a}_{0}} \frac{f(\vec{a})\cdot g(\vec{b})}{h(\vec{a},\vec{b})}
+\end{equation*}
+Our answer will be divided into $3$ steps. In Step 1, we introduce some notations and results about multi-variable function. In Step 2, we develop some lemmas that help us to compute the limit. In Step 3, we find the limit and give the modified density that adapts to the case when some values inside $\vec{a}$ and $\vec{b}$ collide.
+\\
+\textbf{Step 1. } \\
+(\romannumeral 1) \emph{Multi-index} Suppose $\sigma = (\sigma_{1},\cdots,\sigma_{n})$ is a multi-index of \emph{length} $n$. In our problem, we require $\sigma_{1},\cdots,\sigma_{n}$ are all non-negative integers(some of them might be equal). We define $|\sigma|=\sum_{i=1}^{n}\sigma_{i}$ as the \emph{order} of $\sigma$. Suppose $\tau=(\tau_{1},\cdots,\tau_{n})$ is another multi-index of length $n$. We say $\tau\leqslant \sigma$ if $\tau_{i}\leqslant \sigma_{i}$ for $i=1,\cdots,n$. We say $\tau<\sigma$ if $\tau\leqslant \sigma$ and there exists at least one index $i$ such that $\tau_{i}<\sigma_{i}$. Then, define the partial derivative with respect to the multi-index $\sigma$:
+$$D^{\sigma}f(x_{1},\cdots,x_{n})=\frac{\partial^{|\sigma|}f(x_{1},\cdots,x_{n})}{\partial_{x_{1}}^{\sigma_{1}}\partial_{x_{2}}^{\sigma_{2}}\cdots \partial_{x_{n}}^{\sigma_{n}}}$$ We have the general Leibniz rule:
+\begin{align*}
+	D^{\sigma}(fg)=\sum_{\tau\leqslant\sigma}\binom{\sigma}{\tau}D^{\tau}f\cdot D^{\sigma-\tau}g
+\end{align*}
+where $\binom{\sigma}{\tau}=\frac{\sigma_{1}!\cdots\sigma_{n}!}{\tau_{1}!\cdots\tau_{n}!(\sigma_{1}-\tau_{1})!\cdots(\sigma_{n}-\tau_{n})!}$.\\
+We also have the Taylor expansion for multi-variable functions:
+$$f(x_{1},\cdots,x_{n})=\sum_{|\sigma|\leqslant r}\frac{1}{\sigma!}D^{\sigma}f(\vec{x}_{0})(\vec{x}-\vec{x}_{0})^{\sigma}+R_{r+1}(\vec{x},\vec{x}_{0})$$ 
+In the equation, $\sigma!=\sigma_{1}!\sigma_{2}!\cdots\sigma_{n}!$ is the factorial with respect to the multi-index $\sigma$, $\vec{x}_{0}=(x_{1}^{0},\cdots,x_{n}^{0})$ is a constant vector at which we expands the function $f$, $(\vec{x}-\vec{x}_{0})^{\sigma}$ stands for $(x_{1}-x_{1}^{0})^{\sigma_{1}}\cdots(x_{n}-x_{n}^{0})^{\sigma_{n}}$, and $$R_{r+1}(\vec{x},\vec{x}_{0})=\sum_{\sigma:|\sigma|=r+1}\frac{1}{\sigma!}D^{\sigma}f(\vec{\theta})(\vec{x}-\vec{x}_{0})^{\sigma}$$ is the remainder, where $\theta$ is a vector in the box $[\min (x_{1},x_{1}^{0}),\max (x_{1},x_{1}^{0})]\times\cdots\times[\min (x_{n},x_{n}^{0}),\\ \max (x_{n},x_{n}^{0})]$.\\
+(\romannumeral 2) \emph{Permutation} Suppose $s_{n}$ is a permutation of $n$ non-negative integers, for example $\{1,\cdots,n\}$, and $s_{n}(i)$ represents the $i$-$th$ element in the permutation $s_{n}$. We define \emph{the number of inversions} of $s_{n}$ by $I(s_{n})=\sum_{i=1}^{n-1}\sum_{j=i+1}\mathbbm{1}_{\{s_{n}(i)>s_{n}(j)\}}$. For example, the permutation $s_{n}=(1,\cdots,n)$ has $0$ number of inversions, while the permutation $s_{5}=(3,2,5,1,4)$ has number of inversions $5(2+1+2+0+0)$. Define the sign of permutation $s_{n}$ by $sgn(s_{n})=(-1)^{I(s_{n})}$. For instance, $sgn((1,\cdots,n))=1$ and $sgn(s_{5})=-1$ in the previous example.\\
+\textbf{Step 2. }In this step, we derive some lemmas based on the previous set-ups. Suppose $\sigma_{a}=(\sigma_{1}^{a},\cdots,\sigma_{k}^{a})$ and $\sigma_{a}=(\sigma_{1}^{a},\cdots,\sigma_{k}^{a})$ are two multi-indices of length $k$. We divide them into $p$ and $q$ parts according to the shape of $\vec{a}_{0}$ and $\vec{b}_{0}$ as mentioned before: $\sigma_{a}=(\sigma^{(1)}_{a},\sigma^{(2)}_{a},\cdots,\sigma^{(p)}_{a})$, $\sigma_{b}=(\sigma^{(1)}_{b},\sigma^{(2)}_{b},\cdots,\sigma^{(p)}_{b})$. In the following discussion, we ignore the constants $c_{1}(t,p)$, $c_{2}(t,p)$, $c(p)$ in $f(\vec{a})$, $g(\vec{b})$ and $h(\vec{a},\vec{b})$ temporarily for simplicity. We have the following lemmas.\\
+\textbf{Lemma 1}: Suppose $S_{m_i}$ is the set of all permutations of $\{0,1,\cdots,m_{i}-1\}$. If $\sigma_{a}^{(i)}\in S_{m_i}$ for $i=1,\cdots,p$, then 
+\[ D^{\sigma_{a}}f(\vec{a}_{0})= \det
+	\left[ \begin{array}{ccc}
+		(z_{j}^{\sigma_{i}}e^{\alpha_{1}z_{j}})_{\substack{i=1,\cdots,m_{1}\\j=1,\cdots,k}}\\
+	\vdots\\
+	(z_{j}^{\sigma_{i}}e^{\alpha_{p}z_{j}})_{\substack{i=m_1+\cdots+m_{p-1}+1,\\ \cdots m_{1}+\cdots +m_{p} \\j=1,\cdots,k}}
+	\end{array}
+	\right]
+\]
+is non-zero for any $(z_{1},\cdots,z_{k})$ whose elements are distinct.\\
+\emph{Proof: }\\
+Denote the set $\Lambda_{a}=\{\sigma_{a}=(\sigma_{a}^{(1)},\cdots,\sigma_{a}^{(p)}):\sigma_{a}^{(i)}\in S_{m_{i}}, i=1,\cdots,p\}$, and we have if $\sigma_{a}\in \Lambda_{a}$, then $D^{\sigma_{a}}f(\vec{a}_{0})$ is non-zero. Similarly, if $\sigma^{j}_{b}\in S_{n_j}$ for $j=1,\cdots,q$, then $D^{\sigma_{b}}g(\vec{b})$ is non-zero. We can also define $\Lambda_{b}$ is the set of multi-indices that make $D^{\sigma_{b}}g(\vec{b})$ non-zero.\\
+\emph{Lemma 2}: The smallest order of $\sigma_{a}$ that makes the partial derivative $D^{\sigma_{a}}f(\vec{a}_{0})$(at the point $\vec{a}_{0}$) non-zero is $u=\sum_{i=1}^{p}\sum_{j=0}^{m_{i}-1}j=\sum_{i=1}^{p}\frac{m_{i}(m_{i}-1)}{2}$. Similarly, $v=\sum_{j=1}^{q}\frac{n_{j}(n_{j}-1)}{2}$ is the smallest order of $\sigma_{b}$ that makes $D^{\sigma_{b}}f(\vec{b}_{0})$ non-zero.\\
+\emph{Proof:} If the order of derivative is less than $u$, then there exists a $i\in\{1,\cdots,p\}$ such that $\sigma_{a}^{(i)}$ contains two equal elements, and the determinant $D^{\sigma_{a}}f(\vec{a}_{0})$ would have two equal rows, thus equal to zero. If the order of derivative is $u$, then when $\sigma_{a}\in\Lambda_{a}$, $D^{\sigma_{a}}f(\vec{a}_{0})$ is non-zero by Lemma 1. Thus, Lemma 2 holds.\\
+\textbf{Lemma 3}: Suppose $\sigma_{a}\in \Lambda_{a}$ and $\sigma_{b}\in \Lambda_{b}$ are two multi-indices of length $k$. Denote $\sigma=(\sigma_{a},\sigma_{b})$, then we have:
+$$D^{\sigma}(fg)(\vec{a}_{0},\vec{b}_{0})=D^{\sigma_{a}}f(\vec{a}_{0})\cdot D^{\sigma_{b}}g(\vec{b}_{0})$$ \\
+\emph{Proof}: By the general Leibniz rule in Step 1, we know $$D^{\sigma}(fg)(\vec{a},\vec{b})=\sum_{\tau\leqslant\sigma}\binom{\sigma}{\tau}D^{\tau}f(\vec{a},\vec{b})\cdot D^{\sigma-\tau}g(\vec{a},\vec{b})$$
+However, if $\tau< (\sigma_{a},\vec{0}_{k})$ holds, there must be two equal elements in the first $k$ elements of $\tau$, and $D^{\tau}f(\vec{a}_{0},\vec{b}_{0})$ is zero. On the other hand, if $\tau> (\sigma_{a},\vec{0}_{k})$, which means there exist $j\in\{k+1,\cdots,2k\}$ such that $\sigma_{j}>0$, and this will make the last $k$ elements of $\sigma-\tau$ have two equal elements, thus the derivative $D^{\sigma-\tau}(g)(\vec{a}_{0},\vec{b}_{0})$ is zero. Therefore, the terms in the sum is nonzero only when $\tau=(\sigma_{a},\vec{0}_{k})$ and then we have $$D^{\sigma}(fg)(\vec{a}_{0},\vec{b}_{0})=\binom{\sigma}{\tau}D^{\tau}f(\vec{a}_{0},\vec{b}_{0})\cdot D^{\sigma-\tau}g(\vec{a}_{0},\vec{b}_{0})=D^{\sigma_{a}}f(\vec{a}_{0})\cdot D^{\sigma_{b}}g(\vec{b}_{0})$$
+\textbf{Lemma 4}: Suppose $\sigma_{a}\in \Lambda_{a}$ and $\sigma_{b}\in \Lambda_{b}$, then $D^{(\sigma_{a},\sigma_{b})}h(\vec{a}_{0},\vec{b}_{0})$ is non-zero.\\
+\emph{Proof:} To be proved.\\
+\textbf{Lemma 5}: The determinant
+$$P_n = det \begin{bmatrix} 1 & x_1 & x_1^2 & \cdots & x_1^{n-2} & x_1^{n} \\ 1 &x_2 & x_2^2 & \cdots & x_2^{n-2} & x_2^{n}\\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 &x_n & x_n^2 & \cdots & x_n^{n-2} & x_n^{n} \end{bmatrix}$$ has the following relation with Vandermonde Determinant $V_{n}$:
+$$P_{n}=V_{n}\cdot (\sum_{i=1}^{n}x_{i})$$
+\emph{Proof:} To be proved.\\
+\textbf{Step 3. }In this step, we finally compute the limit $$\lim_{\vec{a}\rightarrow \vec{a}_{0},\vec{b}\rightarrow \vec{b}_{0}}=\frac{f(\vec{a})\cdot g(\vec{b})}{h(\vec{a},\vec{b})}$$
+First, consider the numerator $f(\vec{a})\cdot g(\vec{b})\equiv (fg)(\vec{a},\vec{b})$ as a function with respect to $(\vec{a},\vec{b})$, and expand it to the order of $u+v$ at $(\vec{a}_{0},\vec{b}_{0})$, using the Taylor Expansion in \textbf{Step 1}:
+\begin{align*}
+	(fg)(\vec{a},\vec{b})&=\sum_{|\sigma|\leqslant u+v}\frac{D^{\sigma}(fg)(\vec{a}_{0},\vec{b}_{0})}{\sigma!}((\vec{a},\vec{b})-(\vec{a}_{0},\vec{b}_{0}))^{\sigma}+R_{u+v+1}((\vec{a},\vec{b}),(\vec{a}_{0},\vec{b}_{0}))
+\end{align*} 
+The first term can be further computed as:
+\begin{align*}
+	&\sum_{|\sigma|\leqslant u+v}\frac{D^{\sigma}(fg)(\vec{a}_{0},\vec{b}_{0})}{\sigma!}((\vec{a},\vec{b})-(\vec{a}_{0},\vec{b}_{0}))^{\sigma}=\sum_{\substack{\sigma=(\sigma_{a},\sigma_{b}),\\ \sigma_{a}\in\Lambda_{a},\sigma_{b}\in\Lambda_{b}}}\frac{D^{\sigma}(fg)(\vec{a}_{0},\vec{b}_{0})}{\sigma!}((\vec{a},\vec{b})-(\vec{a}_{0},\vec{b}_{0}))^{\sigma}\\
+	&=\sum_{\substack{\sigma=(\sigma_{a},\sigma_{b}),\\ \sigma_{a}\in\Lambda_{a},\sigma_{b}\in\Lambda_{b}}}\frac{D^{\sigma_{a}}f(\vec{a}_{0})\cdot D^{\sigma_{b}}g(\vec{b}_{0})}{\sigma_{a}!\sigma_{b}!}((\vec{a},\vec{b})-(\vec{a}_{0},\vec{b}_{0}))^{\sigma}\\
+	&=\Big(\sum_{\sigma_{a}\in\Lambda_{a}}\frac{D^{\sigma_{a}}f(\vec{a}_{0})}{\sigma_{a}!}(\vec{a}-\vec{a}_{0})^{\sigma_{a}}\Big)\cdot\Big(\sum_{\sigma_{b}\in\Lambda_{b}} \frac{D^{\sigma_{b}}g(\vec{b}_{0})}{\sigma_{b}!}(\vec{b}-\vec{b}_{0})^{\sigma_{b}}\Big)
+\end{align*}
+The first equality holds because all the other terms in the sum are zero by Lemma 2, and the second equality results from Lemma 3.\\
+Denote $sgn(\sigma_{a}^{(i)})$ as the sign of the permutation $\sigma_{a}^{(i)}\in S_{m_i}$ as we mentioned in \textbf{Step 1}, and define the sign of $\sigma_{a}$ by: $sgn(\sigma_{a})=\prod_{i=1}^{p}sgn(\sigma_{a}^{(i)})$. Denote $\sigma_{a}^{\star}=(\sigma_{a}^{(1)\star},\cdots,\sigma_{a}^{(p)\star})$, where $\sigma_{a}^{(i)\star}=(0,1,\cdots,m_i-1)$. Thus, $\sigma_{a}^{\star}$ is a special element in $\Lambda_{a}$. Then $sgn(\sigma_{a}^{\star})=1$ because $\sigma_{a}^{(1)\star},\cdots,\sigma_{a}^{(p)\star}$ all have $0$ number of inversions. Notice that for any $\sigma_{a}\in\Lambda_{a}$, we have $D^{\sigma_{a}}f(\vec{a}_{0})=sgn(\sigma_{a})\cdot D^{\sigma_{a}^{\star}}f(\vec{a}_{0})$ by the property of determinant. Then we obtain:
+\begin{align*}
+	\sum_{\sigma_{a}\in\Lambda_{a}}\frac{1}{\sigma_{a}!}D^{\sigma_{a}}f(\vec{a}_{0})(\vec{a}-\vec{a}_{0})^{\sigma_{a}}=\frac{D^{\sigma_{a}^{\star}}f(\vec{a}_{0})}{\prod_{i=1}^{p}(m_{i}-1)!}\sum_{\sigma_{a}\in\Lambda_{a}}(\vec{a}-\vec{a}_{0})^{\sigma_{a}}\cdot sgn(\sigma_{a})
+\end{align*}
+Notice that 
+\begin{align*}
+	\sum_{\sigma_{a}\in\Lambda_{a}}(\vec{a}-\vec{a}_{0})^{\sigma_{a}}\cdot sgn(\sigma_{a})&=\prod_{i=1}^{p}\Big[\sum_{\sigma_{a}^{(i)}\in S_{m_i}}(\vec{a}^{(i)}-\vec{a}_{0}^{(i)})^{\sigma_{a}^{(i)}}\cdot sgn(\sigma_{a}^{(i)})\Big]\\
+	&=\prod_{i=1}^{p}\Delta_{m_i}(a_{1}^{(i)}-\alpha_{i},a_{2}^{(i)}-\alpha_{i},\cdots,a_{m_i}^{(i)}-\alpha_{i})\equiv\prod_{i=1}^{p}\Delta_{m_i}^{a}
+\end{align*}
+where $\Delta_{n}(x_{1},x_{2},\cdots,x_{n})$ is the Vandermonde Determinant in Problem 4, $a_{j}^{(i)}=a_{m_{1}+\cdots+m_{i-1}+j}$ is the $j$-$th$ element of $\vec{a}^{(i)}$, and the last equality holds by the definition of determinant and Vandermonde Determinant. We can get similar results for $\sum_{\sigma_{a}\in\Lambda_{a}}\frac{1}{\sigma_{a}!}D^{\sigma_{a}}f(\vec{a}_{0})(\vec{a}-\vec{a}_{0})^{\sigma_{a}}$ and then we have:
+\begin{align*}
+	f(\vec{a})\cdot g(\vec{b})=D^{\sigma_{a}^{\star}}f(\vec{a}_{0})\cdot D^{\sigma_{b}^{\star}}g(\vec{b}_{0})\frac{\prod_{i=1}^{p}\Delta_{m_{i}}^{a}\prod_{j=1}^{q}\Delta_{n_{j}}^{b}}{\prod_{i=1}^{p}(m_{i}-1)!\prod_{j=1}^{q}(n_{j}-1)!}+R_{u+v+1}^{f,g}((\vec{a},\vec{b}),(\vec{a}_{0},\vec{b}_{0}))
+\end{align*}
+Following similar steps as above, we can get:
+\begin{align*}
+	h(\vec{a},\vec{b})=D^{(\sigma_{a}^{\star},\sigma_{b}^{\star})}h(\vec{a}_{0},\vec{b}_{0})\frac{\prod_{i=1}^{p}\Delta_{m_{i}}^{a}\prod_{j=1}^{q}\Delta_{n_{j}}^{b}}{\prod_{i=1}^{p}(m_{i}-1)!\prod_{j=1}^{q}(n_{j}-1)!}+R_{u+v+1}^{h}((\vec{a},\vec{b}),(\vec{a}_{0},\vec{b}_{0}))
+\end{align*}
+The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}),(\vec{a}_{0},\vec{b}_{0}))$ and $R_{u+v+1}^{h}((\vec{a},\vec{b}),(\vec{a}_{0},\vec{b}_{0}))$ are actually $o(\prod_{i=1}^{p}\Delta_{m_{i}}^{a}\prod_{j=1}^{q}\Delta_{n_{j}}^{b})$, then we will have:
+\begin{align*}
+	\lim_{\vec{a}\rightarrow \vec{a}_{0},\vec{b}\rightarrow \vec{a}_{0}} \frac{f(\vec{a})\cdot g(\vec{b})}{h(\vec{a},\vec{b})}=\frac{D^{\sigma_{a}^{\star}}f(\vec{a}_{0})\cdot D^{\sigma_{b}^{\star}}g(\vec{b}_{0})}{D^{(\sigma_{a}^{\star},\sigma_{b}^{\star})}h(\vec{a}_{0},\vec{b}_{0})}
+\end{align*}
+
 
 
 \subsection*{Problem 18}
