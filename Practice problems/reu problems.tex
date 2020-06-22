@@ -1444,7 +1444,7 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 	This is a rough sketch; some details need to be filled in. Fix $r>0$ and $R>r$; assume that $r,R\in\mathbb{Z}N^\alpha$ for simplicity. For the general case, replace $r$ and $R$ with $\floor{r}$ and $\lceil R\rceil$ respectively. Define events
 	\begin{align*}
 	A &= \left\{L_1^N\left(\frac{R+r}{2}\,N^\alpha\right) - pN^\alpha\,\frac{R+r}{2} + \lambda\left(\frac{R+r}{2}\right)^2 N^{\alpha/2} < \big[C(k-1)R-\phi(\epsilon)\big]N^{\alpha/2}\right\},\\
-	B &= \left\{\max_{x\in[r,R]} \left(L_k^N(xN^\alpha) - pxN^\alpha\right) < -R_2N^{\alpha/2} \right\}.
+	B &= \left\{\max_{x\in[r,R]} \left(L_k^N(xN^\alpha) - pxN^\alpha\right) < -(\lambda R^2 + \phi(\epsilon)) N^{\alpha/2} \right\}.
 	\end{align*}
 	We specify the constant $C$ later. We aim to bound $\mathbb{P}(B)$, using the fact that $\mathbb{P}(A) \leq 2\epsilon$ for large enough $N$ by one-point tightness. (This holds even with the added $O(R)$ term on the right because $\lambda(\frac{R+r}{2})^2 - C(k-1)R \to \infty$ as $R\to\infty$. We should write this out.) Recall that with probability $>1-2\epsilon$, we have 
 	\begin{align*}
@@ -1459,14 +1459,12 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 	\[
 	\mathbb{P}(A\,|\,F) > c
 	\]
-	for large enough $R$ and $R_2$. Let $D$ denote the set of pairs $(\vec{x},\vec{y})$, with $\vec{x},\vec{y}\in\mathfrak{W}_k$, satisfying 
+	for large enough $R$. Let $D$ denote the set of pairs $(\vec{x},\vec{y})$, with $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$ satisfying 
 	\begin{enumerate}[label=(\arabic*)]
 		
 		\item $0\leq y_i - x_i \leq (R-r)N^\alpha$ for $1\leq i\leq k$,
 		
 		\item $prN^\alpha - (\lambda r^2+\phi(\epsilon))N^{\alpha/2} < x_1 <  prN^\alpha - (\lambda r^2-\phi(\epsilon))N^{\alpha/2}$ and $pRN^\alpha - (\lambda R^2+\phi(\epsilon))N^{\alpha/2} < y_1 <  pRN^\alpha - (\lambda R^2-\phi(\epsilon))N^{\alpha/2}$,
-		
-		\item $x_k < prN^\alpha - R_2N^{\alpha/2}$ and $y_k < pRN^\alpha - R_2N^{\alpha/2}$. 
 		
 	\end{enumerate}
 	
@@ -1481,22 +1479,31 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 	\]
 	Then we have
 	\begin{align*}
-	\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) &= \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{avoid,Ber} (A\,|\,F) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{avoid,Ber} (A\,|\,F)\\
+	\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) &= \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y},\infty,L_k}_{avoid,Ber} (A\,|\,F) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}',\infty,L_k}_{avoid,Ber} (A\,|\,F)\\
 	&\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (A\cap\{L_1 > \cdots > L_k\}\,|\,F)\\
 	&\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (A\,|\,F) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 > \cdots > L_k\,|\,F)\big)\\
 	&= \mathbb{P}^{rN^\alpha, RN^\alpha,x_1,y_1}_{Ber} (A) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 > \cdots > L_k\,|\,F)\big)
 	\end{align*}
-	In the last line, we used the fact that $A$ and $F$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. (We should probably also use the Gibbs property here to justify replacing $\vec{x},\vec{y}$ with $x_1,y_1$.) We can bound the first term using a lemma similar to those proven in Section 3. We would need a statement to the effect that for large $N$, with some positive probability, say at least $1/3$, $L_1(\frac{R+r}{2}N^\alpha)$ does not lie far above the midpoint of the line segment connecting $L_1(rN^\alpha)$ and $L_1(RN^\alpha)$. Note that this midpoint is close to $\lambda(\frac{R^2+r^2}{2})N^{\alpha/2}$, and
+	For the first term in the last line, we used the Gibbs property and the fact that $A$ and $F$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. We can bound the first term using a lemma similar to those proven in Section 3. We would need a statement to the effect that for large $N$, with some positive probability, say at least $1/3$, $L_1(\frac{R+r}{2}N^\alpha)$ does not lie far above the midpoint of the line segment connecting $L_1(rN^\alpha)$ and $L_1(RN^\alpha)$. Note that this midpoint is close to $\lambda(\frac{R^2+r^2}{2})N^{\alpha/2}$, and
 	\[
 	\frac{R^2+r^2}{2} - \left(\frac{R+r}{2}\right)^2 = \frac{R^2 + r^2}{4} - \frac{rR}{4} = O(R^2)
 	\]
 	for fixed $r$. Thus for large enough $R$, $A$ will hold as long as $L_1(\frac{R+r}{2}N^\alpha)$ is a distance of no more than $C(k-1)RN^{\alpha/2}$ above the midpoint of the segment connecting $L_1(rN^\alpha)$ and $L_1(RN^\alpha)$, giving a lower bound of $1/3$ on $\mathbb{P}^{rN^\alpha, RN^\alpha,x_1,y_1}_{Ber}(A)$ for large enough $N$.
 	
-	It remains to bound $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 > \cdots > L_k\,|\,F)$. We have
+	It remains to bound $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 > \cdots > L_k\,|\,F)$. Write $T = (R-r)N^\alpha$, and for $1\leq i\leq k$, define
+	\[
+	p_i = \begin{cases}
+	(y_i - x_i)/T, & \mathrm{if}\; 0 < y_i - x_i < T,\\
+	1/\sqrt{T}, & \mathrm{if}\; y_i - x_i = 0,\\
+	1-1/\sqrt{T}, & \mathrm{if}\;y_i - x_i = T.
+	\end{cases}
+	\]
+	This is the slope of the line segment connecting $L_i(rN^\alpha)$ and $L_i(RN^\alpha)$, adjusted to lie in the open interval $(0,1)$. In particular, $|p_i - (y_i-x_i)/T| \leq 1/\sqrt{T}$. Note that on the event $F$, $L_k^N$ lies uniformly below the line segment connecting $L_1^N(rN^\alpha)$ and $L_1^N(RN^\alpha)$. Thus after raising the endpoints of $\vec{x}',\vec{y}'$, the bottom curve $L_k$ lies uniformly at a distance of at least $C(k-1)RN^{\alpha/2}$ below the segment.  
+	Thus we have
 	\begin{align*}
 	&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 > \cdots > L_k\,|\,F)\\
-	\geq \; & \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} \Big(\sup_{x\in[r,R]} |L_i(xN^\alpha) - pxN^\alpha\big| \leq \frac{CRN^{\alpha/2}}{2}, 1\leq i\leq k-1\,\Big|\,F\Big)\\
-	= \; & \prod_{i=1}^{k-1}\left[1 - \mathbb{P}^{rN^\alpha, RN^\alpha,x_i',y_i'}_{Ber} \Big(\sup_{x\in[r,R]} |L_i(xN^\alpha) - pxN^\alpha\big| > \frac{CRN^{\alpha/2}}{2}\Big)\right].
+	\geq \; & \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} \Big(\sup_{x\in[r,R]} |L_i(xN^\alpha) - p_ixN^\alpha\big| \leq \frac{1}{2}CRN^{\alpha/2}, \;1\leq i\leq k-1\,\Big|\,F\Big)\\
+	= \; & \prod_{i=1}^{k-1}\Big[1 - \mathbb{P}^{rN^\alpha, RN^\alpha,x_i',y_i'}_{Ber} \Big(\sup_{x\in[r,R]} |L_i(xN^\alpha) - p_ixN^\alpha\big| > \frac{1}{2}CRN^{\alpha/2}\Big)\Big].
 	\end{align*}
 	In the last line, we used again the fact that $L_1,\dots,L_{k-1}$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$.  Using Theorem 3.3 to couple each $L_i$ with a Brownian bridge, we can show that each term in the product on the last line goes to 1 as $C\to\infty$. In particular, we can get a lower bound of $11/12$ for sufficiently large $N$ and $C$ depending on $p,k$. (See Problem 18 or the proof of Lemma 4.3 for a detailed argument which is almost exactly the same in this setting. It might be good to state and prove this as a lemma in Section 3.)
 	
@@ -1508,18 +1515,18 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 	\[
 	\mathbb{P}(F) \leq 4\mathbb{P}(A) \leq 8\epsilon
 	\]
-	for large enough $N$, $R$, $R_2$. We can replace $\epsilon$ with $\epsilon/8$ at the start to get $\mathbb{P}(F) \leq \epsilon$.
+	for large enough $N$, $R$, $R_2$. We can replace $\epsilon$ with $\epsilon/8$ at the start to get $\mathbb{P}(F) \leq \epsilon$. Essentially the same argument proves the statement if $[r,R]$ is replaced by $[-R,-r]$.
 
 
 \subsection*{Lemmas from Section 4.2}
 
 	
-	We first establish some notation. Let $a,b,t_1,t_2,z_1,z_2 \in \mathbb{Z}$ be given such that $t_1 + 1 < t_2$, $0\leq z_2 - z_1 \leq t_2 - t_1$, $0\leq b-a \leq t_2 - t_1$, $z_1\leq a$, and $z_2\leq b$. Let $\ell\in\Omega(t_1,t_2,a,b)$ and $\ell_{bot}\in\Omega(t_1,t_2,z_1,z_2)$. We write $A(\ell,\ell_{bot})$ for the event that $\ell \geq \ell_{bot}$. Thus $\mathbb{P}^{t_1,t_2,a,b,\infty,\ell_{bot}}_{avoid,Ber}(\ell) = \mathbb{P}^{t_1,t_2,a,b}_{Ber}(\ell\,|\,A(\ell,\ell_{bot}))$. We now establish some auxiliary results which will be used in the proof of Lemma 4.2.
+	We first establish some notation. Let $a,b,t_1,t_2,z_1,z_2 \in \mathbb{Z}$ be given such that $t_1 + 1 < t_2$, $0\leq z_2 - z_1 \leq t_2 - t_1$, $0\leq b-a \leq t_2 - t_1$, $z_1\leq a$, and $z_2\leq b$. We write $\ell\in\Omega(t_1,t_2,a,b)$ and $\ell_{bot}\in\Omega(t_1,t_2,z_1,z_2)$ for generic paths in these two spaces, and we consider the event $\{\ell \geq \ell_{bot}\} = \{\ell(s) \geq \ell_{bot}(s), s\in[t_1,t_2]\}$. Note that $\mathbb{P}^{t_1,t_2,a,b,\infty,\ell_{bot}}_{avoid,Ber}(\ell) = \mathbb{P}^{t_1,t_2,a,b}_{Ber}(\ell\,|\,\ell \geq \ell_{bot}))$. We now establish some auxiliary results which will be used in the proof of Lemma 4.2.
 	
 	\begin{lemma}
 		If $a\leq k_1\leq k_2\leq a + T - t_1$, then with notation as above,
 		\[
-		\mathbb{P}^{t_1, t_2, a, b}_{Ber}\big( A(\ell,\ell_{bot})\,\big|\,\ell(T) = k_1\big) \leq \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) = k_2\big).
+		\mathbb{P}^{t_1, t_2, a, b}_{Ber}\big( \ell \geq \ell_{bot}\,\big|\,\ell(T) = k_1\big) \leq \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = k_2\big).
 		\]
 	\end{lemma}
 
@@ -1530,9 +1537,9 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 	\begin{proof}
 		Let $\ell_1$ be a random path distributed according to $\mathbb{P}^{t_1, t_2, a, b}_{Ber}$ conditioned on $\ell_1(T) = k_1$. We can identify $\ell_1$ with a sequence of $+$'s and $-$'s of length $t_2-t_1$, where a $+$ in the $i$th position means that $\ell_1(t_1+i+1)-\ell_1(t_1+i) = 1$, and a $-$ means that $\ell_1(t_1+i+1)-\ell_1(t_1+i) = 0$. [Maybe include Figure 9 from Corwin-Dimitrov here.] In this representation, the value of $\ell_1(T)$ is $a$ plus the number of $+$'s in the first $T-t_1$ slots, and the value of $\ell_1(t_2)$ is $a$ plus the total number of $+$'s. Note that we must have exactly $(k_1-a)$ $+$'s in the first $T-t_1$ slots, and $(b-k_1)$ $+$'s in the last $t_2-T$ slots. We pick uniformly at random $(k_2-k_1)$ $-$'s in the first $T-t_1$ slots and change them to $+$'s, then pick randomly $(k_2-k_1)$ $+$'s in the last $t_2-T$ slots and change them to $-$'s. This defines a new path $\ell_2$. Since there are now $k_2-a$ $+$'s in the first $T-t_1$ slots, we have $\ell_2(T) = k_2$, and we still have $\ell_2(t_2) = b$ since the number of $+$'s is unchanged. Thus we see that $\ell_2$ is distributed according to $\mathbb{P}^{t_1,t_2,a,b}_{Ber}$ conditioned on $\ell_2(T) = k_2$. 
 		
-		Now suppose that $\ell_1 \in A(\ell,\ell_{bot})$, i.e., $\ell_1 \geq \ell_{bot}$. We claim that $\ell_2 \geq \ell_1$ on all of $[t_1,t_2]$. To see this, note that for any $s\in\llbracket t_1, t_2\rrbracket$, $\ell_2(s) - \ell_1(s)$ is equal to the number of $+$'s in the first $s-t_1$ slots of the sequence representing $\ell_2$, minus the corresponding number for $\ell_1$. If $s\leq T$, this difference is clearly positive by construction. The difference is equal to $k_2 - k_1 \geq 0$ at $s = T$, and the difference then decreases monotonically as $s$ increases to $t_2$, since we have removed exactly $k_2-k_1$ $+$'s from the last $t_2-T$ slots. The difference is of course 0 at $s = t_2$, so this proves the claim. It follows that
+		Now suppose $\ell_1 \geq \ell_{bot}$. We claim that $\ell_2 \geq \ell_1$ on all of $[t_1,t_2]$. To see this, note that for any $s\in\llbracket t_1, t_2\rrbracket$, $\ell_2(s) - \ell_1(s)$ is equal to the number of $+$'s in the first $s-t_1$ slots of the sequence representing $\ell_2$, minus the corresponding number for $\ell_1$. If $s\leq T$, this difference is clearly positive by construction. The difference is equal to $k_2 - k_1 \geq 0$ at $s = T$, and the difference then decreases monotonically as $s$ increases to $t_2$, since we have removed exactly $k_2-k_1$ $+$'s from the last $t_2-T$ slots. The difference is of course 0 at $s = t_2$, so this proves the claim. It follows that
 		\[
-		\mathbf{1}_{A(\ell_1,\ell_{bot})} \leq \mathbf{1}_{A(\ell_2,\ell_{bot})}.
+		\mathbf{1}_{\ell_1 \geq \ell_{bot}} \leq \mathbf{1}_{\ell_2 \geq \ell_{bot}}.
 		\]
 		Now taking expectations of both sides and recalling the distributions of $\ell_1,\ell_2$ proves the lemma.
 	\end{proof}
@@ -1541,17 +1548,17 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 	\begin{cor}
 		Let $T\in\llbracket t_1, t_2\rrbracket$, and let $A, B$ be nonempty sets of integers such that $a \leq \alpha \leq \beta \leq a+T-t_1$ for all $\alpha\in A, \beta\in B$. Then
 		\[
-		\mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) \in A\big) \leq \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) \in B\big).
+		\mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) \in A\big) \leq \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) \in B\big).
 		\]
 	\end{cor}
 
 	\begin{proof}
 		We have
 		\begin{align*}
-			& \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) \in A\big) = \sum_{\alpha\in A} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) = \alpha\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)}\\
-			= \; & \sum_{\alpha\in A}\sum_{\beta\in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) = \alpha\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)} \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)}\\
-			\leq \; & \sum_{\alpha\in A}\sum_{\beta\in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) = \beta\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)} \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)}\\
-			= \; & \sum_{\beta \in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) = \beta\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)} = \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(A(\ell,\ell_{bot})\,\big|\,\ell(T) \in B\big).
+			& \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) \in A\big) = \sum_{\alpha\in A} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = \alpha\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)}\\
+			= \; & \sum_{\alpha\in A}\sum_{\beta\in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = \alpha\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)} \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)}\\
+			\leq \; & \sum_{\alpha\in A}\sum_{\beta\in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = \beta\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)} \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)}\\
+			= \; & \sum_{\beta \in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = \beta\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)} = \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) \in B\big).
 		\end{align*}
 		The inequality in the third line follows from the previous Lemma.
 	\end{proof}
@@ -1566,33 +1573,35 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 	\begin{proof}
 		We write $\mathbb{P} := \mathbb{P}^{t_1,t_2,a,b}_{Ber}$ for brevity. Using Bayes' theorem repeatedly, we find
 		\begin{align*}
-		\mathbb{P}(\ell(T)\geq\alpha\,|\,A(\ell,\ell_{bot})) &= \frac{\mathbb{P}(A(\ell,\ell_{bot})\,|\,\ell(T)\geq\alpha) \mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(A(\ell,\ell_{bot}))}\\ 
-		&\geq \frac{\mathbb{P}(A(\ell,\ell_{bot})\,|\,\ell(T) < \alpha) \mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(A(\ell,\ell_{bot}))}\\
-		&= \big(1 - \mathbb{P}(\ell(T)\geq\alpha\,|\,A(\ell,\ell_{bot})\big)\cdot\frac{\mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell(T) < \alpha)}.
+		\mathbb{P}(\ell(T)\geq\alpha\,|\,\ell \geq \ell_{bot}) &= \frac{\mathbb{P}(\ell \geq \ell_{bot}\,|\,\ell(T)\geq\alpha) \mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell \geq \ell_{bot})}\\ 
+		&\geq \frac{\mathbb{P}(\ell \geq \ell_{bot}\,|\,\ell(T) < \alpha) \mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell \geq \ell_{bot})}\\
+		&= \big(1 - \mathbb{P}(\ell(T)\geq\alpha\,|\,\ell \geq \ell_{bot}\big)\cdot\frac{\mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell(T) < \alpha)}.
 		\end{align*}
 		The inequality in the second line follows from the previous Corollary. It follows that
 		\[
-		\mathbb{P}(\ell(T)\geq\alpha\,|\,A(\ell,\ell_{bot})) \geq \frac{\mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell(T)\geq\alpha) + \mathbb{P}(\ell(T) < \alpha)} = \mathbb{P}(\ell(T)\geq\alpha).
+		\mathbb{P}(\ell(T)\geq\alpha\,|\,\ell \geq \ell_{bot}) \geq \frac{\mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell(T)\geq\alpha) + \mathbb{P}(\ell(T) < \alpha)} = \mathbb{P}(\ell(T)\geq\alpha).
 		\]
 	\end{proof}
 
 	In order to formulate some of the lemmas below it will be convenient to adopt the following notation: for any $r > 0$
 	\begin{equation*}\label{eqsts}
-	t^{\pm}_1 =\lfloor \pm (r+1) N^{\alpha} \rfloor,\quad t^{\pm}_2 = \lfloor \pm (r+2)N^{\alpha} \rfloor,\quad \textrm{and } t_3^{\pm} = \lfloor \pm (r+3)N^{\alpha} \rfloor.
+	t^1 =\lfloor (r+1) N^{\alpha} \rfloor,\quad t_2 = \lfloor (r+2)N^{\alpha} \rfloor,\quad \textrm{and } t_3 = \lfloor (r+3)N^{\alpha} \rfloor.
 	\end{equation*}
+	
+	We are now ready to prove Lemma 4.2.
 
 	\begin{lemma}
 		For each $\epsilon > 0$ there exist $R_1=R_1(\epsilon) > 0$ and $N_2= N_2(\epsilon)$ such that for $N \geq N_2$ 
-		$$\mathbb{P}\Big( \sup_{s \in [ -t_3, t_3] }\big[ L^N_1(s) - p s \big] \geq  R_1N^{\alpha/2} \Big) < \epsilon.$$
+		$$\mathbb{P}\Big( \sup_{s \in [ -t_3, t_3] }\big( L^N_1(s) - p s \big) \geq  R_1N^{\alpha/2} \Big) < \epsilon.$$
 	\end{lemma}
 
 	\begin{proof}
-		We write $s_4 = \lceil r+3 \rceil N^\alpha$, $s_3 = \lfloor r+3 \rfloor N^\alpha$, so that $s_3 \leq t_3 \leq s_4$, and we take $N$ large enough so that $L_1^N$ is defined at $s_4$. We define events 
+		We write $s_4 = \lceil r+3 \rceil N^\alpha$, $s_3 = \lfloor r+3 \rfloor N^\alpha$, so that $s_3 \leq t_3 \leq s_4$, and take $N$ large enough so that $L_1^N$ is defined at $s_4$. We define events 
 		\[
 		E(M) = \Big\{\big|L_1^N(-s_4) + ps_4\big| > MN^{\alpha/2}\Big\}, \quad F(M) = \Big\{L_1^N(-s_3) > -ps_3 + MN^{\alpha/2} \Big\},
 		\]
 		\[
-		G(M) = \Bigg\{\sup_{s\in[0,t_3]} \big[L_1^N(s) - ps \big] \geq (6r+22)(2r+6)^{1/2}(M+1)N^{\alpha/2} \Bigg\}.
+		G(M) = \Bigg\{\sup_{s\in[0,t_3]} \big(L_1^N(s) - ps \big) \geq (6r+22)(2r+6)^{1/2}(M+1)N^{\alpha/2} \Bigg\}.
 		\]
 		For $a,b\in\mathbb{Z}$, $s\in\llbracket 0, t_3 \rrbracket$, and $\ell_{bot}\in\Omega(-s_4,s,z_1,z_2)$ with $z_1\leq a$, $z_2\leq b$, we also define $E(a,b,s,\ell_{bot})$ to be the event that $L_1^N(-s_4) = a$, $L_1^N(s) = b$, and $L_2^N$ agrees with $\ell_{bot}$ on $[-s_4,s]$. 
 		
@@ -1650,23 +1659,24 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 		\]
 		for large $N$. Since in addition $\mathbb{P}(E(M)) < \epsilon/4$, we find that
 		\[
-		\mathbb{P}\Big( \sup_{s \in [0,t_3] }\big[ L^N_1(s) - p s \big] \geq  (6r+22)(2r+6)^{1/2}(M+1)N^{\alpha/2} \Big) = \mathbb{P}(G(M)) < \epsilon/2
+		\mathbb{P}\Big( \sup_{s \in [0,t_3] }\big( L^N_1(s) - p s \big) \geq  (6r+22)(2r+6)^{1/2}(M+1)N^{\alpha/2} \Big) = \mathbb{P}(G(M)) < \epsilon/2
 		\]
 		for large enough $N$. A similar argument proves the same inequality with $[-t_3,0]$ in place of $[0,t_3]$. Thus we can find an $N_2 = N_2(\epsilon)$ so that
 		\[
-		\mathbb{P}\Big( \sup_{s \in [-t_3,t_3] }\big[ L^N_1(s) - p s \big] \geq  R_1N^{\alpha/2} \Big) < \epsilon
+		\mathbb{P}\Big( \sup_{s \in [-t_3,t_3] }\big( L^N_1(s) - p s \big) \geq  R_1N^{\alpha/2} \Big) < \epsilon
 		\]
 		for all $N\geq N_2$, with $R_1 = (6r+22)(2r+6)^{1/2}(M+1)$.
 		
 	\end{proof}
 
+	We now prove Lemma 4.3, using Problem 21 above.
 
 	\begin{lemma}\label{PropSup2} For each $\epsilon > 0$ there exist $R_2=R_2( \epsilon) > 0$ and $N_3=N_3(\epsilon)$ such that for $N \geq N_3$
 	$$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2N^{\alpha/2} \Big) < \epsilon.$$
 	\end{lemma}
 
 	\begin{proof}
-		We define events
+		This is a sketch; some details about floors and ceilings need to be added. We define events
 		\[
 		A_N(R_2) = \left\{\inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2N^{\alpha/2}\right\}
 		\]
@@ -1683,14 +1693,14 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 		We claim that $B_N(M,R)$ can be written as a countable disjoint union of sets $E(a,b,\vec{x},\vec{y})$. Let $D_N(M)$ be the collection of tuples $(a,b,\vec{x},\vec{y})$ satisfying 
 		\begin{enumerate}[label=(\arabic*)]
 			
-			\item $a,b \in [r,R]\cap\mathbb{Q}$,
+			\item $a,b \in [r,R]$ and $aN^\alpha, bN^\alpha \in \mathbb{Z}$,
 			
 			\item $0 \leq y_i - x_i \leq (a+b)N^\alpha$, $x_k + paN^\alpha > - MN^{\alpha/2}$, and $y_k - pbN^\alpha > - MN^{\alpha/2}$.
 			
 			\item If $c > a$ and $d>b$, then $L_k^N(-cN^\alpha) + pcN^\alpha \leq -MN^{\alpha/2}$ and $L_k^N(dN^\alpha) - pdN^\alpha \leq -MN^{\alpha/2}$.
 			
 		\end{enumerate} 
-		Since the $a,b$ are rational, the $x_i,y_i$ are integers, and there are finitely many choices of $L_i^N$ on $[-aN^\alpha, bN^\alpha]$ given $a,b,x_i,y_i$, we see that $D_N(M)$ is countable. The third condition ensures that the $E(a,b,\vec{x},\vec{y})$ are pairwise disjoint. To see that their union over $D_N(M)$ is all of $B_N(M,R)$, note that $B_N(M,R)$ occurs if and only if there is a first time $-a$ and a last time $b$ when $L_k^N(sN^\alpha)-psN^\alpha$ crosses $-MN^{\alpha/2}$, and we can assume these times are rational by continuity of $L_k^N$. We have
+		Since there are finitely many $a,b$ satisfying (1), the $x_i,y_i$ are integers, and there are finitely many choices of $L_i^N$ on $[-aN^\alpha, bN^\alpha]$ given $a,b,x_i,y_i$, we see that $D_N(M)$ is countable. The third condition ensures that the $E(a,b,\vec{x},\vec{y})$ are pairwise disjoint. To see that their union over $D_N(M)$ is all of $B_N(M,R)$, note that $B_N(M,R)$ occurs if and only if there is a first time $-a$ and a last time $b$ when $L_k^N(sN^\alpha)-psN^\alpha$ crosses $-MN^{\alpha/2}$, and we can assume these times are rational by continuity of $L_k^N$. We have
 		\begin{align*}
 		&\mathbb{P}(A_N(R_2) \cap B_N(M,R)) = \sum_{(a,b,\vec{x},\vec{y})\in D_N(M)} \mathbb{P}(A_N(R_2)\,|\,E(a,b,\vec{x},\vec{y}))\mathbb{P}(E(a,b,\vec{x},\vec{y})).
 		\end{align*}
@@ -1700,7 +1710,7 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 		= \; & \mathbb{P}^{0, (a+b)N^\alpha, \vec{x}, \vec{y}}_{avoid, Ber} \Big( \inf_{s\in[0,(a+b)N^\alpha]} (L_k(s-aN^\alpha) - p(s-aN^\alpha)) \leq -R_2N^{\alpha/2} \Big)\\
 		\leq \; & \mathbb{P}^{0, (a+b)N^\alpha, \vec{x}', \vec{y}'}_{avoid, Ber} \Big( \inf_{s\in[0,(a+b)N^\alpha]} (L_k'(s) - p(s-aN^\alpha)) \leq -R_2N^{\alpha/2} \Big).
 		\end{align*}
-		Here, we have defined $\vec{x}',\vec{y}'$ by $x'_k = \lfloor-paN^\alpha - MN^{\alpha/2}\rfloor$, $ y'_k = \lfloor pbN^\alpha - MN^{\alpha/2}\rfloor$, and $x'_i=x_i, y'_i = y_i$ for $1\leq i\leq k-1$. The inequality follows from Lemma 3.1 since $x_k \geq x_k', y_k\geq y_k'$. We also wrote $L_k'(s) = L_k(s-aN^\alpha)$. We now adjust $x_k'$ to 0, and then separate the curves of the line ensemble. Define  $\vec{x}\,'',\vec{y}\,''$ by 
+		Here, we have defined $\vec{x}',\vec{y}'$ by $x'_k = \lfloor-paN^\alpha - MN^{\alpha/2}\rfloor$, $ y'_k = \lfloor pbN^\alpha - MN^{\alpha/2}\rfloor$, and $x'_i=x_i, y'_i = y_i$ for $1\leq i\leq k-1$. The last inequality follows from Lemma 3.1 since $x_k \geq x_k', y_k\geq y_k'$. We also wrote $L_k'(s) = L_k(s-aN^\alpha)$. We now adjust $x_k'$ to 0, and then separate the curves of the line ensemble. Define  $\vec{x}\,'',\vec{y}\,''$ by 
 		\begin{align*}
 		x''_i &= x'_i - \lceil C(i-1)N^{\alpha/2}\rceil - \lfloor -paN^\alpha - MN^{\alpha/2}\rfloor,\\
 		y''_i &= y'_i - \lceil C(i-1)N^{\alpha/2}\rceil - \floor{-paN^\alpha - MN^{\alpha/2}},
