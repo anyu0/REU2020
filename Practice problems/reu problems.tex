@@ -1441,6 +1441,75 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 
 \subsection*{Problem 21}
 
+	This is a rough sketch; some details need to be filled in. Fix $r>0$ and $R>r$; assume that $r,R\in\mathbb{Z}N^\alpha$ for simplicity. For the general case, replace $r$ and $R$ with $\floor{r}$ and $\lceil R\rceil$ respectively. Define events
+	\begin{align*}
+	A &= \left\{L_1^N\left(\frac{R+r}{2}\,N^\alpha\right) - pN^\alpha\,\frac{R+r}{2} + \lambda\left(\frac{R+r}{2}\right)^2 N^{\alpha/2} < \big[C(k-1)R-\phi(\epsilon)\big]N^{\alpha/2}\right\},\\
+	B &= \left\{\max_{x\in[r,R]} \left(L_k^N(xN^\alpha) - pxN^\alpha\right) < -R_2N^{\alpha/2} \right\}.
+	\end{align*}
+	We specify the constant $C$ later. We aim to bound $\mathbb{P}(B)$, using the fact that $\mathbb{P}(A) \leq 2\epsilon$ for large enough $N$ by one-point tightness. (This holds even with the added $O(R)$ term on the right because $\lambda(\frac{R+r}{2})^2 - C(k-1)R \to \infty$ as $R\to\infty$. We should write this out.) Recall that with probability $>1-2\epsilon$, we have 
+	\begin{align*}
+	& prN^\alpha - (\lambda r^2+\phi(\epsilon))N^{\alpha/2} < L_1^N(rN^\alpha) <  prN^\alpha - (\lambda r^2-\phi(\epsilon))N^{\alpha/2},\\
+	& pRN^\alpha - (\lambda R^2+\phi(\epsilon))N^{\alpha/2} < L_1^N(RN^\alpha) <  pRN^\alpha - (\lambda R^2-\phi(\epsilon))N^{\alpha/2}
+	\end{align*}
+	Let $F$ denote the subset of $B$ for which these two inequalities hold. Then 
+	\[
+	\mathbb{P}(B) \leq \mathbb{P}(F) + 2\epsilon,
+	\]
+	so it suffices to bound $\mathbb{P}(F)$. To do so, we argue that there is a constant $c>0$ independent of $\epsilon$ (maybe $c=1/4$) such that
+	\[
+	\mathbb{P}(A\,|\,F) > c
+	\]
+	for large enough $R$ and $R_2$. Let $D$ denote the set of pairs $(\vec{x},\vec{y})$, with $\vec{x},\vec{y}\in\mathfrak{W}_k$, satisfying 
+	\begin{enumerate}[label=(\arabic*)]
+		
+		\item $0\leq y_i - x_i \leq (R-r)N^\alpha$ for $1\leq i\leq k$,
+		
+		\item $prN^\alpha - (\lambda r^2+\phi(\epsilon))N^{\alpha/2} < x_1 <  prN^\alpha - (\lambda r^2-\phi(\epsilon))N^{\alpha/2}$ and $pRN^\alpha - (\lambda R^2+\phi(\epsilon))N^{\alpha/2} < y_1 <  pRN^\alpha - (\lambda R^2-\phi(\epsilon))N^{\alpha/2}$,
+		
+		\item $x_k < prN^\alpha - R_2N^{\alpha/2}$ and $y_k < pRN^\alpha - R_2N^{\alpha/2}$. 
+		
+	\end{enumerate}
+	
+	Let $E(\vec{x},\vec{y})$ denote the subset of $F$ consisting of $L^N$ for which $L_i^N(rN^\alpha) = x_i$ and $L_i^N(RN^\alpha)=y_i$ for $1\leq i\leq k$, and $L_1^N(s) > \cdots > L_k^N(s)$ for all $s$. Then $D$ is countable, the $E(\vec{x},\vec{y})$ are pairwise disjoint, and $F = \bigcup_{(\vec{x},\vec{y})\in D} E(\vec{x},\vec{y})$. Suppose we can show that $\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) > c$ for all $(\vec{x},\vec{y})\in D$. Then
+	\begin{align*}
+	\mathbb{P}(A\,|\,F) &= \sum_{(\vec{x},\vec{y})\in D} \frac{\mathbb{P}(A\,|\,E(\vec{x},\vec{y}))\mathbb{P}(E(\vec{x},\vec{y}))}{\mathbb{P}(F)} \geq c\cdot\frac{\sum_{(\vec{x},\vec{y})\in D} \mathbb{P}(E(\vec{x},\vec{y}))}{\mathbb{P}(F)} = c.
+	\end{align*}
+	
+	We now try to find a lower bound for $\mathbb{P}(A\,|\,E(\vec{x},\vec{y}))$. We first note that by Lemma 3.1, if we raise the endpoints of each curve, then the probability of the event $A$ will decrease. In particular, define $\vec{x}',\vec{y}'$ by
+	\[
+	x_i' = x_i + C(k-i)RN^{\alpha/2}, \quad y_i' = y_i + C(k-i)RN^{\alpha/2}.
+	\]
+	Then we have
+	\begin{align*}
+	\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) &= \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{avoid,Ber} (A\,|\,F) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{avoid,Ber} (A\,|\,F)\\
+	&\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (A\cap\{L_1 > \cdots > L_k\}\,|\,F)\\
+	&\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (A\,|\,F) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 > \cdots > L_k\,|\,F)\big)\\
+	&= \mathbb{P}^{rN^\alpha, RN^\alpha,x_1,y_1}_{Ber} (A) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 > \cdots > L_k\,|\,F)\big)
+	\end{align*}
+	In the last line, we used the fact that $A$ and $F$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. (We should probably also use the Gibbs property here to justify replacing $\vec{x},\vec{y}$ with $x_1,y_1$.) We can bound the first term using a lemma similar to those proven in Section 3. We would need a statement to the effect that for large $N$, with some positive probability, say at least $1/3$, $L_1(\frac{R+r}{2}N^\alpha)$ does not lie far above the midpoint of the line segment connecting $L_1(rN^\alpha)$ and $L_1(RN^\alpha)$. Note that this midpoint is close to $\lambda(\frac{R^2+r^2}{2})N^{\alpha/2}$, and
+	\[
+	\frac{R^2+r^2}{2} - \left(\frac{R+r}{2}\right)^2 = \frac{R^2 + r^2}{4} - \frac{rR}{4} = O(R^2)
+	\]
+	for fixed $r$. Thus for large enough $R$, $A$ will hold as long as $L_1(\frac{R+r}{2}N^\alpha)$ is a distance of no more than $C(k-1)RN^{\alpha/2}$ above the midpoint of the segment connecting $L_1(rN^\alpha)$ and $L_1(RN^\alpha)$, giving a lower bound of $1/3$ on $\mathbb{P}^{rN^\alpha, RN^\alpha,x_1,y_1}_{Ber}(A)$ for large enough $N$.
+	
+	It remains to bound $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 > \cdots > L_k\,|\,F)$. We have
+	\begin{align*}
+	&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 > \cdots > L_k\,|\,F)\\
+	\geq \; & \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} \Big(\sup_{x\in[r,R]} |L_i(xN^\alpha) - pxN^\alpha\big| \leq \frac{CRN^{\alpha/2}}{2}, 1\leq i\leq k-1\,\Big|\,F\Big)\\
+	= \; & \prod_{i=1}^{k-1}\left[1 - \mathbb{P}^{rN^\alpha, RN^\alpha,x_i',y_i'}_{Ber} \Big(\sup_{x\in[r,R]} |L_i(xN^\alpha) - pxN^\alpha\big| > \frac{CRN^{\alpha/2}}{2}\Big)\right].
+	\end{align*}
+	In the last line, we used again the fact that $L_1,\dots,L_{k-1}$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$.  Using Theorem 3.3 to couple each $L_i$ with a Brownian bridge, we can show that each term in the product on the last line goes to 1 as $C\to\infty$. In particular, we can get a lower bound of $11/12$ for sufficiently large $N$ and $C$ depending on $p,k$. (See Problem 18 or the proof of Lemma 4.3 for a detailed argument which is almost exactly the same in this setting. It might be good to state and prove this as a lemma in Section 3.)
+	
+	Combining our estimates, we get
+	\[
+	\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) \geq \frac{1}{3} - \frac{1}{12} = \frac{1}{4}.
+	\]
+	Hence $\mathbb{P}(A\,|\,F) \geq 1/4$. It follows that
+	\[
+	\mathbb{P}(F) \leq 4\mathbb{P}(A) \leq 8\epsilon
+	\]
+	for large enough $N$, $R$, $R_2$. We can replace $\epsilon$ with $\epsilon/8$ at the start to get $\mathbb{P}(F) \leq \epsilon$.
+
 
 \subsection*{Lemmas from Section 4.2}
 

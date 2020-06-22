@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  19 JUN 2020 00:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  21 JUN 2020 23:56
 entering extended mode
 **"./reu problems.tex"
 ("reu problems.tex"
@@ -752,16 +752,40 @@ Overfull \hbox (8.99876pt too wide) in paragraph at lines 1158--1158
  []
 
 [43] [44] [45] [46]
-Overfull \hbox (9.92892pt too wide) in paragraph at lines 1315--1315
+Overfull \hbox (13.07541pt too wide) in paragraph at lines 1281--1285
+\OT1/cmr/m/n/12 (ii) \OT1/cmr/m/it/12 Per-mu-ta-tion \OT1/cmr/m/n/12 Sup-pose $
+\OML/cmm/m/it/12 s[]$ \OT1/cmr/m/n/12 is a per-mu-ta-tion of $\OML/cmm/m/it/12 
+n$ \OT1/cmr/m/n/12 non-negative in-te-gers, for ex-am-ple $\OMS/cmsy/m/n/12 f\O
+T1/cmr/m/n/12 1\OML/cmm/m/it/12 ; []  ; n\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 ,
+ []
+
+[47] [48]
+Overfull \hbox (0.55785pt too wide) in paragraph at lines 1328--1330
+\OT1/cmr/m/n/12 where $[](\OML/cmm/m/it/12 x[]; x[]; []  ; x[]\OT1/cmr/m/n/12 
+)$ is the Van-der-monde De-ter-mi-nant in Prob-lem 4, $\OML/cmm/m/it/12 a[] \OT
+1/cmr/m/n/12 = \OML/cmm/m/it/12 a[]$
+ []
+
+[49]
+Overfull \hbox (4.61632pt too wide) in paragraph at lines 1336--1338
+\OT1/cmr/m/n/12 The only thing left is to prove the re-main-ders $\OML/cmm/m/it
+/12 R[]\OT1/cmr/m/n/12 (([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 )\OML/cmm/m/it/
+12 ; \OT1/cmr/m/n/12 ([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 ))$ and $\OML/cmm/
+m/it/12 R[]\OT1/cmr/m/n/12 (([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 )\OML/cmm/m
+/it/12 ; \OT1/cmr/m/n/12 ([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 ))$
+ []
+
+[50] [51]
+Overfull \hbox (9.92892pt too wide) in paragraph at lines 1411--1411
 [] 
  []
 
-[47] [48] [49] [50] [51] [52]
-Overfull \hbox (44.2381pt too wide) in paragraph at lines 1547--1547
+[52] [53] [54] [55] [56] [57] [58]
+Overfull \hbox (44.2381pt too wide) in paragraph at lines 1712--1712
 [] 
  []
 
-[53] [54] ("reu problems.aux") ) 
+[59] [60] [61] ("reu problems.aux") ) 
 Here is how much of TeX's memory you used:
  4090 strings out of 493320
  57838 string characters out of 3138925
@@ -770,28 +794,28 @@ Here is how much of TeX's memory you used:
  16739 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,18n,32p,1671b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Christian Serio\AppData\Local\MiKTeX
-\2.9\fonts\pk\ljfour\public\bbm\dpi600\bbm12.pk><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-ti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary10.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary8.pfb>
-Output written on "reu problems.pdf" (54 pages, 1103240 bytes).
+ <C:\Users\Christian Serio\AppData\Local\M
+iKTeX\2.9\fonts\pk\ljfour\public\bbm\dpi600\bbm12.pk><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
+i8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eu
+fm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary10.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary8.pfb>
+Output written on "reu problems.pdf" (61 pages, 1138633 bytes).
 PDF statistics:
- 258 PDF objects out of 1000 (max. 8388607)
+ 281 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
