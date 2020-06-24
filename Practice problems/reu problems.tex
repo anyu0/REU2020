@@ -932,7 +932,7 @@ where $K=n^{N^2}(1-e^{-\frac{1}{n}})^{N^2}(e^{-\frac{1}{n}})^{-\frac{1}{2}N(N-1)
 \section{Avoiding Bernoulli line ensembles}
 
 				\subsection*{Problem 16}
-\textbf{Step 1:} In this step we prove the equality:
+\textbf{Part 1. }We first establish the equality:
 $$\mathbb{P}(L_{1}(\lfloor tT \rfloor) = \lambda_{1}, \cdots, L_{k}(\lfloor tT \rfloor) = \lambda_{k})=\frac{s_{\lambda/\mu}(1^{\lfloor tT \rfloor})\cdot s_{\kappa/\lambda}(1^{T-\lfloor tT \rfloor})}{s_{\kappa/\mu}(1^{T})}$$ where $\lambda_{1}>\lambda_{2}>\cdots >\lambda_{k}$ are positive integers, $s_{\lambda/\mu}$ denote skew Schur polynomials and they are specialized in all parameters equal to $1$. The $\mu$ partition is just the vector $\vec{x}^{T}$ and the $\kappa$ partition should be $\vec{y}^{T}$.
 
 	Let $\Omega(0,T,\vec{x}^T, \vec{y}^T)$ be the set of all non-intersecting Bernoulli line ensembles from $\vec{x}^T$ to $\vec{y}^T$. For each line ensemble $\mathfrak{B}\in \Omega(0,T,\bar x^T,\bar y^T)$ with $\mathfrak B=(B_1,...,B_k)$, we may define $\lambda_i(\mathfrak B):=(B_1(i),B_2(i),...,B_k(i))$, where $1 \leqslant i\leqslant T$ is an integer. The $\lambda_i$ form partitions since by the definition of avoiding Bernoulli line ensembles, we have the inequality $B_\alpha(i)>B_\beta(i)$ if $\alpha<\beta$. 
@@ -959,10 +959,61 @@ Therefore, we can find that
 =&{}\frac{\lvert \Omega(0,\lfloor Tt\rfloor, \vec{x}^T, \lambda)\rvert\cdot \lvert \Omega(\lfloor Tt\rfloor ,T, \lambda, \vec{y}^T)\rvert}{\lvert \Omega(0, T, \vec{x}^T, \vec{y}^T)\rvert}\\
 =&{}\frac{s_{\lambda/\vec{x}^T}(1^{\floor{Tt}})\cdot s_{\vec{y}^T/\lambda}(1^{T-\floor{Tt}})}{s_{\vec{y}^T/\vec{x}^T}(1^T)}
 \end{align*}
-\textbf{Step 2:} In this step, we prove the weak convergence of random vector $(Z_{1},\dots,Z_{k})$, where $Z_{i}=\frac{L_{i}(tT)-ptT}{\sqrt{T}}$. Following similar steps in Problem 12 and Problem 14, we only need to prove that we can find proper constants $Z$, $c_{1}$, $c_{2}$, $c_{3}$ depending on $p,t,\vec{a},\vec{b}$, such that $\sqrt{T}^{k}\cdot \pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)\xrightarrow{T\rightarrow \infty} \rho(z_{1},\cdots z_{k})$, where $$\rho(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot det[e^{c_1(t,p)a_{i}z_{j}}]_{i,j=1}^{k}\cdot det[e^{c_2(t,p)b_{i}z_{j}}]_{i,j=1}^{k}\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}$$ The following paragraphs will prove this claim.\\
+\textbf{Part 2. } In the following, we prove the weak convergence of random vector $(Z_{1}^{T},\dots,Z_{k}^{T})$, where $Z_{i}^{T}=\frac{L_{i}(tT)-ptT}{\sqrt{T}}$. We divide our answer into the following steps. In Step 1, we introduce a lemma and prove the weak convergence using the lemma. In Step 2 we prove the lemma.\\
+\textbf{Step 1. }Let $\mathbb{W}_{k}^{o}$ denote the open Weyl chamber in $\mathbb{R}^{N}$:
+$$\mathbb{W}_{N}^{o}=\{(x_{1},\cdots,x_{k})\in\mathbb{R}^{N}:x_{1}>x_{2}>\cdots>x_{k}\}$$ 
+In this problem, we are going to show the random vector $(Z_{1}^{T},\cdots,Z_{k}^{T})$ weakly converges to a continuous distribution with the density:
+$$\rho(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot det[e^{c_1(t,p)a_{i}z_{j}}]_{i,j=1}^{k}\cdot det[e^{c_2(t,p)b_{i}z_{j}}]_{i,j=1}^{k}\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\cdot \mathbbm{1}_{\{z\in \mathbb{W}_{k}^{o}\}}$$
+where $Z,c_{1},c_{2},c_{3}$ are constants that will be computed later. We will also prove that $\rho(z)$ is actually a density.\\
+In order to show the weak convergence, it is sufficient to show that for every open set $O\in\mathbb{R}^{k}$, we have: 
+$$\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in O)\geqslant\int_{O}\rho(z_{1},\cdots,z_{k})dz_{1}dz_{2}\cdots dz_{k}$$
+This result is due to \emph{Probability: theory and examples}, R. Durrett, Theorem 3.2.11. Actually, it suffices to show for any open set $U\in\mathbb{W}_{k}^{o}$, we have:
+$$\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in U)\geqslant\int_{U}\rho(z_{1},\cdots,z_{k})dz_{1}dz_{2}\cdots dz_{k}\quad\quad\quad (\star)$$
+because if this result holds,
+\begin{align*}
+	&\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in O)\geqslant\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in O\cap\mathbb{W}_{k}^{o})\\
+	&\geqslant \int_{\mathbb{W}_{k}^{o}\cap O}\rho(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}= \int_{O}\rho(z_{1},\cdots,z_{N})dz_{1}\cdots dz_{k}
+\end{align*}
+The second inequality uses the above result $(\star)$, and the last equality is because $\rho(z)$ is zero outside the $\mathbb{W}_{k}^{O}$.
+We prove $(\star)$ through the following steps. \\
+\textbf{Step 1. }In this step, we establish the following result:\\
+For any closed rectangle $R=[u_{1},v_{1}]\times [u_{2},v_{2}]\times\cdots\times[u_{N},v_{N}]\in\mathbb{W}_{k}^{o}$, 
+$$\lim_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)=\int_{R}\rho(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}$$
+where $\rho(z)$ is given at the beginning.\\
+We introduce the following lemma:\\
+\textbf{Lemma: }Fix $A>0$, take $z=(z_{1},\cdots,z_{k})\in\mathbb{W}_{k}^{o}$ such that $A>z_{1}>\cdots>z_{k}>-A$. Choose sufficiently large $T_{0}$ such that $ptT_{0}-A\sqrt{T_{0}}\geqslant 1$, then for $T\geqslant T_{0}$, define $\lambda_{i}(T)=\lfloor z_{i}\sqrt{T}+ptT\rfloor\geqslant 1$ for $i=1,\cdots,k$. Then we have
+$$\lim_{T\rightarrow\infty}(\sqrt{T})^{k}\mathbb{P}(L_{i}(\lfloor tT\rfloor)=\lambda_{i}(T),i=1,\cdots,k)=\rho(z_{1},\cdots,z_{k})$$
+Suppose the lemma holds, and we use the lemma to prove the result above. Define $m_{i}^{T}=\lfloor u_{i}\sqrt{T}+ptT\rfloor+1$ and $M_{i}^{T}=\lfloor v_{i}\sqrt{T}+ptT\rfloor$, and we have:
+\begin{align*}
+&\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)=\mathbb{P}(u_{1}\leqslant Z_{1}^{T} \leqslant v_{1}, \dots,  u_{k}\leqslant Z_{k}^{T} \leqslant v_{k})\\
+&=\mathbb{P}(u_{i}\sqrt{T}+ptT\leqslant L_{i}(\lfloor tT\rfloor) \leqslant v_{i}\sqrt{T}+ptT, i=1,\dots, k)\\
+&=\sum_{\lambda_{1}(T)=m_{1}^{T}}^{M_{1}^{T}}\cdots\sum_{\lambda_{k}(T)=m_{k}^{T}}^{M_{k}^{T}}\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1}(T),\dots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}(T))\\
+&=\sum_{\lambda_{1}(T)=m_{1}^{T}}^{M_{1}^{T}}\dots\sum_{\lambda_{k}(T)=m_{k}^{T}}^{M_{k}^{T}}(\sqrt{T})^{-k}\cdot(\sqrt{T})^{k}\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1}(T),\dots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}(T))
+\end{align*}
+Find sufficiently large $A$ such that $R\subset[-A,A]^{k}$, and define $f_{T}(z_{1},\cdots,z_{k})$ as a simple function that takes value $(\sqrt{T})^{k}\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1}(T),\cdots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}(T)=\lambda_{k}(T))$ if there exist $\lambda_{1}(T),\cdots,\lambda_{k}(T)$ such that $\lambda_{i}(T)\leqslant z_{i}\sqrt{T}+ptT<\lambda_{i}(T)+1$ and take value $0$ otherwise. Since the Lebesgue measure of the set $\{z:\lambda_{i}(T)\leqslant z_{i}\sqrt{T}+ptT<\lambda_{i}(T)+1,i=1,\cdots,k\}$ is $(\sqrt{T})^{-k}$, the above probability can be further written as an integral of simple function $f_{T}(z_{1},\cdots,z_{k})$:
+\begin{align*}
+\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)&=\int_{[-A,A]^{k}}f_{T}(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}
+\end{align*}
+Moreover, the function $f_{T}(z_{1},\cdots,z_{k})$ is bounded on the compact set $[-A,A]^{k}$, and the Lebesgue measure of $[-A,A]^{k}$ is finite. Thus, by bounded convergence theorem and the lemma, we have:
+$$\lim_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)=\int_{R}\rho(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}$$
+Now we prove $(\star)$. Take any open set $U\in \mathbb{W}_{k}^{o}$, it can be written as a countable union of closed rectangles with disjoint interiors: $U=\bigcup_{i=1}^{\infty}R_{i}$, where $R_{i}=[a_{1}^{i},b_{1}^{i}]\times\cdots\times[a_{k}^{i},b_{k}^{i}]$. Denote $R_{i}^{\epsilon}=[a_{1}^{i}+\epsilon,b_{1}^{i}-\epsilon]\times\cdots\times[a_{k}^{i}+\epsilon,b_{k}^{i}-\epsilon]$, then $R_{i}^{\epsilon}$ are disjoint. Therefore,
+\begin{align*}
+	&\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in U)\geqslant\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \bigcup_{i=1}^{n}R_{i}^{\epsilon})\\
+	&=\liminf_{T\rightarrow\infty}\sum_{i=1}^{n}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i}^{\epsilon})=\sum_{i=1}^{n}\int_{R_{i}^{\epsilon}}\rho(z_1,\cdots,z_{k})dz_{1}\cdots dz_{k}\\
+	&\xrightarrow{\epsilon\downarrow 0} \sum_{i=1}^{n}\int_{R_{i}}\rho(z_1,\cdots,z_{k})dz_{1}\cdots dz_{k}
+\end{align*}
+The last line uses monotone convergence theorem, because $\rho(z)\mathbbm{1}_{\{R_{i}^{\epsilon}\}}$ is increasing as $\epsilon\downarrow 0$. Then let $n\rightarrow\infty$ we have $$\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in U)\geqslant\int_{U}\rho(z_1,\cdots,z_{k})dz_{1}\cdots dz_{k}$$
+Thus, we proved $(\star)$. In particular, let the open set $U$ be $\mathbb{W}_{k}^{o}$, which can be represented by a countable union of almost disjoint closed rectangles: $\mathbb{W}_{k}^{o}=\bigcup_{i=1}^{\infty}R_{i}$. Then we have:
+\begin{align*}
+	1&=\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \mathbb{W}_{k}^{o})=\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \bigcup_{i=1}^{\infty}R_{i})=\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in\bigcup_{i=1}^{\infty}R_{i}^{\circ})\\
+	&=\sum_{i=1}^{\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i}^{\circ})= \sum_{i=1}^{\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i})=\sum_{i=1}^{\infty}\int_{R_{i}}\rho(z)dz\\
+	&=\int_{\mathbb{W}_{k}^{o}}\rho(z)dz
+\end{align*}
+which indicates that $\rho(z)$ is actually a density.
+\textbf{Step 2. }Now we prove the lemma in Step 1.
 By Jacobi-Trudi formula, we can conclude:
 \begin{align*}
-\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)=\frac{\det\left(h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})\right)_{i,j=1}^k\cdot\det\left(h_{y_i^T-\lambda_j+j-i}(1^{T-\floor{Tt}})\right)_{i,j=1}^k}{\det\left(h_{y_i^{T}-x_j^T+j-i}(1^T)\right)_{i,j=1}^k}	
+\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)=\frac{\det\left(h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})\right)_{i,j=1}^k\cdot\det\left(h_{y_i^T-\lambda_j+j-i}(1^{T-\floor{tT}})\right)_{i,j=1}^k}{\det\left(h_{y_i^{T}-x_j^T+j-i}(1^T)\right)_{i,j=1}^k}	
 \end{align*}
 We first compute the first determiant in the numerator. Using the identity for complete symmetric functions from Macdonald, page 26 i.e. that $h_r(1^n)=\binom{n+r-1}{r}$, we get the resulting equation 
 \begin{align*}
@@ -1035,7 +1086,7 @@ Notice that $S_{1}(p,t,T)+S_{2}(p,t,T)-S_{3}(p,t,T)=0$. Combine three determinan
 \begin{align*}
 	& \pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)\\
 	\sim & (2\pi)^{-\frac{k}{2}}\left[\sqrt{\frac{p+1}{pt(1-t)}}\right]^{k}\cdot T^{-\frac{k}{2}} \cdot e^{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}(a_{i}^2+z_{i}^2)-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^{2})}\\
-	& \cdot e^{-k\log(p+1}\cdot \frac{\det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\cdot \det(e^{c_{2}(p,t)b_{i}z_{j}})_{i,j=1}^{k}}{\det(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}})_{i,j=1}^{k}}\\
+	& \cdot e^{-k\log(p+1)}\cdot \frac{\det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\cdot \det(e^{c_{2}(p,t)b_{i}z_{j}})_{i,j=1}^{k}}{\det(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}})_{i,j=1}^{k}}\\
 	= &(2\pi)^{-\frac{k}{2}}\left[\sqrt{\frac{1}{p(p+1)t(1-t)}}\right]^{k}\cdot T^{-\frac{k}{2}}\cdot e^{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}a_{i}^2-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}b_{i}^2}\\
 	& \cdot\frac{\det\left(e^{c_{1}(p,t)z_{i}a_{j}}\right)_{i,j=1}^{k}\cdot \det\left(e^{c_{2}(p,t)b_{i}z_{j}}\right)_{i,j=1}^{k}}{\det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right)_{i,j=1}^{k}})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^2}
 \end{align*}
@@ -1045,7 +1096,7 @@ Therefore, $(\sqrt{T})^{k}\cdot\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(
 	&c_{1}(p,t)=\frac{1}{p(p+1)t}, \quad c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}, \quad c_{3}(p,t)=\frac{1}{2p(p+1)t(1-t)}\\
 	&Z=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot e^{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}}\cdot e^{c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}}\det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right)_{i,j=1}^{k}
 \end{align*}
-Thus, we prove our claim. 
+Thus, we prove our lemma. 
 
 
 
