@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  22 JUN 2020 11:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  24 JUN 2020 19:06
 entering extended mode
 **"./reu problems.tex"
 ("reu problems.tex"
@@ -711,63 +711,63 @@ m/n/12 ([]) = (\OML/cmm/m/it/12 B[]\OT1/cmr/m/n/12 ([])\OML/cmm/m/it/12 ; :::;
 B[]\OT1/cmr/m/n/12 ([]))$
  []
 
-
-Overfull \hbox (37.7275pt too wide) in paragraph at lines 966--966
-[] 
- []
-
-[36]
-Overfull \hbox (20.38396pt too wide) in paragraph at lines 984--984
-[] 
- []
-
-
-Overfull \hbox (0.16147pt too wide) in paragraph at lines 1000--1000
-[] 
- []
-
-[37]
-Overfull \hbox (57.39629pt too wide) in paragraph at lines 1011--1011
+[36] [37]
+Overfull \hbox (37.7275pt too wide) in paragraph at lines 1017--1017
 [] 
  []
 
 [38]
-Overfull \hbox (9.90034pt too wide) in paragraph at lines 1033--1033
-[] 
- []
-
-[39] [40] [41]
-Overfull \hbox (0.9824pt too wide) in paragraph at lines 1130--1130
+Overfull \hbox (20.38396pt too wide) in paragraph at lines 1035--1035
 [] 
  []
 
 
-Overfull \hbox (1.37186pt too wide) in paragraph at lines 1136--1136
+Overfull \hbox (0.16147pt too wide) in paragraph at lines 1051--1051
 [] 
  []
 
-[42]
-Overfull \hbox (8.99876pt too wide) in paragraph at lines 1158--1158
+[39]
+Overfull \hbox (57.39629pt too wide) in paragraph at lines 1062--1062
 [] 
  []
 
-[43] [44] [45] [46]
-Overfull \hbox (13.07541pt too wide) in paragraph at lines 1281--1285
+[40]
+Overfull \hbox (9.90034pt too wide) in paragraph at lines 1084--1084
+[] 
+ []
+
+[41] [42] [43]
+Overfull \hbox (0.9824pt too wide) in paragraph at lines 1181--1181
+[] 
+ []
+
+
+Overfull \hbox (1.37186pt too wide) in paragraph at lines 1187--1187
+[] 
+ []
+
+[44]
+Overfull \hbox (8.99876pt too wide) in paragraph at lines 1209--1209
+[] 
+ []
+
+[45] [46] [47] [48]
+Overfull \hbox (13.07541pt too wide) in paragraph at lines 1332--1336
 \OT1/cmr/m/n/12 (ii) \OT1/cmr/m/it/12 Per-mu-ta-tion \OT1/cmr/m/n/12 Sup-pose $
 \OML/cmm/m/it/12 s[]$ \OT1/cmr/m/n/12 is a per-mu-ta-tion of $\OML/cmm/m/it/12 
 n$ \OT1/cmr/m/n/12 non-negative in-te-gers, for ex-am-ple $\OMS/cmsy/m/n/12 f\O
 T1/cmr/m/n/12 1\OML/cmm/m/it/12 ; []  ; n\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 ,
  []
 
-[47] [48]
-Overfull \hbox (0.55785pt too wide) in paragraph at lines 1328--1330
+[49] [50]
+Overfull \hbox (0.55785pt too wide) in paragraph at lines 1379--1381
 \OT1/cmr/m/n/12 where $[](\OML/cmm/m/it/12 x[]; x[]; []  ; x[]\OT1/cmr/m/n/12 
 )$ is the Van-der-monde De-ter-mi-nant in Prob-lem 4, $\OML/cmm/m/it/12 a[] \OT
 1/cmr/m/n/12 = \OML/cmm/m/it/12 a[]$
  []
 
-[49]
-Overfull \hbox (4.61632pt too wide) in paragraph at lines 1336--1338
+[51]
+Overfull \hbox (4.61632pt too wide) in paragraph at lines 1387--1389
 \OT1/cmr/m/n/12 The only thing left is to prove the re-main-ders $\OML/cmm/m/it
 /12 R[]\OT1/cmr/m/n/12 (([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 )\OML/cmm/m/it/
 12 ; \OT1/cmr/m/n/12 ([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 ))$ and $\OML/cmm/
@@ -775,47 +775,48 @@ m/it/12 R[]\OT1/cmr/m/n/12 (([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 )\OML/cmm/m
 /it/12 ; \OT1/cmr/m/n/12 ([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 ))$
  []
 
-[50] [51]
-Overfull \hbox (9.92892pt too wide) in paragraph at lines 1411--1411
+[52] [53]
+Overfull \hbox (9.92892pt too wide) in paragraph at lines 1462--1462
 [] 
  []
 
-[52] [53] [54] [55] [56] [57] [58] [59]
-Overfull \hbox (44.2381pt too wide) in paragraph at lines 1722--1722
+[54]
+Overfull \hbox (4.22624pt too wide) in paragraph at lines 1503--1503
 [] 
  []
 
-[60] [61] ("reu problems.aux") ) 
+[55] [56] [57] [58] [59] [60] [61] [62] [63] [64] ("reu problems.aux") ) 
 Here is how much of TeX's memory you used:
- 4090 strings out of 493320
- 57838 string characters out of 3138925
- 139393 words of memory out of 3000000
- 7531 multiletter control sequences out of 15000+200000
+ 4097 strings out of 493320
+ 57928 string characters out of 3138925
+ 139459 words of memory out of 3000000
+ 7538 multiletter control sequences out of 15000+200000
  16739 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,18n,32p,1671b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Christian Serio\AppData\Local\MiKTeX
-\2.9\fonts\pk\ljfour\public\bbm\dpi600\bbm12.pk><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-ti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary10.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary8.pfb>
-Output written on "reu problems.pdf" (61 pages, 1139124 bytes).
+ <C:\Us
+ers\Christian Serio\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\bbm\dpi600\
+bbm12.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/hoekwater/stmary10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/h
+oekwater/stmary8.pfb>
+Output written on "reu problems.pdf" (64 pages, 1150785 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
+ 290 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
