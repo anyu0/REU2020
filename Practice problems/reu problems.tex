@@ -1498,84 +1498,112 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 	\]
 	Thus by replacing $r$ and $R$ with $\lceil r\rceil$ and $\lfloor R\rfloor$ respectively, we can assume that $r,R\in\mathbb{Z}$. Moreover, we will assume that the midpoint $\frac{R+r}{2}$ is an integer. If not, we are free to enlarge $R$ by 1 so that $R+r$ is even. Define events
 	\begin{align*}
-	A &= \left\{L_1^N\left(\frac{R+r}{2}\,N^\alpha\right) - pN^\alpha\,\frac{R+r}{2} + \lambda\left(\frac{R+r}{2}\right)^2 N^{\alpha/2} < \big[C(k-1)\sqrt{R-r}-M\big]N^{\alpha/2}\right\},\\
-	B &= \left\{\max_{x\in[r,R]} \left(L_k^N(xN^\alpha) - pxN^\alpha\right) < -(\lambda R^2 + \phi(\epsilon)) N^{\alpha/2} \right\}.
+	A &= \left\{L_1^N\left(\frac{R+r}{2}\,N^\alpha\right) - pN^\alpha\,\frac{R+r}{2} + \lambda\left(\frac{R+r}{2}\right)^2 N^{\alpha/2} < -\phi(\epsilon/8)N^{\alpha/2}\right\},\\
+	B &= \left\{\max_{x\in[r,R]} \left(L_k^N(xN^\alpha) - pxN^\alpha\right) < -(\lambda R^2 + \phi(\epsilon/8)) N^{\alpha/2} \right\}.
 	\end{align*}
-	We specify the constants $C$ and $M$ later. We aim to bound $\mathbb{P}(B)$, using the fact that $\mathbb{P}(A) \leq 2\epsilon$ for large enough $N$ and $M$ by one-point tightness. (Take $M$ large enough so that the quantity in brackets is $\leq -\phi(\epsilon)$.) Recall that with probability $>1-2\epsilon$, we have 
+	We specify the constant $C$. We aim to bound $\mathbb{P}(B)$, using the fact that $\mathbb{P}(A) \leq \epsilon/4$ for large enough $N$ and $M$ by one-point tightness. Recall that with probability $>1-\epsilon/4$, we have 
 	\begin{align*}
-	& prN^\alpha - (\lambda r^2+\phi(\epsilon))N^{\alpha/2} < L_1^N(rN^\alpha) <  prN^\alpha - (\lambda r^2-\phi(\epsilon))N^{\alpha/2},\\
-	& pRN^\alpha - (\lambda R^2+\phi(\epsilon))N^{\alpha/2} < L_1^N(RN^\alpha) <  pRN^\alpha - (\lambda R^2-\phi(\epsilon))N^{\alpha/2}
+	& prN^\alpha - (\lambda r^2+\phi(\epsilon/8))N^{\alpha/2} < L_1^N(rN^\alpha) <  prN^\alpha - (\lambda r^2-\phi(\epsilon/8))N^{\alpha/2},\\
+	& pRN^\alpha - (\lambda R^2+\phi(\epsilon/8))N^{\alpha/2} < L_1^N(RN^\alpha) <  pRN^\alpha - (\lambda R^2-\phi(\epsilon/8))N^{\alpha/2}
 	\end{align*}
 	Let $F$ denote the subset of $B$ for which these two inequalities hold. Then 
 	\[
-	\mathbb{P}(B) \leq \mathbb{P}(F) + 2\epsilon,
+	\mathbb{P}(B) \leq \mathbb{P}(F) + \epsilon/4,
 	\]
-	so it suffices to bound $\mathbb{P}(F)$. To do so, we argue that there is a constant $c>0$ independent of $\epsilon$ (maybe $c=1/4$) such that
+	so it suffices to bound $\mathbb{P}(F)$. To do so, we argue that 
 	\[
-	\mathbb{P}(A\,|\,F) > c
+	\mathbb{P}(A\,|\,F) > 1/4.
 	\]
-	for large enough $R$. Let $D$ denote the set of pairs $(\vec{x},\vec{y})$, with $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$ satisfying 
+	for large enough $R,N$. Let $D$ denote the set of pairs $(\vec{x},\vec{y})$, with $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$ satisfying 
 	\begin{enumerate}[label=(\arabic*)]
 		
 		\item $0\leq y_i - x_i \leq (R-r)N^\alpha$ for $1\leq i\leq k$,
 		
-		\item $prN^\alpha - (\lambda r^2+\phi(\epsilon))N^{\alpha/2} < x_1 <  prN^\alpha - (\lambda r^2-\phi(\epsilon))N^{\alpha/2}$ and $pRN^\alpha - (\lambda R^2+\phi(\epsilon))N^{\alpha/2} < y_1 <  pRN^\alpha - (\lambda R^2-\phi(\epsilon))N^{\alpha/2}$,
+		\item $prN^\alpha - (\lambda r^2+\phi(\epsilon/8))N^{\alpha/2} < x_1 <  prN^\alpha - (\lambda r^2-\phi(\epsilon/8))N^{\alpha/2}$ and $pRN^\alpha - (\lambda R^2+\phi(\epsilon/8))N^{\alpha/2} < y_1 <  pRN^\alpha - (\lambda R^2-\phi(\epsilon/8))N^{\alpha/2}$,
 		
 	\end{enumerate}
 	
-	Let $E(\vec{x},\vec{y})$ denote the subset of $F$ consisting of $L^N$ for which $L_i^N(rN^\alpha) = x_i$ and $L_i^N(RN^\alpha)=y_i$ for $1\leq i\leq k$, and $L_1^N(s) > \cdots > L_k^N(s)$ for all $s$. Then $D$ is countable, the $E(\vec{x},\vec{y})$ are pairwise disjoint, and $F = \bigcup_{(\vec{x},\vec{y})\in D} E(\vec{x},\vec{y})$. Suppose we can show that $\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) > c$ for all $(\vec{x},\vec{y})\in D$. Then
-	\begin{align*}
-	\mathbb{P}(A\,|\,F) &= \sum_{(\vec{x},\vec{y})\in D} \frac{\mathbb{P}(A\,|\,E(\vec{x},\vec{y}))\mathbb{P}(E(\vec{x},\vec{y}))}{\mathbb{P}(F)} \geq c\cdot\frac{\sum_{(\vec{x},\vec{y})\in D} \mathbb{P}(E(\vec{x},\vec{y}))}{\mathbb{P}(F)} = c.
-	\end{align*}
+	Let $E(\vec{x},\vec{y})$ denote the subset of $F$ consisting of $L^N$ for which $L_i^N(rN^\alpha) = x_i$ and $L_i^N(RN^\alpha)=y_i$ for $1\leq i\leq k$, and $L_1^N(s) > \cdots > L_k^N(s)$ for all $s$. Then $D$ is countable, the $E(\vec{x},\vec{y})$ are pairwise disjoint, and $F = \bigcup_{(\vec{x},\vec{y})\in D} E(\vec{x},\vec{y})$.
 	
-	We now try to find a lower bound for $\mathbb{P}(A\,|\,E(\vec{x},\vec{y}))$. We first note that by Lemma 3.1, if we raise the endpoints of each curve, then the probability of the event $A$ will decrease. In particular, write $T = (R-r)N^\alpha$, and define $\vec{x}\,',\vec{y}\,'$ by
+	We first try to find a lower bound for $\mathbb{P}(A\,|\,E(\vec{x},\vec{y}))$. We first note that by Lemma 3.1, if we raise the endpoints of each curve, then the probability of the event $A$ will decrease. In particular, write $T = (R-r)N^\alpha$, and define $\vec{x}\,',\vec{y}\,'$ by
 	\[
 	x_i' = x_i + C(k-i)\sqrt{T}, \quad y_i' = y_i + C(k-i)\sqrt{T}.
 	\]
-	Then we have
+	We will later choose $C$ depending on $R$ so that $C\sqrt{T}\in\mathbb{Z}$. Then we have
+	\begin{align}
+	\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) &= \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y},\infty,L_k}_{avoid,Ber} (A\,|\,F) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}',\infty,L_k}_{avoid,Ber} (A\,|\,F) \nonumber \\
+	&\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (A\cap\{L_1 > \cdots > L_k\}\,|\,F) \nonumber \\
+	&\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (A\,|\,F) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 > \cdots > L_k\,|\,F)\big) \nonumber\\
+	&= \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} (A) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 > \cdots > L_k\,|\,F)\big). \label{21xyest}
+	\end{align}
+	For the first term in the last line, we used the Gibbs property and the fact that $A$ and $F$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. We now estimate the two terms in (9), splitting the remainder of the proof into two steps for clarity.\\
+	
+	\noindent\textbf{Step 1:} Write $\overline{x}$ and $\overline{y}$ for the upper bounds on $x_1$ and $y_1$ in (2) above, and write $\overline{z} = \overline{y}-\overline{x} = pT - \lambda(R^2-r^2)N^{\alpha/2}$. We can rewrite the first term in \eqref{21xyest} as
 	\begin{align*}
-	\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) &= \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y},\infty,L_k}_{avoid,Ber} (A\,|\,F) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}',\infty,L_k}_{avoid,Ber} (A\,|\,F)\\
-	&\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (A\cap\{L_1 > \cdots > L_k\}\,|\,F)\\
-	&\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (A\,|\,F) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 > \cdots > L_k\,|\,F)\big)\\
-	&= \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} (A) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 > \cdots > L_k\,|\,F)\big)
+	&\mathbb{P}^{0,T,x_1',y_1'}_{Ber} \Big(L_1(T/2) - pN^\alpha \frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < \phi(\epsilon/8)N^{\alpha/2}\Big)\\
+	= \; & \mathbb{P}^{0,T,x_1,y_1}_{Ber} \Big(L_1(T/2) - pN^\alpha\frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < - \big(\phi(\epsilon/8) + C(k-1)\sqrt{R-r}\big)N^{\alpha/2}\Big)\\
+	\geq \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - pN^\alpha\frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\big(\phi(\epsilon/8) + C(k-1)\sqrt{R-r}\big)N^{\alpha/2}\Big)\\
+	= \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - \frac{\overline{x} + \overline{y}}{2} < \Big( \lambda\Big(\frac{R^2+r^2}{2}\Big) - \lambda\Big(\frac{R+r}{2}\Big)^2 - C(k-1)\sqrt{R-r} - 2\phi(\epsilon/8)\Big)N^{\alpha/2}\Big)\\
+	\geq \; & \mathbb{P}^{0,T,0,\overline{z}}_{Ber}\Big(L_1(T/2) - \overline{z}/2 < \sqrt{T}\Big).
 	\end{align*}
-	For the first term in the last line, we used the Gibbs property and the fact that $A$ and $F$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. We rewrite the first term as
-	\begin{align*}
-	&\mathbb{P}^{0,T,x_1',y_1'}_{Ber} \Big(L_1(T/2) - pT/2 + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < C(k-1)\sqrt{T} - MN^{\alpha/2}\Big)\\
-	= \; & \mathbb{P}^{0,T,x_1,y_1}_{Ber} \Big(L_1(T/2) - pT/2 + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < - MN^{\alpha/2}\Big).
-	\end{align*}
-	We now need a statement to the effect that for large $N$, with some positive probability, say at least $1/3$, $L_1(\frac{R+r}{2}N^\alpha)$ does not lie far above the midpoint of the line segment connecting $L_1(rN^\alpha)$ and $L_1(RN^\alpha)$. Note that this midpoint is close to $\lambda(\frac{R^2+r^2}{2})N^{\alpha/2}$, and
+	The inequality in the third line follows from Lemma 3.1, and the second to last line follows from the definitions of $\overline{x},\overline{y}$. For the last line, we used the fact that
 	\[
 	\frac{R^2+r^2}{2} - \left(\frac{R+r}{2}\right)^2 = \frac{R^2 + r^2}{4} - \frac{rR}{4} = O(R^2)
 	\]
-	for fixed $r$. Thus for large enough $R$, $A$ will hold as long as $L_1(\frac{R+r}{2}N^\alpha)$ is not extremely far above the midpoint of the segment connecting $L_1(rN^\alpha)$ and $L_1(RN^\alpha)$, giving a lower bound of $1/3$ on $\mathbb{P}^{rN^\alpha, RN^\alpha,x_1,y_1}_{Ber}(A)$ for large enough $N$. (We can prove this bound using arguments similar to the lemmas in Section 3.)
+	for fixed $r$. Thus we can take $R$ large enough depending on $\lambda,k,\epsilon$ so that the quantity on the right hand side is positive. Moreover, this quantity is $O(R^{3/2})\sqrt{T}$, so we can take $R$ large enough so that it is $>\sqrt{T}$. We fix $R$ here in the following. Now to estimate this last probability, write $q = \overline{z}/T$, and let $\ell^{(T,\overline{z})}$ have the same law as $L_1$ under a probability measure $\mathbb{P}$ as in Theorem 3.3. Also let $B^\sigma$, $\sigma^2 = q(1-q)$, be the Brownian bridge provided by Theorem 3.3. Then the last probability is
+	\begin{align*}
+	& \mathbb{P}\Big( \ell^{(T,\overline{z})}(T/2) - \overline{z}/2 < \sqrt{T}\Big) = \mathbb{P}\Big(\Big[\ell^{(T,\overline{z})}(T/2) - \overline{z}/2 - \sqrt{T}B^\sigma_{1/2}\Big] + \sqrt{T}B^\sigma_{1/2} < \sqrt{T}\Big)\\
+	\geq \; & \mathbb{P}\Big(\sqrt{T}B^\sigma_{1/2} < 0\quad\mathrm{and}\quad \Delta(T,\overline{z}) < \sqrt{T}\Big) \geq \frac{1}{2} - \mathbb{P}\Big(\Delta(T,\overline{z}) \geq \sqrt{T}\Big).
+	\end{align*}
+	Here, $\Delta(T,\overline{z})$ is as defined in Theorem 3.3. By Chebyshev's inequality and Theorem 3.3, there are constants $K,a,\alpha$ such that 
+	\begin{align*}
+	\mathbb{P}\Big(\Delta(T,\overline{z}) \geq \sqrt{T}\Big) \leq e^{-a\sqrt{T}}\ex[e^{a\Delta(T,\overline{z})}] \leq K\exp\Big[-a\sqrt{T} + \alpha(\log T)^2\Big] = O(e^{-\sqrt{T}}).
+	\end{align*}
+	In particular, recalling that $T=(R-r)N^\alpha$, we can take $N$ large enough depending on $\lambda,k,\epsilon$ so that this quantity is $<1/6$. This gives a lower bound of $1/2 - 1/6 = 1/3$ for the first term in (9).\\
 	
-	It remains to bound $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 > \cdots > L_k\,|\,F)$. For $1\leq i\leq k$, define
+	\noindent\textbf{Step 2:} It remains to bound $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 > \cdots > L_k\,|\,F)$. Write $\vec{z} = \vec{y}-\vec{x}$, and for $1\leq i\leq k$, define
 	\[
 	p_i = \begin{cases}
-	(y_i - x_i)/T, & \mathrm{if}\; 0 < y_i - x_i < T,\\
-	1/\sqrt{T}, & \mathrm{if}\; y_i - x_i = 0,\\
-	1-1/\sqrt{T}, & \mathrm{if}\;y_i - x_i = T.
+	z_i/T, & \mathrm{if}\; 0 < z_i < T,\\
+	1/\sqrt{T}, & \mathrm{if}\; z_i = 0,\\
+	1-1/\sqrt{T}, & \mathrm{if}\; z_i = T.
 	\end{cases}
 	\]
-	This is the slope of the line segment connecting $L_i(rN^\alpha)$ and $L_i(RN^\alpha)$, adjusted to lie in the open interval $(0,1)$. In particular, $|p_i - (y_i-x_i)/T| \leq 1/\sqrt{T}$. Note that on the event $F$, $L_k^N$ lies uniformly below the line segment connecting $L_1^N(rN^\alpha)$ and $L_1^N(RN^\alpha)$. Thus after raising the endpoints of $\vec{x}\,',\vec{y}\,'$, the bottom curve $L_k$ lies uniformly at a distance of at least $C(k-1)\sqrt{T}$ below the segment.  
-	Thus we have
+	This is the slope of the line segment connecting $L_i(rN^\alpha)$ and $L_i(RN^\alpha)$, adjusted to lie in the open interval $(0,1)$. In particular, $|p_i - z_i/T| \leq 1/\sqrt{T}$. Note that on the event $F$, $L_k^N$ lies uniformly below the line segment connecting $L_1^N(rN^\alpha)$ and $L_1^N(RN^\alpha)$. Thus after raising the endpoints of $\vec{x}\,',\vec{y}\,'$, the bottom curve $L_k$ lies uniformly at a distance of at least $C(k-1)\sqrt{T}$ below the segment. Then in order to have $L_1 > \cdots > L_k$ given $F$, it suffices to require each $L_i$ to lie within a distance of $C\sqrt{T}/2$ from  the line segment connecting $x_i'$ and $y_i'$. That is,
+	\begin{align}
+	&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 > \cdots > L_k\,|\,F) \nonumber\\
+	\geq \; & \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} \Big(\sup_{x\in[r,R]} \big|L_i(xN^\alpha) - x_i' - (z_i/T)(x-r)N^\alpha\big| \leq C\sqrt{T}/2, \;1\leq i\leq k-1\,\Big|\,F\Big) \nonumber\\
+	= \; & \prod_{i=1}^{k-1}\mathbb{P}^{0,T,0,z_i}_{Ber} \Big(\sup_{s\in[0,T]} \big|L_i(s+rN^\alpha) - (z_i/T)s\big| \leq C\sqrt{T}/2\Big) \nonumber\\
+	= \; & \prod_{i=1}^{k-1}\Big[1 - \mathbb{P}_i \Big(\sup_{s\in[0,T]} \big|\ell^{(T,z_i)}(s) - (z_i/T)s\big| > C\sqrt{T}/2\Big)\Big]. \label{21avoidest}
+	\end{align}
+	In the third line, we used the fact that $L_1,\dots,L_{k-1}$ are independent from each other and from $L_k$ under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. In the last line, $\mathbb{P}_i$ are probability measures supporting random variables $\ell^{(T,z_i)}$ with the same laws as $L_i(s+rN^\alpha)$, as in Theorem 3.3. Also let $B^{\sigma_i}$ be Brownian bridges with variances $\sigma_i^2 = p_i(1-p_i)$ provided by Theorem 3.3. Then we have
 	\begin{align*}
-	&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 > \cdots > L_k\,|\,F)\\
-	\geq \; & \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} \Big(\sup_{x\in[r,R]} |L_i(xN^\alpha) - p_ixN^\alpha\big| \leq C\sqrt{T}/2, \;1\leq i\leq k-1\,\Big|\,F\Big)\\
-	= \; & \prod_{i=1}^{k-1}\Big[1 - \mathbb{P}^{rN^\alpha, RN^\alpha,x_i',y_i'}_{Ber} \Big(\sup_{x\in[r,R]} |L_i(xN^\alpha) - p_ixN^\alpha\big| > C\sqrt{T}/2\Big)\Big].
+	&\mathbb{P}_i \Big(\sup_{s\in[0,T]} \big|\ell^{(T,z_i)}(s) - (z_i/T) s\big| > C\sqrt{T}/2\Big)\\
+	\leq \; & \mathbb{P}_i\Big(\sup_{s\in[0,T]} |\sqrt{T}B^{\sigma_i}_{s/T}| > C\sqrt{T}/4\Big) + \mathbb{P}_i\Big(\Delta(T,z_i) > C\sqrt{T}/4\Big).
 	\end{align*}
-	In the last line, we used again the fact that $L_1,\dots,L_{k-1}$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$.  Using Theorem 3.3 to couple each $L_i$ with a Brownian bridge, we can show that each term in the product on the last line goes to 1 as $C\to\infty$. In particular, we can get a lower bound of $11/12$ for sufficiently large $N$ and $C$ depending on $p,k$. (See the proof of Lemma 4.3 below for a detailed argument which is almost exactly the same in this setting. It might be good to state and prove this as a lemma in Section 3.)
+	The first term is equal to
+	\[
+	2\exp\left(-\frac{2}{\sigma_i^2}\Big(\frac{C}{4}\Big)^2\right) \leq 2e^{-C^2/2}.
+	\]
+	This follows from (3.40) in Chapter 4 of Karatzas \& Shreve and the fact that $\sigma_i^2\leq 1/4$. For the second term, Chebyshev's inequality and Theorem 3.3 give an upper bound of
+	\[
+	K\exp\Big[-aC\sqrt{T}/4 + \alpha(\log T)^2 + \frac{|z_i - p_iT|^2}{T}\Big] \leq K\exp\Big[ -aC\sqrt{T}/4 + \alpha(\log T)^2 + 1\Big] = O(e^{-\sqrt{T}})
+	\]
+	We can take $N$ large enough so that this is $<e^{-C^2/2}$, after choosing $C$ so that
+	\[
+	\big(1-3e^{-C^2/2}\big)^{k-1} > 11/12,
+	\]
+	and then enlarging $C$ so that $C\sqrt{T}$ is an integer in the definition of $\vec{x}\,',\vec{y}\,'$. Then with this choice of $C$ and for large enough $N$, we get an upper bound of $11/12$ in \eqref{21avoidest}. (Can we do this independent of $z_i$?)\\
 	
-	Combining our estimates, we get
+	Combining these two estimates, we finally obtain an upper bound of $1/3 - 1/12 = 1/4$ in \eqref{21xyest}. Moreover, this bound is independent of $\vec{x},\vec{y}$. (Why?) It follows that
+	\begin{align*}
+	\mathbb{P}(A\,|\,F) &= \sum_{(\vec{x},\vec{y})\in D} \frac{\mathbb{P}(A\,|\,E(\vec{x},\vec{y}))\mathbb{P}(E(\vec{x},\vec{y}))}{\mathbb{P}(F)} \geq \frac{1}{4}\cdot\frac{\sum_{(\vec{x},\vec{y})\in D} \mathbb{P}(E(\vec{x},\vec{y}))}{\mathbb{P}(F)} = \frac{1}{4}.
+	\end{align*}
+	It follows that
 	\[
-	\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) \geq \frac{1}{3} - \frac{1}{12} = \frac{1}{4}.
+	\mathbb{P}(F) \leq 4\mathbb{P}(A) \leq \epsilon
 	\]
-	Hence $\mathbb{P}(A\,|\,F) \geq 1/4$. It follows that
-	\[
-	\mathbb{P}(F) \leq 4\mathbb{P}(A) \leq 8\epsilon
-	\]
-	for large enough $N$, $R$, $R_2$. We can replace $\epsilon$ with $\epsilon/8$ at the start to get $\mathbb{P}(F) \leq \epsilon$. Essentially the same argument proves the statement if $[r,R]$ is replaced by $[-R,-r]$.
+	for large enough $N$, $R$. Essentially the same argument proves the statement if $[r,R]$ is replaced by $[-R,-r]$.
 
 
 \subsection*{Lemmas from Section 4.2}
@@ -1795,7 +1823,7 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 		\end{align*}
 		Since $z_k\geq p(a+b)$, Lemma 3.7 allows us to find $R_2>0$ depending on $\epsilon$ so that this probability is $<\epsilon/4$ for all large $N$ depending on $p,\epsilon$.
 		
-		We now bound from below the probability of the event $F$. Write $a = a'N^\alpha, b = b'N^\alpha$, and $T = a+b = (a'+b')N^\alpha$. For $1\leq i\leq k$, define
+		We now bound from below the probability of the event $F$. The argument is very similar to that in the proof of [Problem 21]. Write $a = a'N^\alpha, b = b'N^\alpha$, and $T = a+b = (a'+b')N^\alpha$. For $1\leq i\leq k$, define
 		\[
 		p_i = \begin{cases}
 		z_i/T, & \mathrm{if}\;z_i \in (0,T),\\
@@ -1805,13 +1833,13 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 		\] 
 		Then $p_i\in(0,1)$ as long as $T>1$ and in particular $|z_i - p_i T|\leq \sqrt{T}$ for all $i$. Let $\ell^{(T,z_i)}$ be paths with the same laws as $L'_i$ shifted down by $x_i{}''$ under measures $\mathbb{P}_i$, as provided by Theorem 3.3. Let $B^{\sigma_i}$ be Brownian bridges with variance $\sigma_i^2 = p_i(1-p_i)$ coupled with $L'_i$. Then
 		\begin{align*}
-		\mathbb{P}^{0,T,\vec{x}\,'', \vec{y}\,''}_{Ber}(F) &\geq \mathbb{P}^{0,T,0,\vec{z}}_{Ber} \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(T,z_i)}(s) - \frac{s}{T}z_i\Big| < \frac{CN^{\alpha/2}}{2},\; 1\leq i\leq k \Big)\\
-		&= \prod_{i=1}^k \Big[ 1 - \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(T,z_i)}(s) - \frac{s}{T}z_i\Big| \geq C'\sqrt{T} \Big) \Big],
+		\mathbb{P}^{0,T,\vec{x}\,'', \vec{y}\,''}_{Ber}(F) &\geq \mathbb{P}_i \Big( \sup_{s\in[0,T]} \Big|\ell^{(T,z_i)}(s) - \frac{s}{T}z_i\Big| < \frac{CN^{\alpha/2}}{2},\; 1\leq i\leq k \Big)\\
+		&= \prod_{i=1}^k \Big[ 1 - \mathbb{P}_i \Big( \sup_{s\in[0,T]} \Big|\ell^{(T,z_i)}(s) - \frac{s}{T}z_i\Big| \geq C'\sqrt{T} \Big) \Big],
 		\end{align*}
-		where in the last line we have written $C' = C/2\sqrt{a'+b'}$. Then
+		where in the last line we have written $C' = C/2\sqrt{a'+b'}$. Now
 		\begin{align*}
-		&\mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(T,z_i)}(s) - \frac{s}{T}z_i\Big| \geq C'\sqrt{T} \Big)\\
-		\leq \; & \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} |\sqrt{T}\,B^{\sigma_i}_{s/T}| \geq C'\sqrt{T}/2\Big) + \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Delta(T,z_i) \geq C'\sqrt{T}/2 \Big),
+		&\mathbb{P}_i \Big( \sup_{s\in[0,T]} \Big|\ell^{(T,z_i)}(s) - \frac{s}{T}z_i\Big| \geq C'\sqrt{T} \Big)\\
+		\leq \; & \mathbb{P}_i \Big( \sup_{s\in[0,T]} |\sqrt{T}\,B^{\sigma_i}_{s/T}| \geq C'\sqrt{T}/2\Big) + \mathbb{P}_i \Big( \Delta(T,z_i) \geq C'\sqrt{T}/2 \Big),
 		\end{align*}
 		where $\Delta(T,z_i)$ is as defined in Theorem 3.3. The first term is equal to
 		\[
@@ -1826,11 +1854,7 @@ The only thing left is to prove the remainders $R_{u+v+1}^{f,g}((\vec{a},\vec{b}
 		\[
 		\mathbb{P}^{0,T,\vec{x}\,'',\vec{y}\,''}_{Ber}(F) \geq \big(1 - 3e^{-C^2/4R}\big)^k \geq 1/2,
 		\]
-		if $C$ is chosen large enough depending on $k$. In particular, this holds if
-		\[
-		C \geq \sqrt{4R\log\frac{3}{1-2^{-1/k}}}.
-		\]
-		We then enlarge $C$ so that $CN^{\alpha/2}\in\mathbb{Z}$ in the definition of $\vec{x}\,'', \vec{y}\,''$. It follows that the probability in \eqref{4.3main} is $< 2\cdot \epsilon/4 = \epsilon/2$ for sufficiently large $N$ depending on $p,k,\epsilon$, independent of $a,b,\vec{x},\vec{y}$. Thus we can find $N_3 = N_3(p,k,\epsilon)\in\mathbb{N}$ so that for all $N\geq N_3$,
+		if $C$ is chosen large enough depending on $k$.	We then enlarge $C$ so that $CN^{\alpha/2}\in\mathbb{Z}$ in the definition of $\vec{x}\,'', \vec{y}\,''$. It follows that the probability in \eqref{4.3main} is $< 2\cdot \epsilon/4 = \epsilon/2$ for sufficiently large $N$ depending on $p,k,\epsilon$, independent of $a,b,\vec{x},\vec{y}$. Thus we can find $N_3 = N_3(p,k,\epsilon)\in\mathbb{N}$ so that for all $N\geq N_3$,
 		\[
 		\mathbb{P}(A_N(R_2)\cap B_N(M,R)) \leq \frac{\epsilon}{2}\sum_{(a,b,\vec{x},\vec{y})\in D_N(M)} \mathbb{P}(E(a,b,\vec{x},\vec{y})) \leq \frac{\epsilon}{2}.
 		\]

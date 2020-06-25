@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  24 JUN 2020 19:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  25 JUN 2020 15:24
 entering extended mode
 **"./reu problems.tex"
 ("reu problems.tex"
@@ -781,40 +781,55 @@ Overfull \hbox (9.92892pt too wide) in paragraph at lines 1462--1462
  []
 
 [54]
-Overfull \hbox (4.22624pt too wide) in paragraph at lines 1503--1503
+Underfull \hbox (badness 10000) in paragraph at lines 1538--1540
+
+ []
+
+
+Overfull \hbox (19.75496pt too wide) in paragraph at lines 1548--1548
 [] 
  []
 
-[55] [56] [57] [58] [59] [60] [61] [62] [63] [64] ("reu problems.aux") ) 
+[55]
+Underfull \hbox (badness 10000) in paragraph at lines 1561--1563
+
+ []
+
+[56]
+Underfull \hbox (badness 10000) in paragraph at lines 1595--1597
+
+ []
+
+[57] [58] [59] [60] [61] [62] [63] [64] ("reu problems.aux") ) 
 Here is how much of TeX's memory you used:
- 4097 strings out of 493320
- 57928 string characters out of 3138925
- 139459 words of memory out of 3000000
- 7538 multiletter control sequences out of 15000+200000
+ 4099 strings out of 493320
+ 57949 string characters out of 3138925
+ 140479 words of memory out of 3000000
+ 7540 multiletter control sequences out of 15000+200000
  16739 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,18n,32p,1671b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Us
-ers\Christian Serio\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\bbm\dpi600\
-bbm12.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/hoekwater/stmary10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/h
-oekwater/stmary8.pfb>
-Output written on "reu problems.pdf" (64 pages, 1150785 bytes).
+ <C:\Users\Christ
+ian Serio\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\bbm\dpi600\bbm12.pk><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/hoe
+kwater/stmary10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/hoekwater/s
+tmary8.pfb>
+Output written on "reu problems.pdf" (64 pages, 1155446 bytes).
 PDF statistics:
  290 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
