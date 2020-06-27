@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  27 JUN 2020 10:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  27 JUN 2020 12:54
 entering extended mode
 **"./reu problems.tex"
 ("reu problems.tex"
@@ -776,57 +776,52 @@ m/it/12 R[]\OT1/cmr/m/n/12 (([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 )\OML/cmm/m
  []
 
 [52] [53]
-Overfull \hbox (9.92892pt too wide) in paragraph at lines 1464--1464
+Overfull \hbox (9.92892pt too wide) in paragraph at lines 1466--1466
 [] 
  []
 
 [54] [55]
-Underfull \hbox (badness 10000) in paragraph at lines 1551--1553
+Underfull \hbox (badness 10000) in paragraph at lines 1553--1555
 
  []
 
 
-Overfull \hbox (19.75496pt too wide) in paragraph at lines 1561--1561
+Overfull \hbox (40.29651pt too wide) in paragraph at lines 1562--1562
 [] 
  []
 
 [56]
-Overfull \hbox (11.51105pt too wide) in paragraph at lines 1574--1574
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1578--1580
+Underfull \hbox (badness 10000) in paragraph at lines 1579--1581
 
  []
 
 [57]
-Underfull \hbox (badness 10000) in paragraph at lines 1604--1606
+Underfull \hbox (badness 10000) in paragraph at lines 1605--1607
 
  []
 
 [58] [59] [60] [61] [62] [63]
-Underfull \hbox (badness 10000) in paragraph at lines 1865--1866
+Underfull \hbox (badness 10000) in paragraph at lines 1866--1867
 
  []
 
 [64]
-Underfull \hbox (badness 10000) in paragraph at lines 1871--1873
+Underfull \hbox (badness 10000) in paragraph at lines 1872--1874
 
  []
 
 
-Overfull \hbox (26.44737pt too wide) in paragraph at lines 1897--1897
+Overfull \hbox (26.44737pt too wide) in paragraph at lines 1898--1898
 [] 
  []
 
 [65]
-Underfull \hbox (badness 10000) in paragraph at lines 1899--1904
+Underfull \hbox (badness 10000) in paragraph at lines 1900--1905
 
  []
 
 
-Overfull \hbox (19.93741pt too wide) detected at line 1928
+Overfull \hbox (19.93741pt too wide) detected at line 1929
 [] [] [] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
 2 x\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\O
 ML/cmm/m/it/12 y\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j  \OML/cmm/m/it/12 [] < []
@@ -834,17 +829,17 @@ ML/cmm/m/it/12 y\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j  \OML/cmm/m/it/12 [] < []
  []
 
 [66]
-Underfull \hbox (badness 10000) in paragraph at lines 1928--1932
+Underfull \hbox (badness 10000) in paragraph at lines 1929--1933
 
  []
 
 
-Overfull \hbox (33.21461pt too wide) in paragraph at lines 1945--1945
+Overfull \hbox (33.21461pt too wide) in paragraph at lines 1946--1946
 [] 
  []
 
 [67]
-Underfull \hbox (badness 10000) in paragraph at lines 1961--1964
+Underfull \hbox (badness 10000) in paragraph at lines 1962--1965
 
  []
 
@@ -852,7 +847,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1961--1964
 Here is how much of TeX's memory you used:
  4109 strings out of 493320
  58095 string characters out of 3138925
- 140706 words of memory out of 3000000
+ 139706 words of memory out of 3000000
  7550 multiletter control sequences out of 15000+200000
  16739 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -876,7 +871,7 @@ pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary10.pfb><C:/Progra
 m Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary8.pfb>
-Output written on "reu problems.pdf" (69 pages, 1178209 bytes).
+Output written on "reu problems.pdf" (69 pages, 1178024 bytes).
 PDF statistics:
  306 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
