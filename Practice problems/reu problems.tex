@@ -1008,10 +1008,10 @@ The last line uses monotone convergence theorem, because $\rho(z)\mathbbm{1}_{\{
 Thus, we proved $(\star)$. In particular, let the open set $U$ be $\mathbb{W}_{k}^{o}$, which can be represented by a countable union of almost disjoint closed rectangles: $\mathbb{W}_{k}^{o}=\bigcup_{i=1}^{\infty}R_{i}$. Then we have:
 \begin{align*}
 	1&=\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \mathbb{W}_{k}^{o})=\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \bigcup_{i=1}^{\infty}R_{i})=\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in\bigcup_{i=1}^{\infty}R_{i}^{\circ})\\
-	&=\sum_{i=1}^{\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i}^{\circ})= \sum_{i=1}^{\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i})=\sum_{i=1}^{\infty}\int_{R_{i}}\rho(z)dz\\
-	&=\int_{\mathbb{W}_{k}^{o}}\rho(z)dz
+	&=\sum_{i=1}^{\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i}^{\circ})\leqslant \sum_{i=1}^{\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i}^{\epsilon+})+\frac{\epsilon}{2^{i}}=\sum_{i=1}^{\infty}\int_{R_{i}^{\epsilon+}}\rho(z)dz+\epsilon
 \end{align*}
-which indicates that $\rho(z)$ is actually a density.\\
+where $R^{\circ}_{i}$ is the interior of $R_{i}$, and $R_{i}^{\epsilon+}$ is a closed rectangle contained in $R_{i}$ and such that $\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i}^{\circ})\leqslant \mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i}^{\epsilon})+\frac{\epsilon}{2^{i}}$. Since the probability measures are regular, we are able to do so(Convergence of Probability Measures, Billingsley, Theorem 1.1). Let $\epsilon\downarrow 0$ and use Monotone convergence theorem we get $1\leqslant \int_{\mathbb{W}_{k}^{o}}\rho(z)dz$. Since we can also approximate $R_{i}$ from below, we can similarly get $1\geqslant \int_{\mathbb{W}_{k}^{o}}\rho(z)dz$ and then we conclude that $\rho(z)$ is actually a density.\\
+
 \textbf{Step 2. }Now we prove the lemma in Step 1.
 By Jacobi-Trudi formula, we can conclude:
 \begin{align*}
