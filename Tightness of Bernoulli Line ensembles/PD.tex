@@ -1,0 +1,108 @@
+\documentclass[11pt,letterpaper]{amsart}
+\usepackage[foot]{amsaddr}
+
+\usepackage{mathtools}
+%\mathtoolsset{showonlyrefs=true}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,letterpaper,tmargin= 1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{soul}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{placeins}
+%\usepackage{bbm}
+\setcounter{tocdepth}{1}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{afterpage}
+\usepackage{enumitem}
+%\usepackage[dvipdfmx]{graphicx}
+\usepackage{bmpsize}
+\usepackage{hyperref}
+\usepackage{tabu}
+\usepackage{enumitem}
+\numberwithin{equation}{section}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+\usetikzlibrary{matrix,graphs,arrows,positioning,calc,decorations.markings,shapes.symbols}
+%\usepackage{refcheck}
+
+\makeatletter
+\renewcommand{\email}[2][]{%
+  \ifx\emails\@empty\relax\else{\g@addto@macro\emails{,\space}}\fi%
+  \@ifnotempty{#1}{\g@addto@macro\emails{\textrm{(#1)}\space}}%
+  \g@addto@macro\emails{#2}%
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+{ \theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}}
+%{ \theoremstyle{definition} \newtheorem{conjecture}[theorem]{Conjecture}}
+{ \theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}}
+
+\def\e{{\epsilon}}
+\def\ra{{\rightarrow}}
+\def\tr{{\rm tr}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\ex}{\mathbb{E}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\pr}{\mathbb{P}}
+\newcommand{\CL}{\mathcal{L}}
+\newcommand{\CX}{\mathcal{X}}
+\newcommand{\weyl}{W^\circ}
+\newcommand{\GT}{\mathbb{GT}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclareMathOperator{\indic}{\mathbbm{1}}
+
+\def\note#1{\textup{\textsf{\color{blue}(#1)}}}
+
+\newcommand{\km}[1]{\textup{\textsf{\color{red}(KM: #1)}}}
+
+\title{Tightness of Bernoulli line ensembles}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Insert abstract here:
+\end{abstract}
+
+
+
+\tableofcontents
+
+\input{Section1.tex}
+\input{Section2.tex}
+\input{Section3.tex}
+\input{Section4.tex}
+\input{Section5.tex}
+\input{Appendix.tex}
+
+
+\bibliographystyle{amsplain} %%%I think we should switch to a reference format like [BC12] rather than [31]
+\bibliography{PD}
+
+\end{document} 

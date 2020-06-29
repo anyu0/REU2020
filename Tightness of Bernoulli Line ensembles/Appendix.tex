@@ -1,0 +1,74 @@
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% Appendix
+%
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\section{Appendix: Proof of Lemmas \ref{MCLxy} and \ref{MCLfg}}
+
+We will prove the following lemma, of which the two lemmas 3.1 and 3.2 are immediate consequences. In particular, Lemma 3.1 is the special case when $g^b = g^t$, and Lemma 3.2 is the case when $\vec{x} = \vec{x}'$ and $\vec{y} = \vec{y}'$. We argue in analogy to Lemma 5.6 in Dimitrov-Matestki.
+
+\begin{lemma}
+	Fix $k \in \mathbb{N}$, $T_0, T_1 \in \mathbb{Z}$ with $T_0 < T_1$, and two functions $g^b, g^t: \llbracket T_0, T_1 \rrbracket  \rightarrow [-\infty, \infty)$ with $g^b\leq g^t$. Also fix $\vec{x}, \vec{y}, \vec{x}', \vec{y}' \in \mathfrak{W}_k$, such that $g^b(T_0)\leq x_i$, $g^b(T_1)\leq y_i$, $g^t(T_0)\leq x_i'$, $g^t(T_1)\leq y_i'$, and $x_i\leq x_i'$, $y_i\leq y_i'$ for $1\leq i\leq k$. Assume that $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, \infty,g^b)$ and $\Omega_{avoid}(T_0, T_1, \vec{x}', \vec{y}', \infty,g^t)$ are both non-empty. Then there exists a probability space $(\Omega, \mathcal{F}, \mathbb{P})$, which supports two $\llbracket 1, k \rrbracket$-indexed Bernoulli line ensembles $\mathfrak{L}^t$ and $\mathfrak{L}^b$ on $\llbracket T_0, T_1 \rrbracket$ such that the law of $\mathfrak{L}^{t}$ {\big (}resp. $\mathfrak{L}^b${\big )} under $\mathbb{P}$ is given by $\mathbb{P}_{avoid, Ber}^{T_0, T_1, \vec{x}', \vec{y}', \infty, g^t}$ {\big (}resp. $\mathbb{P}_{avoid, Ber}^{T_0, T_1, \vec{x}, \vec{y}, \infty, g^b}${\big )} and such that $\mathbb{P}$-almost surely we have $\mathfrak{L}_i^t(r) \geq \mathfrak{L}^b_i(r)$ for all $i = 1,\dots, k$ and $r \in \llbracket T_0, T_1 \rrbracket$.
+\end{lemma}
+
+\begin{proof} We split the proof into two steps.\\
+	
+	\noindent\textbf{Step 1.} We first aim to construct a Markov chain $(X^n,Y^n)_{n\geq 0}$, with \\$X^n\in \Omega_{avoid}(T_0,T_1,\vec{x},\vec{y},\infty,g^b)$, $Y^n\in \Omega_{avoid}(T_0,T_1,\vec{x}',\vec{y}',\infty,g^t)$, with initial distribution given by the maximal paths
+	\begin{align*}
+	& X^0_1(t)=(x_1+t-T_0) \wedge y_1,\quad && Y^0_1(t)=(x_1'+t-T_0) \wedge y_1'\\
+	& X^0_k(t)=(x_k+t-T_0) \wedge y_k \wedge X^0_{k-1}(t), \quad && Y^0_k(t)=(x_k'+t-T_0) \wedge y_k' \wedge Y^0_{k-1}(t).
+	\end{align*}
+	for $t\in\llbracket T_0, T_1\rrbracket$. We want this chain to have the following properties: 
+	\begin{enumerate}[label=(\arabic*)]
+		
+		\item $(X^n)_{n\geq 0}$ and $(Y^n)_{n\geq 0}$ are both Markov in their own filtrations,
+		
+		\item $(X^n)$ is irreducible and has as an invariant distribution the uniform measure $\mathbb{P}_{avoid,Ber}^{T_0,T_1,\vec{x},\vec{y},\infty,g^b}$,
+		
+		\item $(Y^n)$ is irreducible and has invariant distribution $\mathbb{P}_{avoid,Ber}^{T_0,T_1,\vec{x}',\vec{y}',\infty,g^t}$,
+		
+		\item $X^n_i\leq Y^n_i$ on $\llbracket T_0, T_1\rrbracket$ for all $n\geq 0$ and $1\leq i \leq k$.
+		
+	\end{enumerate}
+	
+	\noindent This will allow us to conclude convergence of $X^n$ and $Y^n$ to these two uniform measures.
+	
+	We specify the dynamics of $(X^n, Y^n)$ as follows. At time $n$, we uniformly sample a segment $\{t\}\times[z, z+1]$, with $t\in\llbracket T_0, T_1\rrbracket$ and $z\in\llbracket x_k,y_1'-1\rrbracket$. We also flip a fair coin, with $\mathbb{P}(\textrm{heads})=\mathbb{P}(\textrm{tails})=1/2$. We update $X^n$ and $Y^n$ using the following procedure. For all points $s\neq t$, we set $X^{n+1}(s) = X^n(s)$. If $T_0 < t < T_1$ and $X^n_i(t-1)=z$ and $X^n_i(t+1)=z+1$ (note that this implies $X^n_i(t)\in\{z,z+1\}$), then we set
+	\[
+	X^{n+1}_i(t) = \begin{cases}
+	z+1, & \textrm{if heads},\\
+	z, & \textrm{if tails},
+	\end{cases}
+	\]
+	assuming that this move does not cause $X^{n+1}_i(t)$ to fall below $g^b(t)$. In all other cases, we leave $X^{n+1}_i(t)=X^n_i(t)$. We update $Y^n$ using the same rule, with $g^t$ in place of $g^b$. [Maybe add a figure here.] We will verify below in the proof of (4) that $X^n$ and $Y^n$ are in fact non-intersecting for all $n$, but we assume this for now.
+	
+	It is easy to see that $(X^n,Y^n)$ is a Markov chain, since at each time $n$, the value of $(X^{n+1},Y^{n+1})$ depends only on the current state $(X^n,Y^n)$, and not on the time $n$ or any of the states prior to time $n$. Moreover, the value of $X^{n+1}$ depends only on the state $X^n$, not on $Y^n$, so $(X^n)$ is a Markov chain in its own filtration. The same applies to $(Y^n)$. This proves the property (1) above.
+	
+	We now argue that $(X^n)$ is each irreducible. Observe that the initial distribution $X^0$ is by construction maximal, in the sense that for any $Z\in \Omega_{avoid}(T_0,T_1,\vec{x},\vec{y}\infty,g^b)$, we have $Z_i \leq X^0_i$ for all $i$. Thus to reach $Z$ from the initial state $X_0$, we only need to move the paths downward, and there is no danger of the paths $X_i$ crossing when we do so. We start by ensuring $X^n_k = Z_k$. We successively sample segments which touch $Z_k$ at each point in $\llbracket T_0,T_1\rrbracket$ where $Z_k$ differs from $X_k$, and choose the appropriate coin flips until the two agree on all of $\llbracket a,b\rrbracket$. We repeat this procedure for $X^n_i$ and $Z^i$, with $i$ descending. Since each of these samples and flips has positive probability, and this process terminates in finitely many steps, the probability of transitioning from $X^n$ to $Z$ after some number of steps is positive. The same reasoning applies to show that $(Y^n)$ is irreducible.
+	
+	To see that the uniform measure $\mathbb{P}_{avoid,Ber}^{T_0,T_1,\vec{x},\vec{y},\infty,g^b}$ on $\Omega_{avoid}(T_0,T_1,\vec{x},\vec{y},\infty,g^b)$ is invariant for $(X^n)$, fix any line ensemble $\omega\in\Omega_{avoid}(T_0,T_1,\vec{x},\vec{y},\infty,g^b)$. For simplicity, write $\mu$ for the uniform measure and $N=|\Omega_{avoid}(T_0,T_1,\vec{x},\vec{y},\infty,g^b)|$ for the (finite) number of allowable ensembles. Then for all ensembles $\tau\in\Omega_{avoid}(T_0,T_1,\vec{x},\vec{y},\infty,g^b)$, $\mu(\tau) = 1/N$. Hence
+	\begin{align*}
+	\sum_\tau \mu(\tau)\mathbb{P}(X^{n+1} = \omega\,|\,X^n = \tau) &= \frac{1}{N}\sum_\tau \mathbb{P}(X^{n+1} = \omega\,|\,X^n = \tau)\\
+	&= \frac{1}{N}\sum_\tau \mathbb{P}(X^{n+1} = \tau\,|\,X^n = \omega)\\
+	&= \frac{1}{N}\cdot 1 = \mu(\omega).
+	\end{align*}
+	The second equality is clear if $\tau=\omega$. Otherwise, note that $\mathbb{P}(X_{n+1} = \omega\,|\,X_n = \tau) \neq 0$ if and only if $\tau$ and $\omega$ differ only in one indexed path (say the $i$th) at one point $t$, where $|\tau_i(t)-\omega_i(t)|=1$, and this condition is also equivalent to $\mathbb{P}(X^{n+1} = \tau\,|\,X^n = \omega) \neq 0$. If $X^n=\tau$, there is exactly one choice of segment $\{t\}\times[z,z+1]$ and one coin flip which will ensure $X^{n+1}_i(t)=\omega(t)$, i.e., $X^{n+1}=\omega$. Conversely, if $X^n=\omega$, there is one segment and one coin flip which will ensure $X^{n+1}=\tau$. Since the segments are sampled uniformly and the coin flips are fair, these two conditional probabilities are in fact equal. This proves (2), and an analogous argument proves (3).
+	
+	Lastly, we argue that $X^n_i\leq Y^n_i$ for all $n\geq 0$ and $1\leq i\leq k$. The same argument will prove that $X^n_{i+1}\leq X^n_i$ for all $n,i$, so that $X^n$ is in fact non-intersecting for all $n$, and likewise for $Y^n$. This is of course true at $n=0$. Suppose it holds at some $n\geq 0$. Then since the update rule can only change the values of $X_i$ and $Y_i$ at a single point $t$, it suffices to look at the possible updates to the $i$th curve at a single point $t\in\llbracket T_0, T_1\rrbracket$. Notice that the update can only change values by at most 1, and if $Y^n_i(t) - X^n_i(t) = 1$, then the only way the ordering could be violated is if $Y_i$ were lowered and $X_i$ were raised at the next update. But this is impossible, since a coin flip of heads can only raise or leave fixed both curves, and tails can only lower or leave fixed both curves. Thus it suffices to assume $X^n_i(t) = Y^n_i(t)$. 
+	
+	There are two cases to consider that violate the ordering of $X^{n+1}_i(t)$ and $Y^{n+1}_i(t)$. Either (i) $X_i(t)$ is raised but $Y_i(t)$ is left fixed, or (ii) $Y_i(t)$ is lowered yet $X_i(t)$ is left fixed. These can only occur if the curves exhibit one of two specific shapes on $\llbracket t-1, t+1\rrbracket$. For $X_i(t)$ to be raised, we must have $X^n_i(t-1) = X^n_i(t) = X^n_i(t+1) - 1$, and for $Y_i(t)$ to be lowered, we must have $Y^n_i(t-1) - 1 = Y^n_i(t) = Y^n_i(t+1)$. From the assumptions that $X^n_i(t) = Y^n_i(t)$, and $X^n_i \leq Y^n_i$, we observe that both of these requirements force the other curve to exhibit the same shape on $\llbracket t-1, t+1\rrbracket$. Then the update rule will be the same for both curves, proving that both (i) and (ii) are impossible. \\
+	
+	\noindent\textbf{Step 2.} It follows from (2) and (3) that $(X^n)_{n\geq 0}$ and $(Y^n)_{n\geq 0}$ converge weakly to $\mathbb{P}_{avoid,Ber}^{T_0,T_1,\vec{x},\vec{y},\infty,g^b}$ and $\mathbb{P}_{avoid,Ber}^{T_0,T_1,\vec{x}',\vec{y}',\infty,g^t}$ respectively, c.f. Norris, Theorem 1.8.3. In particular, $(X^n)$ and $(Y^n)$ are tight, so $(X^n,Y^n)_{n\geq 0}$ is tight as well. By Prohorov's theorem, it follows that $(X^n,Y^n)$ is relatively compact. Let $(n_m)$ be a sequence such that $(X^{n_m},Y^{n_m})$ converges weakly. Then by the Skorohod representation theorem (see Billingsley, Theorem 6.7), it follows that there exists a probability space $(\Omega,\mathcal{F},\mathbb{P})$ supporting $C(\llbracket 1, k\rrbracket \times \llbracket T_0, T_1\rrbracket)$-valued random variables $\mathfrak{X}^n$, $\mathfrak{Y}^n$ and $\mathfrak{X},\mathfrak{Y}$ such that
+	\begin{enumerate}[label=(\arabic*)]
+		
+		\item The law of $(\mathfrak{X}^n,\mathfrak{Y}^n)$ under $\mathbb{P}$ is the same as that of $(X^n,Y^n)$,
+		
+		\item $\mathfrak{X}^n(\omega) \longrightarrow \mathfrak{X}(\omega)$ for all $\omega\in\Omega$,
+		
+		\item $\mathfrak{Y}^n(\omega) \longrightarrow \mathfrak{Y}(\omega)$ for all $\omega\in\Omega$.
+		
+	\end{enumerate}
+	
+	In particular, (1) implies that $\mathfrak{X}^{n_m}$ has the same law as $X^{n_m}$, which converges weakly to $\mathbb{P}_{avoid,Ber}^{T_0,T_1,\vec{x},\vec{y},\infty,g^b}$. It follows from (2) and the uniqueness of limits that $\mathfrak{X}$ has law $\mathbb{P}_{avoid,Ber}^{T_0,T_1,\vec{x},\vec{y},\infty,g^b}$. Similarly, $\mathfrak{Y}$ has law $\mathbb{P}_{avoid,Ber}^{T_0,T_1,\vec{x}',\vec{y}',\infty,g^t}$. Moreover, condition (4) in Step 1 implies that $\mathfrak{X}^n_i \leq \mathfrak{Y}^n_i$, $\mathbb{P}$-a.s., so $\mathfrak{X}_i \leq \mathfrak{Y}_i$ for $1\leq i\leq k$, $\mathbb{P}$-a.s. Thus we can take $\mathfrak{L}^b := \mathfrak{X}$ and $\mathfrak{L}^t := \mathfrak{Y}$.
+	
+\end{proof}

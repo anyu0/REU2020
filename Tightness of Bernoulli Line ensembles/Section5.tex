@@ -1,0 +1,372 @@
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%    Section 5
+%
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Proof of three key lemmas}\label{Section5}
+Here we prove the three key lemmas from Section \ref{Section4.1}.
+
+\subsection{Proof of Lemma \ref{PropSup}}
+
+We first establish some notation. Let $a,b,t_1,t_2,z_1,z_2 \in \mathbb{Z}$ be given such that $t_1 + 1 < t_2$, $0\leq z_2 - z_1 \leq t_2 - t_1$, $0\leq b-a \leq t_2 - t_1$, $z_1\leq a$, and $z_2\leq b$. We write $\ell\in\Omega(t_1,t_2,a,b)$ and $\ell_{bot}\in\Omega(t_1,t_2,z_1,z_2)$ for generic paths in these two spaces, and we consider the event $\{\ell \geq \ell_{bot}\} = \{\ell(s) \geq \ell_{bot}(s), s\in[t_1,t_2]\}$. Note that $\mathbb{P}^{t_1,t_2,a,b,\infty,\ell_{bot}}_{avoid,Ber}(\ell) = \mathbb{P}^{t_1,t_2,a,b}_{Ber}(\ell\,|\,\ell \geq \ell_{bot}))$. We now establish some auxiliary results which will be used in the proof of Lemma \ref{PropSup}.
+
+\begin{lemma}\label{pathcounting}
+	If $a\leq k_1\leq k_2\leq a + T - t_1$, then with notation as above,
+	\[
+	\mathbb{P}^{t_1, t_2, a, b}_{Ber}\big( \ell \geq \ell_{bot}\,\big|\,\ell(T) = k_1\big) \leq \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = k_2\big).
+	\]
+\end{lemma}
+
+\begin{remark}
+	This lemma essentially states that a path $\ell$ is more likely to lie above $\ell_{bot}$ if its value at a point $T$ is increased. A more general result is proven in Lemma 4.1 of Corwin-Dimitrov.
+\end{remark}
+
+\begin{proof}
+	Let $\ell_1$ be a random path distributed according to $\mathbb{P}^{t_1, t_2, a, b}_{Ber}$ conditioned on $\ell_1(T) = k_1$. We can identify $\ell_1$ with a sequence of $+$'s and $-$'s of length $t_2-t_1$, where a $+$ in the $i$th position means that $\ell_1(t_1+i+1)-\ell_1(t_1+i) = 1$, and a $-$ means that $\ell_1(t_1+i+1)-\ell_1(t_1+i) = 0$. [Maybe include Figure 9 from Corwin-Dimitrov here.] In this representation, the value of $\ell_1(T)$ is $a$ plus the number of $+$'s in the first $T-t_1$ slots, and the value of $\ell_1(t_2)$ is $a$ plus the total number of $+$'s. Note that we must have exactly $(k_1-a)$ $+$'s in the first $T-t_1$ slots, and $(b-k_1)$ $+$'s in the last $t_2-T$ slots. We pick uniformly at random $(k_2-k_1)$ $-$'s in the first $T-t_1$ slots and change them to $+$'s, then pick randomly $(k_2-k_1)$ $+$'s in the last $t_2-T$ slots and change them to $-$'s. This defines a new path $\ell_2$. Since there are now $k_2-a$ $+$'s in the first $T-t_1$ slots, we have $\ell_2(T) = k_2$, and we still have $\ell_2(t_2) = b$ since the number of $+$'s is unchanged. Thus we see that $\ell_2$ is distributed according to $\mathbb{P}^{t_1,t_2,a,b}_{Ber}$ conditioned on $\ell_2(T) = k_2$. 
+	
+	Now suppose $\ell_1 \geq \ell_{bot}$. We claim that $\ell_2 \geq \ell_1$ on all of $[t_1,t_2]$. To see this, note that for any $s\in\llbracket t_1, t_2\rrbracket$, $\ell_2(s) - \ell_1(s)$ is equal to the number of $+$'s in the first $s-t_1$ slots of the sequence representing $\ell_2$, minus the corresponding number for $\ell_1$. If $s\leq T$, this difference is clearly positive by construction. The difference is equal to $k_2 - k_1 \geq 0$ at $s = T$, and the difference then decreases monotonically as $s$ increases to $t_2$, since we have removed exactly $k_2-k_1$ $+$'s from the last $t_2-T$ slots. The difference is of course 0 at $s = t_2$, so this proves the claim. It follows that
+	\[
+	\mathbf{1}_{\ell_1 \geq \ell_{bot}} \leq \mathbf{1}_{\ell_2 \geq \ell_{bot}}.
+	\]
+	Now taking expectations of both sides and recalling the distributions of $\ell_1,\ell_2$ proves the lemma.
+\end{proof}
+
+
+\begin{corollary}\label{setpathcounting}
+	Let $T\in\llbracket t_1, t_2\rrbracket$, and let $A, B$ be nonempty sets of integers such that $a \leq \alpha \leq \beta \leq a+T-t_1$ for all $\alpha\in A, \beta\in B$. Then
+	\[
+	\mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) \in A\big) \leq \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) \in B\big).
+	\]
+\end{corollary}
+
+\begin{proof}
+	We have
+	\begin{align*}
+	& \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) \in A\big) = \sum_{\alpha\in A} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = \alpha\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)}\\
+	= \; & \sum_{\alpha\in A}\sum_{\beta\in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = \alpha\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)} \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)}\\
+	\leq \; & \sum_{\alpha\in A}\sum_{\beta\in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = \beta\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)} \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)}\\
+	= \; & \sum_{\beta \in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = \beta\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)} = \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) \in B\big).
+	\end{align*}
+	The inequality in the third line follows from Lemma \ref{pathcounting}.
+\end{proof}
+
+\begin{corollary}\label{freeavoidbound}
+	Let $\alpha \leq a + T - t_1$. Then
+	\begin{align*}
+	\mathbb{P}^{t_1,t_2,a,b,\infty,\ell_{bot}}_{avoid,Ber} (\ell(T)\geq\alpha) &\geq \mathbb{P}^{t_1,t_2,a,b}_{Ber} (\ell(T)\geq \alpha).
+	\end{align*}
+\end{corollary}
+
+\begin{proof}
+	We write $\mathbb{P} := \mathbb{P}^{t_1,t_2,a,b}_{Ber}$ for brevity. Using Bayes' theorem repeatedly, we find
+	\begin{align*}
+	\mathbb{P}(\ell(T)\geq\alpha\,|\,\ell \geq \ell_{bot}) &= \frac{\mathbb{P}(\ell \geq \ell_{bot}\,|\,\ell(T)\geq\alpha) \mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell \geq \ell_{bot})}\\ 
+	&\geq \frac{\mathbb{P}(\ell \geq \ell_{bot}\,|\,\ell(T) < \alpha) \mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell \geq \ell_{bot})}\\
+	&= \big(1 - \mathbb{P}(\ell(T)\geq\alpha\,|\,\ell \geq \ell_{bot}\big)\cdot\frac{\mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell(T) < \alpha)}.
+	\end{align*}
+	The inequality in the second line follows from Corollary \ref{setpathcounting}. It follows that
+	\[
+	\mathbb{P}(\ell(T)\geq\alpha\,|\,\ell \geq \ell_{bot}) \geq \frac{\mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell(T)\geq\alpha) + \mathbb{P}(\ell(T) < \alpha)} = \mathbb{P}(\ell(T)\geq\alpha).
+	\]
+\end{proof}
+
+We are now ready to prove Lemma \ref{PropSup}.
+
+\begin{proof}
+	We write $s_4 = \lceil r+3 \rceil N^\alpha$, $s_3 = \lfloor r+3 \rfloor N^\alpha$, so that $s_3 \leq t_3 \leq s_4$, and take $N$ large enough so that $L_1^N$ is defined at $s_4$. We define events 
+	\[
+	E(M) = \Big\{\big|L_1^N(-s_4) + ps_4\big| > MN^{\alpha/2}\Big\}, \quad F(M) = \Big\{L_1^N(-s_3) > -ps_3 + MN^{\alpha/2} \Big\},
+	\]
+	\[
+	G(M) = \Bigg\{\sup_{s\in[0,t_3]} \big(L_1^N(s) - ps \big) \geq (6r+22)(2r+6)^{1/2}(M+1)N^{\alpha/2} \Bigg\}.
+	\]
+	For $a,b\in\mathbb{Z}$, $s\in\llbracket 0, t_3 \rrbracket$, and $\ell_{bot}\in\Omega(-s_4,s,z_1,z_2)$ with $z_1\leq a$, $z_2\leq b$, we also define $E(a,b,s,\ell_{bot})$ to be the event that $L_1^N(-s_4) = a$, $L_1^N(s) = b$, and $L_2^N$ agrees with $\ell_{bot}$ on $[-s_4,s]$. 
+	
+	We claim that the set $G(M) \setminus E(M)$ can be written as a \textit{countable disjoint} union of sets $E(a,b,s,\ell_{bot})$. Let $D(M)$ be the set of tuples $(a,b,s,\ell_{bot})$ satisfying
+	\begin{enumerate}[label=(\arabic*)]
+		
+		\item $0\leq s\leq t_3$,
+		
+		\item $0\leq b-a \leq s + s_4$, $|a + ps_4| \leq MN^{\alpha/2}$, and $b-ps > (6r+22)(2r+6)^{1/2}(M+1)N^{\alpha/2}$,
+		
+		\item $z_1\leq a, z_2\leq b$, and $\ell_{bot}\in\Omega(-s_4, s, z_1, z_2)$.
+		
+	\end{enumerate}
+	Conditions (1) and (2) show that the union of these sets $E(a,b,s,\ell_{bot})$ for $(a,b,s,\ell_{bot})\in D(M)$ is $G(M)\setminus E(M)$. Observe that $D(M)$ is countable, since there are finitely many possible choices of $s$, countably many $a,b$ and $z_1,z_2$ for each $s$, and finitely many $\ell_{bot}$ for each $z_1,z_2$. Moreover, the sets $E(a,b,s,\ell_{bot})$ are clearly pairwise disjoint for distinct tuples in $D(M)$. This proves the claim.
+	
+	Now by one-point tightness of $L_1^N$ at integer multiples of $N^\alpha$, we can choose $M$ large enough depending on $\epsilon$ so that
+	\begin{equation}
+	\mathbb{P}(E(M)) < \epsilon/4, \quad \mathbb{P}(F(M)) < \epsilon/12 \label{4.2EFbounds}
+	\end{equation}
+	for all $N\in\mathbb{N}$. If $(a,b,s,\ell_{bot})\in D(M)$, then
+	\begin{align*}
+	\mathbb{P}^{-s_4,s,a,b}_{Ber}\Big( \ell(-s_3) > -ps_3 + MN^{\alpha/2}\Big) &= \mathbb{P}^{0,s+s_4,0,b-a}_{Ber}\Big(\ell(s_4-s_3) + a \geq -ps_3 + MN^{\alpha/2}\Big)\\
+	&\geq \mathbb{P}^{0,s+s_4,0,b-a}_{Ber}\Big(\ell(s_4-s_3) \geq p(s_4-s_3) + 2MN^{\alpha/2}\Big).
+	\end{align*}
+	The inequality follows from the assumption in (2) that $a+ps_4 \geq -MN^{\alpha/2}$. Moreover, since $b-ps > (6r+22)(2r+6)^{1/2}(M+1)N^{\alpha/2}$ and $a+ps_4 \leq MN^{\alpha/2}$, we have 
+	\[
+	b-a \geq p(s+s_4) + (6r+21)(2r+6)^{1/2}(M+1)N^{\alpha/2} \geq p(s+t_3) + (6r+21)(M+1)(s+s_4)^{1/2}.
+	\]  
+	The second inequality follows since $s+s_4 \leq 2s_4 \leq (2r+6)N^{\alpha}$. It follows from Lemma 3.5 with $M_1 = 0$, $M_2 = (6r+21)(M+1)$ that for sufficiently large $N$, we have
+	\begin{equation}
+	\mathbb{P}^{0,s+s_4,0,b-a}_{Ber}\Big(\ell(s_4-s_3) \geq \frac{s_4-s_3}{s+s_4}[p(s+s_4) + M_2 N^{\alpha/2}] - (s+s_4)^{1/4}\Big) \geq 1/3, \label{4.2interp}
+	\end{equation}
+	for all $(a,b,s,\ell_{bot}) \in D(M)$ simultaneously. Note that $\frac{s_4-s_3}{s+s_4} \geq \frac{N^\alpha - 1}{(2r+6)N^\alpha} \geq \frac{1}{2r+7}$
+	for large $N$. Hence $\frac{s_4-s_3}{s+s_4}[p(s+t_3) + M_2 N^{\alpha/2}] - (s+s_4)^{1/4} \geq p(s+s_4) + 3(M+1)N^{\alpha/2} - (s+s_4)^{1/4}\geq p(s+s_4) + 2MN^{\alpha/2}$ for all large enough $N$. We conclude from \eqref{4.2interp} that
+	\[
+	\mathbb{P}^{-s_4,s,a,b}_{Ber}\Big(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\Big) \geq 1/3
+	\]
+	uniformly in $a,b$ for large $N$. Now by the Gibbs property for $L^N$, we have for any $\ell\in\Omega(-s_4,s,a,b)$ that
+	\[
+	\mathbb{P}(L_1^N|_{[-s_4,s]} = \ell\,|\,E(a,b,s,\ell_{bot})) = \mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}(\ell).
+	\]
+	Hence by Corollary \ref{freeavoidbound},
+	\begin{align*}
+	&\mathbb{P}\big( L_1^N(-s_3) > -ps_3 + MN^{\alpha/2}\,\big|\,E(a,b,s,\ell_{bot})\big)\\
+	= \; & \sum_{\ell\in\Omega(-s_4,s,a,b)} \mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}(\ell)\cdot \mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}\big(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\big)\\
+	\geq \; & \sum_{\ell\in\Omega(-s_4,s,a,b)} \mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}(\ell)\cdot \mathbb{P}^{-s_4,s,a,b}_{Ber}\big(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\big)\\
+	\geq \; & \frac{1}{3}\sum_{\ell\in\Omega(-s_4,s,a,b)} \mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}(\ell) = \frac{1}{3}.
+	\end{align*}
+	Note once again that this bound holds independent of $a,b$ for all sufficiently large $N$. It follows from \eqref{4.2EFbounds} that
+	\[
+	\epsilon/12 > \mathbb{P}(F(M)) \geq \sum_{(a,b,s,\ell_{bot})\in D(M)} \mathbb{P}(F(M)\cap E(a,b,s,\ell_{bot}))
+	\]
+	\[
+	= \sum_{(a,b,s,\ell_{bot})\in D(M)} \mathbb{P}(F(M)\,|\, E(a,b,s,\ell_{bot}))\mathbb{P}(E(a,b,s,\ell_{bot})) \geq \frac{1}{3}\mathbb{P}(G(M)\setminus E(M))
+	\]
+	for large $N$. Since in addition $\mathbb{P}(E(M)) < \epsilon/4$, we find that
+	\[
+	\mathbb{P}\Big( \sup_{s \in [0,t_3] }\big( L^N_1(s) - p s \big) \geq  (6r+22)(2r+6)^{1/2}(M+1)N^{\alpha/2} \Big) = \mathbb{P}(G(M)) < \epsilon/2
+	\]
+	for large enough $N$. A similar argument proves the same inequality with $[-t_3,0]$ in place of $[0,t_3]$. Thus we can find an $N_2 = N_2(\epsilon)$ so that
+	\[
+	\mathbb{P}\Big( \sup_{s \in [-t_3,t_3] }\big( L^N_1(s) - p s \big) \geq  R_1N^{\alpha/2} \Big) < \epsilon
+	\]
+	for all $N\geq N_2$, with $R_1 = (6r+22)(2r+6)^{1/2}(M+1)$.
+	
+	
+\subsection{Proof of Lemma \ref{PropSup2}}
+
+	We begin by proving the following lemma, which allows us to prevent the bottom curve of an ensemble from falling too low on some interval.
+	
+	\begin{lemma}
+		Fix $p\in (0,1)$, $k\in\mathbb{N}$, and $\alpha,\lambda > 0$. Suppose that $\mathfrak{L}^N = (L_1^N, \dots, L_k^N)$ is a $(\alpha,p,\lambda)$-good sequence of $\llbracket 1, k\rrbracket$-indexed Bernoulli line ensembles. Then for any $r,\epsilon>0$, there exists $R>0$ depending on $\lambda,k,p,\epsilon,r,\phi$ and $N_0 \in \mathbb{N}$ depending on $\lambda,k,p,\epsilon,r,\phi,\psi,\alpha$ such that for all $N\geq N_0$,
+		\[
+		\mathbb{P}\Big(\max_{x\in[r,R]} \big(L_k^N(xN^\alpha) - pxN^\alpha\big) \leq -(\lambda R^2 + \phi(\epsilon/8))N^{\alpha/2}\Big) < \epsilon.
+		\]
+		The same statement holds if $[r,R]$ is replaced with $[-R,-r]$.
+	\end{lemma}
+	
+	\begin{proof}
+		
+		Fix $r>0$ and $R>r$. Note that
+		\[
+		\max_{r\leq x\leq R} \big(L_k^N(xN^\alpha) - pxN^\alpha\big) \geq \max_{\lceil r\rceil \leq x \leq \lfloor R\rfloor} \big(L_k^N(xN^\alpha) - pxN^\alpha\big).
+		\]
+		Thus by replacing $r$ and $R$ with $\lceil r\rceil$ and $\lfloor R\rfloor$ respectively, we can assume that $r,R\in\mathbb{Z}$. Moreover, we will assume that the midpoint $\frac{R+r}{2}$ is an integer. If not, we are free to enlarge $R$ by 1 so that $R+r$ is even. We will always assume $N$ is large enough depending on $\psi$ so that $L_1^N$ is defined at $R$. Define events
+		\begin{align*}
+		A &= \left\{L_1^N\left(\frac{R+r}{2}\,N^\alpha\right) - pN^\alpha\,\frac{R+r}{2} + \lambda\left(\frac{R+r}{2}\right)^2 N^{\alpha/2} < -\phi(\epsilon/8)N^{\alpha/2}\right\},\\
+		B &= \left\{\max_{x\in[r,R]} \left(L_k^N(xN^\alpha) - pxN^\alpha\right) \leq -(\lambda R^2 + \phi(\epsilon/8)) N^{\alpha/2} \right\}.
+		\end{align*}
+		We aim to bound $\mathbb{P}(B)$, using the fact that $\mathbb{P}(A) \leq \epsilon/4$ for large enough $N$ and $M$ by one-point tightness. Recall that with probability $>1-\epsilon/4$, we have 
+		\begin{align*}
+		& prN^\alpha - (\lambda r^2+\phi(\epsilon/8))N^{\alpha/2} < L_1^N(rN^\alpha) <  prN^\alpha - (\lambda r^2-\phi(\epsilon/8))N^{\alpha/2},\\
+		& pRN^\alpha - (\lambda R^2+\phi(\epsilon/8))N^{\alpha/2} < L_1^N(RN^\alpha) <  pRN^\alpha - (\lambda R^2-\phi(\epsilon/8))N^{\alpha/2}
+		\end{align*}
+		Let $F$ denote the subset of $B$ for which these two inequalities hold. Then 
+		\[
+		\mathbb{P}(B) \leq \mathbb{P}(F) + \epsilon/4,
+		\]
+		so it suffices to bound $\mathbb{P}(F)$. To do so, we argue that 
+		\[
+		\mathbb{P}(A\,|\,F) > 1/4.
+		\]
+		for large enough $R,N$. Let $D$ denote the set of pairs $(\vec{x},\vec{y})$, with $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$ satisfying 
+		\begin{enumerate}[label=(\arabic*)]
+			
+			\item $0\leq y_i - x_i \leq (R-r)N^\alpha$ for $1\leq i\leq k$,
+			
+			\item $prN^\alpha - (\lambda r^2+\phi(\epsilon/8))N^{\alpha/2} < x_1 <  prN^\alpha - (\lambda r^2-\phi(\epsilon/8))N^{\alpha/2}$ and $pRN^\alpha - (\lambda R^2+\phi(\epsilon/8))N^{\alpha/2} < y_1 <  pRN^\alpha - (\lambda R^2-\phi(\epsilon/8))N^{\alpha/2}$,
+			
+		\end{enumerate}
+		
+		Let $E(\vec{x},\vec{y})$ denote the subset of $F$ consisting of $L^N$ for which $L_i^N(rN^\alpha) = x_i$ and $L_i^N(RN^\alpha)=y_i$ for $1\leq i\leq k$, and $L_1^N(s) > \cdots > L_k^N(s)$ for all $s$. Then $D$ is countable, the $E(\vec{x},\vec{y})$ are pairwise disjoint, and $F = \bigcup_{(\vec{x},\vec{y})\in D} E(\vec{x},\vec{y})$.
+		
+		We first try to find a lower bound for $\mathbb{P}(A\,|\,E(\vec{x},\vec{y}))$. We first note that by Lemma 3.1, if we raise the endpoints of each curve, then the probability of the event $A$ will decrease. In particular, write $T = (R-r)N^\alpha$, and define $\vec{x}\,',\vec{y}\,'$ by
+		\begin{align*}
+		x_i' &= \lfloor\, prN^\alpha - (\lambda r^2 - \phi(\epsilon/8))N^{\alpha/2}\rfloor + (k-i)\lceil C\sqrt{T}\,\rceil,\\
+		y_i' &= \lfloor\, pRN^\alpha - (\lambda R^2 - \phi(\epsilon/8))N^{\alpha/2}\rfloor + (k-i)\lceil C\sqrt{T}\,\rceil.
+		\end{align*}
+		Here, $C$ is a constant depending only on $k,p$ which we specify in \eqref{21Cineq} below. Note that $x_i' \geq x_1 \geq x_i$ for each $i$ by condition (2) above. Furthermore, $x_i' - x_{i+1}' \geq C\sqrt{T}$. The same observations hold for $y_i'$. Using Lemma 3.1, we have
+		\begin{align}
+		\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) &= \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y},\infty,L_k}_{avoid,Ber} (A\,|\,F) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,',\infty,L_k}_{avoid,Ber} (A\,|\,F) \nonumber \\
+		&\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (A\cap\{L_1 > \cdots > L_k\}\,|\,F) \nonumber \\
+		&\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (A\,|\,F) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 > \cdots > L_k\,|\,F)\big) \nonumber\\
+		&= \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} (A) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 > \cdots > L_k\,|\,F)\big). \label{21xyest}
+		\end{align}
+		For the first term in the last line, we used the Gibbs property and the fact that $A$ and $F$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. We now estimate the two terms in (9), splitting the remainder of the proof into two steps for clarity.\\
+		
+		\noindent\textbf{Step 1.} Write $\overline{x}$ and $\overline{y}$ for the floors of the upper bounds on $x_1$ and $y_1$ in (2) above, and write $\overline{z} = \overline{y}-\overline{x}$. We can rewrite the first term in \eqref{21xyest} as
+		\begin{align*}
+		&\mathbb{P}^{0,T,x_1',y_1'}_{Ber} \Big(L_1(T/2) - pN^\alpha \frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < \phi(\epsilon/8)N^{\alpha/2}\Big)\\
+		= \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - pN^\alpha\frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\big(\phi(\epsilon/8) + C(k-1)\sqrt{R-r}\big)N^{\alpha/2}\Big)\\
+		\geq \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - \frac{\overline{x} + \overline{y}}{2} < \Big( \lambda\Big(\frac{R^2+r^2}{2}\Big) - \lambda\Big(\frac{R+r}{2}\Big)^2 - C(k-1)\sqrt{R-r} - 2\phi(\epsilon/8)\Big)N^{\alpha/2} - 1\Big)\\
+		\geq \; & \mathbb{P}^{0,T,0,\overline{z}}_{Ber}\Big(L_1(T/2) - \overline{z}/2 < A\sqrt{T}\Big).
+		\end{align*}
+		The inequality in the second to last line follows from the definitions of $\overline{x},\overline{y}$. For the last line, we used the fact that
+		\[
+		\frac{R^2+r^2}{2} - \left(\frac{R+r}{2}\right)^2 = \frac{R^2 + r^2}{4} - \frac{rR}{4} = O(R^2)
+		\]
+		for fixed $r$. Thus we can take $R$ large enough depending on $\lambda,k,p,\epsilon,r,\phi$ (recalling that $C$ depends only on $k,p$) so that the quantity on the right hand side is positive. We fix $R$ here for the remainder of the proof. The last inequality then holds for a constant $A$ with the same dependencies as $R$. Now to estimate this last probability, let $\ell^{(T,\overline{z})}$ have the same law as $L_1$ under a probability measure $\mathbb{P}$ as in Theorem 3.3. Also let $B^\sigma$, $\sigma^2 = p(1-p)$, be the Brownian bridge provided by Theorem 3.3. Then the last probability is
+		\begin{align*}
+		& \mathbb{P}\Big( \ell^{(T,\overline{z})}(T/2) - \overline{z}/2 < A\sqrt{T}\Big) = \mathbb{P}\Big(\Big[\ell^{(T,\overline{z})}(T/2) - \overline{z}/2 - \sqrt{T}B^\sigma_{1/2}\Big] + \sqrt{T}B^\sigma_{1/2} < A\sqrt{T}\Big)\\
+		\geq \; & \mathbb{P}\Big(\sqrt{T}B^\sigma_{1/2} < 0\quad\mathrm{and}\quad \Delta(T,\overline{z}) < A\sqrt{T}\Big) \geq \frac{1}{2} - \mathbb{P}\Big(\Delta(T,\overline{z}) \geq A\sqrt{T}\Big).
+		\end{align*}
+		Here, $\Delta(T,\overline{z})$ is as defined in Theorem 3.3. By Chebyshev's inequality and Theorem 3.3, there are constants $K,a,\beta$ depending on $q$, hence on $p,\lambda,k,\epsilon,r,\alpha,\psi,\phi$, such that 
+		\begin{align*}
+		\mathbb{P}\Big(\Delta(T,\overline{z}) \geq A\sqrt{T}\Big) \leq e^{-aA\sqrt{T}}\ex[e^{a\Delta(T,\overline{z})}] \leq K\exp\Big[-aA\sqrt{T} + \beta(\log T)^2 + \frac{|\overline{z} - pT|^2}{T}\Big].
+		\end{align*}
+		Observe that
+		\[
+		\frac{|\overline{z} - pT|^2}{T} \leq \frac{(\lambda(R^2-r^2) N^{\alpha/2} + 1)^2}{(R-r)N^\alpha} \leq 4\lambda^2(R+r)^2(R-r).
+		\]
+		In particular, we can find $N_{00}\in\mathbb{N}$ large enough depending on $p,\lambda,k,\epsilon,r,\alpha,\psi,\phi$ so that $\mathbb{P}(\Delta(T,\overline{z})\geq A\sqrt{T})<1/6$ for $N\geq N_{00}$. This gives a lower bound of $1/2 - 1/6 = 1/3$ for the first term in (9) for $N\geq N_{00}$.\\
+		
+		\noindent\textbf{Step 2.} It remains to bound $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 > \cdots > L_k\,|\,F)$. Note that on the event $F$, $L_k^N$ lies uniformly below the line segment connecting $L_1^N(rN^\alpha)$ and $L_1^N(RN^\alpha)$. Thus after raising the endpoints of $\vec{x}\,',\vec{y}\,'$, the bottom curve $L_k$ lies uniformly at a distance of at least $C(k-1)\sqrt{T}$ below the segment. Then in order to have $L_1 > \cdots > L_k$ given $F$, it suffices to require each $L_i$ to lie within a distance of $C\sqrt{T}/2$ from  the line segment of slope $p$ starting at $x_i'$. That is,
+		\begin{align}
+		&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} (L_1 > \cdots > L_k\,|\,F) \nonumber\\
+		\geq \; & \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \Big(\sup_{x\in[r,R]} \big|L_i(xN^\alpha) - x_i' - p(x-r)N^\alpha\big| \leq C\sqrt{T}/2, \;1\leq i\leq k-1\,\Big|\,F\Big) \nonumber\\
+		= \; & \Big[ \mathbb{P}^{0,T,0,\overline{z}}_{Ber} \Big(\sup_{s\in[0,T]} \big|L_1(s+rN^\alpha) - ps\big| > C\sqrt{T}/2\Big)\Big]^{k-1} \nonumber\\
+		= \; & \Big[ 1 - \mathbb{P}\Big(\sup_{s\in[0,T]} \big|\ell^{(T,\overline{z})} - ps\big| \leq C\sqrt{T}/2\Big)\Big]^{k-1}, \label{21avoidest}
+		\end{align}
+		with $\mathbb{P}$ and $\ell^{(T,\overline{z})}$ as in Step 1. In the third line, we used the fact that $L_1,\dots,L_{k-1}$ are independent from each other and from $L_k$ under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. Let $B^\sigma$ be as in Step 1. Then we have
+		\begin{align*}
+		&\mathbb{P} \Big(\sup_{s\in[0,T]} \big|\ell^{(T,\overline{z})}(s) - ps\big| > C\sqrt{T}/2\Big)\\
+		\leq \; & \mathbb{P}\Big(\sup_{s\in[0,T]} |\sqrt{T}B^{\sigma}_{s/T}| > C\sqrt{T}/4\Big) + \mathbb{P}\Big(\Delta(T,\overline{z}) > C\sqrt{T}/4\Big).
+		\end{align*}
+		The first term is equal to
+		\[
+		2\exp\left(-\frac{2}{\sigma^2}\Big(\frac{C}{4}\Big)^2\right) = 2e^{-C^2/8p(1-p)}.
+		\]
+		This follows from (3.40) in Chapter 4 of Karatzas \& Shreve. For the second term, Chebyshev's inequality and Theorem 3.3 give an upper bound of
+		\[
+		K\exp\Big[-aC\sqrt{T}/4 + \beta(\log T)^2 + 4\lambda^2(R+r)^2(R-r) \Big].
+		\]
+		As in Step 1, we can find $N_{01}$ large enough so that this is $<e^{-C^2/8p(1-p)}$ for $N\geq N_{01}$, after choosing $C$ depending on $k,p$ so that
+		\begin{equation}
+		\big(1-3e^{-C^2/8p(1-p)}\big)^{k-1} > 11/12. \label{21Cineq}
+		\end{equation}
+		Then for $N\geq N_0 := N_{00} \vee N_{01}$, we get an upper bound of $11/12$ in \eqref{21avoidest}, independent of $\vec{x},\vec{y}$.\\
+		
+		Combining these two estimates, we finally obtain an upper bound of $1/3 - 1/12 = 1/4$ in \eqref{21xyest}, for all $\vec{x},\vec{y}$. It follows that
+		\begin{align*}
+		\mathbb{P}(A\,|\,F) &= \sum_{(\vec{x},\vec{y})\in D} \frac{\mathbb{P}(A\,|\,E(\vec{x},\vec{y}))\mathbb{P}(E(\vec{x},\vec{y}))}{\mathbb{P}(F)} \geq \frac{1}{4}\cdot\frac{\sum_{(\vec{x},\vec{y})\in D} \mathbb{P}(E(\vec{x},\vec{y}))}{\mathbb{P}(F)} = \frac{1}{4}.
+		\end{align*}
+		Therefore
+		\[
+		\mathbb{P}(F) \leq 4\mathbb{P}(A) \leq \epsilon
+		\]
+		for $N\geq N_0$ and $R$ as chosen in Step 1. Essentially the same argument proves the statement if $[r,R]$ is replaced by $[-R,-r]$.
+		
+	\end{proof}
+
+	We now prove Lemma \ref{PropSup2}.
+	
+	\begin{proof}
+		We define events
+		\[
+		A_N(R_2) = \left\{\inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2N^{\alpha/2}\right\}
+		\]
+		\begin{align*}
+		B_N(M,R) &= \left\{ \max_{x\in [r+2, R]} \big(L^N_k(xN^\alpha) - pxN^\alpha\big) > -MN^{\alpha/2} \right\}\\
+		&\qquad \cap \left\{ \max_{x\in [-R, -r-2]} \big(L^N_k(xN^\alpha) - pxN^\alpha\big) > -MN^{\alpha/2} \right\}.
+		\end{align*}
+		We aim to bound $\mathbb{P}(A_N(R_2))$. By problem 21, given $\epsilon > 0$, we can find $M,R>0$ and $N_{30}\in\mathbb{N}$ large enough depending on $\epsilon,\lambda,k,r,p,\alpha,\phi,\psi$ so that $\mathbb{P}(B_N^c(M,R)) < \epsilon/2$ for all $N\geq N_{30}$. Then
+		\begin{equation}
+		\mathbb{P}(A_N(R_2)) \leq \mathbb{P}(A_N(R_2)\cap B_N(M,R)) + \epsilon/2 \label{4.3cases}
+		\end{equation}
+		Thus it suffices to bound $\mathbb{P}(A_N(R_2)\cap B_N(M,R))$. For $0<a,b\in\mathbb{Z}$ and $\vec{x},\vec{y}\in\mathfrak{W}_k$, we define $E(a,b,\vec{x},\vec{y})$ to be the event that $L_i^N(-a) = x_i$ and $L_i^N(b) = y_i$ for $1\leq i\leq k$, and $L_1^N(s) > \cdots > L_k^N(s)$ for all $s\in[-RN^\alpha,RN^\alpha]$.
+		
+		We claim that $B_N(M,R)$ can be written as a countable disjoint union of sets $E(a,b,\vec{x},\vec{y})$. Let $D_N(M)$ be the collection of tuples $(a,b,\vec{x},\vec{y})$ satisfying 
+		\begin{enumerate}[label=(\arabic*)]
+			
+			\item $a,b\in[rN^\alpha,RN^\alpha]$.
+			
+			\item $0 \leq y_i - x_i \leq b+a$, $x_k + pa > - MN^{\alpha/2}$, and $y_k - pb > - MN^{\alpha/2}$.
+			
+			\item If $c,d\in\mathbb{Z}$, $c > a$, and $d>b$, then $L_k^N(-c) + pc \leq -MN^{\alpha/2}$ and $L_k^N(d) - pd \leq -MN^{\alpha/2}$.
+			
+		\end{enumerate} 
+		Since there are finitely many integers $a,b$ satisfying (1), the $x_i,y_i$ are integers, and there are finitely many choices of $L_i^N$ on $[-aN^\alpha, bN^\alpha]$ given $a,b,x_i,y_i$, we see that $D_N(M)$ is countable. The third condition ensures that the $E(a,b,\vec{x},\vec{y})$ are pairwise disjoint. To see that their union over $D_N(M)$ is all of $B_N(M,R)$, note that $B_N(M,R)$ occurs if and only if there is a first integer time $s=-a$ and a last integer time $s=b$ when $L_k^N(s)-ps$ crosses $-MN^{\alpha/2}$. We have
+		\begin{align*}
+		&\mathbb{P}(A_N(R_2) \cap B_N(M,R)) = \sum_{(a,b,\vec{x},\vec{y})\in D_N(M)} \mathbb{P}(A_N(R_2)\,|\,E(a,b,\vec{x},\vec{y}))\mathbb{P}(E(a,b,\vec{x},\vec{y})).
+		\end{align*}
+		Now
+		\begin{align}
+		&\mathbb{P}(A_N(R_2)\,|\,E(a,b,\vec{x},\vec{y})) \leq \mathbb{P}^{-a,b, \vec{x}, \vec{y}}_{avoid, Ber} \Big( \inf_{s\in[-a, b]} \big(L_k(s) - ps\big) \leq -R_2N^{\alpha/2} \Big) \label{4.3main}\\
+		= \; & \mathbb{P}^{0, a+b, \vec{x}, \vec{y}}_{avoid, Ber} \Big( \inf_{s\in[0,a+b]} \big(L_k(s-a) - p(s-a)\big) \leq -R_2N^{\alpha/2} \Big) \nonumber\\
+		\leq \; & \mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{avoid, Ber} \Big( \inf_{s\in[0,a+b]} \big(L_k'(s) - p(s-a)\big) \leq -R_2N^{\alpha/2} \Big) \nonumber.
+		\end{align}
+		Here, we have defined $\vec{x}\,',\vec{y}\,'$ by
+		\begin{align*}
+		x_i' &= \lfloor - pa - MN^{\alpha/2}\rfloor - (i-1)\lceil CN^{\alpha/2}\rceil,\\
+		y_i' &= \lfloor pb - MN^{\alpha/2}\rfloor - (i-1)\lceil CN^{\alpha/2}\rceil.
+		\end{align*} 
+		We will specify the constant $C$ below. The last inequality follows from Lemma 3.1 since $x_i' \leq -pa - MN^{\alpha/2} \leq x_i$ and $y_i' \leq pb - MN^{\alpha/2} \leq y_i$ by condition (2) above. We also wrote $L_k'(s) = L_k(s-a)$. The last probability is
+		\[
+		\leq \frac{\mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - p(s-a)\big) \leq -R_2 N^{\alpha/2} \Big)}{\mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber}(F)},
+		\]
+		where
+		\[
+		F = \{L_1'(s) > \cdots > L_k'(s), \,s\in [0, a+b]\}.
+		\]
+		Writing $\vec{z} = \vec{y}\,' - \vec{x}\,'$, the numerator is equal to
+		\begin{align*}
+		& \mathbb{P}^{0, a+b, x_k', y_k'}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - p(s-a)\big) \leq -R_2 N^{\alpha/2} \Big)\\
+		= \; & \mathbb{P}^{0, a+b, 0, z_k}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps + pa - \lceil pa + MN^{\alpha/2}\rceil - (k-1)\lceil CN^{\alpha/2}\rceil\big) \leq -R_2 N^{\alpha/2} \Big)\\
+		\leq \; & \mathbb{P}^{0, a+b, 0, z_k}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps\big) \leq -(R_2 - M - C(k-1)) N^{\alpha/2} + k \Big).
+		\end{align*}
+		Since $z_k\geq p(a+b)$ and $a+b \geq 2rN^\alpha$, Lemma 3.7 allows us to find $R_2>0$ depending on $\epsilon,p,\lambda,k,r,\phi$ (see [Problem 21] for these dependencies) so that this probability is $<\epsilon/4$ for all large $N$ depending on $p,\epsilon,\alpha,r$, but not on $a,b,z_k$.
+		
+		We now bound from below the probability of the event $F$. The argument is very similar to that in the proof of [Problem 21]. Write $a = a'N^\alpha, b = b'N^\alpha$, $T = a+b = (a'+b')N^\alpha$, and $z = y_k' - x_k'$. Let $\ell^{(T,z)}$ be a random variable with the same law as the $L'_i$ shifted down by $x_i\,'$ under a measure $\mathbb{P}$, as provided by Theorem 3.3. Let $B^{\sigma}$ be a Brownian bridge with variance $\sigma^2 = p(1-p)$ coupled with $\ell^{(T,z)}$. Then
+		\begin{align*}
+		\mathbb{P}^{0,T,\vec{x}\,', \vec{y}\,'}_{Ber}(F) &\geq \mathbb{P}^{0,T,\vec{x}\,', \vec{y}\,'}_{Ber} \Big( \sup_{s\in[0,T]} \Big|L_i'(s) - x_i' - (z/T)s\Big| < \frac{CN^{\alpha/2}}{2},\; 1\leq i\leq k \Big)\\
+		&= \Big[ 1 - \mathbb{P} \Big( \sup_{s\in[0,T]} \Big|\ell^{(T,z)}(s) - (z/T)s\Big| \geq C'\sqrt{T} \Big) \Big]^k,
+		\end{align*}
+		where in the last line we have written $C' = C/2\sqrt{a'+b'}$. Now
+		\begin{align*}
+		&\mathbb{P} \Big( \sup_{s\in[0,T]} \Big|\ell^{(T,z)}(s) - (z/T)s\Big| \geq C'\sqrt{T} \Big)\\
+		\leq \; & \mathbb{P} \Big( \sup_{s\in[0,T]} |\sqrt{T}\,B^{\sigma}_{s/T}| \geq C'\sqrt{T}/2\Big) + \mathbb{P} \Big( \Delta(T,z) \geq C'\sqrt{T}/2 \Big),
+		\end{align*}
+		where $\Delta(T,z)$ is as defined in Theorem 3.3. The first term is equal to
+		\[
+		2\exp\left( - \frac{2}{\sigma^2}\Big(\frac{C'}{2}\Big)^2\right) \leq 2e^{-C^2/8\sigma^2(a'+b')} \leq 2e^{-C^2/16p(1-p)R}.
+		\]
+		This follows from (3.40) in Chapter 4 of Karatzas \& Shreve and the fact that $a'+b'\leq 2R$. To estimate the second term, we use Chebyshev's inequality and Theorem 3.3 to find constants $K,A,\beta$ depending only on $p$ giving an upper bound of
+		\begin{align*}
+		e^{-AC'\sqrt{T}/2}\ex[e^{A\Delta(T,z)}] &\leq K\exp\Big[-AC'\sqrt{T}/2 + \beta(\log T)^2 + \frac{|z-pT|^2}{T}\Big]\\
+		&\leq K\exp\Big[ -AC'\sqrt{r/2}\,N^{\alpha/2} + \beta(\log (2RN^\alpha))^2 + \frac{1}{2rN^{\alpha}}\Big].
+		\end{align*}
+		For the last line, we used $|z-pT| < 1$ and $2rN^\alpha \leq T \leq 2RN^\alpha$. This probability is $< e^{-C^2/16p(1-p)R}$ for large enough $N$ depending on $p,k,r,\alpha,R$, for all $a,b$ simultaneously. Then
+		\[
+		\mathbb{P}^{0,T,\vec{x}\,'',\vec{y}\,''}_{Ber}(F) \geq \big(1 - 3e^{-C^2/16p(1-p)R}\big)^k \geq 1/2,
+		\]
+		if $C$ is chosen large enough depending on $k,p$.	It follows that the probability in \eqref{4.3main} is $< 2\cdot \epsilon/4 = \epsilon/2$ for sufficiently large $N$ depending on $p,k,\epsilon,r,\alpha$, independent of $a,b,\vec{x},\vec{y}$. Thus we can find $N_{31}$ depending on $p,k,\epsilon,\alpha,r,\lambda,\phi$ so that for all $N\geq N_{31}$,
+		\[
+		\mathbb{P}(A_N(R_2)\cap B_N(M,R)) \leq \frac{\epsilon}{2}\sum_{(a,b,\vec{x},\vec{y})\in D_N(M)} \mathbb{P}(E(a,b,\vec{x},\vec{y})) \leq \frac{\epsilon}{2}.
+		\]
+		Combining with \eqref{4.3cases} proves the result for $N\geq N_3(\epsilon,\lambda,k,r,p,\alpha,\phi,\psi) := N_{30} \vee N_{31}$ and $R_2 := R_2(\epsilon,p,\lambda,k,r,\phi)$.
+		
+	\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+

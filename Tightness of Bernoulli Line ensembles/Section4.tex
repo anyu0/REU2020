@@ -1,0 +1,51 @@
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% Section 4
+%
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Proof of Theorem \ref{PropTightGood} }\label{Section4}
+
+
+The goal of this section is to prove Theorem \ref{PropTightGood} and for the remainder we assume that $k \in \mathbb{N}$ with $k \geq 2$, $p \in (0,1)$, $\alpha, \lambda > 0$ are all fixed and 
+\begin{equation}\label{eqalphagood}
+\big\{\mathfrak{L}^N = (L^N_1,L^N_2, \dots, L^N_k)\big\}_{N=1}^{\infty},
+\end{equation}
+ is an $(\alpha,p,\lambda)$-good sequence of $\llbracket 1, k\rrbracket$-indexed Bernoulli line ensembles as in Definition \ref{Def1} that are all defined on a probability space with measure $\mathbb{P}$. The main technical result we will require is contained in Proposition \ref{PropMain} below and its proof is the content of Section \ref{Section4.1}. The proof of Theorem \ref{PropTightGood} is given in Section \ref{Section4.2}.
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% Section 4.1
+%
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection{Bounds on the acceptance probability}\label{Section4.1}
+ The main result in this section is presented as Proposition \ref{PropMain} below. In order to formulate it and some of the lemmas below it will be convenient to adopt the following notation for any $r > 0$:
+\begin{equation}\label{eqsts}
+t_1 =\lfloor (r+1) N^{\alpha} \rfloor,\quad t_2 = \lfloor (r+2)N^{\alpha} \rfloor,\quad \textrm{and } t_3 = \lfloor (r+3)N^{\alpha} \rfloor.
+\end{equation}
+\begin{proposition}\label{PropMain} For any $\epsilon > 0$, $r > 0$ and any $(\alpha,p,\lambda)$-good sequence of Bernoulli line ensembles $\big\{ \mathfrak{L}^N  = (L^N_1,L^N_2, \dots, L^N_k)\big\}_{N=1}^{\infty}$
+there exist $\delta > 0$ and $N_1$ (both depending on $\epsilon, r$ as well as $ \alpha, p, \lambda$ and the functions $\phi, \psi$ in Definition \ref{Def1}) such that for all $N \geq N_1$
+we have 
+$$\mathbb{P}\Big(Z\big( t_1^-,t_1^+, \vec{x}, \vec{y} , L_{k}\llbracket t_1^-, t_1^+\rrbracket\big) < \delta\Big) < \epsilon,$$
+where $\vec{x} = (L_1^N(t_1^-), \dots, L_{k-1}^N(t_1^-)$, $\vec{y} = (L_1^N(t_1^+), \dots, L^N_{k-1}(t_1^+))$,  $ L_{k}\llbracket t_1^-, t_1^+\rrbracket$ is the restriction of $L^N_k$ to the set $\llbracket t_1^-, t_1^+\rrbracket$, and $Z$ is the acceptance probability of Definition \ref{DefAP}. $\mathbb{P}$ is the measure on a probability space that supports $\big\{ \mathfrak{L}^N \big\}_{N = 1}^\infty$.
+\end{proposition}
+
+The general strategy we use to prove Proposition \ref{PropMain} is inspired by the proof of Proposition 6.5 in \cite{CorHamK}. We begin by stating three key lemmas that will be required. Their proofs are postponed to Section \ref{Section5}. All constants in the statements below will depend implicitly on $\alpha$, $r$, $p$, $\lambda$, and the functions $\phi, \psi$ from Definition \ref{Def1}, which are fixed throughout. We will not list this dependence explicitly.
+
+Lemma \ref{PropSup} controls the deviation of the curve $L^N_1(s)$ from the line $ps$ in the scale $N^{\alpha/2}$.
+\begin{lemma}\label{PropSup} For each $\epsilon > 0$ there exist $R_1=R_1(\epsilon) > 0$ and $N_2= N_2(\epsilon)$ such that for $N \geq N_2$ 
+$$\mathbb{P}\Big( \sup_{s \in [ -t_3, t_3] }\big( L^N_1(s) - p s \big) \geq  R_1N^{\alpha/2} \Big) < \epsilon.$$
+\end{lemma}
+
+Lemma \ref{PropSup2} controls the upper deviation of the curve $L^N_2(s)$ from the line $ps$ in the scale $N^{\alpha/2}$.
+\begin{lemma}\label{PropSup2} For each $\epsilon > 0$ there exist $R_2=R_2( \epsilon) > 0$ and $N_3=N_3(\epsilon)$ such that for $N \geq N_3$
+$$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2N^{\alpha/2} \Big) < \epsilon.$$
+\end{lemma}
+
+
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% Section 4.2
+%
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection{Proof of Theorem \ref{PropTightGood} }\label{Section4.2}
+
+
