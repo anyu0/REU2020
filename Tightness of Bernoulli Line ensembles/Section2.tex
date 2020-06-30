@@ -22,11 +22,11 @@ The following defines the notion of a line ensemble.
 Let $\Sigma \subset \mathbb{Z}$ and $\Lambda \subset \mathbb{R}$ be an interval. A {\em $\Sigma$-indexed line ensemble $\mathcal{L}$} is a random variable defined on a probability space $(\Omega, \mathcal{F}, \mathbb{P})$ that takes values in $\left(C (\Sigma \times \Lambda), \mathcal{C}_{\Sigma}\right)$. Intuitively, $\mathcal{L}$ is a collection of random continuous curves (sometimes referred to as {\em lines}), indexed by $\Sigma$,  each of which maps $\Lambda$ in $\mathbb{R}$. We will often slightly abuse notation and write $\mathcal{L}: \Sigma \times \Lambda \rightarrow \mathbb{R}$, even though it is not $\mathcal{L}$ which is such a function, but $\mathcal{L}(\omega)$ for every $\omega \in \Omega$. For $i \in \Sigma$ we write $\mathcal{L}_i(\omega) = (\mathcal{L}(\omega))(i, \cdot)$ for the curve of index $i$ and note that the latter is a map $\mathcal{L}_i: \Omega \rightarrow C(\Lambda)$, which is $(\mathcal{C}, \mathcal{F})-$measurable.
 \end{definition}
 
-We will require the following result, whose proof is postponed until Section [Appendix]. In simple terms it states that the space $C (\Sigma \times \Lambda)$ where our random variables $\mathcal{L}$ take value has the structure of a complete, separable metric space.
-\begin{lemma} Let $d: C (\Sigma \times \Lambda) \times C (\Sigma \times \Lambda) \rightarrow [0, \infty)$ be given by
-\begin{equation} d (f,g) = [Something].
+We will require the following result, whose proof is postponed until Section [Appendix]. In simple terms it states that the space $C (\Sigma \times \Lambda)$ where our random variables $\mathcal{L}$ take value has the structure of a complete, separable metric space. We say that a collection $(K_n)_{n\geq 1}$ of compact subsets $K_n\subset\Sigma\times\Lambda$ is a \textit{compact exhaustion} if $\bigcup_n K_n = \Sigma\times\Lambda$ and every compact subset of $\Sigma\times\Lambda$ is contained in some $K_n$.
+\begin{lemma}\label{Polish} Let $(K_n)_{n\geq 1}$ be a compact exhaustion of $\Sigma\times\Lambda$. Define $d: C (\Sigma \times \Lambda) \times C (\Sigma \times \Lambda) \rightarrow [0, \infty)$ by
+\begin{equation} d (f,g) = \sum_{n=1}^\infty 2^{-n}\min\Big\{\sup_{(i,t)\in K_n} |f(i,t) - g(i,t)|, \, 1\Big\}.
 \end{equation}
-Then $d$ defines a metric on $C (\Sigma \times \Lambda) $ and moreover the metric space topology defined by $d$ is the same as the topology of uniform convergence over compact sets. Furthermore, the metric space $(C (\Sigma \times \Lambda), d)$ is complete and seperable.
+Then $d$ defines a metric on $C (\Sigma \times \Lambda) $ and moreover the metric space topology defined by $d$ is the same as the topology of uniform convergence over compact sets. Furthermore, the metric space $(C (\Sigma \times \Lambda), d)$ is complete and separable.
 \end{lemma}
 
 \begin{definition}

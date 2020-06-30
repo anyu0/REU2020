@@ -1465,8 +1465,6 @@ $$\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz \leqslant \lim_{T\rightarrow\infty
 
 \subsection*{Problem 18}
 
-	Note: The argument here about bounding the probability of the event $E$ is incorrect. We will need to rewrite this if we plan to use this result later. It should be easy to model the proof based on Problem 21 and/or Lemma 4.3.
-
 	Fix $p\in(0,1)$, $k\in\mathbb{N}$. Let $\vec{x}^T = (x_1^T,\dots,x_k^T)$ and $\vec{y}^T = (y_1^T,\dots,y_k^T)$ be sequences in $\mathfrak{W}_k$ with $0\leq y_i^T - x_i^T \leq T$ for each $i$, and let $(L_1,\dots,L_k)$ be a line ensemble with law $\mathbb{P}^{0,T,\vec{x}^T,\vec{y}^T}_{avoid, Ber}$.  We aim to find a constant $A>0$ depending on $p$ and $k$ so that for any $M_1, M_2 > 0$, there exists a $T_0 \in \mathbb{N}$ depending on $p,k,M_1,M_2$ such that if $T\geq T_0$, $x_k^T \geq M_1\sqrt{T}$, and $y_k^T \geq pT + M_2\sqrt{T}$, then
 	\[
 	P := \mathbb{P}^{0,T,\vec{x}^T,\vec{y}^T}_{avoid, Ber} \Big( L_k(T/2) - pT/2 \leq \frac{M_1+M_2}{2} - A\sqrt{T} \Big) < \frac{1}{2}.
@@ -1474,11 +1472,11 @@ $$\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz \leqslant \lim_{T\rightarrow\infty
 	
 	The idea of the following argument is to use monotone coupling to first lower each curve so that adjacent pairs of endpoints are a distance of roughly $\sqrt{T}$ apart. We then observe that $P$ can be computed by assuming the $L_i$ are independent and conditioning on the event of non-intersection. We bound the probability above when $L_k$ is independent of the other curves, and use strong coupling for each curve with Brownian bridges to argue that the probability of non-intersection is high.
 	
-	We first note that Lemma 3.1 allows us to assume without loss of generality that $x_k^T = \floor{M_1\sqrt{T}}$ and $y_k^T = \floor{pT + M_2\sqrt{T}}$, as this will only increase $P$. (For details, see the proof of Lemma 3.5.) We can then adjust the endpoints according to
+	We first define for $1\leq i\leq k$
 	\[
-	x_i^T{}' = x_i^T - C(i-1)\sqrt{T}, \quad y_i^T{}' = y_i^T - C(i-1)\sqrt{T},
+	x_i^T{}' = \floor{M_1\sqrt{T} - C(i-1)\sqrt{T}} , \quad y_i^T{}' = \floor{pT + M_2\sqrt{T} - C(i-1)\sqrt{T}} ,
 	\]
-	where $C$ is a constant to be chosen later depending on $p,k$. Then by monotone coupling,
+	where $C$ is a constant to be chosen later depending on $p,k$. Observe that $x_i^T{}' \leq x_k^T \leq x_i^T$ and $y_i^T{}' \leq y_k^T \leq y_i^T$ for all $i$. It follows from Lemma 3.1 that
 	\[
 	P \leq \mathbb{P}^{0,T,\vec{x}^T{}',\vec{y}^T{}'}_{avoid, Ber} \Big( L_k(T/2) - pT/2 \leq \frac{M_1+M_2}{2} - A\sqrt{T} \Big).
 	\]
@@ -1490,14 +1488,14 @@ $$\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz \leqslant \lim_{T\rightarrow\infty
 	\[
 	E = \{L_1(s) > \cdots > L_k(s)\;\textrm{for all}\;s \in \llbracket 0, T\rrbracket \}.
 	\]
-	We first estimate the numerator. If $\vec{z}^T = \vec{y}^T{}' - \vec{x}^T{}'$, then using the assumption that $x_k^T{}' \leq M_1\sqrt{T} + 1 - C(k-1)\sqrt{T}$, we see that the numerator is equal to
+	We first estimate the numerator. If $z^T = y_k^T{}' - x_k^T{}'$, then the numerator is
 	\begin{align*}
-	&\mathbb{P}^{0,T,0,z_k^T}_{Ber} \Big( L_k(T/2) - pT/2 + M_1\sqrt{T} - C(k-1)\sqrt{T} \leq \frac{M_1+M_2}{2} - Ck\sqrt{T} + 1\Big) \\
-	= \; & \mathbb{P} \Big( \ell^{(0,z^T_k)}(T/2) - pT/2 + M_1\sqrt{T} \leq \frac{M_1+M_2}{2} - C\sqrt{T} + 1\Big).
+	& \leq \mathbb{P}^{0,T,0,z^T}_{Ber} \Big( L_k(T/2) - pT/2 + M_1\sqrt{T} - C(k-1)\sqrt{T} \leq \frac{M_1+M_2}{2} - Ck\sqrt{T} + 1\Big) \\
+	& = \mathbb{P} \Big( \ell^{(0,z^T)}(T/2) - pT/2 + M_1\sqrt{T} \leq \frac{M_1+M_2}{2} - C\sqrt{T} + 1\Big).
 	\end{align*}
-	Here, $\mathbb{P}$ and $\ell^{(0,z_k^T)}$ are provided by Theorem 3.3, which also gives a Brownian bridge $B^{\sigma}$ with variance $\sigma^2 = p(1-p)$. Since $z^T \geq pT + (M_2 - M_1)\sqrt{T} - 1$, the second line above is
+	Here, $\mathbb{P}$ and $\ell^{(0,z^T)}$ are provided by Theorem 3.3, which also gives a Brownian bridge $B^{\sigma}$ with variance $\sigma^2 = p(1-p)$. Since $z^T \geq pT + (M_2 - M_1)\sqrt{T} - 1$, the second line above is
 	\begin{align*}
-	\leq \; & \mathbb{P} \Big( \ell^{(0,z^T_k)}(T/2) - z^T/2 \leq \frac{M_1+M_2}{2}(1-\sqrt{T}) - C\sqrt{T} + 2\Big)\\
+	\leq \; & \mathbb{P} \Big( \ell^{(0,z^T)}(T/2) - z^T/2 \leq \frac{M_1+M_2}{2}(1-\sqrt{T}) - C\sqrt{T} + 2\Big)\\
 	\leq \; & \mathbb{P} \Big( \sqrt{T}\,B^{\sigma}_{1/2} \leq \frac{M_1+M_2}{2}(1-\sqrt{T}) - C\sqrt{T} + 2\Big)\\
 	&\quad + \mathbb{P}\Big(\Delta(0,z^T) \geq \frac{M_1+M_2}{4}(\sqrt{T}-1) + C\sqrt{T}/2 + 1\Big).
 	\end{align*}
@@ -1515,29 +1513,21 @@ $$\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz \leqslant \lim_{T\rightarrow\infty
 	\]
 	for $T\geq\max(T_{00},T_{01})$.
 	
-	We now bound from below the probability of the event $E$. For $1\leq i\leq k$, define
-	\[
-	p_i = \begin{cases}
-	z_i^T/T, & \mathrm{if}\;z_i^T \in (0,T),\\
-	1/\sqrt{T}, & \mathrm{if}\;z_i^T = 0,\\
-	1 - 1/\sqrt{T}, & \mathrm{if}\;z_i^T = T.
-	\end{cases}
-	\] 
-	Then $p_i\in(0,1)$ for $T>1$ and in particular $|z_i^T - p_i T|\leq \sqrt{T}$ for all $i$. Let $\ell^{(0,z^T_i)}$ be paths with the same laws as $L_i$ shifted down by $x_i^T{}'$ under measures $\mathbb{P}_i$, as provided by Theorem 3.3. Let $B^{\sigma_i}$ be Brownian bridges with variance $\sigma_i^2 = p_i(1-p_i)$ coupled with $L_i$. Then
+	We now bound from below the probability of the event $E$. Then
 	\begin{align*}
-	\mathbb{P}^{0,T,\vec{x}^T{}',\vec{y}^T{}'}_{Ber}(E) &\geq \mathbb{P}^{0,T,0,\vec{z}^T}_{Ber} \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(0,z_i^T)}(s) - \frac{s}{T}z_i^T\Big| < \frac{C-1}{2}\sqrt{T},\; 1\leq i\leq k \Big)\\
-	&= \prod_{i=1}^k \Big[ 1 - \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(0,z_i^T)}(s) - \frac{s}{T}z_i^T\Big| \geq \frac{C-1}{2}\sqrt{T} \Big) \Big].
+	\mathbb{P}^{0,T,\vec{x}^T{}',\vec{y}^T{}'}_{Ber}(E) &\geq \mathbb{P}^{0,T,0,\vec{z}^T}_{Ber} \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(0,z^T)}(s) - \frac{s}{T}z^T\Big| < \frac{C-1}{2}\sqrt{T},\; 1\leq i\leq k \Big)\\
+	&= \Big[ 1 - \mathbb{P} \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(0,z^T)}(s) - \frac{s}{T}z^T\Big| \geq \frac{C-1}{2}\sqrt{T} \Big) \Big]^k.
 	\end{align*}
 	Now
 	\begin{align*}
-	&\mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(0,z_i^T)}(s) - \frac{s}{T}z_i^T\Big| \geq \frac{C-1}{2}\sqrt{T} \Big)\\
-	\leq \; & \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} |\sqrt{T}\,B^{\sigma_i}_{s/T}| \geq \frac{C-1}{4}\sqrt{T}\Big) + \mathbb{P}_i \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\sqrt{T}\,B^{\sigma_i}_{s/T} + \frac{s}{T}z_i^T - \ell^{(0,z_i^T)}(s)\Big| \geq \frac{C-1}{4}\sqrt{T} \Big).
+	&\mathbb{P} \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\ell^{(0,z^T)}(s) - \frac{s}{T}z^T\Big| \geq \frac{C-1}{2}\sqrt{T} \Big)\\
+	\leq \; & \mathbb{P} \Big( \sup_{s\in\llbracket 0, T\rrbracket} |\sqrt{T}\,B^{\sigma}_{s/T}| \geq \frac{C-1}{4}\sqrt{T}\Big) + \mathbb{P} \Big( \sup_{s\in\llbracket 0, T\rrbracket} \Big|\sqrt{T}\,B^{\sigma}_{s/T} + \frac{s}{T}z^T - \ell^{(0,z^T)}(s)\Big| \geq \frac{C-1}{4}\sqrt{T} \Big).
 	\end{align*}
 	The first term is equal to
 	\[
-	2\exp\Big( - \frac{2}{\sigma_i^2}\Big(\frac{C-1}{4}\Big)^2\Big) \leq 2e^{-(C-1)^2/2}.
+	2\exp\Big( - \frac{2}{\sigma^2}\Big(\frac{C-1}{4}\Big)^2\Big) \leq 2e^{-(C-1)^2/2}.
 	\]
-	This follows from (3.40) in Chapter 4 of Karatzas \& Shreve, and the fact that $\sigma_i^2 \leq 1/4$. The second term is $O(e^{-\sqrt{T}})$ by Chebyshev's inequality and Theorem 3.3 since $|z_i^T-p_iT|^2/T \leq 1$, so we can find $T_{02}$ depending on $p,k$ so that this probability is $< e^{-(C-1)^2/2}$ for $T\geq T_{02}$. Then
+	This follows from (3.40) in Chapter 4 of Karatzas \& Shreve, and the fact that $\sigma^2 \leq 1/4$. The second term is $O(e^{-\sqrt{T}})$ by Chebyshev's inequality and Theorem 3.3 since $|z^T-pT|^2/T \leq 1$, so we can find $T_{02}$ depending on $p,k$ so that this probability is $< e^{-(C-1)^2/2}$ for $T\geq T_{02}$. Then
 	\[
 	\mathbb{P}^{0,T,\vec{x}^T{}',\vec{y}^T{}'}_{Ber}(E) \geq \big(1 - 3e^{-(C-1)^2/2}\big)^k \geq 1/2,
 	\]
@@ -1648,16 +1638,16 @@ $$\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz \leqslant \lim_{T\rightarrow\infty
 	\]
 	In particular, we can find $N_{00}\in\mathbb{N}$ large enough depending on $p,\lambda,k,\epsilon,r,\alpha,\psi,\phi$ so that $\mathbb{P}(\Delta(T,\overline{z})\geq A\sqrt{T})<1/6$ for $N\geq N_{00}$. This gives a lower bound of $1/2 - 1/6 = 1/3$ for the first term in (9) for $N\geq N_{00}$.\\
 	
-	\noindent\textbf{Step 2:} It remains to bound $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 > \cdots > L_k\,|\,F)$. Note that on the event $F$, $L_k^N$ lies uniformly below the line segment connecting $L_1^N(rN^\alpha)$ and $L_1^N(RN^\alpha)$. Thus after raising the endpoints of $\vec{x}\,',\vec{y}\,'$, the bottom curve $L_k$ lies uniformly at a distance of at least $C(k-1)\sqrt{T}$ below the segment. Then in order to have $L_1 > \cdots > L_k$ given $F$, it suffices to require each $L_i$ to lie within a distance of $C\sqrt{T}/2$ from  the line segment of slope $p$ starting at $x_i'$. That is,
+	\noindent\textbf{Step 2:} It remains to bound $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 > \cdots > L_k\,|\,F)$. Note that on the event $F$, $L_k^N$ lies uniformly below the line segment connecting $L_1^N(rN^\alpha)$ and $L_1^N(RN^\alpha)$. Thus after raising the endpoints of $\vec{x}\,',\vec{y}\,'$, the bottom curve $L_k$ lies uniformly at a distance of at least $C(k-1)\sqrt{T}$ below the segment. Then in order to have $L_1 > \cdots > L_k$ given $F$, it suffices to require each $L_i$ to lie within a distance of $C\sqrt{T}/2$ from  the line segment connecting its endpoints. That is,
 	\begin{align}
 	&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} (L_1 > \cdots > L_k\,|\,F) \nonumber\\
-	\geq \; & \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \Big(\sup_{x\in[r,R]} \big|L_i(xN^\alpha) - x_i' - p(x-r)N^\alpha\big| \leq C\sqrt{T}/2, \;1\leq i\leq k-1\,\Big|\,F\Big) \nonumber\\
-	= \; & \Big[ \mathbb{P}^{0,T,0,\overline{z}}_{Ber} \Big(\sup_{s\in[0,T]} \big|L_1(s+rN^\alpha) - ps\big| > C\sqrt{T}/2\Big)\Big]^{k-1} \nonumber\\
-	= \; & \Big[ 1 - \mathbb{P}\Big(\sup_{s\in[0,T]} \big|\ell^{(T,\overline{z})} - ps\big| \leq C\sqrt{T}/2\Big)\Big]^{k-1}, \label{21avoidest}
+	\geq \; & \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \Big(\sup_{x\in[r,R]} \big|L_i(xN^\alpha) - x_i' - (\overline{z}/T)(x-r)N^\alpha\big| \leq C\sqrt{T}/2, \;1\leq i\leq k-1\,\Big|\,F\Big) \nonumber\\
+	= \; & \Big[ \mathbb{P}^{0,T,0,\overline{z}}_{Ber} \Big(\sup_{s\in[0,T]} \big|L_1(s+rN^\alpha) - (\overline{z}/T)s\big| > C\sqrt{T}/2\Big)\Big]^{k-1} \nonumber\\
+	= \; & \Big[ 1 - \mathbb{P}\Big(\sup_{s\in[0,T]} \big|\ell^{(T,\overline{z})} - (\overline{z}/T)s\big| \leq C\sqrt{T}/2\Big)\Big]^{k-1}, \label{21avoidest}
 	\end{align}
 	with $\mathbb{P}$ and $\ell^{(T,\overline{z})}$ as in Step 1. In the third line, we used the fact that $L_1,\dots,L_{k-1}$ are independent from each other and from $L_k$ under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. Let $B^\sigma$ be as in Step 1. Then we have
 	\begin{align*}
-	&\mathbb{P} \Big(\sup_{s\in[0,T]} \big|\ell^{(T,\overline{z})}(s) - ps\big| > C\sqrt{T}/2\Big)\\
+	&\mathbb{P} \Big(\sup_{s\in[0,T]} \big|\ell^{(T,\overline{z})}(s) - (\overline{z}/T)s\big| > C\sqrt{T}/2\Big)\\
 	\leq \; & \mathbb{P}\Big(\sup_{s\in[0,T]} |\sqrt{T}B^{\sigma}_{s/T}| > C\sqrt{T}/4\Big) + \mathbb{P}\Big(\Delta(T,\overline{z}) > C\sqrt{T}/4\Big).
 	\end{align*}
 	The first term is equal to
