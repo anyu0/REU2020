@@ -47,5 +47,137 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 %
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Proof of Theorem \ref{PropTightGood} }\label{Section4.2}
-
+	First, we will begin with a statement of the theorem we seek to prove. \\
+	
+	\noindent\textbf{Theorem 2.25}
+	Fix $k \in \mathbb{N}$ with $k \geq 2$, $\alpha, \lambda > 0$ and $p \in (0,1)$ and let $\mathfrak{L}^N = (L^N_1, L^N_2, \dots, L^N_k)$ be an $(\alpha, p, \lambda)$-good sequence of $\llbracket 1, k \rrbracket$-indexed Bernoulli line ensembles.  Set
+	$$f^N_i(s) =  N^{-\alpha/2}(L^N_i(sN^{\alpha}) - p s N^{\alpha} + \lambda s^2 N^{\alpha/2}), \mbox{ for $s\in [-\psi(N) ,\psi(N)]$ and $i = 1,\dots, k -1$,}$$
+	and extend $f^N_i$ to $\mathbb{R}$ by setting for $i = 1, \dots, k - 1$
+	$$f^N_i(s) = f^N_i(-\psi(N)) \mbox{ for $s \leq -\psi(N)$ and } f^N_i(s) = f_N(\psi(N)) \mbox{ for $s \geq \psi(N)$}.$$
+	Let $\mathbb{P}_N$ denote the law of $\{f^N_i\}_{i = 1}^{k-1}$ as a $\llbracket 1, k-1 \rrbracket$-indexed line ensemble (i.e. as a random variable in $(C( \llbracket 1, k -1 \rrbracket \times \mathbb{R}), \mathcal{C})$). Then the sequence $\mathbb{P}_N$ is tight.\\
+	
+	\noindent \textit{Proof:} As shown in Exercise 9, the sequence $\mathbb{P}_N$ is tight if the following two conditions are met:
+	\begin{align}
+	\lim_{a\to\infty} &\limsup_{N\to\infty} \pr(|f^N_i(0)|\geq a) = 0\\
+	\lim_{\delta\to 0} &\limsup_{N\to\infty} \pr\bigg(\sup_{\substack{x,y\in [-R,R], \\ |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon\bigg)= 0.
+	\end{align}
+	For the sake of clarity, we will divide this proof into sections in which the first section will prove the former condition, then the second section will prove the latter.
+	\\\\\noindent \textbf{Step 1:} In this step, we will prove condition (1).
+	
+	In order to prove the first condition, we will make great use of Lemmata 4.2 and 4.3, with Lemma 4.2 giving an upper bound for the top line in the line ensemble and Lemma 4.3 giving a lower bound for the bottom line, and thus providing upper and lower bounds for each intermediate line.
+	
+	First, we will reformulate (1) slightly to find that $\lim_{a\to\infty}\limsup_{N\to\infty} \pr(|f^N_i(0)|\geq a)=0$ is the same statement as for all $\epsilon>0$, there exists an $a>0$ and $N'$ such that $N>N'$ implies $\pr(|f^N_i(0)|\geq a)<\epsilon$. 
+	
+	Now, using the definition of $f_i^N(s)$, we remember that $f^N_i(0)=N^{-\alpha/2}L_i^N(0)$, which tells us that we need to prove that for all $\epsilon>0$, there exists an $a>0$ and $N'$ such that $N>N'$ implies 
+	$$\pr(|L_i^N(0)|\geq a N^{-\alpha/2})<\epsilon$$
+	Lemmata 4.2 and 4.3 give us that there exist $R_1(\epsilon)>0$, $R_2(\epsilon)>0$ and $N_2(\epsilon),N_3(\epsilon)$ such that 
+	\begin{align*}
+	N>N_2(\epsilon) &\text{ implies } \pr\left(\sup_{s\in[t_3^-,t_3^+]}\left(L_1^N(s)-ps\right)\geq R_1(\epsilon)N^{\alpha/2}\right)<\epsilon\\
+	N>N_3(\epsilon) &\text{ implies } \pr\left(\inf_{s\in[t_2^-,t_2^+]}\left(L_k^N(s)-ps\right)\leq -R_2(\epsilon)N^{\alpha/2}\right)<\epsilon
+	\end{align*}
+	where $t_i^\pm=\floor{\pm(r+i)N^\alpha}$ for any $r>0$. In particular, since $0\in[t_i^-,t_i^+]$ for any $t_i^-,t_i^+$, we know that 
+	\begin{align*}
+	N>N_2&\text{ implies }\pr\left(L_1^N(0)\geq R_1\left(\frac{\epsilon}{2}\right)N^{\alpha/2}\right)\leq \pr\left(\sup_{s\in[t_3^-,t_3^+]}\left(L_1^N(s)-ps\right)\geq R_1\left(\frac \epsilon 2\right)N^{\alpha/2}\right)<\frac\epsilon 2\\
+	N>N_3&\text{ implies }\pr\left(L_k^N(0)\leq -R_2\left(\frac{\epsilon}{2}\right)N^{\alpha/2}\right)\leq \pr\left(\inf_{s\in[t_2^-,t_2^+]}\left(L_k^N(s)-ps\right)\leq -R_2\left(\frac\epsilon 2\right)N^{\alpha/2}\right)<\frac \epsilon 2
+	\end{align*}
+	Therefore, allow $N'=\max\left\{N_2\left(\frac{\epsilon}{2}\right),N_3\left(\frac{\epsilon}{2}\right)\right\}$ and $a=\max\left\{R_1\left(\frac{\epsilon}{2}\right),R_2\left(\frac{\epsilon}{2}\right)\right\}$, and so because $L_1^N(0)>L_2^N(0)>...>L_k^N(0)$, for each $i\in \{1,2,...,k\}$, given the above definitions of $N'$ and $a$ we find that 
+	$$\pr(|L_i^N(0)|\geq a N^{-\alpha/2})\leq \pr\left(L_1^N(0)\geq R_1\left(\frac{\epsilon}{2}\right)N^{\alpha/2}\right)+\pr\left(L_k^N(0)\leq -R_2\left(\frac{\epsilon}{2}\right)N^{\alpha/2}\right)<\epsilon$$
+	This is the desired result, giving us tightness of $\{f_i^N(0)\}$ and so completing Step 1.\\\\\noindent
+	\textbf{Step 2:} Here, we will prove condition (2) in three parts.\\
+	\textbf{Part 1}: 
+	We will begin here with a reformulation of the conditions on $f_i^N$ to conditions on $L_i^N$ so that we may use existing knowledge about that structure. To remind ourselves of the statement of condition (2), let us restate it here,expanding the definitions of limits fully. We seek that $\forall \epsilon,\eta>0$ and $R>0$, there exists a $\delta$ and $N_0$ such that $N>N_0$ implies 
+	\[
+	\pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon\bigg)<\eta
+	\]
+	
+	We may then reformulate this expression slightly by expanding the $f_i^N$ to their definition and then contracting them by a factor of $N^\alpha$. 
+	\begin{align}
+	\pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} \abs*{N^{-\alpha/2}\left(L^N_i(xN^{\alpha}) - L^N_i(yN^\alpha)\right)-p(x-y)N^{\alpha/2}+\lambda(x^2-y^2)} \geq \epsilon\bigg)
+	\end{align}
+	
+	Now given that $|x-y|<\delta$ and $x,y\in [-R,R]$, we know that $|x+y|\leq 2R$ and $|x-y|<\delta$, and so $|x^2-y^2|\leq 2R\delta$, and so by the triangle inequalty, we know that the probability above is upper bounded by 
+	\[
+	\pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} N^{-\alpha/2}\abs*{L_i^N(xN^\alpha)-L_i^N(yN^\alpha)-p(x-y)N^\alpha}+2\lambda R\delta\geq \epsilon\bigg)
+	\]
+	and so ensure that $\delta\leq \frac{\epsilon}{8\lambda R}$ to find that expression (3) is upper bounded by 
+	\[
+	\pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} \abs*{L_i^N(xN^\alpha)-L_i^N(yN^\alpha)-p(x-y)N^\alpha}\geq \frac{3N^{\alpha/2}\epsilon}4\bigg)
+	\]
+	which may be scaled by $N^\alpha$ to have the equal expression
+	\begin{align}
+	\pr\bigg(\sup_{\substack{x,y\in [-RN^\alpha,RN^\alpha],\\ |x-y|\leq \delta N^\alpha}} \abs*{L_i^N(x)-L_i^N(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4\bigg)
+	\end{align}
+	This string of arguments has given us the inequality 
+	\[
+	\pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon\bigg)<\pr\bigg(\sup_{\substack{x,y\in [-RN^\alpha,RN^\alpha],\\ |x-y|\leq \delta N^\alpha}} \abs*{L_i^N(x)-L_i^N(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4\bigg)
+	\]
+	which implies that if (4) is less than $\eta$, condition (2) has been met. 
+	\\\\\noindent \textbf{Step 2, Part 2:} In this step, we will establish events in order to size bias our event on arbitrarily large sets that we approximate the entire probability space with certain extra conditions.
+	
+	Let us denote in the limit above as follows, as well as two other events with high probability:
+	\begin{align*}
+	A_\delta&=\bigg\{\sup_{\substack{x,y\in [-RN^\alpha ,RN^\alpha],\\ |x-y|\leq\delta N^{\alpha}}} \abs*{L_i^N(x)-L_i^N(y)-p(x-y)}\geq 3\epsilon N^{\alpha/2}/4\bigg\}\\
+	E_1&=\left\{\max_{1\leq i \leq m}\abs*{f_i(\pm R)}\leq M_1\right\}\\
+	E_2&=\left\{Z(-RN^\alpha, RN^\alpha, \vec x, \vec y, \infty, L_{m+1}^N[-RN^\alpha, RN^\alpha])>\delta_1\right\}
+	\end{align*}
+	We can understand these events as follows: $A_\delta$ is the event whose probability must be bounded by $\eta$ for tightness to occur, $E_1$ is an event with a bounding condition on the entrance and exit data of the line ensemble with $M_1$ being some large constant, and $E_2$ is an event conditioned on a high enough acceptance probability, as defined in Definition 2.21.
+	
+	We want to show that these events occur with very high probability for some choice of $\delta_1$ and $M_1$. In order to do this, we may use Proposition 4.1 and Lemmata 4.2 and 4.3. 
+	
+	For $E_1$,  we first know that $L_i^N(\pm RN^\alpha)> L_{i+1}^N(\pm RN^\alpha)$, since the index $i$ is the ordering of line ensembles by the values of their entry and exit data, which implies that $f_i^N(\pm R)>f_{i+1}^N(\pm R)$ as well. Therefore, we find that
+	\begin{align*}
+	E_1^c=&\{f_1(\pm R)> M_1\} \cup \{f_m(\pm R)<-M_1\} \\
+	=&\left\{ \left(L_1^N(\pm RN^\alpha)\mp pRN^\alpha\right)> (M_1-\lambda R^2)N^{\frac \alpha 2}\right\} \cup \left\{\left(L_m^N(\pm RN^\alpha)\mp pRN^\alpha\right)< -(\lambda R^2+M_1)N^{\frac\alpha 2}\right\}
+	\end{align*}
+	Therefore we will now calculate the probability of both of these events to get an upper bound of $E_1^c$. For the first event, we find that $$
+	\pr\left(L_1^N(\pm RN^\alpha)\mp prN^\alpha>(M_1-\lambda R^2)N^{\frac\alpha2}\right)
+	\leq\pr\left(\sup_{s\in[t_3^-,t_3^+]}L_1^N(s)-ps>(M_1-\lambda R^2)N^{\frac\alpha 2}\right)
+	$$ because $t_3^-<-RN^\alpha<RN^\alpha<t_3^+$ by definition. By Lemma 4.2, we find that if $M_1>R_1(\frac{\eta}{8})+\lambda R^2$ and $N>N_2(\frac\eta 8)$, then this probability is less than $\frac\eta 8$.
+	Now for the second event, \begin{align*}
+	\pr \left(L_m^N(\pm RN^\alpha)\mp pRN^\alpha< -(\lambda R^2+M_1)N^{\frac\alpha 2}\right)&\leq \pr \left(L_m^N(\pm RN^\alpha)\mp pRN^\alpha< -M_1N^{\frac\alpha 2}\right)\\
+	&\leq \pr\left(\inf_{s\in[t_2^-,t_2^+]}L_m^N(s)-ps<-M_1N^{\frac{\alpha}{2}}\right)
+	\end{align*}
+	with the last step justified by the inequality $t_2^-<-RN^{\frac{\alpha}{2}}<RN^{\frac{\alpha}{2}}<t_2^+$. By Lemma 4.3, we know that if $M_1\geq R_2(\frac{\eta}{8})$ and $N>N_2(\frac{\eta}{8})$ then this probability is less than $\frac{\eta}{8}$
+	
+	Therefore, we find that with $M_1=\max\{R_1(\frac{\eta}{8})+\lambda R^2,R_2(\frac\eta8)\}$ the probability of each event is bounded by $\frac{\eta}8$, so $$\pr(E_1^c)<\frac{\eta}{4}$$ by subadditivity.
+	
+	Now, for $E_2$, Proposition 4.1 gives us that for $\frac{\eta}{4}$ and $r=R-1$, there exists some $\delta_1(\frac\eta 4)$ and $N_1(\frac{\eta}{4})$ such that $N\geq N_1$ implies we have  $\pr\left(Z(-RN^\alpha, RN^\alpha, \vec x, \vec y, L_m[-RN^\alpha,RN^\alpha])<\delta_1\right)<\frac{\eta}{4}$. and therefore \[
+	\pr\left( E_2^c\right)<\frac{\eta}{4}
+	\]
+	Therefore, we have found that given $N>\max\{N_1(\frac{\eta}{4}),N_2(\frac{\eta}{8}),N_3(\frac{\eta}{8})\}$, $\pr(E_1^c\cup E_2^c)<\frac{\eta}{2}$ and therefore $$\pr(A_\delta)= \pr(A_\delta\cap E_1\cap E_2)+\pr(A_\delta\cap\left(E_1^c\cup E_2^c\right))\leq \pr(A_\delta\cap E_1\cap E_2)+\frac{\eta}{2}$$ and hence $\pr(A_\delta\cap E_1\cap E_2)\leq \frac{\eta}{2}\implies \pr(A_\delta)<\eta$.\\\\\noindent
+	\textbf{Step 2, Part 3:} In this step we will bound $\pr(A_\delta\cap E_1\cap E_2)$ to prove Condition (2), following from the results of the previous step.\\
+	First, let us begin by defining a $\sigma$-algebra, the usefulness of which will be shown shortly. 
+	$$\mathcal{F}=\sigma\left(L_{m+1}^N,L_1^N(\pm N^\alpha R), L_2^N(\pm N^\alpha R),\dots, L_m^N(\pm N^\alpha R)\right).$$
+	
+	We claim that $E_1, E_2\in \mathcal{F}$. This is trivial for $E_1$, and for $E_2$ we need only apply the definition of the acceptance probability, Definition 2.21, since the values of $\vec x$ and $\vec y$ are determined by $L_i^N$ for $i\in \llbracket 1,m\rrbracket$ and the bottom bounding curve is $L_{m+1}^N$ all of which are generators for $\mathcal{F}$.
+	
+	The $\mathcal{F}$-measurability of $\indic_{E_1}$ and $\indic_{E_2}$ as well as the tower property of conditional expectation give us the following equations
+	\begin{align*}
+	\pr(A_\delta\cap E_1\cap E_2)&=\ex(\indic_{A_\delta}\cdot \indic_{E_1}\cdot \indic_{E_2})\\
+	&=\ex(\indic_{E_1}\cdot \indic_{E_2}\cdot\ex(\indic_{A_\delta}\mid \mathcal{F}))
+	\end{align*}
+	Directly from the Schur-Gibbs property of the line ensemble, as defined in 2.16 we know that 
+	\[\ex\left(\indic_{A_\delta}\mid \mathcal{F}\right)=\ex_{avoid,Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y, \infty, L_{m+1}^N}\left(\indic_{A_\delta}\right)
+	\]
+	We now observe that the Radon-Nikodym derivative of $\pr_{avoid,Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y, \infty, L_{m+1}^N}$ with respect to $\pr_{Ber}^{-RN^\alpha, RN^\alpha,\vec x,\vec y}$ is $$\frac{\indic_{\left\{L_i\leq L_{i+1},\forall i\in [1,m]\right\}}}{Z(-RN^\alpha,RN^\alpha,\vec x, \vec y, L_{m+1}^N)}.$$ To see this, note that for any event $A$,
+	\begin{align*}
+	&\pr_{avoid,Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y, \infty, L_{m+1}^N}(A) = \frac{\pr_{Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y}(A\cap\left\{L_i\leq L_{i+1},\forall i\in [1,m]\right\})}{\pr_{Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y}(L_i\leq L_{i+1},\forall i\in [1,m])}\\
+	= \; & \frac{\ex_{Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y}\left[\indic_A \indic_{\left\{L_i\leq L_{i+1},\forall i\in [1,m]\right\}}\right]}{Z(-RN^\alpha,RN^\alpha,\vec{x},\vec{y},L^N_{m+1})} = \int_A \frac{\indic_{\left\{L_i\leq L_{i+1},\forall i\in [1,m]\right\}}}{Z(-RN^\alpha,RN^\alpha,\vec x, \vec y, L_{m+1}^N)}\,d\pr_{Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y}.
+	\end{align*}
+	
+	Therefore, we find that 
+	\begin{align*}
+	\ex\left(\indic_{A_\delta}\mid \mathcal{F}\right)&=\ex_{Ber}^{-RN^\alpha, RN^\alpha,\vec x,\vec y}\left(\frac{\indic_{A_\delta}\cdot \indic_{\left\{L_i\leq L_{i+1},\forall i\in [1,m]\right\}}}{Z(-RN^\alpha,RN^\alpha,\vec x, \vec y, L_{m+1}^N)}\right)
+	\\
+	\pr(A_\delta\cap E_1\cap E_2)&=\ex\left(\indic_{E_1}\cdot\indic_{E_2}\cdot \ex_{Ber}^{-RN^\alpha, RN^\alpha,\vec x,\vec y}\left(\frac{\indic_{A_\delta}\cdot \indic_{\left\{L_i\leq L_{i+1},\forall i\in [1,m]\right\}}}{Z(-RN^\alpha,RN^\alpha,\vec x, \vec y, L_{m+1}^N)}\right)\right)
+	\end{align*}
+	Now given the factor $\indic_{E_2}$, we know that either $Z(-RN^\alpha,RN^\alpha,\vec x,\vec y, L_{m+1}^N)>\delta_1$, or the entire expression is $0$. Hence, we know that 
+	\begin{align*}
+	\pr(A_\delta\cap E_1\cap E_2)&\leq \ex\left(\indic_{E_1}\cdot\indic_{E_2}\cdot\ex_{Ber}^{-RN^\alpha,RN^\alpha,\vec x,\vec y}\left(\frac{\indic_{A_\delta}}{\delta_1}\right)\right)\\
+	&=\ex\left(\frac{\indic_{E_1}\cdot \indic_{E_2}}{\delta_1}\pr_{Ber}^{-RN^\alpha,RN^\alpha,\vec x,\vec y}(A_\delta)\right).
+	\end{align*}
+	By Lemma 3.13, we know that there exists a $N_4$ and $\delta$ such that $N>N^4$ implies that
+	\[\pr_{Ber}^{-RN^\alpha,RN^\alpha,\vec x,\vec y}(A_\delta)<\frac{\eta\cdot\delta_1}2\] and therefore we find that $$\pr\left(A_\delta\cap E_1\cap E_2\right)\leq \frac{\eta}{2}$$ which is precisely the bound we found to be required at the end of Step 2, part 2. 
+	
+	Therefore, we have found that the two conditions we set out to prove are correct and this implies the tightness of $\pr_N$ as defined in Theorem 2.25.
 
