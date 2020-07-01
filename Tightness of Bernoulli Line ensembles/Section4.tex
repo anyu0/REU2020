@@ -47,16 +47,8 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 %
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Proof of Theorem \ref{PropTightGood} }\label{Section4.2}
-	First, we will begin with a statement of the theorem we seek to prove. \\
 	
-	\noindent\textbf{Theorem 2.25}
-	Fix $k \in \mathbb{N}$ with $k \geq 2$, $\alpha, \lambda > 0$ and $p \in (0,1)$ and let $\mathfrak{L}^N = (L^N_1, L^N_2, \dots, L^N_k)$ be an $(\alpha, p, \lambda)$-good sequence of $\llbracket 1, k \rrbracket$-indexed Bernoulli line ensembles.  Set
-	$$f^N_i(s) =  N^{-\alpha/2}(L^N_i(sN^{\alpha}) - p s N^{\alpha} + \lambda s^2 N^{\alpha/2}), \mbox{ for $s\in [-\psi(N) ,\psi(N)]$ and $i = 1,\dots, k -1$,}$$
-	and extend $f^N_i$ to $\mathbb{R}$ by setting for $i = 1, \dots, k - 1$
-	$$f^N_i(s) = f^N_i(-\psi(N)) \mbox{ for $s \leq -\psi(N)$ and } f^N_i(s) = f_N(\psi(N)) \mbox{ for $s \geq \psi(N)$}.$$
-	Let $\mathbb{P}_N$ denote the law of $\{f^N_i\}_{i = 1}^{k-1}$ as a $\llbracket 1, k-1 \rrbracket$-indexed line ensemble (i.e. as a random variable in $(C( \llbracket 1, k -1 \rrbracket \times \mathbb{R}), \mathcal{C})$). Then the sequence $\mathbb{P}_N$ is tight.\\
-	
-	\noindent \textit{Proof:} As shown in Exercise 9, the sequence $\mathbb{P}_N$ is tight if the following two conditions are met:
+	As shown in Exercise 9, the sequence $\mathbb{P}_N$ is tight if the following two conditions are met:
 	\begin{align}
 	\lim_{a\to\infty} &\limsup_{N\to\infty} \pr(|f^N_i(0)|\geq a) = 0\\
 	\lim_{\delta\to 0} &\limsup_{N\to\infty} \pr\bigg(\sup_{\substack{x,y\in [-R,R], \\ |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon\bigg)= 0.

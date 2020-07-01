@@ -1499,7 +1499,7 @@ $$\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz \leqslant \lim_{T\rightarrow\infty
 	Here, $\mathbb{P}$ and $\ell^{(0,z^T)}$ are provided by Theorem 3.3, which also gives a Brownian bridge $B^{\sigma}$ with variance $\sigma^2 = p(1-p)$. Since $z^T \geq pT + (M_2 - M_1)\sqrt{T} - 1$, the second line above is
 	\begin{align*}
 	\leq \; & \mathbb{P} \Big( \ell^{(0,z^T)}(T/2) - z^T/2 \leq \frac{M_1+M_2}{2}(1-\sqrt{T}) - C\sqrt{T} + 2\Big)\\
-	\leq \; & \mathbb{P} \Big( \sqrt{T}\,B^{\sigma}_{1/2} \leq \frac{M_1+M_2}{2}(1-\sqrt{T}) - C\sqrt{T} + 2\Big)\\
+	\leq \; & \mathbb{P} \Big( \sqrt{T}\,B^{\sigma}_{1/2} \leq \frac{M_1+M_2}{4}(1-\sqrt{T}) - C\sqrt{T}/2 + 1\Big)\\
 	&\quad + \mathbb{P}\Big(\Delta(0,z^T) \geq \frac{M_1+M_2}{4}(\sqrt{T}-1) + C\sqrt{T}/2 + 1\Big).
 	\end{align*}
 	The first term is bounded above by
@@ -1577,7 +1577,7 @@ $$\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz \leqslant \lim_{T\rightarrow\infty
 	A &= \left\{L_1^N\left(\frac{R+r}{2}\,N^\alpha\right) - pN^\alpha\,\frac{R+r}{2} + \lambda\left(\frac{R+r}{2}\right)^2 N^{\alpha/2} < -\phi(\epsilon/8)N^{\alpha/2}\right\},\\
 	B &= \left\{\max_{x\in[r,R]} \left(L_k^N(xN^\alpha) - pxN^\alpha\right) \leq -(\lambda R^2 + \phi(\epsilon/8)) N^{\alpha/2} \right\}.
 	\end{align*}
-	We aim to bound $\mathbb{P}(B)$, using the fact that $\mathbb{P}(A) \leq \epsilon/4$ for large enough $N$ and $M$ by one-point tightness. Recall that with probability $>1-\epsilon/4$, we have 
+	We aim to bound $\mathbb{P}(B)$, using the fact that $\mathbb{P}(A) \leq \epsilon/4$ for large enough $N$ by one-point tightness. Recall that with probability $>1-\epsilon/4$, we have 
 	\begin{align*}
 	& prN^\alpha - (\lambda r^2+\phi(\epsilon/8))N^{\alpha/2} < L_1^N(rN^\alpha) <  prN^\alpha - (\lambda r^2-\phi(\epsilon/8))N^{\alpha/2},\\
 	& pRN^\alpha - (\lambda R^2+\phi(\epsilon/8))N^{\alpha/2} < L_1^N(RN^\alpha) <  pRN^\alpha - (\lambda R^2-\phi(\epsilon/8))N^{\alpha/2}
@@ -1617,29 +1617,32 @@ $$\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz \leqslant \lim_{T\rightarrow\infty
 	
 	\noindent\textbf{Step 1:} Write $\overline{x}$ and $\overline{y}$ for the floors of the upper bounds on $x_1$ and $y_1$ in (2) above, and write $\overline{z} = \overline{y}-\overline{x}$. We can rewrite the first term in \eqref{21xyest} as
 	\begin{align*}
-	&\mathbb{P}^{0,T,x_1',y_1'}_{Ber} \Big(L_1(T/2) - pN^\alpha \frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < \phi(\epsilon/8)N^{\alpha/2}\Big)\\
+	&\mathbb{P}^{0,T,x_1',y_1'}_{Ber} \Big(L_1(T/2) - pN^\alpha \frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\phi(\epsilon/8)N^{\alpha/2}\Big)\\
 	= \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - pN^\alpha\frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\big(\phi(\epsilon/8) + C(k-1)\sqrt{R-r}\big)N^{\alpha/2}\Big)\\
-	\geq \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - \frac{\overline{x} + \overline{y}}{2} < \Big( \lambda\Big(\frac{R^2+r^2}{2}\Big) - \lambda\Big(\frac{R+r}{2}\Big)^2 - C(k-1)\sqrt{R-r} - 2\phi(\epsilon/8)\Big)N^{\alpha/2} - 1\Big)\\
-	\geq \; & \mathbb{P}^{0,T,0,\overline{z}}_{Ber}\Big(L_1(T/2) - \overline{z}/2 < A\sqrt{T}\Big).
+	\geq \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - \frac{\overline{x} + \overline{y}}{2} < \Big( \lambda\Big(\frac{R^2+r^2}{2}\Big) - \lambda\Big(\frac{R+r}{2}\Big)^2 - C(k-1)\sqrt{R-r} - 2\phi(\epsilon/8)\Big)N^{\alpha/2} - 1\Big).
 	\end{align*}
-	The inequality in the second to last line follows from the definitions of $\overline{x},\overline{y}$. For the last line, we used the fact that
+	The inequality in the last line follows from the definitions of $\overline{x},\overline{y}$. Observe that
 	\[
 	\frac{R^2+r^2}{2} - \left(\frac{R+r}{2}\right)^2 = \frac{R^2 + r^2}{4} - \frac{rR}{4} = O(R^2)
 	\]
-	for fixed $r$. Thus we can take $R$ large enough depending on $\lambda,k,p,\epsilon,r,\phi$ (recalling that $C$ depends only on $k,p$) so that the quantity on the right hand side is positive. We fix $R$ here for the remainder of the proof. The last inequality then holds for a constant $A$ with the same dependencies as $R$. Now to estimate this last probability, let $\ell^{(T,\overline{z})}$ have the same law as $L_1$ under a probability measure $\mathbb{P}$ as in Theorem 3.3. Also let $B^\sigma$, $\sigma^2 = p(1-p)$, be the Brownian bridge provided by Theorem 3.3. Then the last probability is
+	for fixed $r$. Thus we can take $R$ large enough depending on $\lambda,k,p,\epsilon,r,\phi$ (recalling that $C$ depends only on $k,p$) so that the factor multiplying $N^{\alpha/2}$ on the right hand side in the last line is positive. We fix $R$ here for the remainder of the proof. Then we can find a constant $\gamma>0$ so that the last probability is bounded below by
+	\[
+	\mathbb{P}^{0,T,0,\overline{z}}_{Ber}\Big(L_1(T/2) - \overline{z}/2 < \gamma\sqrt{T}\Big).
+	\]
+	To estimate this probability, let $\ell^{(T,\overline{z})}$ have the same law as $L_1$ under a probability measure $\mathbb{P}$ as in Theorem 3.3. Also let $B^\sigma$, $\sigma^2 = p(1-p)$, be the Brownian bridge provided by Theorem 3.3. Then the last probability is
 	\begin{align*}
-	& \mathbb{P}\Big( \ell^{(T,\overline{z})}(T/2) - \overline{z}/2 < A\sqrt{T}\Big) = \mathbb{P}\Big(\Big[\ell^{(T,\overline{z})}(T/2) - \overline{z}/2 - \sqrt{T}B^\sigma_{1/2}\Big] + \sqrt{T}B^\sigma_{1/2} < A\sqrt{T}\Big)\\
-	\geq \; & \mathbb{P}\Big(\sqrt{T}B^\sigma_{1/2} < 0\quad\mathrm{and}\quad \Delta(T,\overline{z}) < A\sqrt{T}\Big) \geq \frac{1}{2} - \mathbb{P}\Big(\Delta(T,\overline{z}) \geq A\sqrt{T}\Big).
+	& \mathbb{P}\Big( \ell^{(T,\overline{z})}(T/2) - \overline{z}/2 < \gamma\sqrt{T}\Big) = \mathbb{P}\Big(\Big[\ell^{(T,\overline{z})}(T/2) - \overline{z}/2 - \sqrt{T}B^\sigma_{1/2}\Big] + \sqrt{T}B^\sigma_{1/2} < \gamma\sqrt{T}\Big)\\
+	\geq \; & \mathbb{P}\Big(\sqrt{T}B^\sigma_{1/2} < 0\quad\mathrm{and}\quad \Delta(T,\overline{z}) < \gamma\sqrt{T}\Big) \geq \frac{1}{2} - \mathbb{P}\Big(\Delta(T,\overline{z}) \geq \gamma\sqrt{T}\Big).
 	\end{align*}
 	Here, $\Delta(T,\overline{z})$ is as defined in Theorem 3.3. By Chebyshev's inequality and Theorem 3.3, there are constants $K,a,\beta$ depending on $q$, hence on $p,\lambda,k,\epsilon,r,\alpha,\psi,\phi$, such that 
 	\begin{align*}
-	\mathbb{P}\Big(\Delta(T,\overline{z}) \geq A\sqrt{T}\Big) \leq e^{-aA\sqrt{T}}\ex[e^{a\Delta(T,\overline{z})}] \leq K\exp\Big[-aA\sqrt{T} + \beta(\log T)^2 + \frac{|\overline{z} - pT|^2}{T}\Big].
+	\mathbb{P}\Big(\Delta(T,\overline{z}) \geq \gamma\sqrt{T}\Big) \leq e^{-a\gamma\sqrt{T}}\ex[e^{a\Delta(T,\overline{z})}] \leq K\exp\Big[-a\gamma\sqrt{T} + \beta(\log T)^2 + \frac{|\overline{z} - pT|^2}{T}\Big].
 	\end{align*}
 	Observe that
 	\[
 	\frac{|\overline{z} - pT|^2}{T} \leq \frac{(\lambda(R^2-r^2) N^{\alpha/2} + 1)^2}{(R-r)N^\alpha} \leq 4\lambda^2(R+r)^2(R-r).
 	\]
-	In particular, we can find $N_{00}\in\mathbb{N}$ large enough depending on $p,\lambda,k,\epsilon,r,\alpha,\psi,\phi$ so that $\mathbb{P}(\Delta(T,\overline{z})\geq A\sqrt{T})<1/6$ for $N\geq N_{00}$. This gives a lower bound of $1/2 - 1/6 = 1/3$ for the first term in (9) for $N\geq N_{00}$.\\
+	In particular, we can find $N_{00}\in\mathbb{N}$ large enough depending on $p,\lambda,k,\epsilon,r,\alpha,\psi,\phi$ so that $\mathbb{P}(\Delta(T,\overline{z})\geq \gamma\sqrt{T})<1/6$ for $N\geq N_{00}$. This gives a lower bound of $1/2 - 1/6 = 1/3$ for the first term in (9) for $N\geq N_{00}$.\\
 	
 	\noindent\textbf{Step 2:} It remains to bound $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 > \cdots > L_k\,|\,F)$. Note that on the event $F$, $L_k^N$ lies uniformly below the line segment connecting $L_1^N(rN^\alpha)$ and $L_1^N(RN^\alpha)$. Thus after raising the endpoints of $\vec{x}\,',\vec{y}\,'$, the bottom curve $L_k$ lies uniformly at a distance of at least $C(k-1)\sqrt{T}$ below the segment. Then in order to have $L_1 > \cdots > L_k$ given $F$, it suffices to require each $L_i$ to lie within a distance of $C\sqrt{T}/2$ from  the line segment connecting its endpoints. That is,
 	\begin{align}
@@ -1737,7 +1740,7 @@ $$\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz \leqslant \lim_{T\rightarrow\infty
 		\begin{align*}
 		\mathbb{P}(\ell(T)\geq\alpha\,|\,\ell \geq \ell_{bot}) &= \frac{\mathbb{P}(\ell \geq \ell_{bot}\,|\,\ell(T)\geq\alpha) \mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell \geq \ell_{bot})}\\ 
 		&\geq \frac{\mathbb{P}(\ell \geq \ell_{bot}\,|\,\ell(T) < \alpha) \mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell \geq \ell_{bot})}\\
-		&= \big(1 - \mathbb{P}(\ell(T)\geq\alpha\,|\,\ell \geq \ell_{bot}\big)\cdot\frac{\mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell(T) < \alpha)}.
+		&= \big(1 - \mathbb{P}(\ell(T)\geq\alpha\,|\,\ell \geq \ell_{bot})\big)\cdot\frac{\mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell(T) < \alpha)}.
 		\end{align*}
 		The inequality in the second line follows from Corollary \ref{setpathcounting}. It follows that
 		\[
