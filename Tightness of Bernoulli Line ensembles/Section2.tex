@@ -22,7 +22,7 @@ The following defines the notion of a line ensemble.
 Let $\Sigma \subset \mathbb{Z}$ and $\Lambda \subset \mathbb{R}$ be an interval. A {\em $\Sigma$-indexed line ensemble $\mathcal{L}$} is a random variable defined on a probability space $(\Omega, \mathcal{F}, \mathbb{P})$ that takes values in $\left(C (\Sigma \times \Lambda), \mathcal{C}_{\Sigma}\right)$. Intuitively, $\mathcal{L}$ is a collection of random continuous curves (sometimes referred to as {\em lines}), indexed by $\Sigma$,  each of which maps $\Lambda$ in $\mathbb{R}$. We will often slightly abuse notation and write $\mathcal{L}: \Sigma \times \Lambda \rightarrow \mathbb{R}$, even though it is not $\mathcal{L}$ which is such a function, but $\mathcal{L}(\omega)$ for every $\omega \in \Omega$. For $i \in \Sigma$ we write $\mathcal{L}_i(\omega) = (\mathcal{L}(\omega))(i, \cdot)$ for the curve of index $i$ and note that the latter is a map $\mathcal{L}_i: \Omega \rightarrow C(\Lambda)$, which is $(\mathcal{C}, \mathcal{F})-$measurable.
 \end{definition}
 
-We will require the following result, whose proof is postponed until Section [Appendix]. In simple terms it states that the space $C (\Sigma \times \Lambda)$ where our random variables $\mathcal{L}$ take value has the structure of a complete, separable metric space. We say that a collection $(K_n)_{n\geq 1}$ of compact subsets $K_n\subset\Sigma\times\Lambda$ is a \textit{compact exhaustion} if $\bigcup_n K_n = \Sigma\times\Lambda$ and every compact subset of $\Sigma\times\Lambda$ is contained in some $K_n$.
+We will require the following result, whose proof is postponed until Section [Appendix]. In simple terms it states that the space $C (\Sigma \times \Lambda)$ where our random variables $\mathcal{L}$ take value has the structure of a complete, separable metric space. We say that a collection $(K_n)_{n\geq 1}$ of compact subsets $K_n\subset\Sigma\times\Lambda$ is a \textit{compact exhaustion} if $K_n\subseteq K_{n+1}$ for all $n\geq 1$, $\bigcup_n K_n = \Sigma\times\Lambda$, and every compact subset of $\Sigma\times\Lambda$ is contained in some $K_n$.
 \begin{lemma}\label{Polish} Let $(K_n)_{n\geq 1}$ be a compact exhaustion of $\Sigma\times\Lambda$. Define $d: C (\Sigma \times \Lambda) \times C (\Sigma \times \Lambda) \rightarrow [0, \infty)$ by
 \begin{equation} d (f,g) = \sum_{n=1}^\infty 2^{-n}\min\Big\{\sup_{(i,t)\in K_n} |f(i,t) - g(i,t)|, \, 1\Big\}.
 \end{equation}
@@ -37,6 +37,25 @@ We also say that $\{ \mathcal{L}^n: n \in \mathbb{N} \}$ is {\em tight} if for a
 
 We call a line ensemble {\em non-intersecting} if $\mathbb{P}$-almost surely $\mathcal{L}_i(r) > \mathcal{L}_j(r)$  for all $i < j$ and $r \in \Lambda$.
 \end{definition}
+
+We will require the following sufficient condition for tightness of a sequence of line ensembles, which extends \cite[Theorem 7.3]{Billing}. We give a proof in Section \ref{Appendix1}.
+
+\begin{lemma}\label{2Tight}
+	Let $\Lambda\subset\mathbb{R}$ be an interval and $\Sigma = \llbracket 1, N\rrbracket$. Let $([a_k,b_k])_{k\geq 1}$ be a compact exhaustion of $\Lambda$, and let $a_0 \in [a_k,b_k]$ for all $k$. Then $(\mathcal{L}^n)$ is tight if and only if for every $i\in\Sigma$ and $k\geq 1$, we have
+	\begin{enumerate}[label=(\roman*)]
+		
+		\item 
+		\[
+		\lim_{a\to\infty} \limsup_{n\to\infty}\, \pr(|\mathcal{L}^n_i(a_0)|\geq a) = 0.
+		\]
+		
+		\item For all $\epsilon>0$,
+		\[
+		\lim_{\delta\to 0} \limsup_{n\to\infty}\, \pr\bigg(\sup_{\substack{x,y\in [a_k,b_k], \\ |x-y|\leq\delta}} |\mathcal{L}^n_i(x) - \mathcal{L}^n_i(y)| \geq \epsilon\bigg) = 0.
+		\]
+		
+	\end{enumerate}
+\end{lemma}
 
 We next turn to formulating the Brownian Gibbs property -- we do this in Definition \ref{DefBGP} after introducing some relevant notation and results. If $W_t$ denotes a standard one-dimensional Brownian motion, then the process
 $$\tilde{B}(t) =  W_t - t W_1, \hspace{5mm} 0 \leq t \leq 1,$$
@@ -76,7 +95,7 @@ Observe that for $i \in \{1, \dots, k\}$ and an open set $U \in C([a,b])$ we hav
 $$\mathcal{Q}^{-1}(\{i\} \times U) = \{B_i \in U \} \cap E\; \in\; \mathcal{F},$$
 and since the sets $\{i\} \times U$ form an open basis of $C(\llbracket 1, k \rrbracket \times [a,b])$ we conclude that $\mathcal{Q}$ is $\mathcal{F}$-measurable. This implies that the law $\mathcal{Q}$ is indeed well-defined and also it is non-intersecting almost surely.  Also, given measurable subsets $A_1, \dots, A_k$ of $C([a,b])$ we have that 
 $$\mathbb{P}(\mathcal{Q}_i \in A_i \mbox{ for $i = 1, \dots, k$} ) = \frac{\mathbb{P}^{a,b, \vec{x},\vec{y}}_{free} \left( \{ B_i \in A_i \mbox{ for $i = 1, \dots, k$}\} \cap E \right) }{\mathbb{P}^{a,b, \vec{x},\vec{y}}_{free}(E)}.$$
-We denote the probability distribution of $\mathcal{Q}$ as $\mathbb{P}_{avoid}^{a,b, \vec{x}, \vec{y}, f, g}$ and write $\mathbb{E}_{avoid}^{a,b, \vec{x}, \vec{y}, f, g}$ for the expectation with respect to this measure.
+We denote the probability distribution of $\mathcal{Q}$ as $\mathbb{P}_{avoid}^{a,b, \vec{x}, \vec{y}, f, g}$ and write $\mathbb{E}_{avoid}^{a,b, \vec{x}, \vec{y}, f, g}$ for the expectation with respect to this measure. 
 \end{definition}
 
 The following definition introduces the notion of the Brownian Gibbs property from \cite{CorHamA}.
@@ -156,7 +175,7 @@ Let $\vec{x}, \vec{y} \in \mathfrak{W}_k$, $T_0, T_1 \in \mathbb{Z}$ with $T_0 <
 
 With the above data we define the {\em $(f,g)$-avoiding Bernoulli line ensemble on the interval $\llbracket T_0, T_1 \rrbracket$ with entrance data $\vec{x}$ and exit data $\vec{y}$} to be the $\Sigma$-indexed Bernoulli line ensemble $\mathfrak{Q}$ with $\Sigma = \llbracket 1, k\rrbracket$ on $\llbracket T_0, T_1 \rrbracket$ and with the law of $\mathfrak{Q}$ equal to $\mathbb{P}^{T_0,T_1, \vec{x},\vec{y}}_{Ber}$ (the law of $k$ independent uniform up-right paths $\{B_i: \llbracket T_0, T_1 \rrbracket \rightarrow \mathbb{R} \}_{i = 1}^k$ from $B_i(T_0) = x_i$ to $B_i(T_1) = y_i$) conditioned on the event 
 $$E  = \left\{ f(r) \geq B_1(r) \geq B_2(r) \geq \cdots \geq B_k(r) \geq g(r) \mbox{ for all $r \in \llbracket T_0, T_1 \rrbracket$} \right\}.$$ 
-The above definition is well-posed if there exist $B_i \in \Omega(T_0,T_1,x_i,y_i)$ for $i = 1, \dots, k$ that satisfy the conditions in $E$ (i.e. if the set of such up-right paths is not empty). We will denote by $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g)$ the set of collections of $k$ up-right paths that satisfy the conditions in $E$ and then the distribution on $\mathfrak{Q}$ is simply the uniform measure on $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g)$. We denote the probability distribution of $\mathfrak{Q}$ as $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ and write $\mathbb{E}_{avoid, Ber}^{T_0, T_1, \vec{x}, \vec{y}, f, g}$ for the expectation with respect to this measure. 
+The above definition is well-posed if there exist $B_i \in \Omega(T_0,T_1,x_i,y_i)$ for $i = 1, \dots, k$ that satisfy the conditions in $E$ (i.e. if the set of such up-right paths is not empty). We will denote by $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g)$ the set of collections of $k$ up-right paths that satisfy the conditions in $E$ and then the distribution on $\mathfrak{Q}$ is simply the uniform measure on $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g)$. We denote the probability distribution of $\mathfrak{Q}$ as $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ and write $\mathbb{E}_{avoid, Ber}^{T_0, T_1, \vec{x}, \vec{y}, f, g}$ for the expectation with respect to this measure. When $f=+\infty$ and $g=-\infty$, we simply write $\mathbb{P}^{T_0, T_1, \vec{x},\vec{y}}_{avoid, Ber}$ and $\mathbb{E}^{T_0, T_1, \vec{x},\vec{y}}_{avoid, Ber}$.
 \end{definition}
 
 It will be useful to formulate simple conditions under which $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g)$ is non-empty and thus $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ well-defined. We accomplish this in the following lemma, whose proof is postponed until Section [Appendix].

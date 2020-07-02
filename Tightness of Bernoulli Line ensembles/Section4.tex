@@ -23,8 +23,8 @@ t_1 =\lfloor (r+1) N^{\alpha} \rfloor,\quad t_2 = \lfloor (r+2)N^{\alpha} \rfloo
 \begin{proposition}\label{PropMain} For any $\epsilon > 0$, $r > 0$ and any $(\alpha,p,\lambda)$-good sequence of Bernoulli line ensembles $\big\{ \mathfrak{L}^N  = (L^N_1,L^N_2, \dots, L^N_k)\big\}_{N=1}^{\infty}$
 there exist $\delta > 0$ and $N_1$ (both depending on $\epsilon, r$ as well as $ \alpha, p, \lambda$ and the functions $\phi, \psi$ in Definition \ref{Def1}) such that for all $N \geq N_1$
 we have 
-$$\mathbb{P}\Big(Z\big( t_1^-,t_1^+, \vec{x}, \vec{y} , L_{k}\llbracket t_1^-, t_1^+\rrbracket\big) < \delta\Big) < \epsilon,$$
-where $\vec{x} = (L_1^N(t_1^-), \dots, L_{k-1}^N(t_1^-)$, $\vec{y} = (L_1^N(t_1^+), \dots, L^N_{k-1}(t_1^+))$,  $ L_{k}\llbracket t_1^-, t_1^+\rrbracket$ is the restriction of $L^N_k$ to the set $\llbracket t_1^-, t_1^+\rrbracket$, and $Z$ is the acceptance probability of Definition \ref{DefAP}. $\mathbb{P}$ is the measure on a probability space that supports $\big\{ \mathfrak{L}^N \big\}_{N = 1}^\infty$.
+$$\mathbb{P}\Big(Z\big( -t_1, t_1, \vec{x}, \vec{y} , L_{k}\llbracket -t_1, t_1\rrbracket\big) < \delta\Big) < \epsilon,$$
+where $\vec{x} = (L_1^N(-t_1), \dots, L_{k-1}^N(-t_1)$, $\vec{y} = (L_1^N(t_1), \dots, L^N_{k-1}(t_1))$,  $ L_{k}\llbracket -t_1, t_1\rrbracket$ is the restriction of $L^N_k$ to the set $\llbracket -t_1, t_1\rrbracket$, and $Z$ is the acceptance probability of Definition \ref{DefAP}. $\mathbb{P}$ is the measure on a probability space that supports $\big\{ \mathfrak{L}^N \big\}_{N = 1}^\infty$.
 \end{proposition}
 
 The general strategy we use to prove Proposition \ref{PropMain} is inspired by the proof of Proposition 6.5 in \cite{CorHamK}. We begin by stating three key lemmas that will be required. Their proofs are postponed to Section \ref{Section5}. All constants in the statements below will depend implicitly on $\alpha$, $r$, $p$, $\lambda$, and the functions $\phi, \psi$ from Definition \ref{Def1}, which are fixed throughout. We will not list this dependence explicitly.
@@ -48,34 +48,30 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Proof of Theorem \ref{PropTightGood} }\label{Section4.2}
 	
-	As shown in Exercise 9, the sequence $\mathbb{P}_N$ is tight if the following two conditions are met:
+	By Lemma \ref{2Tight}, it suffices to verify the following two conditions for all $1\leq i\leq k$, $R>0$, and $\epsilon>0$:
 	\begin{align}
-	\lim_{a\to\infty} &\limsup_{N\to\infty} \pr(|f^N_i(0)|\geq a) = 0\\
-	\lim_{\delta\to 0} &\limsup_{N\to\infty} \pr\bigg(\sup_{\substack{x,y\in [-R,R], \\ |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon\bigg)= 0.
+	\lim_{a\to\infty} &\limsup_{N\to\infty} \pr(|f^N_i(0)|\geq a) = 0 \label{ThmCond1}\\
+	\lim_{\delta\to 0} &\limsup_{N\to\infty} \pr\bigg(\sup_{\substack{x,y\in [-R,R], \\ |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon\bigg)= 0. \label{ThmCond2}
 	\end{align}
-	For the sake of clarity, we will divide this proof into sections in which the first section will prove the former condition, then the second section will prove the latter.
-	\\\\\noindent \textbf{Step 1:} In this step, we will prove condition (1).
+	For the sake of clarity, we will prove these conditions in two separate steps.
+	\\\\\noindent \textbf{Step 1.} In this step, we will prove condition \eqref{ThmCond1}. We will make use of Lemmas \ref{PropSup} and \ref{PropSup2} in order to obtain upper and lower bounds for the top and bottom curves respectively, thus bounding all curves.
 	
-	In order to prove the first condition, we will make great use of Lemmata 4.2 and 4.3, with Lemma 4.2 giving an upper bound for the top line in the line ensemble and Lemma 4.3 giving a lower bound for the bottom line, and thus providing upper and lower bounds for each intermediate line.
-	
-	First, we will reformulate (1) slightly to find that $\lim_{a\to\infty}\limsup_{N\to\infty} \pr(|f^N_i(0)|\geq a)=0$ is the same statement as for all $\epsilon>0$, there exists an $a>0$ and $N'$ such that $N>N'$ implies $\pr(|f^N_i(0)|\geq a)<\epsilon$. 
-	
-	Now, using the definition of $f_i^N(s)$, we remember that $f^N_i(0)=N^{-\alpha/2}L_i^N(0)$, which tells us that we need to prove that for all $\epsilon>0$, there exists an $a>0$ and $N'$ such that $N>N'$ implies 
-	$$\pr(|L_i^N(0)|\geq a N^{-\alpha/2})<\epsilon$$
-	Lemmata 4.2 and 4.3 give us that there exist $R_1(\epsilon)>0$, $R_2(\epsilon)>0$ and $N_2(\epsilon),N_3(\epsilon)$ such that 
+	Fix $\epsilon>0$. We show that there exists an $a>0$ and $N'$ such that $N>N'$ implies
+	$$\pr(|f^N_i(0)|\geq a) = \pr(|L_i^N(0)|\geq a N^{\alpha/2})<\epsilon.$$
+	By Lemmas \ref{PropSup} and \ref{PropSup2}, there exist $R_1 := R_1(\epsilon/2)>0$, $R_2 := R_2(\epsilon/2)>0$ and $N_2 := N_2(\epsilon/2),N_3 := N_3(\epsilon/2)$ such that 
 	\begin{align*}
-	N>N_2(\epsilon) &\text{ implies } \pr\left(\sup_{s\in[t_3^-,t_3^+]}\left(L_1^N(s)-ps\right)\geq R_1(\epsilon)N^{\alpha/2}\right)<\epsilon\\
-	N>N_3(\epsilon) &\text{ implies } \pr\left(\inf_{s\in[t_2^-,t_2^+]}\left(L_k^N(s)-ps\right)\leq -R_2(\epsilon)N^{\alpha/2}\right)<\epsilon
+	N\geq N_2 &\text{ implies } \pr\Big(\sup_{s\in[-t_3,t_3]}\left(L_1^N(s)-ps\right)\geq R_1N^{\alpha/2}\Big)<\epsilon/2,\\
+	N\geq N_3 &\text{ implies } \pr\Big(\inf_{s\in[-t_2,t_2]}\left(L_k^N(s)-ps\right)\leq -R_2 N^{\alpha/2}\Big)<\epsilon/2.
 	\end{align*}
-	where $t_i^\pm=\floor{\pm(r+i)N^\alpha}$ for any $r>0$. In particular, since $0\in[t_i^-,t_i^+]$ for any $t_i^-,t_i^+$, we know that 
+	In particular, taking $s=0$, we find that for $N\geq N' := N_2 \vee N_3$, 
 	\begin{align*}
-	N>N_2&\text{ implies }\pr\left(L_1^N(0)\geq R_1\left(\frac{\epsilon}{2}\right)N^{\alpha/2}\right)\leq \pr\left(\sup_{s\in[t_3^-,t_3^+]}\left(L_1^N(s)-ps\right)\geq R_1\left(\frac \epsilon 2\right)N^{\alpha/2}\right)<\frac\epsilon 2\\
-	N>N_3&\text{ implies }\pr\left(L_k^N(0)\leq -R_2\left(\frac{\epsilon}{2}\right)N^{\alpha/2}\right)\leq \pr\left(\inf_{s\in[t_2^-,t_2^+]}\left(L_k^N(s)-ps\right)\leq -R_2\left(\frac\epsilon 2\right)N^{\alpha/2}\right)<\frac \epsilon 2
+	\pr\big(L_1^N(0)\geq R_1N^{\alpha/2}\big) &\leq \pr\Big(\sup_{s\in[-t_3,t_3]}\left(L_1^N(s)-ps\right)\geq R_1N^{\alpha/2}\Big)< \epsilon/2,\\
+	\pr\big(L_k^N(0)\leq -R_2N^{\alpha/2}\big) &\leq \pr\Big(\inf_{s\in[-t_2,t_2]}\left(L_k^N(s)-ps\right)\leq -R_2N^{\alpha/2}\Big)< \epsilon/2.
 	\end{align*}
-	Therefore, allow $N'=\max\left\{N_2\left(\frac{\epsilon}{2}\right),N_3\left(\frac{\epsilon}{2}\right)\right\}$ and $a=\max\left\{R_1\left(\frac{\epsilon}{2}\right),R_2\left(\frac{\epsilon}{2}\right)\right\}$, and so because $L_1^N(0)>L_2^N(0)>...>L_k^N(0)$, for each $i\in \{1,2,...,k\}$, given the above definitions of $N'$ and $a$ we find that 
-	$$\pr(|L_i^N(0)|\geq a N^{-\alpha/2})\leq \pr\left(L_1^N(0)\geq R_1\left(\frac{\epsilon}{2}\right)N^{\alpha/2}\right)+\pr\left(L_k^N(0)\leq -R_2\left(\frac{\epsilon}{2}\right)N^{\alpha/2}\right)<\epsilon$$
-	This is the desired result, giving us tightness of $\{f_i^N(0)\}$ and so completing Step 1.\\\\\noindent
-	\textbf{Step 2:} Here, we will prove condition (2) in three parts.\\
+	Letting $a = R_1 \vee R_2$ and noting that $L_1^N(0)>L_2^N(0)>...>L_k^N(0)$, we find that for $1\leq i\leq k$ and $N \geq N'$,
+	$$\pr\big(|L_i^N(0)|\geq a N^{\alpha/2}\big)\leq \pr\big(L_1^N(0)\geq R_1 N^{\alpha/2}\big) + \pr\big(L_k^N(0)\leq -R_2N^{\alpha/2}\big) < \epsilon.$$
+	This proves \eqref{ThmCond1}.\\\\\noindent
+	\textbf{Step 2.} Here, we will prove condition (2) in three parts.\\
 	\textbf{Part 1}: 
 	We will begin here with a reformulation of the conditions on $f_i^N$ to conditions on $L_i^N$ so that we may use existing knowledge about that structure. To remind ourselves of the statement of condition (2), let us restate it here,expanding the definitions of limits fully. We seek that $\forall \epsilon,\eta>0$ and $R>0$, there exists a $\delta$ and $N_0$ such that $N>N_0$ implies 
 	\[
@@ -114,7 +110,7 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 	\end{align*}
 	We can understand these events as follows: $A_\delta$ is the event whose probability must be bounded by $\eta$ for tightness to occur, $E_1$ is an event with a bounding condition on the entrance and exit data of the line ensemble with $M_1$ being some large constant, and $E_2$ is an event conditioned on a high enough acceptance probability, as defined in Definition 2.21.
 	
-	We want to show that these events occur with very high probability for some choice of $\delta_1$ and $M_1$. In order to do this, we may use Proposition 4.1 and Lemmata 4.2 and 4.3. 
+	We want to show that these events occur with very high probability for some choice of $\delta_1$ and $M_1$. In order to do this, we may use Proposition 4.1 and Lemmas 4.2 and 4.3. 
 	
 	For $E_1$,  we first know that $L_i^N(\pm RN^\alpha)> L_{i+1}^N(\pm RN^\alpha)$, since the index $i$ is the ordering of line ensembles by the values of their entry and exit data, which implies that $f_i^N(\pm R)>f_{i+1}^N(\pm R)$ as well. Therefore, we find that
 	\begin{align*}
