@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  1 JUL 2020 13:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  2 JUL 2020 10:59
 entering extended mode
 **"./reu problems.tex"
 ("reu problems.tex"
@@ -791,78 +791,85 @@ Overfull \hbox (3.14102pt too wide) in paragraph at lines 1528--1528
 [] 
  []
 
-[57] [58] [59]
-Underfull \hbox (badness 10000) in paragraph at lines 1615--1617
+[57] [58]
+Overfull \hbox (14.92995pt too wide) in paragraph at lines 1589--1590
+\OT1/cmr/m/n/12 con-tin-u-ous func-tions. More-over, if $\OML/cmm/m/it/12 z[] \
+OT1/cmr/m/n/12 = \OML/cmm/m/it/12 z[]$\OT1/cmr/m/n/12 , then we have the two ro
+ws $[] =
+ []
+
+[59] [60]
+Underfull \hbox (badness 10000) in paragraph at lines 1657--1659
 
  []
 
 
-Overfull \hbox (43.56036pt too wide) in paragraph at lines 1623--1623
+Overfull \hbox (43.56036pt too wide) in paragraph at lines 1665--1665
 [] 
  []
 
-[60]
-Underfull \hbox (badness 10000) in paragraph at lines 1644--1646
+[61]
+Underfull \hbox (badness 10000) in paragraph at lines 1686--1688
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1670--1672
-
- []
-
-[61] [62] [63] [64] [65] [66] [67]
-Underfull \hbox (badness 10000) in paragraph at lines 1931--1932
+[62]
+Underfull \hbox (badness 10000) in paragraph at lines 1712--1714
 
  []
 
-[68]
-Underfull \hbox (badness 10000) in paragraph at lines 1937--1939
+[63] [64] [65] [66] [67] [68]
+Underfull \hbox (badness 10000) in paragraph at lines 1973--1974
 
- []
-
-
-Overfull \hbox (26.44737pt too wide) in paragraph at lines 1963--1963
-[] 
  []
 
 [69]
-Underfull \hbox (badness 10000) in paragraph at lines 1965--1970
+Underfull \hbox (badness 10000) in paragraph at lines 1979--1981
 
  []
 
 
-Overfull \hbox (19.93741pt too wide) detected at line 1994
+Overfull \hbox (26.44737pt too wide) in paragraph at lines 2005--2005
+[] 
+ []
+
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 2007--2012
+
+ []
+
+
+Overfull \hbox (19.93741pt too wide) detected at line 2036
 [] [] [] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
 2 x\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\O
 ML/cmm/m/it/12 y\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j  \OML/cmm/m/it/12 [] < []
  [] [][][] \OMS/cmsy/m/n/12  [][]
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1994--1998
+[71]
+Underfull \hbox (badness 10000) in paragraph at lines 2036--2040
 
  []
 
-[70]
-Overfull \hbox (33.21461pt too wide) in paragraph at lines 2011--2011
+
+Overfull \hbox (33.21461pt too wide) in paragraph at lines 2053--2053
 [] 
  []
 
-[71]
-Underfull \hbox (badness 10000) in paragraph at lines 2027--2030
+[72]
+Underfull \hbox (badness 10000) in paragraph at lines 2069--2072
 
  []
 
-[72] [73] ("reu problems.aux") ) 
+[73] [74] ("reu problems.aux") ) 
 Here is how much of TeX's memory you used:
- 4109 strings out of 493320
- 58095 string characters out of 3138925
- 141706 words of memory out of 3000000
- 7550 multiletter control sequences out of 15000+200000
+ 4110 strings out of 493320
+ 58104 string characters out of 3138925
+ 141716 words of memory out of 3000000
+ 7551 multiletter control sequences out of 15000+200000
  16739 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,18n,32p,1671b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,18n,32p,1671b,300s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Christian Serio\AppData\Local\MiKTeX
 \2.9\fonts\pk\ljfour\public\bbm\dpi600\bbm12.pk><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
@@ -882,9 +889,9 @@ pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary10.pfb><C:/Progra
 m Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary8.pfb>
-Output written on "reu problems.pdf" (73 pages, 1206032 bytes).
+Output written on "reu problems.pdf" (74 pages, 1214261 bytes).
 PDF statistics:
- 320 PDF objects out of 1000 (max. 8388607)
+ 323 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
