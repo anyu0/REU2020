@@ -198,12 +198,12 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		
 		Let $E(\vec{x},\vec{y})$ denote the subset of $F$ consisting of $L^N$ for which $L_i^N(rN^\alpha) = x_i$ and $L_i^N(RN^\alpha)=y_i$ for $1\leq i\leq k$, and $L_1^N(s) > \cdots > L_k^N(s)$ for all $s$. Then $D$ is countable, the $E(\vec{x},\vec{y})$ are pairwise disjoint, and $F = \bigcup_{(\vec{x},\vec{y})\in D} E(\vec{x},\vec{y})$.
 		
-		We first try to find a lower bound for $\mathbb{P}(A\,|\,E(\vec{x},\vec{y}))$. We first note that by Lemma 3.1, if we raise the endpoints of each curve, then the probability of the event $A$ will decrease. In particular, write $T = (R-r)N^\alpha$, and define $\vec{x}\,',\vec{y}\,'$ by
+		We first try to find a lower bound for $\mathbb{P}(A\,|\,E(\vec{x},\vec{y}))$. We first note that by Lemma \ref{MCLxy}, if we raise the endpoints of each curve, then the probability of the event $A$ will decrease. In particular, write $T = (R-r)N^\alpha$, and define $\vec{x}\,',\vec{y}\,'$ by
 		\begin{align*}
-		x_i' &= \lfloor\, prN^\alpha - (\lambda r^2 - \phi(\epsilon/8))N^{\alpha/2}\rfloor + (k-i)\lceil C\sqrt{T}\,\rceil,\\
-		y_i' &= \lfloor\, pRN^\alpha - (\lambda R^2 - \phi(\epsilon/8))N^{\alpha/2}\rfloor + (k-i)\lceil C\sqrt{T}\,\rceil.
+		x_i' &= \lceil prN^\alpha - (\lambda r^2 - \phi(\epsilon/8))N^{\alpha/2}\,\rceil + (k-i)\lceil C\sqrt{T}\,\rceil,\\
+		y_i' &= \lceil pRN^\alpha - (\lambda R^2 - \phi(\epsilon/8))N^{\alpha/2}\,\rceil + (k-i)\lceil C\sqrt{T}\,\rceil.
 		\end{align*}
-		Here, $C$ is a constant depending only on $k,p$ which we specify in \eqref{21Cineq} below. Note that $x_i' \geq x_1 \geq x_i$ for each $i$ by condition (2) above. Furthermore, $x_i' - x_{i+1}' \geq C\sqrt{T}$. The same observations hold for $y_i'$. Using Lemma 3.1, we have
+		Here, $C$ is a constant depending only on $k,p$ which we specify in \eqref{21Cineq} below. Note that $x_i' \geq x_1 \geq x_i$ for each $i$ by condition (2) above. Furthermore, $x_i' - x_{i+1}' \geq C\sqrt{T}$. The same observations hold for $y_i'$. Using Lemma \ref{MCLxy}, we have
 		\begin{align}
 		\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) &= \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y},\infty,L_k}_{avoid,Ber} (A\,|\,F) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,',\infty,L_k}_{avoid,Ber} (A\,|\,F) \nonumber \\
 		&\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (A\cap\{L_1 > \cdots > L_k\}\,|\,F) \nonumber \\
@@ -212,11 +212,11 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		\end{align}
 		For the first term in the last line, we used the Gibbs property and the fact that $A$ and $F$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. We now estimate the two terms in \eqref{21xyest}, splitting the remainder of the proof into two steps for clarity.\\
 		
-		\noindent\textbf{Step 1.} Write $\overline{x}$ and $\overline{y}$ for the floors of the upper bounds on $x_1$ and $y_1$ in (2) above, and write $\overline{z} = \overline{y}-\overline{x}$. We can rewrite the first term in \eqref{21xyest} as
+		\noindent\textbf{Step 1.} Write $\overline{x}$ and $\overline{y}$ for the ceilings of the upper bounds on $x_1$ and $y_1$ in (2) above, and write $\overline{z} = \overline{y}-\overline{x}$. We can rewrite the first term in \eqref{21xyest} as
 		\begin{align*}
 		&\mathbb{P}^{0,T,x_1',y_1'}_{Ber} \Big(L_1(T/2) - pN^\alpha \frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\phi(\epsilon/8)N^{\alpha/2}\Big)\\
-		= \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - pN^\alpha\frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\big(\phi(\epsilon/8) + C(k-1)\sqrt{R-r}\big)N^{\alpha/2}\Big)\\
-		\geq \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - \frac{\overline{x} + \overline{y}}{2} < \Big( \lambda\Big(\frac{R^2+r^2}{2}\Big) - \lambda\Big(\frac{R+r}{2}\Big)^2 - C(k-1)\sqrt{R-r} - 2\phi(\epsilon/8)\Big)N^{\alpha/2} - 1\Big).
+		= \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - pN^\alpha\frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\big(\phi(\epsilon/8) + (k-1)\lceil C\sqrt{R-r}\,\rceil\big)N^{\alpha/2}\Big)\\
+		\geq \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - \frac{\overline{x} + \overline{y}}{2} < \Big( \lambda\Big(\frac{R^2+r^2}{2}\Big) - \lambda\Big(\frac{R+r}{2}\Big)^2 - Ck\sqrt{R-r} - 2\phi(\epsilon/8)\Big)N^{\alpha/2}\Big).
 		\end{align*}
 		The inequality in the last line follows from the definitions of $\overline{x},\overline{y}$. Observe that
 		\[
@@ -321,7 +321,7 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		x_i' &= \lfloor - pa - MN^{\alpha/2}\rfloor - (i-1)\lceil CN^{\alpha/2}\rceil,\\
 		y_i' &= \lfloor pb - MN^{\alpha/2}\rfloor - (i-1)\lceil CN^{\alpha/2}\rceil.
 		\end{align*} 
-		We will specify the constant $C$ below. The last inequality follows from Lemma 3.1 since $x_i' \leq -pa - MN^{\alpha/2} \leq x_i$ and $y_i' \leq pb - MN^{\alpha/2} \leq y_i$ by condition (2) above. We also wrote $L_k'(s) = L_k(s-a)$. The last probability is
+		We will specify the constant $C$ below. The last inequality follows from Lemma \ref{MCLxy} since $x_i' \leq -pa - MN^{\alpha/2} \leq x_i$ and $y_i' \leq pb - MN^{\alpha/2} \leq y_i$ by condition (2) above. We also wrote $L_k'(s) = L_k(s-a)$. The last probability is
 		\[
 		\leq \frac{\mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - p(s-a)\big) \leq -R_2 N^{\alpha/2} \Big)}{\mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber}(F)},
 		\]
@@ -333,7 +333,7 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		\begin{align*}
 		& \mathbb{P}^{0, a+b, x_k', y_k'}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - p(s-a)\big) \leq -R_2 N^{\alpha/2} \Big)\\
 		= \; & \mathbb{P}^{0, a+b, 0, z_k}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps + pa - \lceil pa + MN^{\alpha/2}\rceil - (k-1)\lceil CN^{\alpha/2}\rceil\big) \leq -R_2 N^{\alpha/2} \Big)\\
-		\leq \; & \mathbb{P}^{0, a+b, 0, z_k}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps\big) \leq -(R_2 - M - C(k-1)) N^{\alpha/2} + k \Big).
+		\leq \; & \mathbb{P}^{0, a+b, 0, z_k}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps\big) \leq -(R_2 - M - Ck) N^{\alpha/2} \Big).
 		\end{align*}
 		Since $z_k\geq p(a+b)$ and $a+b \geq 2rN^\alpha$, Lemma \ref{LemmaMinFreeS4} allows us to find $R_2>0$ depending on $\epsilon,p,\lambda,k,r,\phi$ (see Lemma \ref{21} for these dependencies) so that this probability is $<\epsilon/4$ for all large $N$ depending on $p,\epsilon,\alpha,r$, but not on $a,b,z_k$.
 		

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  2 JUL 2020 10:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  2 JUL 2020 20:33
 entering extended mode
 **"./reu problems.tex"
 ("reu problems.tex"
@@ -752,124 +752,109 @@ Overfull \hbox (8.99876pt too wide) in paragraph at lines 1214--1214
  []
 
 [45] [46] [47] [48]
-Overfull \hbox (13.07541pt too wide) in paragraph at lines 1339--1343
+Overfull \hbox (13.07541pt too wide) in paragraph at lines 1330--1334
 \OT1/cmr/m/n/12 (ii) \OT1/cmr/m/it/12 Per-mu-ta-tion \OT1/cmr/m/n/12 Sup-pose $
 \OML/cmm/m/it/12 s[]$ \OT1/cmr/m/n/12 is a per-mu-ta-tion of $\OML/cmm/m/it/12 
 n$ \OT1/cmr/m/n/12 non-negative in-te-gers, for ex-am-ple $\OMS/cmsy/m/n/12 f\O
 T1/cmr/m/n/12 1\OML/cmm/m/it/12 ; []  ; n\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 ,
  []
 
-[49] [50] [51]
-Overfull \hbox (7.93024pt too wide) in paragraph at lines 1379--1379
-[] 
- []
-
-
-Overfull \hbox (0.55785pt too wide) in paragraph at lines 1395--1397
+[49] [50]
+Overfull \hbox (0.55785pt too wide) in paragraph at lines 1379--1380
 \OT1/cmr/m/n/12 where $[](\OML/cmm/m/it/12 x[]; x[]; []  ; x[]\OT1/cmr/m/n/12 
 )$ is the Van-der-monde De-ter-mi-nant in Prob-lem 4, $\OML/cmm/m/it/12 a[] \OT
 1/cmr/m/n/12 = \OML/cmm/m/it/12 a[]$
  []
 
-[52]
-Overfull \hbox (36.033pt too wide) in paragraph at lines 1405--1405
+[51] [52] [53]
+Overfull \hbox (8.70033pt too wide) in paragraph at lines 1433--1433
 [] 
  []
 
-
-Overfull \hbox (0.71155pt too wide) in paragraph at lines 1413--1413
+[54] [55]
+Overfull \hbox (3.14102pt too wide) in paragraph at lines 1497--1497
 [] 
  []
 
-[53]
-Underfull \hbox (badness 10000) in paragraph at lines 1428--1430
-
- []
-
-[54] [55] [56]
-Overfull \hbox (3.14102pt too wide) in paragraph at lines 1528--1528
-[] 
- []
-
-[57] [58]
-Overfull \hbox (14.92995pt too wide) in paragraph at lines 1589--1590
+[56] [57]
+Overfull \hbox (14.92995pt too wide) in paragraph at lines 1558--1559
 \OT1/cmr/m/n/12 con-tin-u-ous func-tions. More-over, if $\OML/cmm/m/it/12 z[] \
 OT1/cmr/m/n/12 = \OML/cmm/m/it/12 z[]$\OT1/cmr/m/n/12 , then we have the two ro
 ws $[] =
  []
 
-[59] [60]
-Underfull \hbox (badness 10000) in paragraph at lines 1657--1659
+[58] [59]
+Underfull \hbox (badness 10000) in paragraph at lines 1625--1627
 
  []
 
 
-Overfull \hbox (43.56036pt too wide) in paragraph at lines 1665--1665
+Overfull \hbox (43.56036pt too wide) in paragraph at lines 1633--1633
 [] 
+ []
+
+[60]
+Underfull \hbox (badness 10000) in paragraph at lines 1654--1656
+
  []
 
 [61]
-Underfull \hbox (badness 10000) in paragraph at lines 1686--1688
+Underfull \hbox (badness 10000) in paragraph at lines 1680--1682
 
  []
 
-[62]
-Underfull \hbox (badness 10000) in paragraph at lines 1712--1714
+[62] [63] [64] [65] [66] [67]
+Underfull \hbox (badness 10000) in paragraph at lines 1941--1942
 
  []
 
-[63] [64] [65] [66] [67] [68]
-Underfull \hbox (badness 10000) in paragraph at lines 1973--1974
-
- []
-
-[69]
-Underfull \hbox (badness 10000) in paragraph at lines 1979--1981
+[68]
+Underfull \hbox (badness 10000) in paragraph at lines 1947--1949
 
  []
 
 
-Overfull \hbox (26.44737pt too wide) in paragraph at lines 2005--2005
+Overfull \hbox (26.44737pt too wide) in paragraph at lines 1973--1973
 [] 
  []
 
-[70]
-Underfull \hbox (badness 10000) in paragraph at lines 2007--2012
+[69]
+Underfull \hbox (badness 10000) in paragraph at lines 1975--1980
 
  []
 
 
-Overfull \hbox (19.93741pt too wide) detected at line 2036
+Overfull \hbox (19.93741pt too wide) detected at line 2004
 [] [] [] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
 2 x\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\O
 ML/cmm/m/it/12 y\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j  \OML/cmm/m/it/12 [] < []
  [] [][][] \OMS/cmsy/m/n/12  [][]
  []
 
-[71]
-Underfull \hbox (badness 10000) in paragraph at lines 2036--2040
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 2004--2008
 
  []
 
 
-Overfull \hbox (33.21461pt too wide) in paragraph at lines 2053--2053
+Overfull \hbox (33.21461pt too wide) in paragraph at lines 2021--2021
 [] 
  []
 
-[72]
-Underfull \hbox (badness 10000) in paragraph at lines 2069--2072
+[71]
+Underfull \hbox (badness 10000) in paragraph at lines 2037--2040
 
  []
 
-[73] [74] ("reu problems.aux") ) 
+[72] [73] ("reu problems.aux") ) 
 Here is how much of TeX's memory you used:
  4110 strings out of 493320
  58104 string characters out of 3138925
- 141716 words of memory out of 3000000
+ 139716 words of memory out of 3000000
  7551 multiletter control sequences out of 15000+200000
  16739 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,18n,32p,1671b,300s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,18n,32p,1671b,302s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Christian Serio\AppData\Local\MiKTeX
 \2.9\fonts\pk\ljfour\public\bbm\dpi600\bbm12.pk><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
@@ -889,9 +874,9 @@ pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary10.pfb><C:/Progra
 m Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary8.pfb>
-Output written on "reu problems.pdf" (74 pages, 1214261 bytes).
+Output written on "reu problems.pdf" (73 pages, 1204045 bytes).
 PDF statistics:
- 323 PDF objects out of 1000 (max. 8388607)
+ 320 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
