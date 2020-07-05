@@ -934,11 +934,12 @@ where $K=n^{N^2}(1-e^{-\frac{1}{n}})^{N^2}(e^{-\frac{1}{n}})^{-\frac{1}{2}N(N-1)
 \section{Avoiding Bernoulli line ensembles}
 
 								\subsection*{Problem 16}
+The proof of this problem are naturally split into $2$ parts, where we first transform the question of non-intersecting line ensemble into that of skew Schur polynomials, and then analyze the asymptotic behavior of scaled line ensemble and prove weak convergence.\\
 \textbf{Part 1. }We first establish the equality:
 $$\mathbb{P}(L_{1}(\lfloor tT \rfloor) = \lambda_{1}, \cdots, L_{k}(\lfloor tT \rfloor) = \lambda_{k})=\frac{s_{\lambda/\mu}(1^{\lfloor tT \rfloor})\cdot s_{\kappa/\lambda}(1^{T-\lfloor tT \rfloor})}{s_{\kappa/\mu}(1^{T})}$$ where $\lambda_{1}>\lambda_{2}>\cdots >\lambda_{k}$ are positive integers, $s_{\lambda/\mu}$ denote skew Schur polynomials and they are specialized in all parameters equal to $1$. The $\mu$ partition is just the vector $\vec{x}^{T}$ and the $\kappa$ partition should be $\vec{y}^{T}$.
 
 	Let $\Omega(0,T,\vec{x}^T, \vec{y}^T)$ be the set of all non-intersecting Bernoulli line ensembles from $\vec{x}^T$ to $\vec{y}^T$. For each line ensemble $\mathfrak{B}\in \Omega(0,T,\bar x^T,\bar y^T)$ with $\mathfrak B=(B_1,...,B_k)$, we may define $\lambda_i(\mathfrak B):=(B_1(i),B_2(i),...,B_k(i))$, where $1 \leqslant i\leqslant T$ is an integer. The $\lambda_i$ form partitions since by the definition of avoiding Bernoulli line ensembles, we have the inequality $B_\alpha(i)>B_\beta(i)$ if $\alpha<\beta$. 
-Now because $B_\alpha(i+1)-B_\alpha(i)\in \{0,1\}$ we know that $B_\alpha(i+1)\geq B_\alpha(i)$ but also since $B_\alpha(i+1)\in \mathbb{Z}$ and $B_{\alpha+1}(i+1)<B_\alpha(i+1)$ (strictly) by the earlier stated inequality, we know that $B_{\alpha+1}(i+1)+1\leq B_\alpha(i+1)$ and so we find that 
+Now because $B_\alpha(i+1)-B_\alpha(i)\in \{0,1\}$ we know that $B_\alpha(i+1)\geq B_\alpha(i)$ but also since $B_\alpha(i+1)\in \mathbb{Z}$ and $B_{\alpha+1}(i+1)<B_\alpha(i+1)$ by the earlier stated inequality, we know that $B_{\alpha+1}(i+1)+1\leq B_\alpha(i+1)$ and so we find that 
 \[B_{\alpha+1}(i+1)\leq B_\alpha(i)\leq B_\alpha(i+1)\]
 We therefore find that for all $i$, $\lambda_i\preceq \lambda_{i+1}$. Note that when $i=0$, we get $\lambda_0=\bar x^T$ and $\lambda_T=\bar y^T$.
 
@@ -946,41 +947,39 @@ Now, let us define the set
 \[TB_{\kappa/\mu}^T:=\{(\lambda_0,...,\lambda_T)\mid \lambda_0=\mu, \lambda_T=\kappa, \lambda_i\preceq\lambda_{i+1}\}\] 
 Now, if we take $f:\Omega(0,T,\bar x^T, \bar y ^T)\to TB_{\kappa/\mu}^T$ with $f(\mathfrak{B})= (\lambda_0(\mathfrak{B}),\cdots \lambda_T(\mathfrak{B}))$. We find that this function is in fact a bijection. 
 
-First, as proof for injectivity, suppose that there are two Bernoulli line ensembles, $\mathfrak{B}, \mathfrak{B}'\in \Omega(0,T,\bar x^T, \bar y ^T)$ such that $\mathfrak{B}\neq \mathfrak{B'}$.
+First, to show for injectivity, suppose that there are two Bernoulli line ensembles, $\mathfrak{B}, \mathfrak{B}'\in \Omega(0,T,\bar x^T, \bar y ^T)$ such that $\mathfrak{B}\neq \mathfrak{B'}$.
 Because Bernoulli line ensembles are determined by their values at integer times, we find that this would imply that there exists some $(q,r)$ such that $0\leq r\leq T$, $0\leq q \leq k$ and $B_q(r)\neq B'_q(r)$ where $B_q$ and $B_q'$ are components of $\mathfrak{B}$ and $\mathfrak{B'}$ respectively. 
-This implies that $\lambda_r(\mathfrak B)\neq \lambda_r'(\mathfrak{B'})$, and so we have injectivity. 
+This implies that $\lambda_r(\mathfrak B)\neq \lambda_r'(\mathfrak{B'})$, and we have injectivity. 
 
 Now, surjectivity follows since for any $\bar\lambda=(\lambda_0,...,\lambda_T)$ we may define $\mathfrak{B}(\bar{\lambda})=(B_1(\bar\lambda),...,B_k(\bar\lambda))$ where $B_r(\bar\lambda)(i)=\lambda_i^r$ where $\lambda_i^r$ is the $i$\textit{th} entry of $\lambda_r$. The restrictions on $TB_{\kappa/\mu}^T$ ensure that each $\mathfrak{B}(\bar\lambda)\in \Omega(0,T,\bar x^T,\bar y^T)$, and so $f(\mathfrak B(\bar{\lambda}))=(\lambda_0,\cdots \lambda_T)$ by the definition $\mathfrak{B}(\bar\lambda)$. 
 
-We can proceed to use Macdonald Chapter 1, Section 5, Equation (11) to show that, in a very similar way to practice problem 10, we get that 
-\[s_{\kappa/\mu}(1^T)=\sum_{(\nu)}\prod_{i=1}^n s_{\nu^{(i)}/\nu^{i-1}}=\sum_{(\nu)} 1=\lvert TB_{\mu/\kappa}^T\rvert\]
+Applying the result regarding the relationship between number of partitions and skew Schur polynomial(\emph{Chapter 1, Formula (5.11), Symmetric functions and Hall polynomials, I.G Macdonald}), we have \[s_{\kappa/\mu}(1^T)=\sum_{(\nu)}\prod_{i=1}^n s_{\nu^{(i)}/\nu^{i-1}}=\sum_{(\nu)} 1=\lvert TB_{\mu/\kappa}^T\rvert\]
 
 Therefore, we can find that 
 \begin{align*}
 \pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)
 =&{}\frac{\lvert \Omega(0,\lfloor Tt\rfloor, \vec{x}^T, \lambda)\rvert\cdot \lvert \Omega(\lfloor Tt\rfloor ,T, \lambda, \vec{y}^T)\rvert}{\lvert \Omega(0, T, \vec{x}^T, \vec{y}^T)\rvert}\\
 =&{}\frac{s_{\lambda/\vec{x}^T}(1^{\floor{Tt}})\cdot s_{\vec{y}^T/\lambda}(1^{T-\floor{Tt}})}{s_{\vec{y}^T/\vec{x}^T}(1^T)}
-\end{align*}
+\end{align*} and proved the result.\\
 \textbf{Part 2. } In the following, we prove the weak convergence of random vector $(Z_{1}^{T},\dots,Z_{k}^{T})$, where $Z_{i}^{T}=\frac{L_{i}(tT)-ptT}{\sqrt{T}}$. Let $\mathbb{W}_{k}^{o}$ denote the open Weyl chamber in $\mathbb{R}^{N}$:
 $$\mathbb{W}_{N}^{o}=\{(x_{1},\cdots,x_{k})\in\mathbb{R}^{N}:x_{1}>x_{2}>\cdots>x_{k}\}$$ 
-In this problem, we are going to show the random vector $(Z_{1}^{T},\cdots,Z_{k}^{T})$ weakly converges to a continuous distribution with the density:
+We are going to show the random vector $(Z_{1}^{T},\cdots,Z_{k}^{T})$ weakly converges to a continuous distribution with the density:
 $$\rho(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot det[e^{c_1(t,p)a_{i}z_{j}}]_{i,j=1}^{k}\cdot det[e^{c_2(t,p)b_{i}z_{j}}]_{i,j=1}^{k}\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\cdot \mathbbm{1}_{\{z\in \mathbb{W}_{k}^{o}\}}$$
 where $Z,c_{1},c_{2},c_{3}$ are constants that will be computed later. We will also prove that $\rho(z)$ is actually a density.\\
 In order to show the weak convergence, it is sufficient to show that for every open set $O\in\mathbb{R}^{k}$, we have: 
 $$\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in O)\geqslant\int_{O}\rho(z_{1},\cdots,z_{k})dz_{1}dz_{2}\cdots dz_{k}$$
-This result is due to \emph{Probability: theory and examples}, R. Durrett, Theorem 3.2.11. Actually, it suffices to show for any open set $U\in\mathbb{W}_{k}^{o}$, we have:
+This result is due to \emph{Theorem 3.2.11, Probability: theory and examples, R. Durrett}. Actually, it suffices to show for any open set $U\in\mathbb{W}_{k}^{o}$, we have:
 $$\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in U)\geqslant\int_{U}\rho(z_{1},\cdots,z_{k})dz_{1}dz_{2}\cdots dz_{k}\quad\quad\quad (\star)$$
-because if this result holds, we would have:
+which implies that:
 \begin{align*}
 	&\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in O)\geqslant\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in O\cap\mathbb{W}_{k}^{o})\\
 	&\geqslant \int_{\mathbb{W}_{k}^{o}\cap O}\rho(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}= \int_{O}\rho(z_{1},\cdots,z_{N})dz_{1}\cdots dz_{k}
 \end{align*}
-The second inequality uses the above result $(\star)$, since $\mathbb{W}_{k}^{o}\cap O$ is an open set in $\mathbb{W}_{k}^{o}$. The last equality is because $\rho(z)$ is zero outside the $\mathbb{W}_{k}^{o}$.
-We prove $(\star)$ through the following steps.\\
+The second inequality uses the above result $(\star)$, since $\mathbb{W}_{k}^{o}\cap O$ is an open set in $\mathbb{W}_{k}^{o}$. The last equality is because $\rho(z)$ is zero outside the $\mathbb{W}_{k}^{o}$. The rest of the answer will be divided into $4$ parts. In Step 1 and Step 2, we prove the result $(\star)$ assuming the validity of a claim. In Step 3, we prove that $rho(z)$ is actually a density. In Step 4, we prove the claim we made in Step 1.\\
 \textbf{Step 1. }In this step, we establish the following result:\\
 For any closed rectangle $R=[u_{1},v_{1}]\times [u_{2},v_{2}]\times\cdots\times[u_{N},v_{N}]\in\mathbb{W}_{k}^{o}$, 
 $$\lim_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)=\int_{R}\rho(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}$$
-where $\rho(z)$ is given at the beginning.\\
+where $\rho(z)$ is given at the beginning of Part 2.\\
 Define $m_{i}^{T}=\lceil u_{i}\sqrt{T}+ptT\rceil$ and $M_{i}^{T}=\lfloor v_{i}\sqrt{T}+ptT\rfloor$, and we have:
 \begin{align*}
 &\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)=\mathbb{P}(u_{1}\leqslant Z_{1}^{T} \leqslant v_{1}, \dots,  u_{k}\leqslant Z_{k}^{T} \leqslant v_{k})\\
@@ -988,120 +987,121 @@ Define $m_{i}^{T}=\lceil u_{i}\sqrt{T}+ptT\rceil$ and $M_{i}^{T}=\lfloor v_{i}\s
 &=\sum_{\lambda_{1}(T)=m_{1}^{T}}^{M_{1}^{T}}\cdots\sum_{\lambda_{k}(T)=m_{k}^{T}}^{M_{k}^{T}}\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1}(T),\dots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}(T))\\
 &=\sum_{\lambda_{1}(T)=m_{1}^{T}}^{M_{1}^{T}}\dots\sum_{\lambda_{k}(T)=m_{k}^{T}}^{M_{k}^{T}}(\sqrt{T})^{-k}\cdot(\sqrt{T})^{k}\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1}(T),\dots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}(T))
 \end{align*}
-Find sufficiently large $A$ such that $R\subset[-A,A]^{k}$, for example, $A=1+\max_{1\leqslant i\leqslant k}|a_{i}|+max_{1\leqslant i\leqslant k}|b_{i}|$. Define $f_{T}(z_{1},\cdots,z_{k})$ as a simple function on $\mathbb{R}^{k}$: When $(z_{1},\cdots,z_{k})\in R$, it takes value $(\sqrt{T})^{k}\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1}(T),\cdots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}(T)=\lambda_{k}(T))$ if there exist $\lambda_{1}(T),\cdots,\lambda_{k}(T)$ such that $\lambda_{i}(T)\leqslant z_{i}\sqrt{T}+ptT<\lambda_{i}(T)+1$; It takes value $0$ otherwise, when $(z_{1},\cdots,z_{k})\notin R$.  Since the Lebesgue measure of the set $\{z:\lambda_{i}(T)\leqslant z_{i}\sqrt{T}+ptT<\lambda_{i}(T)+1,i=1,\cdots,k\}$ is $(\sqrt{T})^{-k}$, the above probability can be further written as an integral of simple function $f_{T}(z_{1},\cdots,z_{k})$:
+Find sufficiently large $A$ such that $R\subset[-A,A]^{k}$, for example, $A=1+\max_{1\leqslant i\leqslant k}|a_{i}|+\max_{1\leqslant i\leqslant k}|b_{i}|$. Define $f_{T}(z_{1},\cdots,z_{k})$ as a simple function on $\mathbb{R}^{k}$: When $(z_{1},\cdots,z_{k})\in R$, it takes value $(\sqrt{T})^{k}\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1}(T),\cdots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}(T)) $ if there exist $\lambda_{1}(T),\cdots,\lambda_{k}(T)$ such that $\lambda_{i}(T)\leqslant z_{i}\sqrt{T}+ptT<\lambda_{i}(T)+1$; It takes value $0$ otherwise, when $(z_{1},\cdots,z_{k})\notin R$.  Since the Lebesgue measure of the set $\{z:\lambda_{i}(T)\leqslant z_{i}\sqrt{T}+ptT<\lambda_{i}(T)+1,i=1,\cdots,k\}$ is $(\sqrt{T})^{-k}$, the above probability can be further written as an integral of simple function $f_{T}(z_{1},\cdots,z_{k})$:
 \begin{align*}
 \mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)&=\int_{[-A,A]^{k}}f_{T}(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}
 \end{align*}
-Now we introduce the following lemma:\\
-\textbf{Lemma: }Fix $A>0$, take $z=(z_{1},\cdots,z_{k})\in\mathbb{W}_{k}^{o}$ such that $A>z_{1}>\cdots>z_{k}>-A$. Choose sufficiently large $T_{0}$ such that $ptT_{0}-A\sqrt{T_{0}}\geqslant 1$, then for $T\geqslant T_{0}$, define $\lambda_{i}(T)=\lfloor z_{i}\sqrt{T}+ptT\rfloor\geqslant 1$ for $i=1,\cdots,k$. Then we have
+Now we make the following claim:\\
+\textbf{Claim: }Fix $A>0$, take $z=(z_{1},\cdots,z_{k})\in\mathbb{W}_{k}^{o}$ such that $A>z_{1}>\cdots>z_{k}>-A$. Choose sufficiently large $T_{0}$ such that $ptT_{0}-A\sqrt{T_{0}}\geqslant 1$, then for $T\geqslant T_{0}$, define $\lambda_{i}(T)=\lfloor z_{i}\sqrt{T}+ptT\rfloor\geqslant 1$ for $i=1,\cdots,k$. Then we have for every $z\in[-A,A]^{k}$:
 $$\lim_{T\rightarrow\infty}f_{T}(z_{1},\cdots,z_{k})=\rho(z_{1},\cdots,z_{k})$$ and $f_{T}(z_{1},\cdots,z_{k})$ is bounded on $[-A,A]^{k}$ almost surely.\\
-We will prove the lemma in Step 4. For now we suppose the lemma holds. Since the function $f_{T}(z_{1},\cdots,z_{k})$ is bounded on the compact set $[-A,A]^{k}$, and the Lebesgue measure of $[-A,A]^{k}$ is finite, by bounded convergence theorem and the lemma, we have:
+The proof of this claim is postponed to Step 4. Since the function $f_{T}(z_{1},\cdots,z_{k})$ is bounded on the compact set $[-A,A]^{k}$, and the Lebesgue measure of $[-A,A]^{k}$ is finite, by bounded convergence theorem and assuming the validity of the claim, we have:
 $$\lim_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)=\int_{R}\rho(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}$$
-\textbf{Step 2. }In this step, we prove the statement $(\star)$. Take any open set $U\in \mathbb{W}_{k}^{o}$, it can be written as a countable union of closed rectangles with disjoint interiors: $U=\bigcup_{i=1}^{\infty}R_{i}$, where $R_{i}=[a_{1}^{i},b_{1}^{i}]\times\cdots\times[a_{k}^{i},b_{k}^{i}]$. Choose sufficiently small $\epsilon>0$, and denote $R_{i}^{\epsilon}=[a_{1}^{i}+\epsilon,b_{1}^{i}-\epsilon]\times\cdots\times[a_{k}^{i}+\epsilon,b_{k}^{i}-\epsilon]$, then $R_{i}^{\epsilon}$ are disjoint. Therefore,
+\textbf{Step 2. }In this step, we prove the statement $(\star)$. Take any open set $U\in \mathbb{W}_{k}^{o}$, it can be written as a countable union of closed rectangles with disjoint interiors: $U=\bigcup_{i=1}^{\infty}R_{i}$, where $R_{i}=[a_{1}^{i},b_{1}^{i}]\times\cdots\times[a_{k}^{i},b_{k}^{i}]$(\emph{Theorem 1.4, Real Analysis, Stein}). Choose sufficiently small $\epsilon>0$, and denote $R_{i}^{\epsilon}=[a_{1}^{i}+\epsilon,b_{1}^{i}-\epsilon]\times\cdots\times[a_{k}^{i}+\epsilon,b_{k}^{i}-\epsilon]$, then $R_{i}^{\epsilon}$ are disjoint. Therefore,
 \begin{align*}
 	&\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in U)\geqslant\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \bigcup_{i=1}^{n}R_{i}^{\epsilon})\\
 	&=\liminf_{T\rightarrow\infty}\sum_{i=1}^{n}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i}^{\epsilon})=\sum_{i=1}^{n}\int_{R_{i}^{\epsilon}}\rho(z_1,\cdots,z_{k})dz_{1}\cdots dz_{k}\\
 	&=\int_{\bigcup_{i=1}^{n}R_{i}^{\epsilon}}\rho(z_1,\cdots,z_{k})dz_{1}\cdots dz_{k} \xrightarrow{\epsilon\downarrow 0} \int_{U}\rho(z_1,\cdots,z_{k})dz_{1}\cdots dz_{k}
 \end{align*}
 The last line uses monotone convergence theorem. Thus, we proved $(\star)$.\\
-\textbf{Step 3. }In this step, we prove that $\rho(z)$ is actually a density. First, it is nonnegative because it's the limit of a sequence of probabilities. Next, we prove it integrates to $1$. Let the open set $U$ in Step 2 be $\mathbb{W}_{k}^{o}$, and we get: $$1=\liminf_{T\rightarrow\infty}\mathbb{P}(Z^{T}\in \mathbb{W}_{k}^{o})\geqslant \int_{\mathbb{W}_{k}^{o}}\rho(z)dz$$
+\textbf{Step 3. }In this step, we prove that $\rho(z)$ is actually a density. First, it is nonnegative because it's the limit of a sequence of probabilities. Next, we prove it integrates to $1$ over $\mathbb{R}^{k}$. Let the open set $U$ in Step 2 be $\mathbb{W}_{k}^{o}$, and we get: $$1=\liminf_{T\rightarrow\infty}\mathbb{P}(Z^{T}\in \mathbb{W}_{k}^{o})\geqslant \int_{\mathbb{W}_{k}^{o}}\rho(z)dz$$
 On the other hand, write the open set $\mathbb{W}_{k}^{o}$ as a countable union of almost disjoint closed rectangles: $\mathbb{W}_{k}^{o}=\bigcup_{i=1}^{\infty}R_{i}$. Then we have:
 \begin{align*}
 	1&=\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \mathbb{W}_{k}^{o})=\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \bigcup_{i=1}^{\infty}R_{i})\leqslant\sum_{i=1}^{\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i})
 \end{align*}
-where the inequality uses sub-additivity. Take an arbitrary $\epsilon>0$. For each $R_{i}$, we can find a closed rectangle $R_{i}^{\epsilon-}$ contained in $R_{i}$ such that $\mathbb{P}(Z^{T}\in R_{i})\leqslant \mathbb{P}(Z^{T}\in R_{i}^{\epsilon-})+\frac{\epsilon}{2^{i}}$. Then, we have
+where the inequality uses sub-additivity of probability measures. Take an arbitrary $\epsilon>0$. For each $R_{i}$, we can find a closed rectangle $R_{i}^{\epsilon-}$ contained in $R_{i}$ such that $\mathbb{P}(Z^{T}\in R_{i})\leqslant \mathbb{P}(Z^{T}\in R_{i}^{\epsilon-})+\frac{\epsilon}{2^{i}}$. Then, we have
 \begin{align*}
 	1&=\lim_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \mathbb{W}_{k}^{o})\leqslant \lim_{T\rightarrow\infty}\sum_{i=1}^{\infty}\big[\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i}^{\epsilon-})+\frac{\epsilon}{2^{i}}\big]\\
 	&=\sum_{i=1}^{\infty}\int_{R_{i}^{\epsilon-}}\rho(z)dz+\epsilon=\int_{\bigcup_{i=1}^{\infty}R_{i}^{\epsilon-}}\rho(z)dz+\epsilon
 \end{align*}
-Then let $\epsilon\downarrow 0$, we get $1\leqslant\int_{\mathbb{W}_{k}^{o}}\rho(z)dz$, so we have $\int_{\mathbb{W}_{k}^{o}}\rho(z)dz=1$ and we conclude that $\rho(z)$ is actually a density.\\
-\textbf{Step 4. }Now we prove the lemma in Step 1. \\
-(\romannumeral 1) First, we discuss the pointwise convergence. By Jacobi-Trudi formula, we can conclude:
+We can interchange the limit and the infinite sum because the sum is bounded by $1$. Then let $\epsilon\downarrow 0$, we get $1\leqslant\int_{\mathbb{W}_{k}^{o}}\rho(z)dz$, implying $\int_{\mathbb{W}_{k}^{o}}\rho(z)dz=1$ and we conclude that $\rho(z)$ is actually a density.\\
+\textbf{Step 4. }Now we prove the claim we made in Step 1. \\
+(\romannumeral 1) First, we discuss the pointwise convergence. By Jacobi-Trudi formula(\emph{Formula 5.4, Section I.5, Symmetric Functions and Hall Polynomials, I.G. Macdonald}), we can conclude:
 \begin{align*}
 \pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)=\frac{\det\left(h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})\right)_{i,j=1}^k\cdot\det\left(h_{y_i^T-\lambda_j+j-i}(1^{T-\floor{tT}})\right)_{i,j=1}^k}{\det\left(h_{y_i^{T}-x_j^T+j-i}(1^T)\right)_{i,j=1}^k}	
 \end{align*}
-We first compute the first determinant in the numerator. Using the identity for complete symmetric functions from Macdonald, page 26 i.e. that $h_r(1^n)=\binom{n+r-1}{r}$, we get the resulting equation 
+We first compute the first determinant in the numerator. Using the identity for complete symmetric functions(\emph{Example 1, Section I.2, Symmetric Functions and Hall Polynomials, I.G. Macdonald}) that $h_r(1^n)=\binom{n+r-1}{r}$, we get the resulting equation 
 \begin{align*}
 h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})&=\frac{(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!}{(\lambda_{i}-x_{j}^{T}-i+j)!(\lfloor tT \rfloor -1)!}
 \end{align*}
-By Stirling's formula, $(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!$ is approximately equal to
+We have the following Stirling's formula, 
+$$\sqrt{2\pi n}n^ne^{-n}e^{r_{n}}\text{, where }\frac{1}{12n+1}<r_{n}<\frac{1}{12n}$$
+Denote $K=\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1$ and apply the above Stirling's formula, we get
 \begin{align*}
-\sqrt{2\pi}\sqrt{\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1}\cdot  e^{(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)ln(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)-(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)}
+K!=\sqrt{2\pi}\sqrt{K}\cdot e^{K\log K-K+r_{K}}
 \end{align*}
-Additionally, since $\lambda_{i}=z_{i}\sqrt{T}+ptT$ and $x_{i}^{T}\sim a_{i}\sqrt{T}$, we get \[\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1\sim (z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1\]
-Then,	if $(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)\log(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)=A$,
+Additionally, since $\lambda_{i}=\lfloor z_{i}\sqrt{T}+ptT\rfloor$ and $x_{i}^{T}= a_{i}\sqrt{T}+o(\sqrt{T})$, we get \[K=\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1= (z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1+o(\sqrt{T})\]
 \begin{align*}
-A\sim&\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT-i+j-1\right]\cdot\log\left(\frac{(z_{i}-a_{j})\sqrt{T}+(p+1)tT-i+j-1}{(z_{i}-a_{j})\sqrt{T}+(p+1)tT}\right)\\&+\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)\\
-	& +(-i+j-1)\log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)\\
-	\sim & \left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT-i+j-1\right]\cdot \log\left(1+\frac{-i+j-1}{(z_{i}-a_{j})\sqrt{T}+(p+1)tT}\right)\\
-	& +\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot
-	\log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)+ (-i+j-1)\log\left((p+1)tT\right)\\
-	\sim&  \left(-i+j-1\right) + \left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)\\&+(-i+j-1)\log\left((p+1)tT\right)
+	\log K&=\log\left(1+\frac{-i+j-1}{(z_{i}-a_{j})\sqrt{T}+(p+1)tT}+o(\frac{1}{\sqrt{T}})\right)+\log((z_{i}-a_{j})\sqrt{T}+(p+1)tT)\\
+	&=\frac{-i+j-1}{(z_{i}-a_{j})\sqrt{T}+(p+1)tT}+\log((z_{i}-a_{j})\sqrt{T}+(p+1)tT)+o(\frac{1}{\sqrt{T}})
+\end{align*}
+Next, we compute $K\log K$:
+\begin{align*}
+K\log K &=\left(-i+j-1\right) + \left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)\\&+(-i+j-1)\log\left((p+1)tT\right)+o(\sqrt{T})
 \end{align*}
 Now we further compute the term $\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)$. Notice that
 \begin{align*}
 	\log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)&= \log\left((p+1)tT\right)+\log\left(1+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}\right)\\
-	&\sim \log((p+1)tT)+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{(p+1)^{2}t^{2}T}
+	&= \log((p+1)tT)+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{(p+1)^{2}t^{2}T}+o(\frac{1}{T})
 \end{align*}
 Then, 
 \begin{align*}
 	& \left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)\\
-	&\sim\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \left[\log((p+1)tT)+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{(p+1)^{2}t^{2}T}\right]\\
-	&\sim \left((p+1)tT)\log((p+1)tT\right)+(z_{i}-a_{j})\sqrt{T}\cdot \log((p+1)tT)+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}
+	&=\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \left[\log((p+1)tT)+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{(p+1)^{2}t^{2}T}+o(\frac{1}{T})\right]\\
+	&=\left((p+1)tT)\log((p+1)tT\right)+(z_{i}-a_{j})\sqrt{T}\cdot \log((p+1)tT)+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}+o(1)
 \end{align*}
-Therefore, we find that $(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!\sim$
+Therefore, we find that $(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!=$
 \begin{align*}
 	\sqrt{2\pi}\sqrt{(p+1)tT}\cdot \text{Exp}&\{(-i+j-1) + ((p+1)tT)\log((p+1)tT)+(z_{i}-a_{j})\sqrt{T}\cdot ((p+1)tT)\\
-	&+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}+(-i+j-1)\log((p+1)tT)\\&-\left((z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1\right)\}
+	&+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}+(-i+j-1)\log((p+1)tT)\\&-\left((z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1\right)+o(1)\}
 \end{align*}
-Similarly, $(\lambda_{i}-x_{j}^{T}-i+j)!\sim$
+Similarly, $(\lambda_{i}-x_{j}^{T}-i+j)!=$
 \begin{align*}
 \sqrt{2\pi}\sqrt{ptT}\cdot \text{Exp}&\{(-i+j) + (ptT)\log(ptT)+(z_{i}-a_{j})\sqrt{T}\cdot \log(ptT)+(z_{i}-a_{j})\sqrt{T}\\
-& +\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{pt}+(-i+j)\log(ptT)-((z_{i}-a_{j})\sqrt{T} + ptT-i+j)\}
+& +\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{pt}+(-i+j)\log(ptT)-((z_{i}-a_{j})\sqrt{T} + ptT-i+j)+o(1)\}
 \end{align*} and the final term: $$
-(\lfloor tT \rfloor-1)!\sim (tT)\log(tT)-1-ln(tT)$$
-Therefore $h_{\lambda_{i}-x^{T}_{j}+j-i}(1^{\lfloor tT \rfloor})\sim$
+(\lfloor tT \rfloor-1)!= \sqrt{2\pi}\sqrt{tT}\cdot \text{Exp}\{(tT)\log(tT)-1-\log(tT)+o(1)\}$$
+Therefore $h_{\lambda_{i}-x^{T}_{j}+j-i}(1^{\lfloor tT \rfloor})=$
 \begin{align*}
-	\sqrt{2\pi}^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}\cdot \text{Exp}&\bigg\{\vphantom ((p+1)tT)\log((p+1)tT)-(ptT)\log(ptT)-(tT)\log(tT)\\
-	& +(-i+j)\log(\frac{p+1}{p})-ln(p+1)+(z_{i}-a_{j})\sqrt{T}\cdot \log(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^{2}}{p(p+1)t}\bigg\}
+	\sqrt{2\pi}^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}\cdot &\text{Exp}\bigg\{((p+1)tT)\log((p+1)tT)-(ptT)\log(ptT)-(tT)\log(tT)\\
+	& +(-i+j)\log(\frac{p+1}{p})-\log(p+1)+(z_{i}-a_{j})\sqrt{T}\cdot \log(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^{2}}{p(p+1)t}+o(1)\bigg\}
 \end{align*}
 Denote $S_{1}(p,t,T)=\big((p+1)tT)\log((p+1)tT\big)-(ptT)\log(ptT)-(tT)\log(tT)$. Then, the determinant 
 \begin{align*} 
 \det(h_{\lambda_{i}-x_{j}-i+j})_{i,j=1}^{k} \sim&\left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}e^{S_{1}(p,t,T)-\log(p+1)}\right]^{k}\\
 &\cdot
-	 \det\left(e^{(-i+j)\log(\frac{p+1}{p})+(z_{i}-a_{j})\sqrt{T}\cdot \log(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{p(p+1)t}}\right)\\
+	 \det\left(e^{(-i+j)\log(\frac{p+1}{p})+(z_{i}-a_{j})\sqrt{T}\cdot \log(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{p(p+1)t}+o(1)}\right)\\
 	=&\left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}e^{S_{1}(p,t,T)-\log(p+1)}\right]^{k}\cdot \left(\frac{p+1}{p}\right)^{\sum_{j=1}^k j-\sum_{i=1}^{k}i} \\
-	 &\cdot\left(\frac{p+1}{p}\right)^{\left(\sum_{i=1}^{k}z_{i}-\sum_{j=1}^{k}a_{j}\right)\cdot\sqrt{T}}\cdot \cdot e^{-\frac{1}{2p(p+1)t}(\sum_{i=1}^{k}(a_{i}^2+z_{i}^2))}\det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\\
+	 &\cdot\left(\frac{p+1}{p}\right)^{\left(\sum_{i=1}^{k}z_{i}-\sum_{j=1}^{k}a_{j}\right)\cdot\sqrt{T}} \cdot e^{-\frac{1}{2p(p+1)t}(\sum_{i=1}^{k}(a_{i}^2+z_{i}^2))}\det(e^{c_{1}(p,t)z_{i}a_{j}+o(1)})_{i,j=1}^{k}\\
 	 =& \left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}e^{S_{1}(p,t,T)-\log(p+1)}\right]^{k}\left(\frac{p+1}{p}\right)^{\sum_{i=1}^{k}(z_{i}-a_{i}))\cdot\sqrt{T}} \\
-	&\cdot e^{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}(a_{i}^2+z_{i}^2)}\cdot \det\left(e^{c_{1}(p,t)z_{i}a_{j}}\right)_{i,j=1}^{k}
+	&\cdot e^{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}(a_{i}^2+z_{i}^2)}\cdot \det\left(e^{c_{1}(p,t)z_{i}a_{j}+o(1)}\right)_{i,j=1}^{k}
 \end{align*}
 where $c_{1}(p,t)=\frac{1}{p(p+1)t}$.\\
 Similarly,
 \begin{align*}
-	\det \left(h_{y_{i}-\lambda_{j}-i+j}\right)\sim& \left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p(1-t)}}\sqrt{T}^{-1}\cdot e^{S_{2}(p,t,T)-ln(p+1)}\right]^{k}\left(\frac{p+1}{p}\right)^{\sum_{i=1}^{k}(b_{i}-z_{i})\cdot\sqrt{T}} \\
-	& \cdot e^{-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^2)}\cdot \det\left(e^{c_{2}(p,t)b_{i}z_{j}}\right)_{i,j=1}^{k}\\
-	\det(h_{y_{i}^{T}-x_{j}^{T}-i+j})\sim& \left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p}}\sqrt{T}^{-1}\cdot e^{S_{3}(p,t,T)-ln(p+1)}\right]^{k}\left(\frac{p+1}{p}\right)^{\sum_{i=1}^{k}(b_{i}-a_{i})\cdot\sqrt{T}} \\
-	&\cdot \det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^2}\right)_{i,j=1}^{k}
+	\det \left(h_{y_{i}-\lambda_{j}-i+j}\right)&= \left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p(1-t)}}\sqrt{T}^{-1}\cdot e^{S_{2}(p,t,T)-\log(p+1)}\right]^{k}\left(\frac{p+1}{p}\right)^{\sum_{i=1}^{k}(b_{i}-z_{i})\cdot\sqrt{T}} \\
+	& \cdot e^{-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^2)}\cdot \det\left(e^{c_{2}(p,t)b_{i}z_{j}+o(1)}\right)_{i,j=1}^{k}\\
+	\det(h_{y_{i}^{T}-x_{j}^{T}-i+j})\sim& \left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p}}\sqrt{T}^{-1}\cdot e^{S_{3}(p,t,T)-\log(p+1)}\right]^{k}\left(\frac{p+1}{p}\right)^{\sum_{i=1}^{k}(b_{i}-a_{i})\cdot\sqrt{T}} \\
+	&\cdot \det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^2+o(1)}\right)_{i,j=1}^{k}
 	\end{align*}
-where we have the functions of $p,t$ and $T$:
-\begin{align*}c_{2}(p,t)&=\frac{1}{p(p+1)(1-t)}\\
+where the constants $c_{2}(p,t)$, $S_{2}(p,t,T)$, $S_{3}(p,t,T)$ are:
+\begin{align*}
 S_{2}(p,t,T)&=((p+1)(1-t)T)\log((p+1)tT)-(p(1-t)T)\log(ptT)-((1-t)T)\log((1-t)T)\\ 
-S_{3}(p,t,T)&=((p+1)T)\log((p+1)tT)-(pT)\log(pT)-T\log T\end{align*}
+S_{3}(p,t,T)&=((p+1)T)\log((p+1)tT)-(pT)\log(pT)-T\log T,\quad c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}\end{align*}
 Notice that $S_{1}(p,t,T)+S_{2}(p,t,T)-S_{3}(p,t,T)=0$. Combine three determinants above, we get
 \begin{align*}
 	& \pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)\\
-	\sim & (2\pi)^{-\frac{k}{2}}\left[\sqrt{\frac{p+1}{pt(1-t)}}\right]^{k}\cdot T^{-\frac{k}{2}} \cdot e^{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}(a_{i}^2+z_{i}^2)-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^{2})}\\
-	& \cdot e^{-k\log(p+1)}\cdot \frac{\det(e^{c_{1}(p,t)z_{i}a_{j}})_{i,j=1}^{k}\cdot \det(e^{c_{2}(p,t)b_{i}z_{j}})_{i,j=1}^{k}}{\det(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}})_{i,j=1}^{k}}\\
+	= & (2\pi)^{-\frac{k}{2}}\left[\sqrt{\frac{p+1}{pt(1-t)}}\right]^{k}\cdot T^{-\frac{k}{2}} \cdot e^{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}(a_{i}^2+z_{i}^2)-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^{2})}\\
+	& \cdot e^{-k\log(p+1)}\cdot \frac{\det(e^{c_{1}(p,t)z_{i}a_{j}+o(1)})_{i,j=1}^{k}\cdot \det(e^{c_{2}(p,t)b_{i}z_{j}+o(1)})_{i,j=1}^{k}}{\det(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}+o(1)})_{i,j=1}^{k}}\\
 	= &(2\pi)^{-\frac{k}{2}}\left[\sqrt{\frac{1}{p(p+1)t(1-t)}}\right]^{k}\cdot T^{-\frac{k}{2}}\cdot e^{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}a_{i}^2-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}b_{i}^2}\\
-	& \cdot\frac{\det\left(e^{c_{1}(p,t)z_{i}a_{j}}\right)_{i,j=1}^{k}\cdot \det\left(e^{c_{2}(p,t)b_{i}z_{j}}\right)_{i,j=1}^{k}}{\det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right)_{i,j=1}^{k}})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^2}
+	& \cdot\frac{\det\left(e^{c_{1}(p,t)z_{i}a_{j}}\right)_{i,j=1}^{k}\cdot \det\left(e^{c_{2}(p,t)b_{i}z_{j}}\right)_{i,j=1}^{k}}{\det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right)_{i,j=1}^{k}}\cdot \exp\{o(1)\}\cdot \prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^2}
 \end{align*}
 where $c_{3}(t,p)=\frac{1}{2p(p+1)t(1-t)}$.
-Therefore, $(\sqrt{T})^{k}\cdot\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)$ converges to $\rho(x_{1},\dots,x_{k})$ as given above, and 
+Therefore, $f_{T}(z)=(\sqrt{T})^{k}\cdot\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)$ converges to $\rho(z_{1},\dots,z_{k})$ as given above, when $T\rightarrow\infty$ and 
 \begin{align*}
 	&c_{1}(p,t)=\frac{1}{p(p+1)t}, \quad c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}, \quad c_{3}(p,t)=\frac{1}{2p(p+1)t(1-t)}\\
 	&Z=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot e^{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}}\cdot e^{c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}}\det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right)_{i,j=1}^{k}
 \end{align*}
-(\romannumeral 2) Second, we discuss the boundedness. Since $f_{T}(z)$ pointwise converges to $\rho(z)$ and $[-A,A]^{k}$ has finite measure, by Egorov's Theorem(Measure, Integration \& Real Analysis, Sheldon Axler, 2.85), $f_{T}(z)$ uniformly converges to $\rho(z)$ almost surely. The limit function $\rho(z)$ is bounded because it is a continuous function on a compact set $[-A,A]^{k}$. Therefore, the sequence $f_{T}(z)$ is almost surely bounded on $[-A,A]^{k}$, and we proved the lemma.
+(\romannumeral 2) Second, we discuss the boundedness. By the equation we just derived, $f_{T}(z)=\rho(z)\cdot\exp\{o(1)\}$ on the compact set $[-A,A]^{k}$. Since $\exp\{o(1)\}$ and continuous function $\rho(z)$ are bounded on $[-A,A]^{k}$, $f_{T}(z)$ is bounded as well.
 
 
 
