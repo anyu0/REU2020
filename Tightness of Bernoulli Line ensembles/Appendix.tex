@@ -219,3 +219,340 @@ We will prove the following lemma, of which the two lemmas are immediate consequ
 	In particular, (1) implies that $\mathfrak{X}^{n_m}$ has the same law as $X^{n_m}$, which converges weakly to $\mathbb{P}_{avoid,Ber}^{T_0,T_1,\vec{x},\vec{y},\infty,g^b}$. It follows from (2) and the uniqueness of limits that $\mathfrak{X}$ has law $\mathbb{P}_{avoid,Ber}^{T_0,T_1,\vec{x},\vec{y},\infty,g^b}$. Similarly, $\mathfrak{Y}$ has law $\mathbb{P}_{avoid,Ber}^{T_0,T_1,\vec{x}',\vec{y}',\infty,g^t}$. Moreover, condition (4) in Step 1 implies that $\mathfrak{X}^n_i \leq \mathfrak{Y}^n_i$, $\mathbb{P}$-a.s., so $\mathfrak{X}_i \leq \mathfrak{Y}_i$ for $1\leq i\leq k$, $\mathbb{P}$-a.s. Thus we can take $\mathfrak{L}^b := \mathfrak{X}$ and $\mathfrak{L}^t := \mathfrak{Y}$.
 	
 \end{proof}
+
+\subsection{Weak Convergence of Scaled avoiding Bernoulli Line Ensemble} We consider there $\{1,\dots,k\}$-indexed line ensembles with distribution given by $\mathbb{P}^{0,T,\vec{x},\vec{y},\infty,-\infty}_{avoid,Ber}$ in the sense of Definition \ref{DefAvoidingLawBer}. Recall that this is just the law of $k$ independent Bernoulli random walks that have been conditioned to start from $(x_{1},\dots,x_{k})$ at time $0$ and and at $(y_1,\cdots,y_{k})$ at time $T$ and are always ordered. Here $x_{1}\geq x_{2}\geq \cdots \geq x_{k}$, $y_{1}\geq y_{2}\geq \cdots \geq y_{k}$ and $x_{i}$, $y_{i}\in\mathbb{Z}$ satisfy $T\geq y_{i}-x_{i}\geq 0$ for $i=1,\dots,k$. We will drop the infinities and simply write $\mathbb{P}^{0,T,\vec{x},\vec{y}}_{avoid,Ber}$ for the measure.
+
+Fix $p,t\in(0,1)$, $k\in\mathbb{N}$, $a_{i}$, $b_{i}\in\mathbb{R}$ for $i=1,\dots,k$ such that $a_{1}\geq \cdots \geq a_{k}$ and $b_{1}\geq \cdots \geq b_{k}$. Suppose that $\vec{x}^{T}=(x_{1}^{T},\cdots,x_{k}^{T})$ and $\vec{y}^{T}=(y_{1}^{T},\cdots,y_{k}^{T})$ is a sequence of $k$-dimensional vectors with integer entries such that $$\lim_{T\rightarrow\infty}\frac{x_{i}^{T}}{\sqrt{T}}=a_{i} \textbf{ and } \lim_{T\rightarrow\infty}\frac{y_{i}^{T}-pT}{\sqrt{T}}=b_{i}$$ for $i=1,\dots,k$. Define the sequence of random $k$-dimensional vectors $Z^{T}$ by $$Z^{T}=\big(\frac{L_{1}(tT)-ptT}{\sqrt{T}},\cdots,\frac{L_{k}(tT)-ptT}{\sqrt{T}}\big),$$ where $(L_{1},\cdots,L_{k})$ is $\mathbb{P}^{0,T,\vec{x},\vec{y}}_{avoid,Ber}$-distributed. We will prove the following results:
+\begin{enumerate}
+	\item The avoiding Bernoulli line ensemble at position $\lfloor tT \rfloor$ has the following distribution: $$\mathbb{P}(L_{1}(\lfloor tT \rfloor) = \lambda_{1}, \cdots, L_{k}(\lfloor tT \rfloor) = \lambda_{k})=\frac{s_{\lambda/\mu}(1^{\lfloor tT \rfloor})\cdot s_{\kappa/\lambda}(1^{T-\lfloor tT \rfloor})}{s_{\kappa/\mu}(1^{T})}$$ where $\lambda_{1}>\lambda_{2}>\cdots >\lambda_{k}$ are positive integers, $s_{\lambda/\mu}$ denote skew Schur polynomials and they are specialized in all parameters equal to $1$. The $\mu$ partition is just the vector $\vec{x}^{T}$ and the $\kappa$ partition should be $\vec{y}^{T}$.
+	\item When $a_{1}> \cdots > a_{k}$ and $b_{1}> \cdots > b_{k}$ are all distinct, the random vector $Z^{T}$ converges weakly to a random vector with the density $$\rho(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot \det\big[e^{c_{1}(t,p)a_{i}z_{j}}\big]_{i,j=1}^{k}\det\big[e^{c_{2}(t,p)b_{i}z_{j}}\big]_{i,j=1}^{k}\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\mathbbm{1}_{\{z_{1}>\cdots >z_{k}\}}$$ where $c_{1},c_{2},c_{3}$ are constants depending on $p,t$: 
+	\begin{align*}
+		&c_{1}(p,t)=\frac{1}{p(p+1)t}, \quad c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}, \quad c_{3}(p,t)=\frac{1}{2p(p+1)t(1-t)}
+	\end{align*}
+	and $Z$ is a constant depending on $p,t,\vec{a},\vec{b}$ such that $\rho(z_{1},\cdots,z_{k})$ integrates to $1$ over $\mathbb{R}^{k}$.
+	\item When $a_{1}\geq \cdots \geq a_{k}$ and $b_{1}\geq \cdots \geq b_{k}$ contain collided values, we suppose
+	\begin{align*}
+	&\vec{a}_{0}=(\underbrace{\alpha_{1},\cdots,\alpha_{1}}_{m_{1}},\cdots,\underbrace{\alpha_{p},\cdots,\alpha_{p}}_{m_{p}})\\
+	&\vec{b}_{0}=(\underbrace{\beta_{1},\cdots,\beta_{1}}_{n_{1}},\cdots,\underbrace{\beta_{q},\cdots,\beta_{q}}_{n_{q}})
+	\end{align*}
+where $\alpha_{1}>\alpha_{2}>\cdots>\alpha_{p}$, $\beta_{1}>\beta_{2}>\cdots>\beta_{q}$ and $\sum_{i=1}^{p}m_{i}=\sum_{i=1}^{q}n_{i}=k$. Then, the random vector $Z^{T}$ converges weakly to a random vector, but with the density $$\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot \varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\mathbbm{1}_{\{z_{1}>\cdots> z_{k}\}}$$ where $\vec{m}=(m_{1},\cdots,m_{k})$, $\vec{n}=(n_{1},\cdots,n_{k})$, $c_{1},c_{2},c_{3}$ are constants depending on $p,t$ as given in $(2)$, $Z$ is a constant depending on $p,t,\vec{a},\vec{b}$ such that $\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})$ integrates to $1$ over $\mathbb{R}^{k}$, and $\varphi(\vec{a}_{0},\vec{z},\vec{m})$ and $\psi(\vec{b}_{0},\vec{z},\vec{n})$ are determinants:
+\begin{equation*}
+	\varphi(\vec{a}_{0},\vec{z},\vec{m})= \det
+	\left[ \begin{array}{ccc}
+		((c_{1}(t,p)z_{j})^{i-1}e^{c_{1}(t,p)\alpha_{1}z_{j}})_{\substack{i=1,\cdots,m_{1}\\j=1,\cdots,k}}\\
+	\vdots\\
+	((c_{2}(t,p)z_{j})^{i-1}e^{c_{1}(t,p)\alpha_{p}z_{j}})_{\substack{i=1,\cdots,m_{p} \\j=1,\cdots,k}}
+	\end{array}
+	\right]
+\end{equation*}
+\begin{equation*}
+	\psi(\vec{b}_{0},\vec{z},\vec{n})= \det
+	\left[ \begin{array}{ccc}
+		((c_{2}(t,p)z_{j})^{i-1}e^{c_{2}(t,p)\beta_{1}z_{j}})_{\substack{i=1,\cdots,n_{1}\\j=1,\cdots,k}}\\
+	\vdots\\
+	((c_{2}(t,p)z_{j})^{i-1}e^{c_{2}(t,p)\beta_{q}z_{j}})_{\substack{i=1,\cdots, n_{q} \\j=1,\cdots,k}}
+	\end{array}
+	\right]
+\end{equation*} 
+\end{enumerate}
+\begin{proof} Our proof is divided into $3$ parts corresponding to $3$ results, respectively.\\
+\textbf{Part 1. }Let $\Omega(0,T,\vec{x}^T, \vec{y}^T)$ be the set of all non-intersecting Bernoulli line ensembles from $\vec{x}^T$ to $\vec{y}^T$. For each line ensemble $\mathfrak{B}\in \Omega(0,T,\bar x^T,\bar y^T)$ with $\mathfrak B=(B_1,...,B_k)$, we may define $\lambda_i(\mathfrak B):=(B_1(i),B_2(i),...,B_k(i))$, where $1 \leqslant i\leqslant T$ is an integer. The $\lambda_i$ form partitions since by the definition of avoiding Bernoulli line ensembles, we have the inequality $B_\alpha(i)>B_\beta(i)$ if $\alpha<\beta$. 
+Now because $B_\alpha(i+1)-B_\alpha(i)\in \{0,1\}$ we know that $B_\alpha(i+1)\geq B_\alpha(i)$ but also since $B_\alpha(i+1)\in \mathbb{Z}$ and $B_{\alpha+1}(i+1)<B_\alpha(i+1)$ by the earlier stated inequality, we know that $B_{\alpha+1}(i+1)+1\leq B_\alpha(i+1)$ and so we find that 
+\[B_{\alpha+1}(i+1)\leq B_\alpha(i)\leq B_\alpha(i+1)\]
+We therefore find that for all $i$, $\lambda_i\preceq \lambda_{i+1}$. Note that when $i=0$, we get $\lambda_0=\bar x^T$ and $\lambda_T=\bar y^T$.
+
+Now, let us define the set 
+\[TB_{\kappa/\mu}^T:=\{(\lambda_0,...,\lambda_T)\mid \lambda_0=\mu, \lambda_T=\kappa, \lambda_i\preceq\lambda_{i+1}\}\] 
+Now, if we take $f:\Omega(0,T,\bar x^T, \bar y ^T)\to TB_{\kappa/\mu}^T$ with $f(\mathfrak{B})= (\lambda_0(\mathfrak{B}),\cdots \lambda_T(\mathfrak{B}))$. We find that this function is in fact a bijection. 
+
+First, to show for injectivity, suppose that there are two Bernoulli line ensembles, $\mathfrak{B}, \mathfrak{B}'\in \Omega(0,T,\bar x^T, \bar y ^T)$ such that $\mathfrak{B}\neq \mathfrak{B'}$.
+Because Bernoulli line ensembles are determined by their values at integer times, we find that this would imply that there exists some $(q,r)$ such that $0\leq r\leq T$, $0\leq q \leq k$ and $B_q(r)\neq B'_q(r)$ where $B_q$ and $B_q'$ are components of $\mathfrak{B}$ and $\mathfrak{B'}$ respectively. 
+This implies that $\lambda_r(\mathfrak B)\neq \lambda_r'(\mathfrak{B'})$, and we have injectivity. 
+
+Now, surjectivity follows since for any $\bar\lambda=(\lambda_0,...,\lambda_T)$ we may define $\mathfrak{B}(\bar{\lambda})=(B_1(\bar\lambda),...,B_k(\bar\lambda))$ where $B_r(\bar\lambda)(i)=\lambda_i^r$ where $\lambda_i^r$ is the $i$\textit{th} entry of $\lambda_r$. The restrictions on $TB_{\kappa/\mu}^T$ ensure that each $\mathfrak{B}(\bar\lambda)\in \Omega(0,T,\bar x^T,\bar y^T)$, and so $f(\mathfrak B(\bar{\lambda}))=(\lambda_0,\cdots \lambda_T)$ by the definition $\mathfrak{B}(\bar\lambda)$. 
+
+Applying the result regarding the relationship between number of partitions and skew Schur polynomial \cite[Chapter 1, (5.11)]{Mac}, we have \[s_{\kappa/\mu}(1^T)=\sum_{(\nu)}\prod_{i=1}^n s_{\nu^{(i)}/\nu^{i-1}}=\sum_{(\nu)} 1=\lvert TB_{\mu/\kappa}^T\rvert\]
+
+Therefore, we can find that 
+\begin{align*}
+\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)
+=&{}\frac{\lvert \Omega(0,\lfloor Tt\rfloor, \vec{x}^T, \lambda)\rvert\cdot \lvert \Omega(\lfloor Tt\rfloor ,T, \lambda, \vec{y}^T)\rvert}{\lvert \Omega(0, T, \vec{x}^T, \vec{y}^T)\rvert}\\
+=&{}\frac{s_{\lambda/\vec{x}^T}(1^{\floor{Tt}})\cdot s_{\vec{y}^T/\lambda}(1^{T-\floor{Tt}})}{s_{\vec{y}^T/\vec{x}^T}(1^T)}
+\end{align*} and proved the result.\\
+\noindent \textbf{Part 2. }In the following, we prove the weak convergence of the random vector $Z^{T}$, when $\vec{a}$ and $\vec{b}$ consist of distinct entries. Let $\mathbb{W}_{k}^{o}$ denote the open Weyl chamber in $\mathbb{R}^{N}$:
+$$\mathbb{W}_{N}^{o}=\{(x_{1},\cdots,x_{k})\in\mathbb{R}^{N}:x_{1}>x_{2}>\cdots>x_{k}\}$$ 
+
+In order to show the weak convergence, it is sufficient to show that for every open set $O\in\mathbb{R}^{k}$, we have: 
+$$\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in O)\geqslant\int_{O}\rho(z_{1},\cdots,z_{k})dz_{1}dz_{2}\cdots dz_{k}$$
+according to \cite[Theorem 3.2.11]{Durrett}. Actually, it suffices to show for any open set $U\in\mathbb{W}_{k}^{o}$, we have:
+\begin{align}{\label{WeakConv}}
+	\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in U)\geqslant\int_{U}\rho(z_{1},\cdots,z_{k})dz_{1}dz_{2}\cdots dz_{k}
+\end{align}
+which implies that:
+\begin{align*}
+	&\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in O)\geqslant\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in O\cap\mathbb{W}_{k}^{o})\\
+	&\geqslant \int_{\mathbb{W}_{k}^{o}\cap O}\rho(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}= \int_{O}\rho(z_{1},\cdots,z_{N})dz_{1}\cdots dz_{k}
+\end{align*}
+The second inequality uses the above result \ref{WeakConv}, since $\mathbb{W}_{k}^{o}\cap O$ is an open set in $\mathbb{W}_{k}^{o}$. The last equality is because $\rho(z)$ is zero outside the $\mathbb{W}_{k}^{o}$. The rest of Part 2 will be divided into $4$ steps. In Step 1 and Step 2, we prove the result \ref{WeakConv} assuming the validity of a claim. In Step 3, we prove that $\rho(z)$ is actually a density. In Step 4, we prove the claim we made in Step 1.\\
+\textbf{Step 1. }In this step, we establish the following result:\\
+For any closed rectangle $R=[u_{1},v_{1}]\times [u_{2},v_{2}]\times\cdots\times[u_{N},v_{N}]\in\mathbb{W}_{k}^{o}$, 
+\begin{align}
+	\lim_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)=\int_{R}\rho(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}
+\end{align}
+where $\rho(z)$ is given in result $(2)$.\\
+
+Define $m_{i}^{T}=\lceil u_{i}\sqrt{T}+ptT\rceil$ and $M_{i}^{T}=\lfloor v_{i}\sqrt{T}+ptT\rfloor$, and we have:
+\begin{align*}
+&\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)=\mathbb{P}(u_{1}\leqslant Z_{1}^{T} \leqslant v_{1}, \dots,  u_{k}\leqslant Z_{k}^{T} \leqslant v_{k})\\
+&=\mathbb{P}(u_{i}\sqrt{T}+ptT\leqslant L_{i}(\lfloor tT\rfloor) \leqslant v_{i}\sqrt{T}+ptT, i=1,\dots, k)\\
+&=\sum_{\lambda_{1}(T)=m_{1}^{T}}^{M_{1}^{T}}\cdots\sum_{\lambda_{k}(T)=m_{k}^{T}}^{M_{k}^{T}}\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1}(T),\dots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}(T))\\
+&=\sum_{\lambda_{1}(T)=m_{1}^{T}}^{M_{1}^{T}}\dots\sum_{\lambda_{k}(T)=m_{k}^{T}}^{M_{k}^{T}}(\sqrt{T})^{-k}\cdot(\sqrt{T})^{k}\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1}(T),\dots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}(T))
+\end{align*}
+
+Find sufficiently large $A$ such that $R\subset[-A,A]^{k}$, for example, $A=1+\max_{1\leqslant i\leqslant k}|a_{i}|+\max_{1\leqslant i\leqslant k}|b_{i}|$. Define $f_{T}(z_{1},\cdots,z_{k})$ as a simple function on $\mathbb{R}^{k}$: When $(z_{1},\cdots,z_{k})\in R$, it takes value $(\sqrt{T})^{k}\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1}(T),\cdots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}(T)) $ if there exist $\lambda_{1}(T),\cdots,\lambda_{k}(T)$ such that $\lambda_{i}(T)\leqslant z_{i}\sqrt{T}+ptT<\lambda_{i}(T)+1$; It takes value $0$ otherwise, when $(z_{1},\cdots,z_{k})\notin R$.  Since the Lebesgue measure of the set $\{z:\lambda_{i}(T)\leqslant z_{i}\sqrt{T}+ptT<\lambda_{i}(T)+1,i=1,\cdots,k\}$ is $(\sqrt{T})^{-k}$, the above probability can be further written as an integral of simple function $f_{T}(z_{1},\cdots,z_{k})$:
+\begin{align*}
+\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)&=\int_{[-A,A]^{k}}f_{T}(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}
+\end{align*}
+Now we introduce the following claim:\\
+\textbf{Claim: }Fix $A>0$, take $z=(z_{1},\cdots,z_{k})\in\mathbb{W}_{k}^{o}$ such that $A>z_{1}>\cdots>z_{k}>-A$. Choose sufficiently large $T_{0}$ such that $ptT_{0}-A\sqrt{T_{0}}\geqslant 1$, then for $T\geqslant T_{0}$, define $\lambda_{i}(T)=\lfloor z_{i}\sqrt{T}+ptT\rfloor\geqslant 1$ for $i=1,\cdots,k$. Then we have for almost every $z\in[-A,A]^{k}$:
+$$\lim_{T\rightarrow\infty}f_{T}(z_{1},\cdots,z_{k})=\rho(z_{1},\cdots,z_{k})$$ and $f_{T}(z_{1},\cdots,z_{k})$ is bounded on $[-A,A]^{k}$.\\
+The proof of this claim is postponed to Step 4. For now, we assume the validity of the claim. Since the function $f_{T}(z_{1},\cdots,z_{k})$ is bounded on the compact set $[-A,A]^{k}$, and the Lebesgue measure of $[-A,A]^{k}$ is finite, by bounded convergence theorem and assuming the validity of the claim, we have:
+$$\lim_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)=\int_{R}\rho(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}$$
+\textbf{Step 2. }In this step, we prove the statement \ref{WeakConv}. Take any open set $U\in \mathbb{W}_{k}^{o}$, it can be written as a countable union of closed rectangles with disjoint interiors: $U=\bigcup_{i=1}^{\infty}R_{i}$, where $R_{i}=[a_{1}^{i},b_{1}^{i}]\times\cdots\times[a_{k}^{i},b_{k}^{i}]$(\cite[Theorem 1.4]{Stein}). Choose sufficiently small $\epsilon>0$, and denote $R_{i}^{\epsilon}=[a_{1}^{i}+\epsilon,b_{1}^{i}-\epsilon]\times\cdots\times[a_{k}^{i}+\epsilon,b_{k}^{i}-\epsilon]$, then $R_{i}^{\epsilon}$ are disjoint. Therefore,
+\begin{align*}
+	&\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in U)\geqslant\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \bigcup_{i=1}^{n}R_{i}^{\epsilon})\\
+	&=\liminf_{T\rightarrow\infty}\sum_{i=1}^{n}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i}^{\epsilon})=\sum_{i=1}^{n}\int_{R_{i}^{\epsilon}}\rho(z_1,\cdots,z_{k})dz_{1}\cdots dz_{k}\\
+	&=\int_{\bigcup_{i=1}^{n}R_{i}^{\epsilon}}\rho(z_1,\cdots,z_{k})dz_{1}\cdots dz_{k} \xrightarrow{\epsilon\downarrow 0} \int_{U}\rho(z_1,\cdots,z_{k})dz_{1}\cdots dz_{k}
+\end{align*}
+The last line uses monotone convergence theorem. Thus, we proved \ref{WeakConv}.\\
+\textbf{Step 3. }In this step, we prove that $\rho(z)$ is actually a density. First, it is nonnegative because it's the limit of a sequence of probabilities. Next, we prove it integrates to $1$ over $\mathbb{R}^{k}$. Let the open set $U$ in Step 2 be $\mathbb{W}_{k}^{o}$, and we get: $$1=\liminf_{T\rightarrow\infty}\mathbb{P}(Z^{T}\in \mathbb{W}_{k}^{o})\geqslant \int_{\mathbb{W}_{k}^{o}}\rho(z)dz$$
+On the other hand, write the open set $\mathbb{W}_{k}^{o}$ as a countable union of almost disjoint closed rectangles: $\mathbb{W}_{k}^{o}=\bigcup_{i=1}^{\infty}R_{i}$. Then we have:
+\begin{align*}
+	1&=\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \mathbb{W}_{k}^{o})=\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \bigcup_{i=1}^{\infty}R_{i})\leqslant\sum_{i=1}^{\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i})
+\end{align*}
+where the inequality uses sub-additivity of probability measures. Take an arbitrary $\epsilon>0$. For each $R_{i}$, we can find a closed rectangle $R_{i}^{\epsilon-}$ contained in $R_{i}$ such that $\mathbb{P}(Z^{T}\in R_{i})\leqslant \mathbb{P}(Z^{T}\in R_{i}^{\epsilon-})+\frac{\epsilon}{2^{i}}$. Then, we have
+\begin{align*}
+	1&=\lim_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \mathbb{W}_{k}^{o})\leqslant \lim_{T\rightarrow\infty}\sum_{i=1}^{\infty}\big[\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i}^{\epsilon-})+\frac{\epsilon}{2^{i}}\big]\\
+	&=\sum_{i=1}^{\infty}\int_{R_{i}^{\epsilon-}}\rho(z)dz+\epsilon=\int_{\bigcup_{i=1}^{\infty}R_{i}^{\epsilon-}}\rho(z)dz+\epsilon
+\end{align*}
+We can interchange the limit and the infinite sum because the sum is bounded by $1$. Then let $\epsilon\downarrow 0$, we get $1\leqslant\int_{\mathbb{W}_{k}^{o}}\rho(z)dz$, implying $\int_{\mathbb{W}_{k}^{o}}\rho(z)dz=1$ and we conclude that $\rho(z)$ is actually a density.\\
+\textbf{Step 4. }Now we prove the claim we introducted in Step 1. \\
+(\romannumeral 1) First, we discuss the pointwise convergence. By Jacobi-Trudi formula(\cite[Chapter 1, (5.4)]{Mac} ), we conclude:
+\begin{align*}
+\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)=\frac{\det\left(h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})\right)_{i,j=1}^k\cdot\det\left(h_{y_i^T-\lambda_j+j-i}(1^{T-\floor{tT}})\right)_{i,j=1}^k}{\det\left(h_{y_i^{T}-x_j^T+j-i}(1^T)\right)_{i,j=1}^k}	
+\end{align*}
+We first compute the first determinant in the numerator. Using the identity for complete symmetric functions(\cite[Example 1, Section I.2]{Mac}) that $h_r(1^n)=\binom{n+r-1}{r}$, we get the resulting equation 
+\begin{align*}
+h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})&=\frac{(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!}{(\lambda_{i}-x_{j}^{T}-i+j)!(\lfloor tT \rfloor -1)!}
+\end{align*}
+We have the following Stirling's formula, 
+$$\sqrt{2\pi n}n^ne^{-n}e^{r_{n}}\text{, where }\frac{1}{12n+1}<r_{n}<\frac{1}{12n}$$
+Denote $K=\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1$ and apply the above Stirling's formula, we get
+\begin{align*}
+K!=\sqrt{2\pi}\sqrt{K}\cdot e^{K\log K-K+r_{K}}
+\end{align*}
+Additionally, since $\lambda_{i}=\lfloor z_{i}\sqrt{T}+ptT\rfloor$ and $x_{i}^{T}= a_{i}\sqrt{T}+o(\sqrt{T})$, we get \[K=\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1= (z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1+o(\sqrt{T})\]
+\begin{align*}
+	\log K&=\log\left(1+\frac{-i+j-1}{(z_{i}-a_{j})\sqrt{T}+(p+1)tT}+o(\frac{1}{\sqrt{T}})\right)+\log((z_{i}-a_{j})\sqrt{T}+(p+1)tT)\\
+	&=\frac{-i+j-1}{(z_{i}-a_{j})\sqrt{T}+(p+1)tT}+\log((z_{i}-a_{j})\sqrt{T}+(p+1)tT)+o(\frac{1}{\sqrt{T}})
+\end{align*}
+Next, we compute $K\log K$:
+\begin{align*}
+K\log K &=\left(-i+j-1\right) + \left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)\\&+(-i+j-1)\log\left((p+1)tT\right)+o(\sqrt{T})
+\end{align*}
+Now we further compute the term $\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)$. Notice that
+\begin{align*}
+	\log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)&= \log\left((p+1)tT\right)+\log\left(1+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}\right)\\
+	&= \log((p+1)tT)+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{(p+1)^{2}t^{2}T}+o(\frac{1}{T})
+\end{align*}
+Then, 
+\begin{align*}
+	& \left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)\\
+	&=\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \left[\log((p+1)tT)+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{(p+1)^{2}t^{2}T}+o(\frac{1}{T})\right]\\
+	&=\left((p+1)tT)\log((p+1)tT\right)+(z_{i}-a_{j})\sqrt{T}\cdot \log((p+1)tT)+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}+o(1)
+\end{align*}
+Therefore, we find that $(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!=$
+\begin{align*}
+	\sqrt{2\pi}\sqrt{(p+1)tT}\cdot \text{Exp}&\{(-i+j-1) + ((p+1)tT)\log((p+1)tT)+(z_{i}-a_{j})\sqrt{T}\cdot ((p+1)tT)\\
+	&+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}+(-i+j-1)\log((p+1)tT)\\&-\left((z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1\right)+o(1)\}
+\end{align*}
+Similarly, $(\lambda_{i}-x_{j}^{T}-i+j)!=$
+\begin{align*}
+\sqrt{2\pi}\sqrt{ptT}\cdot \text{Exp}&\{(-i+j) + (ptT)\log(ptT)+(z_{i}-a_{j})\sqrt{T}\cdot \log(ptT)+(z_{i}-a_{j})\sqrt{T}\\
+& +\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{pt}+(-i+j)\log(ptT)-((z_{i}-a_{j})\sqrt{T} + ptT-i+j)+o(1)\}
+\end{align*} and the final term: $$
+(\lfloor tT \rfloor-1)!= \sqrt{2\pi}\sqrt{tT}\cdot \text{Exp}\{(tT)\log(tT)-1-\log(tT)+o(1)\}$$
+Therefore $h_{\lambda_{i}-x^{T}_{j}+j-i}(1^{\lfloor tT \rfloor})=$
+\begin{align*}
+	\sqrt{2\pi}^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}\cdot &\text{Exp}\bigg\{((p+1)tT)\log((p+1)tT)-(ptT)\log(ptT)-(tT)\log(tT)\\
+	& +(-i+j)\log(\frac{p+1}{p})-\log(p+1)+(z_{i}-a_{j})\sqrt{T}\cdot \log(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^{2}}{p(p+1)t}+o(1)\bigg\}
+\end{align*}
+Denote $S_{1}(p,t,T)=\big((p+1)tT)\log((p+1)tT\big)-(ptT)\log(ptT)-(tT)\log(tT)$. Then, the determinant 
+\begin{align*} 
+\det(h_{\lambda_{i}-x_{j}-i+j})_{i,j=1}^{k} \sim&\left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}e^{S_{1}(p,t,T)-\log(p+1)}\right]^{k}\\
+&\cdot
+	 \det\left(e^{(-i+j)\log(\frac{p+1}{p})+(z_{i}-a_{j})\sqrt{T}\cdot \log(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{p(p+1)t}+o(1)}\right)\\
+	=&\left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}e^{S_{1}(p,t,T)-\log(p+1)}\right]^{k}\cdot \left(\frac{p+1}{p}\right)^{\sum_{j=1}^k j-\sum_{i=1}^{k}i} \\
+	 &\cdot\left(\frac{p+1}{p}\right)^{\left(\sum_{i=1}^{k}z_{i}-\sum_{j=1}^{k}a_{j}\right)\cdot\sqrt{T}} \cdot e^{-\frac{1}{2p(p+1)t}(\sum_{i=1}^{k}(a_{i}^2+z_{i}^2))}\det(e^{c_{1}(p,t)z_{i}a_{j}+o(1)})_{i,j=1}^{k}\\
+	 =& \left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}e^{S_{1}(p,t,T)-\log(p+1)}\right]^{k}\left(\frac{p+1}{p}\right)^{\sum_{i=1}^{k}(z_{i}-a_{i}))\cdot\sqrt{T}} \\
+	&\cdot e^{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}(a_{i}^2+z_{i}^2)}\cdot \det\left(e^{c_{1}(p,t)z_{i}a_{j}+o(1)}\right)_{i,j=1}^{k}
+\end{align*}
+where $c_{1}(p,t)=\frac{1}{p(p+1)t}$.\\
+Similarly,
+\begin{align*}
+	\det \left(h_{y_{i}-\lambda_{j}-i+j}\right)&= \left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p(1-t)}}\sqrt{T}^{-1}\cdot e^{S_{2}(p,t,T)-\log(p+1)}\right]^{k}\left(\frac{p+1}{p}\right)^{\sum_{i=1}^{k}(b_{i}-z_{i})\cdot\sqrt{T}} \\
+	& \cdot e^{-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^2)}\cdot \det\left(e^{c_{2}(p,t)b_{i}z_{j}+o(1)}\right)_{i,j=1}^{k}\\
+	\det(h_{y_{i}^{T}-x_{j}^{T}-i+j})\sim& \left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p}}\sqrt{T}^{-1}\cdot e^{S_{3}(p,t,T)-\log(p+1)}\right]^{k}\left(\frac{p+1}{p}\right)^{\sum_{i=1}^{k}(b_{i}-a_{i})\cdot\sqrt{T}} \\
+	&\cdot \det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^2+o(1)}\right)_{i,j=1}^{k}
+	\end{align*}
+where the constants $c_{2}(p,t)$, $S_{2}(p,t,T)$, $S_{3}(p,t,T)$ are:
+\begin{align*}
+S_{2}(p,t,T)&=((p+1)(1-t)T)\log((p+1)tT)-(p(1-t)T)\log(ptT)-((1-t)T)\log((1-t)T)\\ 
+S_{3}(p,t,T)&=((p+1)T)\log((p+1)tT)-(pT)\log(pT)-T\log T,\quad c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}\end{align*}
+Notice that $S_{1}(p,t,T)+S_{2}(p,t,T)-S_{3}(p,t,T)=0$. Combine three determinants above, we get
+\begin{align*}
+	& \pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)\\
+	= & (2\pi)^{-\frac{k}{2}}\left[\sqrt{\frac{p+1}{pt(1-t)}}\right]^{k}\cdot T^{-\frac{k}{2}} \cdot e^{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}(a_{i}^2+z_{i}^2)-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^{2})}\\
+	& \cdot e^{-k\log(p+1)}\cdot \frac{\det(e^{c_{1}(p,t)z_{i}a_{j}+o(1)})_{i,j=1}^{k}\cdot \det(e^{c_{2}(p,t)b_{i}z_{j}+o(1)})_{i,j=1}^{k}}{\det(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}+o(1)})_{i,j=1}^{k}}\\
+	= &(2\pi)^{-\frac{k}{2}}\left[\sqrt{\frac{1}{p(p+1)t(1-t)}}\right]^{k}\cdot T^{-\frac{k}{2}}\cdot e^{-\frac{1}{2p(p+1)t}\sum_{i=1}^{k}a_{i}^2-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}b_{i}^2}\\
+	& \cdot\frac{\det\left(e^{c_{1}(p,t)z_{i}a_{j}}\right)_{i,j=1}^{k}\cdot \det\left(e^{c_{2}(p,t)b_{i}z_{j}}\right)_{i,j=1}^{k}}{\det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right)_{i,j=1}^{k}}\cdot \exp\{o(1)\}\cdot \prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^2}
+\end{align*}
+where $c_{3}(t,p)=\frac{1}{2p(p+1)t(1-t)}$.
+Therefore, $f_{T}(z)=(\sqrt{T})^{k}\cdot\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)$ converges to $\rho(z_{1},\dots,z_{k})$ as given above, when $T\rightarrow\infty$ and 
+\begin{align*}
+	&c_{1}(p,t)=\frac{1}{p(p+1)t}, \quad c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}, \quad c_{3}(p,t)=\frac{1}{2p(p+1)t(1-t)}\\
+	&Z=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot e^{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}}\cdot e^{c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}}\det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right)_{i,j=1}^{k}
+\end{align*}
+(\romannumeral 2) Second, we discuss the boundedness. By the equation we just derived, $f_{T}(z)=\rho(z)\cdot\exp\{o(1)\}$ on the compact set $[-A,A]^{k}$. Since $\exp\{o(1)\}$ and continuous function $\rho(z)$ are bounded on $[-A,A]^{k}$, $f_{T}(z)$ is bounded as well.\\
+
+\noindent\textbf{Part 3. }
+Suppose $\mathfrak{L}^{T}=(L_{1},\cdots,L_{k})$ is a Bernoulli avoiding line ensemble whose distribution is $\mathbb{P}_{avoid, Ber}^{0,T,\vec{x}^{T},\vec{y}^{T}}$, starting with $\vec{x}^{T}=(\vec{x}^{T}_{1},\cdots,\vec{x}^{T}_{k})$ and ending with $\vec{y}^{T}=(\vec{y}^{T}_{1},\cdots,\vec{y}^{T}_{k})$. We also have $$\lim_{T\rightarrow\infty}\frac{\vec{x}_{i}^{T}}{\sqrt{T}}=a_{i}, \quad\lim_{T\rightarrow\infty}\frac{\vec{y}_{i}^{T}-ptT}{\sqrt{T}}=b_{i}$$ where $a_{1}\geq a_{2}\geq\cdots\geq a_{k}$ and $b_{1}\geq b_{2}\geq\cdots\geq b_{k}$. In result $(2)$, we have derived that the random vector $Z^{T}=(Z_{1},Z_{2},\dots,Z_{k})$ weakly converges to the continuous distribution with density $\rho(z_{1},z_{2},\cdots,z_{k})$. However, when vectors $\vec{a}$ and $\vec{b}$ have collided values, three determinants $\det[e^{c_1(t,p)a_{i}z_{j}}]_{i,j=1}^{k}$, $\det[e^{c_2(t,p)b_{i}z_{j}}]_{i,j=1}^{k}$, and $\det(e^{c(p)a_{i}b_{j}})_{i,j=1}^{k}$ in the expression of $\rho(z)$ might vanish and we need to make some adjustment to results $(2)$. Now we introduce some notations and give the sketch of our answer for result $(3)$.
+Denote
+\begin{align*}
+	&\vec{a}_{0}=(\underbrace{\alpha_{1},\cdots,\alpha_{1}}_{m_{1}},\cdots,\underbrace{\alpha_{p},\cdots,\alpha_{p}}_{m_{p}})\\
+	&\vec{b}_{0}=(\underbrace{\beta_{1},\cdots,\beta_{1}}_{n_{1}},\cdots,\underbrace{\beta_{q},\cdots,\beta_{q}}_{n_{q}})
+\end{align*}
+where $\alpha_{1}>\alpha_{2}>\cdots>\alpha_{p}$, $\beta_{1}>\beta_{2}>\cdots>\beta_{q}$ and $\sum_{i=1}^{p}\alpha_{i}=\sum_{i=1}^{q}\beta_{i}=k$. Denote $\vec{a}=(a_{1},\cdots,a_{k})$, $\vec{b}=(b_{1},\cdots,b_{k})$. Also denote $\vec{a}^{(1)}=(a_{1},\cdots,a_{m_1})$, $\vec{a}^{(2)}=(a_{m_{1}+1},\cdots,a_{m_1+m_2})$, $\cdots$, $\vec{a}^{(p)}=(a_{m_1+\cdots+m_{p-1}+1},\cdots, a_{m_1+\cdots+m_{p}})$ and $\vec{a}=(\vec{a}^{(1)},\cdots,\vec{a}^{(p)})$. That is, we divide the vector $\vec{a}$ into $p$ parts according to the form of $\vec{a_{0}}$. Similarly, we write $\vec{b}=(b^{(1)},\cdots,b^{(q)})$ according to the shape of $\vec{b}_{0}$. We will keep using similar notations in the following discussion, when we need to divide the vector according to the shape of $\vec{a}_{0}$ and $\vec{b}_{0}$. Next, denote
+\begin{align*}
+	f(a_{1},\cdots,a_{k})\equiv f(\vec{a})&=\det[e^{c_1(t,p)a_{i}z_{j}}]_{i,j=1}^{k},\quad g(b_{1},\cdots,b_{k})\equiv g(\vec{b})=\det[e^{c_2(t,p)b_{i}z_{j}}]_{i,j=1}^{k}
+\end{align*} 
+and it's not difficult to see that they are all smooth multi-variable functions with respect to the corresponding vectors. In addition, $\lim\limits_{\vec{a}\rightarrow\vec{a}_{0}}f(\vec{a})=0$ and $\lim\limits_{\vec{b}\rightarrow\vec{b}_{0}}g(\vec{b})=0$. \\
+
+Our answer will be divided into several steps. In Step 1, we introduce some notations and results about multi-variable functions. In Step 2, we introduce some claims about proving the non-vanishing of the determinant. In Step 3, we use multi-variate Taylor expansion to find the speed of $f(\vec{a})$ and $g(\vec{b})$ converging to zero. In Step 4, we construct a new density function based on Step 3. Finally, in Step 5, we prove that $Z^{T}$ weakly converges to the new density we constructed in Step 4.\\
+\textbf{Step 1. } We introduce the following notations and results.\\
+(\romannumeral 1) \emph{Multi-index} Suppose $\sigma = (\sigma_{1},\cdots,\sigma_{n})$ is a multi-index of \emph{length} $n$. In our problem, we require $\sigma_{1},\cdots,\sigma_{n}$ be all non-negative integers(some of them might be equal). We define $|\sigma|=\sum_{i=1}^{n}\sigma_{i}$ as the \emph{order} of $\sigma$. Suppose $\tau=(\tau_{1},\cdots,\tau_{n})$ is another multi-index of length $n$. We say $\tau\leqslant \sigma$ if $\tau_{i}\leqslant \sigma_{i}$ for $i=1,\cdots,n$. We say $\tau<\sigma$ if $\tau\leqslant \sigma$ and there exists at least one index $i$ such that $\tau_{i}<\sigma_{i}$. Then, define the partial derivative with respect to the multi-index $\sigma$:
+$$D^{\sigma}f(x_{1},\cdots,x_{n})=\frac{\partial^{|\sigma|}f(x_{1},\cdots,x_{n})}{\partial x_{1}^{\sigma_{1}}\partial x_{2}^{\sigma_{2}}\cdots \partial x_{n}^{\sigma_{n}}}$$ We have the general Leibniz rule:
+\begin{align*}
+	D^{\sigma}(fg)=\sum_{\tau\leqslant\sigma}\binom{\sigma}{\tau}D^{\tau}f\cdot D^{\sigma-\tau}g
+\end{align*}
+where $\binom{\sigma}{\tau}=\frac{\sigma_{1}!\cdots\sigma_{n}!}{\tau_{1}!\cdots\tau_{n}!(\sigma_{1}-\tau_{1})!\cdots(\sigma_{n}-\tau_{n})!}$.\\
+We also have the Taylor expansion for multi-variable functions:
+$$f(x_{1},\cdots,x_{n})=\sum_{|\sigma|\leqslant r}\frac{1}{\sigma!}D^{\sigma}f(\vec{x}_{0})(\vec{x}-\vec{x}_{0})^{\sigma}+R_{r+1}(\vec{x},\vec{x}_{0})$$ 
+In the equation, $\sigma!=\sigma_{1}!\sigma_{2}!\cdots\sigma_{n}!$ is the factorial with respect to the multi-index $\sigma$, $\vec{x}_{0}=(x_{1}^{0},\cdots,x_{n}^{0})$ is a constant vector at which we expands the function $f$, $(\vec{x}-\vec{x}_{0})^{\sigma}$ stands for $(x_{1}-x_{1}^{0})^{\sigma_{1}}\cdots(x_{n}-x_{n}^{0})^{\sigma_{n}}$, and $$R_{r+1}(\vec{x},\vec{x}_{0})=\sum_{\sigma:|\sigma|=r+1}\frac{1}{\sigma!}D^{\sigma}f(\vec{x}_{0}+\theta(\vec{x}-\vec{x}_{0}))(\vec{x}-\vec{x}_{0})^{\sigma}$$ is the remainder, where $\theta\in (0,1)$(\cite[Theorem 3.18 \& Corollary 3.19]{CJ}).\\
+(\romannumeral 2) \emph{Permutation} Suppose $s_{n}$ is a permutation of $n$ non-negative integers, for example $\{1,\cdots,n\}$, and $s_{n}(i)$ represents the $i$-$th$ element in the permutation $s_{n}$. We define \emph{the number of inversions} of $s_{n}$ by $I(s_{n})=\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}\mathbbm{1}_{\{s_{n}(i)>s_{n}(j)\}}$. For example, the permutation $s_{n}=(1,\cdots,n)$ has $0$ number of inversions, while the permutation $s_{5}=(3,2,5,1,4)$ has number of inversions $5(2+1+2+0+0)$. Define the sign of permutation $s_{n}$ by $sgn(s_{n})=(-1)^{I(s_{n})}$. For instance, $sgn((1,\cdots,n))=1$ and $sgn(s_{5})=-1$ in the previous example.\\
+\textbf{Step 2. }In this step, we derive some lemmas based on the previous set-ups. Suppose $\sigma_{a}=(\sigma_{1}^{a},\cdots,\sigma_{k}^{a})$ and $\sigma_{b}=(\sigma_{1}^{b},\cdots,\sigma_{k}^{b})$ are two multi-indices of length $k$. We divide them into $p$ and $q$ parts according to the shape of $\vec{a}_{0}$ and $\vec{b}_{0}$ as mentioned before: $\sigma_{a}=(\sigma^{(1)}_{a},\sigma^{(2)}_{a},\cdots,\sigma^{(p)}_{a})$, $\sigma_{b}=(\sigma^{(1)}_{b},\sigma^{(2)}_{b},\cdots,\sigma^{(q)}_{b})$. In the following discussion, we ignore the constants $c_{1}(t,p)$, $c_{2}(t,p)$, $c(p)$ in $f(\vec{a})$, $g(\vec{b})$ and $h(\vec{a},\vec{b})$ temporarily for simplicity. We have the following lemmas.\\
+\textbf{Lemma 1}: Suppose $S_{m_i}$ is the set of all permutations of $\{0,1,\cdots,m_{i}-1\}$. If $\sigma_{a}^{(i)}\in S_{m_i}$ for $i=1,\cdots,p$, then 
+\[ D^{\sigma_{a}}f(\vec{a}_{0})= \det
+	\left[ \begin{array}{ccc}
+		(z_{j}^{\sigma_{i}^{a}}e^{\alpha_{1}z_{j}})_{\substack{i=1,\cdots,m_{1}\\j=1,\cdots,k}}\\
+	\vdots\\
+	(z_{j}^{\sigma_{i}^{a}}e^{\alpha_{p}z_{j}})_{\substack{i=m_1+\cdots+m_{p-1}+1,\\ \cdots ,m_{1}+\cdots +m_{p} \\j=1,\cdots,k}}
+	\end{array}
+	\right]
+\]
+is non-zero for any $(z_{1},\cdots,z_{k})$ whose elements are distinct. Analogous result also holds for $D^{\sigma_{b}}g(\vec{b}_{0})$.\\
+\emph{Proof: }Since $f(\vec{a})$ is actually a determinant and its $i$-$th$ row only depends on the variable $a_{i}$, taking derivative of $f(\vec{a})$ with respect to $a_{i}$ is taking derivative of every entries in the $i$-$th$ row, and we can get the determinant above. Next, we prove that it is non-zero. WLOG, we can assume $\sigma_{a}^{(i)}=\{0,1,\cdots,m_{i}-1\}$, because the determinant will only change by $-1$ when $\sigma_{a}^{(i)}$ is replaced by other permutations in $S_{m_i}$. \textbf{We claim that}, the following equation with respect to $z$:
+$$(\xi_{1}+\xi_{2}z+\cdots+\xi_{m_1}z^{m_{i}-1})e^{\alpha_{1}z}+\cdots(\xi_{m_{1}+\cdots+m_{p-1}+1}+\cdots+\xi_{k}z^{m_{p}-1})e^{\alpha_{p}z}=0$$ has at most $(k-1)$ distinct roots, where $\sum_{i=1}^{p}m_i=k$ and $(\xi_{1},\cdots,\xi_{k})\in\mathbb{R}^{k}$ is non-zero.\\
+Denote the above determinant by $\det\Bigl[\begin{smallmatrix} v_{1}\\\vdots\\ v_{k} \end{smallmatrix}\Bigr]$. If this claim holds, we can conclude that we cannot find non-zero $(\xi_{1},\cdots,\xi_{k})\in\mathbb{R}^{k}$ such that $\xi_{1}v_{1}+\cdots+\xi_{k}v_{k}=0$. Thus, the $k$ row vectors of the determinant are linear independent and the determinant is non-zero. Then we prove the claim by induction on $k$.\\
+$1^{\circ}$ If $k=2$, the equation is $(\xi_{1}+\xi_{2}z)e^{\alpha_{1}z}=0$ or $\xi_{1}e^{\alpha_{1}z}+\xi_{2}e^{\alpha_{2}z}=0$, where $\xi_{1},\xi_{2}\in\mathbb{R}$ cannot be zero at the same time. Then, it's easy to see that the equation has at most $1$ root in two scenarios.\\
+$2^{\circ}$ Suppose the claim holds for $k\leqslant n$.\\
+$3^{\circ}$ When $k=n+1$, we have the equation $$(\xi_{1}+\xi_{2}z+\cdots+\xi_{m_1}z^{m_{i}-1})e^{\alpha_{1}z}+\cdots(\xi_{m_{1}+\cdots+m_{p-1}+1}+\cdots+\xi_{k}z^{m_{p}-1})e^{\alpha_{p}z}=0$$ but now $\sum_{i=1}^{p}m_{i}=n+1$. WLOG, suppose $(\xi_{1},\cdots,\xi_{m_{1}})$ has a non-zero element and $\xi_{\ell}$ is the first non-zero element. Notice that the above equation has the same roots as the following one:
+$$F(z)=(\xi_{\ell}z^{\ell-1}+\cdots+\xi_{m_1}z^{m_1-1})+\cdots+(\xi_{m_1+\cdots+m_{p-1}+1}+\cdots+\xi_{k}z^{m_{p}-1})e^{(\alpha_{p}-\alpha_{1})z}=0$$
+Assume it has at least $(n+1)$ distinct roots $\eta_{1}<\eta_{2}<\cdots<\eta_{n+1}$. Then $F^{\prime}(z)=0$ has at least $n$ distinct roots $\delta_{1}<\cdots<\delta_{n}$ such that $\eta_{1}<\delta_{1}<\eta_{2}<\cdots<\delta_{n}<\eta_{n+1}$, by Rolle's Theorem. Actually, $F^{\prime}(z)=(\xi_{\ell}(\ell-1))z^{\ell-2}+\cdots+\xi_{m_1}(m_1-1)z^{m_{1}-2})+\cdots+[\xi_{m_1+\cdots+m_{p-1}+1}^{\prime}+\cdots+\xi_{k}^{\prime}z^{m_{p}-1})]e^{(\alpha_{p}-\alpha_{1})z}=0$
+where $\xi_{m_1+\cdots+m_{p-1}+1}^{\prime}$ and $\xi_{k}^{\prime}$ are coefficients that can be calculated. This equation has at most $(m_1-1)+m_2+\cdots+m_{p}-1=n-1$ roots by $2^{\circ}$, which leads to a contradiction. Therefore, our claim holds and we proved lemma 1.\\
+\emph{Remark:} Denote the set $\Lambda_{a}=\{\sigma_{a}=(\sigma_{a}^{(1)},\cdots,\sigma_{a}^{(p)}):\sigma_{a}^{(i)}\in S_{m_{i}}, i=1,\cdots,p\}$, and we have if $\sigma_{a}\in \Lambda_{a}$, then $D^{\sigma_{a}}f(\vec{a}_{0})$ is non-zero. Similarly, if $\sigma^{(j)}_{b}\in S_{n_j}$ for $j=1,\cdots,q$, then $D^{\sigma_{b}}g(\vec{b})$ is non-zero, and define $\Lambda_{b}=\{\sigma_{b}=(\sigma_{b}^{(1)},\cdots,\sigma_{b}^{(q)}):\sigma_{b}^{(j)}\in S_{n_{j}}, j=1,\cdots,q\}$.\\
+\textbf{Lemma 2}: The smallest order of $\sigma_{a}$ that makes the partial derivative $D^{\sigma_{a}}f(\vec{a}_{0})$(at the point $\vec{a}_{0}$) non-zero is $u=\sum_{i=1}^{p}\sum_{j=0}^{m_{i}-1}j=\sum_{i=1}^{p}\frac{m_{i}(m_{i}-1)}{2}$. Similarly, $v=\sum_{j=1}^{q}\frac{n_{j}(n_{j}-1)}{2}$ is the smallest order of $\sigma_{b}$ that makes $D^{\sigma_{b}}f(\vec{b}_{0})$ non-zero.\\
+\emph{Proof:} If the order of derivative is less than $u$, then there exists a $i\in\{1,\cdots,p\}$ such that $\sigma_{a}^{(i)}$ contains two equal elements, and the determinant $D^{\sigma_{a}}f(\vec{a}_{0})$ would have two equal rows, thus equal to zero. If the order of derivative is $u$, then when $\sigma_{a}\in\Lambda_{a}$, $D^{\sigma_{a}}f(\vec{a}_{0})$ is non-zero by Lemma 1. Thus, Lemma 2 holds.\\
+\textbf{Step 3. }In this step, we estimate the converging speed of $f(\vec{a})$. Take $\epsilon\in (0,k^{-1}\min\limits_{1\leqslant i\leqslant p-1}(\alpha_{i}-\alpha_{i+1}))$ and construct the following vectors:
+\begin{align*}
+	\vec{A}_{\epsilon,+}&=(\alpha_{1}+m_{1}\epsilon, \alpha_{1}+(m_{1}-1)\epsilon,\cdots,\alpha_{1}+\epsilon,\cdots,\alpha_{p}+m_{p}\epsilon,\cdots,\alpha_{p}+\epsilon)\\
+	\vec{A}_{\epsilon,-}&=(\alpha_{1}-\epsilon, \alpha_{1}-2\epsilon,\cdots,\alpha_{1}-m_{1}\epsilon,\cdots,\alpha_{p}-\epsilon,\cdots,\alpha_{p}-m_{p}\epsilon)
+\end{align*}
+That is, the vector $\vec{A}_{\epsilon,+}(\text{resp. }\vec{A}_{\epsilon,-})$ upwardly(resp. downwardly) spreads out the vector $\vec{a}_{0}$ such that $\vec{A}_{\epsilon,+}(\text{resp. }\vec{A}_{\epsilon,-})$ has distinct elements. In addition, when $\epsilon\downarrow 0$, we have $\vec{A}_{\epsilon,\pm}\rightarrow\vec{a}_{0}$. Then, we prove the following statement:
+\begin{align*}
+	\lim_{\epsilon\downarrow 0}\epsilon^{-u}f(\vec{A}_{\epsilon,\pm})=\varphi(\vec{a}_{0},\vec{z},\vec{m})
+\end{align*}
+where $u=\sum_{i=1}^{p}\frac{m_{i}(m_{i}-1)}{2}$ in lemma 2, $\vec{m}=(m_{1},\cdots,m_{p})$, and $\varphi(\vec{a}_{0},\vec{z},\vec{m})$ is a non-zero function associated with $\vec{a}_{0}$ and $\vec{m}$.\\
+\emph{Proof:} We expand the function $f(\vec{a})$ to the order of $u$ at $\vec{a}_{0}$(Step 1):
+\begin{align*}
+	f(\vec{a})&=\sum_{|\sigma_{a}|\leqslant u}\frac{D^{\sigma_{a}}f(\vec{a}_{0})}{\sigma_{a}!}(\vec{a}-\vec{a}_{0})^{\sigma_{a}}+R_{u+1}(\vec{a},\vec{a}_{0})\\
+	&= \sum_{\sigma_{a}\in \Lambda_{a}}\frac{D^{\sigma_{a}}f(\vec{a}_{0})}{\sigma_{a}!}(\vec{a}-\vec{a}_{0})^{\sigma_{a}}+R_{u+1}(\vec{a},\vec{a}_{0})
+\end{align*} 
+where the $R_{u+1}(\vec{a},\vec{a}_{0})=\sum_{\sigma_{a}:|\sigma_{a}|=u+1}\frac{1}{\sigma_{a}!}D^{\sigma_{a}}f(\vec{a}_{0}+\theta(\vec{a}-\vec{a}_{0}))(\vec{a}-\vec{a}_{0})^{\sigma_{a}}$, $\theta\in(0,1)$ is the remainder. The second equality results from lemma 2, since it indicates that all the terms of order less than $u$ are zero, and for the terms of order $u$, they are non-zero only when $\sigma_{a}\in\Lambda_{a}$.\\
+Consider the first term. Denote $sgn(\sigma_{a}^{(i)})$ as the sign of the permutation $\sigma_{a}^{(i)}\in S_{m_i}$ as we mentioned in Step 1, and define the sign of $\sigma_{a}$ by: $sgn(\sigma_{a})=\prod_{i=1}^{p}sgn(\sigma_{a}^{(i)})$. Denote $\sigma_{a}^{\star}=(\sigma_{a}^{(1)\star},\cdots,\sigma_{a}^{(p)\star})$, where $\sigma_{a}^{(i)\star}=(0,1,\cdots,m_i-1)$. Thus, $\sigma_{a}^{\star}$ is a special element in $\Lambda_{a}$ and $sgn(\sigma_{a}^{\star})=1$ because $\sigma_{a}^{(1)\star},\cdots,\sigma_{a}^{(p)\star}$ all have $0$ number of inversions. Notice that for any $\sigma_{a}\in\Lambda_{a}$, we have $D^{\sigma_{a}}f(\vec{a}_{0})=sgn(\sigma_{a})\cdot D^{\sigma_{a}^{\star}}f(\vec{a}_{0})$ by the property of determinant. Then we obtain:
+\begin{align*}
+	\sum_{\sigma_{a}\in\Lambda_{a}}\frac{1}{\sigma_{a}!}D^{\sigma_{a}}f(\vec{a}_{0})(\vec{a}-\vec{a}_{0})^{\sigma_{a}}=\frac{D^{\sigma_{a}^{\star}}f(\vec{a}_{0})}{\prod_{i=1}^{p}(m_{i}-1)!}\sum_{\sigma_{a}\in\Lambda_{a}}(\vec{a}-\vec{a}_{0})^{\sigma_{a}}\cdot sgn(\sigma_{a})
+\end{align*}
+Notice that 
+\begin{align*}
+	\sum_{\sigma_{a}\in\Lambda_{a}}(\vec{a}-\vec{a}_{0})^{\sigma_{a}}\cdot sgn(\sigma_{a})&=\prod_{i=1}^{p}\Big[\sum_{\sigma_{a}^{(i)}\in S_{m_i}}(\vec{a}^{(i)}-\vec{a}_{0}^{(i)})^{\sigma_{a}^{(i)}}\cdot sgn(\sigma_{a}^{(i)})\Big]\\
+	&=\prod_{i=1}^{p}\Delta_{m_i}(a_{1}^{(i)}-\alpha_{i},a_{2}^{(i)}-\alpha_{i},\cdots,a_{m_i}^{(i)}-\alpha_{i})\equiv\prod_{i=1}^{p}\Delta_{m_i}^{a}
+\end{align*}
+where $\Delta_{n}(x_{1},x_{2},\cdots,x_{n})$ is the Vandermonde Determinant in Problem 4, $a_{j}^{(i)}=a_{m_{1}+\cdots+m_{i-1}+j}$ is the $j$-$th$ element of $\vec{a}^{(i)}$, and the last equality holds by the definition of determinant and Vandermonde Determinant. Now replace $\vec{a}$ with $\vec{A}_{\epsilon,+}$, we get the Vandermonde determinant $\Delta_{m_{i}}^{a}$ is actually $(m_{i}-1)!\cdot\epsilon^{\frac{1}{2}m_{i}(m_{i}-1)}$. Therefore, we have: $$\sum_{\sigma_{a}\in\Lambda_{a}}\frac{1}{\sigma_{a}!}D^{\sigma_{a}}f(\vec{a}_{0})(\vec{a}-\vec{a}_{0})^{\sigma_{a}}=D^{\sigma_{a}^{\star}}f(\vec{a}_{0})\cdot\epsilon^{u}$$
+Now we consider the remainder $R_{u+1}(\vec{A}_{\epsilon,+},\vec{a}_{0})$. Since $D^{\sigma_{a}}f(\vec{a})$ is a continuous function, we have that the quantity $D^{\sigma_{a}^{\star}}f(\vec{a}_{0}+\theta(\vec{a}-\vec{a}_{0}))$ can be bounded by a constant $M(\vec{a},\vec{a}_{0})$. In addition, $\sigma_{a}!$ only have finitely many possible outcomes when its order is $u+1$, thus $\frac{1}{\sigma_{a}!}$ can be bounded by a constant $N(u)$. Also, $|(\vec{A}_{\epsilon,+}-\vec{a}_{0})|^{\sigma_{a}}\leqslant (\max_{1\leqslant i\leqslant p}m_{i}\cdot \epsilon)^{u+1}$. Therefore,
+\begin{align*}
+	|R_{u+1}(\vec{A}_{\epsilon,+},\vec{a}_{0})|\leqslant N\cdot M \cdot (\max_{1\leqslant i\leqslant p}m_{i}\cdot \epsilon)^{u+1}
+\end{align*}
+and this indicates that $R_{u+1}(\vec{A}_{\epsilon,+},\vec{a}_{0})$ is $O(\epsilon^{u+1})$. Therefore, we conclude that 
+$$\lim_{\epsilon\downarrow 0}\epsilon^{-u}f(\vec{A}_{\epsilon,+})=D^{\sigma_{a}^{\star}}f(\vec{a}_{0})$$
+By Lemma 2, $D^{\sigma_{a}^{\star}}f(\vec{a}_{0})$ is non-zero. Thus, we find the limit function $\varphi(\vec{a}_{0},\vec{z},\vec{m})=D^{\sigma_{a}^{\star}}f(\vec{a}_{0})$, and its expression can be found in Lemma 2. Following similar procedure we can prove $\lim_{\epsilon\downarrow 0}\epsilon^{-u}f(\vec{A}_{\epsilon,-})=D^{\sigma_{a}^{\star}}f(\vec{a}_{0})$ also holds, and we complete the proof.\\
+We can construct vectors $\vec{B}_{\epsilon,\pm}$ analogously, which spread out from vector $\vec{b}_{0}$ upward and downward, and get similar results for $g(\vec{B}_{\epsilon,\pm})$ and then we have:
+$$\lim_{\epsilon\downarrow 0}\epsilon^{-v}f(\vec{B}_{\epsilon,\pm})=D^{\sigma_{b}^{\star}}g(\vec{b}_{0})\equiv\psi(\vec{b}_{0},\vec{z},\vec{n})$$
+where $\vec{n}=(n_{1},\cdots,n_{q})$.\\
+\textbf{Step 4. }In this step, we mainly prove the following result.\\
+\textbf{Lemma 3:} The function of $\vec{z}$ $$H(\vec{z})=\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-z_{i}^{2}}$$ is integrable over $\mathbb{R}^{k}$.\\
+\emph{Proof}: Notice that $\varphi(\vec{a}_{0},\vec{z},\vec{m})$ is a determinant, and Lemma 1 gave its expression. Suppose $z_{j_1}^{i_1-1}e^{a_{i_1}z_{j_1}}$ is the entry that has the largest absolute value. Then 
+\begin{align*}
+	|\varphi(\vec{a}_{0},\vec{z},\vec{m})|\leqslant k!|z_{j_{1}}^{i_{1}-1}e^{a_{i_1}z_{j_1}}|^{k}=k!|z_{j_1}^{k(i_1-1)}|e^{ka_{i_1}z_{j_1}}
+\end{align*}
+Similarly, we can find index $i_2$ and $j_{2}$ such that $|\varphi(\vec{b}_{0},\vec{z},\vec{n})|\leqslant k!|z_{j_2}^{k(i_2-1)}|e^{kb_{i_2}z_{j_2}}$. Then, we get 
+\begin{align*}
+	|H(\vec{z})|\leqslant (k!)^{2}\prod_{j\neq j_1,j_2}e^{-z_{j}^{2}}|z_{j_1}^{k(i_1-1)}z_{j_2}^{k(i_2-1)}|e^{ka_{i_1}z_{j_1}-z_{j_1}^2}e^{kb_{i_2}z_{j_2}-z_{j_2}^{2}}
+\end{align*}
+The right hand side is integrable over $\mathbb{R}^{k}$ because it is the product of some exponents of quadratic functions opening downward and polynomials. Thus, $H(\vec{z})$ is integrable, and we proved Lemma 3.\\
+In the following discussion, we add the constants $c_{1}(t,p)$, $c_{2}(t,p)$, $c_{3}(t,p)$ that we ignored previously. It's not difficult to see the previous results still holds under this new situation. Since $H(\vec{z})$ is integrable, we can denote the constant $Z_{\vec{a}_{0},\vec{b}_{0}}=\int_{\mathbb{R}^{k}}H(\vec{z})\mathbbm{1}_{\{z_1>z_2>\cdots>z_{k}\}}dz<\infty$ and the function $$\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})=Z_{\vec{a}_{0},\vec{b}_{0}}^{-1}\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\mathbbm{1}_{\{z_1>z_2>\cdots>z_{k}\}}$$
+is a density because it's non-negative and integrates to $1$ over $\mathbb{R}^{k}$.\\
+\textbf{Step 5. }Now we prove that the random vector $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$ exactly weakly converges to the continuous distribution with the density $\rho_{\vec{a}_{0},\vec{b}_{0}}(z)$ we just constructed. Suppose $\mathfrak{L}_{+}^{T}$ is an Avoiding Bernoulli line ensemble starting with $\vec{x}^{T}_{+}$ and ending with $\vec{y}^{T}_{+}$ and follows the distribution $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T}_{+},\vec{y}^{T}_{+}}$. The vectors $\vec{x}^{T}_{+}$ and $\vec{y}^{T}_{+}$ are two signatures of length $k$ that satisfies the following:\\
+(\romannumeral 1)$$\lim_{T\rightarrow\infty}\frac{x^{T}_{+}}{\sqrt{T}}=\vec{A}_{\epsilon,+},\quad \lim_{T\rightarrow\infty}\frac{y^{T}_{+}-pT1_{k}}{\sqrt{T}}=\vec{B}_{\epsilon,+}$$
+(\romannumeral 2) $x^{T}_{+}\geqslant x^{T}$, $y^{T}_{+}\geqslant y^{T}$, which means the endpoints of the newly constructed line ensembles dominate the original ones. This can be achieved due to the limiting behavior of $x^{T}_{+}$ and $y^{T}_{+}$ and the construction of $\vec{A}_{\epsilon,+}$ and $\vec{B}_{\epsilon,+}$.
+Analogously, we construct another Avoiding Bernoulli line ensemble $\mathfrak{L}_{-}^{T}$ with endpoints $\vec{x}^{T}_{-}$ and $\vec{y}^{T}_{-}$ and distribution $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T}_{-},\vec{y}^{T}_{-}}$ such that $\lim_{T\rightarrow\infty}\frac{x^{T}_{-}}{\sqrt{T}}=\vec{A}_{\epsilon,-},\quad \lim_{T\rightarrow\infty}\frac{y^{T}_{-}-pT1_{k}}{\sqrt{T}}=\vec{B}_{\epsilon,-}$, and $x^{T}_{-}\leqslant x^{T}$, $y^{T}_{-}\leqslant y^{T}$.\\
+Since now $\vec{A}_{\epsilon,+}$, $\vec{A}_{\epsilon,-}$, $\vec{B}_{\epsilon, +}$, $\vec{B}_{\epsilon,-}$ have distinct elements, we can apply the results in Problem $16$ and conclude the weak convergence:
+$$Z^{T}_{\vec{A}_{\epsilon,+}, \vec{B}_{\epsilon, +}}\Rightarrow \rho_{\epsilon,+}(z),\quad Z^{T}_{\vec{A}_{\epsilon,-}, \vec{B}_{\epsilon, -}}\Rightarrow \rho_{\epsilon,-}(z)$$
+where $Z^{T}_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}$ and $Z^{T}_{\vec{A}_{\epsilon,-},\vec{B}_{\epsilon,-}}$ are obtained by scaling the line ensembles $\mathfrak{L}_{+}^{T}$, and $\mathfrak{L}_{-}^{T}$, $\rho_{\epsilon,+}(z)$ and $\rho_{\epsilon,-}(z)$ are densities which are obtained by plugging $\vec{A}_{\epsilon,+}$, $\vec{B}_{\epsilon,+}$ and $\vec{A}_{\epsilon,-}$, $\vec{B}_{\epsilon,-}$ into the formula of $\rho(z)$ in Problem 16. \\
+In order to prove the weak convergence of $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$, it is sufficient to prove for any $R=(-\infty,u_{1}]\times(-\infty,u_{2}]\times\cdots\times(-\infty,u_{k}]$, where $u_{i}\in\mathbb{R}$, we have $$\lim_{T\rightarrow\infty}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)=\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz$$
+Actually, by Monotone Coupling Lemma(Lemma 3.1 in Proof Framework), we can construct a sequence of probability spaces $(\Omega_{T},\mathcal{F}_{T},\mathbb{P}_{T})_{T\geqslant 1}$ such that for each $T\in\mathbb{Z}^{+}$, we have random variables $\mathfrak{L}_{+}^{T}$ and $\mathfrak{L}^{T}$ have law $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T}_{+},\vec{y}^{T}_{+}}$, and $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T},\vec{y}^{T}}$ under measure $\mathbb{P}_{T}$, respectively. Also, we have $\mathfrak{L}_{+}^{T}(i,r)\geqslant \mathfrak{L}^{T}(i,r)$ with probability $1$, where $\mathfrak{L}_{+}^{T}(i,r)$(resp., $\mathfrak{L}^{T}(i,r)$) is the value of the $i$-$th$ up-right path of $\mathfrak{L}_{+}^{T}$(resp., $\mathfrak{L}^{T}$) at $r\in\llbracket 0,T\rrbracket$. Similarly, we can construct another sequence of probability spaces $(\Omega_{T}^{\prime},\mathcal{F}_{T}^{\prime},\mathbb{Q}_{T})_{T\geqslant 1}$ such that for each $T\in\mathbb{Z}^{+}$, we have random variables $\mathfrak{L}_{-}^{T}$ and $\mathfrak{L}^{T}$ have law $\mathbb{P}_{avoid,Ber}^{0,T,\vec{x}^{T}_{-},\vec{y}^{T}_{-}}$, and $\mathbb{P}_{avoid,Ber}^{0,T,\vec{x}^{T},\vec{y}^{T}}$ under measure $\mathbb{Q}_{T}$, respectively, along with $\mathbb{Q}_{T}(\mathfrak{L}_{-}^{T}(i,r)\leqslant \mathfrak{L}^{T}(i,r), i=1,\cdots, k, r\in\llbracket 0,T\rrbracket)=1$.\\
+Therefore, we have that under measure $\mathbb{P}_{T}$ and $\mathbb{Q}_{T}$:
+$$\mathbb{P}_{T}(Z^{T}_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}\in R)\leqslant \mathbb{P}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R),\quad \mathbb{Q}_{T}(Z^{T}_{\vec{A}_{\epsilon,-},\vec{B}_{\epsilon,-}}\in R)\geqslant \mathbb{Q}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)$$
+Take $liminf$ and $limsup$ on both side of the first and second inequalities respectively, we get
+$$\int_{R}\rho_{\epsilon,+}(z)dz\leqslant \liminf_{T\rightarrow\infty}\mathbb{P}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R),\quad \int_{R}\rho_{\epsilon,-}(z)dz\geqslant \limsup_{T\rightarrow\infty}\mathbb{Q}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)$$
+because of the weak convergence of $Z^{T}_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}$ and $Z^{T}_{\vec{A}_{\epsilon,-},\vec{B}_{\epsilon,-}}$. Since the distribution of $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$ under measure $\mathbb{P}_{T}$ and $\mathbb{Q}_{T}$ are the same, we can combine the above two inequalities and get
+$$\int_{R}\rho_{\epsilon,+}(z)dz\leqslant \liminf_{T\rightarrow\infty}\mathbb{P}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)\leqslant\limsup_{T\rightarrow\infty}\mathbb{P}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)\leqslant\int_{R}\rho_{\epsilon,-}(z)dz \quad (\star)$$
+The rest of the answer wants to establish the following statement:
+$$\lim_{\epsilon\downarrow 0}\int_{R}\rho_{\epsilon,+}(z)dz=\lim_{\epsilon\downarrow 0}\int_{R}\rho_{\epsilon,-}(z)dz=\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz$$ and then we can conclude $$\lim_{T\rightarrow\infty}\mathbb{P}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)=\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz$$ by letting $\epsilon\downarrow 0$ in the inequality $(\star)$, and we prove the weak convergence of $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$.\\
+To prove the statement above, first notice that
+\begin{align*}
+	Z_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}&=\int_{\mathbb{R}^{k}}f(\vec{a},\vec{z})g(\vec{b},\vec{z})\prod_{i=1}^{k}e^{-c_{3}(t,p)z^{2}_{i}}dz\\
+	&=\int_{\mathbb{R}^{k}}\big[\epsilon^{u+v}\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})+o(\epsilon^{u+v})\big]\prod_{i=1}^{k}e^{-c_{3}(t,p)z^{2}_{i}}dz\\
+	&=\epsilon^{u+v}\int_{\mathbb{R}^{k}}\big[\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})+o(1)\big]\prod_{i=1}^{k}e^{-c_{3}(t,p)z^{2}_{i}}dz\\
+\end{align*}
+Then, we get
+$$\lim_{\epsilon\downarrow 0} \epsilon^{-(u+v)} Z_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}=\lim_{\epsilon\downarrow 0}\int_{\mathbb{R}^{k}}\big[\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})+o(1)\big]\prod_{i=1}^{k}e^{-c_{3}(t,p)z^{2}_{i}}dz=Z_{\vec{a}_{0},\vec{b}_{0}}$$
+by definition of the constant $Z_{\vec{a},\vec{b}_{0}}$.
+Therefore, we conclude
+\begin{align*}
+	\lim_{\epsilon\downarrow 0}\rho_{\epsilon,+}(z)=\lim_{\epsilon\downarrow 0}(\epsilon^{-(u+v)}Z_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}})(\epsilon^{u}f(\vec{a},\vec{z}))(\epsilon^{v}g(\vec{b},\vec{z}))=Z_{\vec{a},\vec{b}_{0}}\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})=\rho_{\vec{a}_{0},\vec{b}_{0}}(z)
+\end{align*}
+Since $\rho_{\epsilon,+}(z)dz\mathbbm{1}_{R}\leqslant\rho_{\epsilon,+}(z)dz$ is bounded by an integrable function, by Dominated Convergence Theorem we have: $$\lim_{\epsilon\downarrow 0}\int_{R}\rho_{\epsilon,+}(z)dz=\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz$$ Analogously, we can get $\lim_{\epsilon\downarrow 0}\int_{R}\rho_{\epsilon,-}(z)dz=\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz$ and we proved the statement.
+\end{proof}
+
+
