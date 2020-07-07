@@ -23,6 +23,20 @@
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\makeatletter
+\newcommand{\subalign}[1]{%
+	\vcenter{%
+		\Let@ \restore@math@cr \default@tag
+		\baselineskip\fontdimen10 \scriptfont\tw@
+		\advance\baselineskip\fontdimen12 \scriptfont\tw@
+		\lineskip\thr@@\fontdimen8 \scriptfont\thr@@
+		\lineskiplimit\lineskip
+		\ialign{\hfil$\m@th\scriptstyle##$&$\m@th\scriptstyle{}##$\hfil\crcr
+			#1\crcr
+		}%
+	}%
+}
+\makeatother
 \begin{document}
 	\begin{flushright}
 		Summer 2020
@@ -1552,9 +1566,34 @@ Combining this statement with previous inequalities, we have the inequality
 
 We have shown this inequality holds for any $\delta'>0$. 
 In order to pick a sufficient $\delta'$ to find a contradiction, we will have to return to the definition of $\rho$. Recalling that 
-\[\rho(z_1,\cdots ,z_k)=\frac{1}{\bar Z}\prod_{i=1}^{k}e^{\frac{-z_i^2}{t(1-t)}}\cdot \det\left(z_j^i e^{\frac{2a_iz_j}{t}}\right)\det\left(z_j^i e^{\frac{2b_iz_j}{1-t}}\right)
+\[\rho(z_1,\cdots ,z_k)=\frac{1}{Z_{\vec a_0, \vec b_0}}\cdot \varphi(\vec a_0, \vec z, \vec n)\cdot \psi(\vec b_0, \vec z, \vec n)\prod_{i=1}^{k}e^{\frac{-z_i^2}{t(1-t)}}
 \]
-where $\bar Z$ is some normalizing term, we find that $\rho$ is continuous as it is the sum and product of continuous functions. Moreover, if $z_i=z_{i+1}$, then we have the two rows $\left(z_j^1e^{a_1z_j/t},..., z_j^ke^{a_kz_j/t}\right)=\left(z_{j+1}^1e^{a_1z_{j+1}/t},..., z_{j+1}^ke^{a_kz_{j+1}/t}\right)$, and therefore the entire function $\rho$ is $0$ when $z_i=z_{i+1}$ for any $i$. Hence, if we let $E_i^\delta:=\{z\mid z_i-z_{i+1}\leq\delta\}$ we know by the continuity of $\rho$ that the accumulation function \[R_i(\delta):=\int_{E_i^\delta}\rho\] is well defined and continuous, since $\rho$ is continuous, and $\pr(E_i^\delta)\leq 1$. We can find that $R_i(0)=\int_{E_i^0} 0$ by our previous calculation, and so by the continuity of $r$ we know that for any $\epsilon$ there exists a $\delta_i(\epsilon)$ such that $0<\delta<\delta_i(\epsilon)$ implies $|R_i(\delta)|<\epsilon$. Therefore, let $\delta'=\min_{1\leq i\leq k-1}\delta_i\left(\frac\epsilon{2(k-1)}\right)$ and we find that \[\pr\left( \hat Z_i-\hat Z_{i+1}<\delta' \right)=R_i(\delta')<\frac{\epsilon}{2(k-1)}
+where $\bar Z$ is some normalizing term,
+\begin{align*}\varphi(\vec a_0,\vec z, \vec n)&=\det\begin{bmatrix}
+\left[(c_1(t,p)z_j)^{i-1}e^{c_1(t,p)\alpha_1 z_j}\right]_{\subalign{i&=1,...,m_1\\j&=1,...,k}}\\
+\left[(c_1(t,p)z_j)^{i-1}e^{c_1(t,p)\alpha_2 z_j}\right]_{\subalign{i&=1,...,m_2\\j&=1,...,k}}\\
+\vdots \\
+\left[(c_1(t,p)z_j)^{i-1}e^{c_1(t,p)\alpha_r z_j}\right]_{\subalign{i&=1,...,m_r\\j&=1,...,k}}
+\end{bmatrix}\\
+\psi(\vec b_0, \vec z, \vec n)&=\det\begin{bmatrix}
+\left[(c_2(t,p)z_j)^{i-1}e^{c_2(t,p)\beta_1 z_j}\right]_{\subalign{i&=1,...,n_1\\j&=1,...,k}}\\
+\left[(c_2(t,p)z_j)^{i-1}e^{c_2(t,p)\beta_2 z_j}\right]_{\subalign{i&=1,...,n_2\\j&=1,...,k}}\\
+\vdots \\
+\left[(c_2(t,p)z_j)^{i-1}e^{c_2(t,p)\beta_q z_j}\right]_{\subalign{i&=1,...,n_q\\j&=1,...,k}}
+\end{bmatrix}
+\end{align*} we find that $\rho$ is continuous as it is the sum and product of continuous functions. Additionally, if for any $\chi\in\llbracket 1,k-1 \rrbracket$ there is $z_\chi=z_{\chi+1}$, then we have the two columns 
+\[\begin{bmatrix}
+\left[(c_1(t,p)z_\chi)^{i-1}e^{c_1(t,p)\alpha_1 z_j}\right]_{i=1,...,m_1}\\
+\left[(c_1(t,p)z_\chi)^{i-1}e^{c_1(t,p)\alpha_2 z_j}\right]_{i=1,...,m_2}\\
+\vdots \\
+\left[(c_1(t,p)z_\chi)^{i-1}e^{c_1(t,p)\alpha_r z_j}\right]_{i=1,...,m_r}
+\end{bmatrix}=\begin{bmatrix}
+\left[(c_1(t,p)z_{\chi+1})^{i-1}e^{c_1(t,p)\alpha_1 z_{\chi+1}}\right]_{i=1,...,m_1}\\
+\left[(c_1(t,p)z_{\chi+1})^{i-1}e^{c_1(t,p)\alpha_2 z_{\chi+1}}\right]_{i=1,...,m_2}\\
+\vdots \\
+\left[(c_1(t,p)z_{\chi+1})^{i-1}e^{c_1(t,p)\alpha_r z_{\chi+1}}\right]_{i=1,...,m_r}
+\end{bmatrix}\],
+ and therefore the entire function $\rho$ is $0$ when $z_i=z_{i+1}$ for any $i$, since the determinant of that matrix will be $0$. Hence, if we let $E_i^\delta:=\{z\mid z_i-z_{i+1}\leq\delta\}$ we know by the continuity of $\rho$ that the accumulation function \[R_i(\delta):=\int_{E_i^\delta}\rho\] is well defined and continuous, since $\rho$ is continuous, and $\pr(E_i^\delta)\leq 1$. We can find that $R_i(0)=\int_{E_i^0} 0$ by our previous calculation, and so by the continuity of $r$ we know that for any $\epsilon$ there exists a $\delta_i(\epsilon)$ such that $0<\delta<\delta_i(\epsilon)$ implies $|R_i(\delta)|<\epsilon$. Therefore, let $\delta'=\min_{1\leq i\leq k-1}\delta_i\left(\frac\epsilon{2(k-1)}\right)$ and we find that \[\pr\left( \hat Z_i-\hat Z_{i+1}<\delta' \right)=R_i(\delta')<\frac{\epsilon}{2(k-1)}
 \] for each $i$. Therefore, we find that, using equation \ref{eq:ineq}, this gives us the inequality 
 \[\epsilon\leq \pr\left(\min_{1\leq i\leq k-1} \hat Z_i-\hat Z_{i+1}\leq\delta'\right)\leq \sum_{i=1}^{k-1}\pr\left(\hat Z_i-\hat Z_{i+1}\leq \delta'\right)< \frac{\epsilon}{2}
 \]
