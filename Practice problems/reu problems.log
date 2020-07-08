@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  6 JUL 2020 10:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  6 JUL 2020 22:55
 entering extended mode
 **"./reu problems.tex"
 ("reu problems.tex"
@@ -225,18 +225,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
  ("reu problems.aux")
 \openout1 = `"reu problems.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -327,47 +327,47 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 38.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 52.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\stmaryrd\ustmry.fd")
-LaTeX Font Info:    Try loading font information for U+msa on input line 38.
+LaTeX Font Info:    Try loading font information for U+msa on input line 52.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 38.
+LaTeX Font Info:    Try loading font information for U+msb on input line 52.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 148--150
+Underfull \hbox (badness 10000) in paragraph at lines 162--164
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
-
- []
-
-[5]
 Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 171--173
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
 
-Overfull \hbox (9.18695pt too wide) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
+
+ []
+
+
+Overfull \hbox (9.18695pt too wide) in paragraph at lines 188--189
 []\OT1/cmr/m/n/12 For the roots of this poly-no-mial, note that $\OML/cmm/m/it/
 12 Q\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) = 0$ ($\OML/cmm/m/it
 /12 i \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 2$), so $\OML/cmm/m/it/12 Q\OT1/cmr/m/
@@ -377,12 +377,12 @@ n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 C\OT1/cmr/m/n/12 (
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
 
-Overfull \hbox (12.77557pt too wide) detected at line 183
+Overfull \hbox (12.77557pt too wide) detected at line 197
 \OML/cmm/m/it/12 Q\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 ) = (\OMS/
 cmsy/m/n/12  \OT1/cmr/m/n/12 1)[]\OML/cmm/m/it/12 detV\OT1/cmr/m/n/12 (\OML/cmm
 /m/it/12 x[]; []  ; x[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 a \OMS/cmsy/m/n/12   
@@ -394,32 +394,32 @@ y/m/n/12   \OML/cmm/m/it/12 a\OT1/cmr/m/n/12 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--188
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--193
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
 
 
-Overfull \hbox (90.36597pt too wide) in paragraph at lines 196--196
+Overfull \hbox (90.36597pt too wide) in paragraph at lines 210--210
 []\OT1/cmr/m/n/12 We know by the ax-ioms of el-e-men-tary row op-er-a-tions tha
 t for vec-tors $\OML/cmm/m/it/12 v[] \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 R[]$\OT1/
 cmr/m/n/12 , $\OML/cmm/m/it/12 det\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v[]; []  ; 
@@ -427,12 +427,12 @@ v[]; v[]; []  ; v[]\OT1/cmr/m/n/12 ) =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--197
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
 
  []
 
@@ -443,108 +443,108 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ¦ in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--206
+Underfull \hbox (badness 10000) in paragraph at lines 218--220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--208
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--211
+Underfull \hbox (badness 10000) in paragraph at lines 223--225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--224
+Underfull \hbox (badness 10000) in paragraph at lines 236--238
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 229--231
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--244
+Underfull \hbox (badness 10000) in paragraph at lines 256--258
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--246
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--257
+Underfull \hbox (badness 10000) in paragraph at lines 269--271
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 284--286
+Underfull \hbox (badness 10000) in paragraph at lines 298--300
 
  []
 
 [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 352--354
+Underfull \hbox (badness 10000) in paragraph at lines 366--368
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 390--392
+Underfull \hbox (badness 10000) in paragraph at lines 404--406
 
  []
 
 [13] [14] [15] [16] [17]
-Overfull \hbox (10.6808pt too wide) in paragraph at lines 528--528
+Overfull \hbox (10.6808pt too wide) in paragraph at lines 542--542
 [] 
  []
 
 [18]
-Overfull \hbox (34.59245pt too wide) detected at line 533
+Overfull \hbox (34.59245pt too wide) detected at line 547
 \U/msb/m/n/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 `[]; [] `[]\OT1/cmr/m/n/12 ) =
  []
  []
 
 
-Overfull \hbox (1.86617pt too wide) detected at line 535
+Overfull \hbox (1.86617pt too wide) detected at line 549
 \OT1/cmr/m/n/12 #\OMS/cmsy/m/n/12 f[]g \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 s[]\O
 T1/cmr/m/n/12 (1[]) = [] [] = [] []
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 537.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 551.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 537.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 551.
 
 <converse-tiling.jpeg, id=73, 1020.81375pt x 1003.75pt>
 File: converse-tiling.jpeg Graphic file (type jpg)
 
 <use converse-tiling.jpeg>
-Package pdftex.def Info: converse-tiling.jpeg used on input line 540.
+Package pdftex.def Info: converse-tiling.jpeg used on input line 554.
 (pdftex.def)             Requested size: 204.15913pt x 200.74644pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 536--546
+Underfull \hbox (badness 10000) in paragraph at lines 550--560
 
  []
 
@@ -552,27 +552,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 536--546
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [19] [20 <./converse-tiling.jpeg>] [21]
-Overfull \hbox (3.8569pt too wide) in paragraph at lines 599--599
+Overfull \hbox (3.8569pt too wide) in paragraph at lines 613--613
 [] 
  []
 
 
-Overfull \hbox (52.28627pt too wide) in paragraph at lines 614--614
+Overfull \hbox (52.28627pt too wide) in paragraph at lines 628--628
 [] 
  []
 
 [22] [23]
-Overfull \hbox (48.26227pt too wide) detected at line 646
+Overfull \hbox (48.26227pt too wide) detected at line 660
 \OML/cmm/m/it/12 K \OT1/cmr/m/n/12 = [][][][] [] [] []
  []
 
 [24]
-Overfull \hbox (2.9761pt too wide) in paragraph at lines 660--660
+Overfull \hbox (2.9761pt too wide) in paragraph at lines 674--674
 [] 
  []
 
 
-Overfull \hbox (43.62234pt too wide) detected at line 662
+Overfull \hbox (43.62234pt too wide) detected at line 676
 [] \OMS/cmsy/m/n/12  [][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 alna \OT1/cmr/m/n/1
 2 + (\OML/cmm/m/it/12 b \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 c\OT1/cmr/m/n/12 )\O
 ML/cmm/m/it/12 ln\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 b \OT1/cmr/m/n/12 + \OML/cmm
@@ -585,12 +585,12 @@ m/n/12 + \OML/cmm/m/it/12 b \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 c\OT1/cmr/m/n/12
  []
 
 
-Overfull \hbox (21.5808pt too wide) in paragraph at lines 666--666
+Overfull \hbox (21.5808pt too wide) in paragraph at lines 680--680
 [] 
  []
 
 
-Overfull \hbox (38.77255pt too wide) detected at line 667
+Overfull \hbox (38.77255pt too wide) detected at line 681
 [][][] \OMS/cmsy/m/n/12  []  \OML/cmm/m/it/12 exp\OMS/cmsy/m/n/12 f\OT1/cmr/m
 /n/12 (\OML/cmm/m/it/12 S[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a; b; c\OT1/cmr/m/
 n/12 )) \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 L \OT1/cmr/m/n/12 + \OML/cmm/m/it/1
@@ -599,7 +599,7 @@ g
  []
 
 
-Overfull \hbox (6.60251pt too wide) detected at line 670
+Overfull \hbox (6.60251pt too wide) detected at line 684
 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 C \OMS/c
 msy/m/n/12   \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 )! \OMS/cmsy/m/
 n/12  [][][]  \OML/cmm/m/it/12 exp\OMS/cmsy/m/n/12 f \OT1/cmr/m/n/12 2\OML/cm
@@ -615,106 +615,106 @@ OMS/cmsy/m/n/12 g
  []
 
 
-Overfull \hbox (22.0327pt too wide) in paragraph at lines 676--676
+Overfull \hbox (22.0327pt too wide) in paragraph at lines 690--690
 [] 
  []
 
 [25] [26]
-Overfull \hbox (35.40001pt too wide) in paragraph at lines 718--718
+Overfull \hbox (35.40001pt too wide) in paragraph at lines 732--732
 [] 
  []
 
 [27]
-Overfull \hbox (11.76854pt too wide) in paragraph at lines 755--755
+Overfull \hbox (11.76854pt too wide) in paragraph at lines 769--769
 [] 
  []
 
 
-Overfull \hbox (26.70662pt too wide) in paragraph at lines 760--760
+Overfull \hbox (26.70662pt too wide) in paragraph at lines 774--774
 [] 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 780--782
+Underfull \hbox (badness 10000) in paragraph at lines 794--796
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 789--791
+Underfull \hbox (badness 10000) in paragraph at lines 803--805
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 792--793
+Underfull \hbox (badness 10000) in paragraph at lines 806--807
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 794--795
+Underfull \hbox (badness 10000) in paragraph at lines 808--809
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 801--802
+Underfull \hbox (badness 10000) in paragraph at lines 815--816
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 804--806
+Underfull \hbox (badness 10000) in paragraph at lines 818--820
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 811--813
+Underfull \hbox (badness 10000) in paragraph at lines 825--827
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 819--820
+Underfull \hbox (badness 10000) in paragraph at lines 833--834
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 821--822
+Underfull \hbox (badness 10000) in paragraph at lines 835--836
 
  []
 
 [30]
-Overfull \hbox (13.40244pt too wide) in paragraph at lines 829--829
+Overfull \hbox (13.40244pt too wide) in paragraph at lines 843--843
 [] 
  []
 
-LaTeX Font Info:    Try loading font information for U+bbm on input line 831.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 845.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\bbm\ubbm.fd"
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
-Overfull \hbox (23.32402pt too wide) in paragraph at lines 839--839
+Overfull \hbox (23.32402pt too wide) in paragraph at lines 853--853
 [] 
  []
 
 [31] [32]
-LaTeX Font Info:    Try loading font information for U+euf on input line 866.
+LaTeX Font Info:    Try loading font information for U+euf on input line 880.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Underfull \hbox (badness 10000) in paragraph at lines 869--870
+Underfull \hbox (badness 10000) in paragraph at lines 883--884
 
  []
 
 
-Overfull \hbox (8.22258pt too wide) in paragraph at lines 881--882
+Overfull \hbox (8.22258pt too wide) in paragraph at lines 895--896
 []$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X[]\OT1/cmr/m/n/12 )$ is ir-re-ducible and
  has as an in-vari-ant dis-tri-bu-tion the uni-form mea-sure $\U/msb/m/n/12 P[]
 $\OT1/cmr/m/n/12 , 
  []
 
 [33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 914--915
+Underfull \hbox (badness 10000) in paragraph at lines 928--929
 
  []
 
 [35]
-Overfull \hbox (23.44943pt too wide) in paragraph at lines 952--953
+Overfull \hbox (23.44943pt too wide) in paragraph at lines 966--967
 []\OT1/cmr/m/n/12 Now, sur-jec-tiv-ity fol-lows since for any $[] = (\OML/cmm/m
 /it/12 []; :::; []\OT1/cmr/m/n/12 )$ we may de-fine $\U/euf/m/n/12 B\OT1/cmr/
 m/n/12 ([]) = (\OML/cmm/m/it/12 B[]\OT1/cmr/m/n/12 ([])\OML/cmm/m/it/12 ; :::; 
@@ -722,7 +722,7 @@ B[]\OT1/cmr/m/n/12 ([]))$
  []
 
 [36]
-Overfull \hbox (2.15186pt too wide) in paragraph at lines 987--989
+Overfull \hbox (2.15186pt too wide) in paragraph at lines 1001--1003
 \OT1/cmr/m/n/12 takes value $([])[]\U/msb/m/n/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/i
 t/12 L[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 b\OML/cmm/m/it/12 tT\OMS/cmsy/m/n/12 
 c\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T\OT
@@ -734,52 +734,52 @@ it/12 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ;
  []
 
 [37] [38]
-Overfull \hbox (37.7275pt too wide) in paragraph at lines 1019--1019
+Overfull \hbox (37.7275pt too wide) in paragraph at lines 1033--1033
 [] 
  []
 
 [39]
-Overfull \hbox (28.46762pt too wide) in paragraph at lines 1049--1049
+Overfull \hbox (28.46762pt too wide) in paragraph at lines 1063--1063
 [] 
  []
 
 
-Overfull \hbox (0.16147pt too wide) in paragraph at lines 1054--1054
+Overfull \hbox (0.16147pt too wide) in paragraph at lines 1068--1068
 [] 
  []
 
 
-Overfull \hbox (70.87318pt too wide) in paragraph at lines 1065--1065
+Overfull \hbox (70.87318pt too wide) in paragraph at lines 1079--1079
 [] 
  []
 
 [40]
-Overfull \hbox (14.93567pt too wide) in paragraph at lines 1075--1075
+Overfull \hbox (14.93567pt too wide) in paragraph at lines 1089--1089
 [] 
  []
 
 
-Overfull \hbox (9.90034pt too wide) in paragraph at lines 1087--1087
+Overfull \hbox (9.90034pt too wide) in paragraph at lines 1101--1101
 [] 
  []
 
 [41] [42] [43]
-Overfull \hbox (0.9824pt too wide) in paragraph at lines 1184--1184
+Overfull \hbox (0.9824pt too wide) in paragraph at lines 1198--1198
 [] 
  []
 
 [44]
-Overfull \hbox (1.37186pt too wide) in paragraph at lines 1190--1190
+Overfull \hbox (1.37186pt too wide) in paragraph at lines 1204--1204
 [] 
  []
 
 
-Overfull \hbox (8.99876pt too wide) in paragraph at lines 1212--1212
+Overfull \hbox (8.99876pt too wide) in paragraph at lines 1226--1226
 [] 
  []
 
 [45] [46] [47] [48]
-Overfull \hbox (13.07541pt too wide) in paragraph at lines 1328--1332
+Overfull \hbox (13.07541pt too wide) in paragraph at lines 1342--1346
 \OT1/cmr/m/n/12 (ii) \OT1/cmr/m/it/12 Per-mu-ta-tion \OT1/cmr/m/n/12 Sup-pose $
 \OML/cmm/m/it/12 s[]$ \OT1/cmr/m/n/12 is a per-mu-ta-tion of $\OML/cmm/m/it/12 
 n$ \OT1/cmr/m/n/12 non-negative in-te-gers, for ex-am-ple $\OMS/cmsy/m/n/12 f\O
@@ -787,101 +787,94 @@ T1/cmr/m/n/12 1\OML/cmm/m/it/12 ; []  ; n\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 ,
  []
 
 [49] [50] [51]
-Overfull \hbox (0.55785pt too wide) in paragraph at lines 1377--1378
+Overfull \hbox (0.55785pt too wide) in paragraph at lines 1391--1392
 \OT1/cmr/m/n/12 where $[](\OML/cmm/m/it/12 x[]; x[]; []  ; x[]\OT1/cmr/m/n/12 
 )$ is the Van-der-monde De-ter-mi-nant in Prob-lem 4, $\OML/cmm/m/it/12 a[] \OT
 1/cmr/m/n/12 = \OML/cmm/m/it/12 a[]$
  []
 
 [52] [53] [54]
-Overfull \hbox (8.70033pt too wide) in paragraph at lines 1431--1431
+Overfull \hbox (8.70033pt too wide) in paragraph at lines 1445--1445
 [] 
  []
 
 [55] [56]
-Overfull \hbox (3.14102pt too wide) in paragraph at lines 1495--1495
+Overfull \hbox (3.14102pt too wide) in paragraph at lines 1509--1509
 [] 
  []
 
-[57]
-Overfull \hbox (14.92995pt too wide) in paragraph at lines 1556--1557
-\OT1/cmr/m/n/12 con-tin-u-ous func-tions. More-over, if $\OML/cmm/m/it/12 z[] \
-OT1/cmr/m/n/12 = \OML/cmm/m/it/12 z[]$\OT1/cmr/m/n/12 , then we have the two ro
-ws $[] =
- []
-
-[58] [59]
-Underfull \hbox (badness 10000) in paragraph at lines 1623--1625
+[57] [58] [59] [60]
+Underfull \hbox (badness 10000) in paragraph at lines 1662--1664
 
  []
 
-[60]
-Overfull \hbox (43.56036pt too wide) in paragraph at lines 1631--1631
+
+Overfull \hbox (43.56036pt too wide) in paragraph at lines 1670--1670
 [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1652--1654
-
  []
 
 [61]
-Underfull \hbox (badness 10000) in paragraph at lines 1678--1680
+Underfull \hbox (badness 10000) in paragraph at lines 1691--1693
 
  []
 
-[62] [63] [64] [65] [66] [67] [68]
-Underfull \hbox (badness 10000) in paragraph at lines 1939--1940
+[62]
+Underfull \hbox (badness 10000) in paragraph at lines 1717--1719
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1945--1947
+[63] [64] [65] [66] [67] [68]
+Underfull \hbox (badness 10000) in paragraph at lines 1978--1979
 
  []
 
 [69]
-Overfull \hbox (26.44737pt too wide) in paragraph at lines 1971--1971
+Underfull \hbox (badness 10000) in paragraph at lines 1984--1986
+
+ []
+
+
+Overfull \hbox (26.44737pt too wide) in paragraph at lines 2010--2010
 [] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1973--1978
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 2012--2017
 
  []
 
-[70]
-Overfull \hbox (19.93741pt too wide) detected at line 2002
+
+Overfull \hbox (19.93741pt too wide) detected at line 2041
 [] [] [] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
 2 x\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\O
 ML/cmm/m/it/12 y\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j  \OML/cmm/m/it/12 [] < []
  [] [][][] \OMS/cmsy/m/n/12  [][]
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 2002--2006
+[71]
+Underfull \hbox (badness 10000) in paragraph at lines 2041--2045
 
  []
 
 
-Overfull \hbox (33.21461pt too wide) in paragraph at lines 2019--2019
+Overfull \hbox (33.21461pt too wide) in paragraph at lines 2058--2058
 [] 
  []
 
-[71]
-Underfull \hbox (badness 10000) in paragraph at lines 2035--2038
+[72]
+Underfull \hbox (badness 10000) in paragraph at lines 2074--2077
 
  []
 
-[72] [73] ("reu problems.aux") ) 
+[73] [74] ("reu problems.aux") ) 
 Here is how much of TeX's memory you used:
- 4110 strings out of 493320
- 58104 string characters out of 3138925
- 139716 words of memory out of 3000000
- 7551 multiletter control sequences out of 15000+200000
+ 4111 strings out of 493320
+ 58112 string characters out of 3138925
+ 139770 words of memory out of 3000000
+ 7552 multiletter control sequences out of 15000+200000
  16739 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,18n,32p,1671b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,20n,32p,1671b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Christian Serio\AppData\Local\MiKTeX
 \2.9\fonts\pk\ljfour\public\bbm\dpi600\bbm12.pk><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
@@ -901,9 +894,9 @@ pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary10.pfb><C:/Progra
 m Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary8.pfb>
-Output written on "reu problems.pdf" (73 pages, 1206910 bytes).
+Output written on "reu problems.pdf" (74 pages, 1210215 bytes).
 PDF statistics:
- 320 PDF objects out of 1000 (max. 8388607)
+ 323 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

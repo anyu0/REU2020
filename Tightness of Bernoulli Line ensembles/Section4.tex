@@ -29,12 +29,12 @@ where $\vec{x} = (L_1^N(-t_1), \dots, L_{k-1}^N(-t_1)$, $\vec{y} = (L_1^N(t_1), 
 
 The general strategy we use to prove Proposition \ref{PropMain} is inspired by the proof of Proposition 6.5 in \cite{CorHamK}. We begin by stating three key lemmas that will be required. Their proofs are postponed to Section \ref{Section5}. All constants in the statements below will depend implicitly on $\alpha$, $r$, $p$, $\lambda$, and the functions $\phi, \psi$ from Definition \ref{Def1}, which are fixed throughout. We will not list this dependence explicitly.
 
-Lemma \ref{PropSup} controls the deviation of the curve $L^N_1(s)$ from the line $ps$ in the scale $N^{\alpha/2}$.
+Lemma \ref{PropSup} controls the upward deviation of the top curve $L^N_1(s)$ from the line $ps$ in the scale $N^{\alpha/2}$.
 \begin{lemma}\label{PropSup} For each $\epsilon > 0$ there exist $R_1=R_1(\epsilon) > 0$ and $N_2= N_2(\epsilon)$ such that for $N \geq N_2$ 
 $$\mathbb{P}\Big( \sup_{s \in [ -t_3, t_3] }\big( L^N_1(s) - p s \big) \geq  R_1N^{\alpha/2} \Big) < \epsilon.$$
 \end{lemma}
 
-Lemma \ref{PropSup2} controls the upper deviation of the curve $L^N_2(s)$ from the line $ps$ in the scale $N^{\alpha/2}$.
+Lemma \ref{PropSup2} controls the downward deviation of the bottom curve $L^N_k(s)$ from the line $ps$ in the scale $N^{\alpha/2}$.
 \begin{lemma}\label{PropSup2} For each $\epsilon > 0$ there exist $R_2=R_2( \epsilon) > 0$ and $N_3=N_3(\epsilon)$ such that for $N \geq N_3$
 $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2N^{\alpha/2} \Big) < \epsilon.$$
 \end{lemma}
@@ -42,7 +42,7 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 \begin{lemma}\label{LemmaAP1} Fix $k \in \mathbb{N}$, $p \in (0,1)$, $M_1, M_2 > 0$ . Suppose that $\ell_{bot}: \llbracket -t_2, t_2 \rrbracket \rightarrow \mathbb{R} \cup \{ - \infty \}$, and $\vec{x}, \vec{y} \in \mathfrak{W}_{k-1}$ are such that $2t_2 \geq y_i-x_i \geq 0$ for $i = 1, \dots, k-1$. Suppose further that
 	\begin{enumerate}
 		\item $\sup_{s \in [ -t_2,t_2]}\big(\ell_{bot}(s)  - ps \big)  \leq M_2 (2t_2)^{1/2}$,
-		\item  $ x_{k-1} \geq \max\left(\ell_{bot}(t_2), -pt_2- M_1 (2t_2)^{1/2}\right),$
+		\item  $ x_{k-1} \geq \max\left(\ell_{bot}(-t_2), -pt_2- M_1 (2t_2)^{1/2}\right),$
 		\item $ y_{k-1} \geq  \max \left( \ell_{bot}(t_2),  p t_2- M_1(2t_2)^{1/2} \right).$
 	\end{enumerate}
 	Define the constants $g$ and $h$ (depending on $ M_1, M_2, p , k, r$) via
@@ -95,7 +95,7 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 	\lim_{a\to\infty} &\limsup_{N\to\infty} \pr(|f^N_i(0)|\geq a) = 0 \label{ThmCond1}\\
 	\lim_{\delta\to 0} &\limsup_{N\to\infty} \pr\bigg(\sup_{\substack{x,y\in [-R,R], \\ |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon\bigg)= 0. \label{ThmCond2}
 	\end{align}
-	For the sake of clarity, we will prove these conditions in two separate steps.\\
+	For the sake of clarity, we will prove these conditions in three steps.\\
 	
 	\noindent\textbf{Step 1.} We first prove condition \eqref{ThmCond1}, making use of Lemmas \ref{PropSup} and \ref{PropSup2} in order to obtain upper and lower bounds for the top and bottom curves respectively, thus bounding all curves.
 	
@@ -115,9 +115,7 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 	$$\pr\big(|L_i^N(0)|\geq a N^{\alpha/2}\big)\leq \pr\big(L_1^N(0)\geq R_1 N^{\alpha/2}\big) + \pr\big(L_k^N(0)\leq -R_2N^{\alpha/2}\big) < \epsilon.$$
 	This proves \eqref{ThmCond1}.\\
 	
-	\noindent\textbf{Step 2.} 
-	
-	This step is set up for proving condition $\eqref{ThmCond2}$. We will establish sets to size bias the condition in  condition \eqref{ThmCond2} for a fixed $i$. First, we will reorganize the statement of condition $\eqref{ThmCond2}$ in order to get it in terms of Bernoulli random walks, instead of $f_i^N$ and then we will establish large events $E_1$ and $E_2$ in order so that if we prove $\eqref{ThmCond2}$ on the intersection of these two sets, it is equivalent to showing it on the entire probability space.
+	\noindent\textbf{Step 2.} This step is set up for proving condition $\eqref{ThmCond2}$. We will establish sets to size bias the condition in  condition \eqref{ThmCond2} for a fixed $i$. First, we will reorganize the statement of condition $\eqref{ThmCond2}$ in order to get it in terms of Bernoulli random walks, instead of $f_i^N$ and then we will establish large events $E_1$ and $E_2$ in order so that if we prove $\eqref{ThmCond2}$ on the intersection of these two sets, it is equivalent to showing it on the entire probability space.
 	
 	We must show that for all $\epsilon,\eta>0$ and $R>0$, there exists a $\delta$ and $N_0$ such that $N>N_0$ implies 
 	\[
@@ -167,8 +165,9 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 	In summary, for $N>\hat N:= \max\{N_1(\eta/4),N_2(\eta/8),N_3(\eta/8)\}$, 
 	\begin{equation}
 	\pr(A_\delta)= \pr(A_\delta\cap E_1\cap E_2)+\pr(A_\delta\cap\left(E_1^c\cup E_2^c\right))\leq \pr(A_\delta\cap E_1\cap E_2)+\frac{\eta}{2}. \label{ThmBias}
-	\end{equation}
-	\\\\\noindent\textbf{Step 3:}\\  In this step, we will prove that condition \ref{ThmCond2} holds, using the results of the previous step, namely the inequality \ref{ThmBias}. We will do so by passing from Bernoulli avoidiing random walks to random walks using a Radon-Nikodym derivative, and properties of the condtional expectation. 
+	\end{equation}\\
+	
+	\noindent\textbf{Step 3.} In this step, we will prove that condition \ref{ThmCond2} holds, using the results of the previous step, namely the inequality \ref{ThmBias}. We will do so by passing from Bernoulli avoidiing random walks to random walks using a Radon-Nikodym derivative, and properties of the condtional expectation. 
 	
 	We define a $\sigma$-algebra 
 	$$\mathcal{F}=\sigma\left(L_{i+1}^N,L_1^N(\pm R_N ), L_2^N(\pm R_N ),\dots, L_i^N(\pm R_N )\right).$$
