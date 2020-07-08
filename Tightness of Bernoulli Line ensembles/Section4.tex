@@ -29,12 +29,12 @@ where $\vec{x} = (L_1^N(-t_1), \dots, L_{k-1}^N(-t_1)$, $\vec{y} = (L_1^N(t_1), 
 
 The general strategy we use to prove Proposition \ref{PropMain} is inspired by the proof of Proposition 6.5 in \cite{CorHamK}. We begin by stating three key lemmas that will be required. Their proofs are postponed to Section \ref{Section5}. All constants in the statements below will depend implicitly on $\alpha$, $r$, $p$, $\lambda$, and the functions $\phi, \psi$ from Definition \ref{Def1}, which are fixed throughout. We will not list this dependence explicitly.
 
-Lemma \ref{PropSup} controls the deviation of the curve $L^N_1(s)$ from the line $ps$ in the scale $N^{\alpha/2}$.
+Lemma \ref{PropSup} controls the upward deviation of the top curve $L^N_1(s)$ from the line $ps$ in the scale $N^{\alpha/2}$.
 \begin{lemma}\label{PropSup} For each $\epsilon > 0$ there exist $R_1=R_1(\epsilon) > 0$ and $N_2= N_2(\epsilon)$ such that for $N \geq N_2$ 
 $$\mathbb{P}\Big( \sup_{s \in [ -t_3, t_3] }\big( L^N_1(s) - p s \big) \geq  R_1N^{\alpha/2} \Big) < \epsilon.$$
 \end{lemma}
 
-Lemma \ref{PropSup2} controls the upper deviation of the curve $L^N_2(s)$ from the line $ps$ in the scale $N^{\alpha/2}$.
+Lemma \ref{PropSup2} controls the downward deviation of the bottom curve $L^N_k(s)$ from the line $ps$ in the scale $N^{\alpha/2}$.
 \begin{lemma}\label{PropSup2} For each $\epsilon > 0$ there exist $R_2=R_2( \epsilon) > 0$ and $N_3=N_3(\epsilon)$ such that for $N \geq N_3$
 $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2N^{\alpha/2} \Big) < \epsilon.$$
 \end{lemma}
@@ -42,7 +42,7 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 \begin{lemma}\label{LemmaAP1} Fix $k \in \mathbb{N}$, $p \in (0,1)$, $M_1, M_2 > 0$ . Suppose that $\ell_{bot}: \llbracket -t_2, t_2 \rrbracket \rightarrow \mathbb{R} \cup \{ - \infty \}$, and $\vec{x}, \vec{y} \in \mathfrak{W}_{k-1}$ are such that $2t_2 \geq y_i-x_i \geq 0$ for $i = 1, \dots, k-1$. Suppose further that
 	\begin{enumerate}
 		\item $\sup_{s \in [ -t_2,t_2]}\big(\ell_{bot}(s)  - ps \big)  \leq M_2 (2t_2)^{1/2}$,
-		\item  $ x_{k-1} \geq \max\left(\ell_{bot}(t_2), pt_2- M_1 (2t_2)^{1/2}\right),$
+		\item  $ x_{k-1} \geq \max\left(\ell_{bot}(-t_2), -pt_2- M_1 (2t_2)^{1/2}\right),$
 		\item $ y_{k-1} \geq  \max \left( \ell_{bot}(t_2),  p t_2- M_1(2t_2)^{1/2} \right).$
 	\end{enumerate}
 	Define the constants $g$ and $h$ (depending on $ M_1, M_2, p , k, r$) via
@@ -90,16 +90,16 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Proof of Theorem \ref{PropTightGood} }\label{Section4.2}
 	
-	By Lemma \ref{2Tight}, it suffices to verify the following two conditions for all $1\leq i\leq k$, $R>0$, and $\epsilon>0$:
+		By Lemma \ref{2Tight}, it suffices to verify the following two conditions for all $1\leq i\leq k-1$, $R>0$, and $\epsilon>0$:
 	\begin{align}
 	\lim_{a\to\infty} &\limsup_{N\to\infty} \pr(|f^N_i(0)|\geq a) = 0 \label{ThmCond1}\\
 	\lim_{\delta\to 0} &\limsup_{N\to\infty} \pr\bigg(\sup_{\substack{x,y\in [-R,R], \\ |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon\bigg)= 0. \label{ThmCond2}
 	\end{align}
-	For the sake of clarity, we will prove these conditions in two separate steps.\\
+	For the sake of clarity, we will prove these conditions in three steps.\\
 	
 	\noindent\textbf{Step 1.} We first prove condition \eqref{ThmCond1}, making use of Lemmas \ref{PropSup} and \ref{PropSup2} in order to obtain upper and lower bounds for the top and bottom curves respectively, thus bounding all curves.
 	
-	Fix $\epsilon>0$. We show that there exists an $a>0$ and $N'$ such that $N>N'$ implies
+	Fix $\epsilon>0$. We show that there exists an $a>0$ and $N'$ depending on $\epsilon$, such that $N>N'$ implies
 	$$\pr(|f^N_i(0)|\geq a) = \pr(|L_i^N(0)|\geq a N^{\alpha/2})<\epsilon.$$
 	By Lemmas \ref{PropSup} and \ref{PropSup2}, there exist $R_1 := R_1(\epsilon/2)>0$, $R_2 := R_2(\epsilon/2)>0$ and $N_2 := N_2(\epsilon/2),N_3 := N_3(\epsilon/2)$ such that 
 	\begin{align*}
@@ -115,7 +115,9 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 	$$\pr\big(|L_i^N(0)|\geq a N^{\alpha/2}\big)\leq \pr\big(L_1^N(0)\geq R_1 N^{\alpha/2}\big) + \pr\big(L_k^N(0)\leq -R_2N^{\alpha/2}\big) < \epsilon.$$
 	This proves \eqref{ThmCond1}.\\
 	
-	\noindent\textbf{Step 2.} Here, we will prove condition \eqref{ThmCond2} for a fixed $i$ in three parts. We must show that for all $\epsilon,\eta>0$ and $R>0$, there exists a $\delta$ and $N_0$ such that $N>N_0$ implies 
+	\noindent\textbf{Step 2.} This step is set up for proving condition $\eqref{ThmCond2}$. We will establish sets to size bias the condition in  condition \eqref{ThmCond2} for a fixed $i$. First, we will reorganize the statement of condition $\eqref{ThmCond2}$ in order to get it in terms of Bernoulli random walks, instead of $f_i^N$ and then we will establish large events $E_1$ and $E_2$ in order so that if we prove $\eqref{ThmCond2}$ on the intersection of these two sets, it is equivalent to showing it on the entire probability space.
+	
+	We must show that for all $\epsilon,\eta>0$ and $R>0$, there exists a $\delta$ and $N_0$ such that $N>N_0$ implies 
 	\[
 	\pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon\bigg)<\eta.
 	\]
@@ -127,29 +129,32 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 	\begin{align*}
 	&\pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} N^{-\alpha/2}\abs*{L_i^N(xN^\alpha)-L_i^N(yN^\alpha)-p(x-y)N^\alpha}+2\lambda R\delta\geq \epsilon\bigg)\\
 	\leq \; & \pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} \abs*{L_i^N(xN^\alpha)-L_i^N(yN^\alpha)-p(x-y)N^\alpha}\geq \frac{3N^{\alpha/2}\epsilon}4\bigg)\\
-	= \; & \pr\bigg(\sup_{\substack{x,y\in [-RN^\alpha,RN^\alpha],\\ |x-y|\leq \delta N^\alpha}} \abs*{L_i^N(x)-L_i^N(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4\bigg).
+	= \; & \pr\bigg(\sup_{\substack{x,y\in [-R_N,R_N],\\ |x-y|\leq \delta N^\alpha}} \abs*{L_i^N(x)-L_i^N(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4\bigg).
 	\end{align*}
-	We denote the event in the last line by $A_\delta$, and we now bound $\mathbb{P}(A_\delta)$ by size-biasing.
+	Where $R_N:=\floor{RN^\alpha}$We will take the event in this final equation and define:
+	\begin{equation}
+	A_\delta =\bigg\{\sup_{\substack{x,y\in [-R_N,R_N],\\ |x-y|\leq \delta N^\alpha}} \abs*{L_i^N(x)-L_i^N(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4\bigg\}
+	\end{equation}
 	
 	Define events
 	\begin{align*}
 	E_1&=\left\{\max_{1\leq j \leq i}\abs*{f_j(\pm R)}\leq M_1\right\},\\
-	E_2&=\left\{Z(-RN^\alpha, RN^\alpha, \vec x, \vec y, \infty, L_{i+1}^N[-RN^\alpha, RN^\alpha])>\delta_1\right\}.
+	E_2&=\left\{Z(-R_N, R_N, \vec x, \vec y, \infty, L_{i+1}^N[-R_N, R_N])>\delta_1\right\}.\label{BiasDef}
 	\end{align*}
-	Here, $\vec{x} = (L_1^N(-RN^\alpha),\dots,L_i(-RN^\alpha))$ and $\vec{y} = (L_1^N(RN^\alpha),\dots,L_i(RN^\alpha))$. We argue that $E_1,E_2$ have high probability for appropriately chosen $M_1,\delta_1$, and it then suffices to bound the probability of $A_\delta$ on these events.
+	Here, $\vec{x} = (L_1^N(-R_N),\dots,L_i(-R_N))$ and $\vec{y} = (L_1^N(R_N),\dots,L_i(R_N))$. We argue that $E_1,E_2$ have high probability for appropriately chosen $M_1,\delta_1$, and it then suffices to bound the probability of $A_\delta$ on these events.
 	
-	Firstly, we observe that $L_j^N(\pm RN^\alpha)> L_{j+1}^N(\pm RN^\alpha)$, so $f_j^N(\pm R)>f_{j+1}^N(\pm R)$ as well. Thus
+	Firstly, we observe that $L_j^N(\pm R_N)> L_{j+1}^N(\pm R_N)$, so $f_j^N(\pm R)>f_{j+1}^N(\pm R)$ as well. Thus
 	\begin{align*}
 	E_1^c &= \{f_1(\pm R)> M_1\} \cup \{f_i(\pm R)<-M_1\} \\
-	&= \left\{ \left(L_1^N(\pm RN^\alpha)\mp pRN^\alpha\right)> (M_1-\lambda R^2)N^{\alpha/2}\right\}\\
-	&\qquad \cup \left\{\left(L_i^N(\pm RN^\alpha)\mp pRN^\alpha\right)< -(\lambda R^2+M_1)N^{\alpha/2}\right\}.
+	&= \left\{ \left(L_1^N(\pm R_N)\mp pR_N\right)> (M_1-\lambda R^2)N^{\alpha/2}\right\}\\
+	&\qquad \cup \left\{\left(L_i^N(\pm R_N)\mp pR_N\right)< -(\lambda R^2+M_1)N^{\alpha/2}\right\}.
 	\end{align*}
-	Now take $r>R$. Then in particular $RN^\alpha \leq t_3$, so we have $$
-	\pr\left(L_1^N(\pm RN^\alpha)\mp prN^\alpha>(M_1-\lambda R^2)N^{\alpha/2}\right)
+	Now take $r>R$. Then in particular $R_N \leq t_3$, so we have $$
+	\pr\left(L_1^N(\pm R_N)\mp pR_N>(M_1-\lambda R^2)N^{\alpha/2}\right)
 	\leq\pr\Big(\sup_{s\in[-t_3,t_3]}L_1^N(s)-ps>(M_1-\lambda R^2)N^{\alpha/2}\Big).
 	$$ By Lemma \ref{PropSup}, we find that if $M_1>R_1(\eta/8)+\lambda R^2$ and $N>N_1(\eta/8)$, then this probability is less than $\eta/8$. Next, we have
 	\begin{align*}
-	\pr \left(L_i^N(\pm RN^\alpha)\mp pRN^\alpha< -(\lambda R^2+M_1)N^{\alpha/2}\right)&\leq \pr \left(L_i^N(\pm RN^\alpha)\mp pRN^\alpha< -M_1N^{\alpha/2}\right)\\
+	\pr \left(L_i^N(\pm R_N)\mp pR_N< -(\lambda R^2+M_1)N^{\alpha/2}\right)&\leq \pr \left(L_i^N(\pm R_N)\mp pR_N< -M_1N^{\alpha/2}\right)\\
 	&\leq \pr\Big(\inf_{s\in[-t_2,t_2]}\big(L_i^N(s)-ps\big)<-M_1N^{\alpha/2}\Big),
 	\end{align*}
 	and this last probability is $<\eta/8$ for $M_1\geq R_2(\eta/8)$ and $N>N_2(\eta/8)$ by Lemma \ref{PropSup2}. Therefore taking $M_1=\max\{R_1(\eta/8)+\lambda R^2,R_2(\eta/8)\}$, we find $$\pr(E_1^c)<\frac{\eta}{4}.$$
@@ -157,38 +162,41 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 	\[
 	\pr\left( E_2^c\right)<\frac{\eta}{4}.
 	\]
-	In summary, for $N>N_{01} := \max\{N_1(\eta/4),N_2(\eta/8),N_3(\eta/8)\}$, 
+	In summary, for $N>\hat N:= \max\{N_1(\eta/4),N_2(\eta/8),N_3(\eta/8)\}$, 
 	\begin{equation}
 	\pr(A_\delta)= \pr(A_\delta\cap E_1\cap E_2)+\pr(A_\delta\cap\left(E_1^c\cup E_2^c\right))\leq \pr(A_\delta\cap E_1\cap E_2)+\frac{\eta}{2}. \label{ThmBias}
-	\end{equation}
-	It remains to bound the first term. We define a $\sigma$-algebra 
-	$$\mathcal{F}=\sigma\left(L_{i+1}^N,L_1^N(\pm RN^\alpha ), L_2^N(\pm RN^\alpha ),\dots, L_i^N(\pm RN^\alpha )\right).$$
+	\end{equation}\\
+	
+	\noindent\textbf{Step 3.} In this step, we will prove that condition \ref{ThmCond2} holds, using the results of the previous step, namely the inequality \ref{ThmBias}. We will do so by passing from Bernoulli avoidiing random walks to random walks using a Radon-Nikodym derivative, and properties of the condtional expectation. 
+	
+	We define a $\sigma$-algebra 
+	$$\mathcal{F}=\sigma\left(L_{i+1}^N,L_1^N(\pm R_N ), L_2^N(\pm R_N ),\dots, L_i^N(\pm R_N )\right).$$
 	Clearly $E_1, E_2\in \mathcal{F}$, so the indicator random variables $\indic_{E_1}$ and $\indic_{E_2}$ are $\mathcal{F}$-measurable. It follows from the tower property of conditional expectation that
 	\begin{align}
-	\pr(A_\delta\cap E_1\cap E_2)&=\ex[\indic_{A_\delta} \indic_{E_1} \indic_{E_2}] =\ex[\indic_{E_1} \indic_{E_2}\ex[\indic_{A_\delta}\mid \mathcal{F}]\,]. \label{tower}
+	\pr\left(A_\delta\cap E_1\cap E_2\right)&=\ex\left[\indic_{A_\delta} \indic_{E_1} \indic_{E_2}\right] =\ex\left[\indic_{E_1} \indic_{E_2}\ex[\indic_{A_\delta}\mid \mathcal{F}\right]]. \label{tower}
 	\end{align}
 	By the Schur-Gibbs property (see Definition \ref{DefSGP}),
 	\[
-	\ex[\indic_{A_\delta}\mid \mathcal{F}]=\ex_{avoid,Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y, \infty, L_{i+1}^N}[\indic_{A_\delta}].
+	\ex\left[\indic_{A_\delta}\mid \mathcal{F}\right]=\ex_{avoid,Ber}^{-R_N,R_N,\vec x, \vec y, \infty, L_{i+1}^N}\left[\indic_{A_\delta}\right].
 	\]
-	We now observe that the Radon-Nikodym derivative of $\pr_{avoid,Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y, \infty, L_{m+1}^N}$ with respect to $\pr_{Ber}^{-RN^\alpha, RN^\alpha,\vec x,\vec y}$ is given by 
+	We now observe that the Radon-Nikodym derivative of $\pr_{avoid,Ber}^{-R_N,R_N,\vec x, \vec y, \infty, L_{m+1}^N}$ with respect to $\pr_{Ber}^{-R_N, R_N,\vec x,\vec y}$ [with $\vec x, \vec y$ defined as in the definition of $E_2$] is given by 
 	\begin{equation}
-	\frac{d\pr_{avoid,Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y, \infty, L_{i+1}^N}}{d\pr_{Ber}^{-RN^\alpha, RN^\alpha,\vec x,\vec y}} = \frac{\indic_{\left\{L_1 \geq \cdots \geq L_{i+1}\right\}}}{Z(-RN^\alpha,RN^\alpha,\vec x, \vec y, L_{i+1}^N)}. \label{RN}
+	\frac{d\pr_{avoid,Ber}^{-R_N,R_N,\vec x, \vec y, \infty, L_{i+1}^N}}{d\pr_{Ber}^{-R_N, R_N,\vec x,\vec y}} = \frac{\indic_{\left\{L_1 \geq \cdots \geq L_{i+1}\right\}}}{Z(-R_N,R_N,\vec x, \vec y, L_{i+1}^N)}. \label{RN}
 	\end{equation}
 	To see this, note that for any event $A$,
 	\begin{align*}
-	&\pr_{avoid,Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y, \infty, L_{i+1}^N}(A) = \frac{\pr_{Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y}(A\cap\left\{L_1 \geq \cdots \geq L_{i+1}\right\})}{\pr_{Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y}(L_1\geq\cdots\geq L_{i+1})}\\
-	= \; & \frac{\ex_{Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y}\left[\indic_A \indic_{\left\{L_1\geq\cdots\geq L_{i+1}\right\}}\right]}{Z(-RN^\alpha,RN^\alpha,\vec{x},\vec{y},L^N_{i+1})} = \int_A \frac{\indic_{\left\{L_1\geq\cdots\geq L_{i+1}\right\}}}{Z(-RN^\alpha,RN^\alpha,\vec x, \vec y, L_{i+1}^N)}\,d\pr_{Ber}^{-RN^\alpha,RN^\alpha,\vec x, \vec y}.
+	&\pr_{avoid,Ber}^{-R_N,R_N,\vec x, \vec y, \infty, L_{i+1}^N}(A) = \frac{\pr_{Ber}^{-R_N,R_N,\vec x, \vec y}(A\cap\left\{L_1 \geq \cdots \geq L_{i+1}\right\})}{\pr_{Ber}^{-R_N,R_N,\vec x, \vec y}(L_1\geq\cdots\geq L_{i+1})}\\
+	= \; & \frac{\ex_{Ber}^{-R_N,R_N,\vec x, \vec y}\left[\indic_A \indic_{\left\{L_1\geq\cdots\geq L_{i+1}\right\}}\right]}{Z(-R_N,R_N,\vec{x},\vec{y},L^N_{i+1})} = \int_A \frac{\indic_{\left\{L_1\geq\cdots\geq L_{i+1}\right\}}}{Z(-R_N,R_N,\vec x, \vec y, L_{i+1}^N)}\,d\pr_{Ber}^{-R_N,R_N,\vec x, \vec y}.
 	\end{align*}
 	It follows from \eqref{tower}, \eqref{RN}, and the definition of $E_2$ that
 	\begin{align*}
-	\pr(A_\delta\cap E_1\cap E_2) &=\ex\left[\indic_{E_1}\indic_{E_2} \ex_{Ber}^{-RN^\alpha, RN^\alpha,\vec x,\vec y}\left[\frac{\indic_{A_\delta}\cdot \indic_{\left\{L_1\geq\cdots\geq L_{i+1}\right\}}}{Z(-RN^\alpha,RN^\alpha,\vec x, \vec y, L_{i+1}^N)}\right]\right]\\
-	&\leq \ex\left[\indic_{E_1}\ex_{Ber}^{-RN^\alpha,RN^\alpha,\vec x,\vec y}\left[\frac{\indic_{A_\delta}}{\delta_1}\right]\right]\\
-	&\leq \frac{1}{\delta_1}\,\pr_{Ber}^{-RN^\alpha,RN^\alpha,\vec x,\vec y}(A_\delta).
+	\pr(A_\delta\cap E_1\cap E_2) &=\ex\left[\indic_{E_1}\indic_{E_2} \ex_{Ber}^{-R_N, R_N,\vec x,\vec y}\left[\frac{\indic_{A_\delta}\cdot \indic_{\left\{L_1\geq\cdots\geq L_{i+1}\right\}}}{Z(-R_N,R_N,\vec x, \vec y, L_{i+1}^N)}\right]\right]\\
+	&\leq \ex\left[\indic_{E_1}\ex_{Ber}^{-R_N,R_N,\vec x,\vec y}\left[\frac{\indic_{A_\delta}}{\delta_1}\right]\right]\\
+	&\leq \frac{1}{\delta_1}\,\pr_{Ber}^{-R_N,R_N,\vec x,\vec y}(A_\delta).
 	\end{align*}
-	By Lemma \ref{MOCLemmaS4}, there exist $N_4$ and $\delta$ such that $N>N_4$ implies
+	By Lemma \ref{MOCLemmaS4}, there exist $W_4$ and $\delta$ such that $N>W_4$ implies
 	\[
-	\pr_{Ber}^{-RN^\alpha,RN^\alpha,\vec x,\vec y}(A_\delta)<\frac{\eta\,\delta_1}2,
+	\pr_{Ber}^{-R_N,R_N,\vec x,\vec y}(A_\delta)<\frac{\eta\,\delta_1}2,
 	\] 
-	and hence $$\pr\left(A_\delta\cap E_1\cap E_2\right)\leq \frac{\eta}{2}.$$ We conclude from \eqref{ThmBias} that $\mathbb{P}(A_\delta) < \eta$ for $N\geq N_0 := N_{01} \vee N_4$. This completes the proof.
+	and hence $$\pr\left(A_\delta\cap E_1\cap E_2\right)\leq \frac{\eta}{2}.$$ We conclude from \eqref{ThmBias} that $\mathbb{P}(A_\delta) < \eta$ for $N\geq N_0 := \hat N \vee W_4$. Given the manner in which we defined $A_\delta$, this implies we have shown condition 2, which, in conjuncton with condition 1, implies tightness. This completes the proof.
 

@@ -23,6 +23,20 @@
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\makeatletter
+\newcommand{\subalign}[1]{%
+	\vcenter{%
+		\Let@ \restore@math@cr \default@tag
+		\baselineskip\fontdimen10 \scriptfont\tw@
+		\advance\baselineskip\fontdimen12 \scriptfont\tw@
+		\lineskip\thr@@\fontdimen8 \scriptfont\thr@@
+		\lineskiplimit\lineskip
+		\ialign{\hfil$\m@th\scriptstyle##$&$\m@th\scriptstyle{}##$\hfil\crcr
+			#1\crcr
+		}%
+	}%
+}
+\makeatother
 \begin{document}
 	\begin{flushright}
 		Summer 2020
@@ -772,43 +786,42 @@ Following the logic of \textbf{Step 1}, we conclude that the random vector $(X_{
 	
 	\subsection*{Problem 13}
 
-Define a probability distribution on $N$-tuples as
+For given $N \in \mathbb{N}, t > 0$, define a probability distribution on $N$-tuples as
 $$P_N(l_1, \cdots, l_N) = \frac{\omega(l_1, \cdots, l_N)}{Z_N}$$
 where $Z_N$ is the sum of the weights
-$$\omega(l_1, \cdots, l_N) = \prod_{1 \leq i < j \leq N} (l_i - l_j)^2 \prod_{i = 1}^N \frac{t^{l_i}}{l_i !}$$
+$$W(l_1, \cdots, l_N) = \prod_{1 \leq i < j \leq N} (l_i - l_j)^2 \prod_{i = 1}^N \frac{t^{l_i}}{l_i !}$$
 Note that this sum is finite, since
-$$\sum_{l_1 > l_2 > \cdots > l_n \geq 0} \omega(l_1, \cdots, l_N) \leq \sum_{l_1 = N-1}^\infty l_1^{N^2} \frac{C_1 + A_1^{Nl_1}}{l_1!}$$\\
+$$\sum_{l_1 > l_2 > \cdots > l_n \geq 0} \omega(l_1, \cdots, l_N) \leq \sum_{l_1 = N-1}^\infty l_1^{N^2} \frac{(1 + t)^{Nl_1}}{l_1!}$$
+which is summable because of the factorial in the denominator.\\
 
 In the problem, we are given that $A_k, B_k, C_k \in \mathbb{N}$, with $\lim_{k \rightarrow \infty} A_k = \lim_{k \rightarrow \infty} B_k = \lim_{k \rightarrow \infty} C_k = \infty$ and $\lim_{k \rightarrow \infty} \frac{A_k C_k}{B_k} = t$. From problem 11, we have that
-$$P(l_1, \cdots, l_N) = \frac{1}{Z} \prod_{1 \leq i < j \leq N} (l_i - l_j)^2 \prod_{i = 1}^N \omega(l_i)$$
+$$P_k(l_1, \cdots, l_N) = \frac{1}{Z_k} \prod_{1 \leq i < j \leq N} (l_i - l_j)^2 \prod_{i = 1}^N \omega_k(l_i)$$
 where
-$$\omega(y) = \frac{(y + C - N)!(A + B - y - 1)!}{y!(A + N - y - 1)!}$$
-Now notice that
-$$\frac{(y + C_k - N) ! (A_k + B_k - y + 1)!}{y! (A_k + N - y - 1)!}$$
-$$= \frac{A_K + B_k - 1)! (C_k - N)!}{(A_k + N - 1)!} \frac{(A_k + N - 1) \cdots (A_k + N - y) (C_k - N + 1)}{y! (A_k + B_k - 1) \cdots (A_k + B_k - y)}$$\\
+$$\omega_k(y) = \frac{1}{y!}\frac{(A_k + N - 1) \cdots (A_k + N - y) (C_k - N + 1) \cdots (C_k - N + y)}{(A + B_k - 1) \cdots (A_k + B_k - y)}$$
+where we have used that
+$$\frac{(y + C_k - N) ! (A_k + B_k - y - 1)!}{y! (A_k + N - y - 1)!}$$
+$$= \frac{A_K + B_k - 1)! (C_k - N)!}{(A_k + N - 1)!} \frac{1}{y!} \frac{(A_k + N - 1) \cdots (A_k + N - y) (C_k - N + 1) \cdots (C_k - N + y)}{(A_k + B_k - 1) \cdots (A_k + B_k - y)}$$
+which is $0 \leq y < A_k + N$ for large $k$.\\
 
-Hence we can write
-$$P_k(l_1, \cdots, l_N) = \frac{1}{Z_k} \prod_{1 \leq i < j \leq N}(l_i - l_j)^2 \prod_{i = 1}^N \omega_k (l_i)$$
-where
-$$\omega_k(y) = \frac{A_K + B_k - 1)! (C_k - N)!}{(A_k + N - 1)!} \frac{(A_k + N - 1) \cdots (A_k + N - y) (C_k - N + 1)}{y! (A_k + B_k - 1) \cdots (A_k + B_k - y)}$$\\
+To show that $P_k$ converge weakly to $P^N$, it suffices to show that $lim_{k \rightarrow \infty} P_k(l_1, \cdots, l_N) = P^N(l_1, \cdots, l_N)$ for all $l_1 > l_2 > \cdots > l_N \geq 0$, since we are only dealing with discrete distributions.\\
 
-Notice that $\lim_{k \rightarrow \infty} \omega_k(y) = \frac{t^k}{y!} \forall y$, since 
-$$\omega(y) = \frac{(y + C - N)!(A + B - y - 1)!}{y!(A + N - y - 1)!}$$
-and
-$$\lim_{k \rightarrow \infty} \frac{A_k C_k}{B_k} = t$$\\
+We will show that the normalization constant $Z_k$ is uniformly bounded on $(0, \infty)$ and that the sequence of measures $P_k$ is tight. We then only have to prove that each subsequential limit of the measures is $P_N$. \\
 
-Also note that
+For fixed $y_0 \in \mathbb{N}$, with $y_0 + 1 \geq 16(1 + t)$, we let $K = 2\times \max_{y \geq 0} \frac{t^y}{y!}$. Then $k \geq k_0$ implies, for sufficiently large $k_0$,
+$$A_k > N, \frac{B_k}{B_k - N} < 2, \frac{A_k C_k}{B_k} < (1 + t), \frac{A+N}{A} < 2, C_k > 16(1 + t)$$
+Notice that $\lim_{k \rightarrow \infty} \omega_k(y) = \frac{t^k}{y!} \forall y \in \mathbb{N}$. Also note that
 $$\frac{\omega_k (y+1)}{\omega_k (y)} \leq \frac{1}{2}$$
-for $y \geq y_0$, $k\geq k_0$. Hence there exists a constant $C$, s.t. $\omega_k(y) \leq C 2^{-y}$ for $k \geq k_0$, $y \geq y_0$. Combining the last two inequalities, we get that
-$$\prod_{1 \leq i <  \leq N} (j - i)^2 \prod_{i = 1}^N \frac{t^i}{i !} \leq \liminf_{k \rightarrow \infty} Z_k \leq \limsup_{k \rightarrow \infty} Z_k \leq \sum_{l_i = N - 1}^\infty l_i^{N^2} C^N 2^{-l_i}..., \forall k$$
-so $Z_k$ is bounded uniformly for all $k$.\\
+for $y \geq y_0$, $k\geq k_0$, since then
+$$\frac{w_k(y + 1)}{w_k(y)} < 4(1 + t) \left(\frac{1}{16(1+t)} + \frac{1}{y + 1} \right) \leq \frac{1}{2}$$\\
 
-Now, if in addition to $Z_K$ being bounded uniformly, we can show that $P_k$ is a tight sequence of measures, it suffices to show that each subsequential limit is $P_N$ to prove our claim that
-$$P_N(l_1, \cdots, l_N) = \frac{\omega(l_1, \cdots, l_N)}{Z_N}$$
+Hence there exists a constant $C$, s.t. $\omega_k(y) \leq C 2^{-y}$ for $k \geq k_0$, $y \geq y_0$. Combining the last two inequalities, we get that
+$$\prod_{1 \leq i <  \leq N} (j - i)^2 \prod_{i = 1}^N \frac{t^i}{i !} \leq \liminf_{k \rightarrow \infty} Z_k \leq \limsup_{k \rightarrow \infty} Z_k \leq \sum_{l_i = N - 1}^\infty l_i^{N^2} C^N 2^{-l_1} < \infty$$
+so $Z_k$ is bounded uniformly away from zero and infinity for large $k$.\\
 
-Let $\epsilon > 0$ be given. We want to show that the distribution of $l_1$ under $P_k$ is tight. We know that for all $k$, $Z_k < \infty$, $\exists c$, s.t. $Z_k \geq c$ and 
-$$\sum_{l_1 = N}^\infty l_1^N C^N 2^{-l_1} C < c \epsilon$$
-Then
+We now want to show that $P_k$ is tight. Suffice it to show that the distribution of $l_1$ under $P_k$ is tight. Let $\epsilon > 0$ be given. We know that there exist constants $M, c > 0$, s.t.
+$Z_k \geq c$ and, for all large $k$, we have
+$$\sum_{l_1 = M}^\infty l_1^{N^2}C^N 2^{-l_1} < c\epsilon$$
+For all such $k$, we then have
 $$P_k(l_1 \geq M) = \frac{1}{Z_k} \sum_{l_1 > \cdots > l_n > 0, l_1 \geq M} \prod_{1\leq i < j \leq M}(l_i - l_j)^2 \prod_{k = 1}^N \omega_k(l_i) \leq \frac{1}{c} c \epsilon < \epsilon$$
 which proves the tightness of $l_1$ under $P_k$.\\
 
@@ -819,8 +832,7 @@ $$\lim_{k \rightarrow \infty} \omega_k(y) = \frac{t^k}{y!}$$
 so that
 $$P'(l_1, \cdots, l_N) = \frac{1}{Z'} \prod_{1 \leq i < j \leq N} (l_i - l_j)^2 \prod_{i = 1}^N \frac{t^{l_i}}{l_i !}$$\\
 
-Then $Z' = Z^N$, since $P'$ is a probability measure, so $P'$ is the same as $P^N$, hence all subsequential limits of $P_k$ must be $P^N$. This completes the proof.
-
+Then $Z' = Z^N$, since $P'$ is a probability measure, so $P'$ is the same as $P^N$, hence all subsequential limits of $P_k$ must be $P^N$. Together with tightness, this shows that $P_k \rightarrow P_N$ as $k \rightarrow \infty$.\\
 
 \subsection*{Problem 14}
 In this problem, we mimic the process in Problem 12 to prove the weak convergence of the random vector $(X_{1},\dots,X_{N})$, where $X_{i}=\frac{\ell_{i}}{n}$, $i=1,\dots,N$. Take real numbers $u_{1},\dots, u_{N}$ and $v_{1},\dots, v_{N}$ such that $u_{i}<v_{i}$ for $i=1,\dots, N$, and consider the probability: 
@@ -1554,9 +1566,34 @@ Combining this statement with previous inequalities, we have the inequality
 
 We have shown this inequality holds for any $\delta'>0$. 
 In order to pick a sufficient $\delta'$ to find a contradiction, we will have to return to the definition of $\rho$. Recalling that 
-\[\rho(z_1,\cdots ,z_k)=\frac{1}{\bar Z}\prod_{i=1}^{k}e^{\frac{-z_i^2}{t(1-t)}}\cdot \det\left(z_j^i e^{\frac{2a_iz_j}{t}}\right)\det\left(z_j^i e^{\frac{2b_iz_j}{1-t}}\right)
+\[\rho(z_1,\cdots ,z_k)=\frac{1}{Z_{\vec a_0, \vec b_0}}\cdot \varphi(\vec a_0, \vec z, \vec n)\cdot \psi(\vec b_0, \vec z, \vec n)\prod_{i=1}^{k}e^{\frac{-z_i^2}{t(1-t)}}
 \]
-where $\bar Z$ is some normalizing term, we find that $\rho$ is continuous as it is the sum and product of continuous functions. Moreover, if $z_i=z_{i+1}$, then we have the two rows $\left(z_j^1e^{a_1z_j/t},..., z_j^ke^{a_kz_j/t}\right)=\left(z_{j+1}^1e^{a_1z_{j+1}/t},..., z_{j+1}^ke^{a_kz_{j+1}/t}\right)$, and therefore the entire function $\rho$ is $0$ when $z_i=z_{i+1}$ for any $i$. Hence, if we let $E_i^\delta:=\{z\mid z_i-z_{i+1}\leq\delta\}$ we know by the continuity of $\rho$ that the accumulation function \[R_i(\delta):=\int_{E_i^\delta}\rho\] is well defined and continuous, since $\rho$ is continuous, and $\pr(E_i^\delta)\leq 1$. We can find that $R_i(0)=\int_{E_i^0} 0$ by our previous calculation, and so by the continuity of $r$ we know that for any $\epsilon$ there exists a $\delta_i(\epsilon)$ such that $0<\delta<\delta_i(\epsilon)$ implies $|R_i(\delta)|<\epsilon$. Therefore, let $\delta'=\min_{1\leq i\leq k-1}\delta_i\left(\frac\epsilon{2(k-1)}\right)$ and we find that \[\pr\left( \hat Z_i-\hat Z_{i+1}<\delta' \right)=R_i(\delta')<\frac{\epsilon}{2(k-1)}
+where $\bar Z$ is some normalizing term,
+\begin{align*}\varphi(\vec a_0,\vec z, \vec n)&=\det\begin{bmatrix}
+\left[(c_1(t,p)z_j)^{i-1}e^{c_1(t,p)\alpha_1 z_j}\right]_{\subalign{i&=1,...,m_1\\j&=1,...,k}}\\
+\left[(c_1(t,p)z_j)^{i-1}e^{c_1(t,p)\alpha_2 z_j}\right]_{\subalign{i&=1,...,m_2\\j&=1,...,k}}\\
+\vdots \\
+\left[(c_1(t,p)z_j)^{i-1}e^{c_1(t,p)\alpha_r z_j}\right]_{\subalign{i&=1,...,m_r\\j&=1,...,k}}
+\end{bmatrix}\\
+\psi(\vec b_0, \vec z, \vec n)&=\det\begin{bmatrix}
+\left[(c_2(t,p)z_j)^{i-1}e^{c_2(t,p)\beta_1 z_j}\right]_{\subalign{i&=1,...,n_1\\j&=1,...,k}}\\
+\left[(c_2(t,p)z_j)^{i-1}e^{c_2(t,p)\beta_2 z_j}\right]_{\subalign{i&=1,...,n_2\\j&=1,...,k}}\\
+\vdots \\
+\left[(c_2(t,p)z_j)^{i-1}e^{c_2(t,p)\beta_q z_j}\right]_{\subalign{i&=1,...,n_q\\j&=1,...,k}}
+\end{bmatrix}
+\end{align*} we find that $\rho$ is continuous as it is the sum and product of continuous functions. Additionally, if for any $\chi\in\llbracket 1,k-1 \rrbracket$ there is $z_\chi=z_{\chi+1}$, then we have the two columns 
+\[\begin{bmatrix}
+\left[(c_1(t,p)z_\chi)^{i-1}e^{c_1(t,p)\alpha_1 z_j}\right]_{i=1,...,m_1}\\
+\left[(c_1(t,p)z_\chi)^{i-1}e^{c_1(t,p)\alpha_2 z_j}\right]_{i=1,...,m_2}\\
+\vdots \\
+\left[(c_1(t,p)z_\chi)^{i-1}e^{c_1(t,p)\alpha_r z_j}\right]_{i=1,...,m_r}
+\end{bmatrix}=\begin{bmatrix}
+\left[(c_1(t,p)z_{\chi+1})^{i-1}e^{c_1(t,p)\alpha_1 z_{\chi+1}}\right]_{i=1,...,m_1}\\
+\left[(c_1(t,p)z_{\chi+1})^{i-1}e^{c_1(t,p)\alpha_2 z_{\chi+1}}\right]_{i=1,...,m_2}\\
+\vdots \\
+\left[(c_1(t,p)z_{\chi+1})^{i-1}e^{c_1(t,p)\alpha_r z_{\chi+1}}\right]_{i=1,...,m_r}
+\end{bmatrix}\],
+ and therefore the entire function $\rho$ is $0$ when $z_i=z_{i+1}$ for any $i$, since the determinant of that matrix will be $0$. Hence, if we let $E_i^\delta:=\{z\mid z_i-z_{i+1}\leq\delta\}$ we know by the continuity of $\rho$ that the accumulation function \[R_i(\delta):=\int_{E_i^\delta}\rho\] is well defined and continuous, since $\rho$ is continuous, and $\pr(E_i^\delta)\leq 1$. We can find that $R_i(0)=\int_{E_i^0} 0$ by our previous calculation, and so by the continuity of $r$ we know that for any $\epsilon$ there exists a $\delta_i(\epsilon)$ such that $0<\delta<\delta_i(\epsilon)$ implies $|R_i(\delta)|<\epsilon$. Therefore, let $\delta'=\min_{1\leq i\leq k-1}\delta_i\left(\frac\epsilon{2(k-1)}\right)$ and we find that \[\pr\left( \hat Z_i-\hat Z_{i+1}<\delta' \right)=R_i(\delta')<\frac{\epsilon}{2(k-1)}
 \] for each $i$. Therefore, we find that, using equation \ref{eq:ineq}, this gives us the inequality 
 \[\epsilon\leq \pr\left(\min_{1\leq i\leq k-1} \hat Z_i-\hat Z_{i+1}\leq\delta'\right)\leq \sum_{i=1}^{k-1}\pr\left(\hat Z_i-\hat Z_{i+1}\leq \delta'\right)< \frac{\epsilon}{2}
 \]

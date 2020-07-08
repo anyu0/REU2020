@@ -46,8 +46,43 @@ Let $p \in (0,1)$. There exist constants $0 < C, a, \alpha < \infty$ (depending 
 \begin{remark} When $p = 1/2$ the above theorem follows (after a trivial affine shift) from \cite[Theorem 6.3]{LF} and the general $p \in (0,1)$ case was done in \cite[Theorem 4.5]{CD}. We mention that a significant generalization of Theorem \ref{KMT} for general random walk bridges has recently been proved in \cite[Theorem 2.3]{DW19}.
 \end{remark}
 
+We will use the following simple corollary of Theorem \ref{KMT} in the following to compare Bernoulli bridges with Brownian bridges. We use the same notation as in the theorem.
 
-Below we list five lemmas about Bernoulli bridges. We provide a brief informal explanation of what each result says after it is stated. All five lemmas are proved in a similar fashion. For the first four lemmas one observes that the event, whose probability is being estimated, is monotone in $\ell$. This allows by Lemmas \ref{MCLxy} and \ref{MCLfg} to replace $x,y$ in the statements of the lemmas with the extreme values of the ranges specified in each. Once the choice of $x$ and $y$ is fixed one can use our strong coupling result, Theorem \ref{KMT}, to reduce each of the lemmas to an analogous one involving a Brownian bridge with some prescribed variance. The latter statements are then easily confirmed as one has exact formulas for Brownian bridges.\\
+\begin{corollary}\label{Cheb}
+	Fix $p\in (0,1)$, $\beta > 0$, and $A>0$. Suppose $|z-pn| \leq K\sqrt{n}$ for a constant $K>0$. Then for any $\epsilon > 0$, there exists $N$ large enough depending on $p,\epsilon,A,K$ so that for $n\geq N$,
+	\[
+	\mathbb{P}\Big(\Delta(n,z) \geq An^\beta\Big) < \epsilon.
+	\]
+\end{corollary}
+
+\begin{proof}
+	Applying Chebyshev's inequality and \eqref{KMTeq} gives
+	\begin{align*}
+	\mathbb{P}\Big(\Delta(n,z) \geq An^\beta\Big) &\leq e^{-An^\beta}\ex\Big[e^{a\Delta(n,z)}\Big] \leq C\exp\Big[-An^\beta + \alpha(\log n)^2 + \frac{|z-pn|^2}{n}\Big]\\
+	&\leq C\exp\Big[-An^\beta + \alpha(\log n)^2 + K\Big].
+	\end{align*}
+	The conclusion is now immediate.
+\end{proof}
+
+We also state the following result regarding the distribution of the maximum of a Brownian bridge, which follows immediately from Equation (3.40) in \cite[Chapter 4]{KS}.
+
+\begin{lemma}\label{BBmax}
+	Fix $p\in (0,1)$, and let $B^\sigma$ be a Brownian bridge of variance $\sigma^2 = p(1-p)$ on $[0,1]$. Then for any $C,T> 0$,
+	\[
+	\mathbb{P}\Big(\max_{s\in[0,T]} B^\sigma_{s/T} \geq C\Big) = \exp\left( - \frac{2C^2}{p(1-p)}\right).
+	\]
+	In particular, given $\epsilon > 0$, we can choose $C$ large enough depending on $p$ so that this probability does not exceed $\epsilon$.
+\end{lemma}
+
+\begin{proof}
+	Let $B^1$ be a standard Brownian bridge with variance 1 on $[0,1]$. Then $\sigma\sqrt{T}\,B^1_{s/T}$ has the same distribution as $B^\sigma_{s/T}$. Hence
+	\begin{align*}
+	\mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}\,B^\sigma_{s/T} \geq T^{1/2} \Big) &= \mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}\,B^1_{s/T} \geq C\sqrt{T}/\sigma \Big) = e^{-2(C\sqrt{T}/\sigma)^2/T} = e^{-2C^2/p(1-p)}.
+	\end{align*}
+	The second inequality follows from \cite[Chapter 4, (3.40)]{KS}. The second conclusion is immediate.
+\end{proof}
+
+Below we list five lemmas about Bernoulli bridges. We provide a brief informal explanation of what each result says after it is stated. All five lemmas are proved in a similar fashion. For the first four lemmas one observes that the event, whose probability is being estimated, is monotone in $\ell$. This allows by Lemmas \ref{MCLxy} and \ref{MCLfg} to replace $x,y$ in the statements of the lemmas with the extreme values of the ranges specified in each. Once the choice of $x$ and $y$ is fixed one can use our strong coupling results, Theorem \ref{KMT} and Corollary \ref{Cheb}, to reduce each of the lemmas to an analogous one involving a Brownian bridge with some prescribed variance. The latter statements are then easily confirmed as one has exact formulas for Brownian bridges, such as Lemma \ref{BBmax}.\\
 
 \begin{lemma}\label{LemmaHalfS4} Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $x, y\in \mathbb{Z}$ such that $T \geq y-x \geq 0$, and suppose that $\ell$ has distribution $\mathbb{P}^{0,T,x,y}_{Ber}$. Let $M_1, M_2 \in \mathbb{R}$ be given. Then we can find $W_0 = W_0(p,M_2 - M_1) \in \mathbb{N}$ such that for $T \geq W_0$, $x \geq M_1 T^{1/2}$, $y \geq pT + M_2 T^{1/2}$ and $s \in [0,T]$ we have
 \begin{equation}\label{halfEq1S4}
@@ -58,18 +93,18 @@ Below we list five lemmas about Bernoulli bridges. We provide a brief informal e
 If $M_1, M_2 = 0$ then Lemma \ref{LemmaHalfS4} states that if a Bernoulli bridge $\ell$ is started from $(0,x)$ and terminates at $(T,y)$, which are above the straight line of slope $p$, then at any given time $s \in [0,T]$ the probability that $\ell(s)$ goes a modest distance below the straight line of slope $p$ is upper bounded by $ 2/3$.
 \end{remark}
 \begin{proof}
-	Define $A = \lfloor MT_1^{1/2}\rfloor$ and $B = \lfloor pT + M_2 T^{1/2}\rfloor$. Then since $A\leq x$ and $B\leq y$, it follows from Lemma 3.1 that there is a probability space with measure $\mathbb{P}_0$ supporting random variables $\mathfrak{L}_1$ and $\mathfrak{L}_2$, whose laws under $\mathbb{P}_0$ are $\mathbb{P}^{0,T,A,B}_{Ber}$ and $\mathbb{P}^{0,T,x,y}_{Ber}$ respectively, and $\mathbb{P}_0$-a.s. we have $\mathfrak{L}_1\leq \mathfrak{L}_2$. Thus
+	Define $A = \lfloor M_1T^{1/2}\rfloor$ and $B = \lfloor pT + M_2 T^{1/2}\rfloor$. Then since $A\leq x$ and $B\leq y$, it follows from Lemma 3.1 that there is a probability space with measure $\mathbb{P}_0$ supporting random variables $L_1$ and $L_2$, whose laws under $\mathbb{P}_0$ are $\mathbb{P}^{0,T,A,B}_{Ber}$ and $\mathbb{P}^{0,T,x,y}_{Ber}$ respectively, and $\mathbb{P}_0$-a.s. we have $L_1\leq L_2$. Thus
 	\begin{align*}
 	&\mathbb{P}^{0,T,x,y}_{Ber}\Big( \ell(s)  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \Big)\\
-	= \; & \mathbb{P}_0\Big( \mathfrak{L}_2(s)  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \Big)\\
-	\geq \; & \mathbb{P}_0\Big( \mathfrak{L}_1(s)  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \Big)\\
+	= \; & \mathbb{P}_0\Big( L_2(s)  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \Big)\\
+	\geq \; & \mathbb{P}_0\Big( L_1(s)  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \Big)\\
 	= \; & \mathbb{P}^{0,T,A,B}_{Ber}\Big( \ell(s)  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \Big).
 	\end{align*}
 	Since upright paths on $\llbracket 0,T\rrbracket \times \llbracket A,B\rrbracket$ are equivalent to upright paths on $\llbracket 0,T\rrbracket \times \llbracket 0, B-A\rrbracket$ shifted vertically by $A$, the last line is equal to
 	\[
 	\mathbb{P}^{0,T,0,B-A}_{Ber}\Big( \ell(s) + A  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \Big).
 	\]
-	Now we consider the coupling provided by Theorem \ref{KMT}. We have another probability space $(\Omega,\mathcal{F},\mathbb{P})$ supporting a random variable $\ell^{(T,B-A)}$ whose law under $\mathbb{P}$ is that of $\ell$, and a Brownian bridge $B^\sigma$. Then 
+	Now we consider the coupling provided by Theorem \ref{KMT}. We have another probability space $(\Omega,\mathcal{F},\mathbb{P})$ supporting a random variable $\ell^{(T,B-A)}$ whose law under $\mathbb{P}$ is $\mathbb{P}^{0,T,0,B-A}_{Ber}$, and a Brownian bridge $B^\sigma$. Then 
 	\begin{align*}
 	&\mathbb{P}^{0,T,0,B-A}_{Ber}\Big( \ell(s) + A  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \Big)\\
 	= \; & \mathbb{P}\Big( \ell^{(T,B-A)}(s) + A \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \Big)\\
@@ -89,14 +124,7 @@ If $M_1, M_2 = 0$ then Lemma \ref{LemmaHalfS4} states that if a Bernoulli bridge
 	\geq \; & \mathbb{P}\left( B^\sigma_{s/T} \geq 0 \right) - \mathbb{P}\left( \Delta(T,B-A) \geq T^{1/4} - 1 \right)\\
 	= \; & \frac{1}{2} - \mathbb{P}\left( \Delta(T,B-A) \geq T^{1/4} - 1 \right).
 	\end{align*}
-	For the second inequality, we used the fact that the quantity in brackets is bounded in absolute value by $\Delta(T,B-A)$. The third inequality follows by splitting the event $\{B^\sigma_{s/T}\geq 0\}$ into cases and applying subadditivity. It remains to bound the second term on the last line. Applying Chebyshev's inequality and Theorem \ref{KMT}, we obtain constants $C,a,\alpha$ depending only on $p$ such that
-	\begin{align*}
-	\mathbb{P}\left( \Delta(T,B-A) \geq T^{1/4} - 1 \right) & \leq e^{-a(T^{1/4} - 1)} \ex\Big[ e^{a\Delta(T,B-A)} \Big]\\
-	&\leq C \exp\left[ -a(T^{1/4}-1) + \alpha(\log T)^2 + \frac{|B-A-pT|^2}{T} \right]\\
-	&\leq C \exp\left[ -a(T^{1/4}-1) + \alpha(\log T)^2 + (M_2-M_1)^2 + \frac{1}{T} \right]\\
-	&= O(e^{-T^{1/4}}).
-	\end{align*}
-	Thus we can choose $W_0$ large enough, depending on $p$ and $M_2-M_1$, so that if $T \geq W_0$, then this probability does not exceed $1/6$. Combining this with the above inequalities completes the proof.
+	For the second inequality, we used the fact that the quantity in brackets is bounded in absolute value by $\Delta(T,B-A)$. The third inequality follows by dividing the event $\{B^\sigma_{s/T}\geq 0\}$ into cases and applying subadditivity. Since $|B-A-pT|\leq (M_2-M_1+1)\sqrt{T}$, Corollary \ref{Cheb} allows us to choose $W_0$ large enough depending on $p$ and $M_2-M_1$ so that if $T \geq W_0$, then the last line is bounded above by $1/2 - 1/6 = 1/3$. This proves \eqref{halfEq1S4}.
 \end{proof}
 
 \begin{lemma}\label{LemmaMinFreeS4} Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $y\in \mathbb{Z}$ such that $T \geq y \geq 0$, and suppose that $\ell$ has distribution $\mathbb{P}^{0,T,0,y}_{Ber}$. Let $M > 0$ and $\epsilon > 0$ be given. Then we can find $W_1=W_1(M,p, \epsilon) \in \mathbb{N}$ and $A=A(M,p, \epsilon) > 0$ such that for $T \geq W_1$, $ y \geq p T -  MT^{1/2}$ we have
@@ -112,27 +140,16 @@ If $M_1, M_2 = 0$ then Lemma \ref{LemmaHalfS4} states that if a Bernoulli bridge
 	\mathbb{P}^{0,T,0,y}_{Ber}\Big( \inf_{s \in [ 0, T]}\big( \ell(s) -  ps \big) \leq -AT^{1/2} \Big) \leq \mathbb{P}^{0,T,0,B}_{Ber}\Big( \inf_{s \in [ 0, T]}\big( \ell(s) -  ps \big) \leq -AT^{1/2} \Big),
 	\]
 	where $B=\lfloor pT - MT^{1/2}\rfloor$. By Theorem \ref{KMT}, there is a probability space $(\Omega,\mathcal{F},\mathbb{P})$ supporting a random variable $\ell^{(T,B)}$ whose law under $\mathbb{P}$ is that of $\ell$, and a Brownian bridge $B^\sigma$ with variance $\sigma^2 = p(1-p)$. Therefore
-	\begin{align*}
-	&\mathbb{P}^{0,T,0,B}_{Ber}\Big( \inf_{s \in [ 0, T]}\big( \ell(s) -  ps \big) \leq -AT^{1/2} \Big) = \mathbb{P}\Big( \inf_{s \in [ 0, T]}\big( \ell^{(T,B)}(s) -  ps \big) \leq -AT^{1/2} \Big)\\
-	\leq \; & \mathbb{P}\Big( \inf_{s \in [ 0, T]}  \sqrt{T}B^\sigma_{s/T} \leq -\frac{1}{2}AT^{1/2} \Big) + \mathbb{P}\Big( \sup_{s\in [0,T]} \Big|\sqrt{T} B^\sigma_{s/T} + ps - \ell^{(T,B)}(s) \Big| \geq \frac{1}{2}AT^{1/2} \Big)\\
-	\leq \; & \mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}B^\sigma_{s/T} \geq \frac{1}{2}AT^{1/2} \Big) + \mathbb{P}\Big(\Delta(T,B) \geq \frac{1}{2}AT^{1/2} - MT^{1/2} - 1\Big).
-	\end{align*}
+	\begin{align}
+	&\mathbb{P}^{0,T,0,B}_{Ber}\Big( \inf_{s \in [ 0, T]}\big( \ell(s) -  ps \big) \leq -AT^{1/2} \Big) = \mathbb{P}\Big( \inf_{s \in [ 0, T]}\big( \ell^{(T,B)}(s) -  ps \big) \leq -AT^{1/2} \Big)\nonumber\\
+	\leq \; & \mathbb{P}\Big( \inf_{s \in [ 0, T]}  \sqrt{T}B^\sigma_{s/T} \leq -\frac{1}{2}AT^{1/2} \Big) + \mathbb{P}\Big( \sup_{s\in [0,T]} \Big|\sqrt{T} B^\sigma_{s/T} + ps - \ell^{(T,B)}(s) \Big| \geq \frac{1}{2}AT^{1/2} \Big)\nonumber\\
+	\leq \; & \mathbb{P}\Big( \max_{s\in[0,T]} B^\sigma_{s/T} \geq A/2 \Big) + \mathbb{P}\Big(\Delta(T,B) \geq \frac{1}{2}AT^{1/2} - MT^{1/2} - 1\Big). \label{MinFreeS4ineq}
+	\end{align}
 	For the first term in the last line, we used the fact that $B^\sigma$ and $-B^\sigma$ have the same distribution. For the second term, we used the fact that
 	\begin{align*}
 	\sup_{s\in[0,T]}\Big| ps - \frac{s}{T}\cdot B \Big| &\leq \sup_{s\in[0,T]}\Big| ps - \frac{pT-MT^{1/2}}{T}\cdot s \Big| + 1 = MT^{1/2} + 1.
-	\end{align*} To estimate the first term, note that $\sqrt{T}B^\sigma_{s/T} = \sigma\sqrt{T}(W_{s/T} - W_1)$, where $W$ is a standard Brownian motion on $[0,1]$. Hence
-	\begin{align*}
-	\mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}B^\sigma_{s/T} \geq \frac{1}{2}AT^{1/2} \Big) &\leq \mathbb{P}\Big( \sigma\max_{s\in[0,T]} \sqrt{T}\,W_{s/T} \geq \frac{1}{4}AT^{1/2} \Big) + \mathbb{P}\Big( \sigma\sqrt{T}\,W_1 \leq -\frac{1}{4}AT^{1/2} \Big)\\
-	&= \mathbb{P}\Big( \sigma\big|\sqrt{T}\,W_{T/T}\big| \geq \frac{1}{4}AT^{1/2} \Big) + \mathbb{P}\Big( \sigma W_1 \leq -\frac{1}{4}A \Big)\\
-	&= 3\,\mathbb{P}\Big( W_1 \geq \frac{A}{4\sqrt{p(p-1)}} \Big).
-	\end{align*} 
-	The equality in the second line follows from the reflection principle, since $\sqrt{T}\,W_{s/T}$ is a standard Brownian motion on $[0,T]$, and the third line follows by symmetry. Since $W_1\sim\mathcal{N}(0,1)$, we can choose $A$ large enough depending on $p$ and $\epsilon$ so that this probability is bounded above by $\epsilon/2$. 
-	
-	For the second term, it follows from Theorem \ref{KMT} and Chebyshev's inequality that
-	\begin{align*}
-	\mathbb{P}\Big(\Delta(T,B) \geq \Big(\frac{A}{2} - M\Big)T^{1/2} - 1\Big) &\leq C\exp\Big[-a\Big(\frac{A}{2}- M\Big)T^{1/2} + a + \alpha(\log T)^2 + M^2 + \frac{1}{T}\Big].
 	\end{align*}
-	If we take $A > 2M$, then this is $O(e^{-T^{1/2}})$, and then we can find $W_1$ large enough depending on $M,p,\epsilon$ so that this term is also $\leq\epsilon/2$ for $T\geq W_1$. Adding the two terms gives \eqref{minFree1S4}.
+	By Lemma \ref{BBmax}, we can take $A$ large enough depending on $p,\epsilon$ so that the first term in \eqref{MinFreeS4ineq} is $<\epsilon/2$. If we also take $A > 2M$, then since $|B-pT| \leq (M+1)\sqrt{T}$, Corollary \ref{Cheb} gives us a $W_1$ large enough depending on $M,p,\epsilon$ so that the second term is also $<\epsilon/2$ for $T\geq W_1$. Adding the two terms gives \eqref{minFree1S4}.
 \end{proof}
 
 \begin{lemma}\label{LemmaTailS4}Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $x, y\in \mathbb{Z}$ such that $T \geq y-x \geq 0$, and suppose that $\ell$ has distribution $\mathbb{P}^{0,T,x,y}_{Ber}$. Let $M_1,M_2 > 0$ be given. Then we can find $W_2 = W_2(M_1,M_2,p) \in \mathbb{N}$ such that for $T \geq W_2$, $ x \geq -M_1T^{1/2}$, $ y \geq pT -  M_1T^{1/2}$ we have
@@ -144,7 +161,7 @@ where $\Phi^{v}$ is the cumulative distribution function  of a Gaussian random v
 \begin{remark} Lemma \ref{LemmaTailS4} states that  if a Bernoulli bridge $\ell$ is started from $(0,x)$ and terminates at $(T,y)$ with these points not significantly lower than the straight line of slope $p$, then its mid-point would lie well above the straight line of slope $p$ at least with some quantifiably tiny probability.
 \end{remark}
 \begin{proof}
-		We have
+	By Lemma \ref{MCLxy}, we have
 	\begin{align*}
 	\mathbb{P}^{0,T,x,y}_{Ber}\bigg( \ell( T/2 )  \geq \frac{M_2T^{1/2} + p T}{2} - T^{1/4} \bigg) &\geq \mathbb{P}^{0,T,0,B-A}_{Ber}\bigg( \ell( T/2 ) + A  \geq \frac{M_2T^{1/2} + p T}{2} - T^{1/4} \bigg)\\
 	&= \mathbb{P}\bigg( \ell^{(T,B-A)}( T/2 ) + A  \geq \frac{M_2T^{1/2} + p T}{2} - T^{1/4} \bigg),
@@ -168,7 +185,7 @@ where $\Phi^{v}$ is the cumulative distribution function  of a Gaussian random v
 	\[
 	1 - \Phi^v(M_1+M_2),
 	\]
-	where $\Phi^v$ is the cdf for a Gaussian random variable with mean 0 and variance $v=\sigma^2/4 = p(1-p)/4$. For the second term, the same argument as in the proof of Lemma 3.5 shows that it is $O(e^{-T^{1/4}})$. In particular, we can choose $W_2$ depending on $M_1,M_2$, and $p$ so that the second term is less than 1/2 the first term for $T\geq W_2$. This proves \eqref{halfEq2S4}.
+	where $\Phi^v$ is the cdf for a Gaussian random variable with mean 0 and variance $v=\sigma^2/4 = p(1-p)/4$. By Corollary \ref{Cheb}, since $|B-A-pT| \leq 1$, we can choose $W_2$ depending on $M_1,M_2$, and $p$ so that the second term is less than 1/2 the first term for $T\geq W_2$. This proves \eqref{halfEq2S4}.
 \end{proof}
 
 
@@ -181,7 +198,7 @@ where $\Phi^{v}$ is the cumulative distribution function  of a Gaussian random v
 Lemma \ref{LemmaAwayS4} states that  if a Bernoulli bridge $\ell$ is started from $(0,x)$ and terminates at $(T,y)$ with $(0,x)$ and $(T,y)$ well above the line of slope $p$ then at least with some positive probability $\ell$ will not fall significantly below the line of slope $p$.
 \end{remark}
 \begin{proof}
-	We have
+	By Lemma \ref{MCLxy},
 	\begin{align*}
 	& \mathbb{P}^{0,T,x,y}_{Ber}\Big( \inf_{s \in [0,T]} \big( \ell(s) -ps \big)+ T^{1/4} \geq 0 \Big) \\
 	\geq \; & \mathbb{P}^{0,T,0,B-A}_{Ber}\Big( \inf_{s \in [0,T]} \big( \ell(s) + A -ps \big)+ T^{1/4} \geq 0 \Big)\\
@@ -191,16 +208,9 @@ Lemma \ref{LemmaAwayS4} states that  if a Bernoulli bridge $\ell$ is started fro
 	with $A = \lfloor T^{1/2}\rfloor$, $B = \lfloor pT + T^{1/2}\rfloor$, and $\mathbb{P}$, and $\ell^{(T,B-A)}$ provided by Theorem \ref{KMT}. In the last line, we used the facts that $|A-T^{1/2}|\leq 1$ and $|p-(B-A)/T|\leq 1$. With $B^\sigma$ as in the theorem, the last line is bounded below by
 	\begin{align*}
 	&\mathbb{P}\Big( \inf_{s\in[0,T]} \sqrt{T}\,B^\sigma_{s/T} \geq - T^{1/2} \quad \mathrm{and} \quad \Delta(T,B-A) < T^{1/2} - 2 \Big)\\
-	\geq \; & \mathbb{P}\Big( \max_{s\in[0,T]} B^\sigma_{s/T} \leq 1 \Big) - \mathbb{P}\Big( \Delta(T,B-A) \geq T^{1/2} - 2 \Big).
+	\geq \; & 1- \exp\left(-\frac{2}{p(1-p)}\right) - \mathbb{P}\Big( \Delta(T,B-A) \geq T^{1/2} - 2 \Big).
 	\end{align*}
-	To compute the first term, note that if $B^1$ is a Brownian bridge with variance 1 on $[0,1]$, then $\sigma \sqrt{T}\,B^1_{s/T}$ on $[0,T]$ has the same distribution as $B^\sigma_{s/T}$. Hence
-	\begin{align*}
-	\mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}\,B^\sigma_{s/T} \leq T^{1/2} \Big) &= 1 - \mathbb{P}\Big( \max_{s\in[0,T]} \sqrt{T}\,B^1_{s/T} \geq T^{1/2}/\sigma \Big) = 1 - e^{-2(T^{1/2}/\sigma)^2/T}\\ 
-	&= 1- \exp\left(-\frac{2}{p(1-p)}\right).
-	\end{align*}
-	For the second equality, see (3.40) in \cite[Chapter 4]{KS}.
-	
-	The second term is $O(e^{-T^{1/2}})$ by the same argument as in the proof of Lemma 3.5, so we can choose $W_3$ large enough depending on $p$ so that this term is less than 1/2 the first term for $T\geq W_3$. This implies \eqref{awayS4}.
+	In the second line, we used Lemma \ref{BBmax}. Since $|B-A-pT| \leq 1$, Corollary \ref{Cheb} allows us choose $W_3$ large enough depending on $p$ so that this term is less than $\frac{1}{2}(1-e^{-2/p(1-p)})$ for $T\geq W_3$. This implies \eqref{awayS4}.
 \end{proof}
 
 
@@ -220,22 +230,22 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 \begin{proof}
 	We have
 	\[
-	\mathbb{P}^{0,T,0,y}_{Ber}\Big( w\big({f^\ell},\delta\big) \geq \epsilon \Big) = \mathbb{P}\Big( w\big(f^{\ell^{(N,y)}},\delta\big) \geq \epsilon \Big),
+	\mathbb{P}^{0,T,0,y}_{Ber}\Big( w\big({f^\ell},\delta\big) \geq \epsilon \Big) = \mathbb{P}\Big( w\big(f^{\ell^{(T,y)}},\delta\big) \geq \epsilon \Big),
 	\]
-	with $\mathbb{P}$, $f^{\ell^{(N,y)}}$. If $B^\sigma$ is the Brownian bridge provided by Theorem \ref{KMT}, then
+	with $\mathbb{P}$, $f^{\ell^{(T,y)}}$ as in Theorem \ref{KMT}. If $B^\sigma$ is the Brownian bridge provided by Theorem \ref{KMT}, then
 	\begin{align*}
-	w\big(f^{\ell^{(N,y)}},\delta\big) &= T^{-1/2} \sup_{\substack{x,y \in [0,1]\\ |x-y| \leq \delta}} \Big| \ell^{(N,y)}(xT) - pxT - \ell^{(N,y)}(yT) + pyT \Big|\\
-	&\leq T^{-1/2} \sup_{\substack{x,y \in [0,1]\\ |x-y| \leq \delta}} \Big| \sqrt{T}\,B^\sigma_x + xy - pxT - \sqrt{T}\,B^\sigma_y - y^2 + pyT \Big|\\
-	&\qquad + T^{-1/2}\cdot\Big|\sqrt{T}\,B^\sigma_x + xy - \ell^{(N,y)}(xT)\Big| + T^{-1/2}\cdot\Big|\sqrt{T}\,B^\sigma_y + y^2 - \ell^{(N,y)}(yT)\Big|\\
-	&\leq \sup_{\substack{x,y \in [0,1]\\ |x-y| \leq \delta}} \Big| B^\sigma_x - B^\sigma_y + T^{-1/2} (y-pT)(x-y)\Big| + 2T^{-1/2}\Delta(T,y)\\
+	w\big(f^{\ell^{(N,y)}},\delta\big) &= T^{-1/2} \sup_{\substack{s,t \in [0,1]\\ |s-t| \leq \delta}} \Big| \ell^{(N,y)}(sT) - psT - \ell^{(T,y)}(tT) + ptT \Big|\\
+	&\leq T^{-1/2} \sup_{\substack{s,t \in [0,1]\\ |s-t| \leq \delta}} \Big(\big| \sqrt{T}\,B^\sigma_s + sy - psT - \sqrt{T}\,B^\sigma_t - ty + ptT \big|\\
+	&\qquad + \big|\sqrt{T}\,B^\sigma_s + sy - \ell^{(T,y)}(sT)\big| + \big|\sqrt{T}\,B^\sigma_t + ty - \ell^{(T,y)}(tT)\big|\Big)\\
+	&\leq \sup_{\substack{s,t \in [0,1]\\ |s-t| \leq \delta}} \Big| B^\sigma_s - B^\sigma_t + T^{-1/2} (y-pT)(s-t)\Big| + 2T^{-1/2}\Delta(T,y)\\
 	&\leq w\big(B^\sigma,\delta\big) + M\delta + 2T^{-1/2}\Delta(T,y).
 	\end{align*}
 	The last line follows from the assumption that $|y-pT|\leq MT^{1/2}$. Thus
 	\begin{align*}
 	\mathbb{P}\Big( w\big(f^{\ell^{(N,y)}},\delta\big) \geq \epsilon \Big) &\leq \mathbb{P}\Big( w\big(B^\sigma,\delta\big) + M\delta + 2T^{-1/2}\Delta(T,y) \geq \epsilon \Big)\\
-	&\leq \mathbb{P}\Big( w\big(B^\sigma,\delta\big) + M\delta \geq \epsilon/2 \Big) + \mathbb{P}\Big( \Delta(T,y) \geq \epsilon\, T^{1/2}/2 \Big).
+	&\leq \mathbb{P}\Big( w\big(B^\sigma,\delta\big) + M\delta \geq \epsilon/2 \Big) + \mathbb{P}\Big( \Delta(T,y) \geq \epsilon\, T^{1/2}/4 \Big).
 	\end{align*}
-	The last term is $O(e^{-T^{1/2}})$ by the argument in the proof of Lemma 3.5, so we can choose $W_4$ large enough depending on $M,p,\epsilon,\eta$ so that this term is $\leq\eta/2$ for $T\geq W_4$. Since $B^\sigma$ is a.s. uniformly continuous on the compact interval $[0,1]$, $w(B^\sigma,\delta) \to 0$ as $\delta\to 0$. Thus we can find $\delta_0>0$ small enough depending on $\epsilon,\eta$ so that $w(B^\sigma,\delta_0) < \epsilon/2$ with probability at least $1-\eta/2$. Then with $\delta = \min(\delta_0, \epsilon/4M)$, the first term is $\leq\eta/2$ as well. This implies \eqref{MOCeqS4}.
+	Corollary \ref{Cheb} gives us a $W_4$ large enough depending on $M,p,\epsilon,\eta$ so that the last term term is $\leq\eta/2$ for $T\geq W_4$. Since $B^\sigma$ is a.s. uniformly continuous on the compact interval $[0,1]$, $w(B^\sigma,\delta) \to 0$ as $\delta\to 0$. Thus we can find $\delta_0>0$ small enough depending on $\epsilon,\eta$ so that $w(B^\sigma,\delta_0) < \epsilon/2$ with probability at least $1-\eta/2$. Then with $\delta = \min(\delta_0, \epsilon/4M)$, the first term is $\leq\eta/2$ as well. This implies \eqref{MOCeqS4}.
 \end{proof}
 
 
