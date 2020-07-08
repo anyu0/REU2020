@@ -1565,7 +1565,7 @@ We proceed to find lower bounds for $\mathbb{P'}(A)$, and for $\mathbb{P'}(B)$.
 \mathbb{P'}(A)
 = & \mathbb{P}_{Ber}^{0,T, \vec{x}\,'^T, \vec{y}\,'^T} \left(L_k\left(\frac{T}{2}\right)-\frac{pT}{2} \geq M\sqrt{T}) \right) \\
 \geq & \mathbb{P}_{Ber}^{0,T, x_k'^T, y_k'^T}\left(l\left(\frac{T}{2}\right)-\frac{pT}{2} \geq M\sqrt{T}) \right) \\
-= & \mathbb{P}\left(l^{(T,z)} \left(\frac{T}{2}\right)-\frac{pT}{2} \geq M\sqrt{T}) \right)
+= & \mathbb{P}\left(l^{(T,z)} \left(\frac{T}{2}\right)-\frac{pT}{2} +x_k'^T\geq M\sqrt{T}) \right)
 \end{align*}
 where $z:= y_k'^T-x_k'^T = \lfloor M_1\sqrt{T}+pT-M_2\sqrt{T} \rfloor$, and $\mathbb{P}$, $l^{(T,z)}$ are as defined in Theorem 3.3.
 With Brownian bridge $B^\sigma$ as in Theorem 3.3. We rewrite the expression as
@@ -1573,16 +1573,25 @@ With Brownian bridge $B^\sigma$ as in Theorem 3.3. We rewrite the expression as
 \begin{align*}
 \mathbb{P} \left( \left[ l^{(T,z)} \left(\frac{T}{2}\right)
 -\sqrt{T}B^\sigma_{1/2}-\frac{z}{2} \right] + \sqrt{T}B^\sigma  
-\geq -\frac{M_1\sqrt{T}-M_2\sqrt{T}}{2} + M\sqrt{T}) \right)
+\geq -\frac{M_1\sqrt{T}-M_2\sqrt{T}}{2} + M_1\sqrt{T}+C(k-1)\sqrt{T}+M\sqrt{T}) \right)
 \end{align*}
-Cleaning up, we have
-$$-\frac{M_1\sqrt{T}-M_2\sqrt{T}}{2} + M\sqrt{T} = (M+\frac{M_2-M_1}{2})\sqrt{T} $$
+The right hand side is
+$$\frac{M_1+M_2}{2}+M+C(k-1) < (M+M_1+M_2+C(k-1))\sqrt{T} $$
 The probability $\mathbb{P'}(A)$ is bounded below by
 \begin{align*}
 & \mathbb{P} \left( \left[ l^{(T,z)} \left(\frac{T}{2}\right)
 -\sqrt{T}B^\sigma_{1/2}-\frac{z}{2} \right] + \sqrt{T}B^\sigma  
-\geq (M+\frac{M_2-M_1}{2})\sqrt{T} \right) \\
-\geq& \mathbb{P} \left( B^\sigma_{1/2} \geq M_1+M_2 \right)
+\geq (M+M_1+M_2+C(k-1))\sqrt{T} \right) \\
+\geq& \mathbb{P} \left( \sqrt{T}B^\sigma_{1/2} \geq (M+M_1+M_2+C(k-1))\frac{\sqrt{T}}{2} \right)
++ \mathbb{P} \left( \Delta(T,z) \geq (M+M_1+M_2+C(k-1))\frac{\sqrt{T}}{2} \right) 
+\end{align*}
+The first term is equal to 
+$$1 - \Phi^v (M+M_1+M_2+C(k-1))$$
+where $\Phi^v$ is the Gaussian continuous distribution with mean 0 and variance $v=p(1-p)/4$.
+The second term is $O(\exp(-\sqrt{T})$ according to Theorem 3.3. We can write the lower bound as
+\begin{align*}
+\mathbb{P}' (A) &\geq 1 - \Phi^v (M+M_1+M_2+C(k-1)) \\
+&\geq C' \frac{\sqrt{p(1-p)}(M+M_1+M_2+C(k-1))}{\sqrt{2\pi}[(M+M_1+M_2+C(k-1))^2+1]} \exp\left( \frac{(M+M_1+M_2+C(k-1))^2}{2p(1-p)}\right)
 \end{align*}
 
 \noindent\textbf{Step 2:} 
