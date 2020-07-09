@@ -1629,38 +1629,41 @@ Fix $p,t\in (0,1)$ and $ k\in \mathbb{N}$. Suppose that $\vec x^T=(x_1^T,\cdots 
 \pr^{0,T,\vec x^T, \vec y^T}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \left[L_i(tT)-L_{i+1}(tT)\right]<\delta\sqrt{T}\right)<\epsilon
 \]
 \begin{proof}
-We will proceed in our proof of this claim with contradiction:
-Suppose there exists $M_1,M_2,\epsilon>0$ such that for any $T_0\in \mathbb{N}$ and $\delta>0$ there exists some $T\geq T_0$ such that \[
+We prove the claim by contradiction:
+suppose there exists $M_1,M_2,\epsilon>0$ such that for any $T_0\in \mathbb{N}$ and $\delta>0$ there exists some $T\geq T_0$ such that \[
 \pr^{0,T,\vec x^T,\vec y^T}_{avoid, Ber}\left(\min_{1\leq i\leq k-1}\left[L_i(tT)-L_{i+1}(tT)\right]<\delta\sqrt{T}\right)\geq \epsilon
 \]
-Therefore, we find that there exists some sequences $T_n$, $\delta_n>0$  such that $T_n\uparrow \infty$, $\delta_n\downarrow 0$ and, for all $n$, we have  
+Therefore, we can obtain some sequences $T_n$, $\delta_n>0$, $T_n\uparrow \infty$, $\delta_n\downarrow 0$ such that for all $n$, we have  
 \[
 \pr^{0,T,\vec x^{T_n},\vec y^{T_n}}_{avoid, Ber}\left(\min_{1\leq i\leq k-1}\left[\frac{L_i(tT_n)-L_{i+1}(tT_n)}{\sqrt{T_n}}\right]<\delta_n\right)\geq \epsilon
 \]
-Now, by the bounding conditions on $x_i^{T_n}$ and $y_i^{T_n}$ we know that there exists some subsequence $T_{n_m}$ such that $\lim_{m\to\infty} \frac{x^{T_{n_m}}}{\sqrt{T_{n_m}}}\to \vec x$ 
+As $\abs*{x_i^{T_n}}<M_1\sqrt{T}$, $\abs*{y_i^T-pT}\leq M_2\sqrt{T}$ we know that there exists some subsequence $T_{n_m}$ such that $\lim_{m\to\infty} \frac{x^{T_{n_m}}}{\sqrt{T_{n_m}}}\to \vec x$ 
 and 
 $\lim_{m\to\infty}\frac{y^{T_{n_m}}-pT}{\sqrt{T_{n_m}}}\to \vec y$ 
-since these sequences are bounded in the compact intervals $[-M_1,M_1],[-M_2,M_2]$.
- As intermediate notation, notate $Z_i^m:=\frac{L_i(tT_{n_m})-ptT}{\sqrt{T_{n_m}}}$. Then, if we fix some $\delta'>0$ we may find that by the property above, we have for sufficiently large $n$
-\[
+by the Bolzano-Weierstrass theorem
+
+Denote $Z_i^m:=\frac{L_i(tT_{n_m})-ptT}{\sqrt{T_{n_m}}}$ for $1\leq i \leq k$. Then, if we fix $\delta'>0$, by the property above we have for sufficiently large $n$
+\begin{equation}\label{prob20inf}
 \epsilon\leq \liminf_{m\to\infty}\pr\left(\min_{1\leq i\leq k-1}Z_i^m-Z_{i+1}^m<\delta_{n_m}\right)\leq \liminf_{m\to\infty}\pr\left(\min_{1\leq i\leq k-1}Z_i^m-Z_{i+1}^m\leq\delta'\right)
-\]
+\end{equation}
 since there exists some $N$ such that $n>N$ implies $\delta_n<\delta'$.
-Now, if we apply the results of problem 17, we find it implies that the vector $(Z_1^m,\cdots, Z_k^m)$ converges weakly to some random vector $\hat Z$ with probability distribution function $\rho$ as defined previously in problem 17. 
+Now, if we apply the results of problem 17, we find it implies that the vector $(Z_1^m,\cdots, Z_k^m)$ converges weakly to some random vector $\hat Z$ with probability distribution function $\rho$ as defined previously in problem 17, the definitions of which we will state in a few lines, when  they are needed.
 Because this sequence has weak convergence we may apply portmanteau's lemma with the closed set $K=[0,\delta']$ to find 
-\[\limsup_{m\to\infty }\pr\left(\min_{1\leq i\leq k-1}Z_i^m-Z_{i+1}^m\in K\right)\leq \pr\left(\min_{1\leq i\leq k-1}\hat Z_i-\hat Z_{i+1}\in K\right)
-\]
-Combining this statement with previous inequalities, we have the inequality
+\begin{equation}\label{prob20sup}
+\limsup_{m\to\infty }\pr\left(\min_{1\leq i\leq k-1}Z_i^m-Z_{i+1}^m\in K\right)\leq \pr\left(\min_{1\leq i\leq k-1}\hat Z_i-\hat Z_{i+1}\in K\right)
+\end{equation}
+Combining (\ref{prob20inf}) and (\ref{prob20sup}), we arrive at the inequality
 \begin{equation}\label{eq:ineq}
 \epsilon\leq \pr\left(\min_{1\leq i\leq k-1} \hat Z_i-\hat Z_{i+1}\leq\delta'\right)\leq \sum_{i=1}^{k-1}\pr\left(\hat Z_i-\hat Z_{i+1}\leq \delta'\right)
 \end{equation}
 
-We have shown this inequality holds for any $\delta'>0$. 
-In order to pick a sufficient $\delta'$ to find a contradiction, we will have to return to the definition of $\rho$. Recalling that 
+Since $\delta'$ is arbitrary, this inequality holds for any $\delta'>0$. 
+In order to pick a sufficient $\delta'$ to find a contradiction, we will now state the definition of $\rho$, as found in problem 17: 
 \[\rho(z_1,\cdots ,z_k)=\frac{1}{Z_{\vec a_0, \vec b_0}}\cdot \varphi(\vec a_0, \vec z, \vec n)\cdot \psi(\vec b_0, \vec z, \vec n)\prod_{i=1}^{k}e^{\frac{-z_i^2}{t(1-t)}}
 \]
-where $\bar Z$ is some normalizing term,
-\begin{align*}\varphi(\vec a_0,\vec z, \vec n)&=\det\begin{bmatrix}
+ with $\vec z_i\in W_k^\circ$ where we have the functions and constant
+\begin{align*}
+\varphi(\vec a_0,\vec z, \vec n)&=\det\begin{bmatrix}
 \left[(c_1(t,p)z_j)^{i-1}e^{c_1(t,p)\alpha_1 z_j}\right]_{\subalign{i&=1,...,m_1\\j&=1,...,k}}\\
 \left[(c_1(t,p)z_j)^{i-1}e^{c_1(t,p)\alpha_2 z_j}\right]_{\subalign{i&=1,...,m_2\\j&=1,...,k}}\\
 \vdots \\
@@ -1671,8 +1674,9 @@ where $\bar Z$ is some normalizing term,
 \left[(c_2(t,p)z_j)^{i-1}e^{c_2(t,p)\beta_2 z_j}\right]_{\subalign{i&=1,...,n_2\\j&=1,...,k}}\\
 \vdots \\
 \left[(c_2(t,p)z_j)^{i-1}e^{c_2(t,p)\beta_q z_j}\right]_{\subalign{i&=1,...,n_q\\j&=1,...,k}}
-\end{bmatrix}
-\end{align*} we find that $\rho$ is continuous as it is the sum and product of continuous functions. Additionally, if for any $\chi\in\llbracket 1,k-1 \rrbracket$ there is $z_\chi=z_{\chi+1}$, then we have the two columns 
+\end{bmatrix}\\
+Z_{\vec a_0, \vec b_0}&=\int_{\mathbb{R}^k}\left(\indic_{z_1\geq z_2\geq \cdots \geq z_k}(\vec z)\right)\varphi(\vec a_0, \vec z, \vec n)\cdot \psi(\vec b_0, \vec z, \vec n)\prod_{i=1}^{k}e^{\frac{-z_i^2}{t(1-t)}} d\vec z
+\end{align*} we find that $\rho$ is continuous as a sum and product of continuous functions. Additionally, if for any $\chi\in\llbracket 1,k-1 \rrbracket$ such that $z_\chi=z_{\chi+1}$, then we have the two columns 
 \[\begin{bmatrix}
 \left[(c_1(t,p)z_\chi)^{i-1}e^{c_1(t,p)\alpha_1 z_j}\right]_{i=1,...,m_1}\\
 \left[(c_1(t,p)z_\chi)^{i-1}e^{c_1(t,p)\alpha_2 z_j}\right]_{i=1,...,m_2}\\
@@ -1683,12 +1687,17 @@ where $\bar Z$ is some normalizing term,
 \left[(c_1(t,p)z_{\chi+1})^{i-1}e^{c_1(t,p)\alpha_2 z_{\chi+1}}\right]_{i=1,...,m_2}\\
 \vdots \\
 \left[(c_1(t,p)z_{\chi+1})^{i-1}e^{c_1(t,p)\alpha_r z_{\chi+1}}\right]_{i=1,...,m_r}
-\end{bmatrix}\],
- and therefore the entire function $\rho$ is $0$ when $z_i=z_{i+1}$ for any $i$, since the determinant of that matrix will be $0$. Hence, if we let $E_i^\delta:=\{z\mid z_i-z_{i+1}\leq\delta\}$ we know by the continuity of $\rho$ that the accumulation function \[R_i(\delta):=\int_{E_i^\delta}\rho\] is well defined and continuous, since $\rho$ is continuous, and $\pr(E_i^\delta)\leq 1$. We can find that $R_i(0)=\int_{E_i^0} 0$ by our previous calculation, and so by the continuity of $r$ we know that for any $\epsilon$ there exists a $\delta_i(\epsilon)$ such that $0<\delta<\delta_i(\epsilon)$ implies $|R_i(\delta)|<\epsilon$. Therefore, let $\delta'=\min_{1\leq i\leq k-1}\delta_i\left(\frac\epsilon{2(k-1)}\right)$ and we find that \[\pr\left( \hat Z_i-\hat Z_{i+1}<\delta' \right)=R_i(\delta')<\frac{\epsilon}{2(k-1)}
-\] for each $i$. Therefore, we find that, using equation \ref{eq:ineq}, this gives us the inequality 
+\end{bmatrix}\]
+ implying that $\rho=0$ when $z_i=z_{i+1}$ for any $i$, since the determinant of the matrix will be $0$, and so $\varphi(\vec a, \vec z, \vec n)=0$. Hence, if we let $E_i^\delta:=\{z\mid z_i-z_{i+1}\leq\delta\}$ we know by the continuity of $\rho$ that the accumulation function \[R_i(\delta):=\int_{E_i^\delta}\rho\] is well defined and continuous. We can find that $R_i(0)=\int_{E_i^0} 0$ by our previous calculation since on $E_i^0$, $z_i=z_{i+1}$ which implies $\rho=0$. By the continuity of $R$ we know that for any $\epsilon$ there exists a $\delta_i(\epsilon)$ such that $0<\delta<\delta_i(\epsilon)$ implies $|R_i(\delta)|<\epsilon$. Therefore, let $\delta'=\min_{1\leq i\leq k-1}\delta_i\left(\frac\epsilon{2(k-1)}\right)$ and we find that 
+ \begin{equation}\label{prob20boundR}\pr\left( \hat Z_i-\hat Z_{i+1}<\delta' \right)=R_i(\delta')<\frac{\epsilon}{2(k-1)}
+\end{equation}
+for each integer $i$ where $1\leq i\leq k$. Combining equations (\ref{eq:ineq}) and (\ref{prob20boundR}), this gives us the inequality 
 \[\epsilon\leq \pr\left(\min_{1\leq i\leq k-1} \hat Z_i-\hat Z_{i+1}\leq\delta'\right)\leq \sum_{i=1}^{k-1}\pr\left(\hat Z_i-\hat Z_{i+1}\leq \delta'\right)< \frac{\epsilon}{2}
 \]
-This is a contradiction and therefore our original assumption must be false, which shows that we have proved the original claim.
+which is a contradiction. Thus we have proved the claim that for any $M_1,M_2>0$ and $\epsilon>0$ there exists $T_0\in\mathbb{N}$ and $\delta>0$ depending on $p,k,M_1,M_2$ such that if $T\geq T_0$, $\abs*{x_i^T}\leq M_1\sqrt{T}$ and $\abs*{y_i^T-pT}\leq M_2\sqrt{T}$ then 
+\[
+\pr^{0,T,\vec x^T, \vec y^T}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \left[L_i(tT)-L_{i+1}(tT)\right]<\delta\sqrt{T}\right)<\epsilon
+\]
 \end{proof}
 
 
