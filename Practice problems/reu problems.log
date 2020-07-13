@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  6 JUL 2020 22:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  9 JUL 2020 20:58
 entering extended mode
 **"./reu problems.tex"
 ("reu problems.tex"
@@ -803,75 +803,85 @@ Overfull \hbox (3.14102pt too wide) in paragraph at lines 1509--1509
 [] 
  []
 
-[57] [58] [59] [60]
-Underfull \hbox (badness 10000) in paragraph at lines 1662--1664
-
- []
-
-
-Overfull \hbox (43.56036pt too wide) in paragraph at lines 1670--1670
+[57] [58]
+Overfull \hbox (41.01799pt too wide) in paragraph at lines 1577--1577
 [] 
  []
 
-[61]
-Underfull \hbox (badness 10000) in paragraph at lines 1691--1693
 
- []
-
-[62]
-Underfull \hbox (badness 10000) in paragraph at lines 1717--1719
-
- []
-
-[63] [64] [65] [66] [67] [68]
-Underfull \hbox (badness 10000) in paragraph at lines 1978--1979
-
- []
-
-[69]
-Underfull \hbox (badness 10000) in paragraph at lines 1984--1986
-
- []
-
-
-Overfull \hbox (26.44737pt too wide) in paragraph at lines 2010--2010
+Overfull \hbox (49.04817pt too wide) in paragraph at lines 1587--1587
 [] 
  []
 
-[70]
-Underfull \hbox (badness 10000) in paragraph at lines 2012--2017
+[59] [60] [61] [62]
+Underfull \hbox (badness 10000) in paragraph at lines 1762--1764
+
+ []
+
+[63]
+Overfull \hbox (43.56036pt too wide) in paragraph at lines 1770--1770
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1791--1793
+
+ []
+
+[64]
+Underfull \hbox (badness 10000) in paragraph at lines 1817--1819
+
+ []
+
+[65] [66] [67] [68] [69] [70] [71]
+Underfull \hbox (badness 10000) in paragraph at lines 2078--2079
 
  []
 
 
-Overfull \hbox (19.93741pt too wide) detected at line 2041
+Underfull \hbox (badness 10000) in paragraph at lines 2084--2086
+
+ []
+
+[72]
+Overfull \hbox (26.44737pt too wide) in paragraph at lines 2110--2110
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2112--2117
+
+ []
+
+[73]
+Overfull \hbox (19.93741pt too wide) detected at line 2141
 [] [] [] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
 2 x\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\O
 ML/cmm/m/it/12 y\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j  \OML/cmm/m/it/12 [] < []
  [] [][][] \OMS/cmsy/m/n/12  [][]
  []
 
-[71]
-Underfull \hbox (badness 10000) in paragraph at lines 2041--2045
+
+Underfull \hbox (badness 10000) in paragraph at lines 2141--2145
 
  []
 
 
-Overfull \hbox (33.21461pt too wide) in paragraph at lines 2058--2058
+Overfull \hbox (33.21461pt too wide) in paragraph at lines 2158--2158
 [] 
  []
 
-[72]
-Underfull \hbox (badness 10000) in paragraph at lines 2074--2077
+[74]
+Underfull \hbox (badness 10000) in paragraph at lines 2174--2177
 
  []
 
-[73] [74] ("reu problems.aux") ) 
+[75] [76] ("reu problems.aux") ) 
 Here is how much of TeX's memory you used:
- 4111 strings out of 493320
- 58112 string characters out of 3138925
- 139770 words of memory out of 3000000
- 7552 multiletter control sequences out of 15000+200000
+ 4114 strings out of 493320
+ 58148 string characters out of 3138925
+ 139800 words of memory out of 3000000
+ 7555 multiletter control sequences out of 15000+200000
  16739 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,20n,32p,1671b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -894,9 +904,9 @@ pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary10.pfb><C:/Progra
 m Files/MiKTeX 2.9/fonts/type1/public/hoekwater/stmary8.pfb>
-Output written on "reu problems.pdf" (74 pages, 1210215 bytes).
+Output written on "reu problems.pdf" (76 pages, 1221028 bytes).
 PDF statistics:
- 323 PDF objects out of 1000 (max. 8388607)
+ 329 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
