@@ -394,6 +394,36 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		This proves \eqref{4.3denom}.
 		
 	\end{proof}
+	
+	
+	
+	\subsection{Proof of Lemma \ref{LemmaAP1}}
+	\begin{proof}
+	Equivalent of Lemma 5.4: This proof follows the form of that in \cite{CD}
+
+	 
+	First, define $S:=[t_1^-, t_1^+]$ and $T:=[t_2^-, t_1^-]\cup [t_1^+,t_2^+]$. Define $\pr_{\mathfrak L'}$ and $\pr_{\tilde{\mathfrak{L}}'}$ as the measures on Bernoulli line ensembles $\mathfrak L', \tilde{\mathfrak{L}}': T\to \R$ with $\mathfrak L'(t_2^-)=\tilde{\mathfrak{L}}':(t_2^-)=\vec x$ and $\mathfrak L'(t_2^+)=\tilde{\mathfrak{L}}'(t_2^+)=\vec y$, which are the restrictions of the previous measures $\pr_{\mathfrak L}$ and $\pr_{\tilde{\mathfrak{L}}}$ to $T$. The Radon-Nikodym derivative on line ensembles $\mathfrak B: T\to \R^k$ is \begin{equation}\label{propRadon}\frac{d\pr_{\mathfrak L'}}{d\pr_{\tilde{\mathfrak L}'}}\left(\mathfrak B\right)=\left(Z'\right)^{-1}Z\left(t_1^-,t_1^+,\mathfrak{B}\left(t_1^-\right),\mathfrak{B}\left(t_1^+\right),\ell_{bot};T\right)
+	\end{equation}
+	with $Z':=\ex_{\tilde{\mathfrak{L}}'}\left(Z\left(t_1^-, t_1^+, \mathfrak B(t_1^-), \mathfrak B(t_1^+), \ell_{bot}; T\right)\right)$ Now, note that $Z\left(t_1^-, t_1^+, \mathfrak B(t_1^-), \mathfrak B(t_1^+), \ell_{bot}; T\right)$ is a function of $(\mathfrak B(t_1^,), \mathfrak B(t_1^+))$, and in fact because of the manner of our restriction implies the equality of the laws of $\left(\mathfrak B(t_1^,), \mathfrak B(t_1^+)\right)$ and $(\tilde{\mathfrak L}(t_1^,), \tilde{\mathfrak L}(t_1^+))$ alongside inequality (get citation) we have
+	\[
+	Z'=\ex_{\tilde{\mathfrak{L}}'}\left[Z(t_1^-, t_1^+, \mathfrak B(t_1^-),\mathfrak B(t_1^+),\ell_{bot};S)\right]=\ex_{\tilde{\mathfrak{L}}}\left[Z(t_1^-, t_1^+, \tilde{\mathfrak L}(t_1^-),\tilde{\mathfrak L}(t_1^+),\ell_{bot};S)\right]\geq gh
+\]
+which gives us 
+\begin{equation}
+	\label{Zineq} \left(Z'\right)^{-1}\leq \frac{1}{gh}
+\end{equation}
+
+	For the same reasons as above, the law of $\mathfrak B(t_1^-), \mathfrak{B}(t_1^+)$ under $\pr_{\mathfrak L'}$ is the same as $\mathfrak L(t_1^,), \mathfrak L(t_1^+)$ under $\pr_{\mathfrak L}$ Hence,
+	\begin{equation}
+	\pr_{\mathfrak L}\left(Z\left(t_1^-,t_1^+,\mathfrak L(t_1^-),\mathfrak L(t_1^+),\ell_{bot};S\right)\leq gh\tilde \epsilon\right)=\pr_{\mathfrak L'}\left(Z\left(t_1^-,t_1^+,\mathfrak B(t_1^-),\mathfrak B(t_1^+),\ell_{bot};S\right)\leq gh\tilde \epsilon\right)
+	\end{equation}
+	
+	Now if we let $E=\{Z(t_1^-,t_1^+,\mathfrak{B}(t_1^-),\mathfrak{B}(t_1^+),\ell_{bot};S)\leq gh\tilde\epsilon\}\subset \Omega$ with $\Omega$ defined as the probability space of paths of $\mathfrak B$. As a result, we have 
+	\[
+	\pr_{\mathfrak L'}(E)=\int_\Omega \indic_E\cdot d\pr_{\mathfrak L'}(B)=(Z')^{-1}\int_\Omega\indic_E\cdot Z(t_1^-,t_1^+,B(t_1^-),B(t_1^+,\ell_{bot};S)\cdot d\pr_{\tilde{\mathfrak{L}}'}
+	\]
+	using the Radon-Nikodym derivative from \ref{propRadon}. By the definition of $E$, we have that the acceptance probability is bounded by $gh\tilde{\epsilon}$, which gives the inequality \[\pr_{\mathfrak L'}(E)\leq (Z')^{-1}\int_\Omega \indic_E\cdot gh\tilde{\epsilon}\cdot d\pr_{\tilde{\mathfrak{L}}'}(B)\leq \frac{1}{gh}\int_\Omega\indic_E\cdot gh\tilde\epsilon\cdot d\pr_{\tilde{\mathfrak{L}}'}(B)\leq \tilde{\epsilon}\] with \ref{Zineq}  providing the middle inequality and the fact that $\indic_E\leq 1$ providing the final inequality. This inequality is the desired result.
+	\end{proof}
 
 
 
