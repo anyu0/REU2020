@@ -398,10 +398,100 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 	
 	
 	\subsection{Proof of Lemma \ref{LemmaAP1}}
+	
+	We will require the following lemma, which essentially states that if we move the endpoints of a line ensemble closer together, then the acceptance probability decreases.
+	
+	\begin{lemma}\label{APsqueezing}
+		Fix $T_0,T_1\in\mathbb{N}$ and $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$, $k\geq 3$, with $T_1 - T_0 \geq y_i - x_i \geq 0$ for $1\leq i\leq k-1$. Also let $z_0, z_1 \in\mathbb{N}$ satisfy $T_1 - T_0 \geq z_1 - z_0 \geq 0$, and let $\ell_{bot}\in\Omega(T_0,T_1,x_k,y_k)$. Suppose $\vec{x}\,', \vec{y}\,' \in\mathfrak{W}_{k-1}$ satisfy $T_1 - T_0 \geq y_i' - x_i' \geq 0$ for $1\leq i\leq k-1$ and
+		\begin{enumerate}[label = (\arabic*)]
+			
+			\item $x_i' \leq x_i$ and $y_i' \leq y_i$ for $1\leq i\leq k-1$,
+			
+			\item $x_i' - x_{i+1}' \leq x_i - x_{i+1}$ and $y_i' - y_{i+1}' \leq y_i - y_{i+1}$ for $1\leq i\leq k-2$.
+			
+		\end{enumerate}
+		Then
+		\[
+		Z(-t_1,t_1,\vec{x},\vec{y},\ell_{bot}) \geq Z(-t_1,t_1,\vec{x}\,', \vec{y}\,', \ell_{bot}).
+		\]
+	\end{lemma}
+	
 	\begin{proof}
-	Equivalent of Lemma 5.4: This proof follows the form of that in \cite{CD}
+		Without loss of generality, we can assume that $T_0 = 0$ and $T_1 = T$. Let $\mathfrak{L}'$ be a random line ensemble distributed according to $\mathbb{P}^{0, T, \vec{x}\,', \vec{y}\,'}_{Ber}$. Then we can represent each of the curves $L_i'$ in $\mathfrak{L}'$ as a sequence of $+$'s and $-$'s of length $T$, where a $+$ in position $t$ indicates that $L_i'(t+1) = L_i'(t) + 1$, and a $-$ indicates that $L_i'(t+1) = L_i'(t)$. For $s\in\llbracket 0, T\rrbracket$, let $P_i'(s)$ denote the number of $+$'s in the first $s$ slots of $L_i'$. Then particular, $P_i'(T) = y_i' - x_i'$.
+		
+		For each $i$, write $\Delta x_i = x_i - x_i'$, $\Delta y_i = y_i - y_i'$, and $\Delta_i = \Delta y_i - \Delta x_i$. If $\Delta_i \geq 0$, draw uniformly at random $\Delta_i$ of the $-$'s in the sequence representing $L_i'$ and change them to $+$'s. Otherwise, randomly change $\Delta_i$ of the $+$'s to $-$'s. Now let $P_i(s)$ denote the number of $+$'s in the first $s$ slots of this new sequence. Since $P_i(T) = (y_i' - x_i') + (y_i - y_i') - (x_i - x_i') = y_i - x_i$, this defines a new random line ensemble $\mathfrak{L} = (L_1,\dots,L_{k-1})$ distributed according to $\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}$.
+		
+		We claim that if $L_1' \geq \cdots \geq L_{k-1}' \geq \ell_{bot}$ on $[T_0, T_1]$, then also $L_1 \geq \cdots \geq L_{k-1} \geq \ell_{bot}$. Let us write $L_k = L_k' = \ell_{bot}$ for simplicity. Fix $i$ with $1\leq i\leq k - 1$, so that $L_i' \geq L_{i+1}'$ by assumption. Note that $L_{i+1}(s) > L_i(s)$ if and only if $P_{i+1}(s) - P_i(s) > x_i - x_{i+1}$. We have
+		\begin{align*}
+		P_{i+1}(s) - P_i(s) &= (P_{i+1}'(s) + \Delta_{i+1}) - (P_i'(s) + \Delta_i)\\
+		&= (P_{i+1}'(s) - P_i'(s)) + (\Delta y_{i+1} - \Delta x_{i+1}) - (\Delta y_i - \Delta x_i)\\
+		&\leq (x_i' - x_{i+1}') + (y_{i+1} - y_{i+1}') - (x_{i+1} - x_{i+1}') - (y_i - y_i') + (x_i - x_i')\\
+		&= (x_i - x_{i+1}) + (y_i' - y_{i+1}') - (y_i - y_{i+1})\\
+		&\leq x_i - x_{i+1}.
+		\end{align*}
+		In the third line, we used the assumption that $L_i'(s) \geq L_{i+1}'(s)$, and in the last line, we used condition (2) in the hypothesis. This proves the claim. It follows that
+		\[
+		\mathbf{1}_{L_1 \geq \cdots \geq L_{k-1} \geq \ell_{bot}} \geq \mathbf{1}_{L_1' \geq \cdots \geq L_{k-1}' \geq \ell_{bot}}.
+		\]
+		Taking expectations of both sides and recalling the distributions of $\mathfrak{L}$ and $\mathfrak{L}'$ proves the lemma.
+		
+		\end{proof}
+		
+	We will prove Lemma \ref{LemmaAP1} as a consequence of the following intermediate result.
+	
+	\begin{lemma}\label{LemmaAP2} Fix $k \in \mathbb{N}$, $p \in (0,1)$, $M_1, M_2 > 0$ . Suppose that $\ell_{bot}: \llbracket -t_2, t_2 \rrbracket \rightarrow \mathbb{R} \cup \{ - \infty \}$, and $\vec{x}, \vec{y} \in \mathfrak{W}_{k-1}$ are such that $2t_2 \geq y_i-x_i \geq 0$ for $i = 1, \dots, k-1$. Suppose further that
+		\begin{enumerate}
+			\item $\sup_{s \in [ -t_2,t_2]}\big(\ell_{bot}(s)  - ps \big)  \leq M_2 (2t_2)^{1/2}$,
+			\item  $ x_{k-1} \geq \max\left(\ell_{bot}(-t_2), -pt_2- M_1 (2t_2)^{1/2}\right),$
+			\item $ y_{k-1} \geq  \max \left( \ell_{bot}(t_2),  p t_2- M_1(2t_2)^{1/2} \right).$
+		\end{enumerate}
+		Let $g,h$ be as defined in Lemma \ref{LemmaAP1}. Denote $\widetilde{\ell}_{bot} = \ell_{bot} - \infty\cdot\mathbf{1}_{\llbracket -t_1 + 1, t_1 - 1\rrbracket}$. Then, there exists $N_5 = N_5(M_1,M_2,k ) \in \mathbb{N}$  such that for any $\tilde{\epsilon}  > 0$ and $N \geq N_5$ we have
+		\begin{equation}\label{eqn61}
+		\mathbb{P}^{-t_2, t_2, \vec{x},\vec{y}, \infty, \widetilde{\ell}_{bot} }_{avoid, Ber} \Big( Z\big(  -t_1, t_1, \widetilde{Q}(-t_1) , \widetilde{Q}(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\big) \geq g   \Big)  \geq h.
+		\end{equation}
+		
+	\end{lemma}
 
-	 
+	\begin{proof}
+
+	Define 
+	\begin{align*}
+	\overline{x} &= \lceil (M_2+1)(2t_2)^{1/2} - pt_1\rceil,\\
+	\overline{y} &= \lceil(M_2+1)(2t_2)^{1/2} + pt_1\rceil.
+	\end{align*}
+	Fix $\delta \in (0,1)$, and define the event 
+	\[
+	E = \big\{\widetilde{Q}_{k-1}(-t_1) \geq \overline{x}\big\} \cap \big\{\widetilde{Q}_{k-1}(t_1) \geq \overline{y}\big\} \cap \left\{\min_{1\leq i\leq k-2} (\widetilde{Q}_i(\pm t_1) - \widetilde{Q}_{i+1}(\pm t_1)) \geq \delta(2t_2)^{1/2}\right\}.
+	\]
+	Since $\delta < 1$, we have $\overline{x} - \ell_{bot}(- t_1) \geq (2t_2)^{1/2} \geq \delta(2t_2)^{1/2}$ and $\overline{y} - \ell_{bot}(t_1) \geq \delta(2t_2)^{1/2}$. We split the remainder of the proof into several steps for clarity.\\
+		
+	\noindent\textbf{Step 1.} We first show that
+		\begin{equation}\label{4.4APbound}
+		E \subset \left\{Z(-t_1,t_1,\vec{x},\vec{y},\ell_{bot}) \geq \big(1-3e^{-\delta^2/8p(1-p)}\big)^{k-1}\right\}
+		\end{equation}
+		for large enough $N$. Here, $\vec{x} = (\widetilde{Q}_1(-t_1),\dots,\widetilde{Q}_{k-1}(-t_1))$ and $\vec{y} = (\widetilde{Q}_1(t_1),\dots,\widetilde{Q}_{k-1}(t_1))$. Define $\vec{x}\,', \vec{y}\,' \in \mathfrak{W}_{k-1}$ by
+		\begin{align*}
+		x_i' &= \overline{x} + (k-1-i)\lceil \delta(2t_2)^{1/2}\rceil,\\
+		y_i' &= \overline{y} + (k-1-i)\lceil \delta(2t_2)^{1/2}\rceil.
+		\end{align*}
+		Observe that $x_i' \leq x_{k-1} + (k-1-i)\lceil \delta(2t_2)^{1/2}\rceil \leq x_i$, and similarly for $y_i$. Also, $x_{i+1}' - x_i' \leq x_{i+1} - x_i$ and $y_{i+1}' - y_i \leq y_{i+1} - y_i$ for $1\leq i\leq k-2$. By Lemma \ref{APsqueezing}, we have
+		\begin{equation}\label{4.4squeeze}
+		Z(-t_1,t_1,\vec{x},\vec{y},\ell_{bot}) \geq Z(-t_1,t_1,\vec{x}\,', \vec{y}\,', \ell_{bot}).
+		\end{equation}
+		Observe that $x_{k-1}' = \overline{x}$ and $y_{k-1}' = \overline{y}$ lie at least $\delta(2t_2)^{1/2}$ above the points $\overline{x}\,' := M_2(2t_2)^{1/2} - pt_1$ and $\overline{y}\,' := M_2(2t_2)^{1/2} + pt_1$, respectively, and moreover, $\ell_{bot}$ lies uniformly below the line segment connecting $\overline{x}\,'$ and $\overline{y}\,'$. Since we also have $\vec{x}_i' - \vec{x}_{i+1}' \geq \delta(2t_2)^{1/2}$ and $\vec{y}_i' - \vec{y}_{i+1}' \geq \delta(2t_2)^{1/2}$ for each $i$, an acceptance occurs as long as each curve $\widetilde{Q}_i$ remains within a distance $\delta(2t)^{1/2}/2$ of the line segment connecting $x_i'$ and $y_i'$. Thus, writing $\overline{z} = \overline{y} - \overline{x}$ and $T = 2t_1$, we have
+		\begin{align*}
+		Z(-t_1, t_1, \vec{x}\,', \vec{y}\,', \ell_{bot}) &\geq \Big[1 - \mathbb{P}\Big(\sup_{s\in[0,T]}\big|\ell^{(T,\overline{z})}(s) - (\overline{z}/T)s\big| \geq \delta\sqrt{T}/2\Big)\Big]^{k-1}.
+		\end{align*} 
+		The probability on the right hand side is bounded above by
+		\[
+		\mathbb{P}\Big(\max_{s\in[0,T]} \big|B^\sigma_{s/T}\big| \geq \delta/4\Big) + \mathbb{P}\Big(\Delta(T,\overline{z}) \geq \delta\sqrt{T}/4\Big).
+		\]
+		The first term is equal to $2e^{-\delta^2/8p(1-p)}$ by Lemma \ref{BBmax}, and since $|\overline{z} - pT| \leq 1$, it follows from Lemma \ref{Cheb} that the second term is $< e^{-\delta^2/8p(1-p)}$ for large enough $N$ depending on $r,p,\delta$. In view of \eqref{4.4squeeze}, we obtain \eqref{4.4APbound}.
+		
+		\end{proof}
+		
+	We are now equipped to prove Lemma \ref{LemmaAP1}.\\ 
+	
 	First, define $S:=[t_1^-, t_1^+]$ and $T:=[t_2^-, t_1^-]\cup [t_1^+,t_2^+]$. Define $\pr_{\mathfrak L'}$ and $\pr_{\tilde{\mathfrak{L}}'}$ as the measures on Bernoulli line ensembles $\mathfrak L', \tilde{\mathfrak{L}}': T\to \R$ with $\mathfrak L'(t_2^-)=\tilde{\mathfrak{L}}':(t_2^-)=\vec x$ and $\mathfrak L'(t_2^+)=\tilde{\mathfrak{L}}'(t_2^+)=\vec y$, which are the restrictions of the previous measures $\pr_{\mathfrak L}$ and $\pr_{\tilde{\mathfrak{L}}}$ to $T$. The Radon-Nikodym derivative on line ensembles $\mathfrak B: T\to \R^k$ is \begin{equation}\label{propRadon}\frac{d\pr_{\mathfrak L'}}{d\pr_{\tilde{\mathfrak L}'}}\left(\mathfrak B\right)=\left(Z'\right)^{-1}Z\left(t_1^-,t_1^+,\mathfrak{B}\left(t_1^-\right),\mathfrak{B}\left(t_1^+\right),\ell_{bot};T\right)
 	\end{equation}
 	with $Z':=\ex_{\tilde{\mathfrak{L}}'}\left(Z\left(t_1^-, t_1^+, \mathfrak B(t_1^-), \mathfrak B(t_1^+), \ell_{bot}; T\right)\right)$ Now, note that $Z\left(t_1^-, t_1^+, \mathfrak B(t_1^-), \mathfrak B(t_1^+), \ell_{bot}; T\right)$ is a function of $(\mathfrak B(t_1^,), \mathfrak B(t_1^+))$, and in fact because of the manner of our restriction implies the equality of the laws of $\left(\mathfrak B(t_1^,), \mathfrak B(t_1^+)\right)$ and $(\tilde{\mathfrak L}(t_1^,), \tilde{\mathfrak L}(t_1^+))$ alongside inequality (get citation) we have
@@ -423,7 +513,6 @@ which gives us
 	\pr_{\mathfrak L'}(E)=\int_\Omega \indic_E\cdot d\pr_{\mathfrak L'}(B)=(Z')^{-1}\int_\Omega\indic_E\cdot Z(t_1^-,t_1^+,B(t_1^-),B(t_1^+,\ell_{bot};S)\cdot d\pr_{\tilde{\mathfrak{L}}'}
 	\]
 	using the Radon-Nikodym derivative from \ref{propRadon}. By the definition of $E$, we have that the acceptance probability is bounded by $gh\tilde{\epsilon}$, which gives the inequality \[\pr_{\mathfrak L'}(E)\leq (Z')^{-1}\int_\Omega \indic_E\cdot gh\tilde{\epsilon}\cdot d\pr_{\tilde{\mathfrak{L}}'}(B)\leq \frac{1}{gh}\int_\Omega\indic_E\cdot gh\tilde\epsilon\cdot d\pr_{\tilde{\mathfrak{L}}'}(B)\leq \tilde{\epsilon}\] with \ref{Zineq}  providing the middle inequality and the fact that $\indic_E\leq 1$ providing the final inequality. This inequality is the desired result.
-	\end{proof}
 
 
 
