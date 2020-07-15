@@ -454,28 +454,32 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 	\end{lemma}
 
 	\begin{proof}
-
-	Fix $\delta \in (0,1)$, and define the event 
-	\[
-	E = \left\{\inf_{s\in[-t_1,t_1]}\big(\widetilde{Q}_{k-1}(s) - ps\big) \geq (M_2+1)(2t_2)^{1/2}\right\} \cap \left\{\min_{1\leq i\leq k-2} \big(\widetilde{Q}_i(\pm t_1) - \widetilde{Q}_{i+1}(\pm t_1)\big) \geq \delta(2t_2)^{1/2}\right\}.
-	\]
+	
 	Define 
 	\begin{align*}
 	\overline{x} &= \lceil (M_2+1)(2t_2)^{1/2} - pt_1\rceil, \quad
 	\overline{y} = \lceil(M_2+1)(2t_2)^{1/2} + pt_1\rceil.
 	\end{align*}
-	Then on the event $E$, $\widetilde{Q}_{k-1}(-t_1)\geq \overline{x}$ and $\widetilde{Q}_{k-1}(t_1) \geq \overline{y}$. By condition (1) in the hypothesis, and since $\delta < 1$, we have in addition on $E$ that
+	Fix $\delta \in (0,1)$, and define the event 
+	\[
+	E = \big\{\widetilde{Q}_{k-1}(-t_1) \geq \overline{x} \big\} \cap \big\{\widetilde{Q}_{k-1}(t_1) \geq \overline{y} \big\} \cap \left\{\min_{1\leq i\leq k-2} \big(\widetilde{Q}_i(\pm t_1) - \widetilde{Q}_{i+1}(\pm t_1)\big) \geq \delta(2t_2)^{1/2}\right\}.
+	\]
+	By condition (1) in the hypothesis, and since $\delta < 1$, we have in addition on $E$ that
 	\begin{align*}
 	\widetilde{Q}_{k-1}(-t_1) - \ell_{bot}(- t_1) &\geq \overline{x} - \ell_{bot}(- t_1) \geq (2t_2)^{1/2} \geq \delta(2t_2)^{1/2},\\
 	\widetilde{Q}_{k-1}(t_1) - \ell_{bot}(t_1) &\geq \overline{y} - \ell_{bot}(t_1) \geq (2t_2)^{1/2} \geq \delta(2t_2)^{1/2}.
 	\end{align*}
 	We split the remainder of the proof into several steps for clarity.\\
 		
-	\noindent\textbf{Step 1.} We first show that
+	\noindent\textbf{Step 1.} We will prove in the subsequent steps that 
+		\begin{equation}\label{4.4Ebound}
+		\mathbb{P}^{-t_2, t_2, \vec{x},\vec{y}, \infty, \widetilde{\ell}_{bot} }_{avoid, Ber}(E) \geq h
+		\end{equation} 
+		for large enough $N$. Here, we prove \eqref{eqn61} as a consequence by showing that
 		\begin{equation}\label{4.4APbound}
 		E \subset \left\{Z(-t_1,t_1,\widetilde{Q}(-t_1),\widetilde{Q}(t_1),\ell_{bot}) \geq g\right\}
 		\end{equation}
-		for large enough $N$. Define $\vec{x}\,', \vec{y}\,' \in \mathfrak{W}_{k-1}$ by
+		for large $N$. Define $\vec{x}\,', \vec{y}\,' \in \mathfrak{W}_{k-1}$ by
 		\begin{align*}
 		x_i' &= \overline{x} + (k-1-i)\lceil \delta(2t_2)^{1/2}\rceil,\\
 		y_i' &= \overline{y} + (k-1-i)\lceil \delta(2t_2)^{1/2}\rceil.
