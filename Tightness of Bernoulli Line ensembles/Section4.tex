@@ -39,14 +39,14 @@ Lemma \ref{PropSup2} controls the downward deviation of the bottom curve $L^N_k(
 $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2N^{\alpha/2} \Big) < \epsilon.$$
 \end{lemma}
 
-\begin{lemma}\label{LemmaAP1} Fix $k \in \mathbb{N}$, $p \in (0,1)$, $M_1, M_2 > 0$ . Suppose that $\ell_{bot}: \llbracket -t_2, t_2 \rrbracket \rightarrow \mathbb{R} \cup \{ - \infty \}$, and $\vec{x}, \vec{y} \in \mathfrak{W}_{k-1}$ are such that $2t_2 \geq y_i-x_i \geq 0$ for $i = 1, \dots, k-1$. Suppose further that
+\begin{lemma}\label{LemmaAP1} Fix $k \in \mathbb{N}$, $p \in (0,1)$, $M_1, M_2 > 0$ . Suppose that $\ell_{bot}: \llbracket -t_2, t_2 \rrbracket \rightarrow \mathbb{R} \cup \{ - \infty \}$, and $\vec{x}, \vec{y} \in \mathfrak{W}_{k-1}$ are such that $|\Omega_{avoid}(-t_2, t_2, \vec{x}, \vec{y}, \infty, \ell_{bot})| \geq 1$. Suppose further that
 	\begin{enumerate}
-		\item $\sup_{s \in [ -t_2,t_2]}\big(\ell_{bot}(s)  - ps \big)  \leq M_2 (2t_2)^{1/2}$,
-		\item  $ x_{k-1} \geq \max\left(\ell_{bot}(-t_2), -pt_2- M_1 (2t_2)^{1/2}\right),$
-		\item $ y_{k-1} \geq  \max \left( \ell_{bot}(t_2),  p t_2- M_1(2t_2)^{1/2} \right).$
+		\item $\sup_{s \in [- t_2,t_2]}\big(\ell_{bot}(s)  - ps \big)  \leq M_2 (2t_2)^{1/2}$,
+		\item  $-pt_2 + M_1 (2t_2)^{1/2} \geq  x_1 \geq  x_{k-1} \geq \max\left(\ell_{bot}(-t_2), -pt_2- M_1 (2t_2)^{1/2}\right),$
+		\item $pt_2 + M_1 (2t_2)^{1/2} \geq y_1 \geq y_{k-1} \geq  \max \left( \ell_{bot}(t_2),  p t_2- M_1(2t_2)^{1/2} \right).$
 	\end{enumerate}
 	Define the constants $g$ and $h$ (depending on $ M_1, M_2, p , k, r$) via
-	$$g =  \big(1-3e^{-\delta^2/8p(1-p)}\big)^{k-1} \mbox{ and } h = \cdots .$$
+	$$g =  \cdots \mbox{ and } h = \cdots .$$
 	Then, there exists $N_4 = N_4(M_1,M_2,k ) \in \mathbb{N}$  such that for any $\tilde{\epsilon}  > 0$ and $N \geq N_4$ we have
 	\begin{equation}\label{eqn60}
 	\mathbb{P}^{-t_2, t_2, \vec{x},\vec{y}, \infty, \ell_{bot} }_{avoid, Ber} \Big( Z\big(  -t_1, t_1, Q(-t_1) ,Q(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\big) \leq  gh \tilde{\epsilon}   \Big)  \leq \tilde{\epsilon},

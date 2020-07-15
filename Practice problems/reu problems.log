@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  13 JUL 2020 22:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.6.27)  15 JUL 2020 15:38
 entering extended mode
 **"./reu problems.tex"
 ("reu problems.tex"
@@ -743,27 +743,11 @@ Overfull \hbox (0.16147pt too wide) in paragraph at lines 1044--1044
  []
 
 
-LaTeX Warning: Reference `factorial1' on page 39 undefined on input line 1056.
-
-
-LaTeX Warning: Reference `factorial2' on page 39 undefined on input line 1056.
-
-
-LaTeX Warning: Reference `factorial3' on page 39 undefined on input line 1056.
-
-
-LaTeX Warning: Reference `h' on page 39 undefined on input line 1056.
-
-
 Overfull \hbox (70.87318pt too wide) in paragraph at lines 1060--1060
 [] 
  []
 
 [39]
-
-LaTeX Warning: Reference `J-T' on page 40 undefined on input line 1072.
-
-
 Overfull \hbox (18.2986pt too wide) in paragraph at lines 1078--1078
 [] 
  []
@@ -773,27 +757,7 @@ Overfull \hbox (9.90034pt too wide) in paragraph at lines 1082--1082
 [] 
  []
 
-
-LaTeX Warning: Reference `J-T' on page 40 undefined on input line 1083.
-
-
-LaTeX Warning: Reference `PointConv' on page 40 undefined on input line 1100.
-
 [40]
-
-LaTeX Warning: Reference `WeakConv' on page 41 undefined on input line 1116.
-
-
-LaTeX Warning: Reference `WeakConv' on page 41 undefined on input line 1116.
-
-
-LaTeX Warning: Reference `PointConvLemma' on page 41 undefined on input line 11
-16.
-
-
-LaTeX Warning: Reference `Density' on page 41 undefined on input line 1122.
-
-
 Overfull \hbox (5.4852pt too wide) in paragraph at lines 1132--1133
 \OT1/cmr/m/n/12 takes value $([])[] \OMS/cmsy/m/n/12  \U/msb/m/n/12 P\OT1/cmr/
 m/n/12 (\OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 b\OML/cmm/m/it/12
@@ -806,18 +770,7 @@ OML/cmm/m/it/12 T\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []  ; L[]\OT1/cmr/m/n/12 (
 2 )$
  []
 
-[41]
-
-LaTeX Warning: Reference `PointConvLemma' on page 42 undefined on input line 11
-37.
-
-
-LaTeX Warning: Reference `WeakConv' on page 42 undefined on input line 1141.
-
-
-LaTeX Warning: Reference `WeakConv' on page 42 undefined on input line 1147.
-
-[42] [43] [44]
+[41] [42] [43] [44]
 Overfull \hbox (0.9824pt too wide) in paragraph at lines 1240--1240
 [] 
  []
@@ -832,72 +785,15 @@ Overfull \hbox (8.99876pt too wide) in paragraph at lines 1268--1268
 [] 
  []
 
-[46] [47] [48] [49] [50]
-
-LaTeX Warning: Reference `NonVanish' on page 51 undefined on input line 1437.
-
-
-LaTeX Warning: Reference `NonVanish' on page 51 undefined on input line 1447.
-
-
-LaTeX Warning: Reference `MinOrder' on page 51 undefined on input line 1447.
-
-[51]
-
-LaTeX Warning: Reference `MinOrder' on page 52 undefined on input line 1462.
-
-
-LaTeX Warning: Reference `MinOrder' on page 52 undefined on input line 1469.
-
-[52]
-
-LaTeX Warning: Reference `NonVanish' on page 53 undefined on input line 1488.
-
-
-LaTeX Warning: Reference `NonVanish' on page 53 undefined on input line 1488.
-
-
-LaTeX Warning: Reference `ConvSpeed' on page 53 undefined on input line 1488.
-
-
-LaTeX Warning: Reference `MinOrder' on page 53 undefined on input line 1492.
-
-
-LaTeX Warning: Reference `NonVanish' on page 53 undefined on input line 1492.
-
-
-LaTeX Warning: Reference `NonVanish' on page 53 undefined on input line 1497.
-
-[53]
-
-LaTeX Warning: Reference `NewDensity' on page 54 undefined on input line 1511.
-
+[46] [47] [48] [49] [50] [51] [52] [53]
 
 LaTeX Warning: Reference `WeakConvDistinct' on page 54 undefined on input line 
 1515.
 
-
-LaTeX Warning: Reference `Density17' on page 54 undefined on input line 1517.
-
-[54]
-
-LaTeX Warning: Reference `TwoIneq' on page 55 undefined on input line 1528.
-
-
-LaTeX Warning: Reference `Squeezing' on page 55 undefined on input line 1537.
-
-
-LaTeX Warning: Reference `WeakConvConclude' on page 55 undefined on input line 
-1539.
-
-[55]
+[54] [55]
 Overfull \hbox (8.70033pt too wide) in paragraph at lines 1551--1551
 [] 
  []
-
-
-LaTeX Warning: Reference `WeakConvConclude' on page 56 undefined on input line 
-1552.
 
 [56]
 Overfull \hbox (3.14102pt too wide) in paragraph at lines 1614--1614
@@ -905,57 +801,57 @@ Overfull \hbox (3.14102pt too wide) in paragraph at lines 1614--1614
  []
 
 [57] [58]
-Overfull \hbox (41.01799pt too wide) in paragraph at lines 1682--1682
+Overfull \hbox (41.8319pt too wide) in paragraph at lines 1692--1692
 [] 
  []
 
-
-Overfull \hbox (49.04817pt too wide) in paragraph at lines 1692--1692
+[59]
+Overfull \hbox (50.67598pt too wide) in paragraph at lines 1702--1702
 [] 
  []
 
-[59] [60] [61] [62] [63]
-Underfull \hbox (badness 10000) in paragraph at lines 1867--1869
+[60] [61] [62] [63]
+Underfull \hbox (badness 10000) in paragraph at lines 1878--1880
 
- []
-
-
-Overfull \hbox (43.56036pt too wide) in paragraph at lines 1875--1875
-[] 
  []
 
 [64]
-Underfull \hbox (badness 10000) in paragraph at lines 1896--1898
+Overfull \hbox (43.56036pt too wide) in paragraph at lines 1886--1886
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1907--1909
 
  []
 
 [65]
-Underfull \hbox (badness 10000) in paragraph at lines 1922--1924
+Underfull \hbox (badness 10000) in paragraph at lines 1933--1935
 
  []
 
 [66] [67] [68] [69] [70] [71] [72]
-Underfull \hbox (badness 10000) in paragraph at lines 2183--2184
+Underfull \hbox (badness 10000) in paragraph at lines 2194--2195
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2189--2191
+Underfull \hbox (badness 10000) in paragraph at lines 2200--2202
 
  []
 
 [73]
-Overfull \hbox (26.44737pt too wide) in paragraph at lines 2215--2215
+Overfull \hbox (26.44737pt too wide) in paragraph at lines 2226--2226
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2217--2222
+Underfull \hbox (badness 10000) in paragraph at lines 2228--2233
 
  []
 
 [74]
-Overfull \hbox (19.93741pt too wide) detected at line 2246
+Overfull \hbox (19.93741pt too wide) detected at line 2257
 [] [] [] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
 2 x\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\O
 ML/cmm/m/it/12 y\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j  \OML/cmm/m/it/12 [] < []
@@ -963,17 +859,17 @@ ML/cmm/m/it/12 y\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j  \OML/cmm/m/it/12 [] < []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2246--2250
+Underfull \hbox (badness 10000) in paragraph at lines 2257--2261
 
  []
 
 
-Overfull \hbox (33.21461pt too wide) in paragraph at lines 2263--2263
+Overfull \hbox (33.21461pt too wide) in paragraph at lines 2274--2274
 [] 
  []
 
 [75]
-Underfull \hbox (badness 10000) in paragraph at lines 2279--2282
+Underfull \hbox (badness 10000) in paragraph at lines 2290--2293
 
  []
 
@@ -981,14 +877,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 2279--2282
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  4135 strings out of 493320
  58377 string characters out of 3138925
- 141800 words of memory out of 3000000
+ 139988 words of memory out of 3000000
  7576 multiletter control sequences out of 15000+200000
  16739 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1012,7 +905,7 @@ TeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2
 fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/hoekwater/stmary10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/hoekwater/stmary8.pfb>
-Output written on "reu problems.pdf" (77 pages, 1225413 bytes).
+Output written on "reu problems.pdf" (77 pages, 1226615 bytes).
 PDF statistics:
  332 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
