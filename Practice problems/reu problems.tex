@@ -1635,98 +1635,109 @@ Since $\rho_{\epsilon,+}(z)\mathbbm{1}_{R}dz\leqslant\rho_{\epsilon,+}(z)dz$ is 
 
 
 \subsection*{Problem 19}
-Fix $p \in (0,1)$, $k \in \mathbb{N}$. Suppose that $\vec{x}^T = (x^T_1, \dots, x^T_k)$ and $\vec{y}^T = (y^T_1, \dots, y^T_k)$ is a sequence of $k$-dimensional vectors with integer entries such that $T\geq y_i^T -x_i^T \geq 0$ for $i = 1, \dots k$. Find constants $A,B,C >0$ depending on $p$ such that the following holds. For any $M_1, M_2 > 0$ there exists a $T_0 \in \mathbb{N}$ depending on $p,k,M_1,M_2, M$ such that if $T \geq T_0$, $x_k^T \geq - M_1 \sqrt{T}$ and $y_k^T \geq pT - M_2 \sqrt{T}$ then 
-$$\mathbb{P}_{avoid, Ber}^{0,T, \vec{x}^T, \vec{y}^T} \left( L_k(T/2) - (pT/2) \geq M \sqrt{T} \right) \geq A \cdot \exp \left( - Bk (M_1 + M_2 + M + C)^2 \right).$$
+
+
+Fix $p \in (0,1)$, $k \in \mathbb{N}$. Suppose that $\vec{x}^T = (x^T_1, \dots, x^T_k)$ and $\vec{y}^T = (y^T_1, \dots, y^T_k)$ are sequences of $k$-dimensional vectors with integer entries such that $T\geq y_i^T -x_i^T \geq 0$ for $i = 1, \dots k$. Find constants $E,F,D >0$ depending on $p$ such that the following holds. For any $M_1, M_2 > 0$ there exists a $T_0 \in \mathbb{N}$ depending on $p,k,M_1,M_2, M$ such that if $T \geq T_0$, $x_k^T \geq - M_1 \sqrt{T}$ and $y_k^T \geq pT - M_2 \sqrt{T}$ then 
+$$\mathbb{P}_{avoid, Fer}^{0,T, \vec{x}^T, \vec{y}^T} \left( L_k(T/2) - (pT/2) \geq M \sqrt{T} \right) \geq E \cdot \exp \left( - Fk (M_1 + M_2 + M + D)^2 \right).$$
 
 \begin{proof}
+Let
+\begin{align*}
+	A &=  D' \frac{\sqrt{p(1-p)}(M+M_1+M_2+D(k-1))}{\sqrt{2\pi}[(M+M_1+M_2+D(k-1))^2+1]} \\
+	B &=  \frac{1}{2kp(1-p)}\\
+	C &=  D(k-1)
+\end{align*}
+We claim that there exists a $T_0 \in \mathbb{N}$ depending on $p,k,M_1,M_2, M$ such that if $T \geq T_0$, $x_k^T \geq - M_1 \sqrt{T}$ and $y_k^T \geq pT - M_2 \sqrt{T}$ then 
+$$\mathbb{P}_{avoid, Fer}^{0,T, \vec{x}^T, \vec{y}^T} \left( L_k(T/2) - (pT/2) \geq M \sqrt{T} \right) \geq E \cdot \exp \left( - Fk (M_1 + M_2 + M + D)^2 \right)$$ for given $M_1,M_2,M$.
 Define events
-$$ A:=\left\{ L_k\left(\frac{T}{2}\right)-\frac{pT}{2} \geq M\sqrt{T}) \right\}$$
-$$ B:=\left\{ L_1(s)>\dots>L_k(s) , s \in [0,T]\right\}$$
-We aim to find a lower bound for $\mathbb{P}_{avoid, Ber}^{0,T, \vec{x}^T, \vec{y}^T} (A)
-= \mathbb{P}_{Ber}^{0,T, \vec{x}^T, \vec{y}^T}  (A|B)$.
-It follows from Lemma 3.1 that if we lower the endpoints of each curve, the probability of the event A will decrease. 
+$$ E:=\left\{ L_k\left(\frac{T}{2}\right)-\frac{pT}{2} \geq M\sqrt{T}) \right\}$$
+$$ F:=\left\{ L_1(s)>\dots>L_k(s) , s \in [0,T]\right\}$$
+We aim to find a lower bound for $\mathbb{P}_{avoid, Fer}^{0,T, \vec{x}^T, \vec{y}^T} (E)
+= \mathbb{P}_{Fer}^{0,T, \vec{x}^T, \vec{y}^T}  (E|F)$.
+It follows from Lemma 3.1 that if we lower the endpoints of each curve, the probability of the event E will decrease. 
 In particular, define $\vec{x}\,'^T = (\vec{x_1}'^T,\dots,\vec{x_k}'^T)$ and $\vec{y}\,'^T = (\vec{y_1}'^T,\dots,\vec{y_k}'^T)$ by
 \begin{align*}
-x_i'^T &= \lfloor x_i^T - C(i-1)\sqrt{T} \rfloor  \text{ for } i=1,\dots,k-1\text{, and } x_k'^T= \lfloor -M_1\sqrt{T} - C(k-1)\sqrt{T} \rfloor\\
-y_i'^T &= \lfloor y_i'^T-C(i-1)\sqrt{T} \rfloor \text{ for } i=1,\dots,k-1\text{, and }y_k'^T= \lfloor pT-M_2\sqrt{T} - C(k-1)\sqrt{T} \rfloor
+x_i'^T &= \lfloor x_i^T - D(i-1)\sqrt{T} \rfloor  \text{ for } i=1,\dots,k-1\text{, and } x_k'^T= \lfloor -M_1\sqrt{T} - D(k-1)\sqrt{T} \rfloor\\
+y_i'^T &= \lfloor y_i'^T-D(i-1)\sqrt{T} \rfloor \text{ for } i=1,\dots,k-1\text{, and }y_k'^T= \lfloor pT-M_2\sqrt{T} - D(k-1)\sqrt{T} \rfloor
 \end{align*}
-In which $C$ is a constant which we will specify. Note that $x_k'^T<x_i'^T < x_i^T$ for each $i$, and that $x_i'^T-x_{i+1}'^T>C\sqrt{T}$. The same holds for $y_i'^T$. For simplicity, we denote $ \mathbb{P}_{Ber}^{0,T, \vec{x}\,'^T, \vec{y}\,'^T}$ by $\mathbb{P'}$. Lemma 3.1 implies
+In which $D$ is a constant which we will specify. Note that $x_k'^T<x_i'^T < x_i^T$ for each $i$, and that $x_i'^T-x_{i+1}'^T\geq D\sqrt{T}$. The same holds for $y_i'^T$. For simplicity, we denote $ \mathbb{P}_{Fer}^{0,T, \vec{x}\,'^T, \vec{y}\,'^T}$ by $\mathbb{P'}$. Lemma 3.1 implies
 
 \begin{align*}
-\mathbb{P}_{avoid, Ber}^{0,T, \vec{x}^T, \vec{y}^T}(A) 
-=& \mathbb{P}_{Ber}^{0,T, \vec{x}^T, \vec{y}^T}(A|B) \\
-\geq& \mathbb{P}_{Ber}^{0,T, \vec{x}\,'^T, \vec{y}\,'^T}(A|B) \\
-=& \mathbb{P'}(A|B)\\
-=& 1 -  \mathbb{P'}(A^c|B)\\
-=& 1 -  \frac{\mathbb{P'}(A^c\cap B)}{\mathbb{P'}(B)} \\
-\geq& 1 -  \frac{\mathbb{P'}(A^c)}{\mathbb{P'}(B)} \\
-=&  1 -  \frac{1-\mathbb{P'}(A)}{\mathbb{P'}(B)}
+\mathbb{P}_{avoid, Fer}^{0,T, \vec{x}^T, \vec{y}^T}(E) 
+=& \mathbb{P}_{Fer}^{0,T, \vec{x}^T, \vec{y}^T}(E|F) \\
+\geq& \mathbb{P}_{Fer}^{0,T, \vec{x}\,'^T, \vec{y}\,'^T}(E|F) \\
+=& \mathbb{P'}(E|F)\\
+=& 1 -  \mathbb{P'}(E^c|F)\\
+=& 1 -  \frac{\mathbb{P'}(E^c\cap F)}{\mathbb{P'}(F)} \\
+\geq& 1 -  \frac{\mathbb{P'}(E^c)}{\mathbb{P'}(F)} \\
+=&  1 -  \frac{1-\mathbb{P'}(E)}{\mathbb{P'}(F)}
 \end{align*}
-We proceed to find lower bounds for $\mathbb{P'}(A)$, and for $\mathbb{P'}(B)$.
+We proceed to find lower bounds for $\mathbb{P'}(E)$, and for $\mathbb{P'}(F)$.
 
 \noindent\textbf{Step 1:} 
  We know from the same reasoning as in Lemma 3.9 that
 \begin{align*}
-\mathbb{P'}(A)
-= & \mathbb{P}_{Ber}^{0,T, \vec{x}\,'^T, \vec{y}\,'^T} \left(L_k\left(\frac{T}{2}\right)-\frac{pT}{2} \geq M\sqrt{T}) \right) \\
-\geq & \mathbb{P}_{Ber}^{0,T, x_k'^T, y_k'^T}\left(l\left(\frac{T}{2}\right)-\frac{pT}{2} \geq M\sqrt{T}) \right) \\
+\mathbb{P'}(E)
+= & \mathbb{P}_{Fer}^{0,T, \vec{x}\,'^T, \vec{y}\,'^T} \left(L_k\left(\frac{T}{2}\right)-\frac{pT}{2} \geq M\sqrt{T}) \right) \\
+\geq & \mathbb{P}_{Fer}^{0,T, x_k'^T, y_k'^T}\left(l\left(\frac{T}{2}\right)-\frac{pT}{2} \geq M\sqrt{T}) \right) \\
 = & \mathbb{P}\left(l^{(T,z)} \left(\frac{T}{2}\right)-\frac{pT}{2} +x_k'^T\geq M\sqrt{T}) \right)
 \end{align*}
-where $z:= y_k'^T-x_k'^T = \lfloor M_1\sqrt{T}+pT-M_2\sqrt{T} \rfloor$, and $\mathbb{P}$, $l^{(T,z)}$ are as defined in Theorem 3.3.
-With Brownian bridge $B^\sigma$ as in Theorem 3.3. We rewrite the expression as
+where $z:= y_k'^T-x_k'^T = \lfloor M_1\sqrt{T}+pT-M_2\sqrt{T} \rfloor$, and $\mathbb{P}$, $l^{(T,z)}$ are as defined in Theorem 3.3. The second equality follows from the Schur-Gibbs property.
+With Brownian bridge $B^\sigma$ as specified in Theorem 3.3, we rewrite the expression as
 
 \begin{align*}
 \mathbb{P} \left( \left[ l^{(T,z)} \left(\frac{T}{2}\right)
 -\sqrt{T}B^\sigma_{1/2}-\frac{z}{2} \right] + \sqrt{T}B^\sigma  
-\geq -\frac{M_1\sqrt{T}-M_2\sqrt{T}}{2} + M_1\sqrt{T}+C(k-1)\sqrt{T}+M\sqrt{T}) \right)
+\geq -\frac{M_1\sqrt{T}-M_2\sqrt{T}}{2} + M_1\sqrt{T}+D(k-1)\sqrt{T}+M\sqrt{T}) \right)
 \end{align*}
 The right hand side is
-$$\frac{M_1+M_2}{2}+M+C(k-1) < (M+M_1+M_2+C(k-1))\sqrt{T} $$
-The probability $\mathbb{P'}(A)$ is bounded below by
+$$\frac{M_1+M_2}{2}+M+D(k-1) < (M+M_1+M_2+D(k-1))\sqrt{T} $$
+The probability $\mathbb{P'}(E)$ is bounded below by
 \begin{align*}
 & \mathbb{P} \left( \left[ l^{(T,z)} \left(\frac{T}{2}\right)
--\sqrt{T}B^\sigma_{1/2}-\frac{z}{2} \right] + \sqrt{T}B^\sigma  
-\geq (M+M_1+M_2+C(k-1))\sqrt{T} \right) \\
-\geq& \mathbb{P} \left( \sqrt{T}B^\sigma_{1/2} \geq (M+M_1+M_2+C(k-1))\frac{\sqrt{T}}{2} \right)
-+ \mathbb{P} \left( \Delta(T,z) \geq (M+M_1+M_2+C(k-1))\frac{\sqrt{T}}{2} \right) 
+-\sqrt{T}B^\sigma_{1/2}-\frac{z}{2} \right] + \sqrt{T}B^\sigma_{1/2}
+\geq (M+M_1+M_2+D(k-1))\sqrt{T} \right) \\
+\geq& \mathbb{P} \left( \sqrt{T}B^\sigma_{1/2} \geq (M+M_1+M_2+D(k-1))\frac{\sqrt{T}}{2} \right)
++ \mathbb{P} \left( \Delta(T,z) \geq (M+M_1+M_2+D(k-1))\frac{\sqrt{T}}{2} \right) 
 \end{align*}
 The first term is equal to 
-$$1 - \Phi^v (M+M_1+M_2+C(k-1))$$
+$$1 - \Phi^v (M+M_1+M_2+D(k-1))$$
 where $\Phi^v$ is the Gaussian continuous distribution with mean 0 and variance $v=p(1-p)/4$.
 The second term is $O(\exp(-\sqrt{T})$ according to Theorem 3.3. We can write the lower bound as
 \begin{align*}
-\mathbb{P}' (A) &\geq 1 - \Phi^v (M+M_1+M_2+C(k-1)) \\
-&\geq C' \frac{\sqrt{p(1-p)}(M+M_1+M_2+C(k-1))}{\sqrt{2\pi}[(M+M_1+M_2+C(k-1))^2+1]} \exp\left( \frac{(M+M_1+M_2+C(k-1))^2}{2p(1-p)}\right)
+\mathbb{P}' (E) &\geq 1 - \Phi^v (M+M_1+M_2+D(k-1)) \\
+&\geq D' \frac{\sqrt{p(1-p)}(M+M_1+M_2+D(k-1))}{\sqrt{2\pi}[(M+M_1+M_2+D(k-1))^2+1]} \exp\left( \frac{(M+M_1+M_2+D(k-1))^2}{2p(1-p)}\right) 
 \end{align*}
 
 \noindent\textbf{Step 2:} 
-Now it remains to lower bound $\mathbb{P'}(B)$. We write
+Now it remains to lower bound $\mathbb{P'}(F)$. We write
 \begin{align*}
-\mathbb{P'}(B) &= \mathbb{P}_{Ber}^{0,T, \vec{x}\,'^T, \vec{y}\,'^T} \left( L_1(s)>\dots>L_k(s), s\in[0,T]\right) \\
-&\geq  \mathbb{P}_{Ber}^{0,T, \vec{x}\,'^T, \vec{y}\,'^T} \left( \sup_{s\in[0,T]}
- | L_i(s)-x_i'-\frac{s}{T}(y_i-x_i) | \leq \frac{C\sqrt{T}}{2}, 1\leq i \leq k \right) \\
- &=  \left[ 1 - \mathbb{P}_{Ber}^{0,T, \vec{x}\,'^T, \vec{y}\,'^T} \left( \sup_{s\in[0,T]}
- | L_i(s)-x_i'-\frac{s}{T}(y_i-x_i) | > \frac{C\sqrt{T}}{2}, 1\leq i \leq k \right) \right]^k
+\mathbb{P'}(F) &= \mathbb{P}_{Fer}^{0,T, \vec{x}\,'^T, \vec{y}\,'^T} \left( L_1(s)>\dots>L_k(s), s\in[0,T]\right) \\
+&\geq  \mathbb{P}_{Fer}^{0,T, \vec{x}\,'^T, \vec{y}\,'^T} \left( \sup_{s\in[0,T]}
+ | L_i(s)-x_i'-\frac{s}{T}(y_i-x_i) | \leq \frac{D\sqrt{T}}{2}, 1\leq i \leq k \right) \\
+ &=  \left[ 1 - \mathbb{P}_{Fer}^{0,T, x_i'^T, y_i'^T} \left( \sup_{s\in[0,T]}
+ | l_i(s)-x_i'-\frac{s}{T}(y_i-x_i) | > \frac{D\sqrt{T}}{2} \right) \right]^k ,
 \end{align*}
-We know that
+where $l_i$ is a Bernoulli bridge starting from $x_i'$ and ending at $y_i'$. We know that
 \begin{align*}
-&\mathbb{P}_{Ber}^{0,T, \vec{x}\,'^T, \vec{y}\,'^T} \left( \sup_{s\in[0,T]}
- | L_i(s)-x_i'-\frac{s}{T}(y_i'-x_i') | > \frac{C\sqrt{T}}{2}, 1\leq i \leq k \right) \\
- \leq& \mathbb{P}\left( \sup_{s\in[0,T]} |\sqrt{T} B^\sigma _\frac{s}{T}| > \frac{C\sqrt{T}}{4} \right)
- + \mathbb{P} \left( \Delta(T, y_i'-x_i')>\frac{C\sqrt{T}}{4} \right) \\
- =& 2\exp\left(-\frac{2}{\sigma^2}(\frac{C}{4})^2\right) - O(\exp(-\sqrt{T})) 
+&\mathbb{P}_{Fer}^{0,T, x_i'^T, y_i'^T} \left( \sup_{s\in[0,T]}
+ | l_i(s)-x_i'-\frac{s}{T}(y_i'-x_i') | > \frac{D\sqrt{T}}{2} \right) \\
+ \leq& \mathbb{P}\left( \sup_{s\in[0,T]} |\sqrt{T} B^\sigma _\frac{s}{T}| > \frac{D\sqrt{T}}{4} \right)
+ + \mathbb{P} \left( \Delta(T, y_i'-x_i')>\frac{D\sqrt{T}}{4} \right) \\
+ =& 2\exp\left(-\frac{2}{\sigma^2}(\frac{D}{4})^2\right) - O(\exp(-\sqrt{T})) 
  \end{align*}
 Since
-$$\mathbb{P'}(B) = \left( 1 - 2\exp\left(-\frac{2}{\sigma^2}(\frac{C}{4})^2\right) + O(\exp(-\sqrt{T}))  \right)^k$$
-we can find some $T>T_0$ such that $\mathbb{P'}(B)  > \frac{m}{n} $ for given integers $m,n$. We could pick $m,n$ such that $m< (1-\frac{\mathbb{P'}(A)}{2-\mathbb{P'}(A)})n$. We will have
+$$\mathbb{P'}(F) = \left( 1 - 2\exp\left(-\frac{2}{\sigma^2}(\frac{D}{4})^2\right) + O(\exp(-\sqrt{T}))  \right)^k$$
+we can find some $T>T_0$ such that $\mathbb{P'}(F)  > \frac{m}{n} $ for given integers $m,n$. We could pick $m,n$ such that $m< (1-\frac{\mathbb{P'}(E)}{2-\mathbb{P'}(E)})n$. We will have
 \begin{align*}
-\mathbb{P}_{avoid, Ber}^{0,T, \vec{x}^T, \vec{y}^T}(A) 
-\geq&  1 -  \frac{1-\mathbb{P'}(A)}{\mathbb{P'}(B)} \\
-=& 1+\frac{n}{m} (\mathbb{P'}(A)-1) \\
-\geq & \frac{1}{2}\mathbb{P'}(A)
+\mathbb{P}_{avoid, Fer}^{0,T, \vec{x}^T, \vec{y}^T}(E) 
+\geq&  1 -  \frac{1-\mathbb{P'}(E)}{\mathbb{P'}(F)} \\
+=& 1+\frac{n}{m} (\mathbb{P'}(E)-1) \\
+\geq & \frac{1}{2}\mathbb{P'}(E)
 \end{align*}
 whose boundedness was proven in Step 1.
 \end{proof}
+
 
 \subsection*{Problem 20}
 Fix $p,t\in (0,1)$ and $ k\in \mathbb{N}$. Suppose that $\vec x^T=(x_1^T,\cdots x_k^T)$ and $\vec y^T=(y_1^T,\cdots , y_k^T)$ is a sequence of $k$-dimensional vectors with integer entries such that $T\geq y_i^T-x_i^T\geq 0$ for $i,1,\cdots, k$. Show that for any $M_1,M_2>0$ and $\epsilon>0$ there exists $T_0\in\mathbb{N}$ and $\delta>0$ depending on $p,k,M_1,M_2$ such that if $T\geq T_0$, $\abs*{x_i^T}\leq M_1\sqrt{T}$ and $\abs*{y_i^T-pT}\leq M_2\sqrt{T}$ then 
