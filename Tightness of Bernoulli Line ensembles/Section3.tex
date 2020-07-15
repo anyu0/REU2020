@@ -255,7 +255,7 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Properties of avoiding Bernoulli line ensembles}\label{Section3.3}  In this section we derive several results about avoiding Bernoulli line ensembles, which are Bernoulli line ensembles with law $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ as in Definition \ref{DefAvoidingLawBer}. The lemmas we prove only involve the case when $f(r) = \infty$ for all $r \in \llbracket T_0, T_1 \rrbracket$ and we denote the measure in this case by $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, \infty, g}$. A $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, \infty, g}$-distributed random variable will be denoted by $\mathfrak{Q} = (Q_1, \dots, Q_k)$ where $k$ is the number of up-right paths in the ensemble. Our results will rely on the two monotonicity Lemmas \ref{MCLxy} and \ref{MCLfg} as well as the strong coupling between Bernoulli bridges and Brownian bridges from Theorem \ref{KMT}.
 
-\begin{lemma}\label{CurveSeparation} Fix $k, T\in\mathbb{N}$, $p\in (0,1)$, and $\epsilon > 0$. Define a constant
+\begin{lemma}\label{CurveSeparation} Fix $k, T\in\mathbb{N}$, $p\in (0,1)$. Define the constant
 	\[
 	C = \sqrt{8p(1-p)\log\frac{3}{1-(1-\epsilon)^{1/k}}}.
 	\]
@@ -269,9 +269,9 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 		\item $|y_1 - x_1 - pT| \leq K\sqrt{T}$ for a constant $K>0$.
 		
 	\end{enumerate}
-	Let $\mathfrak{L} = (L_1,\dots,L_k)$ be a line ensemble with law $\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}$, and let $E$ denote the event that $L_1(s) \geq \cdots \geq L_k(s)$ for $s\in[0,T]$. Then we can find $W_5 = W_5(p,k,\epsilon)$ so that for $T\geq W_5$,
+	Let $\mathfrak{L} = (L_1,\dots,L_k)$ be a line ensemble with law $\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}$, and let $E$ denote the event that $L_1(s) \geq \cdots \geq L_k(s)$ for $s\in[0,T]$. Then we can find $W_5 = W_5(p,k)$ so that for $T\geq W_5$,
 	\[
-	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}(E) \geq 1 - \epsilon.
+	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}(E) \geq \big(1 - 3e^{-C^2/8p(1-p)}\big)^k
 	\]
 \end{lemma}
 

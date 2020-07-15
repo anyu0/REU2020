@@ -449,44 +449,50 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		\begin{equation}\label{eqn61}
 		\mathbb{P}^{-t_2, t_2, \vec{x},\vec{y}, \infty, \widetilde{\ell}_{bot} }_{avoid, Ber} \Big( Z\big(  -t_1, t_1, \widetilde{Q}(-t_1) , \widetilde{Q}(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\big) \geq g   \Big)  \geq h.
 		\end{equation}
+		Here, $\widetilde{Q}$ is a line ensemble with law $\mathbb{P}^{-t_2, t_2, \vec{x},\vec{y}, \infty, \widetilde{\ell}_{bot} }_{avoid, Ber}$, and $\widetilde{Q}(a) = \big(\widetilde{Q}_1(a),\dots,\widetilde{Q}_{k-1}(a)\big)$.
 		
 	\end{lemma}
 
 	\begin{proof}
 
-	Define 
-	\begin{align*}
-	\overline{x} &= \lceil (M_2+1)(2t_2)^{1/2} - pt_1\rceil,\\
-	\overline{y} &= \lceil(M_2+1)(2t_2)^{1/2} + pt_1\rceil.
-	\end{align*}
 	Fix $\delta \in (0,1)$, and define the event 
 	\[
-	E = \big\{\widetilde{Q}_{k-1}(-t_1) \geq \overline{x}\big\} \cap \big\{\widetilde{Q}_{k-1}(t_1) \geq \overline{y}\big\} \cap \left\{\min_{1\leq i\leq k-2} (\widetilde{Q}_i(\pm t_1) - \widetilde{Q}_{i+1}(\pm t_1)) \geq \delta(2t_2)^{1/2}\right\}.
+	E = \left\{\inf_{s\in[-t_1,t_1]}\big(\widetilde{Q}_{k-1}(s) - ps\big) \geq (M_2+1)(2t_2)^{1/2}\right\} \cap \left\{\min_{1\leq i\leq k-2} \big(\widetilde{Q}_i(\pm t_1) - \widetilde{Q}_{i+1}(\pm t_1)\big) \geq \delta(2t_2)^{1/2}\right\}.
 	\]
-	Since $\delta < 1$, we have $\overline{x} - \ell_{bot}(- t_1) \geq (2t_2)^{1/2} \geq \delta(2t_2)^{1/2}$ and $\overline{y} - \ell_{bot}(t_1) \geq \delta(2t_2)^{1/2}$. We split the remainder of the proof into several steps for clarity.\\
+	Define 
+	\begin{align*}
+	\overline{x} &= \lceil (M_2+1)(2t_2)^{1/2} - pt_1\rceil, \quad
+	\overline{y} = \lceil(M_2+1)(2t_2)^{1/2} + pt_1\rceil.
+	\end{align*}
+	Then on the event $E$, $\widetilde{Q}_{k-1}(-t_1)\geq \overline{x}$ and $\widetilde{Q}_{k-1}(t_1) \geq \overline{y}$. By condition (1) in the hypothesis, and since $\delta < 1$, we have in addition on $E$ that
+	\begin{align*}
+	\widetilde{Q}_{k-1}(-t_1) - \ell_{bot}(- t_1) &\geq \overline{x} - \ell_{bot}(- t_1) \geq (2t_2)^{1/2} \geq \delta(2t_2)^{1/2},\\
+	\widetilde{Q}_{k-1}(t_1) - \ell_{bot}(t_1) &\geq \overline{y} - \ell_{bot}(t_1) \geq (2t_2)^{1/2} \geq \delta(2t_2)^{1/2}.
+	\end{align*}
+	We split the remainder of the proof into several steps for clarity.\\
 		
 	\noindent\textbf{Step 1.} We first show that
 		\begin{equation}\label{4.4APbound}
-		E \subset \left\{Z(-t_1,t_1,\vec{x},\vec{y},\ell_{bot}) \geq \big(1-3e^{-\delta^2/8p(1-p)}\big)^{k-1}\right\}
+		E \subset \left\{Z(-t_1,t_1,\widetilde{Q}(-t_1),\widetilde{Q}(t_1),\ell_{bot}) \geq g\right\}
 		\end{equation}
-		for large enough $N$. Here, $\vec{x} = (\widetilde{Q}_1(-t_1),\dots,\widetilde{Q}_{k-1}(-t_1))$ and $\vec{y} = (\widetilde{Q}_1(t_1),\dots,\widetilde{Q}_{k-1}(t_1))$. Define $\vec{x}\,', \vec{y}\,' \in \mathfrak{W}_{k-1}$ by
+		for large enough $N$. Define $\vec{x}\,', \vec{y}\,' \in \mathfrak{W}_{k-1}$ by
 		\begin{align*}
 		x_i' &= \overline{x} + (k-1-i)\lceil \delta(2t_2)^{1/2}\rceil,\\
 		y_i' &= \overline{y} + (k-1-i)\lceil \delta(2t_2)^{1/2}\rceil.
 		\end{align*}
-		Observe that $x_i' \leq x_{k-1} + (k-1-i)\lceil \delta(2t_2)^{1/2}\rceil \leq x_i$, and similarly for $y_i$. Also, $x_{i+1}' - x_i' \leq x_{i+1} - x_i$ and $y_{i+1}' - y_i \leq y_{i+1} - y_i$ for $1\leq i\leq k-2$. By Lemma \ref{APsqueezing}, we have
+		Observe that $x_i' \leq \widetilde{Q}_{k-1}(-t_1) + (k-1-i)\lceil \delta(2t_2)^{1/2}\rceil \leq \widetilde{Q}_i(-t_1)$, and similarly for $y_i'$. Also, $x_{i+1}' - x_i' \leq \widetilde{Q}_{i+1}(-t_1) - \widetilde{Q}_i(-t_1)$ and $y_{i+1}' - y_i' \leq \widetilde{Q}_{i+1}(t_1) - \widetilde{Q}_i(t_1)$ for $1\leq i\leq k-2$. By Lemma \ref{APsqueezing}, we have
 		\begin{equation}\label{4.4squeeze}
-		Z(-t_1,t_1,\vec{x},\vec{y},\ell_{bot}) \geq Z(-t_1,t_1,\vec{x}\,', \vec{y}\,', \ell_{bot}).
+		Z(-t_1,t_1,\widetilde{Q}(-t_1),\widetilde{Q}(t_1),\ell_{bot}) \geq Z(-t_1,t_1,\vec{x}\,', \vec{y}\,', \ell_{bot}).
 		\end{equation}
-		Observe that $x_{k-1}' = \overline{x}$ and $y_{k-1}' = \overline{y}$ lie at least $\delta(2t_2)^{1/2}$ above the points $\overline{x}\,' := M_2(2t_2)^{1/2} - pt_1$ and $\overline{y}\,' := M_2(2t_2)^{1/2} + pt_1$, respectively, and moreover, $\ell_{bot}$ lies uniformly below the line segment connecting $\overline{x}\,'$ and $\overline{y}\,'$. Since we also have $\vec{x}_i' - \vec{x}_{i+1}' \geq \delta(2t_2)^{1/2}$ and $\vec{y}_i' - \vec{y}_{i+1}' \geq \delta(2t_2)^{1/2}$ for each $i$, an acceptance occurs as long as each curve $\widetilde{Q}_i$ remains within a distance $\delta(2t)^{1/2}/2$ of the line segment connecting $x_i'$ and $y_i'$. Thus, writing $\overline{z} = \overline{y} - \overline{x}$ and $T = 2t_1$, we have
-		\begin{align*}
-		Z(-t_1, t_1, \vec{x}\,', \vec{y}\,', \ell_{bot}) &\geq \Big[1 - \mathbb{P}\Big(\sup_{s\in[0,T]}\big|\ell^{(T,\overline{z})}(s) - (\overline{z}/T)s\big| \geq \delta\sqrt{T}/2\Big)\Big]^{k-1}.
-		\end{align*} 
+		Observe that $x_{k-1}' = \overline{x}$ and $y_{k-1}' = \overline{y}$ lie at least $\delta(2t_2)^{1/2}$ above the points $\overline{x}\,' := M_2(2t_2)^{1/2} - pt_1$ and $\overline{y}\,' := M_2(2t_2)^{1/2} + pt_1$, respectively, and moreover, $\ell_{bot}$ lies uniformly below the line segment connecting $\overline{x}\,'$ and $\overline{y}\,'$. Since we also have $x_i' - x_{i+1}' \geq \delta(2t_2)^{1/2}$ and $y_i' - y_{i+1}' \geq \delta(2t_2)^{1/2}$ for each $i$, an acceptance occurs as long as each curve $\widetilde{Q}_i$ remains within a distance $\delta(2t)^{1/2}/2$ of the line segment connecting $x_i'$ and $y_i'$. Thus, writing $\overline{z} = \overline{y} - \overline{x}$ and $T = 2t_1$, we have
+		\begin{equation}\label{4.4tube}
+		Z(-t_1, t_1, \vec{x}\,', \vec{y}\,', \ell_{bot}) \geq \Big[1 - \mathbb{P}\Big(\sup_{s\in[0,T]}\big|\ell^{(T,\overline{z})}(s) - (\overline{z}/T)s\big| \geq \delta\sqrt{T}/2\Big)\Big]^{k-1}.
+		\end{equation} 
 		The probability on the right hand side is bounded above by
 		\[
 		\mathbb{P}\Big(\max_{s\in[0,T]} \big|B^\sigma_{s/T}\big| \geq \delta/4\Big) + \mathbb{P}\Big(\Delta(T,\overline{z}) \geq \delta\sqrt{T}/4\Big).
 		\]
-		The first term is equal to $2e^{-\delta^2/8p(1-p)}$ by Lemma \ref{BBmax}, and since $|\overline{z} - pT| \leq 1$, it follows from Lemma \ref{Cheb} that the second term is $< e^{-\delta^2/8p(1-p)}$ for large enough $N$ depending on $r,p,\delta$. In view of \eqref{4.4squeeze}, we obtain \eqref{4.4APbound}.
+		The first term is equal to $2e^{-\delta^2/8p(1-p)}$ by Lemma \ref{BBmax}, and since $|\overline{z} - pT| \leq 1$, it follows from Lemma \ref{Cheb} that the second term is $< e^{-\delta^2/8p(1-p)}$ for large enough $N$ depending on $r,p,\delta$. In view of \eqref{4.4squeeze} and \eqref{4.4tube}, we obtain \eqref{4.4APbound}.
 		
 		\end{proof}
 		
