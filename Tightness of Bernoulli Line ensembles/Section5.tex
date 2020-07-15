@@ -229,9 +229,13 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		&\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (A\,|\,F) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 \geq \cdots \geq L_k\,|\,F)\big) \nonumber\\
 		&= \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} (A) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 \geq \cdots \geq L_k\,|\,F)\big). \label{21xyest}
 		\end{align}
-		For the first term in the last line, we used the Gibbs property and the fact that $A$ and $F$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. In Steps 3 and 4, we will argue that the two probabilities in \eqref{21xyest} are bounded below by 1/3 and 11/12, respectively. Then $\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) \geq 1/3 - 1/12 = 1/4$ for large $N$ independent of $\vec{x},\vec{y}$, proving \eqref{21AEbound}.\\
+		For the first term in the last line, we used the Gibbs property and the fact that $A$ and $F$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. In Step 3, we will argue that the two probabilities in \eqref{21xyest} are bounded below by 1/3 and 11/12, respectively. Then $\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) \geq 1/3 - 1/12 = 1/4$ for large $N$ independent of $\vec{x},\vec{y}$, proving \eqref{21AEbound}.\\
 		
-		\noindent\textbf{Step 3.} In this step, we argue that $\mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} (A) > 1/3$ for sufficiently large $N$. Write $\overline{x} = x_1' - (k-1)\lceil C\sqrt{T}\rceil$, $\overline{y} = y_1' - (k-1)\lceil C\sqrt{T}\rceil$, and $\overline{z} = \overline{y}-\overline{x}$. We have
+		\noindent\textbf{Step 3.} We first argue that $\mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} (A) > 1/3$ for sufficiently large $N$. Write 
+		\[
+		\overline{x} = x_1' - (k-1)\lceil C\sqrt{T}\rceil, \quad \overline{y} = y_1' - (k-1)\lceil C\sqrt{T}\rceil,
+		\] 
+		and $\overline{z} = \overline{y}-\overline{x}$. We have
 		\begin{align}
 		& \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} (A)\nonumber\\
 		= \; &\mathbb{P}^{0,T,x_1',y_1'}_{Ber} \Big(L_1(T/2) - pN^\alpha \frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\phi(\epsilon/8)N^{\alpha/2}\Big)\nonumber\\
@@ -255,28 +259,14 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		\begin{equation}\label{21zpT}
 		\frac{|\overline{z} - pT|^2}{T} \leq \frac{(\lambda(R^2-r^2) N^{\alpha/2} + 1)^2}{(R-r)N^\alpha} \leq 4\lambda^2(R+r)^2(R-r).
 		\end{equation}
-		Thus Corollary \ref{Cheb} shows that $\mathbb{P}(\Delta(T,\overline{z})\geq \gamma\sqrt{T})<1/6$ for large enough $N$. This gives a lower bound on $\mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} (A)$ of $1/2 - 1/6 = 1/3$ as desired.\\
+		Thus Corollary \ref{Cheb} shows that $\mathbb{P}(\Delta(T,\overline{z})\geq \gamma\sqrt{T})<1/6$ for large enough $N$. This gives a lower bound on $\mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} (A)$ of $1/2 - 1/6 = 1/3$ as desired.
 		
-		\noindent\textbf{Step 4.} In this last step, we show that $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 > \cdots > L_k\,|\,F) > 11/12$ for large $N$. Note that on the event $F$, $L_k^N$ lies uniformly below the line segment connecting $L_1^N(rN^\alpha)$ and $L_1^N(RN^\alpha)$. Thus after raising the endpoints to $\vec{x}\,',\vec{y}\,'$, the bottom curve $L_k$ lies uniformly at a distance of at least $C\sqrt{T}$ below the segment connecting $L_{k-1}(rN^\alpha)$ and $L_{k-1}(RN^\alpha)$, and moreover the endpoints of adjacent curves are at least $C\sqrt{T}$ apart. Then in order to have $L_1 \geq \cdots \geq L_k$ given $F$, it suffices to require each $L_i$ to lie within a distance of $C\sqrt{T}/2$ from the line segment connecting its endpoints. That is,
-		\begin{align}
-		&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} (L_1 \geq \cdots \geq L_k\,|\,F) \nonumber\\
-		\geq \; & \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \Big(\sup_{x\in[r,R]} \big|L_i(xN^\alpha) - x_i' - (\overline{z}/T)(x-r)N^\alpha\big| \leq C\sqrt{T}/2, \;1\leq i\leq k-1\,\Big|\,F\Big) \nonumber\\
-		= \; & \Big[ \mathbb{P}^{0,T,0,\overline{z}}_{Ber} \Big(\sup_{s\in[0,T]} \big|L_1(s+rN^\alpha) - (\overline{z}/T)s\big| \leq C\sqrt{T}/2\Big)\Big]^{k-1} \nonumber\\
-		= \; & \Big[ 1 - \mathbb{P}\Big(\sup_{s\in[0,T]} \big|\ell^{(T,\overline{z})} - (\overline{z}/T)s\big| > C\sqrt{T}/2\Big)\Big]^{k-1}, \label{21avoidest}
-		\end{align}
-		with $\mathbb{P}$ and $\ell^{(T,\overline{z})}$ as in Step 1. In the third line, we used the fact that $L_1,\dots,L_{k-1}$ are independent from each other and from $L_k$ under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. Let $B^\sigma$ be as in Step 1. Then we have
-		\begin{align*}
-		&\mathbb{P} \Big(\sup_{s\in[0,T]} \big|\ell^{(T,\overline{z})}(s) - (\overline{z}/T)s\big| > C\sqrt{T}/2\Big)\\
-		\leq \; & \mathbb{P}\Big(\sup_{s\in[0,T]} |\sqrt{T}B^{\sigma}_{s/T}| > C\sqrt{T}/4\Big) + \mathbb{P}\Big(\Delta(T,\overline{z}) > C\sqrt{T}/4\Big).
-		\end{align*}
-		By Lemma \ref{BBmax}, the first term is equal to
+		Lastly, we show that $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 \geq \cdots \geq L_k\,|\,F) > 11/12$ for large $N$. Note that on the event $F$, $L_k^N$ lies uniformly below the line segment connecting $L_1^N(rN^\alpha)$ and $L_1^N(RN^\alpha)$. Thus after raising the endpoints to $\vec{x}\,',\vec{y}\,'$, the bottom curve $L_k$ lies uniformly at a distance of at least $C\sqrt{T}$ below the segment connecting $L_{k-1}(rN^\alpha)$ and $L_{k-1}(RN^\alpha)$, and moreover the endpoints of adjacent curves are at least $C\sqrt{T}$ apart. In view of \eqref{21zpT}, we see from Lemma \ref{CurveSeparation} applied with $\ell_{bot} = L_k$ that for large enough $N$ depending on $\lambda, r, R, C$, we have
 		\[
-		2\exp\left(-\frac{2}{\sigma^2}\Big(\frac{C}{4}\Big)^2\right) = 2e^{-C^2/8p(1-p)}.
+		\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 \geq \cdots \geq L_k\,|\,F) \geq \big(1-3e^{-C^2/8p(1-p)}\big)^{k-1}.
 		\]
-		For the second term, \eqref{21zpT} and Corollary \ref{Cheb} give an upper bound of $<e^{-C^2/8p(1-p)}$ for sufficiently large $N$. Our choice of $C$ in \eqref{21Cdef} implies a lower bound in \eqref{21avoidest} of
-		\[
-		(1-3e^{-C^2/8p(1-p)})^{k-1} > 11/12.
-		\]
+		Our choice of $C$ in \eqref{21Cdef} implies that this quantity is at least 11/12.\\
+		
 		\noindent Essentially the same argument proves the statement if $[r,R]$ is replaced by $[-R,-r]$.
 		
 	\end{proof}
@@ -355,9 +345,9 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		\[
 		F = \{L_1'(s) > \cdots > L_k'(s), \,s\in [0, a+b]\}.
 		\]
-		In Steps 3 and 4 below, we will prove that the numerator and denominator in \eqref{4.3bayes} are $<\epsilon/4$ and $>1/2$ for sufficiently large $N$. It then follows that \eqref{4.3bayes} is bounded above by $\epsilon/2$, proving \eqref{4.3AEbound}.\\
+		In Step 3 below, we will prove that the numerator and denominator in \eqref{4.3bayes} are $<\epsilon/4$ and $>1/2$ for sufficiently large $N$. It then follows that \eqref{4.3bayes} is bounded above by $\epsilon/2$, proving \eqref{4.3AEbound}.\\
 		
-		\noindent\textbf{Step 3.} We now argue that
+		\noindent\textbf{Step 3.} We first argue that
 		\begin{equation}\label{4.3num}
 		\mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - p(s-a)\big) \leq -R_2 N^{\alpha/2} \Big) < \epsilon/4
 		\end{equation}
@@ -367,31 +357,17 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		= \; & \mathbb{P}^{0, a+b, 0, z_k}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps + pa - \lceil pa + MN^{\alpha/2}\rceil - (k-1)\lceil CN^{\alpha/2}\rceil\big) \leq -R_2 N^{\alpha/2} \Big) \nonumber\\
 		\leq \; & \mathbb{P}^{0, a+b, 0, z_k}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps\big) \leq -(R_2 - M - Ck) N^{\alpha/2} \Big).\label{4.3R2}
 		\end{align}
-		Since $z_k\geq p(a+b)$, Lemma \ref{LemmaMinFreeS4} allows us to find $R_2>0$ depending on $M,C,k,r,\epsilon$ so that this probability is $<\epsilon/4$ for all large $N$, such that $a+b$ is larger than some constant $W_1$. But observe that $a+b \geq 2rN^\alpha$, so it suffices to take $N > (W_1/2r)^{1/\alpha}$. Thus we obtain \eqref{4.3num}, \textit{independent} of $a,b,\vec{x},\vec{y}$.\\
+		Since $z_k\geq p(a+b)$, Lemma \ref{LemmaMinFreeS4} allows us to find $R_2>0$ depending on $M,C,k,r,\epsilon$ so that this probability is $<\epsilon/4$ for all large $N$, such that $a+b$ is larger than some constant $W_1$. But observe that $a+b \geq 2rN^\alpha$, so it suffices to take $N > (W_1/2r)^{1/\alpha}$. Thus we obtain \eqref{4.3num}, \textit{independent} of $a,b,\vec{x},\vec{y}$.
 		
-		\noindent\textbf{Step 4.} Lastly, we argue that
+		Lastly, we argue that
 		\begin{equation}\label{4.3denom}
 		\mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber}(F) > 1/2
 		\end{equation}
-		for large $N$. The argument is very similar to that in the proof of Lemma \ref{21}. Write $a = a'N^\alpha, b = b'N^\alpha$, $T = a+b = (a'+b')N^\alpha$, and $z = y_k' - x_k'$. Let $\ell^{(T,z)}$ be a random variable with the same law as the $L'_i$ shifted down by $x_i\,'$ under a measure $\mathbb{P}$, as provided by Theorem 3.3. Let $B^{\sigma}$ be a Brownian bridge with variance $\sigma^2 = p(1-p)$ coupled with $\ell^{(T,z)}$. Then
-		\begin{align}
-		\mathbb{P}^{0,T,\vec{x}\,', \vec{y}\,'}_{Ber}(F) &\geq \mathbb{P}^{0,T,\vec{x}\,', \vec{y}\,'}_{Ber} \Big( \sup_{s\in[0,T]} \Big|L_i'(s) - x_i' - (z/T)s\Big| < \frac{CN^{\alpha/2}}{2},\; 1\leq i\leq k \Big)\nonumber\\
-		&= \Big[ 1 - \mathbb{P} \Big( \sup_{s\in[0,T]} \Big|\ell^{(T,z)}(s) - (z/T)s\Big| \geq C'\sqrt{T} \Big) \Big]^k,\label{4.3avoid}
-		\end{align}
-		where in the last line we have written $C' = C/2\sqrt{a'+b'}$. Now
-		\begin{align}
-		&\mathbb{P} \Big( \sup_{s\in[0,T]} \Big|\ell^{(T,z)}(s) - (z/T)s\Big| \geq C'\sqrt{T} \Big) \nonumber\\
-		\leq \; & \mathbb{P} \Big( \sup_{s\in[0,T]} |\sqrt{T}\,B^{\sigma}_{s/T}| \geq C'\sqrt{T}/2\Big) + \mathbb{P} \Big( \Delta(T,z) \geq C'\sqrt{T}/2 \Big), \label{4.3BB}
-		\end{align}
-		where $\Delta(T,z)$ is as defined in Theorem 3.3. Since $a' + b' \leq 2R$, Lemma \ref{BBmax} implies that the first term in \eqref{4.3BB} is equal to
-		\[
-		2e^{-C^2/8\sigma^2(a'+b')} \leq 2e^{-C^2/16p(1-p)R}.
-		\]
-		Since $|z-pT| < 1$, Lemma \ref{Cheb} gives a lower bound for the second term in \eqref{4.3BB} of $e^{-C^2/16p(1-p)R}$ for $T\geq T_0$, where $T_0$ is some constant depending in particular on $C'$, hence possibly on $a+b$. But note that $C'\sqrt{T} = CN^{\alpha/2}$ is independent of $a,b$, so the $C'$ dependency in Lemma \ref{Cheb} reduces to a dependence on $C$. Moreover, $T\geq 2rN^\alpha$, so as long as $N \geq (T_0/2r)^{1/\alpha}$, we have the bound independent $a,b,\vec{x},\vec{y}$. Our choice of $C$ in \eqref{4.3Cdef} then gives a lower bound in \eqref{4.3avoid} of
-		\[
-		\big(1 - 3e^{-C^2/16p(1-p)R}\big)^k \geq 1/2.
-		\]
-		This proves \eqref{4.3denom}.
+		for large $N$. Write $a = a'N^\alpha, b = b'N^\alpha$, $T = a+b = (a'+b')N^\alpha$, and $z = y_k' - x_k'$. Also let $C' = C/\sqrt{a'+b'}$, so that $x_i' - x_{i+1}' \geq CN^{\alpha/2} = C'\sqrt{T}$ and likewise for $y_i'$. Note that $|z-pT| < 1$. It follows from Lemma \ref{CurveSeparation}, applied with $k+1$ in place of $k$, $\ell_{bot} = -\infty$, and $C'$ in place of $C$, that for $T$ larger than some $T_0$, 
+		\begin{equation}\label{4.3avoid}
+		\mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber}(F) \geq \big(1 - 3e^{-(C')^2/8p(1-p)}\big)^k \geq \big(1 - 3e^{-C^2/16p(1-p)R}\big)^k.
+		\end{equation}
+		Here, we used the fact that $a'+b' \leq 2R$, hence $C' \geq C/\sqrt{2R}$. The constant $T_0$ depends in particular on $C'$, hence possibly on $a+b$. Referring to the proofs of Lemmas \ref{CurveSeparation} and \ref{Cheb}, we see that the dependency of $T_0$ on $C'$ amounts to requiring that $e^{-C'\sqrt{T_0}}$ be sufficiently small. But $C' \geq C/2R$, so for this it suffices to choose $T_0$ depending on $C$ and $R$. Moreover, $T\geq 2rN^\alpha$, so as long as $N \geq (T_0/2r)^{1/\alpha}$, we have the bound in \eqref{4.3avoid} independent $a,b,\vec{x},\vec{y}$. Our choice of $C$ in \eqref{4.3Cdef} ensures that the expression on the right in \eqref{4.3avoid} is $> 1/2$, proving \eqref{4.3denom}
 		
 	\end{proof}
 	
@@ -453,23 +429,15 @@ We will prove Lemma \ref{LemmaAP2} in the next section. In the remainder of this
 	\end{enumerate}
 	Then we can find $g(\epsilon, V^{top}, M_2) > 0$ and $N_6 \in \mathbb{N}$ such that for all $N \geq N_6$ we have 
 	\begin{equation}\label{eqnRT}
-	Z\big(  -t_1, t_1, \vec{a} ,\vec{b}, \ell_{bot}\llbracket -t_1, t_1\rrbracket\big)\geq g.
+	Z\big(  -t_1, t_1, \vec{a} ,\vec{b}, \ell_{bot}\llbracket -t_1, t_1\rrbracket\big) \geq g.
 	\end{equation}
 \end{lemma}
 
 	\begin{proof}
 		
-		Observe by conditions (1) and (2) in the hypothesis, as well as condition (1) in Lemma \ref{LemmaAP1}, that $\ell_{bot}$ lies a distance of at least $2\epsilon(2t_2)^{1/2}$ uniformly below the line segment connecting $a_{k-1}$ and $b_{k-1}$. In view of condition (3), we see that the acceptance event $\{Q_1\geq \cdots \geq Q_{k-1} \geq \ell_{bot}\llbracket -t_1, t_1\rrbracket\}$ occurs as long as each curve $Q_i$ remains within a distance $\epsilon(2t)^{1/2}/2$ of the line segment connecting $x_i'$ and $y_i'$. Write $z_i = b_i - a_i$ and $T = 2t_1$. As in Theorem \ref{KMT}, let $\mathbb{P}_i$ be probability measures supporting random variables $\ell^{(T,z_i)}$ with laws $\mathbb{P}^{0,T,0,z_i}_{Ber}$. Then
-		\begin{equation}\label{4.4tube}
-		Z(-t_1, t_1, \vec{a}, \vec{b}, \ell_{bot}\llbracket -t_1, t_1 \rrbracket) \geq \prod_{i=1}^{k-1} \Big[1 - \mathbb{P}_i\Big(\sup_{s\in[0,T]}\big|\ell^{(T,z_i)}(s) - (z_i/T)s\big| \geq \epsilon\sqrt{T}/2\Big)\Big].
-		\end{equation} 
-		Let $B^{\sigma,i}$ be the Brownian bridge with variance $\sigma^2 = p(1-p)$ coupled with $\ell^{(T,z_i)}$ given by Theorem \ref{KMT}. Then 
+		Observe by the rightmost inequalities in conditions (1) and (2) in the hypothesis, as well as condition (1) in Lemma \ref{LemmaAP1}, that $\ell_{bot}$ lies a distance of at least $2\epsilon(2t_2)^{1/2}$ uniformly below the line segment connecting $a_{k-1}$ and $b_{k-1}$. Also note that (1) and (2) imply $|b_i-a_i-pT| \leq (V^{top} - M_2)\sqrt{T}$ for each $i$. Lastly noting (3), we see that the conditions of Lemma \ref{CurveSeparation} are satisfied with $C = 2\epsilon$. This implies \eqref{eqnRT}, with
 		\[
-		\mathbb{P}_i\Big(\sup_{s\in[0,T]}\big|\ell^{(T,z_i)}(s) - (z_i/T)s\big| \geq \epsilon\sqrt{T}/2\Big) \leq \mathbb{P}_i\Big(\max_{s\in[0,T]} \big|B^{\sigma,i}_{s/T}\big| \geq \epsilon/4\Big) + \mathbb{P}_i\Big(\Delta(T,z_i) \geq \epsilon\sqrt{T}/4\Big).
-		\]
-		The first term is equal to $2e^{-\epsilon^2/8p(1-p)}$ by Lemma \ref{BBmax}, and since $|z_i - pT| \leq (V^{top} - M_2)\sqrt{T}$ by conditions (1) and (2), it follows from Lemma \ref{Cheb} that the second term is $< e^{-\epsilon^2/8p(1-p)}$ for large enough $N$ depending on $p,\epsilon,V^{top},M_2$, but independent of $i$. In view of \eqref{4.4tube}, we obtain
-		\[
-		Z(-t_1, t_1, \vec{a}, \vec{b}, \ell_{bot}\llbracket -t_1, t_1\rrbracket) \geq \big(1-3e^{-\epsilon^2/8p(1-p)}\big)^{k-1}.
+		g = \big(1 - 3e^{-\epsilon^2/2p(1-p)}\big)^{k-1}.
 		\]
 		
 	\end{proof}

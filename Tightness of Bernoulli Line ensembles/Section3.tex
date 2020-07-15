@@ -82,7 +82,7 @@ We also state the following result regarding the distribution of the maximum of 
 	The second inequality follows from \cite[Chapter 4, (3.40)]{KS}. The second conclusion is immediate.
 \end{proof}
 
-Below we list five lemmas about Bernoulli bridges. We provide a brief informal explanation of what each result says after it is stated. All five lemmas are proved in a similar fashion. For the first four lemmas one observes that the event, whose probability is being estimated, is monotone in $\ell$. This allows by Lemmas \ref{MCLxy} and \ref{MCLfg} to replace $x,y$ in the statements of the lemmas with the extreme values of the ranges specified in each. Once the choice of $x$ and $y$ is fixed one can use our strong coupling results, Theorem \ref{KMT} and Corollary \ref{Cheb}, to reduce each of the lemmas to an analogous one involving a Brownian bridge with some prescribed variance. The latter statements are then easily confirmed as one has exact formulas for Brownian bridges, such as Lemma \ref{BBmax}.\\
+Below we list six lemmas about Bernoulli bridges. We provide a brief informal explanation of what each result says after it is stated. All six lemmas are proved in a similar fashion. For the first four lemmas one observes that the event, whose probability is being estimated, is monotone in $\ell$. This allows by Lemmas \ref{MCLxy} and \ref{MCLfg} to replace $x,y$ in the statements of the lemmas with the extreme values of the ranges specified in each. Once the choice of $x$ and $y$ is fixed one can use our strong coupling results, Theorem \ref{KMT} and Corollary \ref{Cheb}, to reduce each of the lemmas to an analogous one involving a Brownian bridge with some prescribed variance. The latter statements are then easily confirmed as one has exact formulas for Brownian bridges, such as Lemma \ref{BBmax}.\\
 
 \begin{lemma}\label{LemmaHalfS4} Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $x, y\in \mathbb{Z}$ such that $T \geq y-x \geq 0$, and suppose that $\ell$ has distribution $\mathbb{P}^{0,T,x,y}_{Ber}$. Let $M_1, M_2 \in \mathbb{R}$ be given. Then we can find $W_0 = W_0(p,M_2 - M_1) \in \mathbb{N}$ such that for $T \geq W_0$, $x \geq M_1 T^{1/2}$, $y \geq pT + M_2 T^{1/2}$ and $s \in [0,T]$ we have
 \begin{equation}\label{halfEq1S4}
@@ -248,6 +248,45 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	Corollary \ref{Cheb} gives us a $W_4$ large enough depending on $M,p,\epsilon,\eta$ so that the last term term is $\leq\eta/2$ for $T\geq W_4$. Since $B^\sigma$ is a.s. uniformly continuous on the compact interval $[0,1]$, $w(B^\sigma,\delta) \to 0$ as $\delta\to 0$. Thus we can find $\delta_0>0$ small enough depending on $\epsilon,\eta$ so that $w(B^\sigma,\delta_0) < \epsilon/4$ with probability at least $1-\eta/2$. Then with $\delta = \min(\delta_0, \epsilon/4M)$, the first term is $\leq\eta/2$ as well. This implies \eqref{MOCeqS4}.
 \end{proof}
 
+\begin{lemma}\label{CurveSeparation} Fix $T\in\mathbb{N}$, $p\in (0,1)$, $C > 0$. Let $\ell_{bot} \in \Omega(0,T,a,b)$. Suppose $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$, $k\geq 3$, are such that $T \geq y_i - x_i \geq 0$ for $1\leq i\leq k-1$. Write $\vec{z} = \vec{y} - \vec{x}$, and suppose that
+	\begin{enumerate}[label=(\arabic*)]
+		
+		\item $x_{k-1} + (z_{k-1}/T)s - \ell_{bot}(s) \geq C\sqrt{T}$ for all $s\in[0,T]$,
+		
+		\item $x_i - x_{i+1} \geq C\sqrt{T}$ and $y_i - y_{i+1} \geq C\sqrt{T}$ for $1\leq i\leq k-2$,
+		
+		\item $|z_i - pT| \leq K\sqrt{T}$ for $1\leq i\leq k-1$, for a constant $K > 0$.
+		
+	\end{enumerate}
+	Let $\mathfrak{L} = (L_1,\dots,L_{k-1})$ be a line ensemble with law $\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}$, and let $E$ denote the event that $L_1(s) \geq \cdots \geq L_{k-1}(s) \geq \ell_{bot}(s)$ for $s\in[0,T]$. Then we can find $W_5 = W_5(p,C,K)$ so that for $T\geq W_5$,
+	\begin{equation}\label{SepBound}
+	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}(E) \geq \big(1 - 3e^{-C^2/8p(1-p)}\big)^{k-1}
+	\end{equation}
+\end{lemma}
+
+\begin{remark}
+	This lemma states that if $k$ independent Bernoulli bridges are well-separated, then there is a positive probability that the curves will not intersect. We will use this result to compare curves in an avoiding Bernoulli line ensemble with free Bernoulli bridges.
+\end{remark}
+
+\begin{proof}
+	Observe that condition (1) simply states that $\ell_{bot}$ lies a distance of at least $C\sqrt{T}$ uniformly below the line segment connecting $x_{k-1}$ and $y_{k-1}$. Thus (1) and (2) imply that $E$ occurs if each curve $L_i$ remains within a distance of $C\sqrt{T}/2$ from the line segment connecting $x_i$ and $y_i$. As in Theorem \ref{KMT}, let $\mathbb{P}_i$ be probability measures supporting random variables $\ell^{(T,z_i)}$ with laws $\mathbb{P}^{0,T,0,z_i}_{Ber}$. Then
+	\begin{align}
+	\mathbb{P}^{0, T,\vec{x},\vec{y}}_{Ber} (E) &\geq \mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber} \Big(\sup_{s\in[0,T]} \big|L_i(s) - x_i - (z_i/T)s\big| \leq C\sqrt{T}/2, \;1\leq i\leq k-1\Big) \nonumber\\
+	&= \prod_{i=1}^{k-1}\Big[ \mathbb{P}^{0,T,0,z_i}_{Ber} \Big(\sup_{s\in[0,T]} \big|L_i(s+rN^\alpha) - (z_i/T)s\big| \leq C\sqrt{T}/2\Big)\Big] \nonumber\\
+	&= \prod_{i=1}^{k-1}\Big[ 1 - \mathbb{P}_i\Big(\sup_{s\in[0,T]} \big|\ell^{(T,z_i)} - (z_i/T)s\big| > C\sqrt{T}/2\Big)\Big]. \label{SepEst}
+	\end{align}
+	In the third line, we used the fact that $L_1,\dots,L_{k-1}$ are independent from each other under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. Let $B^{\sigma,i}$ be the Brownian bridge with variance $\sigma^2 = p(1-p)$ coupled with $\ell^{(T,z_i)}$ given by Theorem \ref{KMT}. Then we have
+	\begin{align*}
+	&\mathbb{P}_i \Big(\sup_{s\in[0,T]} \big|\ell^{(T,z_i)}(s) - (z_i/T)s\big| > C\sqrt{T}/2\Big)\\
+	\leq \; & \mathbb{P}_i\Big(\sup_{s\in[0,T]} |\sqrt{T}B^{\sigma}_{s/T}| > C\sqrt{T}/4\Big) + \mathbb{P}_i\Big(\Delta(T,z_i) > C\sqrt{T}/4\Big).
+	\end{align*}
+	By Lemma \ref{BBmax}, the first term is equal to
+	\[
+	2\exp\left(-\frac{2}{\sigma^2}\Big(\frac{C}{4}\Big)^2\right) = 2e^{-C^2/8p(1-p)}.
+	\]
+	For the second term, condition (3) in the hypothesis and Corollary \ref{Cheb} give an upper bound of $<e^{-C^2/8p(1-p)}$ for sufficiently large $N$ depending on $p,C,K$, but independent of $i$. Adding these two terms and referring to \eqref{SepEst} proves \eqref{SepBound}.
+\end{proof}
+
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 % Section 3.3
@@ -255,25 +294,7 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Properties of avoiding Bernoulli line ensembles}\label{Section3.3}  In this section we derive several results about avoiding Bernoulli line ensembles, which are Bernoulli line ensembles with law $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ as in Definition \ref{DefAvoidingLawBer}. The lemmas we prove only involve the case when $f(r) = \infty$ for all $r \in \llbracket T_0, T_1 \rrbracket$ and we denote the measure in this case by $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, \infty, g}$. A $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, \infty, g}$-distributed random variable will be denoted by $\mathfrak{Q} = (Q_1, \dots, Q_k)$ where $k$ is the number of up-right paths in the ensemble. Our results will rely on the two monotonicity Lemmas \ref{MCLxy} and \ref{MCLfg} as well as the strong coupling between Bernoulli bridges and Brownian bridges from Theorem \ref{KMT}.
 
-\begin{lemma}\label{CurveSeparation} Fix $k, T\in\mathbb{N}$, $p\in (0,1)$. Define the constant
-	\[
-	C = \sqrt{8p(1-p)\log\frac{3}{1-(1-\epsilon)^{1/k}}}.
-	\]
-	Suppose $\vec{x},\vec{y}\in\mathfrak{W}_k$ are such that for $1\leq i\leq k$,
-	\begin{enumerate}[label=(\arabic*)]
-		
-		\item $T \geq y_i - x_i \geq 0$, 
-		
-		\item $x_i = x_1 - (i-1)\lceil C\sqrt{T}\rceil$ and $y_i = y_1 - (i-1)\lceil C\sqrt{T}\rceil$,
-		
-		\item $|y_1 - x_1 - pT| \leq K\sqrt{T}$ for a constant $K>0$.
-		
-	\end{enumerate}
-	Let $\mathfrak{L} = (L_1,\dots,L_k)$ be a line ensemble with law $\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}$, and let $E$ denote the event that $L_1(s) \geq \cdots \geq L_k(s)$ for $s\in[0,T]$. Then we can find $W_5 = W_5(p,k)$ so that for $T\geq W_5$,
-	\[
-	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}(E) \geq \big(1 - 3e^{-C^2/8p(1-p)}\big)^k
-	\]
-\end{lemma}
+
 
 
 
