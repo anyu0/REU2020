@@ -261,9 +261,13 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		\end{equation}
 		Thus Corollary \ref{Cheb} shows that $\mathbb{P}(\Delta(T,\overline{z})\geq \gamma\sqrt{T})<1/6$ for large enough $N$. This gives a lower bound on $\mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} (A)$ of $1/2 - 1/6 = 1/3$ as desired.
 		
-		Lastly, we show that $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 \geq \cdots \geq L_k\,|\,F) > 11/12$ for large $N$. Note that on the event $F$, $L_k^N$ lies uniformly below the line segment connecting $L_1^N(rN^\alpha)$ and $L_1^N(RN^\alpha)$. Thus after raising the endpoints to $\vec{x}\,',\vec{y}\,'$, the bottom curve $L_k$ lies uniformly at a distance of at least $C\sqrt{T}$ below the segment connecting $L_{k-1}(rN^\alpha)$ and $L_{k-1}(RN^\alpha)$, and moreover the endpoints of adjacent curves are at least $C\sqrt{T}$ apart. In view of \eqref{21zpT}, we see from Lemma \ref{CurveSeparation} applied with $\ell_{bot} = L_k$ that for large enough $N$ depending on $\lambda, r, R, C$, we have
+		Lastly, we show that $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 \geq \cdots \geq L_k\,|\,F) > 11/12$ for large $N$. Note that on the event $F$, $L_k^N$ lies uniformly below the line segment connecting $L_1^N(rN^\alpha)$ and $L_1^N(RN^\alpha)$. Thus after raising the endpoints to $\vec{x}\,',\vec{y}\,'$, the bottom curve $L_k$ lies uniformly at a distance of at least $C\sqrt{T}$ below the segment $\ell_{k-1}$ connecting $L_{k-1}(rN^\alpha)$ and $L_{k-1}(RN^\alpha)$, and moreover the endpoints of all adjacent curves are at least $C\sqrt{T}$ apart. Let $\ell_{bot}$ denote the segment $\ell_{k-1} - C\sqrt{T}$, so that $L_k \leq \ell_{bot}$. Then since $L_1,\dots,L_{k-1},\ell_{bot}$ are independent of $F$ under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$, we have 
 		\[
-		\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 \geq \cdots \geq L_k\,|\,F) \geq \big(1-3e^{-C^2/8p(1-p)}\big)^{k-1}.
+		\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 \geq \cdots \geq L_k\,|\,F) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} (L_1 \geq \cdots \geq L_{k-1} \geq \ell_{bot}).
+		\]
+		In view of \eqref{21zpT}, we see from Lemma \ref{CurveSeparation} that for large enough $N$ depending on $\lambda, r, R, C$, the probability on right is bounded below by
+		\[
+		\big(1-3e^{-C^2/8p(1-p)}\big)^{k-1}.
 		\]
 		Our choice of $C$ in \eqref{21Cdef} implies that this quantity is at least 11/12.\\
 		
