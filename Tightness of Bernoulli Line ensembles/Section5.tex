@@ -105,18 +105,18 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 	\end{align*}
 	The inequality follows from the assumption in (2) that $a+ps_4 \geq -MN^{\alpha/2}$. Moreover, since $b-ps > (6r+22)(2r+6)^{1/2}(M+1)N^{\alpha/2}$ and $a+ps_4 \leq MN^{\alpha/2}$, we have 
 	\[
-	b-a \geq p(s+s_4) + (6r+21)(2r+6)^{1/2}(M+1)N^{\alpha/2} \geq p(s+t_3) + (6r+21)(M+1)(s+s_4)^{1/2}.
+	b-a \geq p(s+s_4) + (6r+21)(2r+6)^{1/2}(M+1)N^{\alpha/2} \geq p(s+s_4) + (6r+21)(M+1)(s+s_4)^{1/2}.
 	\]  
 	The second inequality follows since $s+s_4 \leq 2s_4 \leq (2r+6)N^{\alpha}$. It follows from Lemma \ref{LemmaHalfS4} with $M_1 = 0$, $M_2 = (6r+21)(M+1)$ that for sufficiently large $N$, we have
 	\begin{equation}
 	\mathbb{P}^{0,s+s_4,0,b-a}_{Ber}\Big(\ell(s_4-s_3) \geq \frac{s_4-s_3}{s+s_4}[p(s+s_4) + M_2 N^{\alpha/2}] - (s+s_4)^{1/4}\Big) \geq 1/3, \label{4.2interp}
 	\end{equation}
 	for all $(a,b,s,\ell_{bot}) \in D(M)$ simultaneously. Note that $\frac{s_4-s_3}{s+s_4} \geq \frac{N^\alpha - 1}{(2r+6)N^\alpha} \geq \frac{1}{2r+7}$
-	for large $N$. Hence $\frac{s_4-s_3}{s+s_4}[p(s+t_3) + M_2 N^{\alpha/2}] - (s+s_4)^{1/4} \geq p(s+s_4) + 3(M+1)N^{\alpha/2} - (s+s_4)^{1/4}\geq p(s+s_4) + 2MN^{\alpha/2}$ for all large enough $N$. We conclude from \eqref{4.2interp} that
+	for large $N$. Hence $\frac{s_4-s_3}{s+s_4}[p(s+s_4) + M_2 N^{\alpha/2}] - (s+s_4)^{1/4} \geq p(s_4-s_3) + 3(M+1)N^{\alpha/2} - (s+s_4)^{1/4}\geq p(s_4-s_3) + 2MN^{\alpha/2}$ for all large enough $N$. We conclude from \eqref{4.2interp} that
 	\[
 	\mathbb{P}^{-s_4,s,a,b}_{Ber}\Big(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\Big) \geq 1/3
 	\]
-	uniformly in $a,b$ for large $N$. Now by the Gibbs property for $L^N$, we have for any $\ell\in\Omega(-s_4,s,a,b)$ that
+	uniformly in $a,b$ for large $N$. Now by the Schur Gibbs property for $L^N$, we have for any $\ell\in\Omega(-s_4,s,a,b)$ that
 	\[
 	\mathbb{P}(L_1^N|_{[-s_4,s]} = \ell\,|\,E(a,b,s,\ell_{bot})) = \mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}(\ell).
 	\]
@@ -191,7 +191,7 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 			
 			\item $0\leq y_i - x_i \leq (R-r)N^\alpha$ for $1\leq i\leq k$,
 			
-			\item $prN^\alpha - (\lambda r^2+\phi(\epsilon/8))N^{\alpha/2} < x_1 <  prN^\alpha - (\lambda r^2-\phi(\epsilon/8))N^{\alpha/2}$ and $pRN^\alpha - (\lambda R^2+\phi(\epsilon/8))N^{\alpha/2} < y_1 <  pRN^\alpha - (\lambda R^2-\phi(\epsilon/8))N^{\alpha/2}$.
+			\item $prN^\alpha - (\lambda r^2+\phi(\epsilon/16))N^{\alpha/2} < x_1 <  prN^\alpha - (\lambda r^2-\phi(\epsilon/16))N^{\alpha/2}$ and $pRN^\alpha - (\lambda R^2+\phi(\epsilon/16))N^{\alpha/2} < y_1 <  pRN^\alpha - (\lambda R^2-\phi(\epsilon/16))N^{\alpha/2}$.
 			
 		\end{enumerate}
 		Let $E(\vec{x},\vec{y})$ denote the subset of $F$ consisting of $L^N$ for which $L_i^N(rN^\alpha) = x_i$ and $L_i^N(RN^\alpha)=y_i$ for $1\leq i\leq k$, and $L_1^N(s) \geq \cdots \geq L_k^N(s)$ for all $s$. Then $D$ is countable, the $E(\vec{x},\vec{y})$ are pairwise disjoint, and $F = \bigcup_{(\vec{x},\vec{y})\in D} E(\vec{x},\vec{y})$.
@@ -229,7 +229,7 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		&\geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (A\,|\,F) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 \geq \cdots \geq L_k\,|\,F)\big) \nonumber\\
 		&= \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} (A) - \big( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} (L_1 \geq \cdots \geq L_k\,|\,F)\big). \label{21xyest}
 		\end{align}
-		For the first term in the last line, we used the Gibbs property and the fact that $A$ and $F$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. In Step 3, we will argue that the two probabilities in \eqref{21xyest} are bounded below by 1/3 and 11/12, respectively. Then $\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) \geq 1/3 - 1/12 = 1/4$ for large $N$ independent of $\vec{x},\vec{y}$, proving \eqref{21AEbound}.\\
+		For the first term in the last line, we used the Schur Gibbs property and the fact that $A$ and $F$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$. In Step 3, we will argue that the two probabilities in \eqref{21xyest} are bounded below by 1/3 and 11/12, respectively. Then $\mathbb{P}(A\,|\,E(\vec{x},\vec{y})) \geq 1/3 - 1/12 = 1/4$ for large $N$ independent of $\vec{x},\vec{y}$, proving \eqref{21AEbound}.\\
 		
 		\noindent\textbf{Step 3.} We first argue that $\mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} (A) > 1/3$ for sufficiently large $N$. Write 
 		\[
@@ -238,9 +238,9 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		and $\overline{z} = \overline{y}-\overline{x}$. We have
 		\begin{align}
 		& \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} (A)\nonumber\\
-		= \; &\mathbb{P}^{0,T,x_1',y_1'}_{Ber} \Big(L_1(T/2) - pN^\alpha \frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\phi(\epsilon/8)N^{\alpha/2}\Big)\nonumber\\
-		= \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - pN^\alpha\frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\big(\phi(\epsilon/8) + (k-1)\lceil C\sqrt{R-r}\,\rceil\big)N^{\alpha/2}\Big)\nonumber\\
-		\geq \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - \frac{\overline{x} + \overline{y}}{2} < \Big( \lambda\Big(\frac{R^2+r^2}{2}\Big) - \lambda\Big(\frac{R+r}{2}\Big)^2 - Ck\sqrt{R-r} - 2\phi(\epsilon/8)\Big)N^{\alpha/2}\Big). \label{21convex}
+		= \; &\mathbb{P}^{0,T,x_1',y_1'}_{Ber} \Big(L_1(T/2) - pN^\alpha \frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2}\Big)\nonumber\\
+		= \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - pN^\alpha\frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\big(\phi(\epsilon/16) + (k-1)\lceil C\sqrt{R-r}\,\rceil\big)N^{\alpha/2}\Big)\nonumber\\
+		\geq \; & \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\Big(L_1(T/2) - \frac{\overline{x} + \overline{y}}{2} < \Big( \lambda\Big(\frac{R^2+r^2}{2}\Big) - \lambda\Big(\frac{R+r}{2}\Big)^2 - Ck\sqrt{R-r} - 2\phi(\epsilon/16)\Big)N^{\alpha/2}\Big). \label{21convex}
 		\end{align}
 		The inequality in the last line follows from the definitions of $\overline{x},\overline{y}$. Observe that
 		\[
