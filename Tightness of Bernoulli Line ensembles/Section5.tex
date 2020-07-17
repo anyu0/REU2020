@@ -448,6 +448,66 @@ We will prove Lemma \ref{LemmaAP2} in the next section. In the remainder of this
 
 Let us put $t_{12} = \lfloor \frac{t_1 + t_2}{2} \rfloor$. We also let $A = \cdots$ and $B = \cdots $. 
 
+\begin{lemma}\label{LemmaBP2} For any $R > 0$ we can find $V_1^t, V_1^b \geq M_2 + R$, $h_1 > 0$ and $N_7 \in \mathbb{N}$ (depending on $R$) such that if $N \geq N_7$ we have
+		\begin{equation}\label{eqnRT2}
+		\mathbb{P}_{\tilde{\mathfrak{L}}} \left(  (2t_2)^{1/2} V_1^t \geq \tilde{L}_1(\pm t_{12}) \mp p t_{12} \geq \tilde{L}_{k-1}(\pm t_{12}) \mp p t_{12} \geq (2t_2)^{1/2} V_1^b  \right) \geq h_1.
+		\end{equation}
+	
+\end{lemma}
+
+
+\begin{proof}(Sketch of the proof of Lemma \ref{LemmaAP2}) We introduce some suggestive notation. For $\vec{c}, \vec{d} \in \mathfrak{W}_{k-1}$ and $\epsilon > 0$ we define
+	\begin{equation}
+	\begin{split}
+	&\tilde A(\vec{c}, \vec{d}) = \{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot}): L_{k-1}(\pm t_{1}) \mp pt_1 \geq (M_2 + 1) (2t_2)^{1/2} \} \\
+	&\tilde B(\vec{c}, \vec{d}, \epsilon) = \left\{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot}): \min_{\substack {i = 1, \dots, k-2 \\ \varsigma \in \{-1, 1\}} } L_{i}(\varsigma t_1) - L_{i+1}(\varsigma t_1) \geq 3\epsilon (2t_2)^{1/2} \right\} \\
+	&A(\vec{c}, \vec{d}) = \{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty): L_{k-1}(\pm t_{1}) \mp pt_1 \geq (M_2 + 1) (2t_2)^{1/2} \} \\
+	&B(\vec{c}, \vec{d}, \epsilon) = \left\{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty): \min_{\substack {i = 1, \dots, k-2 \\ \varsigma \in \{-1, 1\}} } L_{i}(\varsigma t_1) - L_{i+1}(\varsigma t_1) \geq 3\epsilon (2t_2)^{1/2} \right\}, \\
+	\end{split}
+	\end{equation} 
+	
+	{\bf \raggedleft Step 1.} Show in this step that there exists $R > 0$ sufficiently large so that if $c_{k-1} + pt_{12} \geq (2t_2)^{1/2} (M_2 + R)$ and $d_{k-1} - pt_{12} \geq (2t_2)^{1/2} (M_2 + R)$ then we have 
+	\begin{equation}
+	\begin{split}
+	\frac{|\tilde A(\vec{c}, \vec{d})|}{|\tilde{\Omega}(\vec{c}, \vec{d})|} \geq \frac{| A(\vec{c}, \vec{d})|}{|{\Omega}(\vec{c}, \vec{d})|} \geq  \frac{9}{10}, \mbox{ and }\frac{|\tilde{\Omega}(\vec{c}, \vec{d})|}{|{\Omega}(\vec{c}, \vec{d})|} \geq \frac{99}{100}.
+	\end{split}
+	\end{equation} 
+	where we have written $\tilde{\Omega}(\vec{c}, \vec{d})$ to mean ${\Omega}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot})$ and also $\Omega(\vec{c}, \vec{d})$ to mean ${\Omega}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot})$. In this step you should not use anything but the monotone coupling lemmas to push $\ell_{bot}$ to $-\infty$ -- this will give the first inequality. For the other inequalities one you need to spread $\vec{c}$ and $\vec{d}$ appart and use the monotone coupling lemmas together with Lemma 3.6 and Theorem 3.3.
+	
+	{\bf \raggedleft Step 2.} After you fix $R$ in Step 1, let $V_1^t, V_1^b$ and $h_1$ be as in Lemma \ref{LemmaBP2}  for this choice of $R$. Let 
+	$$E = \{ \vec{c}, \vec{d} \in \mathfrak{W}_{k-1}: (2t_2)^{1/2} V_1^t \geq \max(c_1 + p t_{12}, d_1 - pt_{12} \mbox{ and }\min(c_{k-1} + p t_{12}, d_{k-1} - pt_{12}  \geq (2t_2)^{1/2} V_1^b \}.$$
+	
+	Show in this step that there exists $V^{top} \geq M_2 + 6(k-1)$ such that for all $(\vec{c}, \vec{d}) \in E$ you have that 
+	\begin{equation}
+	\frac{|\tilde{C}(\vec{c}, \vec{d}, V^{top})|}{|\tilde{\Omega}(\vec{c},\vec{d})|}= \frac{|\{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot}): L_{1}(\pm t_{1}) \mp pt_1 \leq V^{top} (2t_2)^{1/2} \}|}{|\tilde{\Omega}(\vec{c}, \vec{d})|} \geq  \frac{9}{10}.
+	\end{equation}
+	To prove the above equation you again only need the monotone coupling lemmas together with Lemma 3.6 and Theorem 3.3.
+	
+	{\bf \raggedleft Step 3.} With $V_1^t$ and $V_1^b$ as in Step 2 show that there exists an $\epsilon > 0$ sufficiently small such that for $(\vec{c}, \vec{d}) \in E$ we have
+	\begin{equation}
+	\frac{|B(\vec{c}, \vec{d}, \epsilon)|}{|\Omega(\vec{c}, \vec{d})|} \geq  \frac{9}{10}.
+	\end{equation}
+	To prove the above you simply need to invoke Problem 20.
+	
+	{\bf \raggedleft Step 4.} Using the three inequalities above show that for all $(\vec{c}, \vec{d}) \in E$
+	\begin{equation}
+	\frac{|\tilde{B}(\vec{c}, \vec{d}, \epsilon) \cap \tilde{A}(\vec{c}, \vec{d}) \cap \tilde{C}(\vec{c}, \vec{d}, V^{top}) |}{|\tilde{\Omega}(\vec{c}, \vec{d})|} \geq  \frac{1}{2}.
+	\end{equation}
+	
+	What the above inequality says is that for all $(\vec{c}, \vec{d}) \in E$
+	$$\mathbb{P}_{avoid, Ber}^{-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot}} ( G) \geq \frac{1}{2},$$
+	where $G$ is the event that
+	
+	\begin{enumerate}
+		\item $V^{top} (2t_2)^{1/2} \geq L_1(-t_1) + p t_1 \geq L_{k-1}(-t_1) + pt_1 \geq (M_2 + 1) (2t_2)^{1/2}$;
+		\item $V^{top} (2t_2)^{1/2} \geq L_1(t_1) - p t_1 \geq L_{k-1}(t_1) - pt_1 \geq (M_2 + 1) (2t_2)^{1/2}$; 
+		\item $L_i(-t_1) -L_{i+1}(-t_1) \geq 3\epsilon (2t_2)^{1/2}$ and $L_i(t_1) -L_{i+1}(t_1)  \geq 3 \epsilon (2t_2)^{1/2}$ for $i = 1, \dots, k-2$.
+	\end{enumerate}
+	
+	
+	Now use Lemmas \ref{LemmaBP1} and \ref{LemmaBP2} to conclude the proof of Lemma \ref{LemmaAP2} with $g = g(\epsilon, V^{top}) > 0$ as in Lemma \ref{LemmaBP1} for the choice of $\epsilon$ from Step 3 and $V^{top}$ from Step 2, and $h = h_1 \cdot \frac{1}{2}$, where $h_1$ is as in Step 2.
+\end{proof}
+
 \begin{lemma}\label{LemmaBP2} We can find $V_1^t = [ M_2 + 6k A + B] (2t_2)^{1/2} $ and $[ M_2 + 6k A ] (2t_2)^{1/2} $ such that 
 	\begin{equation}\label{eqnRT2}
 	\mathbb{P}_{\tilde{\mathfrak{L}}} \left(  V_1^t \geq \tilde{L}_1(\pm t_{12}) \mp p t_{12} \geq \tilde{L}_{k-1}(\pm t_{12}) \mp p t_{12} \geq V_1^b  \right) \geq h_1.
