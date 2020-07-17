@@ -459,7 +459,7 @@ Let us put $t_{12} = \lfloor \frac{t_1 + t_2}{2} \rfloor$. We also let $A = \cdo
 \begin{proof}(Sketch of the proof of Lemma \ref{LemmaAP2}) We introduce some suggestive notation. For $\vec{c}, \vec{d} \in \mathfrak{W}_{k-1}$ and $\epsilon > 0$ we define
 	\begin{equation}
 	\begin{split}
-	&\tilde A(\vec{c}, \vec{d}) = \{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot}): L_{k-1}(\pm t_{1}) \mp pt_1 \geq (M_2 + 1) (2t_2)^{1/2} \} \\
+	&\tilde A(\vec{c}, \vec{d}) = \{\mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot}): L_{k-1}(\pm t_{1}) \mp pt_1 \geq (M_2 + 1) (2t_2)^{1/2} \} \\
 	&\tilde B(\vec{c}, \vec{d}, \epsilon) = \left\{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot}): \min_{\substack {i = 1, \dots, k-2 \\ \varsigma \in \{-1, 1\}} } L_{i}(\varsigma t_1) - L_{i+1}(\varsigma t_1) \geq 3\epsilon (2t_2)^{1/2} \right\} \\
 	&A(\vec{c}, \vec{d}) = \{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty): L_{k-1}(\pm t_{1}) \mp pt_1 \geq (M_2 + 1) (2t_2)^{1/2} \} \\
 	&B(\vec{c}, \vec{d}, \epsilon) = \left\{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty): \min_{\substack {i = 1, \dots, k-2 \\ \varsigma \in \{-1, 1\}} } L_{i}(\varsigma t_1) - L_{i+1}(\varsigma t_1) \geq 3\epsilon (2t_2)^{1/2} \right\}, \\
@@ -483,11 +483,12 @@ Let us put $t_{12} = \lfloor \frac{t_1 + t_2}{2} \rfloor$. We also let $A = \cdo
 	\end{equation}
 	To prove the above equation you again only need the monotone coupling lemmas together with Lemma 3.6 and Theorem 3.3.
 	
-	{\bf \raggedleft Step 3.} With $V_1^t$ and $V_1^b$ as in Step 2 show that there exists an $\epsilon > 0$ sufficiently small such that for $(\vec{c}, \vec{d}) \in E$ we have
-	\begin{equation}
+	{\bf \raggedleft Step 3.} With $V_1^t$ and $V_1^b$ as in Step 2 we know that there exists an $\epsilon > 0$ sufficiently small such that for $(\vec{c}, \vec{d}) \in E$ we have
+	\begin{equation}\label{LemmaBP2Step3}
 	\frac{|B(\vec{c}, \vec{d}, \epsilon)|}{|\Omega(\vec{c}, \vec{d})|} \geq  \frac{9}{10}.
 	\end{equation}
-	To prove the above you simply need to invoke Problem 20.
+	
+	We know the existence of $\epsilon$ by two applications of [Enter Citation to Problem 20] with the first application have $s=s_1$ with $s_1\cdot 2t_{12}=-t_1$ and in the second application we have $s=s_2$ with $s_2\cdot 2t_{12}=t_1$, and in both applications we have $M_1,M_2=\max\{\abs*{V_1^t},\abs*{V_1^b}\}$ and $\delta=\frac{9}{10}$. This duel application yields $T_0^1, T_0^2$ and $\epsilon_1, \epsilon_2$ such that if $2t_2>\max\{T_0^1, T_0^2\}$, which can be ensured by picking a sufficiently large $N_6$ such that $N>N_6$ implies $2t_2=2\floor{(r+2)N^\alpha}>\max\{T_0^1, T_0^2\}$ and $\epsilon=\max\{\epsilon_1,\epsilon_2\}$ we get the desired inequality, \ref{LemmaBP2Step3}.
 	
 	{\bf \raggedleft Step 4.} Using the three inequalities above show that for all $(\vec{c}, \vec{d}) \in E$
 	\begin{equation}
