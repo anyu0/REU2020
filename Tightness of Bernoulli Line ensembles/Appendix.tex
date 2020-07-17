@@ -352,7 +352,7 @@ Similarly, $(\lambda_{i}-x_{j}^{T}-i+j)!=$
 \end{align}
 Plugging (\ref{factorial1}), (\ref{factorial2}) and (\ref{factorial3}) into equation (\ref{h}) we get $h_{\lambda_{i}-x^{T}_{j}+j-i}(1^{\lfloor tT \rfloor})=$
 \begin{align*}
-	\sqrt{2\pi}^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}\cdot &\text{Exp}\bigg\{((p+1)tT)\log((p+1)tT)-(ptT)\log(ptT)-(tT)\log(tT)\\
+	\sqrt{2\pi}^{-1} & \sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}\cdot\text{Exp}\bigg\{((p+1)tT)\log((p+1)tT)-(ptT)\log(ptT)-(tT)\log(tT)\\
 	& +(-i+j)\log(\frac{p+1}{p})-\log(p+1)+(z_{i}-a_{j})\sqrt{T}\cdot \log(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^{2}}{p(p+1)t}+o(1)\bigg\}
 \end{align*}
 where the constant in little $o$ notation only depends on $A,p$ and does not depend on $T$.
@@ -366,7 +366,7 @@ Denote $S_{1}(p,t,T)=\big((p+1)tT)\log((p+1)tT\big)-(ptT)\log(ptT)-(tT)\log(tT)$
 \end{align*}
 where the constant $c_{1}(p,t)=\frac{1}{p(p+1)t}$.
 
-Analogously, we calculate the other $2$ determinants in equation \ref{J-T}:
+Analogously, we calculate the other two determinants in equation \ref{J-T}:
 \begin{align*}
 	\det \left(h_{y_{i}-\lambda_{j}-i+j}(1^{T-\lfloor tT \rfloor})\right)&= \left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p(1-t)}}\sqrt{T}^{-1}\cdot e^{S_{2}(p,t,T)-\log(p+1)}\right]^{k}\left(\frac{p+1}{p}\right)^{\sum_{i=1}^{k}(b_{i}-z_{i})\cdot\sqrt{T}} \\
 	& \cdot e^{-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^2)}\cdot \det\left(e^{c_{2}(p,t)b_{i}z_{j}+o(1)}\right)_{i,j=1}^{k}\\
@@ -469,7 +469,7 @@ In the equation, $\sigma!=\sigma_{1}!\sigma_{2}!\cdots\sigma_{n}!$ is the factor
 
 We also need some knowledge about \emph{permutation}. Suppose $s_{n}$ is a permutation of $n$ non-negative integers, for example $\{1,\cdots,n\}$, and $s_{n}(i)$ represents the $i$-$th$ element in the permutation $s_{n}$. We define \emph{the number of inversions} of $s_{n}$ by $I(s_{n})=\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}\mathbbm{1}_{\{s_{n}(i)>s_{n}(j)\}}$. For example, the permutation $s_{n}=(1,\cdots,n)$ has $0$ number of inversions, while the permutation $s_{5}=(3,2,5,1,4)$ has number of inversions $5(2+1+2+0+0)$. Define the sign of permutation $s_{n}$ by $sgn(s_{n})=(-1)^{I(s_{n})}$. For instance, $sgn((1,\cdots,n))=1$ and $sgn(s_{5})=-1$ in the previous example.
 
-Then, we introduce some notations associated with Proposition \ref{WeakConvCollide} in order to better discuss the problem. Denote
+Then, we introduce some notations associated with Proposition \ref{WeakConvCollide} in order to better discuss the problem. Recall that
 \begin{align*}
 	&\vec{a}_{0}=(\underbrace{\alpha_{1},\cdots,\alpha_{1}}_{m_{1}},\cdots,\underbrace{\alpha_{p},\cdots,\alpha_{p}}_{m_{p}})\\
 	&\vec{b}_{0}=(\underbrace{\beta_{1},\cdots,\beta_{1}}_{n_{1}},\cdots,\underbrace{\beta_{q},\cdots,\beta_{q}}_{n_{q}})
