@@ -297,7 +297,7 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		We claim that $B_N(M,R)$ can be written as a countable disjoint union of sets $E(a,b,\vec{x},\vec{y})$. Let $D_N(M)$ be the collection of tuples $(a,b,\vec{x},\vec{y})$ satisfying 
 		\begin{enumerate}[label=(\arabic*)]
 			
-			\item $a,b\in[rN^\alpha,RN^\alpha]$.
+			\item $a,b\in[(r+2)N^\alpha,RN^\alpha]$.
 			
 			\item $0 \leq y_i - x_i \leq b+a$, $x_k + pa > - MN^{\alpha/2}$, and $y_k - pb > - MN^{\alpha/2}$.
 			
@@ -314,7 +314,7 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		
 		\noindent\textbf{Step 1.} We will prove in the steps below that for large enough $N$,
 		\begin{equation}\label{4.3AEbound}
-		\mathbb{P}(A_N(R_2)\,|\,E(a,b,\vec{x},\vec{y}) < \epsilon/2
+		\mathbb{P}(A_N(R_2)\,|\,E(a,b,\vec{x},\vec{y})) < \epsilon/2
 		\end{equation}
 		uniformly in $a,b,\vec{x},\vec{y}$. In this step, we prove the lemma assuming this fact.
 		
@@ -330,7 +330,7 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		\end{equation*}
 		for large enough $N$.\\
 		
-		\noindent\textbf{Step 2.} We next prove \eqref{4.3AEbound}, assuming results from Steps 3 and 4 below. Define $\vec{x}\,',\vec{y}\,'$ by
+		\noindent\textbf{Step 2.} We next prove \eqref{4.3AEbound}, assuming results from Steps 3 below. Define $\vec{x}\,',\vec{y}\,'$ by
 		\begin{align*}
 		x_i' &= \lfloor - pa - MN^{\alpha/2}\rfloor - (i-1)\lceil CN^{\alpha/2}\rceil,\\
 		y_i' &= \lfloor pb - MN^{\alpha/2}\rfloor - (i-1)\lceil CN^{\alpha/2}\rceil.
@@ -371,7 +371,7 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 		\begin{equation}\label{4.3avoid}
 		\mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber}(F) \geq \big(1 - 3e^{-(C')^2/8p(1-p)}\big)^k \geq \big(1 - 3e^{-C^2/16p(1-p)R}\big)^k.
 		\end{equation}
-		Here, we used the fact that $a'+b' \leq 2R$, hence $C' \geq C/\sqrt{2R}$. The constant $T_0$ depends in particular on $C'$, hence possibly on $a+b$. Referring to the proofs of Lemmas \ref{CurveSeparation} and \ref{Cheb}, we see that the dependency of $T_0$ on $C'$ amounts to requiring that $e^{-C'\sqrt{T_0}}$ be sufficiently small. But $C' \geq C/2R$, so for this it suffices to choose $T_0$ depending on $C$ and $R$. Moreover, $T\geq 2rN^\alpha$, so as long as $N \geq (T_0/2r)^{1/\alpha}$, we have the bound in \eqref{4.3avoid} independent $a,b,\vec{x},\vec{y}$. Our choice of $C$ in \eqref{4.3Cdef} ensures that the expression on the right in \eqref{4.3avoid} is $> 1/2$, proving \eqref{4.3denom}
+		Here, we used the fact that $a'+b' \leq 2R$, hence $C' \geq C/\sqrt{2R}$. The constant $T_0$ depends in particular on $C'$, hence possibly on $a+b$. Referring to the proofs of Lemmas \ref{CurveSeparation} and \ref{Cheb}, we see that the dependency of $T_0$ on $C'$ amounts to requiring that $e^{-C'\sqrt{T_0}}$ be sufficiently small. But $C' \geq C/\sqrt{2R}$, so for this it suffices to choose $T_0$ depending on $C$ and $R$. Moreover, $T\geq 2rN^\alpha$, so as long as $N \geq (T_0/2r)^{1/\alpha}$, we have the bound in \eqref{4.3avoid} independent $a,b,\vec{x},\vec{y}$. Our choice of $C$ in \eqref{4.3Cdef} ensures that the expression on the right in \eqref{4.3avoid} is $> 1/2$, proving \eqref{4.3denom}
 		
 	\end{proof}
 	
