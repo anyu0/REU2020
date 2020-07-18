@@ -439,14 +439,14 @@ We will prove Lemma \ref{LemmaAP2} in the next section. In the remainder of this
 
 	\begin{proof}
 		
-		Observe by the rightmost inequalities in conditions (1) and (2) in the hypothesis, as well as condition (1) in Lemma \ref{LemmaAP1}, that $\ell_{bot}$ lies a distance of at least $2\epsilon(2t_2)^{1/2}$ uniformly below the line segment connecting $a_{k-1}$ and $b_{k-1}$. Also note that (1) and (2) imply $|b_i-a_i-pT| \leq (V^{top} - M_2)\sqrt{T}$ for each $i$. Lastly noting (3), we see that the conditions of Lemma \ref{CurveSeparation} are satisfied with $C = 2\epsilon$. This implies \eqref{eqnRT}, with
+		Observe by the rightmost inequalities in conditions (1) and (2) in the hypothesis, as well as condition (1) in Lemma \ref{LemmaAP1}, that $\ell_{bot}$ lies a distance of at least $2\epsilon(2t_2)^{1/2}$ uniformly below the line segment connecting $a_{k-1}$ and $b_{k-1}$. Also note that (1) and (2) imply $|b_i-a_i-2pt_1| \leq (V^{top} - M_2)(2pt_1)^{1/2}$ for each $i$. Lastly noting (3), we see that the conditions of Lemma \ref{CurveSeparation} are satisfied with $C = 2\epsilon$. This implies \eqref{eqnRT}, with
 		\[
 		g = \big(1 - 3e^{-\epsilon^2/2p(1-p)}\big)^{k-1}.
 		\]
 		
 	\end{proof}
 
-Let us put $t_{12} = \lfloor \frac{t_1 + t_2}{2} \rfloor$. We also let $A = \cdots$ and $B = \cdots $. 
+Let us put $t_{12} = \lfloor \frac{t_1 + t_2}{2} \rfloor$.
 
 \begin{lemma}\label{LemmaBP2} For any $R > 0$ we can find $V_1^t, V_1^b \geq M_2 + R$, $h_1 > 0$ and $N_7 \in \mathbb{N}$ (depending on $R$) such that if $N \geq N_7$ we have
 		\begin{equation}\label{eqnRT2}
@@ -462,17 +462,51 @@ Let us put $t_{12} = \lfloor \frac{t_1 + t_2}{2} \rfloor$. We also let $A = \cdo
 	&\tilde A(\vec{c}, \vec{d}) = \{\mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot}): L_{k-1}(\pm t_{1}) \mp pt_1 \geq (M_2 + 1) (2t_2)^{1/2} \} \\
 	&\tilde B(\vec{c}, \vec{d}, \epsilon) = \left\{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot}): \min_{\substack {i = 1, \dots, k-2 \\ \varsigma \in \{-1, 1\}} } L_{i}(\varsigma t_1) - L_{i+1}(\varsigma t_1) \geq 3\epsilon (2t_2)^{1/2} \right\} \\
 	&A(\vec{c}, \vec{d}) = \{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty): L_{k-1}(\pm t_{1}) \mp pt_1 \geq (M_2 + 1) (2t_2)^{1/2} \} \\
-	&B(\vec{c}, \vec{d}, \epsilon) = \left\{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty): \min_{\substack {i = 1, \dots, k-2 \\ \varsigma \in \{-1, 1\}} } L_{i}(\varsigma t_1) - L_{i+1}(\varsigma t_1) \geq 3\epsilon (2t_2)^{1/2} \right\}, \\
+	&B(\vec{c}, \vec{d}, \epsilon) = \left\{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty): \min_{\substack {i = 1, \dots, k-2 \\ \varsigma \in \{-1, 1\}} } L_{i}(\varsigma t_1) - L_{i+1}(\varsigma t_1) \geq 3\epsilon (2t_2)^{1/2} \right\}. \\
 	\end{split}
-	\end{equation} 
+	\end{equation} \\
 	
-	{\bf \raggedleft Step 1.} Show in this step that there exists $R > 0$ sufficiently large so that if $c_{k-1} + pt_{12} \geq (2t_2)^{1/2} (M_2 + R)$ and $d_{k-1} - pt_{12} \geq (2t_2)^{1/2} (M_2 + R)$ then we have 
-	\begin{equation}
+	{\bf \raggedleft Step 1.} In this step, we show that there is an $R > 0$ sufficiently large so that if $c_{k-1} + pt_{12} \geq (2t_2)^{1/2} (M_2 + R)$ and $d_{k-1} - pt_{12} \geq (2t_2)^{1/2} (M_2 + R)$, then we have 
+	\begin{equation}\label{5.8step1}
 	\begin{split}
-	\frac{|\tilde A(\vec{c}, \vec{d})|}{|\tilde{\Omega}(\vec{c}, \vec{d})|} \geq \frac{| A(\vec{c}, \vec{d})|}{|{\Omega}(\vec{c}, \vec{d})|} \geq  \frac{9}{10}, \mbox{ and }\frac{|\tilde{\Omega}(\vec{c}, \vec{d})|}{|{\Omega}(\vec{c}, \vec{d})|} \geq \frac{99}{100}.
+	\frac{|\tilde A(\vec{c}, \vec{d})|}{|\tilde{\Omega}(\vec{c}, \vec{d})|} \geq \frac{| A(\vec{c}, \vec{d})|}{|{\Omega}(\vec{c}, \vec{d})|} \geq  \frac{9}{10} \quad \mathrm{and} \quad \frac{|\tilde{\Omega}(\vec{c}, \vec{d})|}{|{\Omega}(\vec{c}, \vec{d})|} \geq \frac{99}{100}.
 	\end{split}
 	\end{equation} 
-	where we have written $\tilde{\Omega}(\vec{c}, \vec{d})$ to mean ${\Omega}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot})$ and also $\Omega(\vec{c}, \vec{d})$ to mean ${\Omega}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot})$. In this step you should not use anything but the monotone coupling lemmas to push $\ell_{bot}$ to $-\infty$ -- this will give the first inequality. For the other inequalities one you need to spread $\vec{c}$ and $\vec{d}$ appart and use the monotone coupling lemmas together with Lemma 3.6 and Theorem 3.3.
+	Here, we have written $\tilde{\Omega}(\vec{c}, \vec{d})  = {\Omega}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot})$ and $\Omega(\vec{c}, \vec{d}) = {\Omega}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty)$. The first inequality in \eqref{5.8step1} follows immediately from Lemma \ref{MCLfg}. 
+	
+	For the second inequality, define the constant
+	\[
+	C = \sqrt{8p(1-p)\log\frac{3}{1-(199/200)^{1/(k-1)}}}
+	\]
+	and vectors $\vec{c}\,', \vec{d}\,' \in \mathfrak{W}_k$ by
+	\begin{align*}
+	c_i' &= \lfloor -pt_{12} + (M_2+R)(2t_2)^{1/2}\rfloor - (i-1)\lceil C(2t_{12})^{1/2}\rceil,\\
+	d_i' &= \lfloor pt_{12} + (M_2+R)(2t_2)^{1/2}\rfloor - (i-1)\lceil C(2t_{12})^{1/2}\rceil.
+	\end{align*}
+	Then by Lemma \ref{MCLxy} and the Schur Gibbs property,
+	\begin{equation}\label{5.8step1split}
+	\begin{split}
+	\mathbb{P}^{-t_{12}, t_{12}, \vec{c}, \vec{d}}_{avoid, Ber} (A(\vec{c}, \vec{d})) &\geq \mathbb{P}^{-t_{12}, t_{12}, \vec{c}\,', \vec{d}\,'}_{avoid, Ber}(A(\vec{c}\,', \vec{d}\,'))\\ 
+	&\geq \mathbb{P}^{-t_{12}, t_{12}, c_{k-1}', d_{k-1}'}_{Ber}\Big(\ell(\pm t_1) \mp pt_1 \geq (M_2+1)(2t_2)^{1/2}\Big)\\
+	&\qquad - \big( 1 - \mathbb{P}^{-t_{12}, t_{12}, \vec{c}\,', \vec{d}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1})\big).
+	\end{split}
+	\end{equation}
+	By Lemma \ref{CurveSeparation} and our choice of $C$, $\mathbb{P}^{-t_{12}, t_{12}, \vec{c}\,', \vec{d}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1})>199/200>19/20$ for sufficiently large $N$. Writing $z = d_{k-1}' - c_{k-1}'$, the term in the second line of \eqref{5.8step1split} is equal to
+	\begin{align*}
+	&\mathbb{P}^{-t_{12}, t_{12}, 0, z}_{Ber}\Big(\ell(\pm t_1) \mp pt_1 + c_{k-1}' \geq (M_2 + 1)(2t_2)^{1/2}\Big)\\
+	\geq \; & \mathbb{P}^{0, 2t_{12}, 0, z}_{Ber}\Big(\ell(\pm t_1) \mp pt_1 \geq (-R+Ck+1)(2t_2)^{1/2}\Big)\\
+	\geq \; & \mathbb{P}^{0, 2t_{12}, 0, z}_{Ber}\Big(\inf_{s\in[0,2t_{12}]}\big(\ell(s) - ps\big) \geq -(R-Ck-1)(2t_{12})^{1/2}\Big).
+	\end{align*}
+	In the second line, we used the estimate $c_{k-1}' \geq -pt_{12} + (M_2+R-Ck)(2t_2)^{1/2}$. Now by Lemma \ref{LemmaMinFreeS4}, we can choose $R$ large enough depending on $C,k,M_2,p$ so that this probability is $>19/20$ for sufficiently large $N$. This gives a lower bound in \eqref{5.8step1split} of $19/20 - 1/20 = 9/10$, proving the second inequality in \eqref{5.8step1}.
+	
+	We prove the third inequality similarly. Note that since $\ell_{bot}(s) \leq ps + M_2(2t_2)^{1/2}$ on $[-t_2,t_2]$ by assumption, we have
+	\begin{align*}
+	\frac{|\tilde{\Omega}(\vec{c},\vec{d})|}{|\Omega(\vec{c},\vec{d})|} &\geq \mathbb{P}^{-t_{12}, t_{12}, \vec{c},\vec{d}}_{avoid, Ber}\Big(\inf_{s\in[-t_{12}, t_{12}]} \big(L_{k-1}(s) - ps\big) \geq M_2(2t_2)^{1/2}\Big)\\
+	&\geq \mathbb{P}^{-t_{12}, t_{12}, \vec{c}\,',\vec{d}\,'}_{avoid, Ber}\Big(\inf_{s\in[-t_{12}, t_{12}]} \big(L_{k-1}(s) - ps\big) \geq M_2(2t_2)^{1/2}\Big)\\
+	&\geq \mathbb{P}^{0, 2t_{12}, 0, z}_{Ber}\Big(\inf_{s\in[0, 2t_{12}]} \big(\ell(s) - ps\big) \geq -(R-Ck)(2t_2)^{1/2}\Big)\\
+	&\qquad - \big(1 - \mathbb{P}^{-t_{12},t_{12},\vec{c}\,',\vec{d}\,'}_{Ber}(L_1\geq \cdots \geq L_{k-1})\big).
+	\end{align*}
+	We enlarge $R$ if necessary so that the probability in the third line is $>199/200$ by Lemma \ref{LemmaMinFreeS4}, and \ref{CurveSeparation} implies as above that the expression in the last line is $>-1/200$. This gives us a lower bound of $199/200 - 1/200 = 99/100$ as desired.\\
 	
 	{\bf \raggedleft Step 2.} After you fix $R$ in Step 1, let $V_1^t, V_1^b$ and $h_1$ be as in Lemma \ref{LemmaBP2}  for this choice of $R$. Let 
 	$$E = \{ \vec{c}, \vec{d} \in \mathfrak{W}_{k-1}: (2t_2)^{1/2} V_1^t \geq \max(c_1 + p t_{12}, d_1 - pt_{12} \mbox{ and }\min(c_{k-1} + p t_{12}, d_{k-1} - pt_{12}  \geq (2t_2)^{1/2} V_1^b \}.$$
@@ -488,7 +522,7 @@ Let us put $t_{12} = \lfloor \frac{t_1 + t_2}{2} \rfloor$. We also let $A = \cdo
 	\frac{|B(\vec{c}, \vec{d}, \epsilon)|}{|\Omega(\vec{c}, \vec{d})|} \geq  \frac{9}{10}.
 	\end{equation}
 	
-	We know the existence of $\epsilon$ by two applications of [Enter Citation to Problem 20] with the first application have $s=s_1$ with $s_1\cdot 2t_{12}=-t_1$ and in the second application we have $s=s_2$ with $s_2\cdot 2t_{12}=t_1$, and in both applications we have $M_1,M_2=\max\{\abs*{V_1^t},\abs*{V_1^b}\}$ and $\delta=\frac{9}{10}$.\footnote{Note that $s_1$ and $s_2$ actually change slightly with $N$ due to the floor functions. This can essentially be ignored for both, since e.g. we know $$\frac{(2r+2)N^\alpha-2}{(2r+3)N^\alpha-2}\leq\frac{\floor{(r+1)N^\alpha}}{2\floor{\frac{\floor{(r+1)N^\alpha}+\floor{(r+2)N^\alpha}}{2}}}=\frac{t_1}{2t_{12}}=s_1\leq \frac{2r+2}{2r+3}$$ which allows us to squeeze the random variable in the proof of [Cite Problem 20] and achieve the same result}
+	We know the existence of $\epsilon$ by two applications of [Enter Citation to Problem 20] with the first application have $s=s_1$ with $s_1\cdot 2t_{12}=-t_1$ and in the second application we have $s=s_2$ with $s_2\cdot 2t_{12}=t_1$, and in both applications we have $M_1,M_2=\max\{\abs*{V_1^t},\abs*{V_1^b}\}$ and $\delta=\frac{9}{10}$.\footnote{Note that $s_1$ and $s_2$ actually change slightly with $N$ due to the floor functions. This can essentially be ignored for both, since we know $$\frac{r}{2r+4} \leq \frac{(r+1)N^\alpha - 1}{(2r+3)N^\alpha + 2} \leq \frac{t_1}{2t_{12}} \leq \frac{(r+1)N^\alpha + 1}{(2r+3)N^\alpha - 2} \leq \frac{r+2}{2r+2}.$$ In particular, $s_1,s_2$ lies in a compact window, which allows us to squeeze the random variable in the proof of [Cite Problem 20] and achieve the same result.}
 	This duel application yields $T_0^1, T_0^2$ and $\epsilon_1, \epsilon_2$ such that if $2t_2>\max\{T_0^1, T_0^2\}$, which can be ensured by picking a sufficiently large $N_6$ such that $N>N_6$ implies $2t_2=2\floor{(r+2)N^\alpha}>\max\{T_0^1, T_0^2\}$ and $\epsilon=\max\{\epsilon_1,\epsilon_2\}$ we get the desired inequality, \ref{LemmaBP2Step3}.
 	
 	{\bf \raggedleft Step 4.} Using the three inequalities above show that for all $(\vec{c}, \vec{d}) \in E$
@@ -509,19 +543,6 @@ Let us put $t_{12} = \lfloor \frac{t_1 + t_2}{2} \rfloor$. We also let $A = \cdo
 	
 	Now use Lemmas \ref{LemmaBP1} and \ref{LemmaBP2} to conclude the proof of Lemma \ref{LemmaAP2} with $g = g(\epsilon, V^{top}) > 0$ as in Lemma \ref{LemmaBP1} for the choice of $\epsilon$ from Step 3 and $V^{top}$ from Step 2, and $h = h_1 \cdot \frac{1}{2}$, where $h_1$ is as in Step 2.
 \end{proof}
-
-\begin{lemma}\label{LemmaBP2} We can find $V_1^t = [ M_2 + 6k A + B] (2t_2)^{1/2} $ and $[ M_2 + 6k A ] (2t_2)^{1/2} $ such that 
-	\begin{equation}\label{eqnRT2}
-	\mathbb{P}_{\tilde{\mathfrak{L}}} \left(  V_1^t \geq \tilde{L}_1(\pm t_{12}) \mp p t_{12} \geq \tilde{L}_{k-1}(\pm t_{12}) \mp p t_{12} \geq V_1^b  \right) \geq h_1.
-	\end{equation}
-\end{lemma}
-
-\begin{lemma}\label{LemmaBP2} We can find $V^t = \cdots $ and $\epsilon$  such that 
-	\begin{equation}\label{eqnRT2}
-	\mathbb{P}_{\tilde{\mathfrak{L}}} \left(  E  \right) \geq h_2,
-	\end{equation}
-	where $E$ is the event that $\vec{a} = \tilde{\mathfrak{L}}(-t_1)$ and $\vec{b} = \tilde{\mathfrak{L}}(t_1)$ satisfy the conditions of Lemma \ref{LemmaBP1}.
-\end{lemma}
 		
 	
 	
