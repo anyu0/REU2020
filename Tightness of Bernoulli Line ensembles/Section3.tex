@@ -155,6 +155,31 @@ If $M_1, M_2 = 0$ then Lemma \ref{LemmaHalfS4} states that if a Bernoulli bridge
 	By Lemma \ref{BBmax}, the first term in \eqref{MinFreeS4ineq} is equal to $e^{-A^2/2p(1-p)}$. If we choose $A \geq \sqrt{2p(1-p)\log(2/\epsilon)}$, then this is $\leq \epsilon/2$. If we also take $A > 2M$, then since $|B-pT| \leq (M+1)\sqrt{T}$, Corollary \ref{Cheb} gives us a $W_1$ large enough depending on $M,p,\epsilon$ so that the second term in \eqref{MinFreeS4ineq} is also $<\epsilon/2$ for $T\geq W_1$. Adding the two terms gives \eqref{minFree1S4}.
 \end{proof}
 
+\begin{lemma}\label{LemmaMaxFreeS4} Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $y\in \mathbb{Z}$ such that $T \geq y \geq 0$, and suppose that $\ell$ has distribution $\mathbb{P}^{0,T,0,y}_{Ber}$. Let $M > 0$ and $\epsilon > 0$ be given. Then we can find $W_2=W_2(M,p, \epsilon) \in \mathbb{N}$ and $A'=A'(M,p, \epsilon) > 0$ such that for $T \geq W_1$, $ y \leq p T +  MT^{1/2}$ we have
+	\begin{equation}\label{maxFree1S4}
+	\mathbb{P}^{0,T,0,y}_{Ber}\Big( \sup_{s \in [ 0, T]}\big( \ell(s) -  ps \big) \geq A'T^{1/2} \Big) \leq \epsilon.
+	\end{equation}
+\end{lemma}
+\begin{remark} Lemma \ref{LemmaMaxFreeS4} is similar to the previous lemma. It states that if a Bernoulli bridge $\ell$ is started from $(0,0)$ and terminates at $(T,y)$ with $(T,y)$ not significantly higher than the straight line of slope $p$, then the event that $\ell$ goes significantly above the straight line of slope $p$ is very unlikely.
+\end{remark}
+\begin{proof}
+	The proof is nearly identical to that of Lemma \ref{LemmaMinFreeS4}. By Lemma \ref{MCLxy}, we have
+	\[
+	\mathbb{P}^{0,T,0,y}_{Ber}\Big( \sup_{s \in [ 0, T]}\big( \ell(s) -  ps \big) \geq A'T^{1/2} \Big) \leq \mathbb{P}^{0,T,0,B}_{Ber}\Big( \sup_{s \in [ 0, T]}\big( \ell(s) -  ps \big) \geq A'T^{1/2} \Big),
+	\]
+	where $B=\lceil pT + MT^{1/2}\rceil$. By Theorem \ref{KMT}, there is a probability space $(\Omega,\mathcal{F},\mathbb{P})$ supporting a random variable $\ell^{(T,B)}$ whose law under $\mathbb{P}$ is that of $\ell$, and a Brownian bridge $B^\sigma$ with variance $\sigma^2 = p(1-p)$. We have
+	\begin{align}
+	&\mathbb{P}^{0,T,0,B}_{Ber}\Big( \sup_{s \in [ 0, T]}\big( \ell(s) -  ps \big) \geq A'T^{1/2} \Big) = \mathbb{P}\Big( \sup_{s \in [ 0, T]}\big( \ell^{(T,B)}(s) -  ps \big) \geq A'T^{1/2} \Big)\nonumber\\
+	\leq \; & \mathbb{P}\Big( \sup_{s \in [ 0, T]}  \sqrt{T}B^\sigma_{s/T} \geq \frac{1}{2}A'T^{1/2} \Big) + \mathbb{P}\Big( \sup_{s\in [0,T]} \Big|\sqrt{T} B^\sigma_{s/T} + ps - \ell^{(T,B)}(s) \Big| \geq \frac{1}{2}A'T^{1/2} \Big)\nonumber\\
+	\leq \; & \mathbb{P}\Big( \max_{s\in[0,T]} B^\sigma_{s/T} \geq A'/2 \Big) + \mathbb{P}\Big(\Delta(T,B) \geq \frac{1}{2}A'T^{1/2} - MT^{1/2} - 1\Big). \label{MaxFreeS4ineq}
+	\end{align}
+	For the second term in the last line, we used the fact that
+	\begin{align*}
+	\sup_{s\in[0,T]}\Big| ps - \frac{s}{T}\cdot B \Big| &\leq \sup_{s\in[0,T]}\Big| ps - \frac{pT-MT^{1/2}}{T}\cdot s \Big| + 1 = MT^{1/2} + 1.
+	\end{align*}
+	By Lemma \ref{BBmax}, the first term in \eqref{MaxFreeS4ineq} is equal to $e^{-(A')^2/2p(1-p)}$. If we choose $A' \geq \sqrt{2p(1-p)\log(2/\epsilon)}$, then this is $\leq \epsilon/2$. If we also take $A' > 2M$, then since $|B-pT| \leq (M+1)\sqrt{T}$, Corollary \ref{Cheb} gives us a $W_2$ large enough depending on $M,p,\epsilon$ so that the second term in \eqref{MaxFreeS4ineq} is also $<\epsilon/2$ for $T\geq W_2$. Adding the two terms gives \eqref{maxFree1S4}.
+\end{proof}
+
 \begin{lemma}\label{LemmaTailS4}Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $x, y\in \mathbb{Z}$ such that $T \geq y-x \geq 0$, and suppose that $\ell$ has distribution $\mathbb{P}^{0,T,x,y}_{Ber}$. Let $M_1,M_2 > 0$ be given. Then we can find $W_2 = W_2(M_1,M_2,p) \in \mathbb{N}$ such that for $T \geq W_2$, $ x \geq -M_1T^{1/2}$, $ y \geq pT -  M_1T^{1/2}$ and $t\in(0,1)$ we have
 \begin{equation}\label{halfEq2S4}
 \mathbb{P}^{0,T,x,y}_{Ber}\bigg( \ell(tT)  \geq t(M_2T^{1/2} + pT) - T^{1/4} \bigg) \geq (1/2) (1 - \Phi^{v}(M_1 + M_2) ),
