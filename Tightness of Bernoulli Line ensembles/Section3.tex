@@ -403,3 +403,110 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	In the fourth line, we used the fact that $\xi$, $B^1_\cdot$, and $B^2_\cdot$ are independent, and in the second to last line, we used Lemma \ref{BBmax}. Since $|z-pT|\leq (M_1+1)\sqrt{T}$, Lemma \ref{Cheb} allows us to choose $T$ large enough so that $\mathbb{P}(\Delta(T,z) > \sqrt{T}/2)$ is less than 1/2 the last expression. Then in view of \eqref{19gibbs} and \eqref{19BB}, we conclude \eqref{19ineq}.
 	
 \end{proof}
+\begin{lemma}\label{prob17}
+Fix $p,t\in(0,1)$, $k\in\mathbb{N}$, $a_{i}$, $b_{i}\in\mathbb{R}$ for $i=1,\dots,k$ such that $a_{1}\geq \cdots \geq a_{k}$ and $b_{1}\geq \cdots \geq b_{k}$. Suppose that $\vec{x}^{T}=(x_{1}^{T},\cdots,x_{k}^{T})$ and $\vec{y}^{T}=(y_{1}^{T},\cdots,y_{k}^{T})$ are two sequence of $k$-dimensional vectors with integer entries such that $$\lim_{T\rightarrow\infty}\frac{x_{i}^{T}}{\sqrt{T}}=a_{i} \text{ and } \lim_{T\rightarrow\infty}\frac{y_{i}^{T}-pT}{\sqrt{T}}=b_{i}$$ for $i=1,\dots,k$. Define the sequence of random $k$-dimensional vectors $Z^{T}$ by $$Z^{T}=\big(\frac{L_{1}(tT)-ptT}{\sqrt{T}},\cdots,\frac{L_{k}(tT)-ptT}{\sqrt{T}}\big),$$ where $(L_{1},\cdots,L_{k})$ is $\mathbb{P}^{0,T,\vec{x}^{T},\vec{y}^{T}}_{avoid,Ber}$-distributed. When $a_{1}\geq \cdots \geq a_{k}$ and $b_{1}\geq \cdots \geq b_{k}$ contain collided values, we suppose
+\begin{align*}
+&\vec{a}_{0}=(a_{1},\cdots,a_{k})=(\underbrace{\alpha_{1},\cdots,\alpha_{1}}_{m_{1}},\cdots,\underbrace{\alpha_{p},\cdots,\alpha_{p}}_{m_{p}})\\
+&\vec{b}_{0}=(b_{1},\cdots,b_{k})=(\underbrace{\beta_{1},\cdots,\beta_{1}}_{n_{1}},\cdots,\underbrace{\beta_{q},\cdots,\beta_{q}}_{n_{q}})
+\end{align*}
+where $\alpha_{1}>\alpha_{2}>\cdots>\alpha_{p}$, $\beta_{1}>\beta_{2}>\cdots>\beta_{q}$ and $\sum_{i=1}^{p}m_{i}=\sum_{i=1}^{q}n_{i}=k$. Then, the random vector $Z^{T}$ converges weakly to a continuous distribution with the density $$\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot \varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\mathbbm{1}_{\{z_{1}>\cdots> z_{k}\}}$$ where $\vec{m}=(m_{1},\cdots,m_{k})$, $\vec{n}=(n_{1},\cdots,n_{k})$, $c_{1},c_{2},c_{3}$ are constants depending on $p,t$ as given in Proposition \ref{WeakConvDistinct} , $Z$ is a constant depending on $p,t,\vec{a},\vec{b}$ such that $\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})$ integrates to $1$ over $\mathbb{R}^{k}$, and $\varphi(\vec{a}_{0},\vec{z},\vec{m})$ and $\psi(\vec{b}_{0},\vec{z},\vec{n})$ are determinants:
+\begin{equation*}
+\varphi(\vec{a}_{0},\vec{z},\vec{m})= \det
+\left[ \begin{array}{ccc}
+((c_{1}(t,p)z_{j})^{i-1}e^{c_{1}(t,p)\alpha_{1}z_{j}})_{\substack{i=1,\cdots,m_{1}\\j=1,\cdots,k}}\\
+\vdots\\
+((c_{2}(t,p)z_{j})^{i-1}e^{c_{1}(t,p)\alpha_{p}z_{j}})_{\substack{i=1,\cdots,m_{p} \\j=1,\cdots,k}}
+\end{array}
+\right]
+\end{equation*}
+\begin{equation*}
+\psi(\vec{b}_{0},\vec{z},\vec{n})= \det
+\left[ \begin{array}{ccc}
+((c_{2}(t,p)z_{j})^{i-1}e^{c_{2}(t,p)\beta_{1}z_{j}})_{\substack{i=1,\cdots,n_{1}\\j=1,\cdots,k}}\\
+\vdots\\
+((c_{2}(t,p)z_{j})^{i-1}e^{c_{2}(t,p)\beta_{q}z_{j}})_{\substack{i=1,\cdots, n_{q} \\j=1,\cdots,k}}
+\end{array}
+\right]
+\end{equation*} 
+\end{lemma}
+Proof of this lemma will be postponed until the appendix.
+\begin{lemma}\label{prob 20}
+Fix $p,t\in (0,1)$ and $ k\in \mathbb{N}$. Suppose that $\vec x^T=(x_1^T,\cdots x_k^T)$ and $\vec y^T=(y_1^T,\cdots , y_k^T)$ is a sequence of $k$-dimensional vectors with integer entries such that $T\geq y_i^T-x_i^T\geq 0$ for $i,1,\cdots, k$. Show that for any $M_1,M_2>0$ and $\epsilon>0$ there exists $T_0\in\mathbb{N}$ and $\delta>0$ depending on $p,k,M_1,M_2$ such that if $T\geq T_0$, $\abs*{x_i^T}\leq M_1\sqrt{T}$ and $\abs*{y_i^T-pT}\leq M_2\sqrt{T}$ then 
+\[
+\pr^{0,T,\vec x^T, \vec y^T}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \left[L_i(tT)-L_{i+1}(tT)\right]<\delta\sqrt{T}\right)<\epsilon
+\]
+\end{lemma}
+\begin{proof}
+	We prove the claim by contradiction:
+	suppose there exists $M_1,M_2,\epsilon>0$ such that for any $T_0\in \mathbb{N}$ and $\delta>0$ there exists some $T\geq T_0$ such that \[
+	\pr^{0,T,\vec x^T,\vec y^T}_{avoid, Ber}\left(\min_{1\leq i\leq k-1}\left[L_i(tT)-L_{i+1}(tT)\right]<\delta\sqrt{T}\right)\geq \epsilon
+	\]
+	Therefore, we can obtain some sequences $T_n$, $\delta_n>0$, $T_n\uparrow \infty$, $\delta_n\downarrow 0$ such that for all $n$, we have  
+	\[
+	\pr^{0,T,\vec x^{T_n},\vec y^{T_n}}_{avoid, Ber}\left(\min_{1\leq i\leq k-1}\left[\frac{L_i(tT_n)-L_{i+1}(tT_n)}{\sqrt{T_n}}\right]<\delta_n\right)\geq \epsilon
+	\]
+	As $\abs*{x_i^{T_n}}<M_1\sqrt{T}$, $\abs*{y_i^T-pT}\leq M_2\sqrt{T}$ we know that there exists some subsequence $T_{n_m}$ such that $\lim_{m\to\infty} \frac{x^{T_{n_m}}}{\sqrt{T_{n_m}}}\to \vec x$ 
+	and 
+	$\lim_{m\to\infty}\frac{y^{T_{n_m}}-pT}{\sqrt{T_{n_m}}}\to \vec y$ 
+	by the Bolzano-Weierstrass theorem
+	
+	Denote $Z_i^m:=\frac{L_i(tT_{n_m})-ptT}{\sqrt{T_{n_m}}}$ for $1\leq i \leq k$. Then, if we fix $\delta'>0$, by the property above we have for sufficiently large $n$
+	\begin{equation}\label{prob20inf}
+	\epsilon\leq \liminf_{m\to\infty}\pr\left(\min_{1\leq i\leq k-1}Z_i^m-Z_{i+1}^m<\delta_{n_m}\right)\leq \liminf_{m\to\infty}\pr\left(\min_{1\leq i\leq k-1}Z_i^m-Z_{i+1}^m\leq\delta'\right)
+	\end{equation}
+	since there exists some $N$ such that $n>N$ implies $\delta_n<\delta'$.
+	Now, if we apply the results of problem 17, we find it implies that the vector $(Z_1^m,\cdots, Z_k^m)$ converges weakly to some random vector $\hat Z$ with probability distribution function $\rho$ as defined previously in \ref{prob17}, the definitions of which we will state in a few lines, when  they are needed.
+	Because this sequence has weak convergence we may apply portmanteau's lemma with the closed set $K=[0,\delta']$ to find 
+	\begin{equation}\label{prob20sup}
+	\limsup_{m\to\infty }\pr\left(\min_{1\leq i\leq k-1}Z_i^m-Z_{i+1}^m\in K\right)\leq \pr\left(\min_{1\leq i\leq k-1}\hat Z_i-\hat Z_{i+1}\in K\right)
+	\end{equation}
+	Combining (\ref{prob20inf}) and (\ref{prob20sup}), we arrive at the inequality
+	\begin{equation}\label{eq:ineq}
+	\epsilon\leq \pr\left(\min_{1\leq i\leq k-1} \hat Z_i-\hat Z_{i+1}\leq\delta'\right)\leq \sum_{i=1}^{k-1}\pr\left(\hat Z_i-\hat Z_{i+1}\leq \delta'\right)
+	\end{equation}
+	
+	Since $\delta'$ is arbitrary, this inequality holds for any $\delta'>0$. 
+	In order to pick a sufficient $\delta'$ to find a contradiction, we will now state the definition of $\rho$, as found in \ref{prob17}: 
+	\[\rho(z_1,\cdots ,z_k)=\frac{1}{Z_{\vec a_0, \vec b_0}}\cdot \varphi(\vec a_0, \vec z, \vec n)\cdot \psi(\vec b_0, \vec z, \vec n)\prod_{i=1}^{k}e^{\frac{-z_i^2}{t(1-t)}}
+	\]
+	with $\vec z_i\in W_k^\circ$ where we have the functions and constant
+	\begin{align*}
+	\varphi(\vec a_0,\vec z, \vec n)&=\det\begin{bmatrix}
+	\left[(c_1(t,p)z_j)^{i-1}e^{c_1(t,p)\alpha_1 z_j}\right]_{\substack{i=1,...,m_1\\j=1,...,k}}\\
+	\left[(c_1(t,p)z_j)^{i-1}e^{c_1(t,p)\alpha_2 z_j}\right]_{\substack{i=1,...,m_2\\j=1,...,k}}\\
+	\vdots \\
+	\left[(c_1(t,p)z_j)^{i-1}e^{c_1(t,p)\alpha_r z_j}\right]_{\substack{i=1,...,m_r\\j=1,...,k}}
+	\end{bmatrix}\\
+	\psi(\vec b_0, \vec z, \vec n)&=\det\begin{bmatrix}
+	\left[(c_2(t,p)z_j)^{i-1}e^{c_2(t,p)\beta_1 z_j}\right]_{\substack{i=1,...,n_1\\j=1,...,k}}\\
+	\left[(c_2(t,p)z_j)^{i-1}e^{c_2(t,p)\beta_2 z_j}\right]_{\substack{i=1,...,n_2\\j=1,...,k}}\\
+	\vdots \\
+	\left[(c_2(t,p)z_j)^{i-1}e^{c_2(t,p)\beta_q z_j}\right]_{\substack{i=1,...,n_q\\j=1,...,k}}
+	\end{bmatrix}\\
+	Z_{\vec a_0, \vec b_0}&=\int_{\mathbb{R}^k}\left(\indic_{z_1\geq z_2\geq \cdots \geq z_k}(\vec z)\right)\varphi(\vec a_0, \vec z, \vec n)\cdot \psi(\vec b_0, \vec z, \vec n)\prod_{i=1}^{k}e^{\frac{-z_i^2}{t(1-t)}} d\vec z
+	\end{align*} we find that $\rho$ is continuous as a sum and product of continuous functions. Additionally, if for any $\chi\in\llbracket 1,k-1 \rrbracket$ such that $z_\chi=z_{\chi+1}$, then we have the two columns 
+	\[\begin{bmatrix}
+	\left[(c_1(t,p)z_\chi)^{i-1}e^{c_1(t,p)\alpha_1 z_j}\right]_{i=1,...,m_1}\\
+	\left[(c_1(t,p)z_\chi)^{i-1}e^{c_1(t,p)\alpha_2 z_j}\right]_{i=1,...,m_2}\\
+	\vdots \\
+	\left[(c_1(t,p)z_\chi)^{i-1}e^{c_1(t,p)\alpha_r z_j}\right]_{i=1,...,m_r}
+	\end{bmatrix}=\begin{bmatrix}
+	\left[(c_1(t,p)z_{\chi+1})^{i-1}e^{c_1(t,p)\alpha_1 z_{\chi+1}}\right]_{i=1,...,m_1}\\
+	\left[(c_1(t,p)z_{\chi+1})^{i-1}e^{c_1(t,p)\alpha_2 z_{\chi+1}}\right]_{i=1,...,m_2}\\
+	\vdots \\
+	\left[(c_1(t,p)z_{\chi+1})^{i-1}e^{c_1(t,p)\alpha_r z_{\chi+1}}\right]_{i=1,...,m_r}
+	\end{bmatrix}\]
+	implying that $\rho=0$ when $z_i=z_{i+1}$ for any $i$, since the determinant of the matrix will be $0$, and so $\varphi(\vec a, \vec z, \vec n)=0$. Hence, if we let $E_i^\delta:=\{z\mid z_i-z_{i+1}\leq\delta\}$ we know by the continuity of $\rho$ that the accumulation function \[R_i(\delta):=\int_{E_i^\delta}\rho\] is well defined and continuous. We can find that $R_i(0)=\int_{E_i^0} 0$ by our previous calculation since on $E_i^0$, $z_i=z_{i+1}$ which implies $\rho=0$. By the continuity of $R$ we know that for any $\epsilon$ there exists a $\delta_i(\epsilon)$ such that $0<\delta<\delta_i(\epsilon)$ implies $|R_i(\delta)|<\epsilon$. Therefore, let $\delta'=\min_{1\leq i\leq k-1}\delta_i\left(\frac\epsilon{k-1}\right)$ and we find that 
+	\begin{equation}\label{prob20boundR}\pr\left( \hat Z_i-\hat Z_{i+1}<\delta' \right)=R_i(\delta')<\frac{\epsilon}{k-1}
+	\end{equation}
+	for each integer $i$ where $1\leq i\leq k$. Combining equations (\ref{eq:ineq}) and (\ref{prob20boundR}), this gives us the inequality 
+	\[\epsilon\leq \pr\left(\min_{1\leq i\leq k-1} \hat Z_i-\hat Z_{i+1}\leq\delta'\right)\leq \sum_{i=1}^{k-1}\pr\left(\hat Z_i-\hat Z_{i+1}\leq \delta'\right)< \epsilon
+	\]
+	which is a contradiction. Thus we have proved the claim that for any $M_1,M_2>0$ and $\epsilon>0$ there exists $T_0\in\mathbb{N}$ and $\delta>0$ depending on $p,k,M_1,M_2$ such that if $T\geq T_0$, $\abs*{x_i^T}\leq M_1\sqrt{T}$ and $\abs*{y_i^T-pT}\leq M_2\sqrt{T}$ then 
+	\[
+	\pr^{0,T,\vec x^T, \vec y^T}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \left[L_i(tT)-L_{i+1}(tT)\right]<\delta\sqrt{T}\right)<\epsilon
+	\]
+\end{proof}
+\begin{remark}
+	This lemma essentially provides us with some amount of separation between the lines in the ensemble at any point along the Beroulli Random Walkers as they scale to infinite, provided we diffusely scale them with a large enough $T$.
+\end{remark}
