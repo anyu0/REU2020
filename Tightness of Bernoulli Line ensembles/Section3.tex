@@ -36,7 +36,11 @@ In plain words, Lemma \ref{MCLxy} states that one can couple two Bernoulli line 
 
 If $W_t$ denotes a standard one-dimensional Brownian motion and $\sigma > 0$, then the process
 $$B^{\sigma}_t = \sigma (W_t - t W_1), \hspace{5mm} 0 \leq t \leq 1,$$
-is called a {\em Brownian bridge (conditioned on $B_0 = 0, B_1 = 0$)  with variance $\sigma^2$.}  With the above notation we state the strong coupling result we use.
+is called a {\em Brownian bridge (conditioned on $B_0 = 0, B_1 = 0$)  with variance $\sigma^2$.} We note here that since $\ex[W_rW_s] = r\wedge s$, if $0\leq r\leq s\leq 1$, then we have
+\begin{equation}\label{BBcovar}
+\ex[B^\sigma_r B^\sigma_s] = \sigma^2(r - rs - sr + sr) = \sigma^2 r(1-s).
+\end{equation}  
+With the above notation we state the strong coupling result we use.
 \begin{theorem}\label{KMT}
 Let $p \in (0,1)$. There exist constants $0 < C, a, \alpha < \infty$ (depending on $p$) such that for every positive integer $n$, there is a probability space on which are defined a Brownian bridge $B^\sigma$ with variance $\sigma^2 = p(1-p)$ and a family of random paths $\ell^{(n,z)} \in \Omega(0,n, 0, z)$ for $z = 0,\dots,n$ such that $\ell^{(n,z)}$ has law $\mathbb{P}^{0,n,0,z}_{Ber}$ and
 \begin{equation}\label{KMTeq}
@@ -85,7 +89,7 @@ We also state the following result regarding the distribution of the maximum of 
 	\end{align*}
 \end{proof}
 
-We state one more lemma about Brownian bridges, which essentially allows us to decompose a bridge on $[0,1]$ into two independent bridges with affine shifts meeting at a point $s\in (0,1)$.
+We state one more lemma about Brownian bridges, which allows us to decompose a bridge on $[0,1]$ into two independent bridges with Gaussian affine shifts meeting at a point in $(0,1)$.
 
 \begin{lemma}\label{2bridges}
 	Fix $p\in (0,1)$, $T>0$, $t\in(0,T)$, and let $B^\sigma$ be a Brownian bridge of variance $\sigma^2 = p(1-p)$ on $[0,1]$. Let $\xi$ be a Gaussian random variable with mean 0 and variance
@@ -103,7 +107,7 @@ We state one more lemma about Brownian bridges, which essentially allows us to d
 \end{lemma}
 
 \begin{proof}
-	It is clear that $B'$ is a continuous process, and each $B'_s$ is Gaussian with mean 0 since it is a linear combination of centered Gaussians. By Levy's characterization of Brownian motion, it suffices to verify that if $0\leq r\leq s\leq T$, then
+	It is clear that the process $B'$ is a.s. continuous, and each $B'_s$ is Gaussian with mean 0 since it is a linear combination of centered Gaussians. By \ref{BBcovar}, it suffices to verify that if $0\leq r\leq s\leq T$, then
 	\begin{equation}\label{covar}
 	\ex[B'_{r/T}B'_{s/T}] = \sigma^2 \frac{r}{T}\Big(1-\frac{s}{T}\Big).
 	\end{equation}
@@ -112,11 +116,16 @@ We state one more lemma about Brownian bridges, which essentially allows us to d
 	\ex[B'_{r/T}B'_{s/T}] &= \frac{rs}{t^2}\cdot\sigma^2\frac{t}{T}\Big(1-\frac{t}{T}\Big) + \sigma^2\frac{t}{T}\cdot\frac{r}{t}\Big(1-\frac{s}{t}\Big)\\
 	&= \sigma^2\frac{r}{T}\Big(\frac{s}{t} - \frac{s}{T} + 1 - \frac{s}{t}\Big) = \sigma^2\frac{r}{T}\Big(1-\frac{s}{T}\Big).
 	\end{align*}
-	The case when $r\geq t$ is similar. If $r < t < s$, then since $\xi$, $B^1_\cdot$, and $B^2_\cdot$ are all independent, we have
+	If $r\geq t$, we compute
+	\begin{align*}
+	\ex[B'_{r/T}B'_{s/T}] &= \frac{(T-r)(T-s)}{(T-t)^2}\cdot\sigma^2\frac{t}{T}\Big( 1 - \frac{t}{T}\Big) + \sigma^2\frac{T-t}{T}\cdot\frac{r-t}{T-t}\Big( 1 - \frac{s-t}{T-t}\Big)\\
+	&= \frac{\sigma^2(T-s)}{T(T-t)}\Big(\frac{t(T-r)}{T} + r-t\Big) = \frac{\sigma^2(T-s)}{T(T-t)}\cdot\frac{r(T-t)}{T} = \sigma^2\frac{r}{T}\Big(1-\frac{s}{T}\Big).
+	\end{align*}
+	If $r < t < s$, then since $\xi$, $B^1_\cdot$, and $B^2_\cdot$ are all independent, we have
 	\[
-	\ex[B_{r/T}'B_{s/T}'] = \frac{r}{t}\cdot\frac{T-s}{T-t}\cdot\sigma^2\frac{t(T-t)}{T^2} = \sigma^2\frac{r(T-s)}{T^2},
+	\ex[B_{r/T}'B_{s/T}'] = \frac{r}{t}\cdot\frac{T-s}{T-t}\cdot\sigma^2\frac{t(T-t)}{T^2} = \sigma^2\frac{r(T-s)}{T^2} = \sigma^2\frac{r}{T}\Big(1-\frac{s}{T}\Big).
 	\]
-	which is equal to \eqref{covar}.
+	This proves \eqref{covar} in all cases.
 \end{proof}
 
 Below we list six lemmas about Bernoulli bridges. We provide a brief informal explanation of what each result says after it is stated. All six lemmas are proved in a similar fashion. For the first four lemmas one observes that the event, whose probability is being estimated, is monotone in $\ell$. This allows by Lemmas \ref{MCLxy} and \ref{MCLfg} to replace $x,y$ in the statements of the lemmas with the extreme values of the ranges specified in each. Once the choice of $x$ and $y$ is fixed one can use our strong coupling results, Theorem \ref{KMT} and Corollary \ref{Cheb}, to reduce each of the lemmas to an analogous one involving a Brownian bridge with some prescribed variance. The latter statements are then easily confirmed as one has exact formulas for Brownian bridges, such as Lemma \ref{BBmax}.\\
@@ -171,7 +180,7 @@ If $M_1, M_2 = 0$ then Lemma \ref{LemmaHalfS4} states that if a Bernoulli bridge
 \end{split}
 \end{equation}
 \end{lemma}
-\begin{remark} Roughly, Lemma \ref{LemmaMinFreeS4} states that if a Bernoulli bridge $\ell$ is started from $(0,0)$ and terminates at $(T,y)$ with $(T,y)$ not significantly lower than the straight line of slope $p$, then the event that $\ell$ goes significantly below the straight line of slope $p$ is very unlikely.
+\begin{remark} Roughly, Lemma \ref{LemmaMinFreeS4} states that if a Bernoulli bridge $\ell$ is started from $(0,0)$ and terminates at time $T$ not significantly lower (resp. higher) than the straight line of slope $p$, then the event that $\ell$ goes significantly below (resp. above) the straight line of slope $p$ is very unlikely.
 \end{remark}
 \begin{proof}
 	The two inequalities are proven in essentially the same way. We begin with the first inequality. It follows from Lemma \ref{MCLxy} that
@@ -334,9 +343,9 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 
 \begin{lemma}\label{prob19}
 	Fix $p\in(0,1)$, $k\in\mathbb{N}$. Let $\vec{x},\vec{y}\in\mathfrak{W}_k$ be such that $T \geq y_i - x_i \geq 0$ for $i=1,\dots,k$. Then for any $M,M_1 > 0$ we can find $T_0\in\mathbb{N}$ depending on $p,k,M,M_1$ such that if $T\geq T_0$, $x_k \geq - M_1\sqrt{T}$, and $y_k \geq pT - M_1\sqrt{T}$, then
-	\[
-	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{avoid, Ber}\Big(Q_k(T/2) - pT/2 \geq M\sqrt{T}\Big) \geq \big(1-2e^{-4/p(1-p)}\big)^{2k}\exp\left(-\frac{2k(M+M_1+6)^2}{p(1-p)}\right).
-	\]
+	\begin{equation}\label{19ineq}
+	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{avoid, Ber}\Big(Q_k(T/2) - pT/2 \geq M\sqrt{T}\Big) \geq \frac{2^{k/2}\big(1-2e^{-4/p(1-p)}\big)^{2k}}{(\pi p(1-p))^{k/2}}\exp\left(-\frac{2k(M+M_1+6)^2}{p(1-p)}\right).
+	\end{equation}
 \end{lemma}
 
 \begin{proof}
@@ -352,41 +361,45 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	Let us write $K_i = pT/2 + M\sqrt{T}+(10i-5)\lceil\sqrt{T}\rceil$ for $1\leq i\leq k$. Note $K_i$ is the midpoint of $pT/2 + M\sqrt{T} + 10(i-1)\lceil\sqrt{T}\rceil$ and $pT/2 + M\sqrt{T}+10i\lceil\sqrt{T}\rceil$. Let $E$ denote the event that the following conditions hold for $1\leq i\leq k$:
 	\begin{enumerate}[label=(\arabic*)]
 		
-		\item $M\sqrt{T}+(10i-4)\lceil\sqrt{T}\rceil \leq Q_i(T/2) - pT/2 \leq M\sqrt{T} + (10i-6)\lceil\sqrt{T}\rceil$,
+		\item $M\sqrt{T}+(10i-3)\lceil\sqrt{T}\rceil \leq Q_i(T/2) - pT/2 \leq M\sqrt{T} + (10i-7)\lceil\sqrt{T}\rceil$,
 		
-		\item $\sup_{s\in[0,T/2]} \Big|Q_i(s)-x_i'-\dfrac{K_i-x_i'}{T/2}\,s\Big| \leq 4\sqrt{T}$,
+		\item $\sup_{s\in[0,T/2]} \Big|Q_i(s)-x_i'-\dfrac{K_i-x_i'}{T/2}\,s\Big| \leq 3\sqrt{T}$,
 		
-		\item $\sup_{s\in[T/2,T]} \Big|Q_i(s)-K_i-\dfrac{y_i'-K_i}{T/2}(s-T/2)\Big| \leq 4\sqrt{T}$.
+		\item $\sup_{s\in[T/2,T]} \Big|Q_i(s)-K_i-\dfrac{y_i'-K_i}{T/2}(s-T/2)\Big| \leq 3\sqrt{T}$.
 		
 	\end{enumerate}
-	The first condition requires in particular that $Q_1(T/2)-pT/2 \geq M\sqrt{T}$, and also that $Q_i(T/2)-Q_{i+1}(T/2)\geq 8\sqrt{T}$ for each $i$. The second and third conditions require that each curve $Q_i$ remain within a distance of $\sqrt{T}$ of the graph of the piecewise linear function on $[0,T]$ passing through the points $(0,x_1')$, $(T/2,K_i)$, and $(T,y_i')$. We observe that
+	The first condition requires in particular that $Q_1(T/2)-pT/2 \geq M\sqrt{T}$, and also that $Q_i(T/2)-Q_{i+1}(T/2)\geq 6\sqrt{T}$ for each $i$. The second and third conditions require that each curve $Q_i$ remain within a distance of $3\sqrt{T}$ of the graph of the piecewise linear function on $[0,T]$ passing through the points $(0,x_1')$, $(T/2,K_i)$, and $(T,y_i')$. We observe that
 	\[
 	\mathbb{P}^{0,T,\vec{x}\,',\vec{y}\,'}_{avoid, Ber} \Big(Q_k(tT) - ptT \geq M\sqrt{T}\Big) \geq \mathbb{P}^{0,T,\vec{x}\,',\vec{y}\,'}_{avoid, Ber}(E) \geq \mathbb{P}^{0,T,\vec{x}\,',\vec{y}\,'}_{Ber}(E).
 	\]
 	The second inequality follows since the event $E$ implies that $Q_1(s)\geq\cdots\geq Q_k(s)$ for all $s\in[0,T]$. Write $z=y_k'-x_k'$. Then we have
-	\begin{align*}
-	\mathbb{P}^{0,T,\vec{x}\,',\vec{y}\,'}_{Ber}(E) &= \Big[\mathbb{P}^{0,T,0,z}_{Ber}\Big(\big|\ell(T/2)-pT/2-M\sqrt{T}-(10i-5)\lceil\sqrt{T}\rceil+x_1'\big|\leq \lceil\sqrt{T}\rceil \quad\mathrm{and}\\
-	&\qquad\qquad\qquad \sup_{s\in[0,T/2]}\Big|\ell(s) - \frac{K_1-x_1'}{T/2}\,s\Big| \leq 4\sqrt{T}\quad\mathrm{and}\\
-	&\qquad\qquad\qquad \sup_{s\in[T/2,T]}\Big|\ell(s)-(K_1-x_1')-\frac{y_1'-K_1}{T/2}(s-T/2)\Big| \leq 4\sqrt{T}\Big) \Big]^k.
-	\end{align*}
+	\begin{equation}\label{19gibbs}
+	\begin{split}
+	\mathbb{P}^{0,T,\vec{x}\,',\vec{y}\,'}_{Ber}(E) &= \Big[\mathbb{P}^{0,T,0,z}_{Ber}\Big(\big|\ell(T/2)-pT/2-M\sqrt{T}-(10i-5)\lceil\sqrt{T}\rceil+x_1'\big|\leq 2\lceil\sqrt{T}\rceil \quad\mathrm{and}\\
+	&\qquad\qquad\qquad \sup_{s\in[0,T/2]}\Big|\ell(s) - \frac{K_1-x_1'}{T/2}\,s\Big| \leq 3\sqrt{T}\quad\mathrm{and}\\
+	&\qquad\qquad\qquad \sup_{s\in[T/2,T]}\Big|\ell(s)-(K_1-x_1')-\frac{y_1'-K_1}{T/2}(s-T/2)\Big| \leq 3\sqrt{T}\Big) \Big]^k.
+	\end{split}
+	\end{equation}
 	Let $\mathbb{P}$ be a probability space suporting a random variable $\ell^{(T,z)}$ with law $\mathbb{P}^{0,T,0,z}$ coupled with a Brownian bridge $B^\sigma$ with variance $\sigma^2$, as in Theorem \ref{KMT}. Then the last probability in brackets is bounded below by
-	\begin{align*}
-	& \mathbb{P}^{0,T,0,z}_{Ber}\Big(\big|\ell(T/2)-pT/2-(M+5)\sqrt{T}\big|\leq\sqrt{T}\quad\mathrm{and}\\
-	&\qquad\qquad\qquad \sup_{s\in[0,T/2]}\Big|\ell(s)-ps-\frac{M+M_1+5}{\sqrt{T}/2}\,s\Big| \leq 4\sqrt{T} - 1 \quad\mathrm{and}\\
-	&\qquad\qquad\qquad \sup_{s\in[T/2,T]}\Big|\ell(s)-ps-(M+M_1+5)\sqrt{T}+\frac{M+M_1+5}{\sqrt{T}/2}(s-T/2)\Big| \leq 4\sqrt{T} - 1 \Big)\\
-	&\geq \mathbb{P}\Big(|B^\sigma_{1/2} - (M+M_1+5)|\leq 1 \quad\mathrm{and}\quad\sup_{s\in[0,T/2]}\Big|\sqrt{T}\,B^\sigma_{s/T}-(M+M_1+5)\sqrt{T}\cdot\frac{s}{T/2}\Big| \leq 2\sqrt{T}\\
+	\begin{equation}\label{19BB}
+	\begin{split}
+	& \mathbb{P}^{0,T,0,z}_{Ber}\Big(\big|\ell(T/2)-pT/2-(M+M_1+5)\sqrt{T}\big|\leq 2\sqrt{T} - 1\quad\mathrm{and}\\
+	&\qquad\qquad\qquad \sup_{s\in[0,T/2]}\Big|\ell(s)-ps-\frac{M+M_1+5}{\sqrt{T}/2}\,s\Big| \leq 3\sqrt{T} - 1 \quad\mathrm{and}\\
+	&\qquad\qquad\qquad \sup_{s\in[T/2,T]}\Big|\ell(s)-ps-(M+M_1+5)\sqrt{T}+\frac{M+M_1+5}{\sqrt{T}/2}(s-T/2)\Big| \leq 3\sqrt{T} - 1 \Big)\\
+	&\geq \mathbb{P}\Big(\big|\sqrt{T}\,B^\sigma_{1/2} - (M+M_1+5)\sqrt{T}\big|\leq \sqrt{T} \quad\mathrm{and}\quad\sup_{s\in[0,T/2]}\Big|\sqrt{T}\,B^\sigma_{s/T}-(M+M_1+5)\sqrt{T}\cdot\frac{s}{T/2}\Big| \leq 2\sqrt{T}\\
 	&\qquad\qquad\qquad \mathrm{and}\quad \sup_{s\in[T/2,T]}\Big|\sqrt{T}\,B^\sigma_{s/T}-(M+M_1+5)\sqrt{T}\cdot\frac{T-s}{T/2}\Big| \leq 2\sqrt{T} \Big)\\
-	&\qquad\qquad\qquad -  \mathbb{P}\Big(\Delta(T,z) > \sqrt{T}\Big).
-	\end{align*}
-	Note that $B^\sigma_{1/2}$ is a centered Gaussian random variable with variance $\sigma^2(1/2)(1-1/2)=p(1-p)/4$. Writing $\xi = B^\sigma_{1/2}$, it follows from Lemma \ref{2bridges} that there exist independent Brownian bridges $B^1,B^2$ with variance $\sigma^2/2$ so that the first probability in the last line is equal to
+	&\qquad\qquad\qquad -  \mathbb{P}\Big(\Delta(T,z) > \sqrt{T}/2\Big).
+	\end{split}
+	\end{equation}
+	Note that $B^\sigma_{1/2}$ is a centered Gaussian random variable with variance $p(1-p)/4 = \sigma^2(1/2)(1-1/2)$. Writing $\xi = B^\sigma_{1/2}$, it follows from Lemma \ref{2bridges} that there exist independent Brownian bridges $B^1,B^2$ with variance $\sigma^2/2$ so that $B^\sigma_s$ has the same law as $\frac{s}{T/2}\xi + B^1_{2s/T}$ for $s\in[0,T/2]$ and $\frac{T-s}{T/2}\xi + B^2_{(2s-T)/T}$ for $s\in[T/2,T]$. The first term in the last expression in \eqref{19BB} is thus equal to
 	\begin{align*}
 	&\mathbb{P}\Big(|\xi - (M+M_1+5)|\leq 1 \quad\mathrm{and} \sup_{s\in[0,T/2]}\Big|B^1_{s/T}-(M+M_1+5-\xi)\cdot\frac{s}{T/2}\Big| \leq 2\\
 	&\qquad\qquad\qquad \mathrm{and}\quad \sup_{s\in[T/2,T]}\Big|B^2_{(2s-T)/T}-(M+M_1+5-\xi)\cdot\frac{T-s}{T/2}\Big| \leq 2 \Big)\\
 	&\geq \mathbb{P}\Big(|\xi - (M+M_1+5)|\leq 1 \quad\mathrm{and} \sup_{s\in[0,T/2]}\big|B^1_{2s/T}\big| \leq 1 \qquad \mathrm{and}\quad \sup_{s\in[T/2,T]}\big|B^2_{(2s-T)/T}\big| \leq 1 \Big)\\
 	&= \mathbb{P}\Big(|\xi-(M+M_1+5)|\leq 1\Big)\mathbb{P}\Big(\sup_{s\in[0,T/2]} \big|B^1_{2s/T}\big|\leq 1\Big)\Big(\sup_{s\in[0,T/2]} \big|B^2_{(2s-T)/T}\big|\leq 1\Big)\\
-	&\geq \big(1-2e^{-4/p(1-p)}\big)^2 \int_{M+M_1+4}^{M+M_1+6} \frac{1}{\sqrt{2\pi p(1-p)}}e^{-2\xi^2/p(1-p)}\,d\xi\\
-	&\geq 2e^{-2(M+M_1+6)^2/p(1-p)}\big(1-2e^{-4p(1-p)}\big)^2.
+	&\geq \big(1-2e^{-4/p(1-p)}\big)^2 \int_{M+M_1+4}^{M+M_1+6} \frac{e^{-2\xi^2/p(1-p)}}{\sqrt{\pi p(1-p)/2}}\,d\xi\\
+	&\geq \frac{2\sqrt{2}\,e^{-2(M+M_1+6)^2/p(1-p)}}{\sqrt{\pi p(1-p)}}\,\big(1-2e^{-4/p(1-p)}\big)^2.
 	\end{align*}
-	Choosing $T$ large enough so that $\mathbb{P}(\Delta(T,z)>\sqrt{T})$ is less than 1/2 this quantity, we obtain the conclusion.
+	In the fourth line, we used the fact that $\xi$, $B^1_\cdot$, and $B^2_\cdot$ are independent, and in the second to last line, we used Lemma \ref{BBmax}. Since $|z-pT|\leq (M_1+1)\sqrt{T}$, Lemma \ref{Cheb} allows us to choose $T$ large enough so that $\mathbb{P}(\Delta(T,z) > \sqrt{T}/2)$ is less than 1/2 the last expression. Then in view of \eqref{19gibbs} and \eqref{19BB}, we conclude \eqref{19ineq}.
 	
 \end{proof}
