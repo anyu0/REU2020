@@ -535,10 +535,44 @@ Let us put $t_{12} = \lfloor \frac{t_1 + t_2}{2} \rfloor$.
 	\begin{equation}\label{LemmaBP2Step3}
 	\frac{|B(\vec{c}, \vec{d}, \epsilon)|}{|\Omega(\vec{c}, \vec{d})|} \geq  \frac{9}{10} \quad \mathrm{and} \quad \frac{|\tilde{B}(\vec{c}, \vec{d}, \epsilon)|}{|\tilde{\Omega}(\vec{c}, \vec{d})|} \geq  \frac{4}{5}.
 	\end{equation}
-	
-	The existence of an $\epsilon$ satisfying the first inequality follows from two applications of [Problem 20]. In the first application, we take $s=s_1$ with $s_1\cdot 2t_{12}=-t_1$, and in the second application we take $s=s_2$ with $s_2\cdot 2t_{12}=t_1$. In both cases we put $M_1,M_2=\max\{\abs*{V_1^t},\abs*{V_1^b}\}$ and $\delta=\frac{9}{10}$.\footnote{Note that $s_1$ and $s_2$ actually change slightly with $N$ due to the floor functions. This can essentially be ignored for both, since we know $$\frac{r}{2r+4} \leq \frac{(r+1)N^\alpha - 1}{(2r+3)N^\alpha + 2} \leq \frac{t_1}{2t_{12}} \leq \frac{(r+1)N^\alpha + 1}{(2r+3)N^\alpha - 2} \leq \frac{r+2}{2r+2}.$$ In particular, $s_1,s_2$ lies in a compact window, which allows us to squeeze the random variable in the proof of [Cite Problem 20] and achieve the same result.}
-	This yields $T_0^1, T_0^2$ and $\epsilon_1, \epsilon_2$ such that if $2t_2>\max\{T_0^1, T_0^2\}$, which can be ensured by picking a sufficiently large $N_6$ such that $N>N_6$ implies $2t_2=2\floor{(r+2)N^\alpha}>\max\{T_0^1, T_0^2\}$ and $\epsilon=\min\{\epsilon_1,\epsilon_2\}$ we obtain the first inequality in \eqref{LemmaBP2Step3}.
-	
+	In order to prove this inequality, we will use [Lemma Ref for problem 20], and shift the bounds from $-t_{12},t_{12}$ to $0, 2t_{12}$ in order to prove the inequality using that lemma.
+	We know $T=2t_{12}$ and so we desire $s=\frac{t_1}{2t_{12}}$ yet this changes as $N$ increases, since $s=\frac{\floor{(r+1)N^\alpha}}{2\floor{\frac{\floor{(r+1)N^\alpha}+\floor{(r+2)N^\alpha}}{2}}}$. This gives us the inequality \[
+	\frac{(r+1)N^\alpha-1}{(2r+3)N^\alpha}\leq s\leq \frac{(r+1)N^\alpha}{(2r+3)N^\alpha-4}
+	\]
+	and so pick $s=\frac{r+1}{2r+3}$. Note $s\leq \frac{1}{2}$. Because $t_{12}=\floor{\frac{\floor{(r+1)N^\alpha}+\floor{(r+2)N^\alpha}}{2}}$ we know that
+	\[
+	(r+1.5)N^\alpha-2\leq t_{12}\leq \frac{(2r+3)N^\alpha}{2}
+	\]
+	and therefore 
+	\[
+	t_1-1\leq t_1-2s\leq (r+1)N^\alpha-2s\leq s\cdot 2t_{12}\leq (r+1)N^\alpha
+	\]
+	and so $\floor{st_{12}}=t_1-1$ or $t_1$, since $\floor{t_1-1}\leq \floor{st_{12}}\leq \floor{(r+1)N^\alpha}=t_1$
+	Therefore we have that 
+	\begin{equation}\label{Lt1Set}L_i(\floor{st_{12}})-L_i(t_1)\in \{0,-1\}
+	\end{equation} If we apply the result of [Citation for Problem20], we know that there exists some $T_0$ and $\epsilon>0$ such that $t_{12}>T_0$ implies (with $T=2t_{12}$)
+	\begin{equation}\label{stOneTwoProb}
+	\pr^{0,2t_{12},\vec c, \vec d}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \left[L_i(\floor{st_{12}})-L_{i+1}(\floor{st_{12}})\right]<\delta\sqrt{t_{12}}\right)<\frac{9}{10}
+	\end{equation}
+	and by equations \ref{Lt1Set} and \ref{stOneTwoProb} we know that
+	\[
+	\pr^{0,2t_{12},\vec c, \vec d}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \left[L_i(t_1)-L_{i+1}(t_1)\right]<\delta\sqrt{t_{12}}-1\right)<\frac{9}{10}
+	\]
+	Therefore pick a $T_1$ such that $t_{12}>T_1$ implies $\delta\sqrt{t_{12}}>1$ then find $\epsilon'=\frac{\delta\sqrt{2t_{12}}-1}{3\sqrt{2t_2}}$ except we need it not to depend on $t_2$ and $t_{12}$ (i.e. $N$), hence we can bound the statement for $\epsilon'$ by taking a stronger version of the statement with $\epsilon_1<\epsilon'$: 
+	\begin{align*}
+	\epsilon'
+	&=\frac{\delta\sqrt{2\floor{\frac{\floor{(r+1)N^\alpha}+\floor{(r+2)N^\alpha}}2}}-1}{3\sqrt{2\floor{(r+2)N^\alpha}}}\\
+	&\geq\frac{\delta\sqrt{\left(2r+3\right)N^\alpha-1}-1}{3\sqrt{(2r+4)N^\alpha}}\\
+	&>\frac{\delta\sqrt{(2r+2)N^\alpha}-1}{3\sqrt{(2r+4)N^\alpha}}\\
+	&\geq\frac{\delta}{3}\sqrt{\frac{r+1}{2r+4}}\\
+	&=\epsilon_1
+	\end{align*}
+	with the second to last step holding true for $N>N'$ where $N'$ has $\delta\sqrt{\frac{(r+1)N^\alpha}{2}}>1$. Therefore, if we have an $N_6$ such that $N>N_6$ implies $t_{12}>\max\{T_0,T_1\}$ and $N_6>N'$, then for $\epsilon_1$ we have
+	\[
+	\pr^{0,2t_{12},\vec c, \vec d}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \left[L_i(t_1)-L_{i+1}(t_1)\right]<3\epsilon_1\sqrt{2t_2}\right)<\frac{9}{10}
+	\]
+	which implies
+	$$\frac{\left\{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty): \min_{i = 1, \dots, k-2} L_{i}(- t_1) - L_{i+1}(-t_1) \geq 3\epsilon_1 (2t_2)^{1/2} \right\}}{\Omega(\vec c,\vec d)}>9/10$$ The proof for $+t_1$ follows similarly, and gives us a separate epsilon, $\epsilon_2$. We then set $\epsilon=\min\{\epsilon_1,\epsilon_2\}$ and find that $$\frac{\abs*{B(\vec c, \vec d, \epsilon)}}{\abs*{\Omega(\vec c, \vec d)}}>\frac{9}{10}$$ 
 	For the second inequality, we observe via the second inequality in \eqref{5.8step1} that
 	\begin{align*}
 	\frac{|\tilde{B}(\vec{c},\vec{d},\epsilon)|}{|\tilde{\Omega}(\vec{c},\vec{d})|} &\geq \frac{|B(\vec{c},\vec{d},\epsilon)\cap\tilde{\Omega}(\vec{c},\vec{d})|}{|\Omega(\vec{c},\vec{d})|} \geq \frac{|B(\vec{c},\vec{d},\epsilon)|}{|\Omega(\vec{c},\vec{d})|} -\frac{|\tilde{\Omega}^c(\vec{c},\vec{d})|}{|\Omega(\vec{c},\vec{d})|} \geq \frac{9}{10} - \frac{1}{100} > \frac{4}{5}.
