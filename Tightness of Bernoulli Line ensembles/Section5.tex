@@ -8,69 +8,7 @@ Here we prove the three key lemmas from Section \ref{Section4.1}.
 
 \subsection{Proof of Lemma \ref{PropSup}}
 
-We first establish some notation. Let $a,b,t_1,t_2,z_1,z_2 \in \mathbb{Z}$ be given such that $t_1 + 1 < t_2$, $0\leq z_2 - z_1 \leq t_2 - t_1$, $0\leq b-a \leq t_2 - t_1$, $z_1\leq a$, and $z_2\leq b$. We write $\ell\in\Omega(t_1,t_2,a,b)$ and $\ell_{bot}\in\Omega(t_1,t_2,z_1,z_2)$ for generic paths in these two spaces, and we consider the event $\{\ell \geq \ell_{bot}\} = \{\ell(s) \geq \ell_{bot}(s), s\in[t_1,t_2]\}$. Note that $\mathbb{P}^{t_1,t_2,a,b,\infty,\ell_{bot}}_{avoid,Ber}(\ell) = \mathbb{P}^{t_1,t_2,a,b}_{Ber}(\ell\,|\,\ell \geq \ell_{bot}))$. We now establish some auxiliary results which will be used in the proof of Lemma \ref{PropSup}.
-
-\begin{lemma}\label{pathcounting}
-	If $a\leq k_1\leq k_2\leq a + T - t_1$, then with notation as above,
-	\[
-	\mathbb{P}^{t_1, t_2, a, b}_{Ber}\big( \ell \geq \ell_{bot}\,\big|\,\ell(T) = k_1\big) \leq \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = k_2\big).
-	\]
-\end{lemma}
-
-\begin{remark}
-	This lemma essentially states that a path $\ell$ is more likely to lie above $\ell_{bot}$ if its value at a point $T$ is increased. A more general result is proven in \cite[Lemma 4.1]{CD}
-\end{remark}
-
-\begin{proof}
-	Let $\ell_1$ be a random path distributed according to $\mathbb{P}^{t_1, t_2, a, b}_{Ber}$ conditioned on $\ell_1(T) = k_1$. We can identify $\ell_1$ with a sequence of $+$'s and $-$'s of length $t_2-t_1$, where a $+$ in the $i$th position means that $\ell_1(t_1+i+1)-\ell_1(t_1+i) = 1$, and a $-$ means that $\ell_1(t_1+i+1)-\ell_1(t_1+i) = 0$. [Maybe include Figure 9 from Corwin-Dimitrov here.] In this representation, the value of $\ell_1(T)$ is $a$ plus the number of $+$'s in the first $T-t_1$ slots, and the value of $\ell_1(t_2)$ is $a$ plus the total number of $+$'s. Note that we must have exactly $(k_1-a)$ $+$'s in the first $T-t_1$ slots, and $(b-k_1)$ $+$'s in the last $t_2-T$ slots. We pick uniformly at random $(k_2-k_1)$ $-$'s in the first $T-t_1$ slots and change them to $+$'s, then pick randomly $(k_2-k_1)$ $+$'s in the last $t_2-T$ slots and change them to $-$'s. This defines a new path $\ell_2$. Since there are now $k_2-a$ $+$'s in the first $T-t_1$ slots, we have $\ell_2(T) = k_2$, and we still have $\ell_2(t_2) = b$ since the number of $+$'s is unchanged. Thus we see that $\ell_2$ is distributed according to $\mathbb{P}^{t_1,t_2,a,b}_{Ber}$ conditioned on $\ell_2(T) = k_2$. 
-	
-	Now suppose $\ell_1 \geq \ell_{bot}$. We claim that $\ell_2 \geq \ell_1$ on all of $[t_1,t_2]$. To see this, note that for any $s\in\llbracket t_1, t_2\rrbracket$, $\ell_2(s) - \ell_1(s)$ is equal to the number of $+$'s in the first $s-t_1$ slots of the sequence representing $\ell_2$, minus the corresponding number for $\ell_1$. If $s\leq T$, this difference is clearly positive by construction. The difference is equal to $k_2 - k_1 \geq 0$ at $s = T$, and the difference then decreases monotonically as $s$ increases to $t_2$, since we have removed exactly $k_2-k_1$ $+$'s from the last $t_2-T$ slots. The difference is of course 0 at $s = t_2$, so this proves the claim. It follows that
-	\[
-	\mathbf{1}_{\ell_1 \geq \ell_{bot}} \leq \mathbf{1}_{\ell_2 \geq \ell_{bot}}.
-	\]
-	Now taking expectations of both sides and recalling the distributions of $\ell_1,\ell_2$ proves the lemma.
-\end{proof}
-
-
-\begin{corollary}\label{setpathcounting}
-	Let $T\in\llbracket t_1, t_2\rrbracket$, and let $A, B$ be nonempty sets of integers such that $a \leq \alpha \leq \beta \leq a+T-t_1$ for all $\alpha\in A, \beta\in B$. Then
-	\[
-	\mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) \in A\big) \leq \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) \in B\big).
-	\]
-\end{corollary}
-
-\begin{proof}
-	We have
-	\begin{align*}
-	& \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) \in A\big) = \sum_{\alpha\in A} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = \alpha\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)}\\
-	= \; & \sum_{\alpha\in A}\sum_{\beta\in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = \alpha\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)} \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)}\\
-	\leq \; & \sum_{\alpha\in A}\sum_{\beta\in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = \beta\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \alpha)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in A)} \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)}\\
-	= \; & \sum_{\beta \in B} \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) = \beta\big) \cdot \frac{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) = \beta)}{\mathbb{P}^{t_1, t_2, a, b}_{Ber}(\ell(T) \in B)} = \mathbb{P}^{t_1, t_2, a, b}_{Ber}\big(\ell \geq \ell_{bot}\,\big|\,\ell(T) \in B\big).
-	\end{align*}
-	The inequality in the third line follows from Lemma \ref{pathcounting}.
-\end{proof}
-
-\begin{corollary}\label{freeavoidbound}
-	Let $\alpha \leq a + T - t_1$. Then
-	\begin{align*}
-	\mathbb{P}^{t_1,t_2,a,b,\infty,\ell_{bot}}_{avoid,Ber} (\ell(T)\geq\alpha) &\geq \mathbb{P}^{t_1,t_2,a,b}_{Ber} (\ell(T)\geq \alpha).
-	\end{align*}
-\end{corollary}
-
-\begin{proof}
-	We write $\mathbb{P} := \mathbb{P}^{t_1,t_2,a,b}_{Ber}$ for brevity. Using Bayes' theorem repeatedly, we find
-	\begin{align*}
-	\mathbb{P}(\ell(T)\geq\alpha\,|\,\ell \geq \ell_{bot}) &= \frac{\mathbb{P}(\ell \geq \ell_{bot}\,|\,\ell(T)\geq\alpha) \mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell \geq \ell_{bot})}\\ 
-	&\geq \frac{\mathbb{P}(\ell \geq \ell_{bot}\,|\,\ell(T) < \alpha) \mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell \geq \ell_{bot})}\\
-	&= \big(1 - \mathbb{P}(\ell(T)\geq\alpha\,|\,\ell \geq \ell_{bot})\big)\cdot\frac{\mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell(T) < \alpha)}.
-	\end{align*}
-	The inequality in the second line follows from Corollary \ref{setpathcounting}. It follows that
-	\[
-	\mathbb{P}(\ell(T)\geq\alpha\,|\,\ell \geq \ell_{bot}) \geq \frac{\mathbb{P}(\ell(T)\geq\alpha)}{\mathbb{P}(\ell(T)\geq\alpha) + \mathbb{P}(\ell(T) < \alpha)} = \mathbb{P}(\ell(T)\geq\alpha).
-	\]
-\end{proof}
-
-We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \cite[Lemma 5.2]{CD}. We exploit the one-point tightness of $L_1^N$ at two appropriately chosen points, and we use Lemma \ref{LemmaHalfS4} to control the deviation of $L_1^N$ from the line of slope $p$ away from these points.
+Our proof of Lemma \ref{PropSup} is similar to that of \cite[Lemma 5.2]{CD}. We exploit the one-point tightness of $L_1^N$ at two appropriately chosen points, and we use Lemma \ref{LemmaHalfS4} to control the upward deviation of $L_1^N$ from the line of slope $p$ away from these points.
 
 \begin{proof}
 	We write $s_4 = \lceil r+3 \rceil N^\alpha$, $s_3 = \lfloor r+3 \rfloor N^\alpha$, so that $s_3 \leq t_3 \leq s_4$, and take $N$ large enough so that $L_1^N$ is defined at $s_4$. We define events 
@@ -122,7 +60,11 @@ We are now ready to prove Lemma \ref{PropSup}. The proof is similar to that of \
 	\[
 	\mathbb{P}(L_1^N|_{[-s_4,s]} = \ell\,|\,E(a,b,s,\ell_{bot})) = \mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}(\ell).
 	\]
-	Hence by Corollary \ref{freeavoidbound},
+	Also observe that the event that $\ell(-s_3) > -ps_3 + MN^{\alpha/2}$ decreases in probability if $\ell$ is lowered. It follows from Lemma \ref{MCLfg} that
+	\[
+	\mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}\big(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\big) \geq \mathbb{P}^{-s_4,s,a,b}_{Ber}\big(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\big).
+	\]
+	Therefore
 	\begin{align*}
 	&\mathbb{P}\big( L_1^N(-s_3) > -ps_3 + MN^{\alpha/2}\,\big|\,E(a,b,s,\ell_{bot})\big)\\
 	= \; & \sum_{\ell\in\Omega(-s_4,s,a,b)} \mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}(\ell)\cdot \mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}\big(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\big)\\
@@ -545,15 +487,16 @@ Let us put $t_{12} = \lfloor \frac{t_1 + t_2}{2} \rfloor$.
 
 We are now equipped to prove Lemma \ref{LemmaAP2}.
 
-\begin{proof}(Sketch of the proof of Lemma \ref{LemmaAP2}) We introduce some suggestive notation. For $\vec{c}, \vec{d} \in \mathfrak{W}_{k-1}$ and $\epsilon > 0$ we define
+\begin{proof} We first introduce some notation. For $\vec{c}, \vec{d} \in \mathfrak{W}_{k-1}$ and $\epsilon > 0$ we define
 	\begin{equation}
 	\begin{split}
 	&\tilde A(\vec{c}, \vec{d}) = \{\mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot}): L_{k-1}(\pm t_{1}) \mp pt_1 \geq (M_2 + 1) (2t_2)^{1/2} \} \\
-	&\tilde B(\vec{c}, \vec{d}, \epsilon) = \left\{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot}): \min_{\substack {i = 1, \dots, k-2 \\ \varsigma \in \{-1, 1\}} } L_{i}(\varsigma t_1) - L_{i+1}(\varsigma t_1) \geq 3\epsilon (2t_2)^{1/2} \right\} \\
+	&\tilde B(\vec{c}, \vec{d}, \epsilon) = \left\{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot}): \min_{\substack {1\leq i\leq k-2 \\ \varsigma \in \{-1, 1\}} } \big(L_{i}(\varsigma t_1) - L_{i+1}(\varsigma t_1)\big) \geq 3\epsilon (2t_2)^{1/2} \right\} \\
 	&A(\vec{c}, \vec{d}) = \{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty): L_{k-1}(\pm t_{1}) \mp pt_1 \geq (M_2 + 1) (2t_2)^{1/2} \} \\
-	&B(\vec{c}, \vec{d}, \epsilon) = \left\{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty): \min_{\substack {i = 1, \dots, k-2 \\ \varsigma \in \{-1, 1\}} } L_{i}(\varsigma t_1) - L_{i+1}(\varsigma t_1) \geq 3\epsilon (2t_2)^{1/2} \right\}. \\
+	&B(\vec{c}, \vec{d}, \epsilon) = \left\{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty): \min_{\substack {1\leq i\leq k-2 \\ \varsigma \in \{-1, 1\}} } \big(L_{i}(\varsigma t_1) - L_{i+1}(\varsigma t_1)\big) \geq 3\epsilon (2t_2)^{1/2} \right\}. \\
 	\end{split}
-	\end{equation} \\
+	\end{equation}
+	We now split the proof into several steps.\\
 	
 	{\bf \raggedleft Step 1.} In this step, we show that there is an $R > 0$ sufficiently large so that if $c_{k-1} + pt_{12} \geq (2t_2)^{1/2} (M_2 + R)$ and $d_{k-1} - pt_{12} \geq (2t_2)^{1/2} (M_2 + R)$, then we have 
 	\begin{equation}\label{5.8step1}
@@ -618,7 +561,7 @@ We are now equipped to prove Lemma \ref{LemmaAP2}.
 	&\qquad - \big(1 - \mathbb{P}^{-t_{12},t_{12},\vec{c}\,'', \vec{d}\,'', \infty,\tilde{\ell}_{bot}}_{avoid, Ber}\big(L_1\geq\cdots\geq L_{k-1}\geq\tilde{\ell}_{bot}\big)\big).
 	\end{split}
 	\end{equation}
-	In the last line, we have used the Schur Gibbs property and written $z' = d_1'' - c_1''$. We also used the fact that $c_1'' \leq -pt_{12} + (V_1^t + Ck)(2t_2)^{1/2}$. By Lemma \ref{LemmaMaxFreeS4}, we can find $V^{top}$ large enough depending on $V_1^T,C,k,p$ so that the probability in the third line of \eqref{5.8step3split} is $>19/20$ for sufficiently large $N$. On the other hand, the above observations regarding $\vec{c}\,''$, $\vec{d}\,''$, and $\tilde{\ell}_{bot}$ allow us to conclude from Lemma \ref{CurveSeparation} that the last line of \eqref{5.8step3split} is $>-1/20$ for sufficiently large $N$. This gives a lower bound of $19/20 - 1/20 = 9/10$ in \eqref{5.8step3split} as desired.\\
+	In the last line, we have used the Schur Gibbs property and written $z' = d_1'' - c_1''$. We also used the fact that $c_1'' \leq -pt_{12} + (V_1^t + Ck)(2t_2)^{1/2}$. By Lemma \ref{LemmaMinFreeS4}, we can find $V^{top}$ large enough depending on $V_1^t,C,k,p$ so that the probability in the third line of \eqref{5.8step3split} is at least $19/20$ for sufficiently large $N$. On the other hand, the above observations regarding $\vec{c}\,''$, $\vec{d}\,''$, and $\tilde{\ell}_{bot}$, as well as the fact that $|d_1'' - c_1'' - 2pt_{12}| \leq 1$, allow us to conclude from Lemma \ref{CurveSeparation} that the probability in the last line of \eqref{5.8step3split} is at least $19/20$ for sufficiently large $N$. This gives a lower bound of $19/20 - 1/20 = 9/10$ in \eqref{5.8step3split} as desired.\\
 	
 	{\bf \raggedleft Step 3.} In this step, we show that with $V_1^t$ and $V_1^b$ as in Step 2, there is an $\epsilon > 0$ sufficiently small such that for $(\vec{c}, \vec{d}) \in E$ we have
 	\begin{equation}\label{LemmaBP2Step3}
