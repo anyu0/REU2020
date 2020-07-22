@@ -567,7 +567,7 @@ We are now equipped to prove Lemma \ref{LemmaAP2}.
 	\begin{equation}\label{LemmaBP2Step3}
 	\frac{|B(\vec{c}, \vec{d}, \epsilon)|}{|\Omega(\vec{c}, \vec{d})|} \geq  \frac{9}{10} \quad \mathrm{and} \quad \frac{|\tilde{B}(\vec{c}, \vec{d}, \epsilon)|}{|\tilde{\Omega}(\vec{c}, \vec{d})|} \geq  \frac{4}{5}.
 	\end{equation}
-	In order to prove this inequality, we will use [Lemma Ref for problem 20], and shift the bounds from $-t_{12},t_{12}$ to $0, 2t_{12}$ in order to prove the inequality using that lemma.
+	In order to prove this inequality, we will use Lemma \ref{prob 20}, and shift the bounds from $-t_{12},t_{12}$ to $0, 2t_{12}$ in order to prove the inequality using that lemma.
 	We know $T=2t_{12}$ and so we desire $s=\frac{t_1}{2t_{12}}$ yet this changes as $N$ increases, since $s=\frac{\floor{(r+1)N^\alpha}}{2\floor{\frac{\floor{(r+1)N^\alpha}+\floor{(r+2)N^\alpha}}{2}}}$. This gives us the inequality \[
 	\frac{(r+1)N^\alpha-1}{(2r+3)N^\alpha}\leq s\leq \frac{(r+1)N^\alpha}{(2r+3)N^\alpha-4}
 	\]
@@ -582,7 +582,7 @@ We are now equipped to prove Lemma \ref{LemmaAP2}.
 	and so $\floor{st_{12}}=t_1-1$ or $t_1$, since $\floor{t_1-1}\leq \floor{st_{12}}\leq \floor{(r+1)N^\alpha}=t_1$
 	Therefore we have that 
 	\begin{equation}\label{Lt1Set}L_i(\floor{st_{12}})-L_i(t_1)\in \{0,-1\}
-	\end{equation} If we apply the result of [Citation for Problem20], we know that there exists some $T_0$ and $\epsilon>0$ such that $t_{12}>T_0$ implies (with $T=2t_{12}$)
+	\end{equation} If we apply the result of Lemma \ref{prob 20} with $M_1,M_2=\max\{V_1^t,V_1^b\}$ and $\epsilon=6\frac{9}{10}$, we know that there exists some $T_0$ and $\epsilon>0$ such that $t_{12}>T_0$ implies (with $T=2t_{12}$)
 	\begin{equation}\label{stOneTwoProb}
 	\pr^{0,2t_{12},\vec c, \vec d}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \left[L_i(\floor{st_{12}})-L_{i+1}(\floor{st_{12}})\right]<\delta\sqrt{t_{12}}\right)<\frac{9}{10}
 	\end{equation}
@@ -599,7 +599,7 @@ We are now equipped to prove Lemma \ref{LemmaAP2}.
 	&\geq\frac{\delta}{3}\sqrt{\frac{r+1}{2r+4}}\\
 	&=\epsilon_1
 	\end{align*}
-	with the second to last step holding true for $N>N'$ where $N'$ has $\delta\sqrt{\frac{(r+1)N^\alpha}{2}}>1$. Therefore, if we have an $N_6$ such that $N>N_6$ implies $t_{12}>\max\{T_0,T_1\}$ and $N_6>N'$, then for $\epsilon_1$ we have
+	with the second to last step holding true for $N>N'$ where $N'$ has $\delta\sqrt{(r+1)N^\alpha}>1$. Therefore, if we have an $N_6$ such that $N>N_6$ implies $t_{12}>\max\{T_0,T_1\}$ and $N_6>N'$, then for $\epsilon_1$ we have
 	\[
 	\pr^{0,2t_{12},\vec c, \vec d}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \left[L_i(t_1)-L_{i+1}(t_1)\right]<3\epsilon_1\sqrt{2t_2}\right)<\frac{9}{10}
 	\]
