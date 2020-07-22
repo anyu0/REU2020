@@ -3,7 +3,7 @@
 %
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-\section{Appendix}\label{Appendix1}
+\section{Appendix} \label{Appendix1}
 
 \subsection{Proof of Lemma \ref{Polish}}
 
@@ -233,7 +233,35 @@ Fix $p,t\in(0,1)$, $k\in\mathbb{N}$, $a_{i}$, $b_{i}\in\mathbb{R}$ for $i=1,\dot
 \end{proposition}
 
 \begin{proposition}{\label{WeakConvCollide}}
-	 
+When $a_{1}\geq \cdots \geq a_{k}$ and $b_{1}\geq \cdots \geq b_{k}$ contain collided values, we suppose
+	\begin{align*}
+	&\vec{a}_{0}=(a_{1},\cdots,a_{k})=(\underbrace{\alpha_{1},\cdots,\alpha_{1}}_{m_{1}},\cdots,\underbrace{\alpha_{p},\cdots,\alpha_{p}}_{m_{p}})\\
+	&\vec{b}_{0}=(b_{1},\cdots,b_{k})=(\underbrace{\beta_{1},\cdots,\beta_{1}}_{n_{1}},\cdots,\underbrace{\beta_{q},\cdots,\beta_{q}}_{n_{q}})
+	\end{align*}
+where $\alpha_{1}>\alpha_{2}>\cdots>\alpha_{p}$, $\beta_{1}>\beta_{2}>\cdots>\beta_{q}$ and $\sum_{i=1}^{p}m_{i}=\sum_{i=1}^{q}n_{i}=k$. Then, the random vector $Z^{T}$ converges weakly to a continuous distribution with the density 
+\begin{align}{\label{Density17}}
+\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot \varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\mathbbm{1}_{\{z_{1}>\cdots> z_{k}\}}	
+\end{align}
+where $\vec{m}=(m_{1},\cdots,m_{k})$, $\vec{n}=(n_{1},\cdots,n_{k})$, $c_{1},c_{2},c_{3}$ are constants depending on $p,t$ as given in the proposition, $Z$ is a constant depending on $p,t,\vec{a},\vec{b}$ such that $\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})$ integrates to $1$ over $\mathbb{R}^{k}$, and $\varphi(\vec{a}_{0},\vec{z},\vec{m})$ and $\psi(\vec{b}_{0},\vec{z},\vec{n})$ are determinants:
+\begin{equation*}
+	\varphi(\vec{a}_{0},\vec{z},\vec{m})= \det
+	\left[ \begin{array}{ccc}
+		((c_{1}(t,p)z_{j})^{i-1}e^{c_{1}(t,p)\alpha_{1}z_{j}})_{\substack{i=1,\cdots,m_{1}\\j=1,\cdots,k}}\\
+	\vdots\\
+	((c_{2}(t,p)z_{j})^{i-1}e^{c_{1}(t,p)\alpha_{p}z_{j}})_{\substack{i=1,\cdots,m_{p} \\j=1,\cdots,k}}
+	\end{array}
+	\right]
+\end{equation*}
+\begin{equation*}
+	\psi(\vec{b}_{0},\vec{z},\vec{n})= \det
+	\left[ \begin{array}{ccc}
+		((c_{2}(t,p)z_{j})^{i-1}e^{c_{2}(t,p)\beta_{1}z_{j}})_{\substack{i=1,\cdots,n_{1}\\j=1,\cdots,k}}\\
+	\vdots\\
+	((c_{2}(t,p)z_{j})^{i-1}e^{c_{2}(t,p)\beta_{q}z_{j}})_{\substack{i=1,\cdots, n_{q} \\j=1,\cdots,k}}
+	\end{array}
+	\right]
+\end{equation*} 
+
 \end{proposition}
 In order to prove these two propositions, we need to introduce some lemmas.\\
 The following lemma gives the distribution of avoiding Bernoulli line ensembles at time $\lfloor tT \rfloor$.
