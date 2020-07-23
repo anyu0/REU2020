@@ -36,9 +36,9 @@ In plain words, Lemma \ref{MCLxy} states that one can couple two Bernoulli line 
 
 If $W_t$ denotes a standard one-dimensional Brownian motion and $\sigma > 0$, then the process
 $$B^{\sigma}_t = \sigma (W_t - t W_1), \hspace{5mm} 0 \leq t \leq 1,$$
-is called a {\em Brownian bridge (conditioned on $B_0 = 0, B_1 = 0$)  with variance $\sigma^2$.} We note here that since $\ex[W_rW_s] = r\wedge s$, if $0\leq r\leq s\leq 1$, then we have
+is called a {\em Brownian bridge (conditioned on $B_0 = 0, B_1 = 0$) with variance $\sigma^2$.} We note that $B^\sigma$ is the unique a.s. continuous Gaussian process on $[0,1]$ with $B_0 = B_1  = 0$, $\ex[B^\sigma_t] = 0$, and
 \begin{equation}\label{BBcovar}
-\ex[B^\sigma_r B^\sigma_s] = \sigma^2(r - rs - sr + sr) = \sigma^2 r(1-s).
+\ex[B^\sigma_r B^\sigma_s] = \sigma^2(r\wedge s - rs - sr + sr) = \sigma^2 (r\wedge s - rs).
 \end{equation}  
 With the above notation we state the strong coupling result we use.
 \begin{theorem}\label{KMT}
@@ -98,32 +98,32 @@ We state one more lemma about Brownian bridges, which allows us to decompose a b
 	\]
 	Let $B^1,B^2$ be two independent Brownian bridges on $[0,1]$ with variances $\sigma^2 t/T$ and $\sigma^2(T-t)/T$ respectively, also independent from $B^\sigma$. Define the process
 	\[
-	B'_{s/T} = \begin{dcases}
+	\tilde{B}_{s/T} = \begin{dcases}
 	\frac{s}{t}\,\xi + B^1\Big(\frac{s}{t}\Big), & s\leq t,\\
 	\frac{T-s}{T-t}\,\xi + B^2\Big(\frac{s-t}{T-t}\Big), & s\geq t,
 	\end{dcases}
 	\]
-	for $s\in [0,T]$. Then $B'$ is a Brownian bridge with variance $\sigma$.
+	for $s\in [0,T]$. Then $\tilde{B}$ is a Brownian bridge with variance $\sigma$.
 \end{lemma}
 
 \begin{proof}
-	It is clear that the process $B'$ is a.s. continuous, and each $B'_s$ is Gaussian with mean 0 since it is a linear combination of centered Gaussians. By \ref{BBcovar}, it suffices to verify that if $0\leq r\leq s\leq T$, then
+	It is clear that the process $\tilde{B}$ is a.s. continuous, and each $\tilde{B}_s$ is Gaussian with mean 0 since it is a linear combination of centered Gaussians. By \ref{BBcovar}, it suffices to verify that if $0\leq r\leq s\leq T$, then
 	\begin{equation}\label{covar}
-	\ex[B'_{r/T}B'_{s/T}] = \sigma^2 \frac{r}{T}\Big(1-\frac{s}{T}\Big).
+	\ex[\tilde{B}_{r/T}\tilde{B}_{s/T}] = \sigma^2 \frac{r}{T}\Big(1-\frac{s}{T}\Big).
 	\end{equation}
 	First assume $s\leq t$ Using the fact that $\xi$ and $B^1_\cdot$ are independent with mean 0, we find
 	\begin{align*}
-	\ex[B'_{r/T}B'_{s/T}] &= \frac{rs}{t^2}\cdot\sigma^2\frac{t}{T}\Big(1-\frac{t}{T}\Big) + \sigma^2\frac{t}{T}\cdot\frac{r}{t}\Big(1-\frac{s}{t}\Big)\\
+	\ex[\tilde{B}_{r/T}\tilde{B}_{s/T}] &= \frac{rs}{t^2}\cdot\sigma^2\frac{t}{T}\Big(1-\frac{t}{T}\Big) + \sigma^2\frac{t}{T}\cdot\frac{r}{t}\Big(1-\frac{s}{t}\Big)\\
 	&= \sigma^2\frac{r}{T}\Big(\frac{s}{t} - \frac{s}{T} + 1 - \frac{s}{t}\Big) = \sigma^2\frac{r}{T}\Big(1-\frac{s}{T}\Big).
 	\end{align*}
 	If $r\geq t$, we compute
 	\begin{align*}
-	\ex[B'_{r/T}B'_{s/T}] &= \frac{(T-r)(T-s)}{(T-t)^2}\cdot\sigma^2\frac{t}{T}\Big( 1 - \frac{t}{T}\Big) + \sigma^2\frac{T-t}{T}\cdot\frac{r-t}{T-t}\Big( 1 - \frac{s-t}{T-t}\Big)\\
+	\ex[\tilde{B}_{r/T}\tilde{B}_{s/T}] &= \frac{(T-r)(T-s)}{(T-t)^2}\cdot\sigma^2\frac{t}{T}\Big( 1 - \frac{t}{T}\Big) + \sigma^2\frac{T-t}{T}\cdot\frac{r-t}{T-t}\Big( 1 - \frac{s-t}{T-t}\Big)\\
 	&= \frac{\sigma^2(T-s)}{T(T-t)}\Big(\frac{t(T-r)}{T} + r-t\Big) = \frac{\sigma^2(T-s)}{T(T-t)}\cdot\frac{r(T-t)}{T} = \sigma^2\frac{r}{T}\Big(1-\frac{s}{T}\Big).
 	\end{align*}
 	If $r < t < s$, then since $\xi$, $B^1_\cdot$, and $B^2_\cdot$ are all independent, we have
 	\[
-	\ex[B_{r/T}'B_{s/T}'] = \frac{r}{t}\cdot\frac{T-s}{T-t}\cdot\sigma^2\frac{t(T-t)}{T^2} = \sigma^2\frac{r(T-s)}{T^2} = \sigma^2\frac{r}{T}\Big(1-\frac{s}{T}\Big).
+	\ex[\tilde{B}_{r/T}\tilde{B}_{s/T}] = \frac{r}{t}\cdot\frac{T-s}{T-t}\cdot\sigma^2\frac{t(T-t)}{T^2} = \sigma^2\frac{r(T-s)}{T^2} = \sigma^2\frac{r}{T}\Big(1-\frac{s}{T}\Big).
 	\]
 	This proves \eqref{covar} in all cases.
 \end{proof}
@@ -354,14 +354,14 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	x_i' &= \lfloor - M_1\sqrt{T} \rfloor - 10(i-1)\lceil\sqrt{T}\rceil,\\
 	y_i' &= \lfloor pT - M_1\sqrt{T}\rfloor - 10(i-1)\lceil\sqrt{T}\rceil.
 	\end{align*}
-	Then $x_i'\leq x_k \leq x_i$ and $x_i'-x_{i+1}'\geq 4\sqrt{T}$, and similarly for $y_i'$. By Lemma \ref{MCLxy}, we have
+	Then $x_i'\leq x_k \leq x_i$ and $y_i' \leq y_k \leq y_i$ for $1\leq i\leq k-1$. Thus by Lemma \ref{MCLxy}, we have
 	\begin{equation*}
 	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{avoid, Ber} \Big(Q_k(T/2) - ptT \geq M\sqrt{T}\Big) \geq \mathbb{P}^{0,T,\vec{x}\,',\vec{y}\,'}_{avoid, Ber} \Big(Q_k(T/2) - ptT \geq M\sqrt{T}\Big).
 	\end{equation*}
-	Let us write $K_i = pT/2 + M\sqrt{T}+(10i-5)\lceil\sqrt{T}\rceil$ for $1\leq i\leq k$. Note $K_i$ is the midpoint of $pT/2 + M\sqrt{T} + 10(i-1)\lceil\sqrt{T}\rceil$ and $pT/2 + M\sqrt{T}+10i\lceil\sqrt{T}\rceil$. Let $E$ denote the event that the following conditions hold for $1\leq i\leq k$:
+	Let us write $K_i = pT/2 + M\sqrt{T}+(10(k-i)-5)\lceil\sqrt{T}\rceil$ for $1\leq i\leq k$. Note $K_i$ is the midpoint of $pT/2 + M\sqrt{T} + 10(k-i-1)\lceil\sqrt{T}\rceil$ and $pT/2 + M\sqrt{T}+10(k-i)\lceil\sqrt{T}\rceil$. Let $E$ denote the event that the following conditions hold for $1\leq i\leq k$:
 	\begin{enumerate}[label=(\arabic*)]
 		
-		\item $M\sqrt{T}+(10i-3)\lceil\sqrt{T}\rceil \leq Q_i(T/2) - pT/2 \leq M\sqrt{T} + (10i-7)\lceil\sqrt{T}\rceil$,
+		\item $\big| Q_i(T/2) - pT/2 - M\sqrt{T} - (10(k-i)-5)\lceil\sqrt{T}\rceil \big| \leq 2\lceil\sqrt{T}\rceil$,
 		
 		\item $\sup_{s\in[0,T/2]} \Big|Q_i(s)-x_i'-\dfrac{K_i-x_i'}{T/2}\,s\Big| \leq 3\sqrt{T}$,
 		
