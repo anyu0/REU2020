@@ -19,11 +19,12 @@ Given two integers $p \leq q$, we let $\llbracket p, q \rrbracket$ denote the se
 
 The following defines the notion of a line ensemble.
 \begin{definition}\label{CLEDef}
-Let $\Sigma \subset \mathbb{Z}$ and $\Lambda \subset \mathbb{R}$ be an interval. A {\em $\Sigma$-indexed line ensemble $\mathcal{L}$} is a random variable defined on a probability space $(\Omega, \mathcal{F}, \mathbb{P})$ that takes values in $\left(C (\Sigma \times \Lambda), \mathcal{C}_{\Sigma}\right)$. Intuitively, $\mathcal{L}$ is a collection of random continuous curves (sometimes referred to as {\em lines}), indexed by $\Sigma$,  each of which maps $\Lambda$ in $\mathbb{R}$. We will often slightly abuse notation and write $\mathcal{L}: \Sigma \times \Lambda \rightarrow \mathbb{R}$, even though it is not $\mathcal{L}$ which is such a function, but $\mathcal{L}(\omega)$ for every $\omega \in \Omega$. For $i \in \Sigma$ we write $\mathcal{L}_i(\omega) = (\mathcal{L}(\omega))(i, \cdot)$ for the curve of index $i$ and note that the latter is a map $\mathcal{L}_i: \Omega \rightarrow C(\Lambda)$, which is $(\mathcal{C}, \mathcal{F})-$measurable.
+Let $\Sigma \subset \mathbb{Z}$ and $\Lambda \subset \mathbb{R}$ be an interval. A {\em $\Sigma$-indexed line ensemble $\mathcal{L}$} is a random variable defined on a probability space $(\Omega, \mathcal{F}, \mathbb{P})$ that takes values in $\left(C (\Sigma \times \Lambda), \mathcal{C}_{\Sigma}\right)$. Intuitively, $\mathcal{L}$ is a collection of random continuous curves (sometimes referred to as {\em lines}), indexed by $\Sigma$,  each of which maps $\Lambda$ in $\mathbb{R}$. We will often slightly abuse notation and write $\mathcal{L}: \Sigma \times \Lambda \rightarrow \mathbb{R}$, even though it is not $\mathcal{L}$ which is such a function, but $\mathcal{L}(\omega)$ for every $\omega \in \Omega$. For $i \in \Sigma$ we write $\mathcal{L}_i(\omega) = (\mathcal{L}(\omega))(i, \cdot)$ for the curve of index $i$ and note that the latter is a map $\mathcal{L}_i: \Omega \rightarrow C(\Lambda)$, which is $(\mathcal{C}, \mathcal{F})-$measurable. If $a,b \in \Lambda$ satisfy $a < b$ we let $\mathcal{L}_i[a,b]$ denote the restriction of $\mathcal{L}_i$ to $[a,b]$.
 \end{definition}
 
-We will require the following result, whose proof is postponed until Section [Appendix]. In simple terms it states that the space $C (\Sigma \times \Lambda)$ where our random variables $\mathcal{L}$ take value has the structure of a complete, separable metric space. We say that a collection $(K_n)_{n\geq 1}$ of compact subsets $K_n\subset\Sigma\times\Lambda$ is a \textit{compact exhaustion} if $K_n\subseteq K_{n+1}$ for all $n\geq 1$, $\bigcup_n K_n = \Sigma\times\Lambda$, and every compact subset of $\Sigma\times\Lambda$ is contained in some $K_n$.
-\begin{lemma}\label{Polish} Let $(K_n)_{n\geq 1}$ be a compact exhaustion of $\Sigma\times\Lambda$. Define $d: C (\Sigma \times \Lambda) \times C (\Sigma \times \Lambda) \rightarrow [0, \infty)$ by
+We will require the following result, whose proof is postponed until Section \ref{AppendixA}. In simple terms it states that the space $C (\Sigma \times \Lambda)$ where our random variables $\mathcal{L}$ take value has the structure of a complete, separable metric space. 
+
+\begin{lemma}\label{Polish} Let $\Sigma \subset \mathbb{Z}$ and $\Lambda \subset \mathbb{R}$ be an interval. Suppose that $\{a_n\}_{n = 1}^\infty, \{b_n\}_{n = 1}^\infty$ are sequences of real numbers such that $a_n < b_n$, $[a_n, b_n] \subset \Lambda$, $a_{n+1} \leq a_n$, $b_{n+1} \geq b_n$ and $\cup_{n = 1}^\infty [a_n, b_n] = \Lambda$. For $n \in \mathbb{N}$ we let $K_n = \Sigma_n \times [a_n, b_n]$ where $\Sigma_n = \Sigma \cap \llbracket -n, n \rrbracket$. Define $d: C (\Sigma \times \Lambda) \times C (\Sigma \times \Lambda) \rightarrow [0, \infty)$ by
 \begin{equation} d (f,g) = \sum_{n=1}^\infty 2^{-n}\min\Big\{\sup_{(i,t)\in K_n} |f(i,t) - g(i,t)|, \, 1\Big\}.
 \end{equation}
 Then $d$ defines a metric on $C (\Sigma \times \Lambda) $ and moreover the metric space topology defined by $d$ is the same as the topology of uniform convergence over compact sets. Furthermore, the metric space $(C (\Sigma \times \Lambda), d)$ is complete and separable.
@@ -38,21 +39,13 @@ We also say that $\{ \mathcal{L}^n: n \in \mathbb{N} \}$ is {\em tight} if for a
 We call a line ensemble {\em non-intersecting} if $\mathbb{P}$-almost surely $\mathcal{L}_i(r) > \mathcal{L}_j(r)$  for all $i < j$ and $r \in \Lambda$.
 \end{definition}
 
-We will require the following sufficient condition for tightness of a sequence of line ensembles, which extends \cite[Theorem 7.3]{Billing}. We give a proof in Section \ref{Appendix1}.
+We will require the following sufficient condition for tightness of a sequence of line ensembles, which extends \cite[Theorem 7.3]{Billing}. We give a proof in Section \ref{AppendixA}.
 
 \begin{lemma}\label{2Tight}
-	Let $\Lambda\subset\mathbb{R}$ be an interval and $\Sigma = \llbracket 1, N\rrbracket$. Let $([a_k,b_k])_{k\geq 1}$ be a compact exhaustion of $\Lambda$, and let $a_0 \in [a_k,b_k]$ for all $k$. Then $(\mathcal{L}^n)$ is tight if and only if for every $i\in\Sigma$ and $k\geq 1$, we have
+	Let $\Sigma \subset \mathbb{Z}$ and $\Lambda\subset\mathbb{R}$ be an interval. Suppose that $\{a_n\}_{n = 1}^\infty, \{b_n\}_{n = 1}^\infty$ are sequences of real numbers such that $a_n < b_n$, $[a_n, b_n] \subset \Lambda$, $a_{n+1} \leq a_n$, $b_{n+1} \geq b_n$ and $\cup_{n = 1}^\infty [a_n, b_n] = \Lambda$. Then $\{\mathcal{L}^n\}$ is tight if and only if for every $i\in\Sigma$ we have
 	\begin{enumerate}[label=(\roman*)]
-		
-		\item 
-		\[
-		\lim_{a\to\infty} \limsup_{n\to\infty}\, \pr(|\mathcal{L}^n_i(a_0)|\geq a) = 0.
-		\]
-		
-		\item For all $\epsilon>0$,
-		\[
-		\lim_{\delta\to 0} \limsup_{n\to\infty}\, \pr\bigg(\sup_{\substack{x,y\in [a_k,b_k], \\ |x-y|\leq\delta}} |\mathcal{L}^n_i(x) - \mathcal{L}^n_i(y)| \geq \epsilon\bigg) = 0.
-		\]
+		\item $\lim_{a\to\infty} \limsup_{n\to\infty}\, \pr(|\mathcal{L}^n_i(a_0)|\geq a) = 0$;
+		\item For all $\epsilon>0$ and $k \in \mathbb{N}$,  $\lim_{\delta\to 0} \limsup_{n\to\infty}\, \pr\bigg(\sup_{\substack{x,y\in [a_k,b_k], \\ |x-y|\leq\delta}} |\mathcal{L}^n_i(x) - \mathcal{L}^n_i(y)| \geq \epsilon\bigg) = 0.$
 		
 	\end{enumerate}
 \end{lemma}
