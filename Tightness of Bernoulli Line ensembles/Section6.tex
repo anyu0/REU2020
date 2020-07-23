@@ -14,7 +14,7 @@
 \begin{definition}
 	Let $\tilde{\Omega}_{avoid}(-t_2, t_2, \vec{x}, \vec{y}, \infty, \ell_{bot})$ denote the set of elements $(\ell_1, \dots, \ell_{k-1})$ in \\${\Omega}_{avoid}(-t_2, t_2, \vec{x}, \vec{y}, \infty, -\infty)$ such that $\ell_{k-1}(s) \geq \ell_{bot}(s)$ for all $s \in \llbracket -t_2, t_2 \rrbracket \setminus \llbracket -t_1 + 1, t_1 - 1 \rrbracket$. We also denote by $\tilde{\mathfrak{L}} = (\tilde{L}_1, \dots, \tilde{L}_{k-1})$ the $\llbracket 1, k-1 \rrbracket$-indexed line ensemble that is uniformly distributed on $\tilde{\Omega}_{avoid}(-t_2, t_2, \vec{x}, \vec{y}, \infty, \ell_{bot})$.
 \end{definition}
-In simple words, $\tilde{L}$ has the law of $k-1$ independent Bernoulli bridges that have been conditioned on not-crossing each other on the entire interval $[-t_2, t_2]$ and also staying above the graph of $\ell_{bot}$ but only on the intervals $[-t_2, -t_1]$ and $[t_1, t_2]$. The latter restriction means that $\tilde{L}_{k-1}$ is allowed to dip below $\ell_{bot}$ on $(-t_1, t_1).$ 
+In other words, $\tilde{L}$ has the law of $k-1$ independent Bernoulli bridges that have been conditioned on not-crossing each other on the entire interval $[-t_2, t_2]$ and also staying above the graph of $\ell_{bot}$ but only on the intervals $[-t_2, -t_1]$ and $[t_1, t_2]$. The latter restriction means that $\tilde{L}_{k-1}$ is allowed to dip below $\ell_{bot}$ on $(-t_1, t_1).$ 
 
 \begin{lemma}\label{LemmaAP2} We claim that there exists $N_5 \in \mathbb{N}$ such that for $N \geq N_5$ 
 	\begin{equation}\label{eqn57}
@@ -27,7 +27,7 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	
 	First, define $S:=[t_1^-, t_1^+]$ and $T:=[t_2^-, t_1^-]\cup [t_1^+,t_2^+]$. Define $\pr_{\mathfrak L'}$ and $\pr_{\tilde{\mathfrak{L}}'}$ as the measures on Bernoulli line ensembles $\mathfrak L', \tilde{\mathfrak{L}}': T\to \R$ with $\mathfrak L'(t_2^-)=\tilde{\mathfrak{L}}'(t_2^-)=\vec x$ and $\mathfrak L'(t_2^+)=\tilde{\mathfrak{L}}'(t_2^+)=\vec y$, which are the restrictions of the previous measures $\pr_{\mathfrak L}$ and $\pr_{\tilde{\mathfrak{L}}}$ to $T$. The Radon-Nikodym derivative of these restricted measures is given on Bernoulli line ensembles $\mathfrak B: T\to \R^k$ by \begin{equation}\label{propRadon}\frac{d\pr_{\mathfrak L'}}{d\pr_{\tilde{\mathfrak L}'}}\left(\mathfrak B\right)=\left(Z'\right)^{-1}Z\left(t_1^-,t_1^+,\mathfrak{B}\left(t_1^-\right),\mathfrak{B}\left(t_1^+\right),\ell_{bot};T\right)
 	\end{equation}
-	with $Z':=\ex_{\tilde{\mathfrak{L}}'}\left(Z\left(t_1^-, t_1^+, \mathfrak B(t_1^-), \mathfrak B(t_1^+), \ell_{bot}; T\right)\right)$ Now, note that $Z\left(t_1^-, t_1^+, \mathfrak B(t_1^-), \mathfrak B(t_1^+), \ell_{bot}; T\right)$ is a function of $(\mathfrak B(t_1^-), \mathfrak B(t_1^+))$. In fact, the law of ($\left(\mathfrak B(t_1^-), \mathfrak B(t_1^+)\right)$) under $\pr_{\tilde{\mathfrak L}'}$ is the same as $(\tilde{\mathfrak L}(t_1^-), \tilde{\mathfrak L}(t_1^+))$ by way of the restiction. Thus, alongside Lemma \ref{LemmaAP2} we have
+	with $Z':=\ex_{\tilde{\mathfrak{L}}'}\left(Z\left(t_1^-, t_1^+, \mathfrak B(t_1^-), \mathfrak B(t_1^+), \ell_{bot}; T\right)\right)$ Now, note that $Z\left(t_1^-, t_1^+, \mathfrak B(t_1^-), \mathfrak B(t_1^+), \ell_{bot}; T\right)$ is a function of $(\mathfrak B(t_1^-), \mathfrak B(t_1^+))$. In fact, the law of ($\left(\mathfrak B(t_1^-), \mathfrak B(t_1^+)\right)$) under $\pr_{\tilde{\mathfrak L}'}$ is the same as $(\tilde{\mathfrak L}(t_1^-), \tilde{\mathfrak L}(t_1^+))$ by way of the restriction. Thus, alongside Lemma \ref{LemmaAP2} we have
 	\[
 	Z'=\ex_{\tilde{\mathfrak{L}}'}\left[Z(t_1^-, t_1^+, \mathfrak B(t_1^-),\mathfrak B(t_1^+),\ell_{bot};T)\right]=\ex_{\tilde{\mathfrak{L}}}\left[Z(t_1^-, t_1^+, \tilde{\mathfrak L}(t_1^-),\tilde{\mathfrak L}(t_1^+),\ell_{bot};T)\right]\geq gh
 	\]
@@ -45,7 +45,7 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	\[
 	\pr_{\mathfrak L'}(E)=\int_\Omega \indic_E\cdot d\pr_{\mathfrak L'}(B)=(Z')^{-1}\int_\Omega\indic_E\cdot Z(t_1^-,t_1^+,B(t_1^-),B(t_1^+),\ell_{bot};T)\cdot d\pr_{\tilde{\mathfrak{L}}'}(B)
 	\]
-	using the Radon-Nikodym derivative from \ref{propRadon}. By the definition of $E$, we have that the acceptance probability $Z(t_1^-,t_1^+,B(t_1^-),B(t_1^+),\ell_{bot};T)$ is bounded above by $gh\tilde{\epsilon}$, which gives the inequality \[\pr_{\mathfrak L'}(E)\leq (Z')^{-1}\int_\Omega \indic_E\cdot gh\tilde{\epsilon}\cdot d\pr_{\tilde{\mathfrak{L}}'}(B)\leq \frac{1}{gh}\int_\Omega\indic_E\cdot gh\tilde\epsilon\cdot d\pr_{\tilde{\mathfrak{L}}'}(B)\leq \tilde{\epsilon}\]. Equantion (\ref{Zineq})  provides the middle inequality and the fact that $\indic_E\leq 1$ provides the second one, concluding the proof of the lemma.
+	using the Radon-Nikodym derivative from \ref{propRadon}. By the definition of $E$, we have that the acceptance probability $Z(t_1^-,t_1^+,B(t_1^-),B(t_1^+),\ell_{bot};T)$ is bounded above by $gh\tilde{\epsilon}$, which gives the inequality \[\pr_{\mathfrak L'}(E)\leq (Z')^{-1}\int_\Omega \indic_E\cdot gh\tilde{\epsilon}\cdot d\pr_{\tilde{\mathfrak{L}}'}(B)\leq \frac{1}{gh}\int_\Omega\indic_E\cdot gh\tilde\epsilon\cdot d\pr_{\tilde{\mathfrak{L}}'}(B)\leq \tilde{\epsilon}.\] Equation (\ref{Zineq})  provides the middle inequality and the fact that $\indic_E\leq 1$ provides the second one, concluding the proof of the lemma.
 	
 \end{proof}
 
@@ -117,7 +117,7 @@ Let us put $t_{12} = \lfloor \frac{t_1 + t_2}{2} \rfloor$.
 	Note that $x_i' \leq x_{k-1} \leq x_i$ and $x_i' - x_{i+1}' \geq C(2t_2)^{1/2}$ for $1\leq i\leq k$, and likewise for $z_i',y_i'$. By Lemma \ref{MCLxy} and the Schur Gibbs property, we have
 	\begin{equation}\label{5.10separate}
 	\begin{split}
-	&\mathbb{P}^{-t_2,0,\vec{x},\vec{z}}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \mathbb{P}^{-t_2,0,\vec{x}\,',\vec{z}\,'}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big)\\ \geq \; & \mathbb{P}^{-t_2,0,x_{k-1}',z_{k-1}'}_{Ber}\Big(\ell_1(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) - \big( 1 -  \mathbb{P}^{-t_2,t_2,\vec{x}\,',\vec{z}\,'}_{Ber}\big(\tilde{L}^1_1 \geq \cdots \geq \tilde{L}_{k-1}^1\big)\big).
+	&\mathbb{P}^{-t_2,0,\vec{x},\vec{z}}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \mathbb{P}^{-t_2,0,\vec{x}\,',\vec{z}\,'}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big)\\ \geq \; & \mathbb{P}^{-t_2,0,x_{k-1}',z_{k-1}'}_{Ber}\Big(\ell_1(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) - \mathbb{P}^{-t_2,t_2,\vec{x}\,',\vec{z}\,'}_{Ber}\big(\tilde{L}^1_1 \geq \cdots \geq \tilde{L}_{k-1}^1\big).
 	\end{split}
 	\end{equation} 
 	To bound the first term on the second line, we first note that $\frac{t_{12}}{t_2-t_{12}} \leq 2r+3$ and $\frac{t_2}{t_2-t_{12}} \leq r+5$. It follows from our choice of $K_1$ and $V_1^b = K_1/2$ that 
