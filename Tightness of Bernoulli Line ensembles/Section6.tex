@@ -117,7 +117,7 @@ Let us put $t_{12} = \lfloor \frac{t_1 + t_2}{2} \rfloor$.
 	Note that $x_i' \leq x_{k-1} \leq x_i$ and $x_i' - x_{i+1}' \geq C(2t_2)^{1/2}$ for $1\leq i\leq k$, and likewise for $z_i',y_i'$. By Lemma \ref{MCLxy} and the Schur Gibbs property, we have
 	\begin{equation}\label{5.10separate}
 	\begin{split}
-	&\mathbb{P}^{-t_2,0,\vec{x},\vec{z}}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \mathbb{P}^{-t_2,0,\vec{x}\,',\vec{z}\,'}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big)\\ \geq \; & \mathbb{P}^{-t_2,0,x_{k-1}',z_{k-1}'}_{Ber}\Big(\ell_1(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) - \mathbb{P}^{-t_2,t_2,\vec{x}\,',\vec{z}\,'}_{Ber}\big(\tilde{L}^1_1 \geq \cdots \geq \tilde{L}_{k-1}^1\big).
+	&\mathbb{P}^{-t_2,0,\vec{x},\vec{z}}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \mathbb{P}^{-t_2,0,\vec{x}\,',\vec{z}\,'}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big)\\ \geq \; & \mathbb{P}^{-t_2,0,x_{k-1}',z_{k-1}'}_{Ber}\Big(\ell_1(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) - \big( 1 -  \mathbb{P}^{-t_2,t_2,\vec{x}\,',\vec{z}\,'}_{Ber}\big(\tilde{L}^1_1 \geq \cdots \geq \tilde{L}_{k-1}^1\big)\big).
 	\end{split}
 	\end{equation} 
 	To bound the first term on the second line, we first note that $\frac{t_{12}}{t_2-t_{12}} \leq 2r+3$ and $\frac{t_2}{t_2-t_{12}} \leq r+5$. It follows from our choice of $K_1$ and $V_1^b = K_1/2$ that 
