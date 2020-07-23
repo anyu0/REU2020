@@ -7,7 +7,7 @@
 
 \subsection{Proof of Lemma \ref{Polish}}
 
-Observe that the sets $K_1\subset K_2\subset\cdots\subset\Sigma\times\Lambda$ are compact, they cover $\Sigma\times\Lambda$, and any compact subset $K$ of $\Sigma\times\Lambda$ is contained in all $K_n$ for sufficiently large $n$. To see this last fact, let $\pi_1,\pi_2$ denote the canonical projection maps of $\Sigma\times\Lambda$ onto $\Sigma$ and $\Lambda$ respectively. Since these maps are continuous, $\pi_1(K)$ and $\pi_2(K)$ are compact in $\Sigma$ and $\Lambda$. This implies that $\pi_1(K)$ is finite, so it is contained in $\Sigma_{n_1} = \Sigma\cap\llbracket -n_1,n_1\rrbracket$ for some $n_1$. On the other hand, $\pi_2(K)$ is closed and bounded in $\mathbb{R}$, thus contained in some closed interval $[\alpha,\beta]\subseteq\Lambda$. Since $a_n\searrow a$ and $b_n\nearrow b$, we can choose $n_2$ large enough so that $\pi_2(K)\subseteq[\alpha,\beta]\subseteq[a_{n_2},b_{n_2}]$. Then taking $n=\max(n_1,n_2)$, we have $K = \pi_1(K) \times \pi_2(K) \subseteq \Sigma_n \times [a_n,b_n] = K_n$.
+Observe that the sets $K_1\subset K_2\subset\cdots\subset\Sigma\times\Lambda$ are compact, they cover $\Sigma\times\Lambda$, and any compact subset $K$ of $\Sigma\times\Lambda$ is contained in all $K_n$ for sufficiently large $n$. To see this last fact, let $\pi_1,\pi_2$ denote the canonical projection maps of $\Sigma\times\Lambda$ onto $\Sigma$ and $\Lambda$ respectively. Since these maps are continuous, $\pi_1(K)$ and $\pi_2(K)$ are compact in $\Sigma$ and $\Lambda$. This implies that $\pi_1(K)$ is finite, so it is contained in $\Sigma_{n_1} = \Sigma\cap\llbracket -n_1,n_1\rrbracket$ for some $n_1$. On the other hand, $\pi_2(K)$ is closed and bounded in $\mathbb{R}$, thus contained in some closed interval $[\alpha,\beta]\subseteq\Lambda$. Since $a_n\searrow a$ and $b_n\nearrow b$, we can choose $n_2$ large enough so that $\pi_2(K)\subseteq[\alpha,\beta]\subseteq[a_{n_2},b_{n_2}]$. Then taking $n=\max(n_1,n_2)$, we have $K \subseteq \pi_1(K) \times \pi_2(K) \subseteq \Sigma_n \times [a_n,b_n] = K_n$.
 
 We now split the proof into several steps.\\
 
@@ -70,70 +70,59 @@ so $g\in B_K(f,\epsilon)$. This proves that $D$ is a countable dense subset of $
 
 \subsection{Proof of Lemma \ref{2Tight}}
 
-We first state and prove two auxiliary results regarding the topology of uniform convergence over compacts. The first lemma states that a $C(\Sigma\times\Lambda)$-valued random variable is determined by its finite-dimensional distributions.
+We first prove two lemmas that will be used in the proof of Lemma \ref{2Tight}. The first result allows us to identify the space $C(\Sigma\times\Lambda)$ with a product of copies of $C(\Lambda)$. In the following, we assume the notation of Lemma \ref{2Tight}.
 
-\begin{lemma}\label{FDD}
-	Let $(\Omega,\mathcal{F},\pr)$ be a probability space and $X,Y$ random variables on $(\Omega,\mathcal{F},\pr)$ taking values in $C(\Sigma\times\Lambda)$. Suppose that for all $n\in\mathbb{N}$, $(i_1,t_1),\dots,(i_n,t_n)\in\Sigma\times\Lambda$, and $x_1,\dots,x_n\in\mathbb{R}$, we have that
+\begin{lemma}\label{ProdTop}
+	Let $\pi_i: C (\Sigma \times \Lambda) \rightarrow C(\Lambda)$, $i \in \Sigma$, be the projection maps given by
+	$\pi_i(F)(x) = F(i, x)$ for $x \in \Lambda$. Then the $\pi_i$ are continuous. Endow the space $\prod_{i\in\Sigma} C(\Lambda)$ with the product topology induced by the topology of uniform convergence over compacts on $C(\Lambda)$. Then the mapping
 	\begin{align*}
-	&\mathbb{P}\left(X(i_1,t_1)\leq x_1,\dots,X(i_n,t_n)\leq x_n\right) = \mathbb{P}\left(Y(i_1,t_1)\leq x_1,\dots,Y(i_n,t_n)\leq x_n\right).
+		F : C(\Sigma\times\Lambda) \longrightarrow \prod_{i\in\Sigma} C(\Lambda), \quad f\mapsto (\pi_i(f))_{i\in\Sigma}
 	\end{align*}
-	Then $X$ and $Y$ are equal in distribution, i.e., $\mathbb{P}(X\in A) = \mathbb{P}(Y\in A)$ for all $A\in\mathcal{C}_\Sigma$.
-	
+	is a homeomorphism.
 \end{lemma}
 
 \begin{proof}
+	We first prove that the $\pi_i$ are continuous. Since $C(X)$ with the topology of uniform convergence on compacts is metrizable by Lemma \ref{Polish}, it suffices to assume that $f_n\to f$ in $C(\Sigma\times\Lambda)$ and show that $\pi_i(f_n)\to \pi_i(f)$ in $C(\Lambda)$. Let $K$ be compact in $\Lambda$. Then $\{i\}\times K$ is compact in $\Sigma\times\Lambda$, and $f_n\to f$ on $\{i\}\times K$ by assumption, so we have $\pi_i(f_n)|_K = f_n|_{\{i\}\times K} \to f|_{\{i\}\times K} = \pi_i(f)|_K$ uniformly on $K$. Since $K$ was arbitrary, we conclude that $\pi_i(f_n) \to \pi_i(f)$ in $C(\Lambda)$ as desired. 
 	
-	Let $\mathcal{S}$ denote the collection of cylinder sets
+	We now observe that $F$ is invertible. If $(f_i)_{i\in\Sigma} \in \prod_{i\in\Sigma} C(\Lambda)$, then the function $f$ defined by $f(i,\cdot) = f_i(\cdot)$ is in $C(\Sigma\times\Lambda)$, since $\Sigma$ has the discrete topology. This gives a well-defined inverse for $F$. It suffices to prove that $F$ and $F^{-1}$ are open maps.
+	
+	We first show that $F$ sends each basis element $B_K(f,\epsilon)$ of $C(\Sigma\times\Lambda)$ to a basis element in $\prod_{i\in\Sigma} C(\Lambda)$. Note that a basis for the product topology is given by products $\prod_{i\in\Sigma} B_{K_i}(f_i,\epsilon)$, where at most finitely many of the $K_i$ are nonempty. Here, we use the convention that $B_{\varnothing}(f_i,\epsilon) = C(\Lambda)$. Let $\pi_\Sigma,\pi_\Lambda$ denote the canonical projections of $\Sigma\times\Lambda$ onto $\Sigma,\Lambda$. The continuity of $\pi_\Sigma$ implies that if $K\subset\Sigma\times\Lambda$ is compact, then $\pi_\Sigma(K)$ is compact in $\Sigma$, hence finite. Observe that the set $K\cap(\{i\}\times\Lambda)$ is an intersection of two compacts sets, hence compact in $\Sigma\times\Lambda$. Therefore the sets $K_i = \pi_\Lambda(K\cap(\{i\}\times\Lambda))$ are compact in $\Lambda$ for each $i\in\Sigma$ since $\pi_\Lambda$ is continuous. We observe that $F(B_K(f,\epsilon)) = \prod_{i\in\Sigma} U_i$, where
 	\[
-	\{f\in C(\Sigma\times\Lambda) : f(i_1,t_1)\in A_1, \dots, f(i_n,t_n) \in A_n\}, \quad A_1,\dots,A_n\in\mathcal{B}(\mathbb{R}). 
+	U_i = B_{K_i}(\pi_i(f),\epsilon), \quad\mathrm{if} \quad i \in \pi_\Sigma(K),
 	\]
-	Since the Borel sets in $\mathbb{R}$ are generated by intervals of the form $(-\infty,x]$, the hypothesis is equivalent to requiring that the probability measures $\mathbb{P}\circ X^{-1}$ and $\mathbb{P}\circ Y^{-1}$ agree on $\mathcal{S}$. We will show that $\mathcal{S}$ is a $\pi$-system generating $\mathcal{C}_\Sigma$, which will imply by [] that $\mathbb{P}\circ X^{-1} = \mathbb{P}\circ Y^{-1}$ on all of $\mathcal{C}_\Sigma$. Observe that the intersection of two elements of $\mathcal{S}$ is clearly another element of $\mathcal{S}$, so $\mathcal{S}$ is a $\pi$-system. 
+	and $U_i = C(\Lambda)$ otherwise. Since $\pi_\Sigma(K)$ is finite and the $K_i$ are compact, we see that $F(B_K(f,\epsilon))$ is a basis element in the product topology as claimed.
 	
-	We claim that the set $\{f\in C(\Sigma\times\Lambda):f(i_k,t_k)\leq x_k\}$ is closed in the topology of compact convergence. If $f_n(i_k,t_k)\leq x_k$ for all $n$ and $f_n\to f$ in the topology of compact convergence, then by taking limits on a compact set containing $(i_k,t_k)$, we find $f(i_k,t_k)\leq x_k$ as well. This proves that $\sigma(\mathcal{S})\subseteq\mathcal{C}_\Sigma$. 
-	
-	To prove the opposite inclusion, let $K\subset\Sigma\times\Lambda$ be compact, $f\in C(\Sigma\times\Lambda)$, and $\epsilon>0$, and let $H$ be a countable dense subset of $K$. (Recall that every compact metric space is separable, and $K$ is homeomorphic to a product of finitely many compact sets in $\mathbb{R}$, which are metrizable. So $K$ is separable.) We claim that
+	Lastly, we show that $F^{-1}$ sends each basis element $U = \prod_{i\in\Sigma} B_{K_i}(f_i,\epsilon)$ for the product topology to a set of the form $B_K(f,\epsilon)$. We have $K_i=\varnothing$ for all but finitely many $i$. Write $f = F^{-1}((f_i)_{i\in\Sigma})$ and $K=\prod_{i\in\Sigma} K_i$. By Tychonoff's theorem, \cite[Theorem 37.3]{Munkres}, $K$ is compact in $\Sigma\times\Lambda$, and
 	\[
-	B_K(f,\epsilon) = \bigcup_{n=1}^\infty\,\bigcap_{(i,t)\in H} \{g\in C(\Sigma\times\Lambda) : g(i,t) \in  (f(i,t)-(1-2^{-n})\epsilon, f(i,t) + (1-2^{n})\epsilon)\}.
+	F^{-1}(U) = B_K(f,\epsilon).
 	\]
-	Indeed, if $g\in B_K(f,\epsilon)$, i.e., $\sup_{(i,t)\in K} |g(i,t)-f(i,t)| < \epsilon$. Then since $1-2^{-n}\nearrow 1$, we can choose $n$ large enough so that 
-	\[
-	|g(i,t)-f(i,t)| < (1-2^{-n})\epsilon
-	\] 
-	for all $(i,t)\in K$ (in particular with $(i,t)\in H$). Conversely, suppose $g$ is in the set on the right. Then since $g$ is continuous and $H$ is dense in $K$, we find that for some $n\geq 1$,
-	\[
-	|g(i,t)-f(i,t)| \leq (1-2^{-n})\epsilon < \epsilon
-	\]
-	for all $(i,t)\in K$. Hence $g\in B_K(f,\epsilon)$. This proves the claim. Since $H$ is countable, $B_K(f,\epsilon)$ is formed from countably many unions and intersections of sets in $\mathcal{S}$, thus $B_K(f,\epsilon)\in\sigma(\mathcal{S})$.
-	
-	Now by Lemma \ref{Polish}, the topology generated by the basis $\mathcal{A} = \{B_K(f,\epsilon)\}$ is separable and metrizable. The balls of rational radii centered at points of a countable dense subset then give a countable basis $\mathcal{B}$ for the same topology. We claim that this implies that every open set is a \textit{countable} union of sets $B_K(f,\epsilon)$. To see this, let $B\in\mathcal{B}$, and write $B=\bigcup_{\alpha\in I} A_\alpha$, for sets $A_\alpha\in\mathcal{A}$. Then for each $x\in B$, pick $\alpha_x \in I$ such that $x\in A_{\alpha_x}$. Since $\mathcal{B}$ is a basis, there is a set $B_x \in \mathcal{B}$ with $x\in B_x\subseteq A_{\alpha_x}$. Then $B = \bigcup_{x\in B} A_{\alpha_x}$. Note that if $y\in B_y \subseteq A_{\alpha_y}$ and $B_y=B_x$, then in fact $y\in A_{\alpha_x}$, so we can remove $A_{\alpha_y}$ from the union. In other words, we can choose the $A_{\alpha_x}$ so that each corresponds to exactly one $B_x$. But there are only countably many distinct sets $B_x$, so we see that $B$ is a countable union of elements of $\mathcal{A}$. Since every open set can be written as a countable union of elements of $B$, this proves the claim. Since $\mathcal{A}\subseteq\sigma(\mathcal{S})$ by the above, it follows that every open set is in $\sigma(\mathcal{S})$, and consequently so is every Borel set, i.e., $\mathcal{C}_\Sigma \subseteq \sigma(\mathcal{S})$. This completes the proof
 	
 \end{proof}
 
-The next result shows that a sequence of line ensembles is tight if and only if all individual curves form tight sequences.
+We next prove a lemma which states that a sequence of line ensembles is tight if and only if all individual curves form tight sequences.
 
 \begin{lemma}\label{ProjTight}
-	Consider the projection maps $\pi_i: C (\Sigma \times \Lambda) \rightarrow C(\Lambda)$, $i \in \Sigma$, given by
-	$\pi_i(F)(x) = F(i, x) \mbox{ for $x \in \Lambda$}.$ Then the $\pi_i$ are continuous. Suppose that $(\mathcal{L}^n)_{n\geq 1}$ is a sequence of $\Sigma$-indexed line ensembles on $\Lambda$. Then $(\mathcal{L}^n)$ is tight if and only if for each $i \in \Sigma$ the sequence $(X_i^n)_{n\geq 1}$ is tight.
+	Suppose that $\{\mathcal{L}^n\}_{n\geq 1}$ is a sequence of $\Sigma$-indexed line ensembles on $\Lambda$, and let $X_i^n = \pi_i(\mathcal{L}^n)$. Then the $X_i^n$ are $C(\Lambda)$-valued random variables on $(\Omega,\mathcal{F},\mathbb{P})$, and $\{\mathcal{L}^n\}$ is tight if and only if for each $i \in \Sigma$ the sequence $\{X_i^n\}_{n\geq 1}$ is tight.
 	
 \end{lemma}
 
 \begin{proof}
-	
-Since $C(X)$ with the topology of uniform convergence on compacts is metrizable by Lemma \ref{Polish}, to show that the $\pi_i$ are continuous, it suffices to show that if $f_n\to f$ in $C(\Sigma\times\Lambda)$, then $\pi_i(f_n)\to \pi_i(f)$ in $C(\Lambda)$. But this is immediate, since if $f_n\to f$ uniformly on compact subsets of $\Sigma\times\Lambda$, then in particular $f_n(i,\cdot)\to f(i,\cdot)$ uniformly on compact subsets of $\Lambda$. Now write $X_i^n := \pi_i(\mathcal{L}^n)$. If $A$ is a Borel set in $C(\Lambda)$, then $(X_i^n)^{-1}(A) = (\mathcal{L}^n)^{-1}(\pi_i^{-1}(A))$. Note $\pi_i^{-1}(A)\in\mathcal{C}_\Sigma$ since $\pi_i$ is continuous, so it follows that $(X_i^n)^{-1}(A)\in\mathcal{F}$. Thus $X_i^n$ is a $C(\Lambda)$-valued random variable.
 
-Suppose the sequence $(\mathcal{L}^n)$ is tight. By Lemma \ref{Polish}, $C(\Sigma\times\Lambda)$ is a Polish space, so it follows from Prohorov's theorem \cite[Theorem 5.1]{Billing}, that $(\mathcal{L}^n)$ is relatively compact. That is, every subsequence $(\mathcal{L}^{n_k})$ has a further subsequence $(\mathcal{L}^{n_{k_\ell}})$ converging weakly to some $\mathcal{L}$. Then for each $i\in\Sigma$, since $\pi_i$ is continuous, the subsequence $(\pi_i(\mathcal{L}^{n_{k_\ell}}))$ of $(\pi_i(\mathcal{L}^{n_k}))$ converges weakly to $\pi_i(\mathcal{L})$ by the continuous mapping theorem. Thus every subsequence of $(\pi_i(\mathcal{L}^n))$ has a convergent subsequence. Since $C(\Lambda)$ is a Polish space by the same argument as in the proof of Lemma \ref{Polish}, Prohorov's theorem implies that each $(\pi_i(\mathcal{L}^n))$ is tight.
+The fact that the $X_i^n$ are random variables follows from the continuity of the $\pi_i$ in Lemma \ref{ProdTop} and \cite[Theorem 1.3.5]{Durrett}. First suppose the sequence $\{\mathcal{L}^n\}$ is tight. By Lemma \ref{Polish}, $C(\Sigma\times\Lambda)$ is a Polish space, so it follows from Prohorov's theorem, \cite[Theorem 5.1]{Billing}, that $\{\mathcal{L}^n\}$ is relatively compact. That is, every subsequence $\{\mathcal{L}^{n_k}\}$ has a further subsequence $\{\mathcal{L}^{n_{k_\ell}}\}$ converging weakly to some $\mathcal{L}$. Then for each $i\in\Sigma$, since $\pi_i$ is continuous by the above, the subsequence $\{\pi_i(\mathcal{L}^{n_{k_\ell}})\}$ of $\{\pi_i(\mathcal{L}^{n_k})\}$ converges weakly to $\pi_i(\mathcal{L})$ by the continuous mapping theorem, \cite[Theorem 3.2.10]{Durrett}. Thus every subsequence of $\{\pi_i(\mathcal{L}^n)\}$ has a convergent subsequence. Since $C(\Lambda)$ is a Polish space by the same argument as in the proof of Lemma \ref{Polish}, Prohorov's theorem implies that each $\{\pi_i(\mathcal{L}^n)\}$ is tight.
 
-Conversely, suppose $(\pi_i(\mathcal{L}^n))$ is tight for all $i\in\Sigma$. Then for each $i$, every subsequence $(\pi_i(\mathcal{L}^{n_k}))$ has a further subsequence $(\pi_i(\mathcal{L}^{n_{k_\ell}}))$ converging weakly to some $\mathcal{L}_i$. By diagonalizing the subsequences $(n_{k_\ell})$, we obtain a sequence that works for all $i$, so that $\pi_i(\mathcal{L}^{n_{k_\ell}})\implies \mathcal{L}_i$ for all $i$ simultaneously. Note that $C(\Sigma\times\Lambda)$ is homeomorphic to $\prod_{i\in\Sigma} C(\Lambda)$ with the product topology, with $f\in C(\Sigma\times\Lambda)$ identified with $(\pi_i(f))_{i\in\Sigma}$. It is not hard to see this by observing that the compact subsets $K$ of $\Sigma\times\Lambda$ are of the form $S\times I$, for $S$ finite and $I$ compact. Thus the homeomorphism identifies the basis elements $B_K(f,\epsilon)$ in $C(\Sigma\times\Lambda)$ with products of open sets $U_i$ in $C(\Lambda)$, such that if $i\notin S$ then simply $U_i = C(\Lambda)$; since $S$ is finite, these products $\prod_i U_i$ are basis elements of the product topology.
-
-Consequently, we can identify the sequence of random variables $\mathcal{L} = (\mathcal{L}_i)_{i\in\Sigma}$ with an element of $C(\Sigma\times\Lambda)$. We argue that $\mathcal{L}^{n_{k_\ell}}\implies \mathcal{L}$. Let $U$ be a basis element in the product topology, i.e., $U = \prod_{i\in\Sigma} U_i$, with each $U_i$ open in $C(\Lambda)$ and all but finitely many $U_i = C(\Lambda)$. Without loss of generality, assume these finitely many $U_i\neq C(\Lambda)$ are $U_1,\dots,U_m$. Then
+Conversely, suppose $\{X_i^n\}$ is tight for all $i\in\Sigma$. Then given $\epsilon > 0$, we can find compact sets $K_i\subset C(\Lambda)$ such that
 \[
-\mathbb{P}(X \in U) = \mathbb{P}(\pi_1(X) \in U_1, \dots, \pi_m(X) \in U_m) = \prod_{i=1}^m \mathbb{P}(\pi_i(X)\in U_i).
+\mathbb{P}(X_i^n \notin K_i) \leq \epsilon/2^i
 \]
-Therefore, since $\pi_i(\mathcal{L}^{n_{k_\ell}}) \implies \mathcal{L}_i$ for each $i$, we have by the portmanteau theorem, \cite[Theorem 2.1]{Billing}, that
-\begin{align*}
-\liminf_{\ell\to\infty} \mathbb{P}(\mathcal{L}^{n_{k_\ell}} \in U) &\geq \prod_{i=1}^m \liminf_{\ell\to\infty} \mathbb{P}(\pi_i(\mathcal{L}^{n_{k_\ell}})\in U_i) \geq \prod_{i=1}^m \mathbb{P}(\mathcal{L}_i \in U_i) = \mathbb{P}(\mathcal{L}\in U).
-\end{align*}
-Now by the same argument as in the proof of Lemma \ref{FDD}, every open set in $C(\Sigma\times\Lambda)$ is a countable union of sets of the form of $U$. Therefore by countable additivity, the inequalities above hold if $U$ is replaced by an arbitrary open set. Thus again by the portmanteau theorem, $\mathcal{L}^{n_{k_\ell}} \implies \mathcal{L}$ as desired. Hence $(\mathcal{L}^n)$ is relatively compact, and it follows from Prohorov's theorem  once again that $(\mathcal{L}^n)$ is tight.
+for each $i\in\Sigma$. By Tychonoff's theorem, \cite[Theorem 37.3]{Munkres}, the product $\tilde{K} = \prod_{i\in\Sigma} K_i$ is compact in $\prod_{i\in\Sigma} C(\Lambda)$. We have
+\begin{equation}\label{tychonoff}
+\mathbb{P}\Big((X_i^n)_{i\in\Sigma} \notin \tilde{K} \Big) \leq \sum_{i\in\Sigma} \mathbb{P}(X_i^n \notin K_i) \leq \sum_{i=1}^\infty \epsilon/2^i = \epsilon.
+\end{equation}
+By Lemma \ref{ProdTop}, we have a homeomorphism $G : \prod_{i\in\Sigma C(\Lambda)} \to C(\Sigma\times\Lambda)$. We observe that $G((X_i^n)_{i\in\Sigma}) = \mathcal{L}^n$, and $K = G(\tilde{K})$ is compact in $C(\Sigma\times\Lambda)$. Thus $\mathcal{L}^n \in K$ if and only if $(X_i^n)_{i\in\Sigma} \in \tilde{K}$, and it follows from \eqref{tychonoff} that
+\[
+\mathbb{P}(\mathcal{L}^n \in K) \geq 1 - \epsilon.
+\]
+This proves that $\{\mathcal{L}^n\}$ is tight.
 
 \end{proof}
 
