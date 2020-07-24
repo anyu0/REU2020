@@ -107,12 +107,13 @@ We focused on tightness, which requires a maximum, minimum, and conditions on th
 \end{frame}
 
 \begin{frame}{Our Result}
-\begin{theorem}For $n\in \mathbb{Z}$, there exists a subsequence $N_T$ such that
-\[\lim_{T\to\infty}P(L_1^{N_T}(nN^{\alpha}) - nN_T^{\alpha} p + \lambda n^2 N_T^{\alpha/2} \leq N_T^{\alpha/2} x) \to F_{TW}(x)\]
+\begin{theorem}With $L_1^N$ being the top curve in a Bernoulli Line Ensemble $p\in (0,1)$, and $\lambda, \alpha>0$, if for all $n\in \mathbb{Z}$,
+\[\lim_{N\to\infty}P(L_1^{N}(nN^{\alpha}) - nN^{\alpha} p + \lambda n^2 N^{\alpha/2} \leq N^{\alpha/2} x) \to F_{TW}(x)\]
+then the Line Ensemble is tight.
 \end{theorem}
 If the one-point marginal probabilities at integer times weakly converge to the Tracy Widom distribution then the Line Ensemble is tight.
 \begin{figure}
-	\includegraphics[width=0.8\textwidth]{graphics/ConvToTW.jpg}
+	\includegraphics[width=0.75\textwidth]{graphics/ConvToTW.jpg}
 	\caption{Integer time points of top line}
 \end{figure}
 \end{frame}
