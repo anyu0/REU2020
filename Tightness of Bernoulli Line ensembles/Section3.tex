@@ -342,7 +342,7 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 % Section 3.3
 %
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\subsection{Properties of avoiding Bernoulli line ensembles}\label{Section3.3}  In this section we derive several results about avoiding Bernoulli line ensembles, which are Bernoulli line ensembles with law $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ as in Definition \ref{DefAvoidingLawBer}. The lemmas we prove only involve the case when $f(r) = \infty$ for all $r \in \llbracket T_0, T_1 \rrbracket$ and we denote the measure in this case by $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, \infty, g}$. A $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, \infty, g}$-distributed random variable will be denoted by $\mathfrak{Q} = (Q_1, \dots, Q_k)$ where $k$ is the number of up-right paths in the ensemble. As usual, if $g=-\infty$, we write $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}}$. Our results will rely on the two monotonicity Lemmas \ref{MCLxy} and \ref{MCLfg} as well as the strong coupling between Bernoulli bridges and Brownian bridges from Theorem \ref{KMT}.
+\subsection{Properties of avoiding Bernoulli line ensembles}\label{Section3.3}  In this section we derive several results about avoiding Bernoulli line ensembles, which are Bernoulli line ensembles with law $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ as in Definition \ref{DefAvoidingLawBer}. The lemmas we prove only involve the case when $f(r) = \infty$ for all $r \in \llbracket T_0, T_1 \rrbracket$ and we denote the measure in this case by $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, \infty, g}$. A $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, \infty, g}$-distributed random variable will be denoted by $\mathfrak{Q} = (Q_1, \dots, Q_k)$ where $k$ is the number of up-right paths in the ensemble. As usual, if $g=-\infty$, we write $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}}$. Our first result will rely on the two monotonicity Lemmas \ref{MCLxy} and \ref{MCLfg} as well as the strong coupling between Bernoulli bridges and Brownian bridges from Theorem \ref{KMT}, and the further results make use of the material in Section \ref{Appendix2}, Appendix B.
 
 
 \begin{lemma}\label{prob19}
@@ -491,7 +491,7 @@ Fix $p,t\in (0,1)$ and $ k\in \mathbb{N}$. Suppose that $\vec x^T=(x_1^T,\cdots 
 	\left[(c_2(t,p)z_j)^{i-1}e^{c_2(t,p)\beta_q z_j}\right]_{\substack{i=1,...,n_q\\j=1,...,k}}
 	\end{bmatrix}\\
 	Z_{\vec a, \vec b}&=\int_{\mathbb{R}^k}\left(\indic_{z_1\geq z_2\geq \cdots \geq z_k}(\vec z)\right)\varphi(\vec a, \vec z, \vec n)\cdot \psi(\vec b, \vec z, \vec n)\prod_{i=1}^{k}e^{\frac{-z_i^2}{t(1-t)}} d\vec z
-	\end{align*} we find that $\rho$ is continuous as a sum and product of continuous functions. Additionally, if for any $\chi\in\llbracket 1,k-1 \rrbracket$ such that $z_\chi=z_{\chi+1}$, then we have two equal wcolumns 
+	\end{align*} we find that $\rho$ is continuous as a sum and product of continuous functions. Additionally, if for any $\chi\in\llbracket 1,k-1 \rrbracket$ such that $z_\chi=z_{\chi+1}$, then we have two equal columns 
 	\[\begin{bmatrix}
 	\left[(c_1(t,p)z_\chi)^{i-1}e^{c_1(t,p)\alpha_1 z_\chi}\right]_{i=1,...,m_1}\\
 	\left[(c_1(t,p)z_\chi)^{i-1}e^{c_1(t,p)\alpha_2 z_\chi}\right]_{i=1,...,m_2}\\
@@ -514,5 +514,5 @@ Fix $p,t\in (0,1)$ and $ k\in \mathbb{N}$. Suppose that $\vec x^T=(x_1^T,\cdots 
 	which is a contradiction. Thus we have proved the Lemma.
 \end{proof}
 \begin{remark}
-	This lemma essentially provides us with some amount of separation between the lines in the ensemble at any point along the Beroulli Random Walkers as they scale to infinite, provided we diffusely scale them with a large enough $T$.
+	Lemma \ref{prob 20} provides us with some amount of separation between the lines in the ensemble at any point along the Beroulli Random Walkers as $T$ tends to infinity. For any $\epsilon$, it allows us to find a distance $\delta$ such that the probability that any lines get closer than $\delta$ is less than $\epsilon$. The proof essentially passes to subsequential limits in order to use the convergence result of Lemma ($\ref{prob17}$), and then the fact that the density $\rho$ is continuous allows us to integrate $\rho(\vec z)$ over areas where $z_i$ values collide, and find that these integrals are arbitrarily close to $0$, giving us a contradiction.
 \end{remark}
