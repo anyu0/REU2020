@@ -55,31 +55,37 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 \end{lemma}
 
 
-\begin{proof}[Almost proof of Proposition \ref{PropMain}] Let $\epsilon > 0$ be given. Define the event
+\begin{proof}[Proof of Proposition \ref{PropMain}] Let $\epsilon > 0$ be given. Define the event
 	\begin{equation*}
 	\begin{split}
 	&E_N = \Big\{    L_{k-1}^N(  \pm t_2) \mp pt_2 \geq  - M_1 (2t_2)^{1/2}\Big\} \cap \Big\{ \sup_{s \in [ -t_2, t_2]} \big( {L}^N_{k}(s) - p s \big)\leq M_2  (2t_2)^{1/2} \Big\},
 	\end{split}
 	\end{equation*}
-	where $M_1$ and $M_2$ are sufficiently large so that for all large $N$ we have $\mathbb{P}(E_N^c) <  \epsilon / 2$. The existence of such $M_1$ and $M_2$ is assured from Lemmas \ref{PropSup} and \ref{PropSup2}. 
+	where $M_1$ and $M_2$ are sufficiently large so that for $N>N_1=\max\{N_2,N_3,N_4\}$ we have $\mathbb{P}(E_N^c) <  \epsilon / 2$. The existence of such $M_1$ and $M_2$ is assured from Lemmas \ref{PropSup} and \ref{PropSup2}. 
 	
 	Let $\delta = (\epsilon/2) \cdot g h$, where $g,h$ are as in Lemma \ref{LemmaAP1} for the values $M_1, M_2$ as above and $r$ as in the statement of the proposition.
 	We denote
 	$$V = \Big\{Z\big( -t_1,t_1, \vec{x}, \vec{y} , L_{k}\llbracket -t_1, t_1\rrbracket\big)< \delta\Big\}$$
 	and make the following deduction
-	\begin{equation*}
+	\begin{equation}\label{boundoneEN}
 	\begin{split}
 	&\mathbb{P}\big( V \cap E_N \big) =\mathbb{E} \bigg[    \mathbb{E}\Big[{\bf 1}_{E_N} \cdot {\bf 1}_{V} \Big{|} \mathcal{F}_{ext} \big( \{1, \dots, k-1\} \times \llbracket -t_2 + 1,t_2 - 1\rrbracket \big)\Big] \bigg] = \\
 	&\mathbb{E} \bigg[ {\bf 1}_{E_N} \cdot   \mathbb{E}\Big[ {\bf 1} \{ Z\big( -t_1,t_1, \vec{x}, \vec{y} , L_{k}\llbracket -t_1, t_1\rrbracket \big) < \delta\}   \Big{|} \mathcal{F}_{ext} \big( \{1, \dots, k-1\} \times \llbracket -t_2 + 1,t_2 - 1\rrbracket \big)\Big] \bigg]  = \\
 	&\mathbb{E} \left[ {\bf 1}_{E_N} \cdot  \mathbb{E}^{-t_2, t_2, L^N(-t_2), L^N(t_2), \infty, L^N_k\llbracket -t_2, t_2\rrbracket }_{avoid, Ber}\left[ {\bf 1} \{ Z\big( -t_1, t_1, \ell(-t_1),\ell(t_1),{L}^N_k\llbracket -t_1, t_1\rrbracket \big) < \delta\} \right] \right] \leq \\
 	&  \mathbb{E} \left[ {\bf 1}_{E_N} \cdot  \epsilon/2 \right] \leq \epsilon/2.
 	\end{split}
+	\end{equation}
+	The first equality follows from the tower property for conditional expectations. The second equality uses the definition of $V$ and the fact that ${\bf 1}_{E_N} $ is $\mathcal{F}_{ext} \big( \{1\} \times \llbracket -t_2 + 1,t_2 - 1\rrbracket\big)$-measurable and can thus be taken outside of the conditional expectation. The third equality uses the Schur Gibbs property. The inequality on the third line uses Lemma \ref{LemmaAP1} with $\tilde{\epsilon} = \epsilon/2$ as well as the fact that on the event $E_N^c$ the random variables $L^N(-t_2), L^N(t_2)$ and $L^N_k \llbracket -t_2, t_2 \rrbracket$ (that play the roles of $\vec{x}, \vec{y}$ and $\ell_{bot}$) satisfy the inequalities 
+	\begin{equation*}
+	\begin{split}
+	L^N_{k-1}(-t_2) \geq  -pt_2- M_1 (2t_2)^{1/2}\\ 
+	 L^N_{k-1}(t_2) \geq  p t_2- M_1(2t_2)^{1/2}\\ 
+	 \sup_{s \in [ -t_2,t_2]} \hspace{-2mm}\big(L^N_k(s)  - ps \big)  \leq M_2(2t_2)^{1/2}
+	\end{split}
 	\end{equation*}
-	The first equality follows from the tower property for conditional expectations. The second equality uses the fact that ${\bf 1}_{E_N} $ is $\mathcal{F}_{ext} \big( \{1\} \times \llbracket -t_2 + 1,t_2 - 1\rrbracket$-measurable and can thus be taken outside of the conditional expectation as well as the definition of $V$. The third equality uses the Schur Gibbs property. The inequality on the third line uses Lemma \ref{LemmaAP1} with $\tilde{\epsilon} = \epsilon/2$ as well as the fact that on the event $E_N^c$ the random variables $L^N(-t_2), L^N(t_2)$ and $L^N_k \llbracket -t_2, t_2 \rrbracket$ (that play the roles of $\vec{x}, \vec{y}$ and $\ell_{bot}$) satisfy the inequalities 
-	$$L^N_{k-1}(-t_2) \geq  -pt_2- M_1 (2t_2)^{1/2},  L^N_{k-1}(t_2) \geq  p t_2- M_1(2t_2)^{1/2}, \sup_{s \in [ -t_2,t_2]} \hspace{-2mm}\big(L^N_k(s)  - ps \big)  \leq M_2(2t_2)^{1/2}.$$
 	The last inequality is trivial.
 	
-	Combining the above inequality with $\mathbb{P}(E_N^c) <  \epsilon/2$, we see that for all large $N$ we have
+	Combining \ref{boundoneEN} with $\mathbb{P}(E_N^c) <  \epsilon/2$, we see that for all $N>N_1$ we have
 	$$\mathbb{P}\left( V  \right) = \mathbb{P}(V \cap E_N) + \mathbb{P}(V \cap E_N^c) \leq \epsilon/2 + \mathbb{P}(E_N^c) < \epsilon.$$
 \end{proof}
 
@@ -90,7 +96,7 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Proof of Theorem \ref{PropTightGood} }\label{Section4.2}
 	
-		By Lemma \ref{2Tight}, it suffices to verify the following two conditions for all $1\leq i\leq k-1$, $R>0$, and $\epsilon>0$:
+		By Lemma \ref{2Tight}, it suffices to verify the following two conditions for all $1\in \llbracket 1,k-1\rrbracket$, $R>0$, and $\epsilon>0$:
 	\begin{align}
 	\lim_{a\to\infty} &\limsup_{N\to\infty} \pr(|f^N_i(0)|\geq a) = 0 \label{ThmCond1}\\
 	\lim_{\delta\to 0} &\limsup_{N\to\infty} \pr\bigg(\sup_{\substack{x,y\in [-R,R], \\ |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon\bigg)= 0. \label{ThmCond2}
@@ -99,23 +105,23 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 	
 	\noindent\textbf{Step 1.} We first prove condition \eqref{ThmCond1}, making use of Lemmas \ref{PropSup} and \ref{PropSup2} in order to obtain upper and lower bounds for the top and bottom curves respectively, thus bounding all curves.
 	
-	Fix $\epsilon>0$. We show that there exists an $a>0$ and $N'$ depending on $\epsilon$, such that $N>N'$ implies
+	Fix $\epsilon>0$. We show that there exists an $a>0$ and $N_5$ depending on $\epsilon$, such that $N>N_5$ implies
 	$$\pr(|f^N_i(0)|\geq a) = \pr(|L_i^N(0)|\geq a N^{\alpha/2})<\epsilon.$$
 	By Lemmas \ref{PropSup} and \ref{PropSup2}, there exist $R_1 := R_1(\epsilon/2)>0$, $R_2 := R_2(\epsilon/2)>0$ and $N_2 := N_2(\epsilon/2),N_3 := N_3(\epsilon/2)$ such that 
 	\begin{align*}
 	N\geq N_2 &\text{ implies } \pr\Big(\sup_{s\in[-t_3,t_3]}\left(L_1^N(s)-ps\right)\geq R_1N^{\alpha/2}\Big)<\epsilon/2,\\
 	N\geq N_3 &\text{ implies } \pr\Big(\inf_{s\in[-t_2,t_2]}\left(L_k^N(s)-ps\right)\leq -R_2 N^{\alpha/2}\Big)<\epsilon/2.
 	\end{align*}
-	In particular, taking $s=0$, we find that for $N\geq N' := N_2 \vee N_3$, 
+	In particular, taking $s=0$, we find that for $N\geq N_5:= \max\{N_2, N_3\}$, 
 	\begin{align*}
 	\pr\big(L_1^N(0)\geq R_1N^{\alpha/2}\big) &\leq \pr\Big(\sup_{s\in[-t_3,t_3]}\left(L_1^N(s)-ps\right)\geq R_1N^{\alpha/2}\Big)< \epsilon/2,\\
 	\pr\big(L_k^N(0)\leq -R_2N^{\alpha/2}\big) &\leq \pr\Big(\inf_{s\in[-t_2,t_2]}\left(L_k^N(s)-ps\right)\leq -R_2N^{\alpha/2}\Big)< \epsilon/2.
 	\end{align*}
-	Letting $a = R_1 \vee R_2$ and noting that $L_1^N(0)>L_2^N(0)>...>L_k^N(0)$, we find that for $1\leq i\leq k$ and $N \geq N'$,
+	Letting $a =\max\{ R_1, R_2\}$ and noting that $L_1^N(0)>L_2^N(0)>...>L_k^N(0)$, we find that for $i\in\llbracket 1,k\rrbracket$ and $N \geq N_5$,
 	$$\pr\big(|L_i^N(0)|\geq a N^{\alpha/2}\big)\leq \pr\big(L_1^N(0)\geq R_1 N^{\alpha/2}\big) + \pr\big(L_k^N(0)\leq -R_2N^{\alpha/2}\big) < \epsilon.$$
 	This proves \eqref{ThmCond1}.\\
 	
-	\noindent\textbf{Step 2.} This step is set up for proving condition $\eqref{ThmCond2}$. We will establish sets to size bias the condition in  condition \eqref{ThmCond2} for a fixed $i$. First, we will reorganize the statement of condition $\eqref{ThmCond2}$ in order to get it in terms of Bernoulli random walks, instead of $f_i^N$ and then we will establish large events $E_1$ and $E_2$ in order so that if we prove $\eqref{ThmCond2}$ on the intersection of these two sets, it is equivalent to showing it on the entire probability space.
+	\noindent\textbf{Step 2.} This step is set up for proving condition $\eqref{ThmCond2}$. We will establish sets to size bias condition \eqref{ThmCond2} for a fixed $i$. First, we will reorganize the statement of condition $\eqref{ThmCond2}$ in order to get it in terms of Bernoulli random walks, instead of $f_i^N$ and then we will establish large events $E_1$ and $E_2$ in order so that if we prove $\eqref{ThmCond2}$ on the intersection of these two sets, it is equivalent to showing it on the entire probability space.
 	
 	We must show that for all $\epsilon,\eta>0$ and $R>0$, there exists a $\delta$ and $N_0$ such that $N>N_0$ implies 
 	\[
@@ -125,18 +131,17 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 	\begin{align}
 	\pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} \abs*{N^{-\alpha/2}\left(L^N_i(xN^{\alpha}) - L^N_i(yN^\alpha)\right)-p(x-y)N^{\alpha/2}+\lambda(x^2-y^2)} \geq \epsilon\bigg).
 	\end{align}
-	Given that $|x-y|<\delta$ and $x,y\in [-R,R]$, we know that $|x+y|\leq 2R$ and $|x-y|<\delta$, hence $|x^2-y^2|\leq 2R\delta$. Thus if we take $\delta < \frac{\epsilon}{8\lambda R}$, then the last probability is bounded below by
+	By the bounds of the supremum, we know that $|x+y|\leq 2R$ and $|x-y|<\delta$, hence $|x^2-y^2|\leq 2R\delta$. Thus if we take $\delta < \frac{\epsilon}{8\lambda R}$, then the last probability is bounded below by
 	\begin{align*}
 	&\pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} N^{-\alpha/2}\abs*{L_i^N(xN^\alpha)-L_i^N(yN^\alpha)-p(x-y)N^\alpha}+2\lambda R\delta\geq \epsilon\bigg)\\
 	\leq \; & \pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} \abs*{L_i^N(xN^\alpha)-L_i^N(yN^\alpha)-p(x-y)N^\alpha}\geq \frac{3N^{\alpha/2}\epsilon}4\bigg)\\
 	= \; & \pr\bigg(\sup_{\substack{x,y\in [-R_N,R_N],\\ |x-y|\leq \delta N^\alpha}} \abs*{L_i^N(x)-L_i^N(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4\bigg).
 	\end{align*}
 	Where $R_N:=\floor{RN^\alpha}$We will take the event in this final equation and define:
-	\begin{equation}
-	A_\delta =\bigg\{\sup_{\substack{x,y\in [-R_N,R_N],\\ |x-y|\leq \delta N^\alpha}} \abs*{L_i^N(x)-L_i^N(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4\bigg\}
+	\begin{equation}\label{Adelta}
+	A_\delta =\bigg\{\sup_{\substack{x,y\in [-R_N,R_N],\\ |x-y|\leq \delta N^\alpha}} \abs*{L_i^N(x)-L_i^N(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4\bigg\}.
 	\end{equation}
-	
-	Define events
+	Further, define events
 	\begin{align*}
 	E_1&=\left\{\max_{1\leq j \leq i}\abs*{f_j(\pm R)}\leq M_1\right\},\\
 	E_2&=\left\{Z(-R_N, R_N, \vec x, \vec y, \infty, L_{i+1}^N[-R_N, R_N])>\delta_1\right\}.\label{BiasDef}
@@ -152,22 +157,26 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 	Now take $r>R$. Then in particular $R_N \leq t_3$, so we have $$
 	\pr\left(L_1^N(\pm R_N)\mp pR_N>(M_1-\lambda R^2)N^{\alpha/2}\right)
 	\leq\pr\Big(\sup_{s\in[-t_3,t_3]}L_1^N(s)-ps>(M_1-\lambda R^2)N^{\alpha/2}\Big).
-	$$ By Lemma \ref{PropSup}, we find that if $M_1>R_1(\eta/8)+\lambda R^2$ and $N>N_1(\eta/8)$, then this probability is less than $\eta/8$. Next, we have
+	$$ By Lemma \ref{PropSup}, we find that if $M_1>R_1(\eta/8)+\lambda R^2$ and $N>N_2(\eta/8)$, then this probability is less than $\eta/8$. Next, we have
 	\begin{align*}
 	\pr \left(L_i^N(\pm R_N)\mp pR_N< -(\lambda R^2+M_1)N^{\alpha/2}\right)&\leq \pr \left(L_i^N(\pm R_N)\mp pR_N< -M_1N^{\alpha/2}\right)\\
 	&\leq \pr\Big(\inf_{s\in[-t_2,t_2]}\big(L_i^N(s)-ps\big)<-M_1N^{\alpha/2}\Big),
 	\end{align*}
-	and this last probability is $<\eta/8$ for $M_1\geq R_2(\eta/8)$ and $N>N_2(\eta/8)$ by Lemma \ref{PropSup2}. Therefore taking $M_1=\max\{R_1(\eta/8)+\lambda R^2,R_2(\eta/8)\}$, we find $$\pr(E_1^c)<\frac{\eta}{4}.$$
+	and this last probability is $<\eta/8$ for $M_1\geq R_2(\eta/8)$ and $N>N_3(\eta/8)$ by Lemma \ref{PropSup2}. Therefore taking $M_1=\max\{R_1(\eta/8)+\lambda R^2,R_2(\eta/8)\}$, we find $$\pr(E_1^c)<\frac{\eta}{4}.$$
 	Now by Proposition \ref{PropMain} with $r=R-1$, there exist $\delta_1(\eta/4)$ and $N_1(\eta/4)$ such that $N\geq N_1$ implies 
 	\[
 	\pr\left( E_2^c\right)<\frac{\eta}{4}.
 	\]
-	In summary, for $N>\hat N:= \max\{N_1(\eta/4),N_2(\eta/8),N_3(\eta/8)\}$, 
+	and so by countable subadditivity, 
+	\[
+	\pr\left(E_1^c\cup E_2^c\right)<\frac{\eta}{2}
+	\]
+	Hence, for $N>\hat N:= \max\{N_1(\eta/4),N_2(\eta/8),N_3(\eta/8)\}$, 
 	\begin{equation}
 	\pr(A_\delta)= \pr(A_\delta\cap E_1\cap E_2)+\pr(A_\delta\cap\left(E_1^c\cup E_2^c\right))\leq \pr(A_\delta\cap E_1\cap E_2)+\frac{\eta}{2}. \label{ThmBias}
 	\end{equation}\\
 	
-	\noindent\textbf{Step 3.} In this step, we will prove that condition \ref{ThmCond2} holds, using the results of the previous step, namely the inequality \ref{ThmBias}. We will do so by passing from Bernoulli avoidiing random walks to random walks using a Radon-Nikodym derivative, and properties of the condtional expectation. 
+	\noindent\textbf{Step 3.} In this step, we will prove that condition \ref{ThmCond2} holds, using the results of the previous step, namely the inequality \ref{ThmBias}. We will do so by passing from Bernoulli avoiding random walks to random walks using a Radon-Nikodym derivative, and properties of the condtional expectation. 
 	
 	We define a $\sigma$-algebra 
 	$$\mathcal{F}=\sigma\left(L_{i+1}^N,L_1^N(\pm R_N ), L_2^N(\pm R_N ),\dots, L_i^N(\pm R_N )\right).$$
@@ -198,5 +207,5 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 	\[
 	\pr_{Ber}^{-R_N,R_N,\vec x,\vec y}(A_\delta)<\frac{\eta\,\delta_1}2,
 	\] 
-	and hence $$\pr\left(A_\delta\cap E_1\cap E_2\right)\leq \frac{\eta}{2}.$$ We conclude from \eqref{ThmBias} that $\mathbb{P}(A_\delta) < \eta$ for $N\geq N_0 := \hat N \vee W_4$. Given the manner in which we defined $A_\delta$, this implies we have shown condition 2, which, in conjuncton with condition 1, implies tightness. This completes the proof.
+	and hence $$\pr\left(A_\delta\cap E_1\cap E_2\right)\leq \frac{\eta}{2}.$$ We conclude from \eqref{ThmBias} that $\mathbb{P}(A_\delta) < \eta$ for $N\geq N_0 := \max\{\hat N, W_4\}$. Given the definition of $A_\delta$ (see \ref{Adelta}), this implies we have shown condition 2, which, in conjuncton with condition 1, implies tightness. This completes the proof.
 
