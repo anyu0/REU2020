@@ -47,7 +47,23 @@ Graduate Student Assistant: Weitao Zhu}
 \section{Introduction (5-6 min)}
 
 \begin{frame}{The Gaussian universality class}
-Gaussian universality (CLT, Donsker Theorem)
+Let $\{X_i\}$ be a sequence of i.i.d. random variables, s.t. $\mathbb{E}[X_1] = \mu$, $Var(X_1^2) = \sigma^2$. Let $S_n = \sum_{i = 1}^n X_i$:
+
+\bigskip
+
+\begin{itemize}
+\item \textbf{Law of Large Numbers:} $\frac{S_n}{n} \rightarrow \mu$ as $n \rightarrow \infty$ almost surely
+
+\bigskip
+
+\item \textbf{Central Limit Theorem:} $\frac{S_n - n \mu}{\sqrt{n}} \rightarrow N(0, \sigma^2)$ as $n \rightarrow \infty$
+
+\bigskip
+
+\item \textbf{Donsker's Theorem:} Let $S(x) = S_k$ if $x = k$ and linearly interpolate for $x \in [0, n]$ Let $\mu = 0$ and $\sigma = 1$. Then $\frac{S(n\cdot)}{\sqrt{n}} \in C([0, 1])$ and $\frac{S(n\cdot)}{\sqrt{n}} \rightarrow B(\cdot)$, where $B$ denotes a standard Brownian Motion.
+
+\end{itemize}
+
 \begin{figure}
 \includegraphics[height=0.5\textheight]{graphics/Gaussian.png}
 \caption{An example of a Bernoulli random walk and a Brownian Motion}
