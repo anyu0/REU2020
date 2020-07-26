@@ -2,7 +2,7 @@
 % Section 2
 %
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\section{Line ensembles}\label{Section2}
+\section{Line ensembles} \label{Section2}
 In this section we introduce various definitions and notation that are used throughout the paper. 
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -97,7 +97,7 @@ Fix a set $\Sigma = \llbracket 1, N \rrbracket$ with $N \in \mathbb{N}$ or $N = 
 $$\mbox{ Law}\left( \mathcal{L}|_{K \times [a,b]} \mbox{ conditional on } \mathcal{L}|_{D^c_{K,a,b}} \right)= \mbox{Law} \left( \mathcal{Q} \right),$$
 where $\mathcal{Q}_i = \tilde{\mathcal{Q}}_{i - k_1 + 1}$ and $\tilde{\mathcal{Q}}$ is the $(f,g)$-avoiding Brownian line ensemble on $[a,b]$ with entrance data $(\mathcal{L}_{k_1}(a), \dots, \mathcal{L}_{k_2}(a))$ and exit data $(\mathcal{L}_{k_1}(b), \dots, \mathcal{L}_{k_2}(b))$ from Definition \ref{DefAvoidingLaw}. Note that $\tilde{Q}$ is introduced because, by definition, any such $(f,g)$-avoiding Brownian line ensemble is indexed from $1$ to $k_2 - k_1 + 1$ but we want $\mathcal{Q}$ to be indexed from $k_1$ to $k_2$.
 
-A more precise way to express the Brownian Gibbs property is as follows. A $\Sigma$-indexed line ensemble $\mathcal{L}$ on $\Lambda$ satisfies the Brownian Gibbs property if and only if it is non-intersecting and for any finite $K = \{k_1, k_1 + 1, \dots, k_2 \} \subset \Sigma$ and $[a,b] \subset \Lambda$ and any bounded Borel-measurable function $F: C(K \times [a,b]) \rightarrow \mathbb{R}$ we have $\mathbb{P}$-almost surely
+An equivalent way to express the Brownian Gibbs property is as follows. A $\Sigma$-indexed line ensemble $\mathcal{L}$ on $\Lambda$ satisfies the Brownian Gibbs property if and only if it is non-intersecting and for any finite $K = \{k_1, k_1 + 1, \dots, k_2 \} \subset \Sigma$ and $[a,b] \subset \Lambda$ and any bounded Borel-measurable function $F: C(K \times [a,b]) \rightarrow \mathbb{R}$ we have $\mathbb{P}$-almost surely
 \begin{equation}\label{BGPTower}
 \mathbb{E} \left[ F\left(\mathcal{L}|_{K \times [a,b]} \right)  {\big \vert} \mathcal{F}_{ext} (K \times (a,b))  \right] =\mathbb{E}_{avoid}^{a,b, \vec{x}, \vec{y}, f, g} \bigl[ F(\tilde{\mathcal{Q}}) \bigr],
 \end{equation}
@@ -171,8 +171,15 @@ $$E  = \left\{ f(r) \geq B_1(r) \geq B_2(r) \geq \cdots \geq B_k(r) \geq g(r) \m
 The above definition is well-posed if there exist $B_i \in \Omega(T_0,T_1,x_i,y_i)$ for $i = 1, \dots, k$ that satisfy the conditions in $E$ (i.e. if the set of such up-right paths is not empty). We will denote by $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g)$ the set of collections of $k$ up-right paths that satisfy the conditions in $E$ and then the distribution on $\mathfrak{Q}$ is simply the uniform measure on $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g)$. We denote the probability distribution of $\mathfrak{Q}$ as $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ and write $\mathbb{E}_{avoid, Ber}^{T_0, T_1, \vec{x}, \vec{y}, f, g}$ for the expectation with respect to this measure. When $f=+\infty$ and $g=-\infty$, we simply write $\mathbb{P}^{T_0, T_1, \vec{x},\vec{y}}_{avoid, Ber}$ and $\mathbb{E}^{T_0, T_1, \vec{x},\vec{y}}_{avoid, Ber}$.
 \end{definition}
 
-It will be useful to formulate simple conditions under which $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g)$ is non-empty and thus $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ well-defined. We accomplish this in the following lemma, whose proof is postponed until Section [Appendix].
-\begin{lemma}\label{LemmaWD} Suppose that $k \in \mathbb{N}$ and $T_0, T_1 \in \mathbb{Z}$ with $T_0 < T_1$. Suppose further that $\vec{x}, \vec{y} \in \mathfrak{W}_k$ satisfy $T_1 - T_0 \geq y_i - x_i \geq 0$ for $i = 1, \dots, k$. Suppose further that $f : \llbracket T_0, T_1 \rrbracket \rightarrow (-\infty, \infty]$ and $g : \llbracket T_0, T_1 \rrbracket \rightarrow [-\infty, \infty)$ satisfy $f (i+1) = f(i)$ or $f(i+1) = f(i) + 1$, and $g(i+1) = g(i)$ or $g(i+1) = g(i) +1$ for $i = T_0, \dots, T_1 -1$. Finally, suppose that $f(T_0) \geq x_1, f(T_1) \geq y_1$ and $g(T_0) \leq x_k, g(T_1) \leq y_k$. Then the set $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g)$ from Definition \ref{DefAvoidingLawBer} is non-empty.
+It will be useful to formulate simple conditions under which $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g)$ is non-empty and thus $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ well-defined. We accomplish this in the following lemma, whose proof is postponed until Section 8.
+
+\begin{lemma}\label{LemmaWD} Suppose that $k \in \mathbb{N}$ and $T_0, T_1 \in \mathbb{Z}$ with $T_0 < T_1$. Suppose further that 
+\begin{enumerate}
+\item $\vec{x}, \vec{y} \in \mathfrak{W}_k$ satisfy $T_1 - T_0 \geq y_i - x_i \geq 0$ for $i = 1, \dots, k$
+\item $f : \llbracket T_0, T_1 \rrbracket \rightarrow (-\infty, \infty]$ and $g : \llbracket T_0, T_1 \rrbracket \rightarrow [-\infty, \infty)$ satisfy $f (i+1) = f(i)$ or $f(i+1) = f(i) + 1$, and $g(i+1) = g(i)$ or $g(i+1) = g(i) +1$ for $i = T_0, \dots, T_1 -1$
+\item $f(T_0) \geq x_1, f(T_1) \geq y_1$ and $g(T_0) \leq x_k, g(T_1) \leq y_k$ 
+\end{enumerate}
+Then the set $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g)$ from Definition \ref{DefAvoidingLawBer} is non-empty.
 \end{lemma}
 
 The following definition introduces the notion of the Schur Gibbs property, which can be thought of a discrete analogue of the partial Brownian Gibbs property the same way that Bernoulli random walks are discrete analogues of Brownian motion. 
@@ -213,7 +220,7 @@ $$ E=  \left\{ f(r) \geq B_1(r) \geq B_2(r) \geq \cdots \geq B_k(r) \geq g(r) \m
 % Section 2.3
 %
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\subsection{Main result}\label{Section2.3} In this section we present the main result of the paper. We start with the following technical definition.
+\subsection{Main technical result}\label{Section2.3} In this section we present the main technical result of the paper. We start with the following technical definition.
 \begin{definition}\label{Def1} Fix $k \in \mathbb{N}$, $\alpha, \lambda > 0$ and $p \in (0,1)$. Suppose we are given a sequence $\{ T_N \}_{N = 1}^\infty$ with $T_N \in \mathbb{N}$ and that $\{\mathfrak{L}^N\}_{N = 1}^\infty$, $\mathfrak{L}^N = (L^N_1, L^N_2, \dots, L^N_k)$ is a sequence of $\llbracket 1, k \rrbracket$-indexed Bernoulli line ensembles on $ \llbracket -T_N, T_N \rrbracket$. We call the sequence $(\alpha,p,\lambda)$-{\em good} if 
 \begin{itemize}
 \item for each $N \in \mathbb{N}$ we  have that $\mathfrak{L}^N$ satisfies the Schur Gibbs property of Definition \ref{DefSGP};  
@@ -233,12 +240,12 @@ Fix $k \in \mathbb{N}$ with $k \geq 2$, $\alpha, \lambda > 0$ and $p \in (0,1)$ 
 $$f^N_i(s) =  N^{-\alpha/2}(L^N_i(sN^{\alpha}) - p s N^{\alpha} + \lambda s^2 N^{\alpha/2}), \mbox{ for $s\in [-\psi(N) ,\psi(N)]$ and $i = 1,\dots, k -1$,}$$
 and extend $f^N_i$ to $\mathbb{R}$ by setting for $i = 1, \dots, k - 1$
 $$f^N_i(s) = f^N_i(-\psi(N)) \mbox{ for $s \leq -\psi(N)$ and } f^N_i(s) = f_N(\psi(N)) \mbox{ for $s \geq \psi(N)$}.$$
-Let $\mathbb{P}_N$ denote the law of $\{f^N_i\}_{i = 1}^{k-1}$ as a $\llbracket 1, k-1 \rrbracket$-indexed line ensemble (i.e. as a random variable in $(C( \llbracket 1, k -1 \rrbracket \times \mathbb{R}), \mathcal{C})$). Then the sequence $\mathbb{P}_N$ is tight.
+Let $\mathbb{P}_N$ denote the law of $\{f^N_i\}_{i = 1}^{k-1}$ as a $\llbracket 1, k-1 \rrbracket$-indexed line ensemble (i.e. as a random variable in $(C( \llbracket 1, k -1 \rrbracket \times \mathbb{R}), \mathcal{C})$). Then the sequence $\mathbb{P}_N$ is tight. Moreover, if $\mathcal{L}^\infty = \{f_i^{infty}\}_{i = 1}^{k-1}$ denotes any subsequential limit of $\mathbb{P}_N$ then $\mathcal{L}^\infty$ satisfies the Brownian Gibbs property in Definition 2.10.
 \end{theorem}
 
 Roughly, Theorem \ref{PropTightGood} states that if you have a sequence of $\llbracket 1, k \rrbracket$-indexed Bernoulli line ensembles that satisfy the Schur Gibbs property and the top paths of these ensembles under some shift and scaling have tight one-point marginals with a non-trivial parabolic shift, then  under the same shift and scaling the top $k-1$ paths of the line ensemble will be tight. The extension of $f^N_i$ to $\mathbb{R}$ is completely arbitrary and irrelevant for the validity of Theorem \ref{PropTightGood} since the topology on $C( \llbracket 1, k -1 \rrbracket \times \mathbb{R})$ is that of uniform convergence over compacts. Consequently, only the behavior of these functions on compact intervals matters in Theorem \ref{PropTightGood} and not what these functions do near infinity, which is where the modification happens as $\lim_{N \rightarrow \infty} \psi(N) = \infty$  by assumption. The only reason we perform the extension is to embed all Bernoulli line ensembles into the same space $(C( \llbracket 1, k -1 \rrbracket \times \mathbb{R}), \mathcal{C})$.
 
- We mention that the $k$-th up-right path in the sequence of Bernoulli line ensembles is special and Theorem \ref{PropTightGood} provides no tightness result for it. The reason for this stems from the Schur Gibbs property, see Definition \ref{DefSGP}, which assumes less information for the $k$-th path. In practice, one either has an infinite Bernoulli line ensemble for each $N$ or one has a Bernoulli line ensemble with finite number of paths, which increase with $N$ to infinity. In either of these settings one can use Theorem \ref{PropTightGood} to prove tightness of the full line ensemble - we will have more to say about this in Section [Applications].
+ We mention that the $k$-th up-right path in the sequence of Bernoulli line ensembles is special and Theorem \ref{PropTightGood} provides no tightness result for it. The reason for this stems from the Schur Gibbs property, see Definition \ref{DefSGP}, which assumes less information for the $k$-th path. In practice, one either has an infinite Bernoulli line ensemble for each $N$ or one has a Bernoulli line ensemble with finite number of paths, which increase with $N$ to infinity. In either of these settings one can use Theorem \ref{PropTightGood} to prove tightness of the full line ensemble - we will have more to say about this in Section 7.
 
 The proof of Theorem \ref{PropTightGood} is presented in Section \ref{Section4}. In the next section we derive various properties for Bernoulli line ensembles.
 
