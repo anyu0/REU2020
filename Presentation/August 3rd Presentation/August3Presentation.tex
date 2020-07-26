@@ -61,24 +61,24 @@ Let $\{X_i\}$ be a sequence of i.i.d. random variables, s.t. $\mathbb{E}[X_1] = 
 \bigskip
 
 \item \textbf{Donsker's Theorem:} Let $S(x) = S_k$ if $x = k$ and linearly interpolate for $x \in [0, n]$ Let $\mu = 0$ and $\sigma = 1$. Then $\frac{S(n\cdot)}{\sqrt{n}} \in C([0, 1])$ and $\frac{S(n\cdot)}{\sqrt{n}} \rightarrow B(\cdot)$, where $B$ denotes a standard Brownian Motion.
-
 \end{itemize}
-
 \begin{figure}
-\includegraphics[height=0.5\textheight]{graphics/Gaussian.png}
+\includegraphics[height=0.3\textheight]{graphics/Gaussian.png}
 \caption{An example of a Bernoulli random walk and a Brownian Motion}
 \end{figure}
 
 \end{frame}
 
 \begin{frame}{Multiple Random Walks}
-Increase the number of walkers (avoiding Bernoulli random walks and Dyson BM)
+Consider again Bernoulli random walks and Brownian Motion. We now increase the number of (non-intersecting) walkers:
 \begin{figure}
-	\includegraphics[height=0.25\textheight]{graphics/MultipleBernoulli.png}
-	\caption{Multiple Bernoulli Random Walks}
+	\includegraphics[height=0.2\textheight]{graphics/MultipleBernoulli.png}
+	\caption{Multiple Avoiding Bernoulli Random Walks}
 \end{figure}
+When dealing with a family of avoiding Brownian Motions, we speak of Dyson Brownian Motion:
 \begin{figure}
-\includegraphics[height=0.25\textheight]{graphics/DysonBrownian.png}
+\includegraphics[height=0.2\textheight]{graphics/DysonBrownian.png}
+	\caption{Dyson Brownian Motion}
 \end{figure}
 \end{frame}
 
