@@ -32,8 +32,8 @@
 \title{Asymptotics of Bernoulli Line Ensembles}
 
 \author[Fang, Fesser, Serio, Teitler, and Wang]{Xiang Fang, Lukas Fesser, Christian Serio, Carson Teitler, and Angela Wang \\
-Advisor: Evgeni Dimitrov\\
-Graduate Student Assistant: Weitao Zhu}
+Graduate Student Assistant: Weitao Zhu\\
+Advisor: Evgeni Dimitrov}
 
 \institute[Columbia]{Columbia University REU}
 
@@ -47,34 +47,34 @@ Graduate Student Assistant: Weitao Zhu}
 \section{Introduction (5-6 min)}
 
 \begin{frame}{The Gaussian universality class}
-Let $\{X_i\}$ be a sequence of i.i.d. random variables, s.t. $\mathbb{E}[X_1] = \mu$, $Var(X_1^2) = \sigma^2$. Let $S_n = \sum_{i = 1}^n X_i$:
+
+Let $\{X_i\}$ be a sequence of independent identically distributed random variables with mean 0 and variance 1. Let $S_n = X_1 + \cdots + X_n$.
 
 \bigskip
 
 \begin{itemize}
-\item \textbf{Law of Large Numbers:} $\frac{S_n}{n} \rightarrow \mu$ as $n \rightarrow \infty$ almost surely
+\item \textbf{Law of Large Numbers:} $\dfrac{S_n}{n} \longrightarrow \mu$ as $n \rightarrow \infty$ almost surely
 
 \bigskip
 
-\item \textbf{Central Limit Theorem:} $\frac{S_n - n \mu}{\sqrt{n}} \rightarrow N(0, \sigma^2)$ as $n \rightarrow \infty$
+\item \textbf{Central Limit Theorem:} $\dfrac{S_n}{\sqrt{n}} \implies \mathcal{N}(0, 1)$ as $n \rightarrow \infty$.
 
 \bigskip
 
-\item \textbf{Donsker's Theorem:} Let $S(x) = S_k$ if $x = k$ and linearly interpolate for $x \in [0, n]$ Let $\mu = 0$ and $\sigma = 1$. Then $\frac{S(n\cdot)}{\sqrt{n}} \in C([0, 1])$ and $\frac{S(n\cdot)}{\sqrt{n}} \rightarrow B(\cdot)$, where $B$ denotes a standard Brownian Motion.
+\item \textbf{Donsker's Theorem:} Let $B^{(n)}(t) = \dfrac{S_{\lfloor nt\rfloor}}{\sqrt{n}}$ for $t\in [0,1]$. Then $B^{(n)} \in C([0, 1])$ and $B^{(n)} \implies B$ as $n\to\infty$, a standard Brownian motion on $[0,1]$.
 \end{itemize}
 \begin{figure}
-\includegraphics[height=0.3\textheight]{graphics/Gaussian.png}
-\caption{An example of a Bernoulli random walk and a Brownian Motion}
+\includegraphics[height=0.29\textheight]{graphics/Gaussian.png}
+\caption{An example of a random walk and a Brownian motion.}
 \end{figure}
 
 \end{frame}
 
-\begin{frame}{Multiple Random Walks}
-Consider again Bernoulli random walks and Brownian Motion. We now increase the number of (non-intersecting) walkers:
-\begin{figure}
-	\includegraphics[height=0.2\textheight]{graphics/MultipleBernoulli.png}
-	\caption{Multiple Avoiding Bernoulli Random Walks}
-\end{figure}
+\begin{frame}{Multiple random walks}
+If $S_{n+1} - S_n \in \{0, 1\}$, then $\{S_n\}_{n=1}^\infty$ is a \textcolor{red}{\textit{Bernoulli random walk}}. A \textcolor{red}{\textit{Bernoulli line ensemble}} $\mathfrak{L} = (L_1,\dots,L_k)$ consists of $k$ avoiding Bernoulli random walks on an interval $[T_0,T_1]$, such that $L_1(s) \geq L_2(s) \geq \cdots \geq L_k(s)$ for $s\in[T_0,T_1]$.
+\[
+	\includegraphics[height=0.3\textheight]{graphics/MultipleBernoulli.png}
+\]
 When dealing with a family of avoiding Brownian Motions, we speak of Dyson Brownian Motion:
 \begin{figure}
 \includegraphics[height=0.2\textheight]{graphics/DysonBrownian.png}
@@ -83,27 +83,37 @@ When dealing with a family of avoiding Brownian Motions, we speak of Dyson Brown
 \end{frame}
 
 \begin{frame}{Airy Line Ensemble}
-As $N\rightarrow \infty$, the rescaled walks converge in distribution, uniformly over compact sets of $\mathbb{N}\times \mathbb{R}$, to the Airy line ensemble, $\mathcal{A}$, and the top curve converges to Airy process, $\mathcal{A}_1$.
+As $k \to \infty$, $k$ avoiding random walks are conjectured to converge to the \textcolor{red}{Airy line ensemble}, $\mathcal{A}$, and the top curve to the \textcolor{red}{Airy process}, $\mathcal{A}_1$.
 \begin{figure}
 	\includegraphics[height=0.25\textheight]{graphics/airy.png}
 	\caption{Multiple Dyson Brownian walks}
 \end{figure}
- Increasing the number of paths pushes us outside of the Gaussian universality class and into Kardar-Parisi-Zhang (KPZ) universality class.
-\end{frame}
 
-\begin{frame}{Open Question}
-Show that any random walks with generic initial conditions convergence to the Airy line ensemble. 
+\begin{itemize}
+	
+	\item Increasing the number of paths pushes us outside of the Gaussian universality class and into Kardar-Parisi-Zhang (KPZ) universality class.
+	
+	\item Open problem: Show that ``generic" random walks with ``generic" initial conditions converge to the Airy line ensemble. 
+	
+	\item We treat this problem for Bernoulli random walks; the proof is only known if all walks start from 0.
+	
+\end{itemize}
 \end{frame}
 
 
 \section{Convergence to Airy Line Ensemble (6-7 min)}
 
 \begin{frame}{Convergence to the Airy Line Ensemble}
-	Two sufficient conditions:\begin{enumerate}
-		\item Finite dimensional distribution convergence
-		\item Tightness, or the existence of weak subsequential limits.
-	\end{enumerate}
-We focused on tightness, which requires a maximum, minimum, and conditions on the Modulus of Continuity
+	
+	Two sufficient conditions for convergence in distribution:
+	\begin{itemize}
+		
+			\item \textit{Finite dimensional} convergence -- difficult, requires exact algebraic formulas
+			
+			\item \textit{Tightness} (existence of weak subsequential limits) -- easier, more qualitative/analytic
+	\end{itemize}
+
+	We focused on tightness, which we prove by controlling the maximum, the minimum, and the modulus of continuity
 \begin{figure}
 	\includegraphics[height=0.55\textheight]{graphics/ModulusCont.jpg}
 	\caption{The Modulus of Continuity}
@@ -112,23 +122,24 @@ We focused on tightness, which requires a maximum, minimum, and conditions on th
 \end{frame}
 
 \begin{frame}{Our Result}
-\begin{theorem}With $L_1^N$ being the top curve in a Bernoulli Line Ensemble $p\in (0,1)$, and $\lambda, \alpha>0$, if for all $n\in \mathbb{Z}$,
-\[\lim_{N\to\infty}P(L_1^{N}(nN^{\alpha}) - nN^{\alpha} p + \lambda n^2 N^{\alpha/2} \leq N^{\alpha/2} x) \to F_{TW}(x)\]
-then the Line Ensemble is tight.
+\begin{theorem} Let $\{\mathfrak{L}^N = (L_1^N,\dots,L_k^N)\}_{N=1}^\infty$ be a sequence of avoiding Bernoulli Gibbsian line ensembles. Fix $p\in(0,1)$ and $\lambda > 0$, and suppose that for all $n\in\mathbb{Z}$ we have
+\[
+\lim_{N\to\infty} \mathbb{P}\big(L_1^{N}(nN^{2/3}) - pnN^{2/3} + \lambda n^2 N^{1/3} \leq N^{1/3} x \big) = F_{TW}(x).
+\]
+Then $\{\mathfrak{L}^N\}$ is a tight sequence.
 \end{theorem}
-If the one-point marginal probabilities at integer times weakly converge to the Tracy Widom distribution then the Line Ensemble is tight.
-\begin{figure}
-	\includegraphics[width=0.75\textwidth]{graphics/ConvToTW.jpg}
-	\caption{Integer time points of top line}
-\end{figure}
-\end{frame}
 
-\begin{frame}{Improvements}
-[Duavergne, Nica, \& Virag, 2019] - tightness assuming finite dimensional convergence to the Airy Line Ensemble. 
+\begin{itemize}
+	\item $F_{TW}$ denotes the \textit{Tracy-Widom distribution} -- a common limiting distribution in the KPZ universality class.
+	
+	\item {[Dauvergne-Nica-Vir\'{a}g '19]} showed that finite dimensional convergence of all curves implies tightness, hence convergence to the Airy line ensemble.
+	
+	\item Our result shows that it suffices for the \textit{top curve} to converge in the f.d. sense.
+\end{itemize}
 
-We achieve the same result with much less restrictive assumptions
-\newline\newline\noindent
-[Unsure of Image Choice]
+\[
+	\includegraphics[scale=0.18]{graphics/ConvToTW.jpg}
+\]
 \end{frame}
 
 
