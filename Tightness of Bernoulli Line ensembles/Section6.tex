@@ -79,7 +79,10 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	
 \end{proof}
 
-The next lemma helps us derive the lower bound $h$ in \eqref{eqn57}. Let us put $t_{12} = \lfloor \frac{t_1 + t_2}{2} \rfloor$.
+The next lemma helps us derive the lower bound $h$ in \eqref{eqn57}. Let us put 
+\begin{equation}\label{t12def}
+t_{12} = \Big\lfloor \frac{t_1 + t_2}{2} \Big\rfloor.
+\end{equation}
 
 \begin{lemma}\label{LemmaBP2} For any $R > 0$ we can find $V_1^t, V_1^b \geq M_2 + R$, $h_1 > 0$ and $N_7 \in \mathbb{N}$ (depending on $R$) such that if $N \geq N_7$ we have
 	\begin{equation}\label{eqnRT2}
@@ -263,38 +266,47 @@ We are now equipped to prove Lemma \ref{LemmaAP2}.
 	\begin{equation}\label{LemmaBP2Step3}
 	\frac{|B(\vec{c}, \vec{d}, \epsilon)|}{|\Omega(\vec{c}, \vec{d})|} \geq  \frac{9}{10} \quad \mathrm{and} \quad \frac{|\tilde{B}(\vec{c}, \vec{d}, \epsilon)|}{|\tilde{\Omega}(\vec{c}, \vec{d})|} \geq  \frac{4}{5}.
 	\end{equation}
-	We prove this inequality using Lemma \ref{prob 20}, and shift the bounds from $-t_{12},t_{12}$ to $0, 2t_{12}$.
-	Consider the ratio $ \frac{t_1}{2t_{12}} = \frac{\floor{(r+1)N^\alpha}}{2\floor{\frac{\floor{(r+1)N^\alpha}+\floor{(r+2)N^\alpha}}{2}}}$. Note that this increases with $N$ and satisfies the inequality
+	We prove this inequality using Lemma \ref{prob 20}. In order to apply this result, we approximate $t_1$ in the form $s\cdot 2t_{12}$, for $s\in(0,1)$.
+	
+	Observe from \eqref{t12def} and the definitions of $t_1,t_2$ that the ratio $\frac{t_1}{2t_{12}}$ depends on $N$ and satisfies the inequality
 	\[
 	\frac{(r+1)N^\alpha-1}{(2r+3)N^\alpha}\leq \frac{t_1}{2t_{12}} \leq \frac{(r+1)N^\alpha}{(2r+3)N^\alpha-4}.
 	\]
-	Thus, we put $s = \frac{r+1}{2r+3} < \frac{1}{2}.$ Furthermore, since $t_{12}=\floor{\frac{\floor{(r+1)N^\alpha}+\floor{(r+2)N^\alpha}}{2}}$, we have 
+	We put $s = \frac{r+1}{2r+3}$, and observe that $s < 1/2$. Also observe that
 	\[
-	\frac{(2r+3)N^\alpha}{2}-2\leq t_{12}\leq \frac{(2r+3)N^\alpha}{2},
+	(2r+3)N^\alpha - 4\leq 2t_{12}\leq (2r+3)N^\alpha,
 	\]
 	and thus
 	\[
-	t_1-1\leq t_1-2s\leq (r+1)N^\alpha-2s\leq s\cdot 2t_{12}\leq (r+1)N^\alpha.
+	(r+1)N^\alpha \geq s\cdot 2t_{12} \geq (r+1)N^\alpha - 4s \geq t_1 - 2.
 	\]
-	So $\floor{st_{12}}$ is either $t_1-1$ or $t_1$, since $\floor{t_1-1}\leq \floor{st_{12}}\leq \floor{(r+1)N^\alpha}=t_1.$
-	Therefore we derive that 
-	\begin{equation}\label{Lt1Set}L_i(\floor{st_{12}})-L_i(t_1)\in \{0,-1\}.
+	It follows that $\floor{st_{12}}$ is an integer between $t_1-2$ and $t_1$, from which we conclude that
+	\begin{equation}\label{Lt1Set}
+	0 \leq L_i(t_1)-L_i(\floor{st_{12}}) \leq 2.
 	\end{equation}
-	
-	Now, if we apply the result of Lemma \ref{prob 20} with $M_1,M_2=\max\{V_1^t,V_1^b\}$, there exist some $T_0,$ hence $N_0$, and $\delta>0$ such that if $t_{12}>T_0$, or respectively, $N > N_0$(with $T=2t_{12}$),
-	\begin{equation}\label{stOneTwoProb}
-	\pr^{0,2t_{12},\vec c, \vec d}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \left[L_i(\floor{st_{12}})-L_{i+1}(\floor{st_{12}})\right]<\delta\sqrt{t_{12}}\right)<\frac{9}{10}
-	\end{equation}
-	and by equations (\ref{Lt1Set}) and (\ref{stOneTwoProb}) we know that
+	Now applying Lemma \ref{prob 20} with $M_1,M_2=\max(V_1^t,V_1^b)$, we obtain $N_0$ and $\delta>0$ such that if $N \geq N_0$, then
 	\[
-	\pr^{0,2t_{12},\vec c, \vec d}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \left[L_i(t_1)-L_{i+1}(t_1)\right]<\delta\sqrt{t_{12}}-1\right)<\frac{9}{10}
+	\pr^{-t_{12},t_{12},\vec c, \vec d}_{avoid,Ber}\Big(\min_{1\leq i\leq k-1} \big(L_i(\floor{st_{12}})-L_{i+1}(\floor{st_{12}})\big) < \delta(2t_{12})^{1/2}\Big)<\frac{1}{20}.
 	\]
-	Now, pick $N_1$such that $\delta\sqrt{t_{12}}>1$ then find $\delta'=\frac{\delta\sqrt{2t_{12}}-1}{3\sqrt{2t_2}}$. To remove $\delta'$'s dependency on $t_2$ and $t_{12}$, or correspondingly $N$, we define $\delta_1 = \frac{\delta}{3}\sqrt{\frac{r+1}{2r+4}}.$ Note that by direct computation, there exists an $N'$ such that for all $N > N'$, $\delta\sqrt{(r+1)N^\alpha} > 1.$ Thus, for all $N > N'$, we can verify that $\delta_1 < \frac{\delta\sqrt{2\floor{\frac{\floor{(r+1)N^\alpha}+\floor{(r+2)N^\alpha}}2}}-1}{3\sqrt{2\floor{(r+2)N^\alpha}}}.$ If we let $N_6 = \max\{N_0, N_1, N'\}$, then for all $N>N_6$ we obtain	\[
-	\pr^{0,2t_{12},\vec c, \vec d}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \left[L_i(t_1)-L_{i+1}(t_1)\right]<3\delta_1\sqrt{2t_2}\right)<\frac{9}{10}
+	Together with \eqref{Lt1Set} and the fact that $t_2/4 < t_1 < t_{12}$, this implies that
+	\begin{equation}\label{step3delta/2}
+	\pr^{-t_{12},t_{12},\vec c, \vec d}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \big(L_i(t_1)-L_{i+1}(t_1)\big)<(\delta/2)(2t_2)^{1/2}-2\right)<\frac{1}{20}
+	\end{equation}
+	for $N\geq N_0$. Now we observe that if $N \geq \big(\frac{1+1/\delta}{r+2}\big)^{2/\alpha}$, then $(\delta/4)(2t_2)^{1/2} \leq (\delta/2)(2t_2)^{1/2} - 1$. Thus for all sufficiently large $N$, we have
+	\[
+	\pr^{-t_{12},t_{12},\vec c, \vec d}_{avoid,Ber}\Big(\min_{1\leq i\leq k-1} \big(L_i(t_1)-L_{i+1}(t_1)\big)<(\delta/4)(2t_2)^{1/2}\Big)<\frac{1}{20}.
 	\]
-	The above inequality implies that
-	$$\frac{\left\{ \mathfrak{L} \in \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty): \min_{i = 1, \dots, k-2} L_{i}(- t_1) - L_{i+1}(-t_1) \geq 3\delta_1 (2t_2)^{1/2} \right\}}{\Omega(\vec c,\vec d)}>9/10$$ The proof for $+t_1$ follows similarly, and gives us a separate constant, $\delta_2$. We then set $\epsilon=\min\{\delta_1,\delta_2\}$ and find that $$\frac{\abs*{B(\vec c, \vec d, \epsilon)}}{\abs*{\Omega(\vec c, \vec d)}}>\frac{9}{10}$$ 
-	For the second inequality in (\ref{LemmaBP2Step3}), we observe via the second inequality in \eqref{5.8step1} that
+	A similar argument gives us a $\tilde{\delta}>0$ such that
+	\[
+	\pr^{-t_{12},t_{12},\vec c, \vec d}_{avoid,Ber}\Big(\min_{1\leq i\leq k-2} \big(L_i(-t_1)-L_{i+1}(-t_1)\big)<(\tilde{\delta}/4)(2t_2)^{1/2}\Big)<\frac{1}{20}
+	\]
+	for large enough $N$. Then putting $\epsilon = \min(\delta,\tilde{\delta})/12$, we find
+	\[
+	\pr^{-t_{12},t_{12},\vec c, \vec d}_{avoid,Ber}\Big(\min_{1\leq i\leq k-2} \big(L_i(\pm t_1)-L_{i+1}(\pm t_1)\big)<3\epsilon(2t_2)^{1/2}\Big) < \frac{1}{20} + \frac{1}{20} = \frac{1}{10},
+	\] 
+	and the first inequality in \eqref{LemmaBP2Step3} follows.
+	
+	For the second inequality in \eqref{LemmaBP2Step3}, we observe via the second inequality in \eqref{5.8step1} that
 	\begin{align*}
 	\frac{|\tilde{B}(\vec{c},\vec{d},\epsilon)|}{|\tilde{\Omega}(\vec{c},\vec{d})|} &\geq \frac{|B(\vec{c},\vec{d},\epsilon)\cap\tilde{\Omega}(\vec{c},\vec{d})|}{|\Omega(\vec{c},\vec{d})|} \geq \frac{|B(\vec{c},\vec{d},\epsilon)|}{|\Omega(\vec{c},\vec{d})|} -\frac{|\tilde{\Omega}^c(\vec{c},\vec{d})|}{|\Omega(\vec{c},\vec{d})|} \geq \frac{9}{10} - \frac{1}{100} > \frac{4}{5}.
 	\end{align*} \\
