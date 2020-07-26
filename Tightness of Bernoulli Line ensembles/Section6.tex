@@ -280,13 +280,13 @@ We are now equipped to prove Lemma \ref{LemmaAP2}.
 	\[
 	(r+1)N^\alpha \geq s\cdot 2t_{12} \geq (r+1)N^\alpha - 4s \geq t_1 - 2.
 	\]
-	It follows that $\floor{st_{12}}$ is an integer between $t_1-2$ and $t_1$, from which we conclude that
+	It follows that $t_1 - 2 \leq \floor{s\cdot 2t_{12}} \leq t_1$, from which we conclude that
 	\begin{equation}\label{Lt1Set}
-	0 \leq L_i(t_1)-L_i(\floor{st_{12}}) \leq 2.
+	0 \leq L_i(t_1)-L_i(s\cdot 2t_{12}) \leq 2.
 	\end{equation}
 	Now applying Lemma \ref{prob 20} with $M_1,M_2=\max(V_1^t,V_1^b)$, we obtain $N_0$ and $\delta>0$ such that if $N \geq N_0$, then
 	\[
-	\pr^{-t_{12},t_{12},\vec c, \vec d}_{avoid,Ber}\Big(\min_{1\leq i\leq k-1} \big(L_i(\floor{st_{12}})-L_{i+1}(\floor{st_{12}})\big) < \delta(2t_{12})^{1/2}\Big)<\frac{1}{20}.
+	\pr^{-t_{12},t_{12},\vec c, \vec d}_{avoid,Ber}\Big(\min_{1\leq i\leq k-1} \big(L_i(s\cdot 2t_{12})-L_{i+1}(s\cdot 2t_{12})\big) < \delta(2t_{12})^{1/2}\Big)<\frac{1}{20}.
 	\]
 	Together with \eqref{Lt1Set} and the fact that $t_2/4 < t_1 < t_{12}$, this implies that
 	\begin{equation}\label{step3delta/2}
