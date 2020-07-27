@@ -360,7 +360,7 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	\end{align*}
 	Then $x_i'\leq x_k \leq x_i$ and $y_i' \leq y_k \leq y_i$ for $1\leq i\leq k-1$. Thus by Lemma \ref{MCLxy}, we have
 	\begin{equation*}
-	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{avoid, Ber} \Big(Q_k(T/2) - ptT \geq M\sqrt{T}\Big) \geq \mathbb{P}^{0,T,\vec{x}\,',\vec{y}\,'}_{avoid, Ber} \Big(Q_k(T/2) - ptT \geq M\sqrt{T}\Big).
+	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{avoid, Ber} \Big(Q_k(T/2) - pT/2 \geq M\sqrt{T}\Big) \geq \mathbb{P}^{0,T,\vec{x}\,',\vec{y}\,'}_{avoid, Ber} \Big(Q_k(T/2) - pT/2 \geq M\sqrt{T}\Big).
 	\end{equation*}
 	Let us write $K_i = pT/2 + M\sqrt{T}+(10(k-i)-5)\lceil\sqrt{T}\rceil$ for $1\leq i\leq k$. Note $K_i$ is the midpoint of $pT/2 + M\sqrt{T} + 10(k-i-1)\lceil\sqrt{T}\rceil$ and $pT/2 + M\sqrt{T}+10(k-i)\lceil\sqrt{T}\rceil$. Let $E$ denote the event that the following conditions hold for $1\leq i\leq k$:
 	\begin{enumerate}[label=(\arabic*)]
@@ -386,7 +386,7 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	\end{equation}
 \begin{figure}
 	\includegraphics[width=0.85\textwidth]{graphics/Lemma320.jpg}{\kern 3em}
-	\caption{Overview of the arguments for Lemma 3.20:}
+	\caption{Sketch of the argument for Lemma 3.20: \\We shift the Bernoulli random walks with entry and exit data $\vec x$ and $\vec y$ down to Bernoulli random walks with entry data $x'$ and $y'$, applying Monotone Coupling, Lemma \ref{MCLxy} to find that the probability of the even that midpoint of the random walk from $\vec x$ to $\vec y$ is greater than $M\sqrt{T}$ is greater  than the probability of the same event for random walks from $\vec x'$ to $\vec y'$. We then define the event $E$, which is the probability that each random walk lies within the blue bounding lines above after an affine shift. We may then use strong coupling with Brownian motions in accordance with Theorem \ref{KMT} to bound the  event $E$ from below, and use previously known results about Brownian motion to bound the original probability, the height of a random walk at its midpoint, from below.}
 \end{figure}
 	Let $\mathbb{P}$ be a probability space suporting a random variable $\ell^{(T,z)}$ with law $\mathbb{P}^{0,T,0,z}$ coupled with a Brownian bridge $B^\sigma$ with variance $\sigma^2$, as in Theorem \ref{KMT}. Then the last probability in brackets is bounded below by
 	\begin{equation}\label{19BB}
