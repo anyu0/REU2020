@@ -61,7 +61,7 @@ Let $\{X_i\}$ be a sequence of independent identically distributed random variab
 
 \bigskip
 
-\item \textbf{Donsker's Theorem:} Let $B^{(n)}(t) = \dfrac{S_{\lfloor nt\rfloor}}{\sqrt{n}}$ for $t\in [0,1]$. Then $B^{(n)} \in C([0, 1])$ and $B^{(n)} \implies B$ as $n\to\infty$, a standard Brownian motion on $[0,1]$.
+\item \textbf{Donsker's Theorem:} Let $W^{(n)}(t) = \dfrac{S_{\lfloor nt\rfloor}}{\sqrt{n}}$ for $t\in [0,1]$. Then $W^{(n)} \in C([0, 1])$ and $W^{(n)} \implies W$ as $n\to\infty$, a standard Brownian motion on $[0,1]$.
 \end{itemize}
 \begin{figure}
 \includegraphics[height=0.29\textheight]{graphics/Gaussian.png}
@@ -152,30 +152,30 @@ Then $\{\mathfrak{L}^N\}$ is a tight sequence.
 		\item \textit{Transversal fluctuations of the ASEP, stochastic six vertex model, and Hall-Littlewood line ensembles} [Corwin-Dimitrov ‘17], which consider similar questions in a {\color{red}discrete} setting 
 	\end{enumerate}
 \end{frame}
-\begin{frame}{Problem Description}
+\begin{frame}{Proving tightness}
 	Recall that to show tightness, we want to control \begin{enumerate}
-		\item \begin{center}
-			min
-		\end{center}
-		\item 
-		\begin{center}
-			max
-		\end{center}
-		\item 
-		\begin{center}
-			modulus of continuity of the line ensembles
-		\end{center}
+		\item \textbf{\textcolor{ForestGreen}{Minimum}} of bottom curve $\textcolor{ForestGreen}{L_k^N}$,
+		
+		\item \textbf{\textcolor{blue}{Maximum}} of top curve $\textcolor{blue}{L_1^N}$,
+		
+		\item \textbf{\textcolor{Fuchsia}{Modulus of continuity}} of each curve $\textcolor{Fuchsia}{L_i^N}$.
 	\end{enumerate}
-	We claim that for the {\color{blue}\textbf{top}} curve of our line ensemble to have a {\color{red}\textbf{parabolic shift}}, the {\color{blue}\textbf{bottom}} curve cannot dip too low, i.e. for any $r, \epsilon > 0$, there exist $R, M > 0$ such that for $N$ large enough,
-	$$P( \max_{[r, R]} L_k(sN^{\alpha}) - psN^{\alpha} \leq -MN^{\alpha} ) < \epsilon$$ 
-	(perhaps insert a picture)
+	We will focus on bounding the \textcolor{ForestGreen}{minimum}:
+	
+	\begin{lemma}[------]
+		Fix $r,\epsilon > 0$. Then there exist constants $R>0$ and $N_0\in\mathbb{N}$ such that for all $N\geq N_0$,
+		\[
+		\mathbb{P}\Big(\inf_{x\in[-r,r]} \big(L_k^N(xN^{2/3}) - pxN^{2/3}\big) < -RN^{1/3}\Big) < \epsilon.
+		\]
+	\end{lemma}
 \end{frame}
-\begin{frame}
+
+\begin{frame}{Monotone coupling}
 Proof  (mention monotone coupling lemmas somewhere ) - say MC with picture
 2min
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Strong coupling with Brownian bridges}
 Proof  (mention strong coupling somewhere) - say SC with picture 
 L = Bernoulli bridge B is a Brownian bridge with variance. There is a probability space such that $P( sup \abs*{L - B} \geq k (\log N)^2) < \epsilon$. This is a comparison that allows for example to compare the modulus of continuity of the two. [Dimitrov-Wu ‘19]
 2 min
@@ -186,7 +186,7 @@ L = Bernoulli bridge B is a Brownian bridge with variance. There is a probabilit
 	\begin{lemma}[------]
 		For any $r,\epsilon > 0$, there exists $R>r$ and a constant $M>0$ so that for large $N$,
 		\[
-		\mathbb{P}\Big(\max_{x\in[r,R]} \big(L_k^N(xN^{2/3}) - pxN^{2/3}\big) \leq -MN^{1/3}\Big) < \epsilon.
+		\mathbb{P}\Big(\max_{x\in[r,R]} \big(L_k^N(xN^{2/3}) - pxN^{2/3}\big) < -MN^{1/3}\Big) < \epsilon.
 		\]
 		The same is true of the maximum on $[-R,-r]$.
 	\end{lemma}
