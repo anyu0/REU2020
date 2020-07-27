@@ -383,8 +383,8 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	\end{split}
 	\end{equation}
 \begin{figure}
-	\includegraphics[width=0.85\textwidth]{graphics/Lemma320.jpg}{\kern 3em}
-	\caption{Sketch of the argument for Lemma 3.20: \\We shift the Bernoulli random walks with entry and exit data $\vec x$ and $\vec y$ down to Bernoulli random walks with entry data $x'$ and $y'$, applying Monotone Coupling, Lemma \ref{MCLxy} to find that the probability of the even that midpoint of the random walk from $\vec x$ to $\vec y$ is greater than $M\sqrt{T}$ is greater  than the probability of the same event for random walks from $\vec x'$ to $\vec y'$. We then define the event $E$, which is the probability that each random walk lies within the blue bounding lines above after an affine shift. We may then use strong coupling with Brownian motions in accordance with Theorem \ref{KMT} to bound the  event $E$ from below, and use previously known results about Brownian motion to bound the original probability, the height of a random walk at its midpoint, from below.}
+	\includegraphics[scale=0.6]{graphics/Lemma320.jpg}
+	\caption{Sketch of the argument for Lemma \ref{prob19}: We use Lemma \ref{MCLxy} to lower the entry and exit data $\vec{x},\vec{y}$ of the curves to $\vec x\,'$ and $\vec y\,'$. The event $E$ occurs when each curve lies within the blue bounding lines shown in the figure. We then use strong coupling with Brownian bridges via Theorem \ref{KMT} and bound the probability of the bridges remaining within the blue windows.}
 \end{figure}
 	Let $\mathbb{P}$ be a probability space suporting a random variable $\ell^{(T,z)}$ with law $\mathbb{P}^{0,T,0,z}$ coupled with a Brownian bridge $B^\sigma$ with variance $\sigma^2$, as in Theorem \ref{KMT}. Then the last probability in brackets is bounded below by
 	\begin{equation}\label{19BB}

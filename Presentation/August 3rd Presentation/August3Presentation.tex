@@ -29,7 +29,7 @@
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 
 
-\title{Asymptotics of Bernoulli Line Ensembles}
+\title{Asymptotics of Bernoulli Gibbsian Line Ensembles}
 
 \author[Fang, Fesser, Serio, Teitler, and Wang]{Xiang Fang, Lukas Fesser, Christian Serio, Carson Teitler, and Angela Wang \\
 Graduate Student Assistant: Weitao Zhu\\
@@ -71,31 +71,33 @@ Let $\{X_i\}$ be a sequence of independent identically distributed random variab
 \end{frame}
 
 \begin{frame}{Multiple random walks}
-If $S_{n+1} - S_n \in \{0, 1\}$, then $\{S_n\}_{n=1}^\infty$ is a \textcolor{red}{\textit{Bernoulli random walk}}. An \textcolor{red}{\textit{avoiding Bernoulli line ensemble}} $\mathfrak{L} = (L_1,\dots,L_k)$ consists of $k$ avoiding Bernoulli random walks on an interval $[T_0,T_1]$, such that $L_1(s) \geq L_2(s) \geq \cdots \geq L_k(s)$ for $s\in[T_0,T_1]$.
+	
+	\begin{itemize}
+		
+	\item If $S_{n+1} - S_n \in \{0, 1\}$, then $\{S_n\}_{n=1}^\infty$ is a \textcolor{red}{\textit{Bernoulli random walk}} 
+	
+	\item An \textcolor{red}{\textit{avoiding Bernoulli line ensemble}} $\mathfrak{L} = (L_1,\dots,L_k)$ consists of $k$ avoiding Bernoulli random walks on an interval $[T_0,T_1]$, such that $L_1(s) \geq L_2(s) \geq \cdots \geq L_k(s)$ for $s\in[T_0,T_1]$
+	
+	\end{itemize}
 \[
-	\includegraphics[height=0.3\textheight]{graphics/MultipleBernoulli.png}
+	\includegraphics[height=0.5\textheight]{graphics/MultipleBernoulli.png}
 \]
-When dealing with a family of avoiding Brownian Motions, we speak of Dyson Brownian Motion:
-\begin{figure}
-\includegraphics[height=0.2\textheight]{graphics/DysonBrownian.png}
-	\caption{Dyson Brownian Motion}
-\end{figure}
 \end{frame}
 
 \begin{frame}{Airy Line Ensemble}
-As $k \to \infty$, $k$ avoiding random walks are conjectured to converge to the \textcolor{red}{Airy line ensemble}, $\mathcal{A}$, and the top curve to the \textcolor{red}{Airy process}, $\mathcal{A}_1$.
+As $k \to \infty$, $k$ avoiding random walks are conjectured to converge to the \textit{\textcolor{red}{Airy line ensemble}} $\mathcal{A}$, and the top curve to the \textit{\textcolor{red}{Airy process}} $\mathcal{A}_1$
 \begin{figure}
 	\includegraphics[height=0.25\textheight]{graphics/airy.png}
-	\caption{Multiple Dyson Brownian walks}
+	\caption{Trajectories of Dyson Brownian motion}
 \end{figure}
 
 \begin{itemize}
 	
-	\item Increasing the number of paths pushes us outside of the \textcolor{blue}{\textit{Gaussian universality class}} and into \textcolor{blue}{\textit{Kardar-Parisi-Zhang (KPZ) universality class}} .
+	\item Increasing the number of paths pushes us outside of the \textcolor{blue}{Gaussian universality class} and into the \textcolor{blue}{\textit{Kardar-Parisi-Zhang (KPZ) universality class}}
 	
-	\item Open problem: Show that ``generic" random walks with ``generic" initial conditions converge to the Airy line ensemble. 
+	\item Open problem: Show that ``generic" random walks with ``generic" initial conditions converge to the Airy line ensemble
 	
-	\item We treat this problem for Bernoulli random walks; the proof is only known if all walks start from 0.
+	\item We consider this problem for Bernoulli random walks; the proof is only known if all walks start from 0
 	
 \end{itemize}
 \end{frame}
@@ -122,7 +124,7 @@ As $k \to \infty$, $k$ avoiding random walks are conjectured to converge to the 
 \end{frame}
 
 \begin{frame}{Our Result}
-\begin{theorem} Let $\{\mathfrak{L}^N = (L_1^N,\dots,L_k^N)\}_{N=1}^\infty$ be a sequence of avoiding Bernoulli Gibbsian line ensembles. Fix $p\in(0,1)$ and $\lambda > 0$, and suppose that for all $n\in\mathbb{Z}$ we have
+\begin{theorem}[FFSTWZD] Let $\{\mathfrak{L}^N = (L_1^N,\dots,L_k^N)\}_{N=1}^\infty$ be a sequence of $k$ avoiding Bernoulli random walks. Fix $p\in(0,1)$ and $\lambda > 0$, and suppose that for all $n\in\mathbb{Z}$ we have
 \[
 \lim_{N\to\infty} \mathbb{P}\big(L_1^{N}(nN^{2/3}) - pnN^{2/3} + \lambda n^2 N^{1/3} \leq N^{1/3} x \big) = F_{TW}(x).
 \]
@@ -130,11 +132,11 @@ Then $\{\mathfrak{L}^N\}$ is a tight sequence.
 \end{theorem}
 
 \begin{itemize}
-	\item $F_{TW}$ denotes the \textit{Tracy-Widom distribution} -- a common limiting distribution in the KPZ universality class.
+	\item $F_{TW}$ denotes the \textit{Tracy-Widom distribution} -- the one-point marginal for the Airy process
 	
-	\item {[Dauvergne-Nica-Vir\'{a}g '19]} showed that finite dimensional convergence of all curves implies tightness, hence convergence to the Airy line ensemble.
+	\item {[Dauvergne-Nica-Vir\'{a}g '19]} showed that finite dimensional convergence of all curves implies tightness
 	
-	\item Our result shows that it suffices for the \textcolor{red}{\textit{top curve}} to converge in the f.d. sense.
+	\item Our result shows that it suffices for the \textcolor{blue}{top curve} to converge in the f.d. sense
 \end{itemize}
 
 \[
@@ -148,7 +150,7 @@ Then $\{\mathfrak{L}^N\}$ is a tight sequence.
 \begin{frame} {History of the line ensembles}
 	Arguments in this paper are inspired by 
 	\begin{enumerate}
-		\item \textit{Brownian Gibbs property for Airy line ensembles} and \textit{KPZ line ensemble}[Corwin-Hammond ‘11, ‘13], which address the issues of {\color{red}continuous} line ensembles
+		\item \textit{Brownian Gibbs property for Airy line ensembles} [Corwin-Hammond '11] and \textit{KPZ line ensemble} [Corwin-Hammond '13], which address similar issues for {\color{red}continuous} line ensembles
 		\item \textit{Transversal fluctuations of the ASEP, stochastic six vertex model, and Hall-Littlewood line ensembles} [Corwin-Dimitrov ‘17], which consider similar questions in a {\color{red}discrete} setting 
 	\end{enumerate}
 \end{frame}
@@ -156,21 +158,21 @@ Then $\{\mathfrak{L}^N\}$ is a tight sequence.
 	Recall that to show tightness, we want to control:
 	\bigskip
 	\begin{enumerate}
-		\item \textbf{\textcolor{ForestGreen}{Minimum}} of bottom curve $\textcolor{ForestGreen}{L_k^N}$,
+		\item \textbf{\textcolor{ForestGreen}{Minimum}} of bottom curve $\textcolor{ForestGreen}{L_k^N}$
 		
 		\bigskip
 		
-		\item \textbf{\textcolor{blue}{Maximum}} of top curve $\textcolor{blue}{L_1^N}$,
+		\item \textbf{\textcolor{blue}{Maximum}} of top curve $\textcolor{blue}{L_1^N}$
 		
 		\bigskip
 		
-		\item \textbf{\textcolor{Fuchsia}{Modulus of continuity}} of each curve $\textcolor{Fuchsia}{L_i^N}$.
+		\item \textbf{\textcolor{Fuchsia}{Modulus of continuity}} of each curve $\textcolor{Fuchsia}{L_i^N}$
 		
 		\bigskip
 	\end{enumerate}
 	We will focus on bounding the \textcolor{ForestGreen}{minimum}:
 	
-	\begin{lemma}[------]
+	\begin{lemma}[FFSTWZD]
 		Fix $r,\epsilon > 0$. Then there exist constants $R>0$ and $N_0\in\mathbb{N}$ such that for all $N\geq N_0$,
 		\[
 		\mathbb{P}\Big(\inf_{x\in[-r,r]} \big(L_k^N(xN^{2/3}) - pxN^{2/3}\big) < -RN^{1/3}\Big) < \epsilon.
@@ -191,7 +193,7 @@ L = Bernoulli bridge B is a Brownian bridge with variance. There is a probabilit
 
 \begin{frame}{Controlling the minimum: pinning the bottom curve}
 	
-	\begin{lemma}[------]
+	\begin{lemma}[FFSTWZD]
 		For any $r,\epsilon > 0$, there exists $R>r$ and a constant $M>0$ so that for large $N$,
 		\[
 		\mathbb{P}\Big(\max_{x\in[r,R]} \big(L_k^N(xN^{2/3}) - pxN^{2/3}\big) < -MN^{1/3}\Big) < \epsilon.
@@ -204,7 +206,7 @@ L = Bernoulli bridge B is a Brownian bridge with variance. There is a probabilit
 	
 	\begin{itemize}
 		
-		\item Couple with a Brownian bridge: if ``pinned" at two points $>r$ and $-r$, it cannot be low on scale $N^{1/3}$ on $[-r,r]$.
+		\item Couple $L_k^N$ with a Brownian bridge: if ``pinned" at two points in $[r,R]$ and $[-R,-r]$, it cannot be low on scale $N^{1/3}$ on $[-r,r]$
 		
 	\end{itemize}
 	
@@ -218,18 +220,18 @@ L = Bernoulli bridge B is a Brownian bridge with variance. There is a probabilit
 		
 		\item Recall our assumption:
 		\[
-		\mathbb{P}\Big(\textcolor{red}{L_1^N}(nN^{2/3}) - pnN^{2/3} + \textcolor{red}{\lambda n^2} N^{1/3} \leq xN^{1/3}\Big) \underset{N\to\infty}\longrightarrow F_{TW}(x).
+		\mathbb{P}\Big(\textcolor{red}{L_1^N}(nN^{2/3}) - pnN^{2/3} + \textcolor{red}{\lambda n^2} N^{1/3} \leq xN^{1/3}\Big) \underset{N\to\infty}\longrightarrow F_{TW}(x)
 		\]
 		
-		\item The top curve looks like a \textcolor{red}{parabola} with an affine shift on large scales.
+		\item The top curve looks like a \textcolor{red}{parabola} with an affine shift on large scales
 		\[
 		\includegraphics[scale=0.12]{graphics/parabola.png}
 		\]
 		
-		\item Two curves: if $L_2^N$ is low on $[r,R]$, $L_1^N$ looks like a free Brownian bridge.
+		\item Two curves: if $L_2^N$ is low on $[r,R]$, $L_1^N$ looks like a free Brownian bridge
 		
 		\[
-		\textcolor{ForestGreen}{\lambda\Big(\frac{R^2+r^2}{2}\Big)} - \textcolor{Fuchsia}{\lambda\Big(\frac{R+r}{2}\Big)^2} = \lambda\frac{R^2+r^2}{4} - \frac{\lambda rR}{2} = \textcolor{red}{O(R^2)}.
+		\textcolor{ForestGreen}{\lambda\Big(\frac{R^2+r^2}{2}\Big)} - \textcolor{Fuchsia}{\lambda\Big(\frac{R+r}{2}\Big)^2} = \lambda\frac{R^2+r^2}{4} - \frac{\lambda rR}{2} = \textcolor{red}{O(R^2)}
 		\]
 		
 		\item For large $R$, the top curve would be far from the parabola at the midpoint!
