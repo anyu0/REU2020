@@ -26,33 +26,27 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 \begin{proof}[Lemma \ref{LemmaAP1}]
 	
 	Let us denote by $\pr_{\mathfrak L'}$ and $\pr_{\tilde{\mathfrak{L}}'}$ the measures on $\llbracket 1, k-1\rrbracket$-indexed Bernoulli line ensembles $\mathfrak{L}'$, $\tilde{\mathfrak{L}}'$ on the set $S = \llbracket -t_2, -t_1 \rrbracket \cup \llbracket t_1, t_2 \rrbracket$, induced by the restrictions of the measures $\mathbb{P}_{\mathfrak{L}}$, $\mathbb{P}_{\tilde{\mathfrak{L}}}$ in Definition \ref{TildeDef} to $S$. We claim that the Radon-Nikodym derivative between these two restricted measures is given on Bernoulli line ensembles $\mathfrak B$ on $\llbracket 1, k-1\rrbracket \times S$ by \begin{equation}\label{propRadon}
-	\frac{d\pr_{\mathfrak L'}}{d\pr_{\tilde{\mathfrak L}'}}\left(\mathfrak B\right) = (Z')^{-1} Z\left(-t_1,t_1,\mathfrak{B}\left(-t_1\right),\mathfrak{B}\left(t_1\right),\ell_{bot}\llbracket -t_1,t_1\rrbracket\right),
+	\frac{d\pr_{\mathfrak L'}}{d\pr_{\tilde{\mathfrak L}'}}\left(\mathfrak B\right) = \frac{\mathbb{P}_{\mathfrak{L}'}(\mathfrak{B})}{\mathbb{P}_{\tilde{\mathfrak{L}}'}(\mathfrak{B})} = (Z')^{-1} Z\left(-t_1,t_1,\mathfrak{B}\left(-t_1\right),\mathfrak{B}\left(t_1\right),\ell_{bot}\llbracket -t_1,t_1\rrbracket\right),
 	\end{equation}
-	with $Z' = \ex_{\tilde{\mathfrak{L}}'}\left[Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]$.
-	As proof for this claim, consider the following: Here, $\Omega$ denotes $\Omega_{avoid}$ and  $\Omega(S)$ is the set $\Omega_{avoid}(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2),\ell_{bot})$ yet each element has its data stripped on $\llbracket[-t_1+1,t_1-1]$. For each $\omega\in \Omega(S)$ we have
+	with $Z' = \ex_{\tilde{\mathfrak{L}}'}\left[Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]$. The first equality holds simply because the measures are discrete. To prove the second equality, let $\Omega_a(\cdot)$ denote $\Omega_{avoid}(\cdot)$ for simplicity, and let $\Omega_a(S)$ denote the set of elements of $\Omega_{avoid}(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2))$ restricted to $S$. Then we have
+	\[
+	\pr_{\mathfrak{L}'}(\mathfrak{B}) = \frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot}\llbracket -t_1,t_1\rrbracket)|}{|\Omega_a(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2),\ell_{bot})|}, 
+	\quad
+	\pr_{\tilde{\mathfrak{L}}'}(\mathfrak{B}) = \frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1))|}{|\Omega_a(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2),\tilde\ell_{bot})|},
+	\]
+	\[
+	Z(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot}) = \frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot})|}{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1))|},
+	\]
+	and hence
 	\begin{equation*}
 	\begin{split}
-\pr_{\mathfrak{L}'}(\omega)&=\frac{\Omega\left(-t_1,t_1,\mathfrak{B}(-t_1,\omega),\mathfrak{B}(t_1,\omega),\ell_{bot}\llbracket -t_1,t_1\rrbracket\right)}{\Omega\left(-t_2,t_2,\mathfrak{B}(-t_2,\omega),\mathfrak{B}(t_2,\omega),\ell_{bot}\right)}\\
-\pr_{\tilde{\mathfrak{B}}'}(\omega)&=\frac{\Omega\left(-t_1,t_1,\tilde{\mathfrak{B}}(-t_1,\omega),\tilde{\mathfrak{B}}(t_1,\omega)\right)}{\Omega\left(-t_2,t_2,\tilde{\mathfrak{B}}(-t_2,\omega),\tilde{\mathfrak{B}}(t_2,\omega),\tilde\ell_{bot}\right)}\\
-Z(-t_1,t_1,\tilde{\mathfrak{B}}(-t_1,\omega),\tilde{\mathfrak{B}}(t_1,\omega),\ell_{bot})&=\frac{\Omega(-t_1,t_1,\tilde{\mathfrak{B}}(-t_1,\omega),\tilde{\mathfrak{B}}(t_1,\omega),\ell_{bot})}{\Omega(-t_1,t_1,\tilde{\mathfrak{B}}(-t_1,\omega),\tilde{\mathfrak{B}}(t_1,\omega))}
+	Z' &=\sum_{\mathfrak{B}\in \Omega_a(S)}\frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1))|}{|\Omega_a(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2),\tilde\ell_{bot})|}\cdot\frac{|\Omega_a(-t_1,t_1,\mathfrak B(-t_1),\mathfrak{B}(t_1),\ell_{bot})|}{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak B(t_1))|}\\ 
+	&= \frac{\sum_{\mathfrak{B}\in\Omega_a(S)}|\Omega_a(-t_1,t_1,\mathfrak B(-t_1),\mathfrak B(t_1),\ell_{bot})|}{|\Omega_a(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\tilde{\ell}_{bot})|} = \frac{|\Omega_a(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\ell_{bot})|}{|\Omega_a(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\tilde{\ell}_{bot})|}.
 	\end{split}
 	\end{equation*}
-	These all follow from definitions [Get Definitions] and the nature of the restrictions. Hence, we may now calculate the value of $Z'$. We find that
-	\begin{equation*}
-	\begin{split}
-	\ex_{\tilde{\mathfrak{L}}'}\left[Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\right)\right]&=\sum_{\omega\in \Omega(S)}\frac{\Omega(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1))}{\Omega(-t_2,t_2,\mathfrak{B}(-t_2),\mathfrak{B}(t_2),\tilde\ell_{bot})}\cdot\frac{\Omega(-t_1,t_1,\mathfrak B(-t_1),\mathfrak{B}(t_1),\ell_{bot})}{\Omega(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak B(t_1))}\\
-	&=\frac{\sum_{\omega\in\Omega(S)}\Omega(-t_1,t_1,\mathfrak B(-t_1),\mathfrak B(t_1),\ell_{bot})}{\Omega(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\tilde{\ell}_{bot})}\\
-	&=\frac{\Omega(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\ell_{bot}}{\Omega(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\tilde{\ell}_{bot}}
-	\end{split}
-	\end{equation*}
-	Using this equation as well as the earlier stated definitions, we find \begin{equation*}
-	\begin{split}
-(Z')^{-1}Z(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot})&=\frac{\Omega(-t_1,t_1,\tilde{\mathfrak{B}}(-t_1,\omega),\tilde{\mathfrak{B}}(t_1,\omega),\ell_{bot})}{\Omega(-t_1,t_1,\tilde{\mathfrak{B}}(-t_1,\omega),\tilde{\mathfrak{B}}(t_1,\omega))}\cdot \left(\frac{\Omega(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\ell_{bot}}{\Omega(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\tilde{\ell}_{bot}}\right)^{-1}\\
-&=\frac{\pr_{\mathfrak L'}(\omega)}{\pr_{\tilde{\mathfrak L}'}(\omega)}
-	\end{split}
-	\end{equation*}
-	Hence, we find that equation \ref{propRadon} is correct.
-	 Note that $Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)$ is a deterministic function of $\left((\mathfrak B(-t_1), \mathfrak B(t_1)\right)$. In fact, the law of $\left((\mathfrak B(-t_1), \mathfrak B(t_1)\right)$ under $\pr_{\tilde{\mathfrak L}'}$ is the same as that of $\big(\tilde{\mathfrak L}(-t_1), \tilde{\mathfrak L}(t_1)\big)$ by way of the restriction. It follows from Lemma \ref{LemmaAP2} that
+	Comparing the above identities proves the second equality in \eqref{propRadon}.
+	
+	Now note that $Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)$ is a deterministic function of $\left((\mathfrak B(-t_1), \mathfrak B(t_1)\right)$. In fact, the law of $\left((\mathfrak B(-t_1), \mathfrak B(t_1)\right)$ under $\pr_{\tilde{\mathfrak L}'}$ is the same as that of $\big(\tilde{\mathfrak L}(-t_1), \tilde{\mathfrak L}(t_1)\big)$ by way of the restriction. It follows from Lemma \ref{LemmaAP2} that
 	\begin{align*}
 	Z' &= \ex_{\tilde{\mathfrak{L}}'}\left[Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]\\
 	&= \ex_{\tilde{\mathfrak{L}}}\left[Z\left(-t_1, t_1, \mathfrak L(-t_1), \mathfrak L(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]\geq gh,
@@ -127,7 +121,7 @@ t_{12} = \Big\lfloor \frac{t_1 + t_2}{2} \Big\rfloor.
 	Note in particular that $V_1^b > M_2 + R$. We will choose $V_1^t > V_1^b$ in the below depending on $h_1$. We claim that for these choices of  $V_1^b, V_1^t, h_1$, and for large enough $N$, we have 
 	\begin{align}
 	\mathbb{P}_{\tilde{\mathfrak{L}}}\Big(\tilde{L}_{k-1}(\pm t_{12}) \mp pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) &\geq 2h_1, \label{5.10bound1}\\
-	\mathbb{P}_{\tilde{\mathfrak{L}}}\Big(\tilde{L}_1(\pm t_{12}) \mp pt_{12} \geq (2t_2)^{1/2}V_1^t\Big) &\leq h_1. \label{5.10bound2}
+	\mathbb{P}_{\tilde{\mathfrak{L}}}\Big(\tilde{L}_1(\pm t_{12}) \mp pt_{12} > (2t_2)^{1/2}V_1^t\Big) &\leq h_1. \label{5.10bound2}
 	\end{align}
 	Assuming the validity of the claim, we then observe that the probability in \eqref{eqnRT2} is bounded below by $2h_1 - h_1 = h_1$, proving the lemma. We will prove \eqref{5.10bound1} and \eqref{5.10bound2} in two steps.\\
 	
@@ -163,20 +157,20 @@ t_{12} = \Big\lfloor \frac{t_1 + t_2}{2} \Big\rfloor.
 	\end{equation} 
 	To bound the first term on the second line, first note that $x_{k-1}' \geq -pt_2 - M_1(2t_2)^{1/2} - C(k-1)(2t_2)^{1/2}$ and $z_{k-1}' \geq K_1(2t_2)^{1/2} - C(k-1)(2t_2)^{1/2}$ for sufficiently large $N$. Let us write $\tilde{x},\tilde{z}$ for these two lower bounds. Then by Lemma \ref{LemmaHalfS4}, we have
 	\begin{equation}\label{5.10third1}
-	\mathbb{P}^{-t_2,0,x_{k-1}',z_{k-1}'}_{Ber}\Big(\ell_1(-t_{12}) \geq \frac{t_{12}}{t_2}x_{k-1}' + \frac{t_2-t_{12}}{t_2}z_{k-1}' - (2t_2)^{1/4}\Big) \geq \frac{1}{3}.
+	\mathbb{P}^{-t_2,0,x_{k-1}',z_{k-1}'}_{Ber}\Big(\ell_1(-t_{12}) \geq \frac{t_{12}}{t_2}\,\tilde{x} + \frac{t_2-t_{12}}{t_2}\,\tilde{z} - (2t_2)^{1/4}\Big) \geq \frac{1}{3}.
 	\end{equation}  
 	Moreover, as long as $N^\alpha > 4$, we have 
 	\begin{equation}\label{4r+7}
 	\frac{t_2-t_{12}}{t_2} \geq 1 - \frac{(r+3/2)N^\alpha}{(r+2)N^\alpha - 1} > 1-\frac{r+3/2}{r+7/4} = \frac{1}{4r+7}.
 	\end{equation}
-	It follows from our choice of $V_1^b$ and $K_1 = 2(4r+7)V_1^b$ in \eqref{5.10Vb}, and \eqref{4r+7}, that 
+	It follows from our choice of $V_1^b$ and $K_1 = 2(4r+7)V_1^b$ in \eqref{5.10Vb}, as well as \eqref{4r+7}, that 
 	\begin{align*}
 	\frac{t_{12}}{t_2}\,\tilde{x} + \frac{t_2-t_{12}}{t_2}\,\tilde{z} - (2t_2)^{1/4} &= -pt_{12} - C(k-1)(2t_2)^{1/2} - \frac{t_{12}}{t_2}\,M_1(2t_2)^{1/2} + \frac{t_2-t_{12}}{t_2}\,K_1(2t_2)^{1/2} - (2t_2)^{1/4}\\ 
-	&> -pt_{12} - Ck(2t_2)^{1/2} - M_1(2t_2)^{1/2} + \frac{1}{4r+7}\,K_1(2t_2)^{1/2}\\
-	&\geq -pt_{12} + (M_1 + Ck + 2(M_2+R))(2t_2)^{1/2}\\
+	&\geq -pt_{12} - Ck(2t_2)^{1/2} - M_1(2t_2)^{1/2} + \frac{1}{4r+7}\,K_1(2t_2)^{1/2}\\
+	&= -pt_{12} + (M_1 + Ck + 2(M_2+R))(2t_2)^{1/2}\\
 	&> -pt_{12} + (2t_2)^{1/2}V_1^b.
 	\end{align*}
-	For the first inequality, we used the fact that $t_{12}/t_2 < 1$, and we assumed that $N$ is sufficiently large so that $C(k-1)(2t_2)^{1/2} + (2t_2)^{1/4} < Ck(2t_2)^{1/2}$. Using \eqref{5.10third1}, we conclude that
+	For the first inequality, we used the fact that $t_{12}/t_2 < 1$, and we assumed that $N$ is sufficiently large so that $C(k-1)(2t_2)^{1/2} + (2t_2)^{1/4} \leq Ck(2t_2)^{1/2}$. Using \eqref{5.10third1}, we conclude that
 	\begin{equation}\label{5.10third2}
 	\mathbb{P}^{-t_2,0,x_{k-1}',z_{k-1}'}_{Ber}\Big(\ell_1(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \frac{1}{3}.
 	\end{equation}
@@ -205,7 +199,7 @@ t_{12} = \Big\lfloor \frac{t_1 + t_2}{2} \Big\rfloor.
 	\end{align*}
 	Note that $x_i'' \geq x_1 \geq x_i$ and $x_i''-x_{i+1}'' \geq C(2t_2)^{1/2}$, and likewise for $y_i''$. Moreover, $\tilde{\ell}_{bot}$ lies a distance of at least $C(2t_2)^{1/2}$ uniformly below the line segment connecting $x_{k-1}''$ and $y_{k-1}''$. By Lemma \ref{MCLxy} and the Schur Gibbs property, we have
 	\begin{align*}
-	\mathbb{P}_{\tilde{\mathfrak{L}}}\Big(\tilde{L}_1(\pm t_{12}) \mp pt_{12} \geq (2t_2)^{1/2}V_1^t\Big) &\leq \mathbb{P}^{-t_2,t_2,\vec{x}\,'',\vec{y}\,'',\infty,\tilde{\ell}_{bot}}_{avoid,Ber}\Big(\sup_{s\in[-t_2,t_2]} \big(\tilde{L}_1(s)-ps\big) \geq (2t_2)^{1/2}V_1^t\Big)\\
+	\mathbb{P}_{\tilde{\mathfrak{L}}}\Big(\tilde{L}_1(\pm t_{12}) \mp pt_{12} > (2t_2)^{1/2}V_1^t\Big) &\leq \mathbb{P}^{-t_2,t_2,\vec{x}\,'',\vec{y}\,'',\infty,\tilde{\ell}_{bot}}_{avoid,Ber}\Big(\sup_{s\in[-t_2,t_2]} \big(\tilde{L}_1(s)-ps\big) \geq (2t_2)^{1/2}V_1^t\Big)\\
 	&\leq \frac{\mathbb{P}^{-t_2,t_2,x_1'',y_1''}_{Ber}\Big(\sup_{s\in[-t_2,t_2]} \big(\tilde{L}_1(s)-ps\big) \geq (2t_2)^{1/2}V_1^t\Big)}{\mathbb{P}^{-t_2,t_2,\vec{x}\,'',\vec{y}\,''}_{Ber}\big(\tilde{L}_1\geq\cdots\geq\tilde{L}_{k-1}\geq\tilde{\ell}_{bot}\big)}.
 	\end{align*}
 	By Lemma \ref{LemmaMinFreeS4}, since $\min(x_1'' + pt_2, \, y_1'' - pt_2) \leq (M_1+C(k-1))(2t_2)^{1/2}$, we can choose $V_1^t > V_1^b$ large enough so that the numerator is bounded above by $h_1/2$. Since $|y_i'' - x_i'' - 2pt_2| \leq 1$, our choice of $C$ and Lemma \ref{CurveSeparation} imply that the denominator is at least $11/12$. This gives an upper bound of $12/11\cdot h_1/2 < h_1/2$ in the above, proving \eqref{5.10bound2}.
