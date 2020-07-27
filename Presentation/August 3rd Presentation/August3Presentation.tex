@@ -48,23 +48,23 @@ Advisor: Evgeni Dimitrov}
 
 \begin{frame}{The Gaussian universality class}
 
-Let $\{X_i\}$ be a sequence of independent identically distributed random variables with mean 0 and variance 1. Let $S_n = X_1 + \cdots + X_n$.
+Let $\{X_i\}$ be a sequence of independent identically distributed random variables with mean $\mu$ and variance $\sigma^2$. Let $S_n = X_1 + \cdots + X_n$.
 
 \bigskip
 
 \begin{itemize}
-\item \textbf{Law of Large Numbers:} $\dfrac{S_n}{n} \longrightarrow 0$ as $n \rightarrow \infty$ almost surely.
+\item \textbf{Law of Large Numbers:} $\dfrac{S_n}{n} \longrightarrow \mu$ as $n \rightarrow \infty$ almost surely.
 
 \bigskip
 
-\item \textbf{Central Limit Theorem:} $\dfrac{S_n}{\sqrt{n}} \implies \mathcal{N}(0, 1)$ as $n \rightarrow \infty$.
+\item \textbf{Central Limit Theorem:} $\dfrac{S_n - n\mu}{\sigma\sqrt{n}} \implies \mathcal{N}(0, 1)$ as $n \rightarrow \infty$.
 
 \bigskip
 
-\item \textbf{Donsker's Theorem:} Let $W^{(n)}(t) = \dfrac{S_{\lfloor nt\rfloor}}{\sqrt{n}}$ for $t\in [0,1]$. Then $W^{(n)} \in C([0, 1])$ and $W^{(n)} \implies W$ as $n\to\infty$, a standard Brownian motion on $[0,1]$.
+\item \textbf{Donsker's Theorem:} For $t\in[0,1]$, let $W^{(n)}(t) = \dfrac{S_{nt}-nt\mu}{\sigma\sqrt{n}}$ if $nt\in\mathbb{N}$, and linearly interpolate. Then $W^{(n)} \in C([0, 1])$ and $W^{(n)} \implies W$ as $n\to\infty$, a standard Brownian motion on $[0,1]$.
 \end{itemize}
 \begin{figure}
-\includegraphics[height=0.29\textheight]{graphics/Gaussian.png}
+\includegraphics[height=0.25\textheight]{graphics/Gaussian.png}
 \caption{An example of a random walk and a Brownian motion.}
 \end{figure}
 
@@ -153,12 +153,20 @@ Then $\{\mathfrak{L}^N\}$ is a tight sequence.
 	\end{enumerate}
 \end{frame}
 \begin{frame}{Proving tightness}
-	Recall that to show tightness, we want to control \begin{enumerate}
+	Recall that to show tightness, we want to control:
+	\bigskip
+	\begin{enumerate}
 		\item \textbf{\textcolor{ForestGreen}{Minimum}} of bottom curve $\textcolor{ForestGreen}{L_k^N}$,
+		
+		\bigskip
 		
 		\item \textbf{\textcolor{blue}{Maximum}} of top curve $\textcolor{blue}{L_1^N}$,
 		
+		\bigskip
+		
 		\item \textbf{\textcolor{Fuchsia}{Modulus of continuity}} of each curve $\textcolor{Fuchsia}{L_i^N}$.
+		
+		\bigskip
 	\end{enumerate}
 	We will focus on bounding the \textcolor{ForestGreen}{minimum}:
 	
