@@ -25,10 +25,34 @@ In other words, $\tilde{\mathfrak{L}}$ has the law of $k-1$ independent Bernoull
 We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of this section, we give the proof of Lemma \ref{LemmaAP1}.
 \begin{proof}[Lemma \ref{LemmaAP1}]
 	
-	Let us denote by $\pr_{\mathfrak L'}$ and $\pr_{\tilde{\mathfrak{L}}'}$ the measures on $\llbracket 1, k-1\rrbracket$-indexed Bernoulli line ensembles $\mathfrak{L}'$, $\tilde{\mathfrak{L}}'$ on the set $S = \llbracket -t_2, -t_1 \rrbracket \cup \llbracket t_1, t_2 \rrbracket$, induced by the restrictions of the measures $\mathbb{P}_{\mathfrak{L}}$, $\mathbb{P}_{\tilde{\mathfrak{L}}}$ in Definition \ref{TildeDef} to $S$. The Radon-Nikodym derivative between these two restricted measures is given on Bernoulli line ensembles $\mathfrak B$ on $\llbracket 1, k-1\rrbracket \times S$ by \begin{equation}\label{propRadon}
+	Let us denote by $\pr_{\mathfrak L'}$ and $\pr_{\tilde{\mathfrak{L}}'}$ the measures on $\llbracket 1, k-1\rrbracket$-indexed Bernoulli line ensembles $\mathfrak{L}'$, $\tilde{\mathfrak{L}}'$ on the set $S = \llbracket -t_2, -t_1 \rrbracket \cup \llbracket t_1, t_2 \rrbracket$, induced by the restrictions of the measures $\mathbb{P}_{\mathfrak{L}}$, $\mathbb{P}_{\tilde{\mathfrak{L}}}$ in Definition \ref{TildeDef} to $S$. We claim that the Radon-Nikodym derivative between these two restricted measures is given on Bernoulli line ensembles $\mathfrak B$ on $\llbracket 1, k-1\rrbracket \times S$ by \begin{equation}\label{propRadon}
 	\frac{d\pr_{\mathfrak L'}}{d\pr_{\tilde{\mathfrak L}'}}\left(\mathfrak B\right) = (Z')^{-1} Z\left(-t_1,t_1,\mathfrak{B}\left(-t_1\right),\mathfrak{B}\left(t_1\right),\ell_{bot}\llbracket -t_1,t_1\rrbracket\right),
 	\end{equation}
-	with $Z' = \ex_{\tilde{\mathfrak{L}}'}\left[Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]$. Note that $Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)$ is a deterministic function of $\left((\mathfrak B(-t_1), \mathfrak B(t_1)\right)$. In fact, the law of $\left((\mathfrak B(-t_1), \mathfrak B(t_1)\right)$ under $\pr_{\tilde{\mathfrak L}'}$ is the same as that of $\big(\tilde{\mathfrak L}(-t_1), \tilde{\mathfrak L}(t_1)\big)$ by way of the restriction. It follows from Lemma \ref{LemmaAP2} that
+	with $Z' = \ex_{\tilde{\mathfrak{L}}'}\left[Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]$.
+	As proof for this claim, consider the following: Here, $\Omega$ denotes $\Omega_{avoid}$ and  $\Omega(S)$ is the set $\Omega_{avoid}(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2),\ell_{bot})$ yet each element has its data stripped on $\llbracket[-t_1+1,t_1-1]$. For each $\omega\in \Omega(S)$ we have
+	\begin{equation*}
+	\begin{split}
+\pr_{\mathfrak{L}'}(\omega)&=\frac{\Omega\left(-t_1,t_1,\mathfrak{B}(-t_1,\omega),\mathfrak{B}(t_1,\omega),\ell_{bot}\llbracket -t_1,t_1\rrbracket\right)}{\Omega\left(-t_2,t_2,\mathfrak{B}(-t_2,\omega),\mathfrak{B}(t_2,\omega),\ell_{bot}\right)}\\
+\pr_{\tilde{\mathfrak{B}}'}(\omega)&=\frac{\Omega\left(-t_1,t_1,\tilde{\mathfrak{B}}(-t_1,\omega),\tilde{\mathfrak{B}}(t_1,\omega)\right)}{\Omega\left(-t_2,t_2,\tilde{\mathfrak{B}}(-t_2,\omega),\tilde{\mathfrak{B}}(t_2,\omega),\tilde\ell_{bot}\right)}\\
+Z(-t_1,t_1,\tilde{\mathfrak{B}}(-t_1,\omega),\tilde{\mathfrak{B}}(t_1,\omega),\ell_{bot})&=\frac{\Omega(-t_1,t_1,\tilde{\mathfrak{B}}(-t_1,\omega),\tilde{\mathfrak{B}}(t_1,\omega),\ell_{bot})}{\Omega(-t_1,t_1,\tilde{\mathfrak{B}}(-t_1,\omega),\tilde{\mathfrak{B}}(t_1,\omega))}
+	\end{split}
+	\end{equation*}
+	These all follow from definitions [Get Definitions] and the nature of the restrictions. Hence, we may now calculate the value of $Z'$. We find that
+	\begin{equation*}
+	\begin{split}
+	\ex_{\tilde{\mathfrak{L}}'}\left[Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\right)\right]&=\sum_{\omega\in \Omega(S)}\frac{\Omega(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1))}{\Omega(-t_2,t_2,\mathfrak{B}(-t_2),\mathfrak{B}(t_2),\tilde\ell_{bot})}\cdot\frac{\Omega(-t_1,t_1,\mathfrak B(-t_1),\mathfrak{B}(t_1),\ell_{bot})}{\Omega(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak B(t_1))}\\
+	&=\frac{\sum_{\omega\in\Omega(S)}\Omega(-t_1,t_1,\mathfrak B(-t_1),\mathfrak B(t_1),\ell_{bot})}{\Omega(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\tilde{\ell}_{bot})}\\
+	&=\frac{\Omega(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\ell_{bot}}{\Omega(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\tilde{\ell}_{bot}}
+	\end{split}
+	\end{equation*}
+	Using this equation as well as the earlier stated definitions, we find \begin{equation*}
+	\begin{split}
+(Z')^{-1}Z(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot})&=\frac{\Omega(-t_1,t_1,\tilde{\mathfrak{B}}(-t_1,\omega),\tilde{\mathfrak{B}}(t_1,\omega),\ell_{bot})}{\Omega(-t_1,t_1,\tilde{\mathfrak{B}}(-t_1,\omega),\tilde{\mathfrak{B}}(t_1,\omega))}\cdot \left(\frac{\Omega(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\ell_{bot}}{\Omega(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\tilde{\ell}_{bot}}\right)^{-1}\\
+&=\frac{\pr_{\mathfrak L'}(\omega)}{\pr_{\tilde{\mathfrak L}'}(\omega)}
+	\end{split}
+	\end{equation*}
+	Hence, we find that equation \ref{propRadon} is correct.
+	 Note that $Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)$ is a deterministic function of $\left((\mathfrak B(-t_1), \mathfrak B(t_1)\right)$. In fact, the law of $\left((\mathfrak B(-t_1), \mathfrak B(t_1)\right)$ under $\pr_{\tilde{\mathfrak L}'}$ is the same as that of $\big(\tilde{\mathfrak L}(-t_1), \tilde{\mathfrak L}(t_1)\big)$ by way of the restriction. It follows from Lemma \ref{LemmaAP2} that
 	\begin{align*}
 	Z' &= \ex_{\tilde{\mathfrak{L}}'}\left[Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]\\
 	&= \ex_{\tilde{\mathfrak{L}}}\left[Z\left(-t_1, t_1, \mathfrak L(-t_1), \mathfrak L(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]\geq gh,
