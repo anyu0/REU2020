@@ -181,14 +181,21 @@ Then $\{\mathfrak{L}^N\}$ is a tight sequence.
 \end{frame}
 
 \begin{frame}{Monotone coupling}
-Proof  (mention monotone coupling lemmas somewhere ) - say MC with picture
-2min
+Shifting the endpoints or the bottom curve up(resp., down)\\
+$\Rightarrow$ The whole line ensemble uniformly goes up(resp., down)
+\[
+  \includegraphics[scale=0.35]{graphics/MCLemma.png}
+\]
 \end{frame}
 
 \begin{frame}{Strong coupling with Brownian bridges}
-Proof  (mention strong coupling somewhere) - say SC with picture 
-L = Bernoulli bridge B is a Brownian bridge with variance. There is a probability space such that $P( sup \abs*{L - B} \geq k (\log N)^2) < \epsilon$. This is a comparison that allows for example to compare the modulus of continuity of the two. [Dimitrov-Wu ‘19]
-2 min
+[Dimitrov-Wu â19] A Bernoulli random walk and a Brownian bridge with the same endpoints are ``strongly coupled'', meaning that they stay close to each other. 
+\[
+  \includegraphics[scale=0.4]{graphics/SCResult}
+\]
+
+Denote $L(s)$ as a Bernoulli random walk from point $(0,0)$ to $(n,z)$, and $B(s)$ is a Brownian bridge with the same endpoints, where $s\in[0,n]$. Then we have
+ $$\mathbb{P}( \sup_{s\in[0,n]} \abs*{L(s) - B(s)} \geq M \log n + x) < \epsilon$$ meaning that the maximal distance between them grows at the speed of $(\log n)^{2}$ with high probability.
 \end{frame}
 
 \begin{frame}{Controlling the minimum: pinning the bottom curve}
