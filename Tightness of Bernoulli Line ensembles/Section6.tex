@@ -18,30 +18,30 @@ In other words, $\tilde{\mathfrak{L}}$ has the law of $k-1$ independent Bernoull
 
 \begin{lemma}\label{LemmaAP2} There exists $N_5 \in \mathbb{N}$ such that for $N \geq N_5$,
 	\begin{equation}\label{eqn57}
-	\mathbb{P}_{\tilde{\mathfrak{L}}} \left( Z\big(  -t_1, t_1, \tilde{L}(-t_1) , \tilde{L}(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\big)\geq g    \right) \geq h,
+	\mathbb{P}_{\tilde{\mathfrak{L}}} \left( Z\big(  -t_1, t_1, \tilde{\mathfrak{L}}(-t_1) , \tilde{\mathfrak{L}}(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\big)\geq g    \right) \geq h,
 	\end{equation}
-	where the functions $g$ and $h$ are as in Lemma \ref{LemmaAP1}.
+	where the constants $g$ and $h$ are as in Lemma \ref{LemmaAP1}.
 \end{lemma}
 We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of this section, we give the proof of Lemma \ref{LemmaAP1}.
 \begin{proof}[Lemma \ref{LemmaAP1}]
 	
-	Let us denote by $\pr_{\mathfrak L'}$ and $\pr_{\tilde{\mathfrak{L}}'}$ the measures on $\llbracket 1, k-1\rrbracket$-indexed Bernoulli line ensembles $\mathfrak{L}'$, $\tilde{\mathfrak{L}}'$ on the set $S = \llbracket -t_2, -t_1 \rrbracket \cup \llbracket t_1, t_2 \rrbracket$, induced by the restrictions of the measures $\mathbb{P}_{\mathfrak{L}}$, $\mathbb{P}_{\tilde{\mathfrak{L}}}$ in Definition \ref{TildeDef} to $S$. We claim that the Radon-Nikodym derivative between these two restricted measures is given on Bernoulli line ensembles $\mathfrak B$ on $\llbracket 1, k-1\rrbracket \times S$ by \begin{equation}\label{propRadon}
+	 Let us denote by $\pr_{\mathfrak L'}$ and $\pr_{\tilde{\mathfrak{L}}'}$ the measures on $\llbracket 1, k-1\rrbracket$-indexed Bernoulli line ensembles $\mathfrak{L}'$, $\tilde{\mathfrak{L}}'$ on the set $S = \llbracket -t_2, -t_1 \rrbracket \cup \llbracket t_1, t_2 \rrbracket$, induced by the restrictions of the measures $\mathbb{P}_{\mathfrak{L}}$, $\mathbb{P}_{\tilde{\mathfrak{L}}}$ in Definition \ref{TildeDef} to $S$. Also let us write $\Omega_a(\cdot)$ for $\Omega_{avoid}(\cdot)$ for simplicity, and denote by $\Omega_a(S)$ the set of elements of $\Omega_{avoid}(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2))$ restricted to $S$. We claim that the Radon-Nikodym derivative between these two restricted measures is given on elements $\mathfrak B$ of $\Omega_a(S)$ by \begin{equation}\label{propRadon}
 	\frac{d\pr_{\mathfrak L'}}{d\pr_{\tilde{\mathfrak L}'}}\left(\mathfrak B\right) = \frac{\mathbb{P}_{\mathfrak{L}'}(\mathfrak{B})}{\mathbb{P}_{\tilde{\mathfrak{L}}'}(\mathfrak{B})} = (Z')^{-1} Z\left(-t_1,t_1,\mathfrak{B}\left(-t_1\right),\mathfrak{B}\left(t_1\right),\ell_{bot}\llbracket -t_1,t_1\rrbracket\right),
 	\end{equation}
-	with $Z' = \ex_{\tilde{\mathfrak{L}}'}\left[Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]$. The first equality holds simply because the measures are discrete. To prove the second equality, let $\Omega_a(\cdot)$ denote $\Omega_{avoid}(\cdot)$ for simplicity, and let $\Omega_a(S)$ denote the set of elements of $\Omega_{avoid}(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2))$ restricted to $S$. Then we have
+	with $Z' = \ex_{\tilde{\mathfrak{L}}'}\left[Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]$. The first equality holds simply because the measures are discrete. To prove the second equality, observe that
 	\[
 	\pr_{\mathfrak{L}'}(\mathfrak{B}) = \frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot}\llbracket -t_1,t_1\rrbracket)|}{|\Omega_a(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2),\ell_{bot})|}, 
 	\quad
 	\pr_{\tilde{\mathfrak{L}}'}(\mathfrak{B}) = \frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1))|}{|\Omega_a(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2),\tilde\ell_{bot})|},
 	\]
 	\[
-	Z(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot}) = \frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot})|}{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1))|},
+	Z(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot}) = \frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot}\llbracket-t_1,t_1\rrbracket)|}{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1))|},
 	\]
 	and hence
 	\begin{equation*}
 	\begin{split}
 	Z' &=\sum_{\mathfrak{B}\in \Omega_a(S)}\frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1))|}{|\Omega_a(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2),\tilde\ell_{bot})|}\cdot\frac{|\Omega_a(-t_1,t_1,\mathfrak B(-t_1),\mathfrak{B}(t_1),\ell_{bot})|}{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak B(t_1))|}\\ 
-	&= \frac{\sum_{\mathfrak{B}\in\Omega_a(S)}|\Omega_a(-t_1,t_1,\mathfrak B(-t_1),\mathfrak B(t_1),\ell_{bot})|}{|\Omega_a(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\tilde{\ell}_{bot})|} = \frac{|\Omega_a(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\ell_{bot})|}{|\Omega_a(-t_2,t_2,\mathfrak B(-t_2),\mathfrak B(t_2),\tilde{\ell}_{bot})|}.
+	&= \frac{\sum_{\mathfrak{B}\in\Omega_a(S)}|\Omega_a(-t_1,t_1,\mathfrak B(-t_1),\mathfrak B(t_1),\ell_{bot})|}{|\Omega_a(-t_2,t_2,\tilde{\mathfrak L}(-t_2),\tilde{\mathfrak L}(t_2),\tilde{\ell}_{bot})|} = \frac{|\Omega_a(-t_2,t_2,\tilde{\mathfrak L}(-t_2),\tilde{\mathfrak L}(t_2),\ell_{bot})|}{|\Omega_a(-t_2,t_2,\tilde{\mathfrak L}(-t_2),\tilde{\mathfrak L}(t_2),\tilde{\ell}_{bot})|}.
 	\end{split}
 	\end{equation*}
 	Comparing the above identities proves the second equality in \eqref{propRadon}.
@@ -58,17 +58,17 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	Similarly,  the law of $\left(\mathfrak B(-t_1), \mathfrak{B}(t_1)\right)$ under $\pr_{\mathfrak L'}$ is the same as that of $\left(\mathfrak L(-t_1), \mathfrak L(t_1)\right)$ under $\pr_{\mathfrak L}$. Hence
 	\begin{equation}\label{LBswap}
 	\begin{split}
-	&\pr_{\mathfrak L}\left(Z\left(-t_1, t_1, \mathfrak L(-t_1), \mathfrak L(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\leq gh\tilde \epsilon\right)=\\
-	&\qquad\pr_{\mathfrak L'}\left(Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\leq gh\tilde \epsilon\right).
+	&\pr_{\mathfrak L}\Big(Z(-t_1, t_1, \mathfrak L(-t_1), \mathfrak L(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket)\leq gh\tilde \epsilon\Big)=\\
+	&\qquad\pr_{\mathfrak L'}\Big(Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\leq gh\tilde \epsilon\Big).
 	\end{split}
 	\end{equation}
-	Now let $\Omega$ denote the space of paths of $\mathfrak B$, and let us write $E=\{Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\leq gh\tilde\epsilon\}\subset \Omega$. Then according to \eqref{propRadon}, we have
+	Now let us write $E=\{Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\leq gh\tilde\epsilon\}\subset \Omega_a(S)$. Then according to \eqref{propRadon}, we have
 	\[
-	\pr_{\mathfrak L'}(E)=\int_\Omega \indic_E\, d\pr_{\mathfrak L'} = (Z')^{-1}\int_\Omega\indic_E \cdot\, Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\, d\pr_{\tilde{\mathfrak{L}}'}(\mathfrak{B}).
+	\pr_{\mathfrak L'}(E)=\int_{\Omega_a(S)} \indic_E\, d\pr_{\mathfrak L'} = (Z')^{-1}\int_{\Omega_a(S)}\indic_E \cdot\, Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\, d\pr_{\tilde{\mathfrak{L}}'}(\mathfrak{B}).
 	\]
-	From the definition of $E$ and the inequality \eqref{Zineq}, it follows that
+	From the definition of $E$, the inequality \eqref{Zineq}, and the fact that $\mathbf{1}_E \leq 1$, it follows that
 	\[
-	\pr_{\mathfrak L'}(E)\leq (Z')^{-1}\int_\Omega \indic_E\cdot\, gh\tilde{\epsilon}\, d\pr_{\tilde{\mathfrak{L}}'} \leq \frac{1}{gh}\int_\Omega gh\tilde\epsilon\, d\pr_{\tilde{\mathfrak{L}}'}\leq \tilde{\epsilon}.
+	\pr_{\mathfrak L'}(E)\leq (Z')^{-1}\int_{\Omega_a(S)} \indic_E\cdot\, gh\tilde{\epsilon}\, d\pr_{\tilde{\mathfrak{L}}'} \leq \frac{1}{gh}\int_{\Omega_a(S)} gh\tilde\epsilon\, d\pr_{\tilde{\mathfrak{L}}'}\leq \tilde{\epsilon}.
 	\]
 	In combination with \eqref{LBswap}, this proves \eqref{eqn60}.
 	
@@ -125,10 +125,10 @@ t_{12} = \Big\lfloor \frac{t_1 + t_2}{2} \Big\rfloor.
 	\end{align}
 	Assuming the validity of the claim, we then observe that the probability in \eqref{eqnRT2} is bounded below by $2h_1 - h_1 = h_1$, proving the lemma. We will prove \eqref{5.10bound1} and \eqref{5.10bound2} in two steps.\\
 	
-	\noindent\textbf{Step 1.} In this step we prove \eqref{5.10bound1}. We first condition on the value of $\tilde{\mathfrak{L}}$ at 0 and use the Schur Gibbs property to divide $\tilde{\mathfrak{L}}$ into two independent line ensembles on $[-t_2,0]$ and $[0,t_2]$, and we then apply Lemma \ref{LemmaHalfS4} to lower bound the probability of these two halves falling low at $\pm t_{12}$. Observe by Lemma \ref{MCLfg} that
-	\[
+	\noindent\textbf{Step 1.} In this step we prove \eqref{5.10bound1} assuming results from Step 2 below. We condition on the value of $\tilde{\mathfrak{L}}$ at 0 and use the Schur Gibbs property to divide $\tilde{\mathfrak{L}}$ into two independent line ensembles on $[-t_2,0]$ and $[0,t_2]$. Observe by Lemma \ref{MCLfg} that
+	\begin{equation}\label{5.10MC}
 	\mathbb{P}_{\tilde{\mathfrak{L}}}\Big(\tilde{L}_{k-1}(\pm t_{12}) \mp pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \mathbb{P}^{-t_2,t_2,\vec{x},\vec{y}}_{avoid, Ber}\Big(\tilde{L}_{k-1}(\pm t_{12}) \mp pt_{12} \geq (2t_2)^{1/2}V_1^b\Big).
-	\]
+	\end{equation}
 	With $K_1$ as in \eqref{5.10Vb}, we define events
 	\[
 	E_{\vec{z}} = \big\{(\tilde{L}_1(0),\dots,\tilde{L}_{k-1}(0)) = \vec{z}\big\}, \quad X = \Big\{ \vec{z}\in\mathfrak{W}_{k-1} : z_{k-1} \geq K_1(2t_2)^{1/2} \mbox { and } \mathbb{P}^{-t_2,t_2,\vec{x},\vec{y}}_{avoid,Ber}(E_{\vec{z}}) > 0\Big\},
@@ -143,7 +143,20 @@ t_{12} = \Big\lfloor \frac{t_1 + t_2}{2} \Big\rfloor.
 	\begin{equation}\label{5.10split}
 	\mathbb{P}^{-t_2,t_2,\vec{x},\vec{y}}_{avoid,Ber}\big(\tilde{L}^1_{k-1} = \ell_1, \tilde{L}^2_{k-1} = \ell_2 \, |\, E_{\vec{z}}\big) = \mathbb{P}^{-t_2,0,\vec{x},\vec{z}}_{avoid,Ber}(\ell_1)\cdot\mathbb{P}^{0,t_2,\vec{z},\vec{y}}_{avoid,Ber}(\ell_2).
 	\end{equation}
-	Let us define vectors $\vec{x}\,', \vec{z}\,', \vec{y}\,'$ by
+	In Step 2, we will prove that for large $N$,
+	\begin{equation}\label{5.10fourth}
+	\begin{split}
+	&\mathbb{P}^{-t_2,0,\vec{x},\vec{z}}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \frac{1}{4},\\
+	&\mathbb{P}^{0,t_2,\vec{x},\vec{z}}_{avoid,Ber}\Big(\tilde{L}^2_{k-1}(t_{12}) - pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \frac{1}{4}.
+	\end{split}
+	\end{equation}
+	Using \eqref{5.10Ebound}, \eqref{5.10split}, and \eqref{5.10fourth}, we conclude that
+	\[
+	\mathbb{P}^{-t_2,t_2,\vec{x},\vec{y}}_{avoid, Ber}\Big(\tilde{L}_{k-1}(\pm t_{12}) \mp pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \frac{A}{16}\exp\left(-\frac{2k(K_1+M_1+6)^2}{p(1-p)}\right).
+	\]
+	In combination with \eqref{5.10MC}, this proves \eqref{5.10bound1} with $h_1$ as in \eqref{5.10h1}.\\
+	
+	\noindent\textbf{Step 2.} In this step, we prove the inequalities \eqref{5.10fourth} from Step 1, using Lemma \ref{LemmaHalfS4}. Let us define vectors $\vec{x}\,', \vec{z}\,', \vec{y}\,'$ by
 	\begin{align*}
 	x_i' &= \lfloor -pt_2 - M_1(2t_2)^{1/2}\rfloor - (i-1)\lceil C(2t_2)^{1/2}\rceil,\\
 	z_i' &= \lfloor K_1(2t_2)^{1/2}\rfloor - (i-1)\lceil C(2t_2)^{1/2}\rceil,\\
@@ -178,21 +191,14 @@ t_{12} = \Big\lfloor \frac{t_1 + t_2}{2} \Big\rfloor.
 	\[
 	\big(1-3e^{-C^2/8p(1-p)}\big)^{k-1} \geq 11/12.
 	\]
-	It follows from \eqref{5.10separate} that
-	\begin{equation}\label{5.10left}
-	\mathbb{P}^{-t_2,0,\vec{x},\vec{z}}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \frac{1}{3} - \frac{1}{12} = \frac{1}{4}.
-	\end{equation}
-	Similar arguments show that
-	\begin{equation}\label{5.10right}
-	\mathbb{P}^{0,t_2,\vec{z},\vec{y}}_{Ber}\Big(\ell_1(t_{12}) - pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \frac{1}{4}.
-	\end{equation}
-	Using \eqref{5.10Ebound} and \eqref{5.10split}, we conclude that
-	\[
-	\mathbb{P}^{-t_2,t_2,\vec{x},\vec{y}}_{avoid, Ber}\Big(\tilde{L}_{k-1}(\pm t_{12}) \mp pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \frac{A}{16}\exp\left(-\frac{2k(K_1+M_1+6)^2}{p(1-p)}\right).
-	\]
-	This proves \eqref{5.10bound1} with $h_1$ as in \eqref{5.10h1}.\\
+	It follows from \eqref{5.10separate} and \eqref{5.10third2} that
+	\begin{equation*}
+	\mathbb{P}^{-t_2,0,\vec{x},\vec{z}}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \frac{1}{3} - \frac{1}{12} = \frac{1}{4},
+	\end{equation*}
+	proving the first inequality in \eqref{5.10fourth}. The second inequality is proven similarly.
+	\\
 	
-	\noindent\textbf{Step 2.} Here we prove \eqref{5.10bound2}. Let $C$ be as in Step 1, and define vectors $\vec{x}\,'', \vec{y}\,''\in\mathfrak{W}_{k-1}$ by
+	\noindent\textbf{Step 3.} Here we prove \eqref{5.10bound2}. Let $C$ be as in Step 1, and define vectors $\vec{x}\,'', \vec{y}\,''\in\mathfrak{W}_{k-1}$ by
 	\begin{align*}
 	x_i'' &= \lceil -pt_2 + M_1(2t_2)^{1/2}\rceil + (k-i)\lceil C(2t_2)^{1/2}\rceil,\\
 	y_i'' &= \lceil pt_2 + M_1(2t_2)^{1/2}\rceil + (k-i)\lceil C(2t_2)^{1/2}\rceil.
