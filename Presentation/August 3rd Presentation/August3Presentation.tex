@@ -183,19 +183,23 @@ Then $\{\mathfrak{L}^N\}$ is a tight sequence.
 Shifting the endpoints or the bottom curve up(resp., down)\\
 $\Rightarrow$ The whole line ensemble uniformly goes up(resp., down)
 \[
-  \includegraphics[scale=0.35]{graphics/MCLemma.png}
+  \includegraphics[scale=0.3]{graphics/MCLemma.png}
 \]
+\begin{itemize}
+	\item $\mathbb{P}(L_{1}^{high}(s)>M)\geq \mathbb{P}(L_{1}^{low}(s)>M)$
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Strong coupling with Brownian bridges}
-[Dimitrov-Wu 19] A Bernoulli random walk and a Brownian bridge with the same endpoints are ``strongly coupled'', meaning that they stay close to each other. 
+[Dimitrov-Wu â19] A Bernoulli random walk and a Brownian bridge with the same endpoints are ``strongly coupled'', meaning that they stay close to each other. 
 \[
   \includegraphics[scale=0.4]{graphics/SCResult}
 \]
 
 Denote $L(s)$ as a Bernoulli random walk from point $(0,0)$ to $(n,z)$, and $B(s)$ is a Brownian bridge with the same endpoints, where $s\in[0,n]$. Then we have
- $$\mathbb{P}( \sup_{s\in[0,n]} \abs*{L(s) - B(s)} \geq M \log n + x) < \epsilon$$ meaning that the maximal distance between them grows at the speed of $(\log n)^{2}$ with high probability.
+ $$\mathbb{P}( \sup_{s\in[0,n]} \abs*{L(s) - B(s)} \geq M \log n + x) < Ke^{-\lambda x}$$ meaning that the maximal distance between them grows at the speed of $(\log n)^{2}$ with high probability.
 \end{frame}
+
 
 \begin{frame}{Controlling the minimum: pinning the bottom curve}
 	
