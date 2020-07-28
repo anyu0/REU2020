@@ -456,7 +456,7 @@ Fix $p,t\in (0,1)$ and $ k\in \mathbb{N}$. Suppose that $\vec x^T=(x_1^T,\cdots 
 	As $\abs*{x_i^{T_n}}<M_1\sqrt{T_n}$, $\abs*{y_i^{T_n}-pT_n}\leq M_2\sqrt{T_n}$ we know that there exists some subsequence $T_{n_m}$ such that $\lim_{m\to\infty} \frac{x^{T_{n_m}}}{\sqrt{T_{n_m}}}\to \vec x$ 
 	and 
 	$\lim_{m\to\infty}\frac{y^{T_{n_m}}-pT}{\sqrt{T_{n_m}}}\to \vec y$ 
-	by the Bolzano-Weierstrass theorem, as these sequences lie in compact intervals. Denote $$Z_i^m:=\frac{L_i(tT_{n_m})-ptT}{\sqrt{T_{n_m}}}.$$ Then, if we fix $\tilde\delta>0$, because $\delta_n\downarrow 0$, there exists some $M$ such that $m>M$ implies $\delta_m<\tilde\delta$. For such $m>M$, we have 
+	by the Bolzano-Weierstrass theorem \cite[Theorem 3.6]{Rudin}, as these sequences lie in compact intervals. Denote $$Z_i^m:=\frac{L_i(tT_{n_m})-ptT}{\sqrt{T_{n_m}}}.$$ Then, if we fix $\tilde\delta>0$, because $\delta_n\downarrow 0$, there exists some $M$ such that $m>M$ implies $\delta_m<\tilde\delta$. For such $m>M$, we have 
 	\begin{equation}\label{prob20inf}
 	\epsilon\leq \liminf_{m\to\infty}\pr\left(\min_{1\leq i\leq k-1}Z_i^m-Z_{i+1}^m<\delta_{n_m}\right)\leq \liminf_{m\to\infty}\pr\left(\min_{1\leq i\leq k-1}Z_i^m-Z_{i+1}^m\leq\tilde\delta\right)
 	\end{equation}
