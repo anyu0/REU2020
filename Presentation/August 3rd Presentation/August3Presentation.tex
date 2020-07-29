@@ -80,8 +80,11 @@ Let $\{X_i\}$ be a sequence of independent identically distributed random variab
 	
 	\end{itemize}
 \[
-	\includegraphics[height=0.65\textheight]{graphics/MultipleBernoulli.png}
+	\includegraphics[height=0.5\textheight]{graphics/MultipleBernoulli.png}
 \]
+	\begin{itemize}
+		\item Question: What does the limit look like as $k\to\infty$?
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Airy Line Ensemble}
@@ -109,12 +112,12 @@ As $k \to \infty$, $k$ avoiding random walks are conjectured to converge to the 
 	Two sufficient conditions for convergence in distribution:
 	\begin{itemize}
 		
-			\item \textit{Finite dimensional} convergence -- difficult, requires exact algebraic formulas
+			\item \textcolor{red}{\textit{Finite dimensional}} convergence -- difficult, requires exact algebraic formulas
 			
-			\item \textit{Tightness} (existence of weak subsequential limits) -- easier, more qualitative/analytic
+			\item \textcolor{blue}{\textit{Tightness}} (existence of weak subsequential limits) -- easier, more qualitative/analytic
 	\end{itemize}
 
-	We focused on tightness, which we prove by controlling the maximum, the minimum, and the modulus of continuity
+	We focused on \textcolor{blue}{tightness}, which we prove by controlling the maximum, the minimum, and the modulus of continuity
 \begin{figure}
 	\includegraphics[height=0.55\textheight]{graphics/ModulusCont.jpg}
 	\caption{The Modulus of Continuity}
@@ -123,7 +126,7 @@ As $k \to \infty$, $k$ avoiding random walks are conjectured to converge to the 
 \end{frame}
 
 \begin{frame}{Our Result}
-\begin{theorem}[FFSTWZD] Let $\{\mathfrak{L}^N = (L_1^N,\dots,L_k^N)\}_{N=1}^\infty$ be a sequence of $k$ avoiding Bernoulli random walks. Fix $p\in(0,1)$ and $\lambda > 0$, and suppose that for all $n\in\mathbb{Z}$ we have
+\begin{theorem}[DFFSTWZ] Let $\{\mathfrak{L}^N = (L_1^N,\dots,L_k^N)\}_{N=1}^\infty$ be a sequence of $k$ avoiding Bernoulli random walks. Fix $p\in(0,1)$ and $\lambda > 0$, and suppose that for all $n\in\mathbb{Z}$ we have
 \[
 \lim_{N\to\infty} \mathbb{P}\big(L_1^{N}(nN^{2/3}) - pnN^{2/3} + \lambda n^2 N^{1/3} \leq N^{1/3} x \big) = F_{TW}(x).
 \]
@@ -131,11 +134,11 @@ Then $\{\mathfrak{L}^N\}$ is a tight sequence.
 \end{theorem}
 
 \begin{itemize}
-	\item $F_{TW}$ denotes the \textit{Tracy-Widom distribution} -- the one-point marginal for the Airy process
+	\item $F_{TW}$ is the \textit{Tracy-Widom distribution} -- the one-point marginal for the Airy process
 	
 	\item {[Dauvergne-Nica-Vir\'{a}g '19]} showed that finite dimensional convergence of all curves implies tightness
 	
-	\item Our result shows that it suffices for the \textcolor{blue}{top curve} to converge in the f.d. sense
+	\item Our result shows that it suffices for the \textcolor{red}{top curve} to converge in the f.d. sense
 \end{itemize}
 
 \[
@@ -149,8 +152,8 @@ Then $\{\mathfrak{L}^N\}$ is a tight sequence.
 \begin{frame} {History of the line ensembles}
 	Arguments in this paper are inspired by 
 	\begin{enumerate}
-		\item \textit{Brownian Gibbs property for Airy line ensembles} [Corwin-Hammond '11] and \textit{KPZ line ensemble} [Corwin-Hammond '13], which address similar issues for {\color{red}continuous} line ensembles
-		\item \textit{Transversal fluctuations of the ASEP, stochastic six vertex model, and Hall-Littlewood line ensembles} [Corwin-Dimitrov ‘17], which consider similar questions in a {\color{red}discrete} setting 
+		\item \textit{Brownian Gibbs property for Airy line ensembles} [Corwin-Hammond '14] and \textit{KPZ line ensemble} [Corwin-Hammond '15], which address similar issues for {\color{red}continuous} line ensembles
+		\item \textit{Transversal fluctuations of the ASEP, stochastic six vertex model, and Hall-Littlewood line ensembles} [Corwin-Dimitrov '17], which considers similar questions in a {\color{red}discrete} setting 
 	\end{enumerate}
 \end{frame}
 \begin{frame}{Proving tightness}
@@ -171,39 +174,44 @@ Then $\{\mathfrak{L}^N\}$ is a tight sequence.
 	\end{enumerate}
 	We will focus on bounding the \textcolor{ForestGreen}{minimum}:
 	
-	\begin{lemma}[FFSTWZD]
-		Fix $r,\epsilon > 0$. Then there exist constants $R>0$ and $N_0\in\mathbb{N}$ such that for all $N\geq N_0$,
+	\begin{lemma}[DFFSTWZ]
+		Fix $r,\epsilon > 0$. Then there exist constants $M>0$ and $N_0\in\mathbb{N}$ such that for all $N\geq N_0$,
 		\[
-		\mathbb{P}\Big(\inf_{x\in[-r,r]} \big(L_k^N(xN^{2/3}) - pxN^{2/3}\big) < -RN^{1/3}\Big) < \epsilon.
+		\mathbb{P}\Big(\inf_{x\in[-r,r]} \big(L_k^N(xN^{2/3}) - pxN^{2/3}\big) < -MN^{1/3}\Big) < \epsilon.
 		\]
 	\end{lemma}
 \end{frame}
 
 \begin{frame}{Monotone coupling}
-Shifting the endpoints or the bottom curve up(resp., down)\\
-$\Rightarrow$ The whole line ensemble uniformly goes up(resp., down)
+Lowering entry and exit data $\vec{x},\vec{y}$ for the curves $\implies$ curves shift down on whole interval [Corwin-Hammond '14]
 \[
   \includegraphics[scale=0.3]{graphics/MCLemma.png}
 \]
 \begin{itemize}
-	\item $\mathbb{P}(L_{1}^{high}(s)>M)\geq \mathbb{P}(L_{1}^{low}(s)>M)$
+	\item $\textcolor{red}{\mathfrak{L}^{high}}$ and $\textcolor{blue}{\mathfrak{L}^{low}}$ are ``coupled":
+	\[
+	\mathbb{P}(\textcolor{red}{L_k^{high}}(s) < -R) \leq \mathbb{P}(\textcolor{blue}{L_k^{low}}(s) < -R)
+	\]
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Strong coupling with Brownian bridges}
-[Dimitrov-Wu â19] A Bernoulli random walk and a Brownian bridge with the same endpoints are ``strongly coupled'', meaning that they stay close to each other. 
+\begin{frame}{Strong coupling}
+	
+A \textcolor{blue}{Bernoulli random walk} $\textcolor{blue}{\ell^{(N)}}$ on $[0,N]$ can be coupled with an ``exponentially close" \textcolor{red}{Brownian bridge} $\textcolor{red}{B^{(N)}}$ [Dimitrov-Wu '19] 
 \[
-  \includegraphics[scale=0.4]{graphics/SCResult}
+  \includegraphics[scale=0.5]{graphics/SCResult}
 \]
 
-Denote $L(s)$ as a Bernoulli random walk from point $(0,0)$ to $(n,z)$, and $B(s)$ is a Brownian bridge with the same endpoints, where $s\in[0,n]$. Then we have
- $$\mathbb{P}( \sup_{s\in[0,n]} \abs*{L(s) - B(s)} \geq M \log n + x) < Ke^{-\lambda x}$$ meaning that the maximal distance between them grows at the speed of $(\log n)^{2}$ with high probability.
+\[
+\mathbb{P}\Big( \sup_{s\in[0,N]} \abs*{\textcolor{blue}{\ell^{(N)}}(s) - \textcolor{red}{B^{(N)}}(s)} \geq M (\log N)^2 + x\Big) < Ke^{-Ax}
+\]
+
 \end{frame}
 
 
 \begin{frame}{Controlling the minimum: pinning the bottom curve}
 	
-	\begin{lemma}[FFSTWZD]
+	\begin{lemma}[DFFSTWZ]
 		For any $r,\epsilon > 0$, there exists $R>r$ and a constant $M>0$ so that for large $N$,
 		\[
 		\mathbb{P}\Big(\max_{x\in[r,R]} \big(L_k^N(xN^{2/3}) - pxN^{2/3}\big) < -MN^{1/3}\Big) < \epsilon.
@@ -214,11 +222,7 @@ Denote $L(s)$ as a Bernoulli random walk from point $(0,0)$ to $(n,z)$, and $B(s
 	\includegraphics[scale=0.10]{graphics/min2.png}
 	\]
 	
-	\begin{itemize}
-		
-		\item Couple $L_k^N$ with a Brownian bridge: if ``pinned" at two points in $[r,R]$ and $[-R,-r]$, it cannot be low on scale $N^{1/3}$ on $[-r,r]$
-		
-	\end{itemize}
+	Couple $L_k^N$ with a Brownian bridge: if ``pinned" at two points in $[r,R]$ and $[-R,-r]$, it cannot be low on scale $N^{1/3}$ on $[-r,r]$
 	
 	
 	
@@ -230,10 +234,10 @@ Denote $L(s)$ as a Bernoulli random walk from point $(0,0)$ to $(n,z)$, and $B(s
 		
 		\item Recall our assumption:
 		\[
-		\mathbb{P}\Big(\textcolor{red}{L_1^N}(nN^{2/3}) - pnN^{2/3} + \textcolor{red}{\lambda n^2} N^{1/3} \leq xN^{1/3}\Big) \underset{N\to\infty}\longrightarrow F_{TW}(x)
+		\mathbb{P}\Big(\textcolor{blue}{L_1^N}(nN^{2/3}) - pnN^{2/3} + \textcolor{blue}{\lambda n^2} N^{1/3} \leq xN^{1/3}\Big) \underset{N\to\infty}\longrightarrow F_{TW}(x)
 		\]
 		
-		\item The top curve looks like a \textcolor{red}{parabola} with an affine shift on large scales
+		\item The top curve looks like a \textcolor{blue}{parabola} with an affine shift on large scales
 		\begin{center}
 		\includegraphics[scale=0.15]{graphics/parabola2.png}{\kern 4em}
 		\end{center}
@@ -241,7 +245,7 @@ Denote $L(s)$ as a Bernoulli random walk from point $(0,0)$ to $(n,z)$, and $B(s
 		\item Two curves: if $L_2^N$ is low on $[r,R]$, $L_1^N$ looks like a free Brownian bridge
 		
 		\[
-		\textcolor{ForestGreen}{\lambda\Big(\frac{R^2+r^2}{2}\Big)} - \textcolor{Fuchsia}{\lambda\Big(\frac{R+r}{2}\Big)^2} = \lambda\frac{R^2+r^2}{4} - \frac{\lambda rR}{2} = \textcolor{red}{O(R^2)}
+		\textcolor{ForestGreen}{\lambda\Big(\frac{R^2+r^2}{2}\Big)} - \textcolor{blue}{\lambda\Big(\frac{R+r}{2}\Big)^2} = \lambda\,\frac{R^2+r^2-2rR}{4} = \textcolor{red}{O(R^2)}
 		\]
 		
 		\item For large $R$, the top curve would be far from the parabola at the midpoint!
