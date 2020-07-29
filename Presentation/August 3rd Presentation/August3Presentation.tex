@@ -126,22 +126,22 @@ As $k \to \infty$, $k$ avoiding random walks are conjectured to converge to the 
 \end{frame}
 
 \begin{frame}{Our Result}
-\begin{theorem}[DFFSTWZ] Let $\{\mathfrak{L}^N = (L_1^N,\dots,L_k^N)\}_{N=1}^\infty$ be a sequence of $k$ avoiding Bernoulli random walks. Fix $p\in(0,1)$ and $\lambda > 0$, and suppose that for all $n\in\mathbb{Z}$ we have
+\small{\begin{theorem}[DFFSTWZ] Let $\{\mathfrak{L}^N = (L_1^N,\dots,L_k^N)\}_{N=1}^\infty$ be a sequence of $k$ avoiding Bernoulli random walks. Fix $p\in(0,1)$ and $\lambda > 0$, and suppose that for all $n\in\mathbb{Z}$ we have
 \[
 \lim_{N\to\infty} \mathbb{P}\big(L_1^{N}(nN^{2/3}) - pnN^{2/3} + \lambda n^2 N^{1/3} \leq N^{1/3} x \big) = F_{TW}(x).
 \]
 Then $\{\mathfrak{L}^N\}$ is a tight sequence.
-\end{theorem}
+\end{theorem}}
 
 \begin{itemize}
 	\item $F_{TW}$ is the \textit{Tracy-Widom distribution} -- the one-point marginal for the Airy process
 	
-	\item {[Dauvergne-Nica-Vir\'{a}g '19]} showed that finite dimensional convergence of all curves implies tightness
+	\item {[Dauvergne-Nica-Vir\'{a}g '19]} Finite dimensional convergence of all curves implies tightness
 	
-	\item Our result shows that it suffices for the \textcolor{red}{top curve} to converge in the f.d. sense
+	\item Our result shows that it suffices for the integer time one-point marginals of the \textcolor{red}{top curve} to converge to $F_{TW}$
 \end{itemize}
 \begin{center}
-	\includegraphics[scale=0.25]{graphics/ConvToTW.jpg}
+	\includegraphics[width=\textwidth]{graphics/ConvToTW.png}
 \end{center}
 \end{frame}
 
@@ -213,16 +213,16 @@ A \textcolor{blue}{Bernoulli random walk} $\textcolor{blue}{\ell^{(N)}}$ on $[0,
 
 \begin{frame}{Controlling the minimum: pinning the bottom curve}
 	
-	\begin{lemma}[DFFSTWZ]
+	\small{\begin{lemma}[DFFSTWZ]
 		For any $r,\epsilon > 0$, there exists $R>r$ and a constant $M>0$ so that for large $N$,
 		\[
 		\mathbb{P}\Big(\max_{x\in[r,R]} \big(L_k^N(xN^{2/3}) - \textcolor{red}{pxN^{2/3}}\big) < \textcolor{ForestGreen}{-MN^{1/3}}\Big) < \epsilon.
 		\]
 		The same is true of the maximum on $[-R,-r]$.
-	\end{lemma}
-	\[
-	\includegraphics[scale=0.12]{graphics/min2.png}
-	\]
+	\end{lemma}}
+	\begin{center}
+	\includegraphics[width=0.8\textwidth]{graphics/min2.png}
+	\end{center}
 	
 	Couple $L_k^N$ with a Brownian bridge: if ``pinned" at two points in $[r,R]$ and $[-R,-r]$, it cannot be low on $[-r,r]$ on scale $N^{1/3}$
 	
