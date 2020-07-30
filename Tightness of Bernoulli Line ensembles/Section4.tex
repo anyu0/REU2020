@@ -1,4 +1,3 @@
-
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 % Section 4
 %
@@ -6,85 +5,87 @@
 \section{Proof of Theorem \ref{PropTightGood} }\label{Section4}
 
 
-The goal of this section is to prove Theorem \ref{PropTightGood} and for the remainder we assume that $k \in \mathbb{N}$ with $k \geq 2$, $p \in (0,1)$, $\alpha, \lambda > 0$ are all fixed and 
-\begin{equation}\label{eqalphagood}
+The goal of this section is to prove Theorem \ref{PropTightGood} and for the remainder of this section we assume that $k \in \mathbb{N}$ with $k \geq 2$, $p \in (0,1)$, $\alpha, \lambda > 0$ are all fixed and 
+\begin{equation*}
 \big\{\mathfrak{L}^N = (L^N_1,L^N_2, \dots, L^N_k)\big\}_{N=1}^{\infty},
-\end{equation}
- is an $(\alpha,p,\lambda)$-good sequence of $\llbracket 1, k\rrbracket$-indexed Bernoulli line ensembles as in Definition \ref{Def1} that are all defined on a probability space with measure $\mathbb{P}$. The main technical result we will require is contained in Proposition \ref{PropMain} below and its proof is the content of Section \ref{Section4.1}. The proof of Theorem \ref{PropTightGood} is given in Section \ref{Section4.2}.
+\end{equation*}
+is an $(\alpha,p,\lambda)$-good sequence of $\llbracket 1, k\rrbracket$-indexed Bernoulli line ensembles as in Definition \ref{Def1} that are all defined on a probability space with measure $\mathbb{P}$. The proof of Theorem \ref{PropTightGood} depends on three results -- Proposition \ref{PropMain} and Lemmas \ref{PropSup} and \ref{PropSup2}. In these three statements we establish various properties of the sequence of line ensembles $\mathfrak{L}^N$ and the constants in those statements depend implicitly on $\alpha$, $p$, $\lambda$, $k$, and the functions $\phi, \psi$ from Definition \ref{Def1}, which are fixed throughout. We will not list this dependence explicitly. The proof of Proposition \ref{PropMain} is given in Section \ref{Section4.1} while the proofs of Lemmas \ref{PropSup} and \ref{PropSup2} are in Section \ref{Section5}. Theorem \ref{PropTightGood} is proved in Section \ref{Section4.2}.
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 % Section 4.1
 %
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Bounds on the acceptance probability}\label{Section4.1}
- The main result in this section is presented as Proposition \ref{PropMain} below. In order to formulate it and some of the lemmas below it will be convenient to adopt the following notation for any $r > 0$:
+The main result in this section is presented as Proposition \ref{PropMain} below. In order to formulate it and some of the lemmas below it will be convenient to adopt the following notation for any $r > 0$ and $m \in \mathbb{N}$
 \begin{equation}\label{eqsts}
-t_1 =\lfloor (r+1) N^{\alpha} \rfloor,\quad t_2 = \lfloor (r+2)N^{\alpha} \rfloor,\quad \textrm{and } t_3 = \lfloor (r+3)N^{\alpha} \rfloor.
+t_m =\lfloor (r+m) N^{\alpha} \rfloor.
 \end{equation}
-\begin{proposition}\label{PropMain} For any $\epsilon > 0$, $r > 0$ and any $(\alpha,p,\lambda)$-good sequence of Bernoulli line ensembles $\big\{ \mathfrak{L}^N  = (L^N_1,L^N_2, \dots, L^N_k)\big\}_{N=1}^{\infty}$
-there exist $\delta > 0$ and $N_1$ (both depending on $\epsilon, r$ as well as $ \alpha, p, \lambda$ and the functions $\phi, \psi$ in Definition \ref{Def1}) such that for all $N \geq N_1$
-we have 
-$$\mathbb{P}\Big(Z\big( -t_1, t_1, \vec{x}, \vec{y} , L_{k}\llbracket -t_1, t_1\rrbracket\big) < \delta\Big) < \epsilon,$$
-where $\vec{x} = (L_1^N(-t_1), \dots, L_{k-1}^N(-t_1)$, $\vec{y} = (L_1^N(t_1), \dots, L^N_{k-1}(t_1))$,  $ L_{k}\llbracket -t_1, t_1\rrbracket$ is the restriction of $L^N_k$ to the set $\llbracket -t_1, t_1\rrbracket$, and $Z$ is the acceptance probability of Definition \ref{DefAP}. $\mathbb{P}$ is the measure on a probability space that supports $\big\{ \mathfrak{L}^N \big\}_{N = 1}^\infty$.
+\begin{proposition}\label{PropMain} Let $\mathbb{P}$ be the measure from the beginning of this section. For any $\epsilon > 0$, $r > 0$ there exist $\delta = \delta(\epsilon, r) > 0$ and $N_1 = N_1(\epsilon, r)$ such that for all $N \geq N_1$
+	we have 
+	$$\mathbb{P}\Big(Z\big( -t_1, t_1, \vec{x}, \vec{y} , \infty,  L^N_{k}\llbracket -t_1, t_1\rrbracket\big) < \delta\Big) < \epsilon,$$
+	where $\vec{x} = (L_1^N(-t_1), \dots, L_{k-1}^N(-t_1))$, $\vec{y} = (L_1^N(t_1), \dots, L^N_{k-1}(t_1))$,  $ L^N_{k}\llbracket -t_1, t_1\rrbracket$ is the restriction of $L^N_k$ to the set $\llbracket -t_1, t_1\rrbracket$, and $Z$ is the acceptance probability of Definition \ref{DefAP}. 
 \end{proposition}
 
-The general strategy we use to prove Proposition \ref{PropMain} is inspired by the proof of Proposition 6.5 in \cite{CorHamK}. We begin by stating three key lemmas that will be required. Their proofs are postponed to Section \ref{Section5}. All constants in the statements below will depend implicitly on $\alpha$, $r$, $p$, $\lambda$, and the functions $\phi, \psi$ from Definition \ref{Def1}, which are fixed throughout. We will not list this dependence explicitly.
+The general strategy we use to prove Proposition \ref{PropMain} is inspired by the proof of \cite[Proposition 6.5]{CorHamK}. We begin by stating three key lemmas that will be required. The proofs of Lemmas \ref{PropSup} and \ref{PropSup2} are postponed to Section \ref{Section5} and Lemma \ref{LemmaAP1} is proved in Section \ref{Section6}.
 
-Lemma \ref{PropSup} controls the upward deviation of the top curve $L^N_1(s)$ from the line $ps$ in the scale $N^{\alpha/2}$.
-\begin{lemma}\label{PropSup} For each $\epsilon > 0$ there exist $R_1=R_1(\epsilon) > 0$ and $N_2= N_2(\epsilon)$ such that for $N \geq N_2$ 
-$$\mathbb{P}\Big( \sup_{s \in [ -t_3, t_3] }\big( L^N_1(s) - p s \big) \geq  R_1N^{\alpha/2} \Big) < \epsilon.$$
+
+\begin{lemma}\label{PropSup}  Let $\mathbb{P}$ be the measure from the beginning of this section. For any $\epsilon > 0$, $r > 0$ there exist $R_1=R_1(\epsilon,r) > 0$ and $N_2= N_2(\epsilon,r)$ such that for $N \geq N_2$ 
+	$$\mathbb{P} \left( \sup_{s \in [ -t_3, t_3] }\big[ L^N_1(s) - p s \big] \geq  R_1N^{\alpha/2} \right) < \epsilon.$$
 \end{lemma}
 
-Lemma \ref{PropSup2} controls the downward deviation of the bottom curve $L^N_k(s)$ from the line $ps$ in the scale $N^{\alpha/2}$.
-\begin{lemma}\label{PropSup2} For each $\epsilon > 0$ there exist $R_2=R_2( \epsilon) > 0$ and $N_3=N_3(\epsilon)$ such that for $N \geq N_3$
-$$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2N^{\alpha/2} \Big) < \epsilon.$$
+\begin{lemma}\label{PropSup2}  Let $\mathbb{P}$ be the measure from the beginning of this section.  For any $\epsilon > 0$, $r > 0$ there exist $R_2=R_2( \epsilon,r) > 0$ and $N_3=N_3(\epsilon,r)$ such that for $N \geq N_3$
+	$$\mathbb{P}\left( \inf_{s \in [ -t_3, t_3 ]}\big[L^N_{k-1}(s) - p s \big] \leq - R_2N^{\alpha/2} \right) < \epsilon.$$
 \end{lemma}
 
-\begin{lemma}\label{LemmaAP1} Fix $k \in \mathbb{N}$, $p \in (0,1)$, $M_1, M_2 > 0$ . Suppose that $\ell_{bot}: \llbracket -t_2, t_2 \rrbracket \rightarrow \mathbb{R} \cup \{ - \infty \}$, and $\vec{x}, \vec{y} \in \mathfrak{W}_{k-1}$ are such that $|\Omega_{avoid}(-t_2, t_2, \vec{x}, \vec{y}, \infty, \ell_{bot})| \geq 1$. Suppose further that
+\begin{lemma}\label{LemmaAP1} Fix $k \in \mathbb{N}$, $k \geq 2$, $p \in (0,1)$, $r, \alpha, M_1, M_2 > 0$ . Suppose that $\ell_{bot}: \llbracket -t_3, t_3 \rrbracket \rightarrow \mathbb{R} \cup \{ - \infty \}$, and $\vec{x}, \vec{y} \in \mathfrak{W}_{k-1}$ are such that $|\Omega_{avoid}(-t_3, t_3, \vec{x}, \vec{y}, \infty, \ell_{bot})| \geq 1$. Suppose further that
 	\begin{enumerate}
-		\item $\sup_{s \in [- t_2,t_2]}\big(\ell_{bot}(s)  - ps \big)  \leq M_2 (2t_2)^{1/2}$,
-		\item  $-pt_2 + M_1 (2t_2)^{1/2} \geq  x_1 \geq  x_{k-1} \geq \max\left(\ell_{bot}(-t_2), -pt_2- M_1 (2t_2)^{1/2}\right),$
-		\item $pt_2 + M_1 (2t_2)^{1/2} \geq y_1 \geq y_{k-1} \geq  \max \left( \ell_{bot}(t_2),  p t_2- M_1(2t_2)^{1/2} \right).$
+		\item $\sup_{s \in [- t_3,t_3]}\big[\ell_{bot}(s)  - ps \big]  \leq M_2 (2t_3)^{1/2}$,
+		\item  $-pt_3 + M_1 (2t_3)^{1/2} \geq  x_1 \geq  x_{k-1} \geq \max\left(\ell_{bot}(-t_3), -pt_3- M_1 (2t_3)^{1/2}\right),$
+		\item $pt_3 + M_1 (2t_3)^{1/2} \geq y_1 \geq y_{k-1} \geq  \max \left( \ell_{bot}(t_3),  p t_3- M_1(2t_3)^{1/2} \right).$
 	\end{enumerate}
-	Then there exist constants $g,h$ depending on $ M_1, M_2, p , k, r$ and $N_4 = N_4(M_1,M_2,k ) \in \mathbb{N}$  such that for any $\tilde{\epsilon}  > 0$ and $N \geq N_4$ we have
+	Then there exist constants $g,h$ and $N_4 \in \mathbb{N}$ all depending on $ M_1, M_2, p , k, r, \alpha$   such that for any $\tilde{\epsilon}  > 0$ and $N \geq N_4$ we have
 	\begin{equation}\label{eqn60}
-	\mathbb{P}^{-t_2, t_2, \vec{x},\vec{y}, \infty, \ell_{bot} }_{avoid, Ber} \Big( Z\big(  -t_1, t_1, Q(-t_1) ,Q(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\big) \leq  gh \tilde{\epsilon}   \Big)  \leq \tilde{\epsilon},
+	\mathbb{P}^{-t_3, t_3, \vec{x},\vec{y}, \infty, \ell_{bot} }_{avoid, Ber} \Big( Z\big(  -t_1, t_1, \mathfrak{Q}(-t_1) ,\mathfrak{Q}(t_1), \infty,  \ell_{bot}\llbracket -t_1, t_1\rrbracket\big) \leq  gh \tilde{\epsilon}   \Big)  \leq \tilde{\epsilon},
 	\end{equation}
-	where $\ell_{bot}\llbracket -t_1, t_1\rrbracket$ is the vector, whose coordinates match those of $\ell_{bot}$ on $\llbracket -t_1, t_1\rrbracket$ and $Q(a) = (Q_1(a), \dots, Q_{k-1}(a))$ is the value of the line ensemble $Q$ whose law is $\mathbb{P}^{-t_2, t_2, \vec{x},\vec{y}, \infty, \ell_{bot} }_{avoid, Ber}$ at location $a$.
+	where $Z$ is the acceptance probability of Definition \ref{DefAP}, $\ell_{bot}\llbracket -t_1, t_1\rrbracket$ is the vector, whose coordinates match those of $\ell_{bot}$ on $\llbracket -t_1, t_1\rrbracket$ and $\mathfrak{Q}(a) = (Q_1(a), \dots, Q_{k-1}(a))$ is the value of the line ensemble $\mathfrak{Q} = (Q_1, \dots, Q_{k-1})$ whose law is $\mathbb{P}^{-t_3, t_3, \vec{x},\vec{y}, \infty, \ell_{bot} }_{avoid, Ber}$ at location $a$.
 \end{lemma}
 
 
 \begin{proof}[Proof of Proposition \ref{PropMain}] Let $\epsilon > 0$ be given. Define the event
 	\begin{equation*}
 	\begin{split}
-	&E_N = \Big\{    L_{k-1}^N(  \pm t_2) \mp pt_2 \geq  - M_1 (2t_2)^{1/2}\Big\} \cap \Big\{ \sup_{s \in [ -t_2, t_2]} \big( {L}^N_{k}(s) - p s \big)\leq M_2  (2t_2)^{1/2} \Big\},
+	E_N = &\left\{    L_{k-1}^N(  \pm t_3) \mp pt_3 \geq  - M_1 (2t_3)^{1/2}\right\} \cap \left\{    L_{1}^N(  \pm t_3) \mp pt_3 \leq   M_1 (2t_3)^{1/2}\right\} \cap \\
+	& \left\{ \sup_{s \in [ -t_3, t_3]} [{L}^N_{k}(s) - p s ]\leq M_2  (2t_3)^{1/2} \right\}.
 	\end{split}
 	\end{equation*}
-	where $M_1$ and $M_2$ are sufficiently large so that for $N>N_1=\max\{N_2,N_3,N_4\}$ we have $\mathbb{P}(E_N^c) <  \epsilon / 2$. The existence of such $M_1$ and $M_2$ is assured from Lemmas \ref{PropSup} and \ref{PropSup2}. 
+	In view of  Lemmas \ref{PropSup} and \ref{PropSup2} and the fact that $\mathbb{P}$-almost surely $L_1^N(s) \geq L_k^N(s)$ for all $s \in [ -t_3, t_3]$ we can find sufficiently large $M_1, M_2$ and $N_2$ such that for $N \geq N_2$ we have 
+	\begin{equation}\label{UBEC}
+	\mathbb{P}(E_N^c) <  \epsilon / 2.
+	\end{equation}
 	
-	Let $\delta = (\epsilon/2) \cdot g h$, where $g,h$ are as in Lemma \ref{LemmaAP1} for the values $M_1, M_2$ as above and $r$ as in the statement of the proposition.
-	We denote
-	$$V = \Big\{Z\big( -t_1,t_1, \vec{x}, \vec{y} , L_{k}\llbracket -t_1, t_1\rrbracket\big)< \delta\Big\}$$
-	and make the following deduction
+	
+	Let $g,h, N_4$ be as in Lemma \ref{LemmaAP1} for the values $M_1, M_2$ as above, the values $\alpha, p, k$ from the beginning of the section and $r$ as in the statement of the proposition. For $\delta = (\epsilon/2) \cdot g h$ we denote
+	$$V = \Big\{Z\big( -t_1,t_1, \vec{x}, \vec{y} , \infty,  L^N_{k}\llbracket -t_1, t_1\rrbracket\big)< \delta\Big\}$$
+	and make the following deduction for $N \geq N_4$
 	\begin{equation}\label{boundoneEN}
 	\begin{split}
-	&\mathbb{P}\big( V \cap E_N \big) =\mathbb{E} \bigg[    \mathbb{E}\Big[{\bf 1}_{E_N} \cdot {\bf 1}_{V} \Big{|} \mathcal{F}_{ext} \big( \{1, \dots, k-1\} \times \llbracket -t_2 + 1,t_2 - 1\rrbracket \big)\Big] \bigg] = \\
-	&\mathbb{E} \bigg[ {\bf 1}_{E_N} \cdot   \mathbb{E}\Big[ {\bf 1} \{ Z\big( -t_1,t_1, \vec{x}, \vec{y} , L_{k}\llbracket -t_1, t_1\rrbracket \big) < \delta\}   \Big{|} \mathcal{F}_{ext} \big( \{1, \dots, k-1\} \times \llbracket -t_2 + 1,t_2 - 1\rrbracket \big)\Big] \bigg]  = \\
-	&\mathbb{E} \left[ {\bf 1}_{E_N} \cdot  \mathbb{E}^{-t_2, t_2, L^N(-t_2), L^N(t_2), \infty, L^N_k\llbracket -t_2, t_2\rrbracket }_{avoid, Ber}\left[ {\bf 1} \{ Z\big( -t_1, t_1, \ell(-t_1),\ell(t_1),{L}^N_k\llbracket -t_1, t_1\rrbracket \big) < \delta\} \right] \right] \leq \\
-	&  \mathbb{E} \left[ {\bf 1}_{E_N} \cdot  \epsilon/2 \right] \leq \epsilon/2.
+	&\mathbb{P}\big( V \cap E_N \big) =\mathbb{E} \bigg[    \mathbb{E}\Big[{\bf 1}_{E_N} \cdot {\bf 1}_{V} \Big{|} \sigma \big( \mathfrak{L}^N(-t_3),  \mathfrak{L}^N(t_3),L^N_k\llbracket -t_3, t_3\rrbracket   \big)\Big] \bigg] = \\
+	&\mathbb{E} \bigg[ {\bf 1}_{E_N} \cdot   \mathbb{E}\Big[ {\bf 1} \{ Z\big( -t_1,t_1, \vec{x}, \vec{y} , \infty,  L^N_{k}\llbracket -t_1, t_1\rrbracket \big) < \delta\}   \Big{|} \sigma \big( \mathfrak{L}^N(-t_3),  \mathfrak{L}^N(t_3),L^N_k\llbracket -t_3, t_3\rrbracket   \big) \Big] \bigg]  = \\
+	&\mathbb{E} \left[ {\bf 1}_{E_N} \cdot  \mathbb{E}_{avoid}\left[ {\bf 1} \{ Z\big( -t_1, t_1, \mathfrak{L}(-t_1),\mathfrak{L}(t_1), \infty, {L}^N_k\llbracket -t_1, t_1\rrbracket \big) < \delta\} \right] \right] \leq  \mathbb{E} \left[ {\bf 1}_{E_N} \cdot  \epsilon/2 \right] \leq \epsilon/2.
 	\end{split}
 	\end{equation}
-	The first equality follows from the tower property for conditional expectations. The second equality uses the definition of $V$ and the fact that ${\bf 1}_{E_N} $ is $\mathcal{F}_{ext} \big( \{1\} \times \llbracket -t_2 + 1,t_2 - 1\rrbracket\big)$-measurable and can thus be taken outside of the conditional expectation. The third equality uses the Schur Gibbs property. The inequality on the third line uses Lemma \ref{LemmaAP1} with $\tilde{\epsilon} = \epsilon/2$ as well as the fact that on the event $E_N^c$ the random variables $L^N(-t_2), L^N(t_2)$ and $L^N_k \llbracket -t_2, t_2 \rrbracket$ (that play the roles of $\vec{x}, \vec{y}$ and $\ell_{bot}$) satisfy the inequalities 
-	\begin{equation*}
-	\begin{split}
-	L^N_{k-1}(-t_2) \geq  -pt_2- M_1 (2t_2)^{1/2}\\ 
-	 L^N_{k-1}(t_2) \geq  p t_2- M_1(2t_2)^{1/2}\\ 
-	 \sup_{s \in [ -t_2,t_2]} \hspace{-2mm}\big(L^N_k(s)  - ps \big)  \leq M_2(2t_2)^{1/2}
-	\end{split}
-	\end{equation*}
-	The last inequality is trivial.
+	In (\ref{boundoneEN}) we have written $\mathbb{E}_{avoid}$ in place of $\mathbb{E}^{-t_3, t_3, \mathfrak{L}^N(-t_3), \mathfrak{L}^N(t_3), \infty, L^N_k\llbracket -t_3, t_3\rrbracket }_{avoid, Ber}$ to ease the notation; in addition, we have that $\mathfrak{L}^N(a) = (L_1^N(a), \dots, L_{k-1}^N(a))$ and $\mathfrak{L}$ on the last line is distributed according to $\mathbb{P}^{-t_3, t_3, \mathfrak{L}^N(-t_3), \mathfrak{L}^N(t_3), \infty, L^N_k\llbracket -t_3, t_3\rrbracket }_{avoid, Ber}$. We elaborate on (\ref{boundoneEN}) in the paragraph below.
 	
-	Combining \ref{boundoneEN} with $\mathbb{P}(E_N^c) <  \epsilon/2$, we see that for all $N>N_1$ we have
-	$$\mathbb{P}\left( V  \right) = \mathbb{P}(V \cap E_N) + \mathbb{P}(V \cap E_N^c) \leq \epsilon/2 + \mathbb{P}(E_N^c) < \epsilon.$$
+	The first equality in (\ref{boundoneEN}) follows from the tower property for conditional expectations. The second equality uses the definition of $V$ and the fact that ${\bf 1}_{E_N} $ is $\sigma \big( \mathfrak{L}^N(-t_3),  \mathfrak{L}^N(t_3),L^N_k\llbracket -t_3, t_3\rrbracket   \big)$-measurable and can thus be taken outside of the conditional expectation. The third equality uses the Schur Gibbs property, see Definition \ref{DefSGP}. The first inequality on the third line holds if $N \geq N_4$ and uses Lemma \ref{LemmaAP1} with $\tilde{\epsilon} = \epsilon/2$  as well as the fact that on the event $E_N$ the random variables $\mathfrak{L}^N(-t_3), \mathfrak{L}^N(t_3)$ and $L^N_k \llbracket -t_3, t_3 \rrbracket$ (that play the roles of $\vec{x}, \vec{y}$ and $\ell_{bot}$) satisfy the inequalities 
+	\begin{enumerate}
+		\item $\sup_{s \in [- t_3,t_3]}\big[L^N_k(s)  - ps \big]  \leq M_2 (2t_3)^{1/2}$,
+		\item  $-pt_3 + M_1 (2t_3)^{1/2} \geq  {L}^N_1(-t_3) \geq  {L}^N_{k-1}(-t_3) \geq \max\left(L^N_k(-t_3), -pt_3- M_1 (2t_3)^{1/2}\right),$
+		\item $pt_3 + M_1 (2t_3)^{1/2} \geq {L}^N_1(t_3) \geq {L}^N_{k-1}(t_3) \geq  \max \left(L^N_k(t_3),  p t_3- M_1(2t_3)^{1/2} \right).$
+	\end{enumerate}
+	The last inequality in (\ref{boundoneEN}) is trivial.
+	
+	Combining (\ref{boundoneEN}) with (\ref{UBEC}), we see that for all $N \geq \max(N_2, N_4)$ we have
+	$$\mathbb{P}\left( V  \right) = \mathbb{P}(V \cap E_N) + \mathbb{P}(V \cap E_N^c) \leq \epsilon/2 + \mathbb{P}(E_N^c) < \epsilon,$$
+	which proves the proposition.
 \end{proof}
 
 
@@ -93,117 +94,110 @@ $$\mathbb{P}\Big( \inf_{s \in [ -t_2, t_2 ]}\big(L^N_k(s) - p s \big) \leq - R_2
 %
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Proof of Theorem \ref{PropTightGood} }\label{Section4.2}
-	
-		By Lemma \ref{2Tight}, it suffices to verify the following two conditions for all $1\in \llbracket 1,k-1\rrbracket$, $R>0$, and $\epsilon>0$:
-	\begin{align}
-	\lim_{a\to\infty} &\limsup_{N\to\infty} \pr(|f^N_i(0)|\geq a) = 0 \label{ThmCond1}\\
-	\lim_{\delta\to 0} &\limsup_{N\to\infty} \pr\bigg(\sup_{\substack{x,y\in [-R,R], \\ |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon\bigg)= 0. \label{ThmCond2}
-	\end{align}
-	For the sake of clarity, we will prove these conditions in three steps.\\
-	
-	\noindent\textbf{Step 1.} We first prove condition \eqref{ThmCond1}, making use of Lemmas \ref{PropSup} and \ref{PropSup2} in order to obtain upper and lower bounds for the top and bottom curves respectively, thus bounding all curves.
-	
-	Fix $\epsilon>0$. We show that there exists an $a>0$ and $N_5$ depending on $\epsilon$, such that $N>N_5$ implies
-	$$\pr(|f^N_i(0)|\geq a) = \pr(|L_i^N(0)|\geq a N^{\alpha/2})<\epsilon.$$
-	By Lemmas \ref{PropSup} and \ref{PropSup2}, there exist $R_1 := R_1(\epsilon/2)>0$, $R_2 := R_2(\epsilon/2)>0$ and $N_2 := N_2(\epsilon/2),N_3 := N_3(\epsilon/2)$ such that 
-	\begin{align*}
-	N\geq N_2 &\text{ implies } \pr\Big(\sup_{s\in[-t_3,t_3]}\left(L_1^N(s)-ps\right)\geq R_1N^{\alpha/2}\Big)<\epsilon/2,\\
-	N\geq N_3 &\text{ implies } \pr\Big(\inf_{s\in[-t_2,t_2]}\left(L_k^N(s)-ps\right)\leq -R_2 N^{\alpha/2}\Big)<\epsilon/2.
-	\end{align*}
-	In particular, taking $s=0$, we find that for $N\geq N_5:= \max\{N_2, N_3\}$, 
-	\begin{align*}
-	\pr\big(L_1^N(0)\geq R_1N^{\alpha/2}\big) &\leq \pr\Big(\sup_{s\in[-t_3,t_3]}\left(L_1^N(s)-ps\right)\geq R_1N^{\alpha/2}\Big)< \epsilon/2,\\
-	\pr\big(L_k^N(0)\leq -R_2N^{\alpha/2}\big) &\leq \pr\Big(\inf_{s\in[-t_2,t_2]}\left(L_k^N(s)-ps\right)\leq -R_2N^{\alpha/2}\Big)< \epsilon/2.
-	\end{align*}
-	Letting $a =\max\{ R_1, R_2\}$ and noting that $L_1^N(0)>L_2^N(0)>...>L_k^N(0)$, we find that for $i\in\llbracket 1,k\rrbracket$ and $N \geq N_5$,
-	$$\pr\big(|L_i^N(0)|\geq a N^{\alpha/2}\big)\leq \pr\big(L_1^N(0)\geq R_1 N^{\alpha/2}\big) + \pr\big(L_k^N(0)\leq -R_2N^{\alpha/2}\big) < \epsilon.$$
-	This proves \eqref{ThmCond1}.\\
-	
-	\noindent\textbf{Step 2.} This step is set up for proving condition $\eqref{ThmCond2}$. We will establish sets to size bias condition \eqref{ThmCond2} for a fixed $i$. First, we will reorganize the statement of condition $\eqref{ThmCond2}$ in order to get it in terms of Bernoulli random walks, instead of $f_i^N$ and then we will establish large events $E_1$ and $E_2$ in order so that if we prove $\eqref{ThmCond2}$ on the intersection of these two sets, it is equivalent to showing it on the entire probability space.
-	
-	We must show that for all $\epsilon,\eta>0$ and $R>0$, there exists a $\delta$ and $N_0$ such that $N>N_0$ implies 
-	\[
-	\pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon\bigg)<\eta.
-	\]
-	We rewrite the left hand side as
-	\begin{align}
-	\pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} \abs*{N^{-\alpha/2}\left(L^N_i(xN^{\alpha}) - L^N_i(yN^\alpha)\right)-p(x-y)N^{\alpha/2}+\lambda(x^2-y^2)} \geq \epsilon\bigg).
-	\end{align}
-	By the bounds of the supremum, we know that $|x+y|\leq 2R$ and $|x-y|<\delta$, hence $|x^2-y^2|\leq 2R\delta$. Thus if we take $\delta < \frac{\epsilon}{8\lambda R}$, then the last probability is bounded below by
-	\begin{align*}
-	&\pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} N^{-\alpha/2}\abs*{L_i^N(xN^\alpha)-L_i^N(yN^\alpha)-p(x-y)N^\alpha}+2\lambda R\delta\geq \epsilon\bigg)\\
-	\leq \; & \pr\bigg(\sup_{\substack{x,y\in [-R,R],\\ |x-y|\leq\delta}} \abs*{L_i^N(xN^\alpha)-L_i^N(yN^\alpha)-p(x-y)N^\alpha}\geq \frac{3N^{\alpha/2}\epsilon}4\bigg)\\
-	= \; & \pr\bigg(\sup_{\substack{x,y\in [-R_N,R_N],\\ |x-y|\leq \delta N^\alpha}} \abs*{L_i^N(x)-L_i^N(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4\bigg).
-	\end{align*}
-	Where $R_N:=\floor{RN^\alpha}$We will take the event in this final equation and define:
-	\begin{equation}\label{Adelta}
-	A_\delta =\bigg\{\sup_{\substack{x,y\in [-R_N,R_N],\\ |x-y|\leq \delta N^\alpha}} \abs*{L_i^N(x)-L_i^N(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4\bigg\}.
-	\end{equation}
-	Further, define events
-	\begin{align*}
-	E_1&=\left\{\max_{1\leq j \leq i}\abs*{f_j(\pm R)}\leq M_1\right\},\\
-	E_2&=\left\{Z(-R_N, R_N, \vec x, \vec y, \infty, L_{i+1}^N[-R_N, R_N])>\delta_1\right\}.\label{BiasDef}
-	\end{align*}
-	Here, $\vec{x} = (L_1^N(-R_N),\dots,L_i(-R_N))$ and $\vec{y} = (L_1^N(R_N),\dots,L_i(R_N))$. We argue that $E_1,E_2$ have high probability for appropriately chosen $M_1,\delta_1$, and it then suffices to bound the probability of $A_\delta$ on these events.
-	
-	Firstly, we observe that $L_j^N(\pm R_N)> L_{j+1}^N(\pm R_N)$, so $f_j^N(\pm R)>f_{j+1}^N(\pm R)$ as well. Thus
-	\begin{align*}
-	E_1^c &= \{f_1(\pm R)> M_1\} \cup \{f_i(\pm R)<-M_1\} \\
-	&= \left\{ \left(L_1^N(\pm R_N)\mp pR_N\right)> (M_1-\lambda R^2)N^{\alpha/2}\right\}\\
-	&\qquad \cup \left\{\left(L_i^N(\pm R_N)\mp pR_N\right)< -(\lambda R^2+M_1)N^{\alpha/2}\right\}.
-	\end{align*}
-	Now take $r>R$. Then in particular $R_N \leq t_3$, so we have $$
-	\pr\left(L_1^N(\pm R_N)\mp pR_N>(M_1-\lambda R^2)N^{\alpha/2}\right)
-	\leq\pr\Big(\sup_{s\in[-t_3,t_3]}L_1^N(s)-ps>(M_1-\lambda R^2)N^{\alpha/2}\Big).
-	$$ By Lemma \ref{PropSup}, we find that if $M_1>R_1(\eta/8)+\lambda R^2$ and $N>N_2(\eta/8)$, then this probability is less than $\eta/8$. Next, we have
-	\begin{align*}
-	\pr \left(L_i^N(\pm R_N)\mp pR_N< -(\lambda R^2+M_1)N^{\alpha/2}\right)&\leq \pr \left(L_i^N(\pm R_N)\mp pR_N< -M_1N^{\alpha/2}\right)\\
-	&\leq \pr\Big(\inf_{s\in[-t_2,t_2]}\big(L_i^N(s)-ps\big)<-M_1N^{\alpha/2}\Big),
-	\end{align*}
-	and this last probability is $<\eta/8$ for $M_1\geq R_2(\eta/8)$ and $N>N_3(\eta/8)$ by Lemma \ref{PropSup2}. Therefore taking $M_1=\max\{R_1(\eta/8)+\lambda R^2,R_2(\eta/8)\}$, we find $$\pr(E_1^c)<\frac{\eta}{4}.$$
-	Now by Proposition \ref{PropMain} with $r=R-1$, there exist $\delta_1(\eta/4)$ and $N_1(\eta/4)$ such that $N\geq N_1$ implies 
-	\[
-	\pr\left( E_2^c\right)<\frac{\eta}{4}.
-	\]
-	and so by countable subadditivity, 
-	\[
-	\pr\left(E_1^c\cup E_2^c\right)<\frac{\eta}{2}
-	\]
-	Hence, for $N>\hat N:= \max\{N_1(\eta/4),N_2(\eta/8),N_3(\eta/8)\}$, 
-	\begin{equation}
-	\pr(A_\delta)= \pr(A_\delta\cap E_1\cap E_2)+\pr(A_\delta\cap\left(E_1^c\cup E_2^c\right))\leq \pr(A_\delta\cap E_1\cap E_2)+\frac{\eta}{2}. \label{ThmBias}
-	\end{equation}\\
-	
-	\noindent\textbf{Step 3.} In this step, we will prove that condition \ref{ThmCond2} holds, using the results of the previous step, namely the inequality \ref{ThmBias}. We will do so by passing from Bernoulli avoiding random walks to random walks using a Radon-Nikodym derivative, and properties of the condtional expectation. 
-	
-	We define a $\sigma$-algebra 
-	$$\mathcal{F}=\sigma\left(L_{i+1}^N,L_1^N(\pm R_N ), L_2^N(\pm R_N ),\dots, L_i^N(\pm R_N )\right).$$
-	Clearly $E_1, E_2\in \mathcal{F}$, so the indicator random variables $\indic_{E_1}$ and $\indic_{E_2}$ are $\mathcal{F}$-measurable. It follows from the tower property of conditional expectation that
-	\begin{align}
-	\pr\left(A_\delta\cap E_1\cap E_2\right)&=\ex\left[\indic_{A_\delta} \indic_{E_1} \indic_{E_2}\right] =\ex\left[\indic_{E_1} \indic_{E_2}\ex[\indic_{A_\delta}\mid \mathcal{F}\right]]. \label{tower}
-	\end{align}
-	By the Schur-Gibbs property (see Definition \ref{DefSGP}),
-	\[
-	\ex\left[\indic_{A_\delta}\mid \mathcal{F}\right]=\ex_{avoid,Ber}^{-R_N,R_N,\vec x, \vec y, \infty, L_{i+1}^N}\left[\indic_{A_\delta}\right].
-	\]
-	We now observe that the Radon-Nikodym derivative of $\pr_{avoid,Ber}^{-R_N,R_N,\vec x, \vec y, \infty, L_{m+1}^N}$ with respect to $\pr_{Ber}^{-R_N, R_N,\vec x,\vec y}$ [with $\vec x, \vec y$ defined as in the definition of $E_2$] is given by 
-	\begin{equation}
-	\frac{d\pr_{avoid,Ber}^{-R_N,R_N,\vec x, \vec y, \infty, L_{i+1}^N}}{d\pr_{Ber}^{-R_N, R_N,\vec x,\vec y}} = \frac{\indic_{\left\{L_1 \geq \cdots \geq L_{i+1}\right\}}}{Z(-R_N,R_N,\vec x, \vec y, L_{i+1}^N)}. \label{RN}
-	\end{equation}
-	To see this, note that for any event $A$,
-	\begin{align*}
-	&\pr_{avoid,Ber}^{-R_N,R_N,\vec x, \vec y, \infty, L_{i+1}^N}(A) = \frac{\pr_{Ber}^{-R_N,R_N,\vec x, \vec y}(A\cap\left\{L_1 \geq \cdots \geq L_{i+1}\right\})}{\pr_{Ber}^{-R_N,R_N,\vec x, \vec y}(L_1\geq\cdots\geq L_{i+1})}\\
-	= \; & \frac{\ex_{Ber}^{-R_N,R_N,\vec x, \vec y}\left[\indic_A \indic_{\left\{L_1\geq\cdots\geq L_{i+1}\right\}}\right]}{Z(-R_N,R_N,\vec{x},\vec{y},L^N_{i+1})} = \int_A \frac{\indic_{\left\{L_1\geq\cdots\geq L_{i+1}\right\}}}{Z(-R_N,R_N,\vec x, \vec y, L_{i+1}^N)}\,d\pr_{Ber}^{-R_N,R_N,\vec x, \vec y}.
-	\end{align*}
-	It follows from \eqref{tower}, \eqref{RN}, and the definition of $E_2$ that
-	\begin{align*}
-	\pr(A_\delta\cap E_1\cap E_2) &=\ex\left[\indic_{E_1}\indic_{E_2} \ex_{Ber}^{-R_N, R_N,\vec x,\vec y}\left[\frac{\indic_{A_\delta}\cdot \indic_{\left\{L_1\geq\cdots\geq L_{i+1}\right\}}}{Z(-R_N,R_N,\vec x, \vec y, L_{i+1}^N)}\right]\right]\\
-	&\leq \ex\left[\indic_{E_1}\ex_{Ber}^{-R_N,R_N,\vec x,\vec y}\left[\frac{\indic_{A_\delta}}{\delta_1}\right]\right]\\
-	&\leq \frac{1}{\delta_1}\,\pr_{Ber}^{-R_N,R_N,\vec x,\vec y}(A_\delta).
-	\end{align*}
-	By Lemma \ref{MOCLemmaS4}, there exist $W_4$ and $\delta$ such that $N>W_4$ implies
-	\[
-	\pr_{Ber}^{-R_N,R_N,\vec x,\vec y}(A_\delta)<\frac{\eta\,\delta_1}2,
-	\] 
-	and hence $$\pr\left(A_\delta\cap E_1\cap E_2\right)\leq \frac{\eta}{2}.$$ We conclude from \eqref{ThmBias} that $\mathbb{P}(A_\delta) < \eta$ for $N\geq N_0 := \max\{\hat N, W_4\}$. Given the definition of $A_\delta$ (see \ref{Adelta}), this implies we have shown condition 2, which, in conjuncton with condition 1, implies tightness. This completes the proof.
+
+By Lemma \ref{2Tight}, it suffices to verify the following two conditions for all $i \in \llbracket 1,k-1\rrbracket$, $r>0$, and $\epsilon>0$:
+\begin{equation}\label{ThmCond1}
+\lim_{a\to\infty} \limsup_{N\to\infty} \pr(|f^N_i(0)|\geq a) = 0 
+\end{equation}
+\begin{equation}\label{ThmCond2}
+\lim_{\delta\to 0} \limsup_{N\to\infty} \pr\left(\sup_{{x,y\in [-r,r], |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon \right)= 0.
+\end{equation}
+For the sake of clarity, we will prove these conditions in several steps.\\
+
+\noindent\textbf{Step 1.} In this step we prove \eqref{ThmCond1}. Let $\epsilon > 0$ be given. Then by Lemmas \ref{PropSup} and \ref{PropSup2} we can find $N_2, N_3$ and $R_1, R_2$ such that for $N \geq \max(N_1, N_2)$
+\begin{align*}
+\pr\left(\sup_{s\in[-t_3,t_3]} [L_1^N(s)-ps]\geq R_1N^{\alpha/2}\right)<\epsilon/2,\\
+\pr\left(\inf_{s\in[-t_3,t_3]}[L_{k-1}^N(s)-ps]\leq -R_2 N^{\alpha/2}\right)<\epsilon/2.
+\end{align*}
+In particular, if we set $R  = \max(R_1, R_2)$ and utilize the fact that $L_1^N(0) \geq \cdots \geq L_{k-1}^N(0)$ we conclude that for any $i \in \llbracket 1, k-1 \rrbracket$ we have
+$$\pr\big(|L_i^N(0)|\geq R N^{\alpha/2}\big)\leq \pr\big(L_1^N(0)\geq R_1 N^{\alpha/2}\big) + \pr\big(L_{k-1}^N(0)\leq -R_2N^{\alpha/2}\big) < \epsilon,$$
+which implies \eqref{ThmCond1}.\\
+
+\noindent\textbf{Step 2.} In this step we prove (\ref{ThmCond2}). In the sequel we fix $r, \epsilon > 0$ and $i \in \llbracket 1, k-1 \rrbracket$. To prove (\ref{ThmCond2}) it suffices to show that for any $\eta>0$, there exists a $\delta > 0$ and $N_0$ such that $N \geq N_0$ implies 
+\begin{equation}\label{S2R1}
+\pr\left(\sup_{{x,y\in [-r,r], |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon\right)<\eta.
+\end{equation}
+
+For $\delta > 0$ we define the event
+\begin{equation}\label{Adelta}
+A^N_\delta =\left\{\sup_{{x,y\in [-t_1,t_1], |x-y|\leq \delta N^\alpha}} \abs*{L_i^N(x)-L_i^N(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4\right\},
+\end{equation}
+where we recall that $t_1 = \lfloor (r + 1)N^{\alpha} \rfloor$ from (\ref{eqsts}). We claim that there exist $\delta_0 > 0$ and $N_0 \in \mathbb{N}$ such that for $\delta \in (0, \delta_0]$ and $N \geq N_0$ we have
+\begin{equation}\label{Abound}
+\mathbb{P}(A^N_\delta) < \eta.
+\end{equation}
+We prove (\ref{Abound}) in the steps below. Here we assume its validity and conclude the proof of (\ref{S2R1}).\\
+
+Observe that if $\delta \in \left (0, \min \left(\delta_0, \epsilon \cdot (8 \lambda r)^{-1} \right) \right)$, where $\lambda$ is as in the statement of the theorem, we have the following tower of inequalities
+\begin{equation}\label{Term1}
+\begin{split}
+&\pr\left(\sup_{{x,y\in [-r,r], |x-y|\leq\delta}} |f^N_i(x) - f^N_i(y)| \geq \epsilon\right) = \\
+&\pr\left(\sup_{{x,y\in [-r,r],|x-y|\leq\delta}} \abs*{N^{-\alpha/2}\left(L^N_i(xN^{\alpha}) - L^N_i(yN^\alpha)\right)-p(x-y)N^{\alpha/2}+\lambda(x^2-y^2)} \geq \epsilon\right) \leq \\
+&\pr\left(\sup_{{x,y\in [-r,r], |x-y|\leq\delta}} N^{-\alpha/2}\abs*{L_i^N(xN^\alpha)-L_i^N(yN^\alpha)-p(x-y)N^\alpha}+2\lambda r\delta\geq \epsilon\right) \leq \\
+& \pr\left(\sup_{{x,y\in [-r,r], |x-y|\leq\delta}} \abs*{L_i^N(xN^\alpha)-L_i^N(yN^\alpha)-p(x-y)N^\alpha}\geq \frac{3N^{\alpha/2}\epsilon}4\right)\leq \mathbb{P}(A^N_\delta) < \eta .
+\end{split}
+\end{equation}
+In (\ref{Term1}) the first equality follows from the definition of $f_i^N$, and the inequality on the second line follows from the inequality $|x^2-y^2|\leq 2r\delta$, which holds for all $x,y \in [-r,r]$ such that $|x-y| \leq \delta$. The inequality in the third line of (\ref{Term1}) follows from our assumption that $\delta <   \epsilon \cdot (8 \lambda r)^{-1}$ and the first inequality on the last line follows from the definition of $A^N_\delta$ in (\ref{Adelta}), and the fact that $t_1 \geq r N^{\alpha}$. The last inequality follows from our assumption that $\delta < \delta_0$ and (\ref{Abound}). In view of (\ref{Term1}) we conclude (\ref{S2R1}).\\
+
+{\bf \raggedleft Step 3.} In this step we prove (\ref{Abound}) and fix $\eta > 0$ in the sequel. For $\delta_1, M_1 > 0$ and $N \in \mathbb{N}$ we define the events
+\begin{equation}
+\begin{split}
+E_1= \hspace{-0.5mm}\left\{\max_{1\leq j \leq k-1}\abs*{L_j^N(\pm t_1) \mp pt_1}\leq M_1N^{\alpha/2} \right\}, E_2=\hspace{-0.5mm}\left\{Z(-t_1, t_1, \vec x, \vec y, \infty, L_{k}^N\llbracket -t_1, t_1 \rrbracket)>\delta_1\right\},
+\end{split}
+\end{equation}
+where we used the same notation as in Proposition \ref{PropMain} (in particular $\vec x = (L^N_1(-t_1), \dots, L_{k-1}^N(-t_1))$ and $\vec y = (L_1^N(t_1), \dots, L_{k-1}^N(t_1))$). Combining Lemmas \ref{PropSup}, \ref{PropSup2} and Proposition \ref{PropMain} we know that we can find $\delta_1 > 0$ sufficiently small, $M_1$ sufficiently large and $\tilde{N} \in \mathbb{N}$ such that for $N \geq \tilde{N}$ we know
+\begin{equation}\label{BoundECup}
+\mathbb{P} \left(E_1^c \cup E_2^c \right) < \eta/2.
+\end{equation}
+We claim that we can find $\delta_0 > 0$ and $N_0 \geq \tilde{N}$ such that for $N \geq N_0$ and $\delta \in (0, \delta_0)$ we have
+\begin{equation}\label{Abound2}
+\mathbb{P}(A^N_\delta \cap E_1 \cap E_2 ) < \eta/2.
+\end{equation}
+Since
+$$\pr(A^N_\delta)= \pr(A^N_\delta\cap E_1\cap E_2)+\pr(A^N_\delta\cap\left(E_1^c\cup E_2^c\right))\leq \pr(A^N_\delta\cap E_1\cap E_2)+\mathbb{P} \left(E_1^c \cup E_2^c \right),$$
+we see that (\ref{BoundECup}) and (\ref{Abound2}) together imply (\ref{Abound}).\\
+
+{\bf \raggedleft Step 4.} In this step we prove (\ref{Abound2}). We define the $\sigma$-algebra 
+$$\mathcal{F}=\sigma\left(L_{k}^N \llbracket -t_1, t_1 \rrbracket ,L_1^N(\pm t_1 ), L_2^N(\pm t_1 ),\dots, L_{k-1}^N(\pm t_1 )\right).$$
+Clearly $E_1, E_2\in \mathcal{F}$, so the indicator random variables $\indic_{E_1}$ and $\indic_{E_2}$ are $\mathcal{F}$-measurable. It follows from the tower property of conditional expectation that
+\begin{equation}\label{tower}
+\pr\left(A^N_\delta\cap E_1\cap E_2\right)=\ex\left[\indic_{A^N_\delta} \indic_{E_1} \indic_{E_2}\right] =\ex\left[\indic_{E_1} \indic_{E_2}\ex\left[\indic_{A^N_\delta}\mid \mathcal{F}\right]\right]. 
+\end{equation}
+By the Schur-Gibbs property (see Definition \ref{DefSGP}), we know that $\mathbb{P}$-almost surely
+\begin{equation}\label{tower2}
+\ex\left[\indic_{A^N_\delta}\mid \mathcal{F}\right]=\ex_{avoid,Ber}^{-t_1,t_1,\vec x, \vec y, \infty, L_{k}^N \llbracket -t_1, t_1 \rrbracket}\left[\indic_{A^N_\delta}\right].
+\end{equation}
+We now observe that the Radon-Nikodym derivative of $\pr_{avoid,Ber}^{-t_1,t_1,\vec x, \vec y, \infty, L_{k}^N \llbracket -t_1, t_1 \rrbracket}$ with respect to $\pr_{Ber}^{-t_1, t_1,\vec x,\vec y}$ is given by 
+\begin{equation}\label{RN}
+\frac{d\pr_{avoid,Ber}^{-t_1,t_1,\vec x, \vec y, \infty, L_{k}^N\llbracket -t_1, t_1 \rrbracket } (Q_1, \dots, Q_{k-1})}{d\pr_{Ber}^{-t_1, t_1,\vec x,\vec y}} = \frac{\indic_{\left\{Q_1 \geq \cdots \geq Q_{k-1} \geq Q_k \right\}}}{Z(-t_1,t_1,\vec x, \vec y, \infty,  L_{k}^N\llbracket -t_1, t_1 \rrbracket )},
+\end{equation}
+where $\mathfrak{Q} = (Q_1, \dots, Q_{k-1})$ is $\pr_{Ber}^{-t_1, t_1,\vec x,\vec y}$-distributed and $Q_k = L_{k}^N\llbracket -t_1, t_1 \rrbracket$. To see this, note that by Definition \ref{DefAvoidingLawBer} we have for any set $A \subset  \prod_{i = 1}^{k-1}\Omega(-t_1, t_1, x_i, y_i )$ that 
+\begin{equation*}
+\begin{split}
+&\pr_{avoid,Ber}^{-t_1,t_1,\vec x, \vec y, \infty, L_{k}^N\llbracket -t_1, t_1 \rrbracket}(A) = \frac{\pr_{Ber}^{-t_1,t_1,\vec x, \vec y}(A\cap\left\{Q_1 \geq \cdots \geq Q_{k-1} \geq Q_k\right\})}{\pr_{Ber}^{-t_1,t_1,\vec x, \vec y}(Q_1\geq\cdots\geq Q_{k-1} \geq Q_k)} = \\
+& \frac{\ex_{Ber}^{-t_1,t_1,\vec x, \vec y}\left[\indic_A \cdot  \indic_{\left\{Q_1\geq\cdots\geq Q_{k-1} \geq Q_k \right\}}\right]}{Z(-t_1,t_1,\vec{x},\vec{y}, \infty, L^N_{k} \llbracket -t_1, t_1 \rrbracket)} = \int_A \frac{\indic_{\left\{Q_1\geq\cdots\geq Q_{k-1} \geq Q_k \right\}}}{Z(-t_1,t_1,\vec x, \vec y, \infty, L_{k}^N \llbracket -t_1, t_1 \rrbracket )}\,d\pr_{Ber}^{-t_1,t_1,\vec x, \vec y}.
+\end{split}
+\end{equation*}
+It follows from \eqref{tower}, \eqref{RN}, and the definition of $E_2$ that
+\begin{equation}\label{RT1}
+\begin{split}
+&\pr(A^N_\delta\cap E_1\cap E_2) =\ex\left[\indic_{E_1}\indic_{E_2} \ex_{Ber}^{-t_1, t_1,\vec x,\vec y}\left[\frac{\indic_{B^N_\delta}\cdot \indic_{\left\{Q_1\geq\cdots\geq Q_{k}\right\}}}{Z(-t_1,t_1,\vec x, \vec y, L^N_{k} \llbracket -t_1, t_1 \rrbracket)}\right]\right] \leq \\
+&\leq \ex\left[\indic_{E_1}\indic_{E_2}\ex_{Ber}^{-t_1,t_1,\vec x,\vec y}\left[\frac{\indic_{B^N_\delta}}{\delta_1}\right]\right] \leq \frac{1}{\delta_1} \ex\left[ \indic_{E_1} \cdot\pr_{Ber}^{-t_1,t_1,\vec{x}, \vec{y} }(B^N_\delta) \right],
+\end{split}
+\end{equation}
+where 
+$$B^N_\delta = \left\{\sup_{{x,y\in [-t_1,t_1], |x-y|\leq \delta N^\alpha}} \abs*{Q_i(x)-Q_i(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4\right\}.$$
+Notice that under $\pr_{Ber}^{-t_1,t_1,\vec{x}, \vec{y} }$ the law of $Q_i$ is precisely $\pr_{Ber}^{-t_1,t_1,x_i, y_i }$, and so we conclude that 
+\begin{equation}\label{RT2}
+\begin{split}
+& \pr_{Ber}^{-t_1,t_1,\vec{x}, \vec{y} }(B^N_\delta) = \pr_{Ber}^{0,2t_1,0, y_i - x_i }\left( \sup_{{x,y\in [0,2t_1], |x-y|\leq \delta N^\alpha}} \abs*{\ell(x)-\ell(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4  \right),
+\end{split}
+\end{equation}
+where $\ell$ has law $\pr_{Ber}^{0,2t_1,0, y_i - x_i }$ (note that in (\ref{RT2}) we implicitly translated the path $\ell$ to the right by $t_1$ and up by $-x_i$, which does not affect the probability in question). Since on the event $E_1$ we know that $|y_i -x_i - 2 p t_1| \leq 2M_1 N^{\alpha}$  we conclude from Lemma \ref{MOCLemmaS4} that we can find $N_0$ and $\delta_0 > 0$ depending on $M_1, r, \alpha$ such that for $N \geq N_0$ and $\delta \in (0, \delta_0)$ we have
+\begin{equation}\label{RT3}
+\begin{split}
+& \indic_{E_1} \cdot \pr_{Ber}^{0,2t_1,0, y_i - x_i }\left( \sup_{{x,y\in [0,2t_1], |x-y|\leq \delta N^\alpha}} \abs*{\ell(x)-\ell(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4  \right) < \frac{\delta_1 \eta}{2}.
+\end{split}
+\end{equation}
+Combining (\ref{RT1}), (\ref{RT2}) and (\ref{RT3}) we conclude (\ref{Abound2}), and hence the theorem.
 
