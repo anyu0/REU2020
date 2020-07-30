@@ -128,7 +128,7 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 	We begin by proving the following important lemma, which allows us to prevent the curve $L_{k-1}^N$ from falling too low on a large enough interval.
 	
 	\begin{lemma}\label{21}
-		Fix $p\in (0,1)$, $k\in\mathbb{N}$, and $\alpha,\lambda > 0$. Suppose that $\mathfrak{L}^N = (L_1^N, \dots, L_k^N)$ is a $(\alpha,p,\lambda)$-good sequence of $\llbracket 1, k\rrbracket$-indexed Bernoulli line ensembles. Then for any $r,\epsilon>0$, there exists $R>0$ depending on $\lambda,k,p,\epsilon,r,\phi$ and $N_0 \in \mathbb{N}$ depending on $\lambda,k,p,\epsilon,r,\phi,\psi,\alpha$ such that for all $N\geq N_0$,
+		Fix $p\in (0,1)$, $k\in\mathbb{N}$, and $\alpha,\lambda > 0$. Suppose that $\mathfrak{L}^N = (L_1^N, \dots, L_k^N)$ is a $(\alpha,p,\lambda)$-good sequence of $\llbracket 1, k\rrbracket$-indexed Bernoulli line ensembles. Then for any $r,\epsilon>0$, there exists $R>0$ and $N_5 \in \mathbb{N}$ such that for all $N\geq N_5$,
 		\[
 		\mathbb{P}\left(\max_{x\in[r,R]} \left(L_{k-1}^N(xN^\alpha) - pxN^\alpha\right) \leq -(\lambda R^2 + \phi(\epsilon/16))N^{\alpha/2}\right) < \epsilon.
 		\]
@@ -159,7 +159,7 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		B &= \left\{\max_{x\in[r,R]} \left(L_k^N(xN^\alpha) - pxN^\alpha\right) \leq -(\lambda R^2 + \phi(\epsilon/16)) N^{\alpha/2} \right\}.
 		\end{split}
 		\end{equation}
-		We will argue in the subsequent steps that we can find $N_3\in\mathbb{N}$ so that for all $N\geq N_3$,
+		We will argue in the subsequent steps that we can find $N_5\in\mathbb{N}$ so that for all $N\geq N_5$,
 		\begin{equation}\label{21Bbound}
 		\mathbb{P}(B) < \epsilon,
 		\end{equation}
@@ -207,7 +207,7 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		\[
 		\mathbb{P}(B) \leq \mathbb{P}(F) + \epsilon/2 \leq \epsilon
 		\]
-		for $N\geq N_3 = \max(\tilde{N}_0,\tilde{N}_1,\tilde{N}_2)$.\\
+		for $N\geq N_5 = \max(\tilde{N}_0,\tilde{N}_1,\tilde{N}_2)$.\\
 		
 		\noindent\textbf{Step 3.} We will now prove \eqref{21AEbound}, assuming results from Steps 3 and 4 below. We first note that by Lemma \ref{MCLxy}, if we raise the curves at the endpoints $rN^\alpha,RN^\alpha$, then the probability of the event $A$ will decrease. In particular, write $T = (R-r)N^\alpha$, and define $\vec{x}\,',\vec{y}\,'\in\mathfrak{W}_{k-1}$ by
 		\begin{align*}
@@ -282,106 +282,109 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		
 	\end{proof}
 
-	We now prove Lemma \ref{PropSup2}. We exploit Lemma \ref{21} in order to find two far away points where $L_k^N$ cannot be too low. After separating the curves in order to treat $L_k^N$ as a free curve as in the previous argument, we employ Lemma \ref{LemmaMinFreeS4} to bound the deviation of $L_k^N$ below the line of slope $p$.
+	We now prove Lemma \ref{PropSup2}. We exploit Lemma \ref{21} in order to find two points on intervals $[r,R]$ and $[-R,-r]$ where $L_{k-1}^N(xN^\alpha)$ cannot be too low. After separating the curves in order to treat $L_{k-1}^N$ as a free Bernoulli bridge as in the previous argument, we employ Lemma \ref{LemmaMinFreeS4} to bound the deviation of $L_{k-1}^N$ below the line of slope $p$.
 	
-	\begin{proof}
-		We first introduce notation used in the proof. Define events
+	\begin{proof} We split the proof into four steps for clarity. In the first step we introduce notation to be used in the latter steps.\\
+	
+	\noindent\textbf{Step 1.} Define events
 		\[
-		A_N(R_2) = \left\{\inf_{s \in [ -t_3, t_3 ]}\big(L^N_k(s) - p s \big) \leq - R_2N^{\alpha/2}\right\},
+		A = \left\{\inf_{s \in [ -t_3, t_3 ]}\big(L^N_{k-1}(s) - p s \big) \leq - R_2N^{\alpha/2}\right\},
 		\]
-		\begin{align*}
-		B_N &= \left\{ \max_{x\in [r+3, R]} \big(L^N_k(xN^\alpha) - pxN^\alpha\big) > -MN^{\alpha/2} \right\}\\
-		&\qquad \cap \left\{ \max_{x\in [-R, -r-3]} \big(L^N_k(xN^\alpha) - pxN^\alpha\big) > -MN^{\alpha/2} \right\}.
-		\end{align*}
+		\[
+		B = \left\{ \max_{x\in [r+3, R] \cup [-R,-r-3]} \big(L^N_{k-1}(xN^\alpha) - pxN^\alpha\big) > -MN^{\alpha/2} \right\}.
+		\]
 		Here, we define $M,R$ via Lemma \ref{21}, taking $R$ large enough so that with $M = \lambda R^2 + \phi(\epsilon/64)$, we have 
 		\begin{equation}\label{4.3Bbound}
-		\mathbb{P}(B_N^c) < \epsilon/2
+		\mathbb{P}(B) \geq 1 - \epsilon/2
 		\end{equation} 
-		for sufficiently large $N$. 
-		
-		For $0<a,b\in\mathbb{Z}$ and $\vec{x},\vec{y}\in\mathfrak{W}_k$, we define $E(a,b,\vec{x},\vec{y})$ to be the event that $L_i^N(-a) = x_i$ and $L_i^N(b) = y_i$ for $1\leq i\leq k$, and $L_1^N(s) \geq \cdots \geq L_k^N(s)$ for all $s\in[-RN^\alpha,RN^\alpha]$.
-		
-		We claim that $B_N(M,R)$ can be written as a countable disjoint union of sets $E(a,b,\vec{x},\vec{y})$. Let $D_N(M)$ be the collection of tuples $(a,b,\vec{x},\vec{y})$ satisfying 
-		\begin{enumerate}[label=(\arabic*)]
-			
-			\item $a,b\in[(r+3)N^\alpha,RN^\alpha]$.
-			
-			\item $0 \leq y_i - x_i \leq b+a$, $x_k + pa > - MN^{\alpha/2}$, and $y_k - pb > - MN^{\alpha/2}$.
-			
-			\item If $c,d\in\mathbb{Z}$, $c > a$, and $d > b$, then $L_k^N(-c) + pc \leq -MN^{\alpha/2}$ and $L_k^N(d) - pd \leq -MN^{\alpha/2}$.
-			
-		\end{enumerate} 
-		Since there are finitely many integers $a,b$ satisfying (1), the $x_i,y_i$ are integers, and there are finitely many choices of $L_i^N$ on $[-aN^\alpha, bN^\alpha]$ given $a,b,x_i,y_i$, we see that $D_N(M)$ is countable. The third condition ensures that the $E(a,b,\vec{x},\vec{y})$ are pairwise disjoint. To see that their union over $D_N(M)$ is all of $B_N(M,R)$, note that $B_N(M,R)$ occurs if and only if there is a first integer time $s=-a$ and a last integer time $s=b$ when $L_k^N(s)-ps$ crosses $-MN^{\alpha/2}$.
-		
+		for $N$ larger than some $\tilde{N}_0$.
 		Lastly, define the constant
 		\begin{equation}\label{4.3Cdef}
 		C = \sqrt{16p(1-p)\log\frac{3}{1-2^{-1/(k-1)}}}.
 		\end{equation}
-		We will prove that $\mathbb{P}(A_N(R_2)) < \epsilon$ for large $N$, if $R_2$ is chosen large enough depending on $M,C,k,r,\epsilon$. We specify how we choose $R_2$ after \eqref{4.3R2} below. We split the proof into steps for clarity.\\
-		
-		\noindent\textbf{Step 1.} We will prove in the steps below that for large enough $N$,
-		\begin{equation}\label{4.3AEbound}
-		\mathbb{P}(A_N(R_2)\,|\,E(a,b,\vec{x},\vec{y})) < \epsilon/2
+		In the following steps, we will find $N_4\in\mathbb{N}$ and $R_2 > 0$ depending on $M,C,k,r,\epsilon$ so that 
+		\begin{equation}\label{4.3Abound}
+		\mathbb{P}(A) < \epsilon
 		\end{equation}
-		uniformly in $a,b,\vec{x},\vec{y}$. In this step, we prove the lemma assuming this fact.
+		for $N\geq N_4$, which will prove the lemma. In particular, we specify $R_2$ in Step 3.
 		
-		Since the $E(a,b,\vec{x},\vec{y})$ are disjoint, \eqref{4.3AEbound} implies
+		In the remainder of this step, we prove that $B$ can be written as a \textit{countable disjoint union} of the form
+		\begin{equation}\label{4.3disj}
+		B = \bigsqcup_{(a,b,\vec{x},\vec{y},\ell_{bot})\in D} E(a,b,\vec{x},\vec{y},\ell_{bot}),
+		\end{equation}
+		where the sets $D$ and $E(a,b,\vec{x},\vec{y},\ell_{bot})$ are defined below.
+		
+		For $0<a,b\in\mathbb{Z}$, $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$, $z_1,z_2\in\mathbb{Z}$ with $z_1\leq x_{k-1}$ and $z_2\leq y_{k-1}$, and $\ell_{bot}\in\Omega(-a,b,z_1,z_2)$, we define $E(a,b,\vec{x},\vec{y},\ell_{bot})$ to be the event that $L_i^N(-a) = x_i$ and $L_i^N(b) = y_i$ for $1\leq i\leq k-1$, $L_k^N$ agrees with $\ell_{bot}$ on $[-a,b]$. Let $D$ be the collection of tuples $(a,b,\vec{x},\vec{y},\ell_{bot})$ satisfying 
+		\begin{enumerate}[label=(\arabic*)]
+			
+			\item $a,b\in[(r+3)N^\alpha,RN^\alpha]$.
+			
+			\item $0 \leq y_i - x_i \leq b+a$, $x_{k-1} + pa > - MN^{\alpha/2}$, and $y_{k-1} - pb > - MN^{\alpha/2}$.
+			
+			\item If $c,d\in\mathbb{Z}$, $c > a$, and $d > b$, then $L_{k-1}^N(-c) + pc \leq -MN^{\alpha/2}$ and $L_{k-1}^N(d) - pd \leq -MN^{\alpha/2}$,
+			
+			\item $z_1\leq x_{k-1}$, $z_2\leq y_{k-1}$, and $\ell_{bot}\in\Omega(-a,b,z_1,z_2)$.
+			
+		\end{enumerate} 
+		Since there are finitely many integers $a,b$ satisfying (1), countably many $x_i,y_i$ and $z_1,z_2$ satisfying (2) and (4), and finitely many $L_i^N,\ell_{bot}$ satisfying (3) and (4) given $a,b,x_i,y_i,z_1,z_2$, we see that $D$ is countable. The four conditions together imply that $B = \bigcup_{(a,b,\vec{x},\vec{y},\ell_{bot})\in D} E(a,b,\vec{x},\vec{y},\ell_{bot})$.
+		
+		To see that the $E(a,b,\vec{x},\vec{y},\ell_{bot})$ are pairwise disjoint for $(a,b,\vec{x},\vec{y},\ell_{bot})\in D$, observe that on the intersection of $E(a,b,\vec{x},\vec{y},\ell_{bot})$ and $E(\tilde a,\tilde b,\tilde{\vec{x}},\tilde{\vec{y}},\tilde{\ell}_{bot})$, conditions (2) and (3) imply that $a=\tilde{a}$ and $b=\tilde{b}$. We then conclude from the definition of $E(a,b,\vec{x},\vec{y},\ell_{bot})$ that $\vec{x}=\tilde{\vec{x}}$, $\vec{y} = \tilde{\vec{y}}$, and $\ell_{bot} = \tilde{\ell}_{bot}$. This proves \eqref{4.3disj}.\\
+		
+		\noindent\textbf{Step 2.} We will prove in the steps below that we can find $\tilde{N}_1$ and $R_2$ so that for $N\geq\tilde{N}_1$,
+		\begin{equation}\label{4.3AEbound}
+		\mathbb{P}(A\,|\,E(a,b,\vec{x},\vec{y},\ell_{bot})) < \epsilon/2
+		\end{equation}
+		uniformly in $a,b,\vec{x},\vec{y},\ell_{bot}$. In this step, we prove \eqref{4.3Abound} assuming this fact.
+		
+		By \eqref{4.3AEbound} and \eqref{4.3disj}, we obtain
 		\begin{align*}
-		\mathbb{P}(A_N(R_2) \cap B_N(M,R)) &= \sum_{(a,b,\vec{x},\vec{y})\in D_N} \mathbb{P}(A_N(R_2)\,|\,E(a,b,\vec{x},\vec{y}))\mathbb{P}(E(a,b,\vec{x},\vec{y}))\\
-		&\leq \frac{\epsilon}{2}\sum_{(a,b,\vec{x},\vec{y})\in D_N} \mathbb{P}(E(a,b,\vec{x},\vec{y})) \leq \frac{\epsilon}{2}.
+		\mathbb{P}(A \cap B) &= \sum_{(a,b,\vec{x},\vec{y},\ell_{bot})\in D} \mathbb{P}(A\,|\,E(a,b,\vec{x},\vec{y},\ell_{bot}))\mathbb{P}(E(a,b,\vec{x},\vec{y},\ell_{bot}))\\
+		&\leq \frac{\epsilon}{2}\sum_{(a,b,\vec{x},\vec{y},\ell_{bot})\in D} \mathbb{P}(E(a,b,\vec{x},\vec{y},\ell_{bot})) \leq \frac{\epsilon}{2}
 		\end{align*}
-		
-		It follows from \eqref{4.3Bbound} that
+		for $N\geq\tilde{N}_1$. It follows from \eqref{4.3Bbound} that
 		\begin{equation*}
-		\mathbb{P}(A_N(R_2)) \leq \mathbb{P}(A_N(R_2)\cap B_N) + \epsilon/2 < \epsilon
+		\mathbb{P}(A) \leq \mathbb{P}(A\cap B) + \epsilon/2 < \epsilon
 		\end{equation*}
-		for large enough $N$.\\
+		for $N\geq N_4 = \max(\tilde{N}_0,\tilde{N}_1)$.\\
 		
-		\noindent\textbf{Step 2.} We next prove \eqref{4.3AEbound}, assuming results from Steps 3 below. Define $\vec{x}\,',\vec{y}\,'$ by
+		\noindent\textbf{Step 3.} We next prove \eqref{4.3AEbound}, assuming results from Steps 3 below. Define $\vec{x}\,',\vec{y}\,' \in \mathfrak{W}_{k-1}$ by
 		\begin{align*}
 		x_i' &= \lfloor - pa - MN^{\alpha/2}\rfloor - (i-1)\lceil CN^{\alpha/2}\rceil,\\
 		y_i' &= \lfloor pb - MN^{\alpha/2}\rfloor - (i-1)\lceil CN^{\alpha/2}\rceil.
 		\end{align*}  
-		Observe that by condition (2) above, $x_i'\leq -pa - MN^{\alpha/2} \leq x_k \leq x_i$, and similarly for $\vec{y}$. It follows from Lemma \ref{MCLxy} that
+		Observe that by condition (2) above, $x_i'\leq -pa - MN^{\alpha/2} \leq x_{k-1} \leq x_i$, and similarly for $\vec{y}$. It follows from the Schur Gibbs property (see Definition \ref{DefSGP}) and Lemmas \ref{MCLxy} and \ref{MCLfg} that
 		\begin{equation}\label{4.3main}
 		\begin{split}
-		&\mathbb{P}(A_N(R_2)\,|\,E(a,b,\vec{x},\vec{y})) \leq \mathbb{P}\left( \inf_{s\in[-a, b]} \left(L_k(s) - ps\right) \leq -R_2N^{\alpha/2}\, \big| \, E(a,b,\vec{x},\vec{y}) \right) = \\
-		&\mathbb{P}^{-a,b, \vec{x}, \vec{y}}_{avoid, Ber} \left( \inf_{s\in[-a, b]} \left(L_k(s) - ps\right) \leq -R_2N^{\alpha/2} \right) =\\
-		& \mathbb{P}^{0, a+b, \vec{x}, \vec{y}}_{avoid, Ber} \Big( \inf_{s\in[0,a+b]} \big(L_k(s-a) - p(s-a)\big) \leq -R_2N^{\alpha/2} \Big) \leq \\
-		& \mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{avoid, Ber} \Big( \inf_{s\in[0,a+b]} \big(L_k'(s) - p(s-a)\big) \leq -R_2N^{\alpha/2} \Big).
+		&\mathbb{P}(A\,|\,E(a,b,\vec{x},\vec{y},\ell_{bot})) \leq \mathbb{P}\left( \inf_{s\in[-a, b]} \left(L_{k-1}(s) - ps\right) \leq -R_2N^{\alpha/2}\, \big| \, E(a,b,\vec{x},\vec{y},\ell_{bot}) \right) = \\
+		&\mathbb{P}^{-a,b, \vec{x}, \vec{y},\infty,\ell_{bot}}_{avoid, Ber} \left( \inf_{s\in[-a, b]} \left(L_{k-1}(s) - ps\right) \leq -R_2N^{\alpha/2} \right) \leq\\
+		& \mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{avoid, Ber} \left( \inf_{s\in[0,a+b]} \big(L_{k-1}(s) - ps\big) \leq -R_2N^{\alpha/2} \right) \leq \\
+		&\frac{\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber} \left( \inf_{s\in[0,a+b]} \big(L_{k-1}(s) - ps\big) \leq -R_2 N^{\alpha/2} \right)}{\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1})}.
 		\end{split}
 		\end{equation}
-		In the second line we used the Schur-Gibbs property, and in the last line we have written $L_k'(s) = L_k(s-a)$. The last probability is bounded above by
-		\begin{equation}\label{4.3bayes}
-		\frac{\mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - p(s-a)\big) \leq -R_2 N^{\alpha/2} \Big)}{\mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber}(F)},
-		\end{equation}
-		where
-		\[
-		F = \{L_1'(s) > \cdots > L_k'(s), \,s\in [0, a+b]\}.
-		\]
-		In Step 3 below, we will prove that the numerator and denominator in \eqref{4.3bayes} are $<\epsilon/4$ and $>1/2$ for sufficiently large $N$. It then follows that \eqref{4.3bayes} is bounded above by $\epsilon/2$, proving \eqref{4.3AEbound}.\\
+		In Step 3 below, we will find $\tilde{N}_2$ and $R_2 > 0$ such that the numerator and denominator in the last line are $<\epsilon/4$ and $\geq1/2$ for $N\geq\tilde{N}_2$. It then follows that the first expression in \eqref{4.3main} is bounded above by $\epsilon/2$, proving \eqref{4.3AEbound}.\\
 		
-		\noindent\textbf{Step 3.} We first argue that
-		\begin{equation}\label{4.3num}
-		\mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - p(s-a)\big) \leq -R_2 N^{\alpha/2} \Big) < \epsilon/4
-		\end{equation}
-		for sufficiently large $N$. Writing $\vec{z} = \vec{y}\,' - \vec{x}\,'$, \eqref{4.3num} is equal to
+		\noindent\textbf{Step 4.} In this step, we fix $R_2 > 0$ and $\tilde{N}_2$ so that for $N\geq\tilde{N}_2$, we have
 		\begin{align}
-		& \mathbb{P}^{0, a+b, x_k', y_k'}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - p(s-a)\big) \leq -R_2 N^{\alpha/2} \Big) \nonumber\\
-		= \; & \mathbb{P}^{0, a+b, 0, z_k}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps + pa - \lceil pa + MN^{\alpha/2}\rceil - (k-1)\lceil CN^{\alpha/2}\rceil\big) \leq -R_2 N^{\alpha/2} \Big) \nonumber\\
-		\leq \; & \mathbb{P}^{0, a+b, 0, z_k}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps\big) \leq -(R_2 - M - Ck) N^{\alpha/2} \Big).\label{4.3R2}
+		&\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps\big) \leq -R_2 N^{\alpha/2} \Big) < \epsilon/4, \label{4.3free}\\
+		&\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1}) \geq 1/2. \label{4.3intersect}
 		\end{align}
-		Since $z_k\geq p(a+b)$, Lemma \ref{LemmaMinFreeS4} allows us to find $R_2>0$ depending on $M,C,k,r,\epsilon$ so that this probability is $<\epsilon/4$ for all large $N$, such that $a+b$ is larger than some constant $W_1$. But observe that $a+b \geq 2rN^\alpha$, so it suffices to take $N > (W_1/2r)^{1/\alpha}$. Thus we obtain \eqref{4.3num}, \textit{independent} of $a,b,\vec{x},\vec{y}$.
+		Let us first prove \eqref{4.3free}. Writing $\vec{z} = \vec{y}\,' - \vec{x}\,'$, and using the fact that $L_1,\dots,L_{k-1}$ are independent under $\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}$, we can rewrite the left hand side of \eqref{4.3free} as
+		\begin{equation}\label{4.3R2}
+		\begin{split}
+		& \mathbb{P}^{0, a+b, x_{k-1}', y_{k-1}'}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - p(s-a)\big) \leq -R_2 N^{\alpha/2} \Big) =\\
+		&\mathbb{P}^{0, a+b, 0, z_{k-1}}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps + pa - \lceil pa + MN^{\alpha/2}\rceil - (k-2)\lceil CN^{\alpha/2}\rceil\big) \leq -R_2 N^{\alpha/2} \Big) \leq \\
+		& \mathbb{P}^{0, a+b, 0, z_{k-1}}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps\big) \leq -(R_2 - M - Ck) N^{\alpha/2} \Big).
+		\end{split}
+		\end{equation}
+		In the first line, we have implicitly shifted the domain of the paths from $[-a,b]$ to $[0,a+b]$. Since $z_k\geq p(a+b)$, Lemma \ref{LemmaMinFreeS4} allows us to find $R_2>0$ depending on $M,C,k,r,\epsilon$ so that this probability is $<\epsilon/4$ as long as $a+b$ is larger than some constant $W_1$. Since $a+b \geq 2rN^\alpha$, so it suffices to take $\tilde{N}_2 \geq (W_1/2r)^{1/\alpha}$. Thus we obtain \eqref{4.3free}, \textit{independent} of $a,b,\vec{x},\vec{y}$.
 		
-		Lastly, we argue that
-		\begin{equation}\label{4.3denom}
-		\mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber}(F) > 1/2
-		\end{equation}
-		for large $N$. Write $a = a'N^\alpha, b = b'N^\alpha$, $T = a+b = (a'+b')N^\alpha$, and $z = y_k' - x_k'$. Also let $C' = C/\sqrt{a'+b'}$, so that $x_i' - x_{i+1}' \geq CN^{\alpha/2} = C'\sqrt{T}$ and likewise for $y_i'$. Note that $|z-pT| < 1$. It follows from Lemma \ref{CurveSeparation}, applied with $k+1$ in place of $k$, $\ell_{bot} = -\infty$, and $C'$ in place of $C$, that for $T$ larger than some $T_0$, 
+		Lastly, we prove that we can enlarge $\tilde{N}_2$ so that \eqref{4.3intersect} holds for $N\geq\tilde{N}_2$. Write $a = a'N^\alpha, b = b'N^\alpha$, and $T = a+b = (a'+b')N^\alpha$. Also let $C' = C/\sqrt{a'+b'}$ with $C$ as in \eqref{4.3Cdef}, so that $x_i' - x_{i+1}' \geq CN^{\alpha/2} = C'\sqrt{T}$ and likewise for $y_i'$. Note that $|z_{k-1}-pT| \leq 1$. It follows from Lemma \ref{CurveSeparation}, applied with $\ell_{bot} = -\infty$ and $C'$ in place of $C$, that for $T$ larger than some $T_0$, 
 		\begin{equation}\label{4.3avoid}
-		\mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber}(F) \geq \big(1 - 3e^{-(C')^2/8p(1-p)}\big)^k \geq \big(1 - 3e^{-C^2/16p(1-p)R}\big)^k.
+		\begin{split}
+		& \mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1}) = \mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1}) \geq\\ & \left(1 - 3e^{-(C')^2/8p(1-p)}\right)^{k-1} \geq \left(1 - 3e^{-C^2/16p(1-p)R}\right)^k.
+		\end{split}
 		\end{equation}
-		Here, we used the fact that $a'+b' \leq 2R$, hence $C' \geq C/\sqrt{2R}$. The constant $T_0$ depends in particular on $C'$, hence possibly on $a+b$. Referring to the proofs of Lemmas \ref{CurveSeparation} and \ref{Cheb}, we see that the dependency of $T_0$ on $C'$ amounts to requiring that $e^{-C'\sqrt{T_0}}$ be sufficiently small. But $C' \geq C/\sqrt{2R}$, so for this it suffices to choose $T_0$ depending on $C$ and $R$. Moreover, $T\geq 2rN^\alpha$, so as long as $N \geq (T_0/2r)^{1/\alpha}$, we have the bound in \eqref{4.3avoid} independent $a,b,\vec{x},\vec{y}$. Our choice of $C$ in \eqref{4.3Cdef} ensures that the expression on the right in \eqref{4.3avoid} is $> 1/2$, proving \eqref{4.3denom}
+		Here, we used the fact that $a'+b' \leq 2R$, hence $C' \geq C/\sqrt{2R}$. The constant $T_0$ depends in particular on $C'$, hence possibly on $a+b$. Referring to the proofs of Lemmas \ref{CurveSeparation} and \ref{Cheb}, we see that the dependency of $T_0$ on $C'$ amounts to requiring that $e^{-C'\sqrt{T_0}}$ be sufficiently small. But $C' \geq C/\sqrt{2R}$, so for this it suffices to choose $T_0$ depending on $C$ and $R$. Moreover, $T\geq 2rN^\alpha$, so as long as $\tilde{N}_2 \geq (T_0/2r)^{1/\alpha}$, we have the bound in \eqref{4.3avoid} for $N\geq\tilde{N}_2$ independent $a,b,\vec{x},\vec{y}$. Our choice of $C$ in \eqref{4.3Cdef} ensures that the expression on the right in \eqref{4.3avoid} is at least $1/2$, proving \eqref{4.3intersect}.
 		
 	\end{proof}
 	
