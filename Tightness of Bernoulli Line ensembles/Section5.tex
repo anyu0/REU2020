@@ -276,7 +276,7 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		\]
 		In view of \eqref{21zpT}, we see from Lemma \ref{CurveSeparation} that we can enlarge $\tilde{N}_0$ depending on $\lambda, r, R, C$ so that for $N\geq\tilde{N}_0$, the probability on right is bounded below by
 		\[
-		\big(1-3e^{-C^2/8p(1-p)}\big)^{k-2}.
+		\left(1-3e^{-C^2/8p(1-p)}\right)^{k-2}.
 		\]
 		Our choice of $C$ in \eqref{21Cdef} implies that this quantity is at least 11/12, proving \eqref{21 1/12}.
 		
@@ -361,30 +361,30 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		&\frac{\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber} \left( \inf_{s\in[0,a+b]} \big(L_{k-1}(s) - ps\big) \leq -R_2 N^{\alpha/2} \right)}{\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1})}.
 		\end{split}
 		\end{equation}
-		In Step 3 below, we will find $\tilde{N}_2$ and $R_2 > 0$ such that the numerator and denominator in the last line are $<\epsilon/4$ and $\geq1/2$ for $N\geq\tilde{N}_2$. It then follows that the first expression in \eqref{4.3main} is bounded above by $\epsilon/2$, proving \eqref{4.3AEbound}.\\
+		In Step 3 below, we will find $\tilde{N}_1$ and $R_2 > 0$ such that the numerator and denominator in the last line are $<\epsilon/4$ and $\geq1/2$ for $N\geq\tilde{N}_1$. It then follows that the first expression in \eqref{4.3main} is bounded above by $\epsilon/2$, proving \eqref{4.3AEbound}.\\
 		
-		\noindent\textbf{Step 4.} In this step, we fix $R_2 > 0$ and $\tilde{N}_2$ so that for $N\geq\tilde{N}_2$, we have
+		\noindent\textbf{Step 4.} In this step, we fix $R_2 > 0$ and $\tilde{N}_1$ so that for $N\geq\tilde{N}_1$, we have
 		\begin{align}
-		&\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps\big) \leq -R_2 N^{\alpha/2} \Big) < \epsilon/4, \label{4.3free}\\
+		&\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber} \left( \inf_{s\in[0,a+b]} \big(\ell(s) - ps\big) \leq -R_2 N^{\alpha/2} \right) < \epsilon/4, \label{4.3free}\\
 		&\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1}) \geq 1/2. \label{4.3intersect}
 		\end{align}
 		Let us first prove \eqref{4.3free}. Writing $\vec{z} = \vec{y}\,' - \vec{x}\,'$, and using the fact that $L_1,\dots,L_{k-1}$ are independent under $\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}$, we can rewrite the left hand side of \eqref{4.3free} as
 		\begin{equation}\label{4.3R2}
 		\begin{split}
-		& \mathbb{P}^{0, a+b, x_{k-1}', y_{k-1}'}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - p(s-a)\big) \leq -R_2 N^{\alpha/2} \Big) =\\
-		&\mathbb{P}^{0, a+b, 0, z_{k-1}}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps + pa - \lceil pa + MN^{\alpha/2}\rceil - (k-2)\lceil CN^{\alpha/2}\rceil\big) \leq -R_2 N^{\alpha/2} \Big) \leq \\
-		& \mathbb{P}^{0, a+b, 0, z_{k-1}}_{Ber} \Big( \inf_{s\in[0,a+b]} \big(\ell(s) - ps\big) \leq -(R_2 - M - Ck) N^{\alpha/2} \Big).
+		& \mathbb{P}^{0, a+b, x_{k-1}', y_{k-1}'}_{Ber} \left( \inf_{s\in[0,a+b]} \big(\ell(s) - p(s-a)\big) \leq -R_2 N^{\alpha/2} \right) =\\
+		&\mathbb{P}^{0, a+b, 0, z_{k-1}}_{Ber} \left( \inf_{s\in[0,a+b]} \left(\ell(s) - ps + pa - \lceil pa + MN^{\alpha/2}\rceil - (k-2)\lceil CN^{\alpha/2}\rceil\right) \leq -R_2 N^{\alpha/2} \right) \leq \\
+		& \mathbb{P}^{0, a+b, 0, z_{k-1}}_{Ber} \left( \inf_{s\in[0,a+b]} \big(\ell(s) - ps\big) \leq -(R_2 - M - Ck) N^{\alpha/2} \right).
 		\end{split}
 		\end{equation}
-		In the first line, we have implicitly shifted the domain of the paths from $[-a,b]$ to $[0,a+b]$. Since $z_k\geq p(a+b)$, Lemma \ref{LemmaMinFreeS4} allows us to find $R_2>0$ depending on $M,C,k,r,\epsilon$ so that this probability is $<\epsilon/4$ as long as $a+b$ is larger than some constant $W_1$. Since $a+b \geq 2rN^\alpha$, so it suffices to take $\tilde{N}_2 \geq (W_1/2r)^{1/\alpha}$. Thus we obtain \eqref{4.3free}, \textit{independent} of $a,b,\vec{x},\vec{y}$.
+		In the first line, we have implicitly shifted the domain of the paths from $[-a,b]$ to $[0,a+b]$. Since $z_k\geq p(a+b)$, Lemma \ref{LemmaMinFreeS4} allows us to find $R_2>0$ depending on $M,C,k,r,\epsilon$ so that this probability is $<\epsilon/4$ as long as $a+b$ is larger than some constant $W_1$. Since $a+b \geq 2rN^\alpha$, so it suffices to take $\tilde{N}_1 \geq (W_1/2r)^{1/\alpha}$. Thus we obtain \eqref{4.3free}, \textit{independent} of $a,b,\vec{x},\vec{y}$.
 		
-		Lastly, we prove that we can enlarge $\tilde{N}_2$ so that \eqref{4.3intersect} holds for $N\geq\tilde{N}_2$. Write $a = a'N^\alpha, b = b'N^\alpha$, and $T = a+b = (a'+b')N^\alpha$. Also let $C' = C/\sqrt{a'+b'}$ with $C$ as in \eqref{4.3Cdef}, so that $x_i' - x_{i+1}' \geq CN^{\alpha/2} = C'\sqrt{T}$ and likewise for $y_i'$. Note that $|z_{k-1}-pT| \leq 1$. It follows from Lemma \ref{CurveSeparation}, applied with $\ell_{bot} = -\infty$ and $C'$ in place of $C$, that for $T$ larger than some $T_0$, 
+		Lastly, we prove that we can enlarge $\tilde{N}_1$ so that \eqref{4.3intersect} holds for $N\geq\tilde{N}_1$. Write $a = a'N^\alpha, b = b'N^\alpha$, and $T = a+b = (a'+b')N^\alpha$. Also let $C' = C/\sqrt{a'+b'}$ with $C$ as in \eqref{4.3Cdef}, so that $x_i' - x_{i+1}' \geq CN^{\alpha/2} = C'\sqrt{T}$ and likewise for $y_i'$. Note that $|z_{k-1}-pT| \leq 1$. It follows from Lemma \ref{CurveSeparation}, applied with $\ell_{bot} = -\infty$ and $C'$ in place of $C$, that for $T$ larger than some $T_0$, 
 		\begin{equation}\label{4.3avoid}
 		\begin{split}
-		& \mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1}) = \mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1}) \geq\\ & \left(1 - 3e^{-(C')^2/8p(1-p)}\right)^{k-1} \geq \left(1 - 3e^{-C^2/16p(1-p)R}\right)^k.
+		& \mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1}) = \mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1}) \geq\\ & \left(1 - 3e^{-(C')^2/8p(1-p)}\right)^{k-1} \geq \left(1 - 3e^{-C^2/16p(1-p)R}\right)^{k-1}.
 		\end{split}
 		\end{equation}
-		Here, we used the fact that $a'+b' \leq 2R$, hence $C' \geq C/\sqrt{2R}$. The constant $T_0$ depends in particular on $C'$, hence possibly on $a+b$. Referring to the proofs of Lemmas \ref{CurveSeparation} and \ref{Cheb}, we see that the dependency of $T_0$ on $C'$ amounts to requiring that $e^{-C'\sqrt{T_0}}$ be sufficiently small. But $C' \geq C/\sqrt{2R}$, so for this it suffices to choose $T_0$ depending on $C$ and $R$. Moreover, $T\geq 2rN^\alpha$, so as long as $\tilde{N}_2 \geq (T_0/2r)^{1/\alpha}$, we have the bound in \eqref{4.3avoid} for $N\geq\tilde{N}_2$ independent $a,b,\vec{x},\vec{y}$. Our choice of $C$ in \eqref{4.3Cdef} ensures that the expression on the right in \eqref{4.3avoid} is at least $1/2$, proving \eqref{4.3intersect}.
+		Here, we used the fact that $a'+b' \leq 2R$, hence $C' \geq C/\sqrt{2R}$. The constant $T_0$ depends in particular on $C'$, hence possibly on $a+b$. Referring to the proofs of Lemmas \ref{CurveSeparation} and \ref{Cheb}, we see that the dependency of $T_0$ on $C'$ amounts to requiring that $e^{-C'\sqrt{T_0}}$ be sufficiently small. But $C' \geq C/\sqrt{2R}$, so for this it suffices to choose $T_0$ depending on $C$ and $R$. Moreover, $T\geq 2rN^\alpha$, so as long as $\tilde{N}_1 \geq (T_0/2r)^{1/\alpha}$, we have the bound in \eqref{4.3avoid} for $N\geq\tilde{N}_1$ independent $a,b,\vec{x},\vec{y}$. Our choice of $C$ in \eqref{4.3Cdef} ensures that the expression on the right in \eqref{4.3avoid} is at least $1/2$, proving \eqref{4.3intersect}.
 		
 	\end{proof}
 	
