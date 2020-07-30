@@ -16,7 +16,8 @@
 \setbeamerfont{author in sidebar}{size=\fontsize{2}{4}\selectfont}
 \setbeamerfont{section in sidebar}{size=\fontsize{2}{4}\selectfont}
 \setbeamerfont{subsection in sidebar}{size=\fontsize{2}{4}\selectfont}
-\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma1}[theorem]{Lemma 1}
+\newtheorem{lemma2}[theorem]{Lemma 2}
 \fontsize{6pt}{7.2}
 \DeclareMathOperator{\ex}{\mathbb{E}}
 \DeclareMathOperator{\pr}{\mathbb{P}}
@@ -76,11 +77,13 @@ Let $\{X_i\}$ be a sequence of independent identically distributed random variab
 		
 	\item If $S_{n+1} - S_n \in \{0, 1\}$, then $\{S_n\}_{n=1}^\infty$ is a \textcolor{red}{\textit{Bernoulli random walk}} 
 	
-	\item An \textcolor{red}{\textit{avoiding Bernoulli line ensemble}} $\mathfrak{L} = (L_1,\dots,L_k)$ consists of $k$ avoiding Bernoulli random walks on an interval $[T_0,T_1]$, such that $L_1(s) \geq L_2(s) \geq \cdots \geq L_k(s)$ for $s\in[T_0,T_1]$
+	\item An \textcolor{red}{\textit{avoiding Bernoulli line ensemble}} $\mathfrak{L} = (L_1,\dots,L_k)$ consists of $k$ avoiding Bernoulli random walks on an interval $[T_0,T_1]$ with random entry and exit data $\mathfrak{L}(T_0),\mathfrak{L}(T_1)$, such that $L_1(s) \geq L_2(s) \geq \cdots \geq L_k(s)$ for $s\in[T_0,T_1]$
+	
+	\item Special case of \textcolor{red}{\textit{Bernoulli Gibbsian line ensembles}}
 	
 	\end{itemize}
 \[
-	\includegraphics[height=0.5\textheight]{graphics/MultipleBernoulli.png}
+	\includegraphics[height=0.45\textheight]{graphics/MultipleBernoulli.png}
 \]
 	\begin{itemize}
 		\item Question: What does the limit look like as $k\to\infty$?
@@ -120,7 +123,7 @@ As $k \to \infty$, $k$ avoiding random walks are conjectured to converge to the 
 	We focused on \textcolor{blue}{tightness}, which we prove by controlling the maximum, the minimum, and the modulus of continuity
 \begin{figure}
 	\includegraphics[height=0.45\textheight]{graphics/ModulusCont.jpg}
-	\caption{The Modulus of Continuity}
+	\caption{The modulus of continuity}
 \end{figure}
 
 \end{frame}
@@ -128,7 +131,7 @@ As $k \to \infty$, $k$ avoiding random walks are conjectured to converge to the 
 \begin{frame}{Our Result}
 \small{\begin{theorem}[DFFSTWZ] Let $\{\mathfrak{L}^N = (L_1^N,\dots,L_k^N)\}_{N=1}^\infty$ be a sequence of $k$ avoiding Bernoulli random walks. Fix $p\in(0,1)$ and $\lambda > 0$, and suppose that for all $n\in\mathbb{Z}$ we have
 \[
-\lim_{N\to\infty} \mathbb{P}\big(L_1^{N}(nN^{2/3}) - pnN^{2/3} + \lambda n^2 N^{1/3} \leq N^{1/3} x \big) = F_{TW}(x).
+\lim_{N\to\infty} \mathbb{P}\big(L_1^{N}(nN^{2/3}) - pnN^{2/3} + \textcolor{red}{\lambda n^2 N^{1/3}} \leq N^{1/3} x \big) = F_{TW}(x).
 \]
 Then $\{\mathfrak{L}^N\}$ is a tight sequence.
 \end{theorem}}
@@ -151,15 +154,15 @@ Then $\{\mathfrak{L}^N\}$ is a tight sequence.
 \begin{frame} {History of the line ensembles}
 	Arguments in this paper are inspired by 
 	\begin{enumerate}
-		\item \textit{Brownian Gibbs property for Airy line ensembles} [Corwin-Hammond '14] and \textit{KPZ line ensemble} [Corwin-Hammond '15], which address similar issues for {\color{red}continuous} line ensembles
+		\item \textit{Brownian Gibbs property for Airy line ensembles} [Corwin-Hammond '14] and \textit{KPZ line ensemble} [Corwin-Hammond '16], which address similar issues for {\color{red}continuous} line ensembles
 		\item \textit{Transversal fluctuations of the ASEP, stochastic six vertex model, and Hall-Littlewood line ensembles} [Corwin-Dimitrov '17], which considers similar questions in a {\color{red}discrete} setting 
 	\end{enumerate}
 \end{frame}
 \begin{frame}{Proving tightness}
-	Recall that to show tightness, we want to control:
+	To show tightness, we want to control:
 	\bigskip
 	\begin{enumerate}
-		\item \textbf{\textcolor{ForestGreen}{Minimum}} of bottom curve $\textcolor{ForestGreen}{L_k^N}$
+		\item \textbf{\textcolor{ForestGreen}{Minimum}} of bottom curve $\textcolor{ForestGreen}{L_{k-1}^N}$
 		
 		\bigskip
 		
@@ -173,33 +176,33 @@ Then $\{\mathfrak{L}^N\}$ is a tight sequence.
 	\end{enumerate}
 	We will focus on bounding the \textcolor{ForestGreen}{minimum}:
 	
-	\begin{lemma}[DFFSTWZ]
+	\begin{lemma1}[DFFSTWZ]
 		Fix $r,\epsilon > 0$. Then there exist constants $M>0$ and $N_0\in\mathbb{N}$ such that for all $N\geq N_0$,
 		\[
-		\mathbb{P}\Big(\inf_{x\in[-r,r]} \big(L_k^N(xN^{2/3}) - pxN^{2/3}\big) < -MN^{1/3}\Big) < \epsilon.
+		\mathbb{P}\Big(\inf_{x\in[-r,r]} \big(L_{k-1}^N(xN^{2/3}) - pxN^{2/3}\big) < -MN^{1/3}\Big) < \epsilon.
 		\]
-	\end{lemma}
+	\end{lemma1}
 \end{frame}
 
 \begin{frame}{Monotone coupling}
-Lowering entry and exit data $\textcolor{red}{\vec{x},\vec{y}}$ for the curves $\implies$ curves shift down on whole interval [Corwin-Hammond '14]
+Lowering entry and exit data $\textcolor{red}{\vec{x},\vec{y}}$ for the curves $\implies$ curves shift down on whole interval  \begin{itemize}
+	\item We proved this by adapting arguments from [Corwin-Hammond '14]
+\end{itemize}
 \begin{center}
   \includegraphics[scale=0.5]{graphics/monotonecoupling.png}{\kern 3em}
 \end{center}
 
 \begin{itemize}
-	\item $\textcolor{red}{\mathfrak{L}^{high}}$ and $\textcolor{blue}{\mathfrak{L}^{low}}$ are ``coupled":
+	\item $\textcolor{red}{\mathfrak{L}^{high}}$ and $\textcolor{blue}{\mathfrak{L}^{low}}$ are coupled, in particular
 	\[
 	\mathbb{P}(\textcolor{red}{L_2^{high}} < -R) \leq \mathbb{P}(\textcolor{blue}{L_2^{low}} < -R)
 	\]
-	
-	\item Use this to separate curves at endpoints -- then treat as \textcolor{blue}{free Bernoulli bridges}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Strong coupling}
 	
-A \textcolor{blue}{Bernoulli random walk} $\textcolor{blue}{\ell^{(N)}}$ on $[0,N]$ can be coupled with an ``exponentially close" \textcolor{red}{Brownian bridge} $\textcolor{red}{B^{(N)}}$ [Dimitrov-Wu '19] 
+A \textcolor{blue}{Bernoulli random walk} $\textcolor{blue}{\ell^{(N)}}$ on $[0,N]$ can be coupled with an ``exponentially close" \textcolor{red}{Brownian bridge} $\textcolor{red}{B^{(N)}}$ with variance $\textcolor{red}{O(\sqrt{N})}$ [Dimitrov-Wu '19] 
 \[
   \includegraphics[scale=0.6]{graphics/SCResult.png}
 \]
@@ -211,26 +214,32 @@ A \textcolor{blue}{Bernoulli random walk} $\textcolor{blue}{\ell^{(N)}}$ on $[0,
 \end{frame}
 
 
-\begin{frame}{Controlling the minimum: pinning the bottom curve}
+\begin{frame}{Proving Lemma 1: pinning the bottom curve}
 	
-	\small{\begin{lemma}[DFFSTWZ]
+	\small{\begin{lemma2}[DFFSTWZ]
 		For any $r,\epsilon > 0$, there exists $R>r$ and a constant $M>0$ so that for large $N$,
 		\[
-		\mathbb{P}\Big(\max_{x\in[r,R]} \big(L_k^N(xN^{2/3}) - \textcolor{red}{pxN^{2/3}}\big) < \textcolor{ForestGreen}{-MN^{1/3}}\Big) < \epsilon.
+		\mathbb{P}\Big(\max_{x\in[r,R]} \big(L_{k-1}^N(xN^{2/3}) - \textcolor{red}{pxN^{2/3}}\big) < \textcolor{ForestGreen}{-MN^{1/3}}\Big) < \epsilon.
 		\]
 		The same is true of the maximum on $[-R,-r]$.
-	\end{lemma}}
+	\end{lemma2}}
 	\begin{center}
-	\includegraphics[width=0.8\textwidth]{graphics/min2.png}
+	\includegraphics[width=0.7\textwidth]{graphics/min2.png}
 	\end{center}
+
+	\begin{itemize}
+		
+		\item Use monotone coupling to push $L_k^N$ to $-\infty$
 	
-	Couple $L_k^N$ with a Brownian bridge: if ``pinned" at two points in $[r,R]$ and $[-R,-r]$, it cannot be low on $[-r,r]$ on scale $N^{1/3}$
+		\item Strongly couple $L_{k-1}^N$ with a Brownian bridge: if ``pinned" at two points in $[r,R]$ and $[-R,-r]$, it cannot be low on $[-r,r]$ on scale $N^{1/3}$
+		
+	\end{itemize}
 	
 	
 	
 \end{frame}
 
-\begin{frame}{Proving the pinning lemma}
+\begin{frame}{Proving Lemma 2}
 	
 	\begin{itemize}
 		
@@ -247,7 +256,7 @@ A \textcolor{blue}{Bernoulli random walk} $\textcolor{blue}{\ell^{(N)}}$ on $[0,
 		\item Two curves: if $L_2^N$ is low on $[r,R]$, $L_1^N$ looks like a free Brownian bridge
 		
 		\[
-		\textcolor{ForestGreen}{\lambda\Big(\frac{R^2+r^2}{2}\Big)} - \textcolor{blue}{\lambda\Big(\frac{R+r}{2}\Big)^2} = \lambda\,\frac{R^2+r^2-2rR}{4} = \textcolor{red}{O(R^2)}
+		\textcolor{blue}{\left[-\lambda\Big(\frac{R+r}{2}\Big)^2\right]} - \textcolor{ForestGreen}{\left[-\lambda\Big(\frac{R^2+r^2}{2}\Big)\right]}  = \lambda\,\frac{R^2+r^2-2rR}{4} = \textcolor{red}{O(R^2)}
 		\]
 		
 		\item For large $R$, the top curve would be far from the parabola at the midpoint!
