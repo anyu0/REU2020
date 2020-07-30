@@ -209,35 +209,36 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		\]
 		for $N\geq N_3 = \max(\tilde{N}_0,\tilde{N}_1,\tilde{N}_2)$.\\
 		
-		\noindent\textbf{Step 3.} We will now prove \eqref{21AEbound}, assuming results from Steps 3 and 4 below. We first note that by Lemma \ref{MCLxy}, if we raise the endpoints of each curve, then the probability of the event $A$ will decrease. In particular, write $T = (R-r)N^\alpha$, and define $\vec{x}\,',\vec{y}\,'$ by
+		\noindent\textbf{Step 3.} We will now prove \eqref{21AEbound}, assuming results from Steps 3 and 4 below. We first note that by Lemma \ref{MCLxy}, if we raise the endpoints of each curve, then the probability of the event $A$ will decrease. In particular, write $T = (R-r)N^\alpha$, and define $\vec{x}\,',\vec{y}\,'\in\mathfrak{W}_{k-1}$ by
 		\begin{align*}
-		x_i' &= \lceil prN^\alpha - (\lambda r^2 - \phi(\epsilon/8))N^{\alpha/2}\,\rceil + (k-i)\lceil C\sqrt{T}\,\rceil,\\
-		y_i' &= \lceil pRN^\alpha - (\lambda R^2 - \phi(\epsilon/8))N^{\alpha/2}\,\rceil + (k-i)\lceil C\sqrt{T}\,\rceil.
+		x_i' &= \lceil prN^\alpha - (\lambda r^2 - \phi(\epsilon/16))N^{\alpha/2}\,\rceil + (k-1-i)\lceil C\sqrt{T}\,\rceil,\\
+		y_i' &= \lceil pRN^\alpha - (\lambda R^2 - \phi(\epsilon/16))N^{\alpha/2}\,\rceil + (k-1-i)\lceil C\sqrt{T}\,\rceil.
 		\end{align*}
 		Note that $x_i' \geq x_1 \geq x_i$ for each $i$ by condition (2) above. Furthermore, $x_i' - x_{i+1}' \geq C\sqrt{T}$. The same observations hold for $y_i'$. Using the Schur Gibbs property (Definition \ref{DefSGP}) and Lemma \ref{MCLxy}, we have
 		\begin{equation}\label{21xyest}
 		\begin{split}
 		&\mathbb{P}(A\,|\,E(\vec{x},\vec{y},\ell_{bot})) = \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y},\infty,\ell_{bot}}_{avoid,Ber} (A\,|\,F) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,',\infty,\ell_{bot}}_{avoid,Ber} (A\,|\,F) \geq \\
-		&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(\tilde{A}\cap\left\{\tilde L_1 \geq \cdots \geq \tilde L_{k-1} \geq \ell_{bot}\right\}\,\big|\,\tilde F\right) \geq \\
-		&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \big(\tilde A\,|\,\tilde F\big) - \left( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(\tilde L_1 \geq \cdots \geq \tilde L_{k-1} \geq \ell_{bot}\,\big|\,\tilde F\right)\right). 
+		&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(\tilde{A}\cap\left\{Q_1 \geq \cdots \geq Q_{k-1}\right\}\,\big|\,\tilde F \cap \{ Q_{k-1} \geq \ell_{bot}\}\right) \geq \\
+		&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(\tilde A\,\big|\,\tilde F \cap \{ Q_{k-1} \geq \ell_{bot}\}\right) -\\
+		&\qquad \left( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(Q_1 \geq \cdots \geq Q_{k-1}\,\big|\,\tilde F\cap \{ Q_{k-1} \geq \ell_{bot}\}\right)\right). 
 		\end{split}
 		\end{equation}
-		Here, we have written $\big(\tilde{L}_1,\dots,\tilde{L}_{k-1}\big)$ for the line ensemble with law $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}$, and we define the events $\tilde A$, $\tilde F$ in the same way as $A$, $F$ in Step 1 but replacing $L_1^N, L_{k-1}^N$ with $\tilde{L}_i, \tilde{L}_{k-1}$. In Step 4, we will find $\tilde{N}_0$ so that for $N\geq\tilde{N}_0$, 
+		Here, we have written $(Q_1,\dots,Q_{k-1})$ for the line ensemble with law $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}$, and we define the events $\tilde A$, $\tilde F$ in the same way as $A$, $F$ in Step 1 but replacing $L_1^N, L_{k-1}^N$ with $Q_1, Q_{k-1}$. In Step 4, we will find $\tilde{N}_0$ so that for $N\geq\tilde{N}_0$, 
 		\begin{align}
-		& \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \big(\tilde A\,|\,\tilde F \big) \geq 1/3, \label{21 1/3}\\
-		& \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} \left(\tilde L_1 \geq \cdots \geq \tilde L_{k-1} \geq \ell_{bot}\,\big|\,\tilde F\right) \geq 11/12 \label{21 1/12},
+		& \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(\tilde A\,\big|\,\tilde F \cap \{ Q_{k-1} \geq \ell_{bot}\}\right) \geq 1/3, \label{21 1/3}\\
+		& \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} \left(Q_1 \geq \cdots \geq Q_{k-1} \geq \ell_{bot}\,\big|\,\tilde F\cap \{ Q_{k-1} \geq \ell_{bot}\}\right) \geq 11/12 \label{21 1/12},
 		\end{align}
 		independent of $\vec{x},\vec{y},\ell_{bot}$. Then \eqref{21xyest} implies $\mathbb{P}(A\,|\,E(\vec{x},\vec{y},\ell_{bot})) \geq 1/3 - 1/12 = 1/4$ for $N\geq\tilde{N}_0$, proving \eqref{21AEbound}.\\
 		
 		\noindent\textbf{Step 4.} In this step we prove \eqref{21 1/3}. A very similar argument proves the same inequality if $[r,R]$ is replaced by $[-R,-r]$ in the definition of $B$. 
 		
-		Let $\ell$ be the random variable with law $\mathbb{P}^{rN^\alpha,RN^\alpha,x_1',y_1'}_{Ber}$, and define $\tilde{A}_\ell$ in the same way as $A$ in \eqref{21AB} but with $L_1^N$ replaced by $\ell$. Since $\tilde L_1,\dots,\tilde L_k$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}$, and the event $\tilde A$ in \eqref{21xyest} depends only on $\tilde L_1$, we have
+		Let $\ell$ be the random variable with law $\mathbb{P}^{rN^\alpha,RN^\alpha,x_1',y_1'}_{Ber}$, and define $\tilde{A}_\ell$ in the same way as $A$ in \eqref{21AB} but with $L_1^N$ replaced by $\ell$. Since $Q_1,\dots,Q_{k-1},\ell_{bot}$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}$, and the event $\tilde A$ in \eqref{21xyest} depends only on $Q_1$, we have
 		\begin{equation}\label{21indep}
-		\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}\big(\tilde A\,|\,F\big) = \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber}\big(\tilde{A}_\ell\big).
+		\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}\left(\tilde A\,\big|\,\tilde F\cap \{ Q_{k-1} \geq \ell_{bot}\}\right) = \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber}\big(\tilde{A}_\ell\big).
 		\end{equation} 
 		With $T=(R-r)N^\alpha$ as in Step 3, write
 		\[
-		\overline{x} = x_1' - (k-1)\lceil C\sqrt{T}\rceil, \quad \overline{y} = y_1' - (k-1)\lceil C\sqrt{T}\rceil,
+		\overline{x} = x_1' - (k-2)\lceil C\sqrt{T}\rceil, \quad \overline{y} = y_1' - (k-2)\lceil C\sqrt{T}\rceil,
 		\] 
 		and $\overline{z} = \overline{y}-\overline{x}$. We have
 		\begin{equation} \label{21convex}
@@ -269,9 +270,9 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		
 		\noindent\textbf{Step 5.} In this last step, we prove \eqref{21 1/12} for $N\geq \tilde{N}_0$, after possibly enlarging $\tilde{N}_0$ from Step 4. The argument with $[-R,-r]$ in place of $[r,R]$ is essentially the same. 
 		
-		Note that on the event $\tilde F$, $\tilde L_{k-1}$ lies uniformly below the line segment connecting $\tilde L_1(rN^\alpha)$ and $\tilde L_1(RN^\alpha)$. Thus after raising the endpoints to $\vec{x}\,',\vec{y}\,'$, both $\tilde L_{k-1}$ and $\ell_{bot}$ lie uniformly at a distance of at least $C\sqrt{T}$ below the segment $\ell_{k-2}$ connecting $\tilde L_{k-2}(rN^\alpha)$ and $\tilde L_{k-2}(RN^\alpha)$, and moreover the endpoints of all adjacent curves are at least $C\sqrt{T}$ apart. Let $\tilde{\ell}_{bot}$ denote the segment $\ell_{k-2} - C\sqrt{T}$, so that $\tilde L_{k-1} \leq \tilde\ell_{bot}$. Then since $\tilde L_1,\dots,\tilde L_{k-2},\tilde \ell_{bot}$ are independent of $\tilde F$ under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$, we have 
+		Note that on the event $\tilde F$, $Q_{k-1}$ lies uniformly below the line segment connecting $Q_1(rN^\alpha)$ and $Q_1(RN^\alpha)$. Thus after raising the values at the endpoints to $\vec{x}\,',\vec{y}\,'$, $Q_{k-1}$ lies uniformly at a distance of at least $C\sqrt{T}$ below the segment $\ell_{k-2}$ connecting $Q_{k-2}(rN^\alpha)$ and $Q_{k-2}(RN^\alpha)$, and moreover the endpoints of all adjacent curves are at least $C\sqrt{T}$ apart. Let $\tilde{\ell}_{bot}$ denote the segment $\ell_{k-2} - C\sqrt{T}$, so that $Q_{k-1} \leq \tilde\ell_{bot}$. Then since $Q_1,\dots,Q_{k-2},\tilde \ell_{bot}$ are independent of the events $\tilde F$ and $\{Q_{k-1} \geq \ell_{bot}\}$ under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$, we have 
 		\[
-		\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} \left(\tilde L_1 \geq \cdots \geq \tilde L_k\,\big|\,\tilde F\right) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} \left(\tilde L_1 \geq \cdots \geq \tilde L_{k-2} \geq \tilde \ell_{bot}\right).
+		\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} \left(Q_1 \geq \cdots \geq Q_{k-1}\,\big|\,\tilde F\cap \{ Q_{k-1} \geq \ell_{bot}\}\right) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} \left(Q_1 \geq \cdots \geq Q_{k-2} \geq \tilde \ell_{bot}\right).
 		\]
 		In view of \eqref{21zpT}, we see from Lemma \ref{CurveSeparation} that we can enlarge $\tilde{N}_0$ depending on $\lambda, r, R, C$ so that for $N\geq\tilde{N}_0$, the probability on right is bounded below by
 		\[
