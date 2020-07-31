@@ -12,63 +12,66 @@
 \end{enumerate}
 
 \begin{definition}\label{TildeDef}
-	We write $S = \llbracket -t_2,-t_1\rrbracket\cup \llbracket t_1,t_2\rrbracket$, and we let $\tilde{\ell}_{bot}$ denote the path which is equal to $\ell_{bot}$ on $S$ and equal to $-\infty$ on $\llbracket -t_1 + 1, t_1 - 1\rrbracket$. We also denote by $\mathfrak{L} = (L_1,\dots,L_{k-1})$ and $\tilde{\mathfrak{L}} = (\tilde{L}_1, \dots, \tilde{L}_{k-1})$ the $\llbracket 1, k-1 \rrbracket$-indexed line ensembles which are uniformly distributed on $\Omega_{avoid}(-t_2,t_2,\vec{x},\vec{y},\infty,\ell_{bot})$ and $\Omega_{avoid}(-t_2, t_2, \vec{x}, \vec{y}, \infty, \tilde{\ell}_{bot})$ respectively, and we let $\mathbb{P}_{\mathfrak{L}}$ and $\mathbb{P}_{\tilde{\mathfrak{L}}}$ denote these uniform measures.
+	We write $S = \llbracket -t_3,-t_1\rrbracket\cup \llbracket t_1,t_3\rrbracket$, and we let $\tilde{\ell}_{bot}$ denote the path which is equal to $\ell_{bot}$ on $S$ and equal to $-\infty$ on $\llbracket -t_1 + 1, t_1 - 1\rrbracket$. We also denote by $\mathfrak{Q} = (Q_1,\dots,Q_{k-1})$ and $\tilde{\mathfrak{Q}} = (\tilde{Q}_1, \dots, \tilde{Q}_{k-1})$ the $\llbracket 1, k-1 \rrbracket$-indexed line ensembles which are uniformly distributed on $\Omega_{avoid}(-t_3,t_3,\vec{x},\vec{y},\infty,\ell_{bot})$ and $\Omega_{avoid}(-t_3, t_3, \vec{x}, \vec{y}, \infty, \tilde{\ell}_{bot})$ respectively, and we let $\mathbb{P}_{\mathfrak{Q}}$ and $\mathbb{P}_{\tilde{\mathfrak{Q}}}$ denote these uniform measures.
 \end{definition}
-In other words, $\tilde{\mathfrak{L}}$ has the law of $k-1$ independent Bernoulli bridges that have been conditioned on not-crossing each other on the entire interval $[-t_2, t_2]$ and also staying above the graph of $\ell_{bot}$ but only on the intervals $[-t_2, -t_1]$ and $[t_1, t_2]$. The latter restriction means that $\tilde{L}_{k-1}$ is allowed to dip below $\ell_{bot}$ on $(-t_1, t_1).$ 
+In other words, $\tilde{\mathfrak{Q}}$ has the law of $k-1$ independent Bernoulli bridges that have been conditioned on not-crossing each other on the entire interval $\llbracket-t_3, t_3\rrbracket$ and also staying above the graph of $\ell_{bot}$ but only on the intervals $\llbracket-t_3, -t_1\rrbracket$ and $\llbracket t_1, t_3\rrbracket$. The latter restriction means that $\tilde{Q}_{k-1}$ is allowed to dip below $\ell_{bot}$ on $(-t_1, t_1).$ 
 
 \begin{lemma}\label{LemmaAP2} There exists $N_5 \in \mathbb{N}$ such that for $N \geq N_5$,
 	\begin{equation}\label{eqn57}
-	\mathbb{P}_{\tilde{\mathfrak{L}}} \left( Z\big(  -t_1, t_1, \tilde{\mathfrak{L}}(-t_1) , \tilde{\mathfrak{L}}(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\big)\geq g    \right) \geq h,
+		\mathbb{P}_{\tilde{\mathfrak{Q}}} \left( Z\big(  -t_1, t_1, \tilde{\mathfrak{Q}}(-t_1) , \tilde{\mathfrak{Q}}(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\big)\geq g    \right) \geq h,
 	\end{equation}
 	where the constants $g$ and $h$ are as in Lemma \ref{LemmaAP1}.
 \end{lemma}
-We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of this section, we give the proof of Lemma \ref{LemmaAP1}.
+We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of this section, we give the proof of Lemma \ref{LemmaAP1}. The proof begins by evaluating the Radon-Nidokum derivative between $\pr_{\mathfrak{Q}'}$ and $\pr_{\tilde{\mathfrak{Q}}'}$. We then use this Radon-Nikodym derivative to transition between $\tilde{\mathfrak{Q}}$ in Lemma \ref{LemmaAP2} which ignores $\ell_{bot}$ on $\llbracket -(t_1-1),t_1-1\rrbracket$ and $\mathfrak{Q}$ in Lemma \ref{LemmaAP1} which avoids $\ell_{bot}$ everywhere. Then we perform some calculations to achieve the desired statement in Equation (\ref{eqn60}).
 \begin{proof}[Lemma \ref{LemmaAP1}]
 	
-	 Let us denote by $\pr_{\mathfrak L'}$ and $\pr_{\tilde{\mathfrak{L}}'}$ the measures on $\llbracket 1, k-1\rrbracket$-indexed Bernoulli line ensembles $\mathfrak{L}'$, $\tilde{\mathfrak{L}}'$ on the set $S$ in Definition \ref{TildeDef} induced by the restrictions of the measures $\mathbb{P}_{\mathfrak{L}}$, $\mathbb{P}_{\tilde{\mathfrak{L}}}$ to $S$. Also let us write $\Omega_a(\cdot)$ for $\Omega_{avoid}(\cdot)$ for simplicity, and denote by $\Omega_a(S)$ the set of elements of $\Omega_{avoid}(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2))$ restricted to $S$. We claim that the Radon-Nikodym derivative between these two restricted measures is given on elements $\mathfrak B$ of $\Omega_a(S)$ by \begin{equation}\label{propRadon}
-	\frac{d\pr_{\mathfrak L'}}{d\pr_{\tilde{\mathfrak L}'}}\left(\mathfrak B\right) = \frac{\mathbb{P}_{\mathfrak{L}'}(\mathfrak{B})}{\mathbb{P}_{\tilde{\mathfrak{L}}'}(\mathfrak{B})} = (Z')^{-1} Z\left(-t_1,t_1,\mathfrak{B}\left(-t_1\right),\mathfrak{B}\left(t_1\right),\ell_{bot}\llbracket -t_1,t_1\rrbracket\right),
+	Let us denote by $\pr_{\mathfrak{Q}'}$ and $\pr_{\tilde{\mathfrak{Q}}'}$ the measures on $\llbracket 1, k-1\rrbracket$-indexed Bernoulli line ensembles $\mathfrak{Q}'$, $\tilde{\mathfrak{Q}}'$ on the set $S$ in Definition \ref{TildeDef} induced by the restrictions of the measures $\mathbb{P}_{\mathfrak{Q}}$, $\mathbb{P}_{\tilde{\mathfrak{Q}}}$ to $S$. Also let us write $\Omega_a(\cdot)$ for $\Omega_{avoid}(\cdot)$ for simplicity, and denote by $\Omega_a(S)$ the set of elements of $\Omega_{avoid}(-t_3,t_3,\tilde{\mathfrak{Q}}(-t_3),\tilde{\mathfrak{Q}}(t_3))$ restricted to $S$. Additionally, $\Omega_{a,S}(\cdot)$ will be notation meaning that the line ensembles avoid intersection on $S$ but not on $\llbracket -(t_1-1),t_1-1\rrbracket$. We claim that the Radon-Nikodym derivative between these two restricted measures is given on elements $\mathfrak B$ of $\Omega_a(S)$ by \begin{equation}\label{propRadon}
+		\frac{d\pr_{\mathfrak{Q}'}}{d\pr_{\tilde{\mathfrak{Q}}'}}\left(\mathfrak B\right) = \frac{\mathbb{P}_{\mathfrak{Q}'}(\mathfrak{B})}{\mathbb{P}_{\tilde{\mathfrak{Q}}'}(\mathfrak{B})} = (Z')^{-1} Z\left(-t_1,t_1,\mathfrak{B}\left(-t_1\right),\mathfrak{B}\left(t_1\right),\ell_{bot}\llbracket -t_1,t_1\rrbracket\right),
 	\end{equation}
-	with $Z' = \ex_{\tilde{\mathfrak{L}}'}\left[Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]$. The first equality holds simply because the measures are discrete. To prove the second equality, observe that
+	with $Z' = \ex_{\tilde{\mathfrak{Q}}'}\left[Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]$. The first equality holds simply because the measures are discrete. To prove the second equality, observe that
+	\begin{equation}
+		\begin{split}
+			\pr_{\mathfrak{Q}'}(\mathfrak{B}) &= \frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot}\llbracket -t_1,t_1\rrbracket)|}{|\Omega_a(-t_3,t_3,{\mathfrak{Q}}(-t_3),{\mathfrak{Q}}(t_3),\ell_{bot})|}, 
+			\\
+			\pr_{\tilde{\mathfrak{Q}}'}(\mathfrak{B}) &= \frac{\prod_{i = 1}^{k-1}|\Omega(-t_1,t_1,B_i(-t_1),B_i(t_1))|}{|\Omega_{a,S}(-t_3,t_3,\tilde{\mathfrak{Q}}(-t_3),\tilde{\mathfrak{Q}}(t_3),\tilde\ell_{bot})|}
+		\end{split}
+	\end{equation}
+	These identities follow from the restriction, and the fact that the measures are uniform. Then, from Definition \ref{DefAP}, 
 	\[
-	\pr_{\mathfrak{L}'}(\mathfrak{B}) = \frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot}\llbracket -t_1,t_1\rrbracket)|}{|\Omega_a(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2),\ell_{bot})|}, 
-	\quad
-	\pr_{\tilde{\mathfrak{L}}'}(\mathfrak{B}) = \frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1))|}{|\Omega_a(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2),\tilde\ell_{bot})|},
-	\]
-	\[
-	Z(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot}) = \frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot}\llbracket-t_1,t_1\rrbracket)|}{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1))|},
+	Z(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot}) = \frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1),\ell_{bot}\llbracket-t_1,t_1\rrbracket)|}{\prod_{i = 1}^{k-1}|\Omega(-t_1,t_1, B_i(-t_1),B_i(t_1))|}
 	\]
 	and hence
 	\begin{equation*}
-	\begin{split}
-	Z' &=\sum_{\mathfrak{B}\in \Omega_a(S)}\frac{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak{B}(t_1))|}{|\Omega_a(-t_2,t_2,\tilde{\mathfrak{L}}(-t_2),\tilde{\mathfrak{L}}(t_2),\tilde\ell_{bot})|}\cdot\frac{|\Omega_a(-t_1,t_1,\mathfrak B(-t_1),\mathfrak{B}(t_1),\ell_{bot})|}{|\Omega_a(-t_1,t_1,\mathfrak{B}(-t_1),\mathfrak B(t_1))|}\\ 
-	&= \frac{\sum_{\mathfrak{B}\in\Omega_a(S)}|\Omega_a(-t_1,t_1,\mathfrak B(-t_1),\mathfrak B(t_1),\ell_{bot})|}{|\Omega_a(-t_2,t_2,\tilde{\mathfrak L}(-t_2),\tilde{\mathfrak L}(t_2),\tilde{\ell}_{bot})|} = \frac{|\Omega_a(-t_2,t_2,\tilde{\mathfrak L}(-t_2),\tilde{\mathfrak L}(t_2),\ell_{bot})|}{|\Omega_a(-t_2,t_2,\tilde{\mathfrak L}(-t_2),\tilde{\mathfrak L}(t_2),\tilde{\ell}_{bot})|}.
-	\end{split}
+		\begin{split}
+			Z' =&\sum_{\mathfrak{B}\in \Omega_a(S)}\frac{\prod_{i = 1}^{k-1}|\Omega(-t_1,t_1,B_i(-t_1),B_i(t_1))|}{|\Omega_{a,S}(-t_3,t_3,\tilde{\mathfrak{Q}}(-t_3),\tilde{\mathfrak{Q}}(t_3),\tilde\ell_{bot})|}\cdot\frac{|\Omega_a(-t_1,t_1,\mathfrak B(-t_1),\mathfrak{B}(t_1),\ell_{bot})|}{\prod_{i = 1}^{k-1}|\Omega(-t_1,t_1, B_i(-t_1),B_i(t_1))|}=\\ 
+			&\frac{\sum_{\mathfrak{B}\in\Omega_a(S)}|\Omega_a(-t_1,t_1,\mathfrak B(-t_1),\mathfrak B(t_1),\ell_{bot})|}{|\Omega_{a,S}(-t_3,t_3,\tilde{\mathfrak{Q}}(-t_3),\tilde{\mathfrak{Q}}(t_3),\tilde{\ell}_{bot})|} = \frac{|\Omega_a(-t_3,t_3,{\mathfrak{Q}}(-t_3),{\mathfrak{Q}}(t_3),\ell_{bot})|}{|\Omega_{a,S}(-t_3,t_3,\tilde{\mathfrak{Q}}(-t_3),\tilde{\mathfrak{Q}}(t_3),\tilde{\ell}_{bot})|}.
+		\end{split}
 	\end{equation*}
 	Comparing the above identities proves the second equality in \eqref{propRadon}.
 	
-	Now note that $Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)$ is a deterministic function of $\left((\mathfrak B(-t_1), \mathfrak B(t_1)\right)$. In fact, the law of $\left((\mathfrak B(-t_1), \mathfrak B(t_1)\right)$ under $\pr_{\tilde{\mathfrak L}'}$ is the same as that of $\big(\tilde{\mathfrak L}(-t_1), \tilde{\mathfrak L}(t_1)\big)$ by way of the restriction. It follows from Lemma \ref{LemmaAP2} that
+	Now note that $Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)$ is a deterministic function of $\left((\mathfrak B(-t_1), \mathfrak B(t_1)\right)$. In fact, the law of $\left((\mathfrak B(-t_1), \mathfrak B(t_1)\right)$ under $\pr_{\tilde{\mathfrak{Q}}'}$ is the same as that of $\big(\tilde{\mathfrak{Q}}(-t_1), \tilde{\mathfrak{Q}}(t_1)\big)$ by way of the restriction. It follows from Lemma \ref{LemmaAP2} that
 	\begin{align*}
-	Z' &= \ex_{\tilde{\mathfrak{L}}'}\left[Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]\\
-	&= \ex_{\tilde{\mathfrak{L}}}\left[Z\left(-t_1, t_1, \mathfrak L(-t_1), \mathfrak L(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]\geq gh,
-	\end{align*}
+		Z' &= \ex_{\tilde{\mathfrak{Q}}'}\left[Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]\\
+		&= \ex_{\tilde{\mathfrak{Q}}}\left[Z\left(-t_1, t_1, \mathfrak{Q}(-t_1), \mathfrak{Q}(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\right]\geq gh,
+	\end{align*}	
 	which gives us 
 	\begin{equation}
-	\label{Zineq} (Z')^{-1}\leq \frac{1}{gh}.
+		\label{Zineq} (Z')^{-1}\leq \frac{1}{gh}.
 	\end{equation}
-	Similarly,  the law of $\left(\mathfrak B(-t_1), \mathfrak{B}(t_1)\right)$ under $\pr_{\mathfrak L'}$ is the same as that of $\left(\mathfrak L(-t_1), \mathfrak L(t_1)\right)$ under $\pr_{\mathfrak L}$. Hence
+	Similarly,  the law of $\left(\mathfrak B(-t_1), \mathfrak{B}(t_1)\right)$ under $\pr_{\mathfrak{Q}'}$ is the same as that of $\left(\mathfrak{Q}(-t_1), \mathfrak{Q}(t_1)\right)$ under $\pr_{\mathfrak{Q}}$. Hence
 	\begin{equation}\label{LBswap}
-	\begin{split}
-	&\pr_{\mathfrak L}\Big(Z(-t_1, t_1, \mathfrak L(-t_1), \mathfrak L(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket)\leq gh\tilde \epsilon\Big)=\\
-	&\qquad\pr_{\mathfrak L'}\Big(Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\leq gh\tilde \epsilon\Big).
-	\end{split}
+		\begin{split}
+			&\pr_{\mathfrak{Q}}\Big(Z(-t_1, t_1, \mathfrak{Q}(-t_1), \mathfrak{Q}(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket)\leq gh\tilde \epsilon\Big)=\\
+			&\qquad\pr_{\mathfrak{Q}'}\Big(Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\leq gh\tilde \epsilon\Big).
+		\end{split}
 	\end{equation}
 	Now let us write $E=\{Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\leq gh\tilde\epsilon\}\subset \Omega_a(S)$. Then according to \eqref{propRadon}, we have
 	\[
-	\pr_{\mathfrak L'}(E)=\int_{\Omega_a(S)} \indic_E\, d\pr_{\mathfrak L'} = (Z')^{-1}\int_{\Omega_a(S)}\indic_E \cdot\, Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\, d\pr_{\tilde{\mathfrak{L}}'}(\mathfrak{B}).
+	\pr_{\mathfrak{Q}'}(E)=\int_{\Omega_a(S)} \indic_E\, d\pr_{\mathfrak{Q}'} = (Z')^{-1}\int_{\Omega_a(S)}\indic_E \cdot\, Z\left(-t_1, t_1, \mathfrak B(-t_1), \mathfrak B(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right)\, d\pr_{\tilde{\mathfrak{Q}}'}(\mathfrak{B}).
 	\]
 	From the definition of $E$, the inequality \eqref{Zineq}, and the fact that $\mathbf{1}_E \leq 1$, it follows that
 	\[
-	\pr_{\mathfrak L'}(E)\leq (Z')^{-1}\int_{\Omega_a(S)} \indic_E\cdot\, gh\tilde{\epsilon}\, d\pr_{\tilde{\mathfrak{L}}'} \leq \frac{1}{gh}\int_{\Omega_a(S)} gh\tilde\epsilon\, d\pr_{\tilde{\mathfrak{L}}'}\leq \tilde{\epsilon}.
+	\pr_{\mathfrak{Q}'}(E)\leq (Z')^{-1}\int_{\Omega_a(S)} \indic_E\cdot\, gh\tilde{\epsilon}\, d\pr_{\tilde{\mathfrak{Q}}'} \leq \frac{1}{gh}\int_{\Omega_a(S)} gh\tilde\epsilon\, d\pr_{\tilde{\mathfrak{Q}}'}\leq \tilde{\epsilon}.
 	\]
 	In combination with \eqref{LBswap}, this proves \eqref{eqn60}.
 	
@@ -97,10 +100,7 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	
 \end{proof}
 
-The next lemma helps us derive the lower bound $h$ in \eqref{eqn57}. Let us put 
-\begin{equation}\label{t12def}
-t_{12} = \Big\lfloor \frac{t_1 + t_2}{2} \Big\rfloor.
-\end{equation}
+\noindent The next lemma helps us derive the lower bound $h$ in \eqref{eqn57}:
 
 \begin{lemma}\label{LemmaBP2} For any $R > 0$ we can find $V_1^t, V_1^b \geq M_2 + R$, $h_1 > 0$ and $N_7 \in \mathbb{N}$ (depending on $R$) such that if $N \geq N_7$ we have
 	\begin{equation}\label{eqnRT2}
