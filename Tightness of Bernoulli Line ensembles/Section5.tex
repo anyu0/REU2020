@@ -156,7 +156,7 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		\begin{equation}\label{21AB}
 		\begin{split}
 		A &= \left\{L_1^N\left(\frac{R+r}{2}\,N^\alpha\right) - pN^\alpha\,\frac{R+r}{2} + \lambda\left(\frac{R+r}{2}\right)^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2}\right\},\\
-		B &= \left\{\max_{x\in[r,R]} \left(L_k^N(xN^\alpha) - pxN^\alpha\right) \leq -(\lambda R^2 + \phi(\epsilon/16)) N^{\alpha/2} \right\}.
+		B &= \left\{\max_{x\in[r,R]} \left(L_{k-1}^N(xN^\alpha) - pxN^\alpha\right) \leq -(\lambda R^2 + \phi(\epsilon/16)) N^{\alpha/2} \right\}.
 		\end{split}
 		\end{equation}
 		We will argue in the subsequent steps that we can find $N_5\in\mathbb{N}$ so that for all $N\geq N_5$,
@@ -177,14 +177,14 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		with the sets $E(\vec{x},\vec{y},\ell_{bot})$ and $D$
 		defined in the following.
 		
-		For $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$, $z_1,z_2\in\mathbb{Z}$, and $\ell_{bot}\in\Omega(rN^\alpha,RN^\alpha,z_1,z_2)$, let $E(\vec{x},\vec{y},\ell_{bot})$ denote the event that $L_i^N(rN^\alpha) = x_i$ and $L_i^N(RN^\alpha)=y_i$ for $1\leq i\leq k-1$, and $L_k^N$ agrees with $\ell_{bot}$ on $[rN^\alpha,RN^\alpha]$. Let $D$ denote the set of triples $(\vec{x},\vec{y},\ell_{bot})$ satisfying
+		For $\vec{x},\vec{y}\in\mathfrak{W}_{k-2}$, $z_1,z_2\in\mathbb{Z}$, and $\ell_{bot}\in\Omega(rN^\alpha,RN^\alpha,z_1,z_2)$, let $E(\vec{x},\vec{y},\ell_{bot})$ denote the event that $L_i^N(rN^\alpha) = x_i$ and $L_i^N(RN^\alpha)=y_i$ for $1\leq i\leq k-2$, and $L_{k-1}^N$ agrees with $\ell_{bot}$ on $[rN^\alpha,RN^\alpha]$. Let $D$ denote the set of triples $(\vec{x},\vec{y},\ell_{bot})$ satisfying
 		\begin{enumerate}[label=(\arabic*)]
 			
-			\item $0\leq y_i - x_i \leq (R-r)N^\alpha$ for $1\leq i\leq k-1$,
+			\item $0\leq y_i - x_i \leq (R-r)N^\alpha$ for $1\leq i\leq k-2$,
 			
 			\item $N^{-\alpha/2}|x_1 - prN^\alpha + \lambda r^2N^{\alpha/2}| < \phi(\epsilon/16)$ and $N^{-\alpha/2}|y_1-pRN^\alpha + \lambda R^2N^{\alpha/2}| < \phi(\epsilon/16)$,
 			
-			\item $z_1\leq x_{k-1}$, $z_2\leq y_{k-1}$, and $\ell_{bot} \in \Omega(rN^\alpha,RN^\alpha,z_1,z_2)$.
+			\item $z_1\leq x_{k-2}$, $z_2\leq y_{k-2}$, and $\ell_{bot} \in \Omega(rN^\alpha,RN^\alpha,z_1,z_2)$.
 			
 		\end{enumerate}
 		Then $D$ is countable, since there are finitely many integers $x_i,y_i$ satisfying (1), countably many $z_1,z_2\in\mathbb{Z}$ satisfying (3), and at most finitely many $\ell_{bot}$ satisfying (3) for each choice of $z_1,z_2$. Moreover, the $E(\vec{x},\vec{y},\ell_{bot})$ are pairwise disjoint, and the three conditions together show that $F = \bigcup_{(\vec{x},\vec{y},\ell_{bot})\in D} (F\cap E(\vec{x},\vec{y},\ell_{bot}))$. This proves \eqref{21F}.\\
@@ -209,38 +209,37 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		\]
 		for $N\geq N_5 = \max(\tilde{N}_0,\tilde{N}_1,\tilde{N}_2)$.\\
 		
-		\noindent\textbf{Step 3.} We will now prove \eqref{21AEbound}, assuming results from Steps 3 and 4 below. We first note that by Lemma \ref{MCLxy}, if we raise the curves at the endpoints $rN^\alpha,RN^\alpha$, then the probability of the event $A$ will decrease. In particular, write $T = (R-r)N^\alpha$, and define $\vec{x}\,',\vec{y}\,'\in\mathfrak{W}_{k-1}$ by
-		\begin{align*}
-		x_i' &= \lceil prN^\alpha - (\lambda r^2 - \phi(\epsilon/16))N^{\alpha/2}\,\rceil + (k-1-i)\lceil C\sqrt{T}\,\rceil,\\
-		y_i' &= \lceil pRN^\alpha - (\lambda R^2 - \phi(\epsilon/16))N^{\alpha/2}\,\rceil + (k-1-i)\lceil C\sqrt{T}\,\rceil.
-		\end{align*}
-		Note that $x_i' \geq x_1 \geq x_i$ for each $i$ by condition (2) above. Furthermore, $x_i' - x_{i+1}' \geq C\sqrt{T}$. The same observations hold for $y_i'$. Using the Schur Gibbs property (Definition \ref{DefSGP}) and Lemma \ref{MCLxy}, we have
+		\noindent\textbf{Step 3.} We will now prove \eqref{21AEbound}, assuming results from Steps 3 and 4 below. We first note that by Lemma \ref{MCLxy}, if we raise the curves at the endpoints $rN^\alpha,RN^\alpha$, then the probability of the event $A$ will decrease. In particular, let us write
+		\begin{equation}\label{21xybar}
+		\overline{x} = \lceil prN^\alpha - (\lambda r^2 - \phi(\epsilon/16))N^{\alpha/2}\,\rceil, \quad \overline{y} = \lceil pRN^\alpha - (\lambda R^2 - \phi(\epsilon/16))N^{\alpha/2}\,\rceil,
+		\end{equation} 
+		and $T = (R-r)N^\alpha$, and define $\vec{x}\,',\vec{y}\,'\in\mathfrak{W}_{k-2}$ by
+		\begin{equation*}
+		x_i' = \overline{x} + (k-1-i)\lceil C\sqrt{T}\,\rceil, \quad
+		y_i' = \overline{y} + (k-1-i)\lceil C\sqrt{T}\,\rceil.
+		\end{equation*}
+		Note that $x_i' \geq \overline{x} \geq x_1 \geq x_i$ for each $i$ by condition (2) above. Furthermore, $x_i' - x_{i+1}' \geq C\sqrt{T}$. The same observations hold for $y_i'$. Using the Schur Gibbs property (Definition \ref{DefSGP}) and Lemma \ref{MCLxy}, we have
 		\begin{equation}\label{21xyest}
 		\begin{split}
 		&\mathbb{P}(A\,|\,F\cap E(\vec{x},\vec{y},\ell_{bot})) = \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y},\infty,\ell_{bot}}_{avoid,Ber} (A\,|\,F) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,',\infty,\ell_{bot}}_{avoid,Ber} (A\,|\,F) \geq \\
-		&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(\tilde{A}\cap\left\{Q_1 \geq \cdots \geq Q_{k-1}\right\}\,\big|\,\tilde F \cap \{ Q_{k-1} \geq \ell_{bot}\}\right) \geq \\
-		&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(\tilde A\,\big|\,\tilde F \cap \{ Q_{k-1} \geq \ell_{bot}\}\right) -\\
-		&\qquad \left( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(Q_1 \geq \cdots \geq Q_{k-1}\,\big|\,\tilde F\cap \{ Q_{k-1} \geq \ell_{bot}\}\right)\right). 
+		&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(\tilde{A}\cap\left\{Q_1 \geq \cdots \geq Q_{k-2} \geq \ell_{bot}\right\}\,\big|\,\tilde F\right) \geq \\
+		&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \big(\tilde A\,\big|\,\tilde F\big) - \left( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(Q_1 \geq \cdots \geq Q_{k-2} \geq \ell_{bot}\,\big|\,\tilde F\right)\right). 
 		\end{split}
 		\end{equation}
-		Here, we have written $(Q_1,\dots,Q_{k-1})$ for the line ensemble with law $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}$, and we define the events $\tilde A$, $\tilde F$ in the same way as $A$, $F$ in Step 1 but replacing $L_1^N, L_{k-1}^N$ with $Q_1, Q_{k-1}$. In Step 4, we will find $\tilde{N}_0$ so that for $N\geq\tilde{N}_0$, 
+		Here, we have written $(Q_1,\dots,Q_{k-2})$ for the line ensemble with law $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}$, and we define the events $\tilde A$, $\tilde F$ in the same way as $A$, $F$ in Step 1 but replacing $L_1^N, L_{k-1}^N$ with $Q_1, \ell_{bot}$. In Step 4, we will find $\tilde{N}_0$ so that for $N\geq\tilde{N}_0$, 
 		\begin{align}
-		& \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(\tilde A\,\big|\,\tilde F \cap \{ Q_{k-1} \geq \ell_{bot}\}\right) \geq 1/3, \label{21 1/3}\\
-		& \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}',\vec{y}'}_{Ber} \left(Q_1 \geq \cdots \geq Q_{k-1} \geq \ell_{bot}\,\big|\,\tilde F\cap \{ Q_{k-1} \geq \ell_{bot}\}\right) \geq 11/12 \label{21 1/12},
+		& \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \big(\tilde A\,\big|\,\tilde F \big) \geq 1/3, \label{21 1/3}\\
+		& \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(Q_1 \geq \cdots \geq Q_{k-2} \geq \ell_{bot}\,\big|\,\tilde F \right) \geq 11/12 \label{21 1/12},
 		\end{align}
 		independent of $\vec{x},\vec{y},\ell_{bot}$. Then \eqref{21xyest} implies $\mathbb{P}(A\,|\,F\cap E(\vec{x},\vec{y},\ell_{bot})) \geq 1/3 - 1/12 = 1/4$ for $N\geq\tilde{N}_0$, proving \eqref{21AEbound}.\\
 		
 		\noindent\textbf{Step 4.} In this step we prove \eqref{21 1/3}. A very similar argument proves the same inequality if $[r,R]$ is replaced by $[-R,-r]$ in the definition of $B$. 
 		
-		Let $\ell$ be the random variable with law $\mathbb{P}^{rN^\alpha,RN^\alpha,x_1',y_1'}_{Ber}$, and define $\tilde{A}_\ell$ in the same way as $A$ in \eqref{21AB} but with $L_1^N$ replaced by $\ell$. Since $Q_1,\dots,Q_{k-1},\ell_{bot}$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}$, and the event $\tilde A$ in \eqref{21xyest} depends only on $Q_1$, we have
+		Let $\ell$ be the random variable with law $\mathbb{P}^{rN^\alpha,RN^\alpha,x_1',y_1'}_{Ber}$, and define $\tilde{A}_\ell$ in the same way as $A$ in \eqref{21AB} but with $L_1^N$ replaced by $\ell$. Since $Q_1,\dots,Q_{k-2},\ell_{bot}$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}$, and the event $\tilde A$ in \eqref{21xyest} depends only on $Q_1$, we have
 		\begin{equation}\label{21indep}
-		\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}\left(\tilde A\,\big|\,\tilde F\cap \{ Q_{k-1} \geq \ell_{bot}\}\right) = \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber}\big(\tilde{A}_\ell\big).
+		\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}\big(\tilde A\,\big|\,\tilde F \big) = \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber}\big(\tilde{A}_\ell\big).
 		\end{equation} 
-		With $T=(R-r)N^\alpha$ as in Step 3, write
-		\[
-		\overline{x} = x_1' - (k-2)\lceil C\sqrt{T}\rceil, \quad \overline{y} = y_1' - (k-2)\lceil C\sqrt{T}\rceil,
-		\] 
-		and $\overline{z} = \overline{y}-\overline{x}$. We have
+		With $\overline{x},\overline{y}$ as in \eqref{21xybar}, write $\overline{z} = \overline{y}-\overline{x}$. We have
 		\begin{equation} \label{21convex}
 		\begin{split}
 		& \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} \big(\tilde A_\ell\big)
@@ -273,9 +272,9 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		
 		\noindent\textbf{Step 5.} In this last step, we prove \eqref{21 1/12} for $N\geq \tilde{N}_0$, after possibly enlarging $\tilde{N}_0$ from Step 4. The argument with $[-R,-r]$ in place of $[r,R]$ is essentially the same. 
 		
-		Note that on the event $\tilde F$, $Q_{k-1}$ lies uniformly below the line segment connecting $Q_1(rN^\alpha)$ and $Q_1(RN^\alpha)$. Thus after raising the values at the endpoints to $\vec{x}\,',\vec{y}\,'$, $Q_{k-1}$ lies uniformly at a distance of at least $C\sqrt{T}$ below the segment $\ell_{k-2}$ connecting $Q_{k-2}(rN^\alpha)$ and $Q_{k-2}(RN^\alpha)$, and moreover the endpoints of all adjacent curves are at least $C\sqrt{T}$ apart. Let $\tilde{\ell}_{bot}$ denote the segment $\ell_{k-2} - C\sqrt{T}$, so that $Q_{k-1} \leq \tilde\ell_{bot}$. Then since $Q_1,\dots,Q_{k-2},\tilde \ell_{bot}$ are independent of the events $\tilde F$ and $\{Q_{k-1} \geq \ell_{bot}\}$ under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$, we have 
+		Note that on the event $\tilde F$, $\ell_{bot}$ lies uniformly below the line segment $\overline{\ell}_{bot}$  on $[rN^\alpha,RN^\alpha]$ connecting the points $\overline{x}$ and $\overline{y}$ defined in \eqref{21xybar}. This segment in turn lies uniformly at a distance of at least $C\sqrt{T}$ below the segment connecting $x'_{k-2} \geq \overline{x} + C\sqrt{T}$ and $y'_{k-2} \geq \overline{y} + C\sqrt{T}$. Moreover, the endpoints of all adjacent curves are at least $C\sqrt{T}$ apart. Since $Q_1,\dots,Q_{k-2},\overline \ell_{bot}$ are independent of $\tilde F$ under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber}$, we have 
 		\[
-		\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} \left(Q_1 \geq \cdots \geq Q_{k-1}\,\big|\,\tilde F\cap \{ Q_{k-1} \geq \ell_{bot}\}\right) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y}}_{Ber} \left(Q_1 \geq \cdots \geq Q_{k-2} \geq \tilde \ell_{bot}\right).
+		\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(Q_1 \geq \cdots \geq Q_{k-2} \geq \ell_{bot} \,\big|\,\tilde F \right) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(Q_1 \geq \cdots \geq Q_{k-2} \geq \overline \ell_{bot}\right).
 		\]
 		In view of \eqref{21zpT}, we see from Lemma \ref{CurveSeparation} that we can enlarge $\tilde{N}_0$ depending on $\lambda, r, R, C$ so that for $N\geq\tilde{N}_0$, the probability on right is bounded below by
 		\[
