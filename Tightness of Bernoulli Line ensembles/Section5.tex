@@ -152,7 +152,7 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		C &= \sqrt{ 8p(1-p) \log\frac{3}{1-(11/12)^{1/(k-2)}}}\,,\label{21Cdef}\\
 		R_0 &= \frac{2}{\lambda}\left(Ck+\sqrt{C^{2}k^{2}+2\lambda\phi(\epsilon/16)}\right) + r + 1. \label{21Rdef}
 		\end{align}
-		Note that $R_0\geq r$. We define $R = R_0 + \mathbf{1}_{R_0 + r\;\mathrm{odd}}$, so that $R\geq R_0$ and the midpoint $(R+r)/2$ is an integer. In the following, we always assume $N$ is large enough so that $\psi(N) > R$, hence $L_i^N$ are defined at $RN^\alpha$ for $1\leq i\leq k$. We may do so by the second condition in the definition of an $(\alpha,p,\lambda)$-good sequence (see Definition \ref{Def1}). Define events
+		Note that $R_0\geq r$. We define $R = \lceil R_0\rceil + \mathbf{1}_{\lceil R_0\rceil + r\;\mathrm{odd}}$, so that $R\geq R_0$ and the midpoint $(R+r)/2$ are integers. In the following, we always assume $N$ is large enough so that $\psi(N) > R$, hence $L_i^N$ are defined at $RN^\alpha$ for $1\leq i\leq k$. We may do so by the second condition in the definition of an $(\alpha,p,\lambda)$-good sequence (see Definition \ref{Def1}). Define events
 		\begin{equation}\label{21AB}
 		\begin{split}
 		A &= \left\{L_1^N\left(\frac{R+r}{2}\,N^\alpha\right) - pN^\alpha\,\frac{R+r}{2} + \lambda\left(\frac{R+r}{2}\right)^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2}\right\},\\
@@ -250,15 +250,15 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		&\mathbb{P}^{0,T,0,\overline{z}}_{Ber}\left(\ell(T/2) - \overline{z}/2 < \gamma\sqrt{T}\right).
 		\end{split}
 		\end{equation}
-		The inequality in the second last line follows from the definitions of $\overline{x},\overline{y}$, and in the last line, we have written $\gamma$ for the constant multiplying $N^{\alpha/2}$ in the previous line, divided by $\sqrt{R-r}$. We claim that our choice of $R$ in \eqref{21Rdef} implies that $\gamma > 0$. To see this observe that
+		The inequality in the second last line follows from the definitions of $\overline{x},\overline{y}$, and in the last line, we have shifted the domain and written $\gamma$ for the constant multiplying $N^{\alpha/2}$ in the previous line, divided by $\sqrt{R-r}$. We claim that our choice of $R_0$ in \eqref{21Rdef} and the fact that $R\geq R_0$ imply that $\gamma > 0$. To see this observe that
 		\[
 		\frac{R^2+r^2}{2} - \left(\frac{R+r}{2}\right)^2 = \frac{R^2 + r^2-2rR}{4} = \frac{(R-r)^2}{4}
 		\]
-		for fixed $r$, and hence
+		for fixed $r$, and thus since $R-r \geq R_0-r > 1$,
 		\begin{align*}
-		&\gamma\sqrt{R-r} = \frac{\lambda}{4}(R-r)^2 - Ck\sqrt{R-r} - 2\phi(\epsilon/16) \geq \frac{\lambda}{4}(R_0-r)^2 - Ck(R_0-r) - 2\phi(\epsilon/16) > 0.
+		&\gamma\sqrt{R-r} = \frac{\lambda}{4}(R-r)^2 - Ck\sqrt{R-r} - 2\phi(\epsilon/16) > \frac{\lambda}{4}(R_0-r)^2 - Ck(R_0-r) - 2\phi(\epsilon/16) \geq 0.
 		\end{align*} 
-		The last inequality is easily checked by computing the zeros of quadratic function in $R_0$.
+		The last inequality is easily checked by computing the zeros of the quadratic function in $R_0$.
 		
 		Now by Theorem \ref{KMT}, there is a probability measure $\tilde{\mathbb{P}}$ supporting a random variable $\ell^{(T,\overline{z})}$ with law $\mathbb{P}^{0,T,0,\overline{z}}_{Ber}$ and a Brownian bridge $B^\sigma$ with variance $\sigma^2 = p(1-p)$. Then the probability in the last line of \eqref{21convex} is equal to
 		\begin{align*}
