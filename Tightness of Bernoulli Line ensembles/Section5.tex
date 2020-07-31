@@ -145,12 +145,12 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		
 		\noindent\textbf{Step 1.} Fix $r>0$. Note that for any $R>r$,
 		\[
-		\max_{r\leq x\leq R} \big(L_k^N(xN^\alpha) - pxN^\alpha\big) \geq \max_{\lceil r\rceil \leq x \leq R} \big(L_k^N(xN^\alpha) - pxN^\alpha\big).
+		\max_{r\leq x\leq R} \big(L_{k-1}^N(xN^\alpha) - pxN^\alpha\big) \geq \max_{\lceil r\rceil \leq x \leq R} \big(L_{k-1}^N(xN^\alpha) - pxN^\alpha\big).
 		\]
 		Thus by replacing $r$ with $\lceil r\rceil$, we can assume that $r\in\mathbb{Z}$. Define constants
 		\begin{align}
 		C &= \sqrt{ 8p(1-p) \log\frac{3}{1-(11/12)^{1/(k-2)}}}\,,\label{21Cdef}\\
-		R_0 &= Ck+\sqrt{C^{2}k^{2}+2\phi(\epsilon/16)}+r. \label{21Rdef}
+		R_0 &= \frac{2}{\lambda}\left(Ck+\sqrt{C^{2}k^{2}+2\lambda\phi(\epsilon/16)}\right) + r + 1. \label{21Rdef}
 		\end{align}
 		Note that $R_0\geq r$. We define $R = R_0 + \mathbf{1}_{R_0 + r\;\mathrm{odd}}$, so that $R\geq R_0$ and the midpoint $(R+r)/2$ is an integer. In the following, we always assume $N$ is large enough so that $\psi(N) > R$, hence $L_i^N$ are defined at $RN^\alpha$ for $1\leq i\leq k$. We may do so by the second condition in the definition of an $(\alpha,p,\lambda)$-good sequence (see Definition \ref{Def1}). Define events
 		\begin{equation}\label{21AB}
@@ -177,10 +177,10 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		with the sets $E(\vec{x},\vec{y},\ell_{bot})$ and $D$
 		defined in the following.
 		
-		For $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$, $z_1,z_2\in\mathbb{Z}$ with $z_1\leq x_{k-1}$ and $z_2\leq y_{k-1}$, and $\ell_{bot}\in\Omega(rN^\alpha,RN^\alpha,z_1,z_2)$, let $E(\vec{x},\vec{y},\ell_{bot})$ denote the event that $L_i^N(rN^\alpha) = x_i$ and $L_i^N(RN^\alpha)=y_i$ for $1\leq i\leq k-1$, and $L_k^N$ agrees with $\ell_{bot}$ on $[rN^\alpha,RN^\alpha]$. Let $D$ denote the set of triples $(\vec{x},\vec{y},\ell_{bot})$ satisfying
+		For $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$, $z_1,z_2\in\mathbb{Z}$, and $\ell_{bot}\in\Omega(rN^\alpha,RN^\alpha,z_1,z_2)$, let $E(\vec{x},\vec{y},\ell_{bot})$ denote the event that $L_i^N(rN^\alpha) = x_i$ and $L_i^N(RN^\alpha)=y_i$ for $1\leq i\leq k-1$, and $L_k^N$ agrees with $\ell_{bot}$ on $[rN^\alpha,RN^\alpha]$. Let $D$ denote the set of triples $(\vec{x},\vec{y},\ell_{bot})$ satisfying
 		\begin{enumerate}[label=(\arabic*)]
 			
-			\item $0\leq y_i - x_i \leq (R-r)N^\alpha$ for $1\leq i\leq k$,
+			\item $0\leq y_i - x_i \leq (R-r)N^\alpha$ for $1\leq i\leq k-1$,
 			
 			\item $N^{-\alpha/2}|x_1 - prN^\alpha + \lambda r^2N^{\alpha/2}| < \phi(\epsilon/16)$ and $N^{-\alpha/2}|y_1-pRN^\alpha + \lambda R^2N^{\alpha/2}| < \phi(\epsilon/16)$,
 			
@@ -245,19 +245,22 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		\begin{split}
 		& \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} \big(\tilde A_\ell\big)
 		= \mathbb{P}^{0,T,x_1',y_1'}_{Ber} \left(\ell(T/2) - pN^\alpha \frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2}\right) =\\
-		& \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\left(\ell(T/2) - pN^\alpha\frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\big(\phi(\epsilon/16) + (k-1)\lceil C\sqrt{R-r}\,\rceil\big)N^{\alpha/2}\right) \geq\\
-		& \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\left(\ell(T/2) - \frac{\overline{x} + \overline{y}}{2} < \Big( \lambda\Big(\frac{R^2+r^2}{2}\Big) - \lambda\Big(\frac{R+r}{2}\Big)^2 - Ck\sqrt{R-r} - 2\phi(\epsilon/16)\Big)N^{\alpha/2}\right).
+		& \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\left(\ell(T/2) - pN^\alpha\frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\big(\phi(\epsilon/16) + (k-2)\lceil C\sqrt{R-r}\,\rceil\big)N^{\alpha/2}\right) \geq\\
+		& \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\left(\ell(T/2) - \frac{\overline{x} + \overline{y}}{2} < \Big( \lambda\Big(\frac{R^2+r^2}{2}\Big) - \lambda\Big(\frac{R+r}{2}\Big)^2 - Ck\sqrt{R-r} - 2\phi(\epsilon/16)\Big)N^{\alpha/2}\right) = \\
+		&\mathbb{P}^{0,T,0,\overline{z}}_{Ber}\left(\ell(T/2) - \overline{z}/2 < \gamma\sqrt{T}\right).
 		\end{split}
 		\end{equation}
-		The inequality in the last line follows from the definitions of $\overline{x},\overline{y}$. Observe that
+		The inequality in the second last line follows from the definitions of $\overline{x},\overline{y}$, and in the last line, we have written $\gamma$ for the constant multiplying $N^{\alpha/2}$ in the previous line, divided by $\sqrt{R-r}$. We claim that our choice of $R$ in \eqref{21Rdef} implies that $\gamma > 0$. To see this observe that
 		\[
-		\frac{R^2+r^2}{2} - \left(\frac{R+r}{2}\right)^2 = \frac{R^2 + r^2}{4} - \frac{rR}{2}.
+		\frac{R^2+r^2}{2} - \left(\frac{R+r}{2}\right)^2 = \frac{R^2 + r^2-2rR}{4} = \frac{(R-r)^2}{4}
 		\]
-		for fixed $r$. Our choice of $R$ from \eqref{21Rdef} ensures that the constant factor multiplying $N^{\alpha/2}$ in the last line of \eqref{21convex} is positive. Denoting this constant by $\gamma_0$ and letting $\gamma = \gamma_0/\sqrt{R-r}$, we see that the last line of \eqref{21convex} is equal to
-		\begin{equation}\label{21z/2}
-		\mathbb{P}^{0,T,0,\overline{z}}_{Ber}\left(\ell(T/2) - \overline{z}/2 < \gamma\sqrt{T}\right).
-		\end{equation}
-		By Theorem \ref{KMT}, there is a probability measure $\tilde{\mathbb{P}}$ supporting a random variable $\ell^{(T,\overline{z})}$ with law $\mathbb{P}^{0,T,0,\overline{z}}_{Ber}$ and a Brownian bridge $B^\sigma$ with variance $\sigma^2 = p(1-p)$. Then the probability in \eqref{21z/2} is equal to
+		for fixed $r$, and hence
+		\begin{align*}
+		&\gamma\sqrt{R-r} = \frac{\lambda}{4}(R-r)^2 - Ck\sqrt{R-r} - 2\phi(\epsilon/16) \geq \frac{\lambda}{4}(R_0-r)^2 - Ck(R_0-r) - 2\phi(\epsilon/16) > 0.
+		\end{align*} 
+		The last inequality is easily checked by computing the zeros of quadratic function in $R_0$.
+		
+		Now by Theorem \ref{KMT}, there is a probability measure $\tilde{\mathbb{P}}$ supporting a random variable $\ell^{(T,\overline{z})}$ with law $\mathbb{P}^{0,T,0,\overline{z}}_{Ber}$ and a Brownian bridge $B^\sigma$ with variance $\sigma^2 = p(1-p)$. Then the probability in the last line of \eqref{21convex} is equal to
 		\begin{align*}
 		& \tilde{\mathbb{P}}\left( \ell^{(T,\overline{z})}(T/2) - \overline{z}/2 < \gamma\sqrt{T}\right) = \tilde{\mathbb{P}}\left(\left[\ell^{(T,\overline{z})}(T/2) - \overline{z}/2 - \sqrt{T}B^\sigma_{1/2}\right] + \sqrt{T}B^\sigma_{1/2} < \gamma\sqrt{T}\right) \geq \\
 		& \tilde{\mathbb{P}}\left(\sqrt{T}B^\sigma_{1/2} < 0\quad\mathrm{and}\quad \Delta(T,\overline{z}) < \gamma\sqrt{T}\right) \geq \frac{1}{2} - \tilde{\mathbb{P}}\left(\Delta(T,\overline{z}) \geq \gamma\sqrt{T}\right).
@@ -314,7 +317,7 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		\end{equation}
 		where the sets $D$ and $E(a,b,\vec{x},\vec{y},\ell_{bot})$ are defined below.
 		
-		For $0<a,b\in\mathbb{Z}$, $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$, $z_1,z_2\in\mathbb{Z}$ with $z_1\leq x_{k-1}$ and $z_2\leq y_{k-1}$, and $\ell_{bot}\in\Omega(-a,b,z_1,z_2)$, we define $E(a,b,\vec{x},\vec{y},\ell_{bot})$ to be the event that $L_i^N(-a) = x_i$ and $L_i^N(b) = y_i$ for $1\leq i\leq k-1$, $L_k^N$ agrees with $\ell_{bot}$ on $[-a,b]$. Let $D$ be the collection of tuples $(a,b,\vec{x},\vec{y},\ell_{bot})$ satisfying 
+		For $0<a,b\in\mathbb{Z}$, $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$, $z_1,z_2\in\mathbb{Z}$, and $\ell_{bot}\in\Omega(-a,b,z_1,z_2)$, we define $E(a,b,\vec{x},\vec{y},\ell_{bot})$ to be the event that $L_i^N(-a) = x_i$ and $L_i^N(b) = y_i$ for $1\leq i\leq k-1$, and $L_k^N$ agrees with $\ell_{bot}$ on $[-a,b]$. Let $D$ be the collection of tuples $(a,b,\vec{x},\vec{y},\ell_{bot})$ satisfying 
 		\begin{enumerate}[label=(\arabic*)]
 			
 			\item $a,b\in[(r+3)N^\alpha,RN^\alpha]$.
@@ -338,8 +341,8 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 		
 		By \eqref{4.3AEbound} and \eqref{4.3disj}, we obtain
 		\begin{align*}
-		\mathbb{P}(A \cap B) &= \sum_{(a,b,\vec{x},\vec{y},\ell_{bot})\in D} \mathbb{P}(A\,|\,E(a,b,\vec{x},\vec{y},\ell_{bot}))\mathbb{P}(E(a,b,\vec{x},\vec{y},\ell_{bot}))\\
-		&\leq \frac{\epsilon}{2}\sum_{(a,b,\vec{x},\vec{y},\ell_{bot})\in D} \mathbb{P}(E(a,b,\vec{x},\vec{y},\ell_{bot})) \leq \frac{\epsilon}{2}
+		&\mathbb{P}(A \cap B) = \sum_{(a,b,\vec{x},\vec{y},\ell_{bot})\in D} \mathbb{P}(A\,|\,E(a,b,\vec{x},\vec{y},\ell_{bot}))\mathbb{P}(E(a,b,\vec{x},\vec{y},\ell_{bot})) \leq\\
+		& \frac{\epsilon}{2}\sum_{(a,b,\vec{x},\vec{y},\ell_{bot})\in D} \mathbb{P}(E(a,b,\vec{x},\vec{y},\ell_{bot})) \leq \frac{\epsilon}{2}
 		\end{align*}
 		for $N\geq\tilde{N}_1$. It follows from \eqref{4.3Bbound} that
 		\begin{equation*}
