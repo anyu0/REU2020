@@ -99,7 +99,7 @@ We give some definitions and elementary results regarding skew Schur polynomials
 	\begin{align}
 		h_{r}=\sum_{|\lambda|=r}m_{\lambda}
 	\end{align}
-	 where $m_{\lambda}=x_1^{\lambda_1}x_2^{\lambda_2}\cdots$ is the monomial with parts of partition $\lambda$ as corresponding powers. For $r<0$, we  define $h_r$ to be zero. In particular, when $x_1=x_2=\cdots=x_n=1$, $x_{n+1}=x_{n+2}=\cdots=0$, $h_r$ is just the number of partitions that have weight $r$ and $n$ nonzero parts. Thus we have: 
+	 where $m_{\lambda}=x_1^{\lambda_1}x_2^{\lambda_2}\cdots$ is the monomial with parts of partition $\lambda$ as corresponding powers. For $r<0$, we  define $h_r$ to be zero. In particular, when $x_1=x_2=\cdots=x_n=1$, $x_{n+1}=x_{n+2}=\cdots=0$, $h_r$ is just the number of partitions that have weight $r$ and $n$ nonzero parts. Thus, we have: 
 	 \begin{align}
 	 	h_{r}(1^{n})=\binom{r+n-1}{r}
 	 \end{align}
@@ -131,7 +131,7 @@ Assume the same notations as in Section \ref{DefMainRes}, denote $m=\lfloor tT \
 where $\lambda_{1}>\lambda_{2}>\cdots >\lambda_{k}$ are positive integers, $s_{\lambda/\mu}$ denote skew Schur polynomials and they are specialized in all parameters equal to $1$. The $\mu$ partition is just the vector $\vec{x}^{T}$ and the $\kappa$ partition should be $\vec{y}^{T}$.
 \end{lemma}
 \begin{remark}
-	Here we let $\lambda_{1}>\lambda_{2}>\cdots>\lambda_{k}$ be positive integers, but actually they can be negative. However, we can shift all the endpoints up such that all possible $\lambda_{i}$ are positive. Also, in the proof we treat finite dimensional vectors as partitions because as long as we add infinitely many zeros at their ends we can and make them  ``partitions'' in Definition \ref{DefPar}.
+	Here we let $\lambda_{1}>\lambda_{2}>\cdots>\lambda_{k}$ be positive integers, althought they could potentially be negative. However, we can shift all the endpoints up such that all possible $\lambda_{i}$ are positive. Also, in the proof we treat finite dimensional vectors as partitions because as long as we add infinitely many zeros at their ends we can and make them  ``partitions'' in Definition \ref{DefPar}.
 \end{remark}
 \begin{proof} Let $\Omega(0,T,\vec{x}^T, \vec{y}^T)$ be the set of all non-intersecting Bernoulli line ensembles from $\vec{x}^T$ to $\vec{y}^T$. For each line ensemble $\mathfrak{B}\in \Omega(0,T,\bar x^T,\bar y^T)$ with $\mathfrak B=(B_1,...,B_k)$, we may define $\lambda^{i}(\mathfrak B):=(B_1(i),B_2(i),...,B_k(i))$, where $1 \leq i\leq T$ is an integer. The $\lambda^{i}(\mathfrak{B})$ form partitions since by the definition of avoiding Bernoulli line ensembles, we have the inequality $B_\alpha(i)\geq B_\beta(i)$ if $\alpha<\beta$. Now we claim that partitions $\lambda^{i}(\mathfrak{B})$, $1\leq i \leq T$ are interlaced. By definition of Bernoulli random walk, we have $B_{\alpha}(i+1)=B_{\alpha}(i)+\xi$ and $B_{\alpha+1}(i+1)=B_{\alpha+1}(i)+\eta$, where $\xi$, $\eta\in\{0,1\}$, so $B_{\alpha}(i+1)\geq B_{\alpha}(i)$. If $B_{\alpha}(i)\geq B_{\alpha+1}(i)+1$, then $B_{\alpha}(i)\geq B_{\alpha+1}(i+1)$; If $B_{\alpha}(i)=B_{\alpha+1}(i)$, in order to assure $B_{\alpha}(i+1)\geq B_{\alpha+1}(i+1)$, $\xi$ and $\eta$ have to be $0$ or $1$ at the same time, or $\xi=1$ and $\eta=0$, all of which deduce that $B_{\alpha}(i)\geq B_{\alpha+1}(i+1)$. Therefore,
 \[B_{\alpha+1}(i+1)\leq B_\alpha(i)\leq B_\alpha(i+1)\]
@@ -141,9 +141,9 @@ Now, let us define the set
 \[TB_{\lambda/\mu}^T:=\{(\lambda^0,...,\lambda^T)\mid \lambda^0=\mu, \lambda^T=\lambda, \lambda^i\preceq\lambda^{i+1}\}\] 
 Now, if we take $f:\Omega(0,T,\bar x^T, \bar y ^T)\to TB_{\kappa/\mu}^T$ with $f(\mathfrak{B})= (\lambda_0(\mathfrak{B}),\cdots \lambda_T(\mathfrak{B}))$. We find that this function is in fact a bijection. 
 
-First, to show for injectivity, suppose that there are two Bernoulli line ensembles, $\mathfrak{B}, \widetilde{\mathfrak{B}}\in \Omega(0,T,\bar x^T, \bar y ^T)$ such that $\mathfrak{B}\neq \widetilde{\mathfrak{B}}$.
-Because Bernoulli line ensembles are determined by their values at integer times, we find that this would imply that there exists some $(q,r)$ such that $0\leq r\leq T$, $0\leq q \leq k$ and $B_q(r)\neq \widetilde{\mathfrak{B}}_q(r)$ where $B_q$ and $\widetilde{B}_q$ are components of $\mathfrak{B}$ and $\widetilde{\mathfrak{B}}$ respectively. 
-This implies that $\lambda^r(\mathfrak B)\neq \lambda^r(\widetilde{\mathfrak{B}})$, and we have injectivity. 
+First, to show injectivity, suppose that there are two Bernoulli line ensembles, $\mathfrak{B}, \widetilde{\mathfrak{B}}\in \Omega(0,T,\bar x^T, \bar y ^T)$ such that $\mathfrak{B}\neq \widetilde{\mathfrak{B}}$.
+Bernoulli line ensembles are determined by their values at integer times, so this would imply that there exists some $(q,r)$ such that $0\leq r\leq T$, $0\leq q \leq k$ and $B_q(r)\neq \widetilde{\mathfrak{B}}_q(r)$ where $B_q$ and $\widetilde{B}_q$ are components of $\mathfrak{B}$ and $\widetilde{\mathfrak{B}}$ respectively. 
+This implies that $\lambda^r(\mathfrak B)\neq \lambda^r(\widetilde{\mathfrak{B}})$, so we have injectivity. 
 
 Now, surjectivity follows since for any $\bar\lambda=(\lambda^0,...,\lambda^T)$ we may define $\mathfrak{B}(\bar{\lambda})=(B_1(\bar\lambda),...,B_k(\bar\lambda))$ where $B_r(\bar\lambda)(i)=\lambda^i_r$ where $\lambda^i_r$ is the $r$\textit{-th} entry of $\lambda^i$. The restrictions on $TB_{\kappa/\mu}^T$ ensure that each $\mathfrak{B}(\bar\lambda)\in \Omega(0,T,\bar x^T,\bar y^T)$, and so $f(\mathfrak B(\bar{\lambda}))=(\lambda^0,\cdots \lambda^T)$ by the definition $\mathfrak{B}(\bar\lambda)$. 
 
@@ -157,12 +157,13 @@ Therefore, we conclude that
 \end{align*} where $\lambda=(\lambda_{1},\cdots,\lambda_{k})$ is a partition such that $\vec{x}^{T}\preceq\lambda\preceq\vec{y}^{T}$.
 \end{proof}
 
-\subsection{Proof of Proposition \ref{WeakConvDistinct}}{\label{ProofProp1}} In this section, we prove Proposition \ref{WeakConvDistinct} assuming the validity of Lemma \ref{LemmaDensity}. We first intend to prove the limiting function of probability mass function (\ref{ProbMassFunc}) in Lemma \ref{BerDist} is exactly the function in (\ref{Density}), then Lemma \ref{LemmaDensity} justifies that it is actually a probability density function. Finally, we prove that the random vector $Z^{T}$ weakly converges to the density (\ref{Density}).
+\subsection{Proof of Proposition \ref{WeakConvDistinct}}{\label{ProofProp1}} In this section, we prove Proposition \ref{WeakConvDistinct} assuming the validity of Lemma \ref{LemmaDensity}. First,we show that the limiting function of probability mass function (\ref{ProbMassFunc}) in Lemma \ref{BerDist} is exactly the function in (\ref{Density}). We then use Lemma \ref{LemmaDensity} to show that the limiting function is a probability density function. Finally, we prove that the random vector $Z^{T}$ weakly converges to the density (\ref{Density}).
 
-We start with finding the asymptotic behavior of skew Schur polynomials in (\ref{ProbMassFunc}). By Jacob-Trudi formula (\ref{J-TFormula}), we only need to find the asymptotic formula for complete symmetric functions, and the result is stated as the following lemma.
+We start with finding the asymptotic behavior of skew Schur polynomials in (\ref{ProbMassFunc}). By the Jacob-Trudi formula (\ref{J-TFormula}), we only need to find the asymptotic formula for complete symmetric functions. The result is stated as the following lemma.
 
 \begin{lemma}
-	Assume the same notation as in Section \ref{SkewSchurPoly}. We have the following 
+	Assume the same notation as in Section \ref{SkewSchurPoly}. We then have the following 
+% is this lemma missing?
 \end{lemma}
 We first compute the first determinant in the numerator. Using the identity for complete symmetric functions(\cite[Example 1, Section I.2]{Mac}) that $h_r(1^n)=\binom{n+r-1}{r}$, we get the resulting equation 
 \begin{align}{\label{h}}
@@ -170,7 +171,7 @@ h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})&=\frac{(\lambda_{i}-x_{j}^{T}-i+j+\lfloo
 \end{align}
 We have the following Stirling's formula, 
 $$n!=\sqrt{2\pi n}n^ne^{-n}e^{r_{n}}\text{, where }\frac{1}{12n+1}<r_{n}<\frac{1}{12n}$$
-Denote $K=\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1$ and apply the above Stirling's formula, we get
+Write $K=\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1$ and apply the above Stirling's formula to get
 \begin{align*}
 K!=\sqrt{2\pi}\sqrt{K}\cdot e^{K\log K-K+r_{K}}
 \end{align*}
@@ -225,7 +226,7 @@ where the constant in little $o$ notation only depends on $A,p$ and does not dep
 
 \subsection{Proof of Proposition \ref{WeakConvCollide}}{\label{ProofProp2}}
 \subsection{Proof of Lemma \ref{LemmaDensity} and Lemma \ref{Integrable}}{\label{Pf2Lemma}}
-The following lemma helps to prove Proposition \ref{WeakConvDistinct}. It shows the asymptotic formula for the distribution of avoiding Bernoulli line ensembles at time $\lfloor tT \rfloor$. 
+The following lemma helps us to prove Proposition \ref{WeakConvDistinct}. It shows the asymptotic formula for the distribution of avoiding Bernoulli line ensembles at time $\lfloor tT \rfloor$. 
 \begin{lemma}{\label{PointConvLemma}}
 	Let $\mathbb{W}_{k}^{o}$ denote the open Weyl chamber in $\mathbb{R}^{N}$:
 $$\mathbb{W}_{N}^{o}=\{(x_{1},\cdots,x_{k})\in\mathbb{R}^{N}:x_{1}>x_{2}>\cdots>x_{k}\}$$ Fix a real number $A>0$, $p,t\in(0,1)$, take $z=(z_{1},\cdots,z_{k})\in\mathbb{W}_{k}^{o}$ such that $A>z_{1}>\cdots>z_{k}>-A$. Choose sufficiently large $T_{0}$ such that $ptT_{0}-A\sqrt{T_{0}}\geqslant 1$, then for $T\geqslant T_{0}$, define $\lambda_{i}(T)=\lfloor z_{i}\sqrt{T}+ptT\rfloor\geqslant 1$ for $i=1,\cdots,k$. Denote $P_{T}(z)=(\sqrt{T})^{k}\pr(L_1(\lfloor tT\rfloor)=\lambda_1(T),\cdots, L_k(\lfloor tT\rfloor)=\lambda_k(T))$, then we have for almost every $z\in[-A,A]^{k}$:
@@ -233,11 +234,11 @@ $$\lim_{T\rightarrow\infty}P_{T}(z)=\rho(z_{1},\cdots,z_{k})$$ and $P_{T}(z)$ is
 \end{lemma}
 
 \begin{proof}
-	(\romannumeral 1) First, we discuss the pointwise convergence of $P_{T}(z)$. By Jacobi-Trudi formula(\cite[Chapter 1, (5.4)]{Mac} ), we conclude:
+	(\romannumeral 1) First, we discuss the pointwise convergence of $P_{T}(z)$. By the Jacobi-Trudi formula(\cite[Chapter 1, (5.4)]{Mac} ), we conclude:
 \begin{align}{\label{J-T}}
 \pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)=\frac{\det\left(h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})\right)_{i,j=1}^k\cdot\det\left(h_{y_i^T-\lambda_j+j-i}(1^{T-\floor{tT}})\right)_{i,j=1}^k}{\det\left(h_{y_i^{T}-x_j^T+j-i}(1^T)\right)_{i,j=1}^k}	
 \end{align}
-Denote $S_{1}(p,t,T)=\big((p+1)tT)\log((p+1)tT\big)-(ptT)\log(ptT)-(tT)\log(tT)$ and we further calculate the determinant 
+We write $S_{1}(p,t,T)=\big((p+1)tT)\log((p+1)tT\big)-(ptT)\log(ptT)-(tT)\log(tT)$ and further calculate the determinant 
 \begin{align*} 
 \det(h_{\lambda_{i}-x_{j}-i+j}(1^{\lfloor tT \rfloor}))_{i,j=1}^{k} =&\left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}e^{S_{1}(p,t,T)-\log(p+1)}\right]^{k}\\
 &\cdot
@@ -247,7 +248,7 @@ Denote $S_{1}(p,t,T)=\big((p+1)tT)\log((p+1)tT\big)-(ptT)\log(ptT)-(tT)\log(tT)$
 \end{align*}
 where the constant $c_{1}(p,t)=\frac{1}{p(p+1)t}$.
 
-Analogously, we calculate the other two determinants in equation \ref{J-T}:
+We calculate the other two determinants in equation \ref{J-T} analogously:
 \begin{align*}
 	\det \left(h_{y_{i}-\lambda_{j}-i+j}(1^{T-\lfloor tT \rfloor})\right)&= \left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{p(1-t)}}\sqrt{T}^{-1}\cdot e^{S_{2}(p,t,T)-\log(p+1)}\right]^{k}\left(\frac{p+1}{p}\right)^{\sum_{i=1}^{k}(b_{i}-z_{i})\cdot\sqrt{T}} \\
 	& \cdot e^{-\frac{1}{2p(p+1)(1-t)}\sum_{i=1}^{k}(b_{i}^2+z_{i}^2)}\cdot \det\left(e^{c_{2}(p,t)b_{i}z_{j}+o(1)}\right)_{i,j=1}^{k}\\
@@ -275,14 +276,14 @@ In conclusion, $P_{T}(z)=(\sqrt{T})^{k}\cdot\pr(L_1(\lfloor tT\rfloor)=\lambda_1
 	&c_{1}(p,t)=\frac{1}{p(p+1)t}, \quad c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}, \quad c_{3}(p,t)=\frac{1}{2p(p+1)t(1-t)}\\
 	&Z=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot e^{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}}\cdot e^{c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}}\det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right)_{i,j=1}^{k}
 \end{align*}
-(\romannumeral 2) Second, we discuss the boundedness. By the Equation \ref{PointConv} we just derived, $P_{T}(z)=\rho(z)\cdot\exp\{o(1)\}$ on the compact set $[-A,A]^{k}$, where the constant in little $o$ notation only depends on $A,p$. Since continuous function $\rho(z)$ is bounded on $[-A,A]^{k}$, and $\exp\{o(1)\}$ is uniformly bounded on $[-A,A]^{k}$, we conclude that $P_{T}(z)$ is bounded as well.
+(\romannumeral 2) We now discuss boundedness. By the Equation \ref{PointConv} we just derived, $P_{T}(z)=\rho(z)\cdot\exp\{o(1)\}$ on the compact set $[-A,A]^{k}$, where the constant in little $o$ notation only depends on $A,p$. Since the continuous function $\rho(z)$ is bounded on $[-A,A]^{k}$, and $\exp\{o(1)\}$ is uniformly bounded on $[-A,A]^{k}$, we conclude that $P_{T}(z)$ is bounded as well.
 \end{proof}
-Now we are ready to prove Proposition \ref{WeakConvDistinct}.
+We are now ready to prove Proposition \ref{WeakConvDistinct}.
 \begin{proof}[Proof of Proposition \ref{WeakConvDistinct}]
 In the following, we prove the weak convergence of the random vector $Z^{T}$, when $\vec{a}=(a_{1},\cdots,a_{k})$ and $\vec{b}=(b_{1},\cdots,b_{k})$ consist of distinct entries. 
-In order to show the weak convergence, it is sufficient to show that for every open set $O\in\mathbb{R}^{k}$, we have: 
+In order to show weak convergence, it is sufficient to show that for every open set $O\in\mathbb{R}^{k}$, we have: 
 $$\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in O)\geqslant\int_{O}\rho(z_{1},\cdots,z_{k})dz_{1}dz_{2}\cdots dz_{k}$$
-according to \cite[Theorem 3.2.11]{Durrett}. Actually, it suffices to show that for any open set $U\in\mathbb{W}_{k}^{o}$, we have:
+according to \cite[Theorem 3.2.11]{Durrett}. It is also sufficient to show that for any open set $U\in\mathbb{W}_{k}^{o}$, we have:
 \begin{align}{\label{WeakConv}}
 	\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in U)\geqslant\int_{U}\rho(z_{1},\cdots,z_{k})dz_{1}dz_{2}\cdots dz_{k}
 \end{align}
@@ -291,7 +292,7 @@ which implies that:
 	&\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in O)\geqslant\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in O\cap\mathbb{W}_{k}^{o})\\
 	&\geqslant \int_{\mathbb{W}_{k}^{o}\cap O}\rho(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}= \int_{O}\rho(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}
 \end{align*}
-The second inequality uses the above result (\ref{WeakConv}), since $\mathbb{W}_{k}^{o}\cap O$ is an open set in $\mathbb{W}_{k}^{o}$. The last equality is because $\rho(z)$ is zero outside $\mathbb{W}_{k}^{o}$. The rest of the proof will be divided into $4$ steps. In Step 1, we prove the weak convergence holds on every closed rectangle. In Step 2, we prove the result \ref{WeakConv} using Lemma \ref{PointConvLemma}. In Step 3, we prove that $\rho(z)$ is actually a density and conclude the weak convergence.\\
+The second inequality uses the above result (\ref{WeakConv}), since $\mathbb{W}_{k}^{o}\cap O$ is an open set in $\mathbb{W}_{k}^{o}$. The last equality is because $\rho(z)$ is zero outside $\mathbb{W}_{k}^{o}$. The rest of the proof will be divided into $4$ steps. In Step 1, we prove that weak convergence holds on every closed rectangle. In Step 2, we prove the result \ref{WeakConv} using Lemma \ref{PointConvLemma}. In Step 3, we prove that $\rho(z)$ is actually a density and conclude weak convergence.\\
 \noindent \textbf{Step 1. }In this step, we establish the following result:\\
 For any closed rectangle $R=[u_{1},v_{1}]\times [u_{2},v_{2}]\times\cdots\times[u_{N},v_{N}]\in\mathbb{W}_{k}^{o}$, 
 \begin{align}
@@ -299,7 +300,7 @@ For any closed rectangle $R=[u_{1},v_{1}]\times [u_{2},v_{2}]\times\cdots\times[
 \end{align}
 where $\rho(z)$ is given in Proposition \ref{WeakConvDistinct}.
 
-Define $m_{i}^{T}=\lceil u_{i}\sqrt{T}+ptT\rceil$ and $M_{i}^{T}=\lfloor v_{i}\sqrt{T}+ptT\rfloor$, and we have:
+Define $m_{i}^{T}=\lceil u_{i}\sqrt{T}+ptT\rceil$ and $M_{i}^{T}=\lfloor v_{i}\sqrt{T}+ptT\rfloor$. Then we have:
 \begin{align*}
 &\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)=\mathbb{P}(u_{1}\leqslant Z_{1}^{T} \leqslant v_{1}, \dots,  u_{k}\leqslant Z_{k}^{T} \leqslant v_{k})\\
 &=\mathbb{P}(u_{i}\sqrt{T}+ptT\leqslant L_{i}(\lfloor tT\rfloor) \leqslant v_{i}\sqrt{T}+ptT, i=1,\dots, k)\\
@@ -307,30 +308,30 @@ Define $m_{i}^{T}=\lceil u_{i}\sqrt{T}+ptT\rceil$ and $M_{i}^{T}=\lfloor v_{i}\s
 &=\sum_{\lambda_{1}(T)=m_{1}^{T}}^{M_{1}^{T}}\dots\sum_{\lambda_{k}(T)=m_{k}^{T}}^{M_{k}^{T}}(\sqrt{T})^{-k}\cdot(\sqrt{T})^{k}\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1}(T),\dots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}(T))
 \end{align*}
 
-Find sufficiently large $A$ such that $R\subset[-A,A]^{k}$, for example, $A=1+\max_{1\leqslant i\leqslant k}|a_{i}|+\max_{1\leqslant i\leqslant k}|b_{i}|$. Define $f_{T}(z_{1},\cdots,z_{k})$ as a simple function on $\mathbb{R}^{k}$: When $(z_{1},\cdots,z_{k})\in R$, it takes value $(\sqrt{T})^{k}\cdot\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1}(T),\cdots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}(T)) $ if there exist $\lambda_{1}(T),\cdots,\lambda_{k}(T)$ such that $\lambda_{i}(T)\leqslant z_{i}\sqrt{T}+ptT<\lambda_{i}(T)+1$; It takes value $0$ otherwise, when $(z_{1},\cdots,z_{k})\notin R$.  Since the Lebesgue measure of the set $\{z:\lambda_{i}(T)\leqslant z_{i}\sqrt{T}+ptT<\lambda_{i}(T)+1,i=1,\cdots,k\}$ is $(\sqrt{T})^{-k}$, the above probability can be further written as an integral of simple function $f_{T}(z_{1},\cdots,z_{k})$:
+Find sufficiently large $A$ such that $R\subset[-A,A]^{k}$, for example, $A=1+\max_{1\leqslant i\leqslant k}|a_{i}|+\max_{1\leqslant i\leqslant k}|b_{i}|$. Define $f_{T}(z_{1},\cdots,z_{k})$ as a simple function on $\mathbb{R}^{k}$: When $(z_{1},\cdots,z_{k})\in R$, it takes value $(\sqrt{T})^{k}\cdot\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1}(T),\cdots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}(T)) $ if there exist $\lambda_{1}(T),\cdots,\lambda_{k}(T)$ such that $\lambda_{i}(T)\leqslant z_{i}\sqrt{T}+ptT<\lambda_{i}(T)+1$; It takes value $0$ otherwise, when $(z_{1},\cdots,z_{k})\notin R$.  Since the Lebesgue measure of the set $\{z:\lambda_{i}(T)\leqslant z_{i}\sqrt{T}+ptT<\lambda_{i}(T)+1,i=1,\cdots,k\}$ is $(\sqrt{T})^{-k}$, the above probability can be further written as an integral of simple functions $f_{T}(z_{1},\cdots,z_{k})$:
 \begin{align*}
 \mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)&=\int_{[-A,A]^{k}}f_{T}(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}
 \end{align*}
 
-By Lemma \ref{PointConvLemma}, the function $f_{T}(z_{1},\cdots,z_{k})$ pointwise converges to $\rho(z)$ and is bounded on the compact set $[-A,A]^{k}$. Since the Lebesgue measure of $[-A,A]^{k}$ is finite, by bounded convergence theorem we have:
+By Lemma \ref{PointConvLemma}, the function $f_{T}(z_{1},\cdots,z_{k})$ pointwise converges to $\rho(z)$ and is bounded on the compact set $[-A,A]^{k}$. Since the Lebesgue measure of $[-A,A]^{k}$ is finite, by the bounded convergence theorem we have:
 \begin{align}{\label{ConvOnRect}}
 	\lim_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)=\int_{R}\rho(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}
 \end{align}
-\textbf{Step 2. }In this step, we prove the statement \ref{WeakConv}. Take any open set $U\in \mathbb{W}_{k}^{o}$, it can be written as a countable union of closed rectangles with disjoint interiors: $U=\bigcup_{i=1}^{\infty}R_{i}$, where $R_{i}=[a_{1}^{i},b_{1}^{i}]\times\cdots\times[a_{k}^{i},b_{k}^{i}]$(\cite[Theorem 1.4]{Stein}). Choose sufficiently small $\epsilon>0$, and denote $R_{i}^{\epsilon}=[a_{1}^{i}+\epsilon,b_{1}^{i}-\epsilon]\times\cdots\times[a_{k}^{i}+\epsilon,b_{k}^{i}-\epsilon]$, then $R_{i}^{\epsilon}$ are disjoint. Therefore,
+\textbf{Step 2. }In this step, we prove the statement \ref{WeakConv}. Take any open set $U\in \mathbb{W}_{k}^{o}$. Then this set can be written as a countable union of closed rectangles with disjoint interiors: $U=\bigcup_{i=1}^{\infty}R_{i}$, where $R_{i}=[a_{1}^{i},b_{1}^{i}]\times\cdots\times[a_{k}^{i},b_{k}^{i}]$(\cite[Theorem 1.4]{Stein}). Choose sufficiently small $\epsilon>0$, and denote $R_{i}^{\epsilon}=[a_{1}^{i}+\epsilon,b_{1}^{i}-\epsilon]\times\cdots\times[a_{k}^{i}+\epsilon,b_{k}^{i}-\epsilon]$, then $R_{i}^{\epsilon}$ are disjoint. Therefore,
 \begin{align*}
 	&\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in U)\geqslant\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \bigcup_{i=1}^{n}R_{i}^{\epsilon})\\
 	&=\liminf_{T\rightarrow\infty}\sum_{i=1}^{n}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i}^{\epsilon})=\sum_{i=1}^{n}\int_{R_{i}^{\epsilon}}\rho(z_1,\cdots,z_{k})dz_{1}\cdots dz_{k}\\
 	&=\int_{\bigcup_{i=1}^{n}R_{i}^{\epsilon}}\rho(z_1,\cdots,z_{k})dz_{1}\cdots dz_{k} \xrightarrow{\epsilon\downarrow 0} \int_{U}\rho(z_1,\cdots,z_{k})dz_{1}\cdots dz_{k}
 \end{align*}
-The last line uses monotone convergence theorem. Thus, we proved the inequality \ref{WeakConv}.\\
-\textbf{Step 3. }In this step, we prove that $\rho(z)$ is actually a density. First, it is nonnegative because it's the limit of a sequence of probabilities. Next, we prove it integrates to $1$ over $\mathbb{R}^{k}$. Let the open set $U$ in Step 2 be $\mathbb{W}_{k}^{o}$, and we get: $$1=\liminf_{T\rightarrow\infty}\mathbb{P}(Z^{T}\in \mathbb{W}_{k}^{o})\geqslant \int_{\mathbb{W}_{k}^{o}}\rho(z)dz$$
+The last line uses the monotone convergence theorem. Thus, we have proved the inequality \ref{WeakConv}.\\
+\textbf{Step 3. }In this step, we prove that $\rho(z)$ is actually a density. First, it is nonnegative because it is the limit of a sequence of probabilities. Next, we prove it integrates to $1$ over $\mathbb{R}^{k}$. Let the open set $U$ in Step 2 be $\mathbb{W}_{k}^{o}$ to get: $$1=\liminf_{T\rightarrow\infty}\mathbb{P}(Z^{T}\in \mathbb{W}_{k}^{o})\geqslant \int_{\mathbb{W}_{k}^{o}}\rho(z)dz$$
 On the other hand, write the open set $\mathbb{W}_{k}^{o}$ as a countable union of almost disjoint closed rectangles: $\mathbb{W}_{k}^{o}=\bigcup_{i=1}^{\infty}R_{i}$. Then, for any $n\in\mathbb{Z}^{+}$ we can find $N_{n}\in \mathbb{Z}^{+}$ such that $\mathbb{P}(Z^{T}\in\mathbb{W}_{k}^{o})-\mathbb{P}(Z^{T}\in\bigcup_{i=1}^{N_{n}}R_{i})\leq 1/n$, and $N_{n}\rightarrow\infty$ as $n\rightarrow\infty$. 
 \begin{align*}
 	1&=\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \mathbb{W}_{k}^{o})\leq \mathbb{P}(Z^{T}\in\bigcup_{i=1}^{N_{n}}R_{i})+1/n \leq \sum_{i=1}^{N_{n}}\mathbb{P}(Z^{T}\in R_{i})+1/n
 \end{align*}
-Let $T\rightarrow\infty$ we obtain
+Let $T\rightarrow\infty$. Then we obtain
 $$1\leq \sum_{i=1}^{N_{n}}\int_{R_{i}}\rho(z)dz+1/n=\int_{\bigcup_{i=1}^{N_{n}}R_{i}}\rho(z)dz+1/n$$
-due to (\ref{ConvOnRect}) and the fact that $\rho(z)$ integrates to $0$ over the boundary of rectangles. Finally, let $n\rightarrow\infty$, we have $\int_{\mathbb{W}_{k}^{o}}\rho(z)dz\geq 1$ by monotone convergence theorem and conclude that $\rho(z)$ is actually a density.
+due to (\ref{ConvOnRect}) and the fact that $\rho(z)$ integrates to $0$ over the boundary of rectangles. Finally, let $n\rightarrow\infty$. We then have $\int_{\mathbb{W}_{k}^{o}}\rho(z)dz\geq 1$ by the monotone convergence theorem and conclude that $\rho(z)$ is a density.
 \end{proof}
 
 Next we are going to prove Proposition \ref{WeakConvCollide}. Before that, we first introduce some notations and results about multivariate functions.
