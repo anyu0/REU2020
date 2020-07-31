@@ -3,30 +3,52 @@
 %
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Appendix B} \label{Appendix2}
-\subsection{Weak Convergence of Scaled avoiding Bernoulli Line Ensemble} We consider there $\{1,\dots,k\}$-indexed line ensembles with distribution given by $\mathbb{P}^{0,T,\vec{x},\vec{y},\infty,-\infty}_{avoid,Ber}$ in the sense of Definition \ref{DefAvoidingLawBer}. Recall that this is just the law of $k$ independent Bernoulli random walks that have been conditioned to start from $(x_{1},\dots,x_{k})$ at time $0$ and and at $(y_1,\cdots,y_{k})$ at time $T$ and are always ordered. Here $x_{1}\geq x_{2}\geq \cdots \geq x_{k}$, $y_{1}\geq y_{2}\geq \cdots \geq y_{k}$ and $x_{i}$, $y_{i}\in\mathbb{Z}$ satisfy $T\geq y_{i}-x_{i}\geq 0$ for $i=1,\dots,k$. We will drop the infinities and simply write $\mathbb{P}^{0,T,\vec{x},\vec{y}}_{avoid,Ber}$ for the measure.
 
-Fix $p,t\in(0,1)$, $k\in\mathbb{N}$, $a_{i}$, $b_{i}\in\mathbb{R}$ for $i=1,\dots,k$ such that $a_{1}\geq \cdots \geq a_{k}$ and $b_{1}\geq \cdots \geq b_{k}$. Suppose that $\vec{x}^{T}=(x_{1}^{T},\cdots,x_{k}^{T})$ and $\vec{y}^{T}=(y_{1}^{T},\cdots,y_{k}^{T})$ are two sequence of $k$-dimensional vectors with integer entries such that $$\lim_{T\rightarrow\infty}\frac{x_{i}^{T}}{\sqrt{T}}=a_{i} \text{ and } \lim_{T\rightarrow\infty}\frac{y_{i}^{T}-pT}{\sqrt{T}}=b_{i}$$ for $i=1,\dots,k$. Define the sequence of random $k$-dimensional vectors $Z^{T}$ by $$Z^{T}=\big(\frac{L_{1}(tT)-ptT}{\sqrt{T}},\cdots,\frac{L_{k}(tT)-ptT}{\sqrt{T}}\big),$$ where $(L_{1},\cdots,L_{k})$ is $\mathbb{P}^{0,T,\vec{x}^{T},\vec{y}^{T}}_{avoid,Ber}$-distributed. In this section, we will prove that the random vector $Z^{T}$ weakly converges to some continuous distribution and give the corresponding density. The followings are two main results of this section, which give the limiting distribution when $(a_{1},\cdots,a_{k})$ and $(b_{1},\cdots,b_{k})$ contain distinct values and when they contain collided values.
+The goal of this section is to establish the weak convergence of scaled avoiding Bernoulli line ensemble. We consider the $\llbracket 1,k\rrbracket$-indexed line ensembles with distribution given by $\mathbb{P}^{0,T,\vec{x},\vec{y},\infty,-\infty}_{avoid,Ber}$ in the sense of Definition \ref{DefAvoidingLawBer}. Recall that this is just the law of $k$ independent Bernoulli random walks that have been conditioned to start from $\vec{x}=(x_{1},\dots,x_{k})$ at time $0$ and and at $\vec{y}=(y_1,\cdots,y_{k})$ at time $T$ and are always ordered. Here $\vec{x}$, $\vec{y}\in\mathfrak{W}_{k}$ satisfy $T\geq y_{i}-x_{i}\geq 0$ for $i=1,\dots,k$. We will drop the infinities and simply write $\mathbb{P}^{0,T,\vec{x},\vec{y}}_{avoid,Ber}$ for the measure.
+
+This section will be divided into $6$ subsections. In Section \ref{DefMainRes}, we introduce some definitions, formulate the precise statements of two main results we want to prove as Proposition \ref{WeakConvDistinct} and Proposition \ref{WeakConvCollide} and introduce Lemma \ref{LemmaDensity} and Lemma \ref{Integrable} that help to prove them. In Section \ref{SkewSchurPoly}, we introduce some fundamental knowledge about Skew Schur Polynomials and give the distribution of avoiding Bernoulli line ensembles at integer points using Skew Schur Polynomials as Lemma \ref{BerDist}. In Section \ref{ProofProp1}, we will prove our first main result Proposition \ref{WeakConvDistinct} assuming Lemma \ref{LemmaDensity}. In Section \ref{multivar} we introduce some notations and results about multi-indices and multivariate functions which paves the way for proof of Proposition \ref{WeakConvCollide}. Section \ref{ProofProp2} will prove our second main result Proposition \ref{WeakConvCollide} assuming Lemma \ref{Integrable}. Finally, in Section \ref{Pf2Lemma}, we prove Lemma \ref{LemmaDensity} and Lemma \ref{Integrable} and complete our proof.
+
+\subsection{Definitions and Main Results}{\label{DefMainRes}}
+We start by introducing some helpful notations.
+\begin{definition}\label{DefScaled}
+	Fix $p,t\in(0,1)$, $k\in\mathbb{N}$, $\vec{a}$, $\vec{b}\in \mathbb{W}_{k}$ are two vectors in Weyl chamber defined in Definition \ref{DefAvoidingLaw}. Suppose that $\vec{x}^{T}=(x_{1}^{T},\cdots,x_{k}^{T})$ and $\vec{y}^{T}=(y_{1}^{T},\cdots,y_{k}^{T})$ are two sequence of $k$-dimensional vectors with integer entries such that $$\lim_{T\rightarrow\infty}\frac{x_{i}^{T}}{\sqrt{T}}=a_{i} \text{ and } \lim_{T\rightarrow\infty}\frac{y_{i}^{T}-pT}{\sqrt{T}}=b_{i}$$ for $i=1,\dots,k$. Define the sequence of random $k$-dimensional vectors $Z^{T}$ by $$Z^{T}=\big(\frac{L_{1}(tT)-ptT}{\sqrt{T}},\cdots,\frac{L_{k}(tT)-ptT}{\sqrt{T}}\big),$$ where $(L_{1},\cdots,L_{k})$ is $\mathbb{P}^{0,T,\vec{x}^{T},\vec{y}^{T}}_{avoid,Ber}$-distributed.
+\end{definition}
+
+We introduce some constants below
+\begin{align}{\label{WCconst}}
+	\begin{split}
+	&c_{1}(p,t)=\frac{1}{p(p+1)t}, \quad c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}, \quad c_{3}(p,t)=\frac{1}{2p(p+1)t(1-t)}\\
+	&Z=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot e^{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}}\cdot e^{c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}}\det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right)_{i,j=1}^{k}
+	\end{split}
+\end{align}
+and define the function $\rho(z_{1},\cdots, z_{k})\equiv\rho(\vec{z})$ as the following:
+\begin{align}{\label{Density}}
+	\rho(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot \mathbbm{1}_{\{z_{1}>\cdots >z_{k}\}}\cdot \det\big[e^{c_{1}(t,p)a_{i}z_{j}}\big]_{i,j=1}^{k}\det\big[e^{c_{2}(t,p)b_{i}z_{j}}\big]_{i,j=1}^{k}\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}
+\end{align}
+
+We can prove that the function $\rho(z)$ defined in (\ref{Density}) is a density function, meaning that it is non-negative and integrates to $1$ over $\mathbb{R}^{k}$. Since this is an important ingredient of our results, we isolate it in the following lemma and will prove it in Section \ref{Pf2Lemma}.
+\begin{lemma}{\label{LemmaDensity}}
+	The function $\rho(z_{1},\cdots,z_{k})$ defined in (\ref{Density}) is a probability density function.
+\end{lemma}
+
+Now we are ready to state our first main result, which gives the limiting distribution when vectors $\vec{a}$ and $\vec{b}$ contain distinct values.
 
 \begin{proposition}{\label{WeakConvDistinct}}
-	When $a_{1}> \cdots > a_{k}$ and $b_{1}> \cdots > b_{k}$ are all distinct, the random vector $Z^{T}$ converges weakly to a continuous distribution with the density $$\rho(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot \det\big[e^{c_{1}(t,p)a_{i}z_{j}}\big]_{i,j=1}^{k}\det\big[e^{c_{2}(t,p)b_{i}z_{j}}\big]_{i,j=1}^{k}\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\mathbbm{1}_{\{z_{1}>\cdots >z_{k}\}}$$ where $c_{1},c_{2},c_{3}$ are constants depending on $p,t$: 
-	\begin{align*}
-		&c_{1}(p,t)=\frac{1}{p(p+1)t}, \quad c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}, \quad c_{3}(p,t)=\frac{1}{2p(p+1)t(1-t)}
-	\end{align*}
-	and $Z$ is a constant depending on $p,t,\vec{a},\vec{b}$ such that $\rho(z_{1},\cdots,z_{k})$ integrates to $1$ over $\mathbb{R}^{k}$: $$Z=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot e^{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}}\cdot e^{c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}}\det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right)_{i,j=1}^{k}$$
+Assume the same notation as in the Definition \ref{DefScaled}. When $a_{1}> \cdots > a_{k}$ and $b_{1}> \cdots > b_{k}$ are all distinct, the random vector $Z^{T}$ converges weakly to a continuous distribution with the density in (\ref{Density}).	
 \end{proposition}
 
-\begin{proposition}{\label{WeakConvCollide}}
-When $a_{1}\geq \cdots \geq a_{k}$ and $b_{1}\geq \cdots \geq b_{k}$ contain collided values, we suppose
-	\begin{align*}
+Proposition \ref{WeakConvDistinct} states the result when $\vec{a}$ and $\vec{b}$ consist of distinct values. When the values in $\vec{a}$ and $\vec{b}$ start to collide, the three determinants in the density function (\ref{Density}) will vanish(one in constant $Z$ in equation (\ref{WCconst}) and the other two are in the expression of equation (\ref{Density})). In the following, we are going to formulate the result under this new situation. We will construct a modified density function and the random vector $Z^{T}$ will weakly converge to this new density function.
+
+Suppose vectors $\vec{a}$ and $\vec{b}$ cluster as the following:
+\begin{align}{\label{Block}}
+\begin{split}
 	&\vec{a}_{0}=(a_{1},\cdots,a_{k})=(\underbrace{\alpha_{1},\cdots,\alpha_{1}}_{m_{1}},\cdots,\underbrace{\alpha_{p},\cdots,\alpha_{p}}_{m_{p}})\\
 	&\vec{b}_{0}=(b_{1},\cdots,b_{k})=(\underbrace{\beta_{1},\cdots,\beta_{1}}_{n_{1}},\cdots,\underbrace{\beta_{q},\cdots,\beta_{q}}_{n_{q}})
-	\end{align*}
-where $\alpha_{1}>\alpha_{2}>\cdots>\alpha_{p}$, $\beta_{1}>\beta_{2}>\cdots>\beta_{q}$ and $\sum_{i=1}^{p}m_{i}=\sum_{i=1}^{q}n_{i}=k$. Then, the random vector $Z^{T}$ converges weakly to a continuous distribution with the density 
-\begin{align}{\label{Density17}}
-\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot \varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\mathbbm{1}_{\{z_{1}>\cdots> z_{k}\}}	
+\end{split}
 \end{align}
-where $\vec{m}=(m_{1},\cdots,m_{k})$, $\vec{n}=(n_{1},\cdots,n_{k})$, $c_{1},c_{2},c_{3}$ are constants depending on $p,t$ as given in the proposition, $Z$ is a constant depending on $p,t,\vec{a},\vec{b}$ such that $\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})$ integrates to $1$ over $\mathbb{R}^{k}$, and $\varphi(\vec{a}_{0},\vec{z},\vec{m})$ and $\psi(\vec{b}_{0},\vec{z},\vec{n})$ are determinants:
-\begin{equation*}
+where $\alpha_{1}>\alpha_{2}>\cdots>\alpha_{p}$, $\beta_{1}>\beta_{2}>\cdots>\beta_{q}$ and $\sum_{i=1}^{p}m_{i}=\sum_{i=1}^{q}n_{i}=k$. Denote $\vec{m}=(m_{1},\cdots,m_{p})$, $\vec{n}=(n_{1},\cdots,n_{q})$ and define two determinants $\varphi(\vec{a}_{0},\vec{z},\vec{m})$ and $\psi(\vec{b}_{0},\vec{z},\vec{n})$ below:
+\begin{equation}{\label{TwoDet}}
+\begin{split}
 	\varphi(\vec{a}_{0},\vec{z},\vec{m})= \det
 	\left[ \begin{array}{ccc}
 		((c_{1}(t,p)z_{j})^{i-1}e^{c_{1}(t,p)\alpha_{1}z_{j}})_{\substack{i=1,\cdots,m_{1}\\j=1,\cdots,k}}\\
@@ -34,8 +56,7 @@ where $\vec{m}=(m_{1},\cdots,m_{k})$, $\vec{n}=(n_{1},\cdots,n_{k})$, $c_{1},c_{
 	((c_{2}(t,p)z_{j})^{i-1}e^{c_{1}(t,p)\alpha_{p}z_{j}})_{\substack{i=1,\cdots,m_{p} \\j=1,\cdots,k}}
 	\end{array}
 	\right]
-\end{equation*}
-\begin{equation*}
+\\
 	\psi(\vec{b}_{0},\vec{z},\vec{n})= \det
 	\left[ \begin{array}{ccc}
 		((c_{2}(t,p)z_{j})^{i-1}e^{c_{2}(t,p)\beta_{1}z_{j}})_{\substack{i=1,\cdots,n_{1}\\j=1,\cdots,k}}\\
@@ -43,52 +64,106 @@ where $\vec{m}=(m_{1},\cdots,m_{k})$, $\vec{n}=(n_{1},\cdots,n_{k})$, $c_{1},c_{
 	((c_{2}(t,p)z_{j})^{i-1}e^{c_{2}(t,p)\beta_{q}z_{j}})_{\substack{i=1,\cdots, n_{q} \\j=1,\cdots,k}}
 	\end{array}
 	\right]
-\end{equation*} 
+\end{split}
+\end{equation}
 
-\end{proposition}
-In order to prove these two propositions, we need to introduce some lemmas.\\
-The following lemma gives the distribution of avoiding Bernoulli line ensembles at time $\lfloor tT \rfloor$.
-\begin{lemma}
-The avoiding Bernoulli line ensemble at position $\lfloor tT \rfloor$ has the following distribution: $$\mathbb{P}(L_{1}(\lfloor tT \rfloor) = \lambda_{1}, \cdots, L_{k}(\lfloor tT \rfloor) = \lambda_{k})=\frac{s_{\lambda/\mu}(1^{\lfloor tT \rfloor})\cdot s_{\kappa/\lambda}(1^{T-\lfloor tT \rfloor})}{s_{\kappa/\mu}(1^{T})}$$ where $\lambda_{1}>\lambda_{2}>\cdots >\lambda_{k}$ are positive integers, $s_{\lambda/\mu}$ denote skew Schur polynomials and they are specialized in all parameters equal to $1$. The $\mu$ partition is just the vector $\vec{x}^{T}$ and the $\kappa$ partition should be $\vec{y}^{T}$.
+Then define the function 
+\begin{align}{\label{PreDensity17}}
+	H(\vec{z})=\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}
+\end{align}
+we can prove that $H(\vec{z})$ in (\ref{PreDensity17}) is non-negative and integrable over $\mathbb{R}^{k}$, which is formalized in the following lemma:
+\begin{lemma}{\label{Integrable}}
+	The function $H(\vec{z})$ is non-negative and integrable over $\mathbb{R}^{k}$. Thus, we can define the constant $Z_{0}=\int_{\mathbb{R}^{k}}H(\vec{z})\mathbbm{1}_{\{z\in\mathbb{W}_{k}\}}dz<\infty$, and define the following density function:
+\begin{align}{\label{Density17}}
+\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})=\frac{1}{Z_{0}}\cdot\mathbbm{1}_{\{z_{1}>\cdots> z_{k}\}}\cdot \varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}	
+\end{align}
 \end{lemma}
+Now we are ready to state our second main result, which gives the weak convergence of $Z^{T}$ when $\vec{a}$ and $\vec{b}$ have collided values.
+\begin{proposition}{\label{WeakConvCollide}}
+Assume the same notation as in the Definition \ref{DefScaled} and suppose vectors $\vec{a}_{0}$, $\vec{b}_{0}$ has the form in (\ref{Block}). Then, the random vector $Z^{T}$ converges weakly to a continuous distribution with the density in (\ref{Density17}).
+\end{proposition}
 
-\begin{proof} Let $\Omega(0,T,\vec{x}^T, \vec{y}^T)$ be the set of all non-intersecting Bernoulli line ensembles from $\vec{x}^T$ to $\vec{y}^T$. For each line ensemble $\mathfrak{B}\in \Omega(0,T,\bar x^T,\bar y^T)$ with $\mathfrak B=(B_1,...,B_k)$, we may define $\lambda_i(\mathfrak B):=(B_1(i),B_2(i),...,B_k(i))$, where $1 \leqslant i\leqslant T$ is an integer. The $\lambda_i$ form partitions since by the definition of avoiding Bernoulli line ensembles, we have the inequality $B_\alpha(i)>B_\beta(i)$ if $\alpha<\beta$. 
-Now because $B_\alpha(i+1)-B_\alpha(i)\in \{0,1\}$ we know that $B_\alpha(i+1)\geq B_\alpha(i)$ but also since $B_\alpha(i+1)\in \mathbb{Z}$ and $B_{\alpha+1}(i+1)<B_\alpha(i+1)$ by the earlier stated inequality, we know that $B_{\alpha+1}(i+1)+1\leq B_\alpha(i+1)$ and so we find that 
+\subsection{Skew Schur polynomials and distribution of avoiding Bernoulli line ensembles}{\label{SkewSchurPoly}}
+We give some definitions and elementary results regarding skew Schur polynomials first, which are mainly from \cite[Chapter 1]{Mac}.
+\begin{definition}{\label{DefPar}} \emph{Partition, Interlaced, Tableau}
+\begin{enumerate}
+	\item A \emph{partition} is any infinite sequence $\lambda=(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{r}, \cdots)$ of non-negative integers in decreasing order $\lambda_{1}\geq \lambda_{2}\geq \cdots\geq \lambda_{r}\geq \cdots$ and containing only finitely many non-zero terms. The non-zero $\lambda_{i}$ are called \emph{parts} of $\lambda$, and the sum of the parts is the \emph{weight} of $\lambda$, denoted by $|\lambda|$.
+	\item Suppose $\lambda$ and $\mu$ are two partitions, we denote $\lambda\supset\mu$ if $\lambda_{i}\geq \mu_{i}$ for all $i\in \mathbb{Z}^{+}$, and we can define a new partition $\lambda-\mu=(\lambda_{1}-\mu_{1},\lambda_{2}-\mu_{2},\cdots)$.
+	\item Partitions $\lambda=(\lambda_{1}, \lambda_{2},\cdots)$ and $\mu=(\mu_{1}, \mu_{2},\cdots)$ are call \emph{interlaced}, denoted by $\mu\preceq \lambda$, if $\lambda_1\geq \mu_1\geq \lambda_2\geq \mu_2\geq\cdots$. By definition, if $\mu\preceq\lambda$, then $\mu\subset\lambda$.
+	\item A \emph{tableau} $T=(\lambda^{0}, \lambda^{1}, \cdots \lambda^{r})$ is a sequence of partitions such that $\lambda^{0}\subset\lambda^{1}\subset \cdots\subset \lambda^{r}$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition} \emph{Complete Symmetric Function}{\label{CompSymFunc}}\\
+	For each $r\geq 0$ the $r$-th \emph{complete symmetric function} $h_{r}$ is the sum of all monomials of total degree $r$ in the variables $x_1, x_2, \cdots$ so that
+	\begin{align}
+		h_{r}=\sum_{|\lambda|=r}m_{\lambda}
+	\end{align}
+	 where $m_{\lambda}=x_1^{\lambda_1}x_2^{\lambda_2}\cdots$ is the monomial with parts of partition $\lambda$ as corresponding powers. For $r<0$, we  define $h_r$ to be zero. In particular, when $x_1=x_2=\cdots=x_n=1$, $x_{n+1}=x_{n+2}=\cdots=0$, $h_r$ is just the number of partitions that have weight $r$ and $n$ nonzero parts. Thus we have: 
+	 \begin{align}
+	 	h_{r}(1^{n})=\binom{r+n-1}{r}
+	 \end{align}
+\end{definition}
+
+Next, we introduce Skew Schur Polynomial based on \cite[Chapter 1, (5.4), (5.11), (5.12)]{Mac}.
+\begin{definition} \emph{Skew Schur Polynomial, Jacob-Trudi Formula}{\label{DefSkewSchurPoly}}
+\begin{enumerate}
+	\item Suppose $\mu\preceq\lambda$ are two interlaced partitions, then the \emph{skew Schur polynomial} $s_{\lambda/\mu}$ with single variable $x$ is defined by $s_{\lambda/\mu}(x)=x^{|\lambda-\mu|}$. Otherwise, we define $s_{\lambda/\mu}=0$.
+	\item Suppose $\lambda\supset\mu$ are two partitions, define the \emph{skew Schur polynomial} $s_{\lambda/\mu}$ with respect to variables $x_1, x_2, \cdots, x_{n}$ by
+	\begin{align}
+		s_{\lambda/\mu}(x_1,\cdots,x_n)=\sum_{(\nu)}\prod_{i=1}^{n}s_{\nu^{i}/\nu^{i-1}}(x_i)=\sum_{(\nu)}\prod_{i=1}^{n}x_{i}^{|\nu^{i}-\nu^{i-1}|}
+	\end{align}
+	summed over all sequences $(\nu)=(\nu^{0},\nu^{1},\cdots,\nu^{n})$ of partitions, such that $\nu^{0}=\mu$, $\nu^{n}=\lambda$ and $\nu^{0}\preceq\nu^{1}\preceq\cdots\preceq\nu^{n}$. In particular, when $x_1=x_2=\cdots=x_{n}=1$, the skew Schur polynomial is just the number of such sequences of interlaced partitions $(\nu)$.
+	\item We also have the following \emph{Jacob-Trudi Formula}\cite[Chapter 1, (5.4)]{Mac} for the skew Schur polynomial:
+	\begin{align}{\label{J-TFormula}}
+		s_{\lambda/\mu}=\det\left(h_{\lambda_{i}-\mu_{j}-i+j}\right)_{1\leq i,j\leq n}
+	\end{align}
+	where $h_r$ is the complete symmetric function in Definition \ref{CompSymFunc}.
+\end{enumerate}
+\end{definition}
+
+Based on the above preparation, we are ready to state the following lemma giving the distribution of avoiding Bernoulli line ensembles at time $\lfloor tT \rfloor$.
+\begin{lemma}{\label{BerDist}}
+Assume the same notations as in Section \ref{DefMainRes}, denote $m=\lfloor tT \rfloor$, $n=T-\lfloor tT \rfloor$ and $T=m+n$. Then, the avoiding Bernoulli line ensemble at time $m$ has the following distribution: 
+\begin{align}{\label{ProbMassFunc}}
+\mathbb{P}(L_{1}(m) = \lambda_{1}, \cdots, L_{k}(m) = \lambda_{k})=\frac{s_{\lambda/\mu}(1^{m})\cdot s_{\kappa/\lambda}(1^{n})}{s_{\kappa/\mu}(1^{T})}	
+\end{align}
+where $\lambda_{1}>\lambda_{2}>\cdots >\lambda_{k}$ are positive integers, $s_{\lambda/\mu}$ denote skew Schur polynomials and they are specialized in all parameters equal to $1$. The $\mu$ partition is just the vector $\vec{x}^{T}$ and the $\kappa$ partition should be $\vec{y}^{T}$.
+\end{lemma}
+\begin{remark}
+	Here we let $\lambda_{1}>\lambda_{2}>\cdots>\lambda_{k}$ be positive integers, but actually they can be negative. However, we can shift all the endpoints up such that all possible $\lambda_{i}$ are positive. Also, in the proof we treat finite dimensional vectors as partitions because as long as we add infinitely many zeros at their ends we can and make them  ``partitions'' in Definition \ref{DefPar}.
+\end{remark}
+\begin{proof} Let $\Omega(0,T,\vec{x}^T, \vec{y}^T)$ be the set of all non-intersecting Bernoulli line ensembles from $\vec{x}^T$ to $\vec{y}^T$. For each line ensemble $\mathfrak{B}\in \Omega(0,T,\bar x^T,\bar y^T)$ with $\mathfrak B=(B_1,...,B_k)$, we may define $\lambda^{i}(\mathfrak B):=(B_1(i),B_2(i),...,B_k(i))$, where $1 \leq i\leq T$ is an integer. The $\lambda^{i}(\mathfrak{B})$ form partitions since by the definition of avoiding Bernoulli line ensembles, we have the inequality $B_\alpha(i)\geq B_\beta(i)$ if $\alpha<\beta$. Now we claim that partitions $\lambda^{i}(\mathfrak{B})$, $1\leq i \leq T$ are interlaced. By definition of Bernoulli random walk, we have $B_{\alpha}(i+1)=B_{\alpha}(i)+\xi$ and $B_{\alpha+1}(i+1)=B_{\alpha+1}(i)+\eta$, where $\xi$, $\eta\in\{0,1\}$, so $B_{\alpha}(i+1)\geq B_{\alpha}(i)$. If $B_{\alpha}(i)\geq B_{\alpha+1}(i)+1$, then $B_{\alpha}(i)\geq B_{\alpha+1}(i+1)$; If $B_{\alpha}(i)=B_{\alpha+1}(i)$, in order to assure $B_{\alpha}(i+1)\geq B_{\alpha+1}(i+1)$, $\xi$ and $\eta$ have to be $0$ or $1$ at the same time, or $\xi=1$ and $\eta=0$, all of which deduce that $B_{\alpha}(i)\geq B_{\alpha+1}(i+1)$. Therefore,
 \[B_{\alpha+1}(i+1)\leq B_\alpha(i)\leq B_\alpha(i+1)\]
-We therefore find that for all $i$, $\lambda_i\preceq \lambda_{i+1}$. Note that when $i=0$, we get $\lambda_0=\bar x^T$ and $\lambda_T=\bar y^T$.
+and $\lambda^{1}(\mathfrak{B})\preceq\cdots\preceq\lambda^{T}(\mathfrak{B})$ are interlaced. Note that when $i=0$, we get $\lambda^0(\mathfrak{B})=\bar x^T$ and $\lambda^T(\mathfrak{B})=\bar y^T$.
 
 Now, let us define the set 
-\[TB_{\kappa/\mu}^T:=\{(\lambda_0,...,\lambda_T)\mid \lambda_0=\mu, \lambda_T=\kappa, \lambda_i\preceq\lambda_{i+1}\}\] 
+\[TB_{\lambda/\mu}^T:=\{(\lambda^0,...,\lambda^T)\mid \lambda^0=\mu, \lambda^T=\lambda, \lambda^i\preceq\lambda^{i+1}\}\] 
 Now, if we take $f:\Omega(0,T,\bar x^T, \bar y ^T)\to TB_{\kappa/\mu}^T$ with $f(\mathfrak{B})= (\lambda_0(\mathfrak{B}),\cdots \lambda_T(\mathfrak{B}))$. We find that this function is in fact a bijection. 
 
-First, to show for injectivity, suppose that there are two Bernoulli line ensembles, $\mathfrak{B}, \mathfrak{B}'\in \Omega(0,T,\bar x^T, \bar y ^T)$ such that $\mathfrak{B}\neq \mathfrak{B'}$.
-Because Bernoulli line ensembles are determined by their values at integer times, we find that this would imply that there exists some $(q,r)$ such that $0\leq r\leq T$, $0\leq q \leq k$ and $B_q(r)\neq B'_q(r)$ where $B_q$ and $B_q'$ are components of $\mathfrak{B}$ and $\mathfrak{B'}$ respectively. 
-This implies that $\lambda_r(\mathfrak B)\neq \lambda_r'(\mathfrak{B'})$, and we have injectivity. 
+First, to show for injectivity, suppose that there are two Bernoulli line ensembles, $\mathfrak{B}, \widetilde{\mathfrak{B}}\in \Omega(0,T,\bar x^T, \bar y ^T)$ such that $\mathfrak{B}\neq \widetilde{\mathfrak{B}}$.
+Because Bernoulli line ensembles are determined by their values at integer times, we find that this would imply that there exists some $(q,r)$ such that $0\leq r\leq T$, $0\leq q \leq k$ and $B_q(r)\neq \widetilde{\mathfrak{B}}_q(r)$ where $B_q$ and $\widetilde{B}_q$ are components of $\mathfrak{B}$ and $\widetilde{\mathfrak{B}}$ respectively. 
+This implies that $\lambda^r(\mathfrak B)\neq \lambda^r(\widetilde{\mathfrak{B}})$, and we have injectivity. 
 
-Now, surjectivity follows since for any $\bar\lambda=(\lambda_0,...,\lambda_T)$ we may define $\mathfrak{B}(\bar{\lambda})=(B_1(\bar\lambda),...,B_k(\bar\lambda))$ where $B_r(\bar\lambda)(i)=\lambda_i^r$ where $\lambda_i^r$ is the $i$\textit{th} entry of $\lambda_r$. The restrictions on $TB_{\kappa/\mu}^T$ ensure that each $\mathfrak{B}(\bar\lambda)\in \Omega(0,T,\bar x^T,\bar y^T)$, and so $f(\mathfrak B(\bar{\lambda}))=(\lambda_0,\cdots \lambda_T)$ by the definition $\mathfrak{B}(\bar\lambda)$. 
+Now, surjectivity follows since for any $\bar\lambda=(\lambda^0,...,\lambda^T)$ we may define $\mathfrak{B}(\bar{\lambda})=(B_1(\bar\lambda),...,B_k(\bar\lambda))$ where $B_r(\bar\lambda)(i)=\lambda^i_r$ where $\lambda^i_r$ is the $r$\textit{-th} entry of $\lambda^i$. The restrictions on $TB_{\kappa/\mu}^T$ ensure that each $\mathfrak{B}(\bar\lambda)\in \Omega(0,T,\bar x^T,\bar y^T)$, and so $f(\mathfrak B(\bar{\lambda}))=(\lambda^0,\cdots \lambda^T)$ by the definition $\mathfrak{B}(\bar\lambda)$. 
 
-Applying the result regarding the relationship between number of partitions and skew Schur polynomial \cite[Chapter 1, (5.11)]{Mac}, we have \[s_{\kappa/\mu}(1^T)=\sum_{(\nu)}\prod_{i=1}^n s_{\nu^{(i)}/\nu^{i-1}}=\sum_{(\nu)} 1=\lvert TB_{\mu/\kappa}^T\rvert\]
+Applying the result regarding the relationship between number of sequences of interlaced partitions and skew Schur polynomial(Definition \ref{DefSkewSchurPoly}, (2)), we have $\lvert TB_{\lambda/\mu}^T\rvert =s_{\lambda/\mu}(1^T)$.
 
-Therefore, we can find that 
+Therefore, we conclude that 
 \begin{align*}
-\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)
-=&{}\frac{\lvert \Omega(0,\lfloor Tt\rfloor, \vec{x}^T, \lambda)\rvert\cdot \lvert \Omega(\lfloor Tt\rfloor ,T, \lambda, \vec{y}^T)\rvert}{\lvert \Omega(0, T, \vec{x}^T, \vec{y}^T)\rvert}\\
-=&{}\frac{s_{\lambda/\vec{x}^T}(1^{\floor{Tt}})\cdot s_{\vec{y}^T/\lambda}(1^{T-\floor{Tt}})}{s_{\vec{y}^T/\vec{x}^T}(1^T)}
-\end{align*} and proved the result.
+\pr(L_1(m)=\lambda_1,\cdots, L_k(m)=\lambda_k)
+=&{}\frac{\lvert \Omega(0, m, \vec{x}^T, \lambda)\rvert\cdot \lvert \Omega(m, T, \lambda, \vec{y}^T)\rvert}{\lvert \Omega(0, T, \vec{x}^T, \vec{y}^T)\rvert}\\
+=&{}\frac{s_{\lambda/\vec{x}^T}(1^{m})\cdot s_{\vec{y}^T/\lambda}(1^{n})}{s_{\vec{y}^T/\vec{x}^T}(1^T)}
+\end{align*} where $\lambda=(\lambda_{1},\cdots,\lambda_{k})$ is a partition such that $\vec{x}^{T}\preceq\lambda\preceq\vec{y}^{T}$.
 \end{proof}
 
-The following lemma helps to prove Proposition \ref{WeakConvDistinct}. It shows the asymptotic formula for the distribution of avoiding Bernoulli line ensembles at time $\lfloor tT \rfloor$. 
-\begin{lemma}{\label{PointConvLemma}}
-	Let $\mathbb{W}_{k}^{o}$ denote the open Weyl chamber in $\mathbb{R}^{N}$:
-$$\mathbb{W}_{N}^{o}=\{(x_{1},\cdots,x_{k})\in\mathbb{R}^{N}:x_{1}>x_{2}>\cdots>x_{k}\}$$ Fix a real number $A>0$, $p,t\in(0,1)$, take $z=(z_{1},\cdots,z_{k})\in\mathbb{W}_{k}^{o}$ such that $A>z_{1}>\cdots>z_{k}>-A$. Choose sufficiently large $T_{0}$ such that $ptT_{0}-A\sqrt{T_{0}}\geqslant 1$, then for $T\geqslant T_{0}$, define $\lambda_{i}(T)=\lfloor z_{i}\sqrt{T}+ptT\rfloor\geqslant 1$ for $i=1,\cdots,k$. Denote $P_{T}(z)=(\sqrt{T})^{k}\pr(L_1(\lfloor tT\rfloor)=\lambda_1(T),\cdots, L_k(\lfloor tT\rfloor)=\lambda_k(T))$, then we have for almost every $z\in[-A,A]^{k}$:
-$$\lim_{T\rightarrow\infty}P_{T}(z)=\rho(z_{1},\cdots,z_{k})$$ and $P_{T}(z)$ is bounded on $[-A,A]^{k}$, where $\rho(z)$ is given in Proposition \ref{WeakConvDistinct}.
-\end{lemma}
+\subsection{Proof of Proposition \ref{WeakConvDistinct}}{\label{ProofProp1}} In this section, we prove Proposition \ref{WeakConvDistinct} assuming the validity of Lemma \ref{LemmaDensity}. We first intend to prove the limiting function of probability mass function (\ref{ProbMassFunc}) in Lemma \ref{BerDist} is exactly the function in (\ref{Density}), then Lemma \ref{LemmaDensity} justifies that it is actually a probability density function. Finally, we prove that the random vector $Z^{T}$ weakly converges to the density (\ref{Density}).
 
-\begin{proof}
-	(\romannumeral 1) First, we discuss the pointwise convergence of $P_{T}(z)$. By Jacobi-Trudi formula(\cite[Chapter 1, (5.4)]{Mac} ), we conclude:
-\begin{align}{\label{J-T}}
-\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)=\frac{\det\left(h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})\right)_{i,j=1}^k\cdot\det\left(h_{y_i^T-\lambda_j+j-i}(1^{T-\floor{tT}})\right)_{i,j=1}^k}{\det\left(h_{y_i^{T}-x_j^T+j-i}(1^T)\right)_{i,j=1}^k}	
-\end{align}
+We start with finding the asymptotic behavior of skew Schur polynomials in (\ref{ProbMassFunc}). By Jacob-Trudi formula (\ref{J-TFormula}), we only need to find the asymptotic formula for complete symmetric functions, and the result is stated as the following lemma.
+
+\begin{lemma}
+	Assume the same notation as in Section \ref{SkewSchurPoly}. We have the following 
+\end{lemma}
 We first compute the first determinant in the numerator. Using the identity for complete symmetric functions(\cite[Example 1, Section I.2]{Mac}) that $h_r(1^n)=\binom{n+r-1}{r}$, we get the resulting equation 
 \begin{align}{\label{h}}
 h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})&=\frac{(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!}{(\lambda_{i}-x_{j}^{T}-i+j)!(\lfloor tT \rfloor -1)!}
@@ -144,6 +219,24 @@ Plugging (\ref{factorial1}), (\ref{factorial2}) and (\ref{factorial3}) into equa
 	& +(-i+j)\log(\frac{p+1}{p})-\log(p+1)+(z_{i}-a_{j})\sqrt{T}\cdot \log(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^{2}}{p(p+1)t}+o(1)\bigg\}
 \end{align*}
 where the constant in little $o$ notation only depends on $A,p$ and does not depend on $T$.
+
+
+\subsection{Multi-indices and multivariate functions}\label{multivar}
+
+\subsection{Proof of Proposition \ref{WeakConvCollide}}{\label{ProofProp2}}
+\subsection{Proof of Lemma \ref{LemmaDensity} and Lemma \ref{Integrable}}{\label{Pf2Lemma}}
+The following lemma helps to prove Proposition \ref{WeakConvDistinct}. It shows the asymptotic formula for the distribution of avoiding Bernoulli line ensembles at time $\lfloor tT \rfloor$. 
+\begin{lemma}{\label{PointConvLemma}}
+	Let $\mathbb{W}_{k}^{o}$ denote the open Weyl chamber in $\mathbb{R}^{N}$:
+$$\mathbb{W}_{N}^{o}=\{(x_{1},\cdots,x_{k})\in\mathbb{R}^{N}:x_{1}>x_{2}>\cdots>x_{k}\}$$ Fix a real number $A>0$, $p,t\in(0,1)$, take $z=(z_{1},\cdots,z_{k})\in\mathbb{W}_{k}^{o}$ such that $A>z_{1}>\cdots>z_{k}>-A$. Choose sufficiently large $T_{0}$ such that $ptT_{0}-A\sqrt{T_{0}}\geqslant 1$, then for $T\geqslant T_{0}$, define $\lambda_{i}(T)=\lfloor z_{i}\sqrt{T}+ptT\rfloor\geqslant 1$ for $i=1,\cdots,k$. Denote $P_{T}(z)=(\sqrt{T})^{k}\pr(L_1(\lfloor tT\rfloor)=\lambda_1(T),\cdots, L_k(\lfloor tT\rfloor)=\lambda_k(T))$, then we have for almost every $z\in[-A,A]^{k}$:
+$$\lim_{T\rightarrow\infty}P_{T}(z)=\rho(z_{1},\cdots,z_{k})$$ and $P_{T}(z)$ is bounded on $[-A,A]^{k}$, where $\rho(z)$ is given in Proposition \ref{WeakConvDistinct}.
+\end{lemma}
+
+\begin{proof}
+	(\romannumeral 1) First, we discuss the pointwise convergence of $P_{T}(z)$. By Jacobi-Trudi formula(\cite[Chapter 1, (5.4)]{Mac} ), we conclude:
+\begin{align}{\label{J-T}}
+\pr(L_1(\lfloor tT\rfloor)=\lambda_1,\cdots, L_k(\lfloor tT\rfloor)=\lambda_k)=\frac{\det\left(h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})\right)_{i,j=1}^k\cdot\det\left(h_{y_i^T-\lambda_j+j-i}(1^{T-\floor{tT}})\right)_{i,j=1}^k}{\det\left(h_{y_i^{T}-x_j^T+j-i}(1^T)\right)_{i,j=1}^k}	
+\end{align}
 Denote $S_{1}(p,t,T)=\big((p+1)tT)\log((p+1)tT\big)-(ptT)\log(ptT)-(tT)\log(tT)$ and we further calculate the determinant 
 \begin{align*} 
 \det(h_{\lambda_{i}-x_{j}-i+j}(1^{\lfloor tT \rfloor}))_{i,j=1}^{k} =&\left[(\sqrt{2\pi})^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}e^{S_{1}(p,t,T)-\log(p+1)}\right]^{k}\\
@@ -231,16 +324,13 @@ By Lemma \ref{PointConvLemma}, the function $f_{T}(z_{1},\cdots,z_{k})$ pointwis
 \end{align*}
 The last line uses monotone convergence theorem. Thus, we proved the inequality \ref{WeakConv}.\\
 \textbf{Step 3. }In this step, we prove that $\rho(z)$ is actually a density. First, it is nonnegative because it's the limit of a sequence of probabilities. Next, we prove it integrates to $1$ over $\mathbb{R}^{k}$. Let the open set $U$ in Step 2 be $\mathbb{W}_{k}^{o}$, and we get: $$1=\liminf_{T\rightarrow\infty}\mathbb{P}(Z^{T}\in \mathbb{W}_{k}^{o})\geqslant \int_{\mathbb{W}_{k}^{o}}\rho(z)dz$$
-On the other hand, write the open set $\mathbb{W}_{k}^{o}$ as a countable union of almost disjoint closed rectangles: $\mathbb{W}_{k}^{o}=\bigcup_{i=1}^{\infty}R_{i}$. Then we have:
+On the other hand, write the open set $\mathbb{W}_{k}^{o}$ as a countable union of almost disjoint closed rectangles: $\mathbb{W}_{k}^{o}=\bigcup_{i=1}^{\infty}R_{i}$. Then, for any $n\in\mathbb{Z}^{+}$ we can find $N_{n}\in \mathbb{Z}^{+}$ such that $\mathbb{P}(Z^{T}\in\mathbb{W}_{k}^{o})-\mathbb{P}(Z^{T}\in\bigcup_{i=1}^{N_{n}}R_{i})\leq 1/n$, and $N_{n}\rightarrow\infty$ as $n\rightarrow\infty$. 
 \begin{align*}
-	1&=\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \mathbb{W}_{k}^{o})=\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \bigcup_{i=1}^{\infty}R_{i})\leqslant\sum_{i=1}^{\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i})
+	1&=\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \mathbb{W}_{k}^{o})\leq \mathbb{P}(Z^{T}\in\bigcup_{i=1}^{N_{n}}R_{i})+1/n \leq \sum_{i=1}^{N_{n}}\mathbb{P}(Z^{T}\in R_{i})+1/n
 \end{align*}
-where the inequality uses sub-additivity of probability measure. Take an arbitrary $\epsilon>0$. For each $R_{i}$, we can find a closed rectangle $R_{i}^{\epsilon-}$ contained in $R_{i}$ such that $\mathbb{P}(Z^{T}\in R_{i})\leqslant \mathbb{P}(Z^{T}\in R_{i}^{\epsilon-})+\frac{\epsilon}{2^{i}}$. Then, we have
-\begin{align*}
-	1&=\lim_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in \mathbb{W}_{k}^{o})\leqslant \lim_{T\rightarrow\infty}\sum_{i=1}^{\infty}\big[\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R_{i}^{\epsilon-})+\frac{\epsilon}{2^{i}}\big]\\
-	&=\sum_{i=1}^{\infty}\int_{R_{i}^{\epsilon-}}\rho(z)dz+\epsilon=\int_{\bigcup_{i=1}^{\infty}R_{i}^{\epsilon-}}\rho(z)dz+\epsilon
-\end{align*}
-We can interchange the limit and the infinite sum because the sum is bounded by $1$. Then let $\epsilon\downarrow 0$, we get $1\leqslant\int_{\mathbb{W}_{k}^{o}}\rho(z)dz$, implying $\int_{\mathbb{W}_{k}^{o}}\rho(z)dz=1$ and we conclude that $\rho(z)$ is actually a density.
+Let $T\rightarrow\infty$ we obtain
+$$1\leq \sum_{i=1}^{N_{n}}\int_{R_{i}}\rho(z)dz+1/n=\int_{\bigcup_{i=1}^{N_{n}}R_{i}}\rho(z)dz+1/n$$
+due to (\ref{ConvOnRect}) and the fact that $\rho(z)$ integrates to $0$ over the boundary of rectangles. Finally, let $n\rightarrow\infty$, we have $\int_{\mathbb{W}_{k}^{o}}\rho(z)dz\geq 1$ by monotone convergence theorem and conclude that $\rho(z)$ is actually a density.
 \end{proof}
 
 Next we are going to prove Proposition \ref{WeakConvCollide}. Before that, we first introduce some notations and results about multivariate functions.
