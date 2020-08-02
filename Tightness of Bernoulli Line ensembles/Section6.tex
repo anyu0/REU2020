@@ -4,11 +4,11 @@
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Lower bounds on the acceptance probability}\label{Section6}
 
-\subsection{Proof of Lemma \ref{LemmaAP1}}\label{sect61} Throughout this section we assume the same notation as in Lemma \ref{LemmaAP1}, i.e., we assume that we have fixed $k \in \mathbb{N}$, $p \in (0,1)$, $M_1, M_2 > 0$, $\ell_{bot}: \llbracket -t_2, t_2 \rrbracket \rightarrow \mathbb{R} \cup \{ - \infty \}$, and $\vec{x}, \vec{y} \in \mathfrak{W}_{k-1}$ such that $|\Omega_{avoid}(-t_2, t_2, \vec{x}, \vec{y}, \infty, \ell_{bot})| \geq 1$. We also assume that
+\subsection{Proof of Lemma \ref{LemmaAP1}}\label{sect61} Throughout this section we assume the same notation as in Lemma \ref{LemmaAP1}, i.e., we assume that we have fixed $k \in \mathbb{N}$, $p \in (0,1)$, $M_1, M_2 > 0$, $\ell_{bot}: \llbracket -t_3, t_3 \rrbracket \rightarrow \mathbb{R} \cup \{ - \infty \}$, and $\vec{x}, \vec{y} \in \mathfrak{W}_{k-1}$ such that $|\Omega_{avoid}(-t_3, t_3, \vec{x}, \vec{y}, \infty, \ell_{bot})| \geq 1$. We also assume that
 \begin{enumerate}
-	\item $\sup_{s \in [- t_2,t_2]}\big(\ell_{bot}(s)  - ps \big)  \leq M_2 (2t_2)^{1/2}$,
-	\item  $-pt_2 + M_1 (2t_2)^{1/2} \geq  x_1 \geq  x_{k-1} \geq \max\left(\ell_{bot}(-t_2), -pt_2- M_1 (2t_2)^{1/2}\right),$
-	\item $pt_2 + M_1 (2t_2)^{1/2} \geq y_1 \geq y_{k-1} \geq  \max \left( \ell_{bot}(t_2),  p t_2- M_1(2t_2)^{1/2} \right).$
+	\item $\sup_{s \in [- t_3,t_3]}\big[\ell_{bot}(s)  - ps \big]  \leq M_2 (2t_3)^{1/2}$,
+	\item  $-pt_3 + M_1 (2t_3)^{1/2} \geq  x_1 \geq  x_{k-1} \geq \max\left(\ell_{bot}(-t_3), -pt_3 - M_1 (2t_3)^{1/2}\right),$
+	\item $pt_3 + M_1 (2t_3)^{1/2} \geq y_1 \geq y_{k-1} \geq  \max \left( \ell_{bot}(t_3),  p t_3 - M_1(2t_3)^{1/2} \right).$
 \end{enumerate}
 
 \begin{definition}\label{TildeDef}
@@ -97,16 +97,16 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	
 	Observe by the rightmost inequalities in conditions (1) and (2) in the hypothesis, as well as condition (1) in Lemma \ref{LemmaAP1}, that $\ell_{bot}$ lies a distance of at least $2\epsilon(2t_2)^{1/2}$ uniformly below the line segment connecting $a_{k-1}$ and $b_{k-1}$. Also note that (1) and (2) imply $|b_i-a_i-2pt_1| \leq (V^{top} - M_2)(2pt_1)^{1/2}$ for each $i$. Lastly noting (3), we see that the conditions of Lemma \ref{CurveSeparation} are satisfied with $C = 2\epsilon$. This implies \eqref{eqnRT}, with
 	\[
-	g = \big(1 - 3e^{-\epsilon^2/2p(1-p)}\big)^{k-1}.
+	g = \left( 1 - 3\sum_{n=1}^\infty e^{-\epsilon^2n^2/2p(1-p)}\right)^{k-1}.
 	\]
 	
 \end{proof}
 
-\noindent The next lemma helps us derive the lower bound $h$ in \eqref{eqn57}:
+\noindent The next lemma helps us derive the lower bound $h$ in \eqref{eqn57}.
 
 \begin{lemma}\label{LemmaBP2} For any $R > 0$ we can find $V_1^t, V_1^b \geq M_2 + R$, $h_1 > 0$ and $N_7 \in \mathbb{N}$ (depending on $R$) such that if $N \geq N_7$ we have
 	\begin{equation}\label{eqnRT2}
-	\mathbb{P}_{\tilde{\mathfrak{L}}} \left(  (2t_2)^{1/2} V_1^t \geq \tilde{L}_1(\pm t_{12}) \mp p t_{12} \geq \tilde{L}_{k-1}(\pm t_{12}) \mp p t_{12} \geq (2t_2)^{1/2} V_1^b  \right) \geq h_1.
+	\mathbb{P}_{\tilde{\mathfrak{Q}}} \left(  (2t_3)^{1/2} V_1^t \geq \tilde{Q}_1(\pm t_2) \mp p t_2 \geq \tilde{Q}_{k-1}(\pm t_2) \mp p t_2 \geq (2t_3)^{1/2} V_1^b  \right) \geq h_1.
 	\end{equation}
 	
 \end{lemma}
@@ -115,102 +115,103 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	
 	Let the constant $C$ be as in \eqref{21Cdef}, and put
 	\begin{equation}\label{5.10Vb}
-	V_1^b = M_1 + Ck + M_2 + R, \quad K_1 = (8r+14)V_1^b,
+	V_1^b = M_1 + Ck + M_2 + R, \quad K_1 = (4r+10)V_1^b,
 	\end{equation}
 	\begin{equation}\label{5.10h1}
 	h_1 =  \frac{2^{k/2-5}\big(1-2e^{-4/p(1-p)}\big)^{2k}}{(\pi p(1-p))^{k/2}}\,\exp\left(-\frac{2k(K_1+M_1+6)^2}{p(1-p)}\right).
 	\end{equation}
 	Note in particular that $V_1^b > M_2 + R$. We will choose $V_1^t > V_1^b$ in the below depending on $h_1$. We claim that for these choices of  $V_1^b, V_1^t, h_1$, and for large enough $N$, we have 
 	\begin{align}
-	\mathbb{P}_{\tilde{\mathfrak{L}}}\Big(\tilde{L}_{k-1}(\pm t_{12}) \mp pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) &\geq 2h_1, \label{5.10bound1}\\
-	\mathbb{P}_{\tilde{\mathfrak{L}}}\Big(\tilde{L}_1(\pm t_{12}) \mp pt_{12} > (2t_2)^{1/2}V_1^t\Big) &\leq h_1. \label{5.10bound2}
+	\mathbb{P}_{\tilde{\mathfrak{Q}}}\left(\tilde{Q}_{k-1}(\pm t_2) \mp pt_2 \geq (2t_3)^{1/2}V_1^b\right) &\geq 2h_1, \label{5.10bound1}\\
+	\mathbb{P}_{\tilde{\mathfrak{Q}}}\left(\tilde{Q}_1(\pm t_2) \mp pt_2 > (2t_3)^{1/2}V_1^t\right) &\leq h_1. \label{5.10bound2}
 	\end{align}
 	Assuming the validity of the claim, we then observe that the probability in \eqref{eqnRT2} is bounded below by $2h_1 - h_1 = h_1$, proving the lemma. We will prove \eqref{5.10bound1} and \eqref{5.10bound2} in three steps.\\
 	
-	\noindent\textbf{Step 1.} In this step we prove \eqref{5.10bound1} assuming results from Step 2 below. We condition on the value of $\tilde{\mathfrak{L}}$ at 0 and use the Schur Gibbs property to divide $\tilde{\mathfrak{L}}$ into two independent line ensembles on $[-t_2,0]$ and $[0,t_2]$. Observe by Lemma \ref{MCLfg} that
+	\noindent\textbf{Step 1.} In this step we prove \eqref{5.10bound1} assuming results from Step 2 below. We condition on the value of $\tilde{\mathfrak{L}}$ at 0 and use the Schur Gibbs property to divide $\tilde{\mathfrak{Q}}$ into two independent line ensembles on $[-t_3,0]$ and $[0,t_3]$. Observe by Lemma \ref{MCLfg} that
 	\begin{equation}\label{5.10MC}
-	\mathbb{P}_{\tilde{\mathfrak{L}}}\Big(\tilde{L}_{k-1}(\pm t_{12}) \mp pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \mathbb{P}^{-t_2,t_2,\vec{x},\vec{y}}_{avoid, Ber}\Big(\tilde{L}_{k-1}(\pm t_{12}) \mp pt_{12} \geq (2t_2)^{1/2}V_1^b\Big).
+	\mathbb{P}_{\tilde{\mathfrak{Q}}}\left(\tilde{Q}_{k-1}(\pm t_2) \mp pt_2 \geq (2t_3)^{1/2}V_1^b\right) \geq \mathbb{P}^{-t_3,t_3,\vec{x},\vec{y}}_{avoid, Ber; S}\left(\tilde{Q}_{k-1}(\pm t_2) \mp pt_2 \geq (2t_3)^{1/2}V_1^b\right).
 	\end{equation}
 	With $K_1$ as in \eqref{5.10Vb}, we define events
 	\[
-	E_{\vec{z}} = \big\{(\tilde{L}_1(0),\dots,\tilde{L}_{k-1}(0)) = \vec{z}\big\}, \quad X = \Big\{ \vec{z}\in\mathfrak{W}_{k-1} : z_{k-1} \geq K_1(2t_2)^{1/2} \mbox { and } \mathbb{P}^{-t_2,t_2,\vec{x},\vec{y}}_{avoid,Ber}(E_{\vec{z}}) > 0\Big\},
+	E_{\vec{z}} = \left\{\big(\tilde{Q}_1(0),\dots,\tilde{Q}_{k-1}(0)\big) = \vec{z}\right\}, \quad X = \left\{ \vec{z}\in\mathfrak{W}_{k-1} : z_{k-1} \geq K_1(2t_3)^{1/2} \mbox { and } \mathbb{P}^{-t_3,t_3,\vec{x},\vec{y}}_{avoid,Ber; S}(E_{\vec{z}}) > 0\right\},
 	\]
 	and $E = \bigsqcup_{\vec{z} \in X} E_{\vec{z}}$. Note that $X$ is non-empty if $N$ is sufficiently large depending on $M_1,C,k,M_2,R$. By Lemma \ref{prob19}, we have
 	\begin{equation}\label{5.10Ebound}
-	\mathbb{P}^{-t_2,t_2,\vec{x},\vec{y}}_{avoid, Ber}(E) \geq \mathbb{P}^{-t_2,t_2,\vec{x},\vec{y}}_{avoid,Ber}\Big(\tilde{L}_{k-1}(0) \geq K_1(2t_2)^{1/2}\Big) \geq A\exp\left(-\frac{2k(K_1+M_1+6)^2}{p(1-p)}\right)
+	\mathbb{P}^{-t_3,t_3,\vec{x},\vec{y}}_{avoid, Ber; S}(E) \geq \mathbb{P}^{-t_3,t_3,\vec{x},\vec{y}}_{avoid,Ber; S}\left(\tilde{Q}_{k-1}(0) \geq K_1(2t_3)^{1/2}\right) \geq A\exp\left(-\frac{2k(K_1+M_1+6)^2}{p(1-p)}\right)
 	\end{equation}
 	for sufficiently large $N$, where $A = A(p,k)$ is a constant given explicitly in \eqref{19ineq}.
 	
-	Now let $\tilde{L}_i^1$ and $\tilde{L}_i^2$ denote the restrictions of $\tilde{L}_i$ to $[-t_2,0]$ and $[0,t_2]$ respectively, for $1\leq i\leq k-1$. We observe that if $\vec{z}\in X$, then
+	Now let $\tilde{Q}_i^1$ and $\tilde{Q}_i^2$ denote the restrictions of $\tilde{Q}_i$ to $[-t_3,0]$ and $[0,t_3]$ respectively for $1\leq i\leq k-1$, and write $S_1 = S\cap\llbracket -t_3,0\rrbracket$, $S_2 = S\cap\llbracket 0, t_3\rrbracket$. We observe that if $\vec{z}\in X$, then
 	\begin{equation}\label{5.10split}
-	\mathbb{P}^{-t_2,t_2,\vec{x},\vec{y}}_{avoid,Ber}\big(\tilde{L}^1_{k-1} = \ell_1, \tilde{L}^2_{k-1} = \ell_2 \, |\, E_{\vec{z}}\big) = \mathbb{P}^{-t_2,0,\vec{x},\vec{z}}_{avoid,Ber}(\ell_1)\cdot\mathbb{P}^{0,t_2,\vec{z},\vec{y}}_{avoid,Ber}(\ell_2).
+	\mathbb{P}^{-t_3,t_3,\vec{x},\vec{y}}_{avoid,Ber;S}\left(\tilde{Q}^1_{k-1} = \ell_1, \tilde{Q}^2_{k-1} = \ell_2 \, |\, E_{\vec{z}}\right) = \mathbb{P}^{-t_3,0,\vec{x},\vec{z}}_{avoid,Ber;S_1}(\ell_1)\cdot\mathbb{P}^{0,t_3,\vec{z},\vec{y}}_{avoid,Ber;S_2}(\ell_2).
 	\end{equation}
 	In Step 2, we will prove that for large $N$,
 	\begin{equation}\label{5.10fourth}
 	\begin{split}
-	&\mathbb{P}^{-t_2,0,\vec{x},\vec{z}}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \frac{1}{4},\\
-	&\mathbb{P}^{0,t_2,\vec{x},\vec{z}}_{avoid,Ber}\Big(\tilde{L}^2_{k-1}(t_{12}) - pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \frac{1}{4}.
+	&\mathbb{P}^{-t_3,0,\vec{x},\vec{z}}_{avoid,Ber;S_1}\left(\tilde{Q}^1_{k-1}(-t_2) + pt_2 \geq (2t_3)^{1/2}V_1^b\right) \geq \frac{1}{4},\\
+	&\mathbb{P}^{0,t_3,\vec{x},\vec{z}}_{avoid,Ber;S_2}\left(\tilde{Q}^2_{k-1}(t_2) - pt_{12} \geq (2t_3)^{1/2}V_1^b\right) \geq \frac{1}{4}.
 	\end{split}
 	\end{equation}
 	Using \eqref{5.10Ebound}, \eqref{5.10split}, and \eqref{5.10fourth}, we conclude that
 	\[
-	\mathbb{P}^{-t_2,t_2,\vec{x},\vec{y}}_{avoid, Ber}\Big(\tilde{L}_{k-1}(\pm t_{12}) \mp pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \frac{A}{16}\exp\left(-\frac{2k(K_1+M_1+6)^2}{p(1-p)}\right).
+	\mathbb{P}^{-t_2,t_2,\vec{x},\vec{y}}_{avoid, Ber}\left(\tilde{L}_{k-1}(\pm t_{12}) \mp pt_{12} \geq (2t_2)^{1/2}V_1^b\right) \geq \frac{A}{16}\exp\left(-\frac{2k(K_1+M_1+6)^2}{p(1-p)}\right).
 	\]
 	In combination with \eqref{5.10MC}, this proves \eqref{5.10bound1} with $h_1$ as in \eqref{5.10h1}.\\
 	
 	\noindent\textbf{Step 2.} In this step, we prove the inequalities \eqref{5.10fourth} from Step 1, using Lemma \ref{LemmaHalfS4}. Let us define vectors $\vec{x}\,', \vec{z}\,', \vec{y}\,'$ by
 	\begin{align*}
-	x_i' &= \lfloor -pt_2 - M_1(2t_2)^{1/2}\rfloor - (i-1)\lceil C(2t_2)^{1/2}\rceil,\\
-	z_i' &= \lfloor K_1(2t_2)^{1/2}\rfloor - (i-1)\lceil C(2t_2)^{1/2}\rceil,\\
-	y_i' &= \lfloor pt_2 - M_1(2t_2)^{1/2}\rfloor - (i-1)\lceil C(2t_2)^{1/2}\rceil.
+	x_i' &= \lfloor -pt_3 - M_1(2t_3)^{1/2}\rfloor - (i-1)\lceil C(2t_3)^{1/2}\rceil,\\
+	z_i' &= \lfloor K_1(2t_3)^{1/2}\rfloor - (i-1)\lceil C(2t_3)^{1/2}\rceil,\\
+	y_i' &= \lfloor pt_3 - M_1(2t_3)^{1/2}\rfloor - (i-1)\lceil C(2t_3)^{1/2}\rceil.
 	\end{align*}
-	Note that $x_i' \leq x_{k-1} \leq x_i$ and $x_i' - x_{i+1}' \geq C(2t_2)^{1/2}$ for $1\leq i\leq k - 1$, and likewise for $z_i',y_i'$. By Lemma \ref{MCLxy} and the Schur Gibbs property, we have
+	Note that $x_i' \leq x_{k-1} \leq x_i$ and $x_i' - x_{i+1}' \geq C(2t_3)^{1/2}$ for $1\leq i\leq k - 1$, and likewise for $z_i',y_i'$. By Lemma \ref{MCLxy} we have
 	\begin{equation}\label{5.10separate}
 	\begin{split}
-	&\mathbb{P}^{-t_2,0,\vec{x},\vec{z}}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \mathbb{P}^{-t_2,0,\vec{x}\,',\vec{z}\,'}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big)\\ \geq \; & \mathbb{P}^{-t_2,0,x_{k-1}',z_{k-1}'}_{Ber}\Big(\ell_1(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) - \big( 1 - \mathbb{P}^{-t_2,t_2,\vec{x}\,',\vec{z}\,'}_{Ber}\big(\tilde{L}^1_1 \geq \cdots \geq \tilde{L}_{k-1}^1\big)\big).
+	&\mathbb{P}^{-t_3,0,\vec{x},\vec{z}}_{avoid,Ber;S_1}\left(\tilde{Q}^1_{k-1}(-t_2) + pt_2 \geq (2t_3)^{1/2}V_1^b\right) \geq \mathbb{P}^{-t_3,0,\vec{x}\,',\vec{z}\,'}_{avoid,Ber;S_1}\left(\tilde{Q}^1_{k-1}(-t_2) + pt_2 \geq (2t_3)^{1/2}V_1^b\right) \geq \\ 
+	& \mathbb{P}^{-t_3,0,x_{k-1}',z_{k-1}'}_{Ber}\left(\ell_1(-t_2) + pt_2 \geq (2t_3)^{1/2}V_1^b\right) - \left( 1 - \mathbb{P}^{-t_3,t_3,\vec{x}\,',\vec{z}\,'}_{Ber}\left(\tilde{Q}^1_1 \geq \cdots \geq \tilde{Q}_{k-1}^1\right)\right).
 	\end{split}
 	\end{equation} 
-	To bound the first term on the second line, first note that $x_{k-1}' \geq -pt_2 - M_1(2t_2)^{1/2} - C(k-1)(2t_2)^{1/2}$ and $z_{k-1}' \geq K_1(2t_2)^{1/2} - C(k-1)(2t_2)^{1/2}$ for sufficiently large $N$. Let us write $\tilde{x},\tilde{z}$ for these two lower bounds. Then by Lemma \ref{LemmaHalfS4}, we have
+	To bound the first term on the second line, first note that $x_{k-1}' \geq -pt_3 - (M_1+C(k-1))(2t_3)^{1/2}$ and $z_{k-1}' \geq K_1(2t_3)^{1/2} - C(k-1)(2t_3)^{1/2}$ for sufficiently large $N$. Let us write $\tilde{x},\tilde{z}$ for these two lower bounds. Then by Lemma \ref{LemmaHalfS4}, we have
 	\begin{equation}\label{5.10third1}
-	\mathbb{P}^{-t_2,0,x_{k-1}',z_{k-1}'}_{Ber}\Big(\ell_1(-t_{12}) \geq \frac{t_{12}}{t_2}\,\tilde{x} + \frac{t_2-t_{12}}{t_2}\,\tilde{z} - (2t_2)^{1/4}\Big) \geq \frac{1}{3}.
+	\mathbb{P}^{-t_3,0,x_{k-1}',z_{k-1}'}_{Ber}\left(\ell_1(-t_2) \geq \frac{t_2}{t_3}\,\tilde{x} + \frac{t_3-t_2}{t_3}\,\tilde{z} - (2t_3)^{1/4}\right) \geq \frac{1}{3}.
 	\end{equation}  
-	Moreover, as long as $N^\alpha > 4$, we have 
-	\begin{equation}\label{4r+7}
-	\frac{t_2-t_{12}}{t_2} \geq 1 - \frac{(r+3/2)N^\alpha}{(r+2)N^\alpha - 1} > 1-\frac{r+3/2}{r+7/4} = \frac{1}{4r+7}.
+	Moreover, as long as $N^\alpha > 2$, we have 
+	\begin{equation}\label{2r+5}
+	\frac{t_3-t_2}{t_3} \geq 1 - \frac{(r+2)N^\alpha}{(r+3)N^\alpha - 1} > 1-\frac{r+2}{r+5/2} = \frac{1}{2r+5}.
 	\end{equation}
-	It follows from our choice of $V_1^b$ and $K_1 = 2(4r+7)V_1^b$ in \eqref{5.10Vb}, as well as \eqref{4r+7}, that 
+	It follows from our choice of $V_1^b$ and $K_1 = 2(2r+5)V_1^b$ in \eqref{5.10Vb}, as well as \eqref{2r+5}, that 
 	\begin{align*}
-	\frac{t_{12}}{t_2}\,\tilde{x} + \frac{t_2-t_{12}}{t_2}\,\tilde{z} - (2t_2)^{1/4} &= -pt_{12} - C(k-1)(2t_2)^{1/2} - \frac{t_{12}}{t_2}\,M_1(2t_2)^{1/2} + \frac{t_2-t_{12}}{t_2}\,K_1(2t_2)^{1/2} - (2t_2)^{1/4}\\ 
-	&\geq -pt_{12} - Ck(2t_2)^{1/2} - M_1(2t_2)^{1/2} + \frac{1}{4r+7}\,K_1(2t_2)^{1/2}\\
-	&= -pt_{12} + (M_1 + Ck + 2(M_2+R))(2t_2)^{1/2}\\
-	&> -pt_{12} + (2t_2)^{1/2}V_1^b.
+	\frac{t_2}{t_3}\,\tilde{x} + \frac{t_3-t_2}{t_3}\,\tilde{z} - (2t_3)^{1/4} &= -pt_2 - C(k-1)(2t_3)^{1/2} - \frac{t_2}{t_3}\,M_1(2t_3)^{1/2} + \frac{t_3-t_2}{t_3}\,K_1(2t_3)^{1/2} - (2t_3)^{1/4}\\ 
+	&\geq -pt_2 - Ck(2t_3)^{1/2} - M_1(2t_3)^{1/2} + \frac{1}{2r+5}\,K_1(2t_3)^{1/2}\\
+	&= -pt_2 + (M_1 + Ck + 2(M_2+R))(2t_3)^{1/2}\\
+	&> -pt_2 + (2t_3)^{1/2}V_1^b.
 	\end{align*}
 	For the first inequality, we used the fact that $t_{12}/t_2 < 1$, and we assumed that $N$ is sufficiently large so that $C(k-1)(2t_2)^{1/2} + (2t_2)^{1/4} \leq Ck(2t_2)^{1/2}$. Using \eqref{5.10third1}, we conclude that
 	\begin{equation}\label{5.10third2}
-	\mathbb{P}^{-t_2,0,x_{k-1}',z_{k-1}'}_{Ber}\Big(\ell_1(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \frac{1}{3}.
+	\mathbb{P}^{-t_3,0,x_{k-1}',z_{k-1}'}_{Ber}\left(\ell_1(-t_2) + pt_2 \geq (2t_3)^{1/2}V_1^b\right) \geq \frac{1}{3}.
 	\end{equation}
 	Since $|z_i'-x_i'-pt_2| \leq (K_1+M_1+1)(2t_2)^{1/2}$, we have by Lemma \ref{CurveSeparation} and our choice of $C$ that the second probability in the second line of \eqref{5.10separate} is bounded below by
 	\[
-	\big(1-3e^{-C^2/8p(1-p)}\big)^{k-1} \geq 11/12.
+	\left(1-3e^{-C^2/8p(1-p)}\right)^{k-1} \geq 11/12.
 	\]
 	It follows from \eqref{5.10separate} and \eqref{5.10third2} that
 	\begin{equation*}
-	\mathbb{P}^{-t_2,0,\vec{x},\vec{z}}_{avoid,Ber}\Big(\tilde{L}^1_{k-1}(-t_{12}) + pt_{12} \geq (2t_2)^{1/2}V_1^b\Big) \geq \frac{1}{3} - \frac{1}{12} = \frac{1}{4},
+	\mathbb{P}^{-t_3,0,\vec{x},\vec{z}}_{avoid,Ber;S_1}\left(\tilde{Q}^1_{k-1}(-t_2) + pt_2 \geq (2t_3)^{1/2}V_1^b\right) \geq \frac{1}{3} - \frac{1}{12} = \frac{1}{4},
 	\end{equation*}
 	proving the first inequality in \eqref{5.10fourth}. The second inequality is proven similarly.
 	\\
 	
 	\noindent\textbf{Step 3.} Here we prove \eqref{5.10bound2}. Let $C$ be as in Step 1, and define vectors $\vec{x}\,'', \vec{y}\,''\in\mathfrak{W}_{k-1}$ by
 	\begin{align*}
-	x_i'' &= \lceil -pt_2 + M_1(2t_2)^{1/2}\rceil + (k-i)\lceil C(2t_2)^{1/2}\rceil,\\
-	y_i'' &= \lceil pt_2 + M_1(2t_2)^{1/2}\rceil + (k-i)\lceil C(2t_2)^{1/2}\rceil.
+	x_i'' &= \lceil -pt_3 + M_1(2t_3)^{1/2}\rceil + (k-i)\lceil C(2t_3)^{1/2}\rceil,\\
+	y_i'' &= \lceil pt_3 + M_1(2t_3)^{1/2}\rceil + (k-i)\lceil C(2t_3)^{1/2}\rceil.
 	\end{align*}
-	Note that $x_i'' \geq x_1 \geq x_i$ and $x_i''-x_{i+1}'' \geq C(2t_2)^{1/2}$, and likewise for $y_i''$. Moreover, $\tilde{\ell}_{bot}$ lies a distance of at least $C(2t_2)^{1/2}$ uniformly below the line segment connecting $x_{k-1}''$ and $y_{k-1}''$. By Lemma \ref{MCLxy} and the Schur Gibbs property, we have
+	Note that $x_i'' \geq x_1 \geq x_i$ and $x_i''-x_{i+1}'' \geq C(2t_3)^{1/2}$, and likewise for $y_i''$. Moreover, $\tilde{\ell}_{bot}$ lies a distance of at least $C(2t_3)^{1/2}$ uniformly below the line segment connecting $x_{k-1}''$ and $y_{k-1}''$. By Lemma \ref{MCLxy} and the Schur Gibbs property, we have
 	\begin{align*}
-	\mathbb{P}_{\tilde{\mathfrak{L}}}\Big(\tilde{L}_1(\pm t_{12}) \mp pt_{12} > (2t_2)^{1/2}V_1^t\Big) &\leq \mathbb{P}^{-t_2,t_2,\vec{x}\,'',\vec{y}\,'',\infty,\tilde{\ell}_{bot}}_{avoid,Ber}\Big(\sup_{s\in[-t_2,t_2]} \big(\tilde{L}_1(s)-ps\big) \geq (2t_2)^{1/2}V_1^t\Big)\\
-	&\leq \frac{\mathbb{P}^{-t_2,t_2,x_1'',y_1''}_{Ber}\Big(\sup_{s\in[-t_2,t_2]} \big(\tilde{L}_1(s)-ps\big) \geq (2t_2)^{1/2}V_1^t\Big)}{\mathbb{P}^{-t_2,t_2,\vec{x}\,'',\vec{y}\,''}_{Ber}\big(\tilde{L}_1\geq\cdots\geq\tilde{L}_{k-1}\geq\tilde{\ell}_{bot}\big)}.
+	\mathbb{P}_{\tilde{\mathfrak{Q}}}\left(\tilde{Q}_1(\pm t_2) \mp pt_2 > (2t_3)^{1/2}V_1^t\right) &\leq \mathbb{P}^{-t_3,t_3,\vec{x}\,'',\vec{y}\,'',\infty,\tilde{\ell}_{bot}}_{avoid,Ber;S}\left(\sup_{s\in[-t_3,t_3]} \big[\tilde{Q}_1(s)-ps\big] \geq (2t_3)^{1/2}V_1^t\right)\\
+	&\leq \frac{\mathbb{P}^{-t_3,t_3,x_1'',y_1''}_{Ber}\left(\sup_{s\in[-t_3,t_3]} \big[\tilde{L}_1(s)-ps\big] \geq (2t_3)^{1/2}V_1^t\right)}{\mathbb{P}^{-t_3,t_3,\vec{x}\,'',\vec{y}\,''}_{Ber}\left(\tilde{Q}_1\geq\cdots\geq\tilde{Q}_{k-1}\geq\tilde{\ell}_{bot}\right)}.
 	\end{align*}
-	By Lemma \ref{LemmaMinFreeS4}, since $\min(x_1'' + pt_2, \, y_1'' - pt_2) \leq (M_1+C(k-1))(2t_2)^{1/2}$, we can choose $V_1^t > V_1^b$ large enough so that the numerator is bounded above by $h_1/2$. Since $|y_i'' - x_i'' - 2pt_2| \leq 1$, our choice of $C$ and Lemma \ref{CurveSeparation} imply that the denominator is at least $11/12$. This gives an upper bound of $12/11\cdot h_1/2 < h_1/2$ in the above, proving \eqref{5.10bound2}.
+	By Lemma \ref{LemmaMinFreeS4}, since $\min(x_1'' + pt_3, \, y_1'' - pt_3) \leq (M_1+C(k-1))(2t_3)^{1/2}$, we can choose $V_1^t > V_1^b$ large enough so that the numerator is bounded above by $h_1/2$. Since $|y_i'' - x_i'' - 2pt_3| \leq 1$, our choice of $C$ and Lemma \ref{CurveSeparation} imply that the denominator is at least $11/12$. This gives an upper bound of $12/11\cdot h_1/2 < h_1/2$ in the above, proving \eqref{5.10bound2}.
 	
 	
 \end{proof}
