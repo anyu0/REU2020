@@ -220,8 +220,8 @@ We are now equipped to prove Lemma \ref{LemmaAP2}.
 We first introduce some notation to be used in the proof. For $\vec{c}, \vec{d} \in \mathfrak{W}_{k-1}$, let us write $\Omega(\vec{c},\vec{d}) = \Omega_{avoid}(-t_{2}, t_{2}, \vec{c}, \vec{d}, \infty, -\infty)$ and ${\Omega_{a,S}}(\vec{c},\vec{d}) = \Omega_{a,S}(-t_{2}, t_{2}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot})$, and define events
 \begin{equation*}
 \begin{split}
-E(\vec c,\vec d, V_1^t, V_1^b)=&\left\{\tilde{\mathfrak{B}}\in \Omega_{a,S}(\vec c,\vec d)\mid (2t_2)^{1/2} V_1^t \geq \tilde{B}_1(\pm t_2) \mp p t_2 \geq \tilde{B}_{k-1}(\pm t_2) \mp p t_2 \geq (2t_2)^{1/2} V_1^b\right\}\\
-A(\vec c,\vec d, V^t_1,V^b_1)=&\left\{\tilde{\mathfrak{B}}\in \Omega_{a,S}(\vec c,\vec d)\mid \tilde{B}_1\left(\pm t_1\right)\mp pt_1<\left(2t_2\right)^{1/2}V_1^t,\tilde{B}_{k-1}(\pm t_1)\pm pt_1 >\left(2t_2\right)^{1/2}V_1^b\right\}\\
+E(\vec c,\vec d, V_1^t, V_1^b)=&\left\{\tilde{\mathfrak{B}}\in \Omega_{a,S}(\vec c,\vec d)\mid (2t_3)^{1/2} V_1^t \geq \tilde{B}_1(\pm t_2) \mp p t_2 \geq \tilde{B}_{k-1}(\pm t_2) \mp p t_2 \geq (2t_3)^{1/2} V_1^b\right\}\\
+A(\vec c,\vec d, V^t_1,V^b_1)=&\left\{\tilde{\mathfrak{B}}\in \Omega_{a,S}(\vec c,\vec d)\mid \tilde{B}_1\left(\pm t_1\right)\mp pt_1\leq\left(2t_3\right)^{1/2}V_1^t,\tilde{B}_{k-1}(\pm t_1)\pm pt_1 \geq \left(2t_3\right)^{1/2}V_1^b\right\}\\
 B(\vec c, \vec d, \epsilon)=&\left\{\tilde{\mathfrak{B}}\in \Omega_{a,S}(\vec c,\vec d)\mid\min_{\substack{i\in\llbracket 1,k-2\rrbracket\\\varsigma\in \{-1,1\}}}\tilde{B}_i(\varsigma t_2)-\tilde{B}_{i+1}(\varsigma t_2)\geq 3\epsilon (2t_2)^{1/2}\right\}\\
 C(\vec c,\vec d,V_1^t,V_1^b,\vec \epsilon)=&\bigg\{\tilde{\mathfrak{B}}\in \Omega_{a,S}(\vec c,\vec d)\mid\min_{\substack{i\in\llbracket 1,k-2\rrbracket\\\varsigma\in \{-1,1\}}}\tilde{B}_i(\varsigma t_1)-\tilde{B}_{i+1}(\varsigma t_1)\geq 3\epsilon (2t_2)^{1/2}\bigg\}
 \end{split}
@@ -239,7 +239,7 @@ Therefore, we know
 \end{equation*}
 and if we prove that 
 $\pr_{\tilde{\mathfrak{Q}}}(A\cap C\mid E)>h_2$
-for some $h_2$, then we have $\pr_{\tilde{\mathfrak{Q}}}(A\cap C\cap E)\geq h_1\cdot h_2=h$, then we have proved Lemma \ref{LemmaAP2}.
+for some $h_2$, then we have $\pr_{\tilde{\mathfrak{Q}}}(A\cap C\cap E)\geq h_1\cdot h_2=h$, then we have proved Lemma \ref{LemmaAP2}. In order to prove this statement, we split the proof into several steps. 
 \end{proof}
 \begin{proof} We first introduce some notation to be used in the proof. For $\vec{c}, \vec{d} \in \mathfrak{W}_{k-1}$, let us write $\Omega(\vec{c},\vec{d}) = \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty)$ and $\tilde{\Omega}(\vec{c},\vec{d}) = \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot})$, and define events
 	\begin{equation}
