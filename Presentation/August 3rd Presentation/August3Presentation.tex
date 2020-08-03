@@ -151,7 +151,7 @@ Then the collection formed by the top $k-1$ curves of $\{\mathfrak{L}^N\}_{N=1}^
 
 \section{Section of Paper (7-9 min)}
 
-\begin{frame} {History of the line ensembles}
+\begin{frame} {History of line ensembles}
 	Arguments in this paper are inspired by 
 	\begin{enumerate}
 		\item \textit{Brownian Gibbs property for Airy line ensembles} [Corwin-Hammond '14] and \textit{KPZ line ensemble} [Corwin-Hammond '16], which address similar issues for {\color{red}continuous} line ensembles
@@ -182,6 +182,12 @@ Then the collection formed by the top $k-1$ curves of $\{\mathfrak{L}^N\}_{N=1}^
 		\mathbb{P}\Big(\inf_{x\in[-r,r]} \big(L_{k-1}^N(xN^{2/3}) - pxN^{2/3}\big) < -MN^{1/3}\Big) < \epsilon.
 		\]
 	\end{lemma1}
+
+	\begin{itemize}
+
+		\item For simplicity, we consider the case of \textcolor{ForestGreen}{two curves} ($k = 3$).
+		
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Monotone coupling}
@@ -253,10 +259,10 @@ A \textcolor{blue}{Bernoulli random walk bridge} $\textcolor{blue}{\ell^{(N)}}$ 
 		\includegraphics[scale=0.17]{graphics/parabola2.png}{\kern 4em}
 		\end{center}
 		
-		\item Two curves: if $L_2^N$ is low on $[r,R]$, $L_1^N$ looks like a free Brownian bridge
+		\item If $L_2^N$ is low on $[r,R]$, $L_1^N$ looks like a free Brownian bridge
 		
 		\[
-		\textcolor{blue}{\left[-\lambda\Big(\frac{R+r}{2}\Big)^2\right]} - \textcolor{ForestGreen}{\left[-\lambda\Big(\frac{R^2+r^2}{2}\Big)\right]}  = \lambda\,\frac{R^2+r^2-2rR}{4} = \textcolor{red}{O(R^2)}
+		\textcolor{blue}{\left[-\lambda\Big(\frac{R+r}{2}\Big)^2N^{1/3}\right] } - \textcolor{ForestGreen}{\left[-\lambda\Big(\frac{R^2+r^2}{2}\Big)N^{1/3}\right] }  = \frac{\lambda}{4}\,(R-r)^2 N^{1/3} = \textcolor{red}{O(R^2 N^{1/3})}
 		\]
 		
 		\item For large $R$, the top curve would be far from the parabola at the midpoint!
@@ -271,5 +277,10 @@ A \textcolor{blue}{Bernoulli random walk bridge} $\textcolor{blue}{\ell^{(N)}}$ 
 \end{center}
 \end{frame}
 
+\begin{frame}{Thank you!}
+	\[
+	\includegraphics[scale=0.4]{graphics/closing.jpg}
+	\]
+\end{frame}
 
 \end{document}
