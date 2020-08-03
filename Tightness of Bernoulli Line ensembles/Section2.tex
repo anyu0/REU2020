@@ -68,10 +68,11 @@ We next state a couple of results about Brownian bridges from \cite{CorHamA} for
 
 The following definition introduces the notion of an $(f,g)$-avoiding Brownian line ensemble, which in simple terms is a collection of $k$ independent Brownian bridges, conditioned on not-crossing each other and staying above the graph of $g$ and below the graph of $f$ for two continuous functions $f$ and $g$.
 \begin{definition}\label{DefAvoidingLaw}
-Let $k \in \mathbb{N}$ and $\weyl_k$ denote the open Weyl chamber in $\mathbb{R}^k$, i.e.
+Let $k \in \mathbb{N}$ and $\weyl_k$ denote the open Weyl chamber in $\mathbb{R}^{k}$, i.e.
 $$\weyl_k = \{ \vec{x} = (x_1, \dots, x_k) \in \mathbb{R}^k: x_1 > x_2 > \cdots > x_k \}$$
-(in \cite{CorHamA} the notation $\mathbb{R}_{>}^k$ was used for this set).
+(in \cite{CorHamA} the notation $\mathbb{R}_{>}^k$ was used for this set and $\mathbb{W}_{k}=\{\vec{x}=(x_1,\cdots,x_{k})\in\mathbb{R}^{k}:x_1\geq x_2\geq \cdots \geq x_k\}$ denote the Weyl chamber in $\mathbb{R}^{k}$).
 Let $\vec{x}, \vec{y} \in \weyl_k$, $a,b \in \mathbb{R}$ with $a < b$, and $f: [a,b] \rightarrow (-\infty, \infty]$ and $g: [a,b] \rightarrow [-\infty, \infty)$ be two continuous functions. The latter condition means that either $f: [a,b] \rightarrow \mathbb{R}$ is continuous or $f = \infty$ everywhere, and similarly for $g$. We also assume that $f(t) > g(t)$ for all $t \in[a,b]$, $f(a) > x_1, f(b) > y_1$ and $g(a) < x_k, g(b) < y_k.$
+
 
 With the above data we define the {\em $(f,g)$-avoiding Brownian line ensemble on the interval $[a,b]$ with entrance data $\vec{x}$ and exit data $\vec{y}$} to be the $\Sigma$-indexed line ensemble $\mathcal{Q}$ with $\Sigma = \llbracket 1, k\rrbracket$ on $\Lambda = [a,b]$ and with the law of $\mathcal{Q}$ equal to $\mathbb{P}^{a,b, \vec{x},\vec{y}}_{free}$ (the law of $k$ independent Brownian bridges $\{B_i: [a,b] \rightarrow \mathbb{R} \}_{i = 1}^k$ from $B_i(a) = x_i$ to $B_i(b) = y_i$) conditioned on the event 
 $$E  = \left\{ f(r) > B_1(r) > B_2(r) > \cdots > B_k(r) > g(r) \mbox{ for all $r \in[a,b]$} \right\}.$$ 
