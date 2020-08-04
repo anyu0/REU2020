@@ -12,9 +12,9 @@
 \end{enumerate}
 
 \begin{definition}\label{TildeDef}
-	We write $S = \llbracket -t_3,-t_1\rrbracket\cup \llbracket t_1,t_3\rrbracket$, and we let $\tilde{\ell}_{bot}$ denote the path which is equal to $\ell_{bot}$ on $S$ and equal to $-\infty$ on $\llbracket -t_1 + 1, t_1 - 1\rrbracket$. Additionally, define the subset $\Omega_{a,S}(\cdot)\subseteq \Omega(\cdot)$ by 
+	We write $S = \llbracket -t_3,-t_1\rrbracket\cup \llbracket t_1,t_3\rrbracket$. Additionally, define the subset $\Omega_{a,S}(\cdot)\subseteq \Omega(\cdot)$ by 
 	\begin{equation}\label{OmegaASDef}\Omega_{a,S}(\cdot):=\left\{\mathfrak{B} \in \Omega(\cdot)\mid  \forall (i,s)\in\llbracket 1,k-2\rrbracket\times S, B_{i}(s)\geq B_{i+1}(s)\right\}
-	\end{equation} We also denote by $\mathfrak{Q} = (Q_1,\dots,Q_{k-1})$ and $\tilde{\mathfrak{Q}} = (\tilde{Q}_1, \dots, \tilde{Q}_{k-1})$ the $\llbracket 1, k-1 \rrbracket$-indexed line ensembles which are uniformly distributed on $\Omega_{avoid}(-t_3,t_3,\vec{x},\vec{y},\ell_{bot})$ and $\Omega_{a,S}(-t_3, t_3, \vec{x}, \vec{y}, \tilde{\ell}_{bot})$ respectively, and we let $\mathbb{P}_{\mathfrak{Q}}$ and $\mathbb{P}_{\tilde{\mathfrak{Q}}}$ denote these uniform measures.
+	\end{equation} We also denote by $\mathfrak{Q} = (Q_1,\dots,Q_{k-1})$ and $\tilde{\mathfrak{Q}} = (\tilde{Q}_1, \dots, \tilde{Q}_{k-1})$ the $\llbracket 1, k-1 \rrbracket$-indexed line ensembles which are uniformly distributed on $\Omega_{avoid}(-t_3,t_3,\vec{x},\vec{y},\ell_{bot})$ and $\Omega_{a,S}(-t_3, t_3, \vec{x}, \vec{y}, \ell_{bot})$ respectively, and we let $\mathbb{P}_{\mathfrak{Q}}$ and $\mathbb{P}_{\tilde{\mathfrak{Q}}}$ denote these uniform measures.
 \end{definition}
 In other words, $\tilde{\mathfrak{Q}}$ has the law of $k-1$ independent Bernoulli bridges that have been conditioned on not-crossing each other on the set $S$ and also staying above the graph of $\ell_{bot}$ but only on the intervals $\llbracket-t_3, -t_1\rrbracket$ and $\llbracket t_1, t_3\rrbracket$. The latter restriction means that the lines are allowed to cross on $\llbracket -t_1+1,t_1-1\rrbracket$, and  $\tilde{Q}_{k-1}$ is allowed to dip below $\ell_{bot}$ on $\llbracket -t_1+1,t_1-1\rrbracket$ as well. Essentially, the line ensemble is free on $\llbracket -t_1+1,t_1-1\rrbracket$, and avoiding on $S$.
 
@@ -46,7 +46,7 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	\begin{equation*}
 		\begin{split}
 			Z' =&\sum_{\mathfrak{B}\in \Omega_a(S)}\frac{\prod_{i = 1}^{k-1}|\Omega(-t_1,t_1,B_i(-t_1),B_i(t_1))|}{|\Omega_{a,S}(-t_3,t_3,\tilde{\mathfrak{Q}}(-t_3),\tilde{\mathfrak{Q}}(t_3),\tilde\ell_{bot})|}\cdot\frac{|\Omega_a(-t_1,t_1,\mathfrak B(-t_1),\mathfrak{B}(t_1),\ell_{bot})|}{\prod_{i = 1}^{k-1}|\Omega(-t_1,t_1, B_i(-t_1),B_i(t_1))|}=\\ 
-			&\frac{\sum_{\mathfrak{B}\in\Omega_a(S)}|\Omega_a(-t_1,t_1,\mathfrak B(-t_1),\mathfrak B(t_1),\ell_{bot})|}{|\Omega_{a,S}(-t_3,t_3,\tilde{\mathfrak{Q}}(-t_3),\tilde{\mathfrak{Q}}(t_3),\tilde{\ell}_{bot})|} = \frac{|\Omega_a(-t_3,t_3,{\mathfrak{Q}}(-t_3),{\mathfrak{Q}}(t_3),\ell_{bot})|}{|\Omega_{a,S}(-t_3,t_3,\tilde{\mathfrak{Q}}(-t_3),\tilde{\mathfrak{Q}}(t_3),\tilde{\ell}_{bot})|}.
+			&\frac{\sum_{\mathfrak{B}\in\Omega_a(S)}|\Omega_a(-t_1,t_1,\mathfrak B(-t_1),\mathfrak B(t_1),\ell_{bot})|}{|\Omega_{a,S}(-t_3,t_3,\tilde{\mathfrak{Q}}(-t_3),\tilde{\mathfrak{Q}}(t_3),\ell_{bot})|} = \frac{|\Omega_a(-t_3,t_3,{\mathfrak{Q}}(-t_3),{\mathfrak{Q}}(t_3),\ell_{bot})|}{|\Omega_{a,S}(-t_3,t_3,\tilde{\mathfrak{Q}}(-t_3),\tilde{\mathfrak{Q}}(t_3),\ell_{bot})|}.
 		\end{split}
 	\end{equation*}
 	Comparing the above identities proves the second equality in \eqref{propRadon}.
@@ -205,10 +205,10 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	x_i'' &= \lceil -pt_3 + M_1(2t_3)^{1/2}\rceil + (k-i)\lceil C(2t_3)^{1/2}\rceil,\\
 	y_i'' &= \lceil pt_3 + M_1(2t_3)^{1/2}\rceil + (k-i)\lceil C(2t_3)^{1/2}\rceil.
 	\end{align*}
-	Note that $x_i'' \geq x_1 \geq x_i$ and $x_i''-x_{i+1}'' \geq C(2t_3)^{1/2}$, and likewise for $y_i''$. Moreover, $\tilde{\ell}_{bot}$ lies a distance of at least $C(2t_3)^{1/2}$ uniformly below the line segment connecting $x_{k-1}''$ and $y_{k-1}''$. By Lemma \ref{MCLxy} and the Schur Gibbs property, we have
+	Note that $x_i'' \geq x_1 \geq x_i$ and $x_i''-x_{i+1}'' \geq C(2t_3)^{1/2}$, and likewise for $y_i''$. Moreover, $\ell_{bot}$ lies a distance of at least $C(2t_3)^{1/2}$ uniformly below the line segment connecting $x_{k-1}''$ and $y_{k-1}''$. By Lemma \ref{MCLxy} and the Schur Gibbs property, we have
 	\begin{align*}
-	\mathbb{P}_{\tilde{\mathfrak{Q}}}\left(\tilde{Q}_1(\pm t_2) \mp pt_2 > (2t_3)^{1/2}V_1^t\right) &\leq \mathbb{P}^{-t_3,t_3,\vec{x}\,'',\vec{y}\,'',\infty,\tilde{\ell}_{bot}}_{avoid,Ber;S}\left(\sup_{s\in[-t_3,t_3]} \big[\tilde{Q}_1(s)-ps\big] \geq (2t_3)^{1/2}V_1^t\right)\\
-	&\leq \frac{\mathbb{P}^{-t_3,t_3,x_1'',y_1''}_{Ber}\left(\sup_{s\in[-t_3,t_3]} \big[\tilde{L}_1(s)-ps\big] \geq (2t_3)^{1/2}V_1^t\right)}{\mathbb{P}^{-t_3,t_3,\vec{x}\,'',\vec{y}\,''}_{Ber}\left(\tilde{Q}_1\geq\cdots\geq\tilde{Q}_{k-1}\geq\tilde{\ell}_{bot}\right)}.
+	\mathbb{P}_{\tilde{\mathfrak{Q}}}\left(\tilde{Q}_1(\pm t_2) \mp pt_2 > (2t_3)^{1/2}V_1^t\right) &\leq \mathbb{P}^{-t_3,t_3,\vec{x}\,'',\vec{y}\,'',\infty,\ell_{bot}}_{avoid,Ber;S}\left(\sup_{s\in[-t_3,t_3]} \big[\tilde{Q}_1(s)-ps\big] \geq (2t_3)^{1/2}V_1^t\right)\\
+	&\leq \frac{\mathbb{P}^{-t_3,t_3,x_1'',y_1''}_{Ber}\left(\sup_{s\in[-t_3,t_3]} \big[\tilde{L}_1(s)-ps\big] \geq (2t_3)^{1/2}V_1^t\right)}{\mathbb{P}^{-t_3,t_3,\vec{x}\,'',\vec{y}\,''}_{Ber}\left(\tilde{Q}_1\geq\cdots\geq\tilde{Q}_{k-1}\geq\ell_{bot}\right)}.
 	\end{align*}
 	By Lemma \ref{LemmaMinFreeS4}, since $\min(x_1'' + pt_3, \, y_1'' - pt_3) \leq (M_1+C(k-1))(2t_3)^{1/2}$, we can choose $V_1^t > V_1^b$ large enough so that the numerator is bounded above by $h_1/2$. Since $|y_i'' - x_i'' - 2pt_3| \leq 1$, our choice of $C$ and Lemma \ref{CurveSeparation} imply that the denominator is at least $11/12$. This gives an upper bound of $12/11\cdot h_1/2 < h_1/2$ in the above, proving \eqref{5.10bound2}.
 	
@@ -287,11 +287,11 @@ t_{12} = \left\lfloor \frac{t_1+t_2}{2}\right\rfloor.
 	c_i'' &= \lceil -pt_2 + (2t_3)^{1/2} V_1^t\rceil + (k-1-i)\lceil C(2t_2)^{1/2}\rceil,\\
 	d_i'' &= \lceil pt_2 + (2t_3)^{1/2} V_1^t\rceil + (k-1-i)\lceil C(2t_2)^{1/2}\rceil.
 	\end{align*}
-	Then $c_i'' \geq c_1 \geq c_i$ and $c_i'' - c_{i+1}'' \geq C(2t_2)^{1/2}$ for each $i$, and likewise for $d_i''$. Furthermore, since $V_1^b \geq M_2+R$, we see that $\tilde{\ell}_{bot}$ lies a distance of at least $R(2t_3)^{1/2}$ uniformly below the line segment connecting $c_{k-1}''$ and $d_{k-1}''$. By construction, $R>C$. By Lemma \ref{MCLxy}, the left hand side of \eqref{6.2step2} is bounded below by
+	Then $c_i'' \geq c_1 \geq c_i$ and $c_i'' - c_{i+1}'' \geq C(2t_2)^{1/2}$ for each $i$, and likewise for $d_i''$. Furthermore, since $V_1^b \geq M_2+R$, we see that $\ell_{bot}$ lies a distance of at least $R(2t_3)^{1/2}$ uniformly below the line segment connecting $c_{k-1}''$ and $d_{k-1}''$. By construction, $R>C$. By Lemma \ref{MCLxy}, the left hand side of \eqref{6.2step2} is bounded below by
 	\begin{equation}\label{6.2step3split}
 	\begin{split}
 	&\mathbb{P}^{-t_2,t_2,\vec{c}\,'', \vec{d}\,'', \infty,\ell_{bot}}_{avoid, Ber;\tilde S}\left(\sup_{s\in \tilde S}\big[Q_1(s) - ps\big] \leq V^{top}(2t_3)^{1/2}\right) \geq\\
-	& \mathbb{P}^{0,2t_2,0,z'}_{Ber}\left(\sup_{s\in[-t_2,t_2]}\big[\ell(s) - ps\big] \leq (V^{top}-V_1^t-Ck)(2t_3)^{1/2}\right) -\\ &\qquad\qquad \left(1 - \mathbb{P}^{-t_2,t_2,\vec{c}\,'', \vec{d}\,'', \infty,\ell_{bot}}_{Ber}\left(L_1\geq\cdots\geq L_{k-1}\geq\tilde{\ell}_{bot}\right)\right).
+	& \mathbb{P}^{0,2t_2,0,z'}_{Ber}\left(\sup_{s\in[-t_2,t_2]}\big[\ell(s) - ps\big] \leq (V^{top}-V_1^t-Ck)(2t_3)^{1/2}\right) -\\ &\qquad\qquad \left(1 - \mathbb{P}^{-t_2,t_2,\vec{c}\,'', \vec{d}\,'', \infty,\ell_{bot}}_{Ber}\left(L_1\geq\cdots\geq L_{k-1}\geq \ell_{bot}\right)\right).
 	\end{split}
 	\end{equation}
 	In the last line, we have written $z' = d_1'' - c_1''$, and we used the fact that $c_1'' \leq -pt_2 + (V_1^t + Ck)(2t_3)^{1/2}$. By Lemma \ref{LemmaMinFreeS4}, we can find $V^{top}$ large enough depending on $V_1^t,C,k,p$ so that the probability in the third line of \eqref{6.2step3split} is at least $39/40$ for sufficiently large $N$. On the other hand, the above observations regarding $\vec{c}\,''$, $\vec{d}\,''$, and $\ell_{bot}$, as well as the fact that $|d_1'' - c_1'' - 2pt_2| \leq 1$, allow us to conclude from Lemma \ref{CurveSeparation} that the probability in the last line of \eqref{6.2step3split} is at least $39/40$ for sufficiently large $N$. This gives a lower bound of $39/40 - 1/40 = 19/20$ in \eqref{6.2step3split} as desired.\\
@@ -412,7 +412,7 @@ t_{12} = \left\lfloor \frac{t_1+t_2}{2}\right\rfloor.
 		\item $V^{top} (2t_3)^{1/2} \geq Q_1(t_1) - p t_1 \geq Q_{k-1}(t_1) - pt_1 \geq (M_2 + 1) (2t_3)^{1/2}$,
 		\item $Q_i(-t_1) - Q_{i+1}(-t_1) \geq 3\epsilon (2t_2)^{1/2}$ and $Q_i(t_1) - Q_{i+1}(t_1)  \geq 3 \epsilon (2t_2)^{1/2}$ for $i = 1, \dots, k-2$.
 	\end{enumerate}
-	Let $Y$ denote the event appearing in \eqref{eqnRT2}. Then we can write $Y = \bigsqcup_{(\vec{c},\vec{d})\in E} Y(\vec{c},\vec{d})$, where $Y(\vec{c},\vec{d})$ is the event that $Q(-t_2) = \vec{c}$, $Q(t_2) = \vec{d}$, and $E$ is defined in Step 2. It follows from Lemma \ref{LemmaBP2} that $\mathbb{P}_{\tilde{\mathfrak Q}}(Y) \geq h_1$. Using the Schur Gibbs property (Definition \ref{DefSGP}) we conclude that
+	Let $Y$ denote the event appearing in \eqref{eqnRT2}. Then we can write $Y = \bigsqcup_{(\vec{c},\vec{d})\in E} Y(\vec{c},\vec{d})$, where $Y(\vec{c},\vec{d})$ is the event that $\mathfrak{Q}(-t_2) = \vec{c}$, $\mathfrak{Q}(t_2) = \vec{d}$, and $E$ is defined in Step 2. It follows from Lemma \ref{LemmaBP2} that $\mathbb{P}_{\tilde{\mathfrak Q}}(Y) \geq h_1$. Using the Schur Gibbs property (Definition \ref{DefSGP}) we conclude that
 	\begin{align*}
 	&\mathbb{P}_{\tilde{\mathfrak{Q}}}(H) \geq \mathbb{P}_{\tilde{\mathfrak{Q}}}(H\cap F) = \sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(F(\vec{c},\vec{d}))\cdot \mathbb{P}_{\tilde{\mathfrak{Q}}}(H\,|\,F(\vec{c},\vec{d})) =\\
 	&\sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(F(\vec{c},\vec{d}))\cdot \mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}(H) \geq \frac{h}{h_1}\sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(F(\vec{c},\vec{d})) = \frac{h}{h_1}\,\mathbb{P}_{\tilde{\mathfrak{Q}}}(Y) \geq h
