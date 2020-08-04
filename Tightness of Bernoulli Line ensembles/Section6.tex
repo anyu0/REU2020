@@ -78,14 +78,13 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	In combination with \eqref{LBswap}, this proves \eqref{eqn60}.
 	
 \end{proof}
-
 \subsection{Proof of Lemma \ref{LemmaAP2}} \label{sect62} In this section, we prove Lemma \ref{LemmaAP2}. We first state and prove two auxiliary lemmas necessary for the proof. The first lemma establishes a set of conditions under which we have the desired lower bound on the acceptance probability. 
 
 \begin{lemma}\label{LemmaBP1} Let $\epsilon > 0$ and $V^{top} > 0$ be given such that $V^{top} > M_2 + 6 (k-1) \epsilon$. Suppose further that $\vec{a}, \vec{b} \in \mathfrak{W}_{k-1}$are such that 
 	\begin{enumerate}
-		\item $V^{top} (2t_2)^{1/2} \geq a_1 + p t_1 \geq a_{k-1} + pt_1 \geq (M_2 + 2 \epsilon) (2t_2)^{1/2}$;
-		\item $V^{top} (2t_2)^{1/2} \geq b_1 - p t_1 \geq b_{k-1} - pt_1 \geq (M_2 + 2 \epsilon) (2t_2)^{1/2}$; 
-		\item $a_i -a_{i+1} \geq 3\epsilon (2t_2)^{1/2}$ and $b_{i} - b_{i+1} \geq 3 \epsilon (2t_2)^{1/2}$ for $i = 1, \dots, k-2$.
+		\item $V^{top} (2t_3)^{1/2} \geq a_1 + p t_1 \geq a_{k-1} + pt_1 \geq (M_2 + 2 \epsilon) (2t_3)^{1/2}$;
+		\item $V^{top} (2t_3)^{1/2} \geq b_1 - p t_1 \geq b_{k-1} - pt_1 \geq (M_2 + 2 \epsilon) (2t_3)^{1/2}$; 
+		\item $a_i -a_{i+1} \geq 3\epsilon (2t_3)^{1/2}$ and $b_{i} - b_{i+1} \geq 3 \epsilon (2t_3)^{1/2}$ for $i = 1, \dots, k-2$.
 	\end{enumerate}
 	Then we can find $g = g(\epsilon, V^{top}, M_2) > 0$ and $N_6 \in \mathbb{N}$ such that for all $N \geq N_6$ we have 
 	\begin{equation}\label{eqnRT}
@@ -95,7 +94,7 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 
 \begin{proof}
 	
-	Observe by the rightmost inequalities in conditions (1) and (2) in the hypothesis, as well as condition (1) in Lemma \ref{LemmaAP1}, that $\ell_{bot}$ lies a distance of at least $2\epsilon(2t_2)^{1/2}$ uniformly below the line segment connecting $a_{k-1}$ and $b_{k-1}$. Also note that (1) and (2) imply $|b_i-a_i-2pt_1| \leq (V^{top} - M_2)(2pt_1)^{1/2}$ for each $i$. Lastly noting (3), we see that the conditions of Lemma \ref{CurveSeparation} are satisfied with $C = 2\epsilon$. This implies \eqref{eqnRT}, with
+	Observe by the rightmost inequalities in conditions (1) and (2) in the hypothesis, as well as condition (1) in Lemma \ref{LemmaAP1}, that $\ell_{bot}$ lies a distance of at least $2\epsilon(2t_3)^{1/2} \geq 2\epsilon(2t_1)^{1/2}$ uniformly below the line segment connecting $a_{k-1}$ and $b_{k-1}$. Also note that (1) and (2) imply $|b_i-a_i-2pt_1| \leq (V^{top} - M_2-2\epsilon)(2t_3)^{1/2} \leq 2(V^{top} - M_2)(2t_3)^{1/2}$ for each $i$. Lastly noting (3), we see that the conditions of Lemma \ref{CurveSeparation} are satisfied with $C = 2\epsilon$. This implies \eqref{eqnRT}, with
 	\[
 	g = \left( 1 - 3\sum_{n=1}^\infty e^{-\epsilon^2n^2/2p(1-p)}\right)^{k-1}.
 	\]
@@ -216,158 +215,207 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	
 \end{proof}
 
-We are now equipped to prove Lemma \ref{LemmaAP2}.
+We are now equipped to prove Lemma \ref{LemmaAP2}. Let us put
+\begin{equation}\label{t12}
+t_{12} = \left\lfloor \frac{t_1+t_2}{2}\right\rfloor.
+\end{equation}
 
-\begin{proof} We first introduce some notation to be used in the proof. For $\vec{c}, \vec{d} \in \mathfrak{W}_{k-1}$, let us write $\Omega(\vec{c},\vec{d}) = \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, -\infty)$ and $\tilde{\Omega}(\vec{c},\vec{d}) = \Omega_{avoid}(-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot})$, and define events
+\begin{proof} We first introduce some notation to be used in the proof. Let $S$ be as in Definition \ref{TildeDef}. For $\vec{c}, \vec{d} \in \mathfrak{W}_{k-1}$, let us write $\tilde{S} = \llbracket -t_2,-t_1\rrbracket \cup \llbracket t_1,t_2\rrbracket$, $\tilde{\Omega}(\vec{c},\vec{d}) = \Omega_{avoid}(-t_2, t_2, \vec{c}, \vec{d}, \infty, \ell_{bot}; \tilde{S})$. For $s\in\tilde{S}$ we define events
 	\begin{equation}
 	\begin{split}
-	&\tilde A(\vec{c}, \vec{d}) = \{\mathfrak{L} \in \tilde{\Omega}(\vec{c},\vec{d}): L_{k-1}(\pm t_{1}) \mp pt_1 \geq (M_2 + 1) (2t_2)^{1/2} \}, \\
-	&\tilde B(\vec{c}, \vec{d}, \epsilon) = \left\{ \mathfrak{L} \in \tilde{\Omega}(\vec{c},\vec{d}): \min_{\substack {1\leq i\leq k-2 \\ \varsigma \in \{-1, 1\}} } \big(L_{i}(\varsigma t_1) - L_{i+1}(\varsigma t_1)\big) \geq 3\epsilon (2t_2)^{1/2} \right\}, \\
-	&A(\vec{c}, \vec{d}) = \{ \mathfrak{L} \in \Omega(\vec{c},\vec{d}): L_{k-1}(\pm t_{1}) \mp pt_1 \geq (M_2 + 1) (2t_2)^{1/2} \}, \\
-	&B(\vec{c}, \vec{d}, \epsilon) = \left\{ \mathfrak{L} \in \Omega(\vec{c},\vec{d}): \min_{\substack {1\leq i\leq k-2 \\ \varsigma \in \{-1, 1\}} } \big(L_{i}(\varsigma t_1) - L_{i+1}(\varsigma t_1)\big) \geq 3\epsilon (2t_2)^{1/2} \right\},\\
-	& \tilde{C}(\vec{c},\vec{d},V^{top}) = \{ \mathfrak{L} \in \tilde{\Omega}(\vec{c},\vec{d}): L_{1}(\pm t_{1}) \mp pt_1 \leq V^{top} (2t_2)^{1/2} \}.
+	&A(\vec{c}, \vec{d},s) = \left\{\mathfrak{Q} \in \tilde\Omega(\vec{c},\vec{d}): Q_{k-1}(\pm s) \mp ps \geq (M_2 + 1) (2t_3)^{1/2} \right\}, \\
+	&B(\vec{c},\vec{d},V^{top},s) = \left\{ \mathfrak{Q} \in \tilde\Omega(\vec{c},\vec{d}): Q_{1}(\pm s) \mp ps \leq V^{top} (2t_3)^{1/2} \right\},\\
+	&C(\vec{c}, \vec{d}, \epsilon, s) = \left\{ \mathfrak{Q} \in \tilde\Omega(\vec{c},\vec{d}): \min_{1\leq i\leq k-2, \, \varsigma \in \{-1, 1\}} \big[Q_{i}(\varsigma s) - Q_{i+1}(\varsigma s)\big] \geq 3\epsilon (2t_3)^{1/2} \right\},\\
+	&D(\vec{c},\vec{d},V^{top},\epsilon,s) = A(\vec{c}, \vec{d},s) \cap B(\vec{c},\vec{d},V^{top},s) \cap C(\vec{c}, \vec{d}, \epsilon, s).
 	\end{split}
 	\end{equation}
-	Here, $\epsilon$ and $V^{top}$ are constants which we will specify later. By Lemma \ref{LemmaBP1}, for $N$ sufficiently large we have $$\tilde A(\vec{c}, \vec{d}) \cap \tilde B(\vec{c}, \vec{d}, \epsilon) \cap \tilde{C}(\vec{c},\vec{d},V^{top}) \subset \big\{Z\big(  -t_1, t_1, \vec{a} ,\vec{b}, \ell_{bot}\llbracket -t_1, t_1\rrbracket\big) > g\big\}$$
-	for some $g$ depending on $\epsilon,V^{top},M_2$. Thus we will prove that probability of the event on the left under $\mathbb{P}_{\tilde{\mathfrak L}}$ is bounded below by $h = h_1/2$, with $h_1$ as in \eqref{5.10h1}. We split the proof into several steps.\\
+	Here, $\epsilon$ and $V^{top}$ are constants which we will specify later. By Lemma \ref{LemmaBP1}, for all $(\vec{c},\vec{d})$ and $N$ sufficiently large we have $$D(\vec{c},\vec{d},V^{top},\epsilon,s)  \subset \left\{Z\left(  -t_1, t_1, \mathfrak{Q}(-t_1), \mathfrak{Q}(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\right) > g\right\}$$
+	for some $g$ depending on $\epsilon,V^{top},M_2$. Thus we will prove that probability of the event on the left under the uniform measure on $\Omega_S(\vec{c},\vec{d})$ is bounded below by $h = h_1/2$, with $h_1$ as in \eqref{5.10h1}. We split the proof into several steps.\\
 	
-	{\bf \raggedleft Step 1.} In this step, we show that there is an $R > 0$ sufficiently large so that if $c_{k-1} + pt_{12} \geq (2t_2)^{1/2} (M_2 + R)$ and $d_{k-1} - pt_{12} \geq (2t_2)^{1/2} (M_2 + R)$, then we have 
-	\begin{equation}\label{5.8step1}
+	{\bf \raggedleft Step 1.} In this step, we show that there is an $R > 0$ sufficiently large so that if $c_{k-1} + pt_2 \geq (2t_3)^{1/2} (M_2 + R)$ and $d_{k-1} - pt_2 \geq (2t_3)^{1/2} (M_2 + R)$, then for all $s\in\tilde{S}$ we have
+	\begin{equation}\label{6.2step1}
 	\begin{split}
-	\frac{|\tilde A(\vec{c}, \vec{d})|}{|\tilde{\Omega}(\vec{c}, \vec{d})|} \geq \frac{| A(\vec{c}, \vec{d})|}{|{\Omega}(\vec{c}, \vec{d})|} \geq  \frac{9}{10} \quad \mathrm{and} \quad \frac{|\tilde{\Omega}(\vec{c}, \vec{d})|}{|{\Omega}(\vec{c}, \vec{d})|} \geq \frac{99}{100}.
+	\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber; \tilde S}\big(A(\vec{c},\vec{d},s)\big) \geq  \frac{19}{20} \quad \mathrm{and} \quad \mathbb{P}^{-t_2,t_2,\vec{c},\vec{d}}_{avoid,Ber;\tilde S}\left(Q_{k-1}|_{\tilde S} \geq \ell_{bot}|_{\tilde S}\right) \geq \frac{99}{100}.
 	\end{split}
 	\end{equation} 
-	The first inequality follows immediately from Lemma \ref{MCLfg}. 
-	
-	For the second inequality, define the constant
-	\begin{equation}\label{5.8C}
+	Let us begin with the first inequality. We observe via Lemma \ref{MCLfg} that
+	\begin{equation}\label{6.2step1MC}
+	\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber; \tilde S}\big(A(\vec{c},\vec{d},s)\big) \geq \mathbb{P}^{-t_2,t_2,\vec{c},\vec{d}}_{avoid,Ber; \tilde S}\big(A(\vec{c},\vec{d},s)\big).
+	\end{equation}
+	Now define the constant
+	\begin{equation}\label{6.2C}
 	C = \sqrt{8p(1-p)\log\frac{3}{1-(199/200)^{1/(k-1)}}}
 	\end{equation}
 	and vectors $\vec{c}\,', \vec{d}\,' \in \mathfrak{W}_k$ by
 	\begin{align*}
-	c_i' &= \lfloor -pt_{12} + (M_2+R)(2t_2)^{1/2}\rfloor - (i-1)\lceil C(2t_{12})^{1/2}\rceil,\\
-	d_i' &= \lfloor pt_{12} + (M_2+R)(2t_2)^{1/2}\rfloor - (i-1)\lceil C(2t_{12})^{1/2}\rceil.
+	c_i' &= \lfloor -pt_2 + (M_2+R)(2t_3)^{1/2}\rfloor - (i-1)\lceil C(2t_2)^{1/2}\rceil,\\
+	d_i' &= \lfloor pt_2 + (M_2+R)(2t_3)^{1/2}\rfloor - (i-1)\lceil C(2t_2)^{1/2}\rceil.
 	\end{align*}
-	Then by Lemma \ref{MCLxy} and the Schur Gibbs property,
-	\begin{equation}\label{5.8step1split}
+	Then by Lemma \ref{MCLxy} we have
+	\begin{equation}\label{6.2step1split}
 	\begin{split}
-	\mathbb{P}^{-t_{12}, t_{12}, \vec{c}, \vec{d}}_{avoid, Ber} (A(\vec{c}, \vec{d})) &\geq \mathbb{P}^{-t_{12}, t_{12}, \vec{c}\,', \vec{d}\,'}_{avoid, Ber}(A(\vec{c}\,', \vec{d}\,'))\\ 
-	&\geq \mathbb{P}^{-t_{12}, t_{12}, c_{k-1}', d_{k-1}'}_{Ber}\Big(\ell(\pm t_1) \mp pt_1 \geq (M_2+1)(2t_2)^{1/2}\Big)\\
-	&\qquad - \big( 1 - \mathbb{P}^{-t_{12}, t_{12}, \vec{c}\,', \vec{d}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1})\big).
+	&\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d}}_{avoid,Ber; \tilde S}\big(A(\vec{c},\vec{d},s)\big) \geq \mathbb{P}^{-t_{12}, t_{12}, \vec{c}\,', \vec{d}\,'}_{avoid, Ber; \tilde S}(A(\vec{c}\,', \vec{d}\,',s)) \geq \\ 
+	&\mathbb{P}^{-t_2, t_2, c_{k-1}', d_{k-1}'}_{Ber}\left(\inf_{s\in \tilde S}\big[\ell(s) - ps\big] \geq (M_2+1)(2t_3)^{1/2}\right) - \left( 1 - \mathbb{P}^{-t_2, t_2, \vec{c}\,', \vec{d}\,'}_{Ber}\left(L_1 \geq \cdots \geq L_{k-1}\right)\right).
 	\end{split}
 	\end{equation}
-	By Lemma \ref{CurveSeparation} and our choice of $C$, $\mathbb{P}^{-t_{12}, t_{12}, \vec{c}\,', \vec{d}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1})>199/200>19/20$ for sufficiently large $N$. Writing $z = d_{k-1}' - c_{k-1}'$, the term in the second line of \eqref{5.8step1split} is equal to
+	By Lemma \ref{CurveSeparation} and our choice of $C$, $\mathbb{P}^{-t_2, t_2, \vec{c}\,', \vec{d}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1})>199/200 > 39/40$ for sufficiently large $N$. Writing $z = d_{k-1}' - c_{k-1}'$, the term in the second line of \eqref{6.2step1split} is equal to
 	\begin{align*}
-	&\mathbb{P}^{-t_{12}, t_{12}, 0, z}_{Ber}\Big(\ell(\pm t_1) \mp pt_1 + c_{k-1}' \geq (M_2 + 1)(2t_2)^{1/2}\Big)\\
-	\geq \; & \mathbb{P}^{0, 2t_{12}, 0, z}_{Ber}\Big(\ell(\pm t_1) \mp pt_1 \geq (-R+Ck+1)(2t_2)^{1/2}\Big)\\
-	\geq \; & \mathbb{P}^{0, 2t_{12}, 0, z}_{Ber}\Big(\inf_{s\in[0,2t_{12}]}\big(\ell(s) - ps\big) \geq -(R-Ck-1)(2t_{12})^{1/2}\Big).
+	&\mathbb{P}^{-t_2, t_2, 0, z}_{Ber}\Big(\inf_{s\in \tilde S}\big[\ell(s) + c_{k-1}' - ps\big]  \geq (M_2 + 1)(2t_3)^{1/2}\Big) \geq \\
+	& \mathbb{P}^{0, 2t_2, 0, z}_{Ber}\Big(\inf_{s\in [0,2t_2]}\big[\ell(s) - ps\big] \geq (-R+Ck+1)(2t_3)^{1/2}\Big).
 	\end{align*}
-	In the second line, we used the estimate $c_{k-1}' \geq -pt_{12} + (M_2+R-Ck)(2t_2)^{1/2}$. Now by Lemma \ref{LemmaMinFreeS4}, we can choose $R$ large enough depending on $C,k,M_2,p$ so that this probability is greater than $19/20$ for sufficiently large $N$. This gives a lower bound in \eqref{5.8step1split} of $19/20 - 1/20 = 9/10$, proving the second inequality in \eqref{5.8step1}.
+	In the second line, we used the estimate $c_{k-1}' \geq -pt_2 + (M_2+R-Ck)(2t_3)^{1/2}$. Now by Lemma \ref{LemmaMinFreeS4}, we can choose $R$ large enough depending on $C,k,M_2,p$ so that this probability is greater than $39/40$ for sufficiently large $N$. This gives a lower bound in \eqref{6.2step1split} of $39/40-1/40 = 19/20$, and in combination with \eqref{6.2step1MC} this proves the first inequality in \eqref{6.2step1}.
 	
-	We prove the third inequality in (\ref{5.8step1})similarly. Note that since $\ell_{bot}(s) \leq ps + M_2(2t_2)^{1/2}$ on $[-t_2,t_2]$ by assumption, we have
+	We prove the second inequality in \eqref{6.2step1} similarly. Note that since $\ell_{bot}(s) \leq ps + M_2(2t_3)^{1/2}$ on $[-t_3,t_3]$ by assumption, we have
 	\begin{equation} \label{sigma}
 	\begin{split}
-	\frac{|\tilde{\Omega}(\vec{c},\vec{d})|}{|\Omega(\vec{c},\vec{d})|} &\geq \mathbb{P}^{-t_{12}, t_{12}, \vec{c},\vec{d}}_{avoid, Ber}\Big(\inf_{s\in[-t_{12}, t_{12}]} \big(L_{k-1}(s) - ps\big) \geq M_2(2t_2)^{1/2}\Big)\\
-	&\geq \mathbb{P}^{-t_{12}, t_{12}, \vec{c}\,',\vec{d}\,'}_{avoid, Ber}\Big(\inf_{s\in[-t_{12}, t_{12}]} \big(L_{k-1}(s) - ps\big) \geq M_2(2t_2)^{1/2}\Big)\\
-	&\geq \mathbb{P}^{0, 2t_{12}, 0, z}_{Ber}\Big(\inf_{s\in[0, 2t_{12}]} \big(\ell(s) - ps\big) \geq -(R-Ck)(2t_2)^{1/2}\Big)\\
-	&\qquad - \big(1 - \mathbb{P}^{-t_{12},t_{12},\vec{c}\,',\vec{d}\,'}_{Ber}(L_1\geq \cdots \geq L_{k-1})\big).
+	&\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d}}_{avoid,Ber;\tilde S}\left(Q_{k-1}|_{\tilde S} \geq \ell_{bot}|_{\tilde S}\right) \geq \mathbb{P}^{-t_2, t_2, \vec{c},\vec{d}}_{avoid, Ber; \tilde S}\left(\inf_{s\in[-t_2, t_2]} \big[Q_{k-1}(s) - ps\big] \geq M_2(2t_3)^{1/2}\right) \geq\\
+	&\mathbb{P}^{-t_2, t_2, \vec{c}\,',\vec{d}\,'}_{avoid, Ber;\tilde S}\left(\inf_{s\in[-t_2, t_2]} \big[Q_{k-1}(s) - ps\big] \geq M_2(2t_3)^{1/2}\right) \geq\\
+	&\mathbb{P}^{0, 2t_2, 0, z}_{Ber}\left(\inf_{s\in[0, 2t_2]} \big[\ell(s) - ps\big] \geq -(R-Ck)(2t_3)^{1/2}\right) - \\
+	&\qquad \left(1 - \mathbb{P}^{-t_2,t_2,\vec{c}\,',\vec{d}\,'}_{Ber}(Q_1\geq \cdots \geq Q_{k-1})\right).
 	\end{split}
 	\end{equation}
 	We enlarge $R$ if necessary so that the probability in the third line of \eqref{sigma} is $>199/200$ by Lemma \ref{LemmaMinFreeS4}, and \ref{CurveSeparation} implies as above that the expression in the last line of \eqref{sigma} is $>-1/200$. This gives us a lower bound of $199/200 - 1/200 = 99/100$ as desired.\\
 	
 	{\bf \raggedleft Step 2.} With $R$ fixed from Step 1, let $V_1^t, V_1^b$ and $h_1$ be as in Lemma \ref{LemmaBP2}  for this choice of $R$. Define the event
-	$$E = \{ \vec{c}, \vec{d} \in \mathfrak{W}_{k-1}: (2t_2)^{1/2} V_1^t \geq \max(c_1 + p t_{12}, d_1 - pt_{12}) \mbox{ and }\min(c_{k-1} + p t_{12}, d_{k-1} - pt_{12})  \geq (2t_2)^{1/2} V_1^b \}.$$
-	We show in this step that there exists $V^{top} \geq M_2 + 6(k-1)$ such that for all $(\vec{c}, \vec{d}) \in E$, we have
-	\begin{equation}\label{5.8step2}
-	\frac{|\tilde{C}(\vec{c}, \vec{d}, V^{top})|}{|\tilde{\Omega}(\vec{c},\vec{d})|} \geq  \frac{9}{10}.
+	$$E = \{ \vec{c}, \vec{d} \in \mathfrak{W}_{k-1}: (2t_3)^{1/2} V_1^t \geq \max(c_1 + p t_2 d_1 - pt_2) \mbox{ and }\min(c_{k-1} + p t_2, d_{k-1} - pt_2)  \geq (2t_3)^{1/2} V_1^b \}.$$
+	We show in this step that there exists $V^{top} \geq M_2 + 6(k-1)$ such that for all $(\vec{c}, \vec{d}) \in E$ and $s\in\tilde{S}$ we have
+	\begin{equation}\label{6.2step2}
+	\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\big(B(\vec{c},\vec{d},V^{top},s)\big) \geq  \frac{19}{20}.
 	\end{equation}
-	Let $C$ be as in \eqref{5.8C}, and define $\vec{c}\,'', \vec{d}\,'' \in \mathfrak{W}_{k-1}$ by
+	Let $C$ be as in \eqref{6.2C}, and define $\vec{c}\,'', \vec{d}\,'' \in \mathfrak{W}_{k-1}$ by
 	\begin{align*}
-	c_i'' &= \lceil -pt_{12} + (2t_2)^{1/2} V_1^t\rceil + (k-1-i)\lceil C(2t_{12})^{1/2}\rceil,\\
-	d_i'' &= \lceil pt_{12} + (2t_2)^{1/2} V_1^t\rceil + (k-1-i)\lceil C(2t_{12})^{1/2}\rceil.
+	c_i'' &= \lceil -pt_2 + (2t_3)^{1/2} V_1^t\rceil + (k-1-i)\lceil C(2t_2)^{1/2}\rceil,\\
+	d_i'' &= \lceil pt_2 + (2t_3)^{1/2} V_1^t\rceil + (k-1-i)\lceil C(2t_2)^{1/2}\rceil.
 	\end{align*}
-	Then $c_i'' \geq c_1 \geq c_i$ and $c_i'' - c_{i+1}'' \geq C(2t_2)^{1/2}$ for each $i$, and likewise for $d_i''$. Furthermore, since $V_1^b \geq M_2+R$, we see that $\tilde{\ell}_{bot}$ lies a distance of at least $R(2t_2)^{1/2}$ uniformly below the line segment connecting $c_{k-1}''$ and $d_{k-1}''$. By construction, $R>C$. By Lemma \ref{MCLxy}, we have
-	\begin{equation}\label{5.8step3split}
+	Then $c_i'' \geq c_1 \geq c_i$ and $c_i'' - c_{i+1}'' \geq C(2t_2)^{1/2}$ for each $i$, and likewise for $d_i''$. Furthermore, since $V_1^b \geq M_2+R$, we see that $\tilde{\ell}_{bot}$ lies a distance of at least $R(2t_3)^{1/2}$ uniformly below the line segment connecting $c_{k-1}''$ and $d_{k-1}''$. By construction, $R>C$. By Lemma \ref{MCLxy}, the left hand side of \eqref{6.2step2} is bounded below by
+	\begin{equation}\label{6.2step3split}
 	\begin{split}
-	\frac{|\tilde{C}(\vec{c}, \vec{d}, V^{top})|}{|\tilde{\Omega}(\vec{c},\vec{d})|} &\geq \mathbb{P}^{-t_{12},t_{12},\vec{c}\,'', \vec{d}\,'', \infty,\tilde{\ell}_{bot}}_{avoid, Ber}\Big(L_1(\pm t_1) \mp pt_1 \leq V^{top}(2t_2)^{1/2}\Big)\\
-	&\geq \mathbb{P}^{-t_{12},t_{12},\vec{c}\,'', \vec{d}\,'', \infty,\tilde{\ell}_{bot}}_{avoid, Ber}\Big(\sup_{s\in[-t_{12},t_{12}]}\big(L_1(s) - ps\big) \leq V^{top}(2t_2)^{1/2}\Big)\\
-	&\geq \mathbb{P}^{0,2t_{12},0,z'}_{Ber}\Big(\sup_{s\in[-t_{12},t_{12}]}\big(\ell(s) - ps\big) \leq (V^{top}-V_1^t-Ck)(2t_2)^{1/2}\Big)\\ 
-	&\qquad - \big(1 - \mathbb{P}^{-t_{12},t_{12},\vec{c}\,'', \vec{d}\,'', \infty,\tilde{\ell}_{bot}}_{avoid, Ber}\big(L_1\geq\cdots\geq L_{k-1}\geq\tilde{\ell}_{bot}\big)\big).
+	&\mathbb{P}^{-t_2,t_2,\vec{c}\,'', \vec{d}\,'', \infty,\ell_{bot}}_{avoid, Ber;\tilde S}\left(\sup_{s\in \tilde S}\big[Q_1(s) - ps\big] \leq V^{top}(2t_3)^{1/2}\right) \geq\\
+	& \mathbb{P}^{0,2t_2,0,z'}_{Ber}\left(\sup_{s\in[-t_2,t_2]}\big[\ell(s) - ps\big] \leq (V^{top}-V_1^t-Ck)(2t_3)^{1/2}\right) -\\ &\qquad\qquad \left(1 - \mathbb{P}^{-t_2,t_2,\vec{c}\,'', \vec{d}\,'', \infty,\ell_{bot}}_{Ber}\left(L_1\geq\cdots\geq L_{k-1}\geq\tilde{\ell}_{bot}\right)\right).
 	\end{split}
 	\end{equation}
-	In the last line, we have used the Schur Gibbs property and written $z' = d_1'' - c_1''$. We also used the fact that $c_1'' \leq -pt_{12} + (V_1^t + Ck)(2t_2)^{1/2}$. By Lemma \ref{LemmaMinFreeS4}, we can find $V^{top}$ large enough depending on $V_1^t,C,k,p$ so that the probability in the third line of \eqref{5.8step3split} is at least $19/20$ for sufficiently large $N$. On the other hand, the above observations regarding $\vec{c}\,''$, $\vec{d}\,''$, and $\tilde{\ell}_{bot}$, as well as the fact that $|d_1'' - c_1'' - 2pt_{12}| \leq 1$, allow us to conclude from Lemma \ref{CurveSeparation} that the probability in the last line of \eqref{5.8step3split} is at least $19/20$ for sufficiently large $N$. This gives a lower bound of $19/20 - 1/20 = 9/10$ in \eqref{5.8step3split} as desired.\\
+	In the last line, we have written $z' = d_1'' - c_1''$, and we used the fact that $c_1'' \leq -pt_2 + (V_1^t + Ck)(2t_3)^{1/2}$. By Lemma \ref{LemmaMinFreeS4}, we can find $V^{top}$ large enough depending on $V_1^t,C,k,p$ so that the probability in the third line of \eqref{6.2step3split} is at least $39/40$ for sufficiently large $N$. On the other hand, the above observations regarding $\vec{c}\,''$, $\vec{d}\,''$, and $\ell_{bot}$, as well as the fact that $|d_1'' - c_1'' - 2pt_2| \leq 1$, allow us to conclude from Lemma \ref{CurveSeparation} that the probability in the last line of \eqref{6.2step3split} is at least $39/40$ for sufficiently large $N$. This gives a lower bound of $39/40 - 1/40 = 19/20$ in \eqref{6.2step3split} as desired.\\
 	
 	{\bf \raggedleft Step 3.} In this step, we show that with $V_1^t$ and $V_1^b$ as in Step 2, there is an $\epsilon > 0$ sufficiently small such that for $(\vec{c}, \vec{d}) \in E$ we have
 	\begin{equation}\label{LemmaBP2Step3}
-	\frac{|B(\vec{c}, \vec{d}, \epsilon)|}{|\Omega(\vec{c}, \vec{d})|} \geq  \frac{9}{10} \quad \mathrm{and} \quad \frac{|\tilde{B}(\vec{c}, \vec{d}, \epsilon)|}{|\tilde{\Omega}(\vec{c}, \vec{d})|} \geq  \frac{4}{5}.
+	\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\big(D(\vec{c},\vec{d},V^{top},\epsilon,t_{12}) \big) \geq \frac{1}{2}.
 	\end{equation}
-	We prove this inequality using Lemma \ref{prob 20}. In order to apply this result, we approximate $t_1$ in the form $s\cdot 2t_{12}$, for $s\in(0,1)$.
+	We claim that this follows from the inequality
+	\begin{equation}\label{6.2step3cond}
+	\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d}}_{avoid,Ber;\tilde S}\big(C(\vec{c},\vec{d},\epsilon,t_{12})\,|\,A(\vec{c},\vec{d},t_1) \cap B(\vec{c},\vec{d},V^{top},t_1)\big) \geq \frac{9}{10}.
+	\end{equation}
+	To see this, note that \eqref{6.2step1} and \eqref{6.2step2} imply
+	\[
+	\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d}}_{avoid,Ber;\tilde S}\big(A(\vec{c},\vec{d},t_1) \cap B(\vec{c},\vec{d},V^{top},t_1)\big) \geq \frac{19}{20} - \frac{1}{20} - \frac{1}{100} > \frac{4}{5},
+	\]
+	and then \eqref{6.2step3cond} and the second inequality in \eqref{6.2step1} imply that
+	\[
+	\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\big(A(\vec{c},\vec{d},t_1) \cap B(\vec{c},\vec{d},V^{top},t_1) \cap C(\vec{c},\vec{d},\epsilon,t_{12})\big) > \frac{9}{10}\cdot\frac{4}{5} - \frac{1}{100} > \frac{17}{25}.
+	\]
+	Then using \eqref{6.2step1} and \eqref{6.2step2} once again and recalling the definition of $D(\vec{c},\vec{d},V^{top},\epsilon,t_{12}) $ gives a lower bound on the probability in \eqref{LemmaBP2Step3} of $17/25 - 1/10 > 14/25 > 1/2$ as desired. 
 	
-	Observe from \eqref{t12def} and the definitions of $t_1,t_2$ that the ratio $\frac{t_1}{2t_{12}}$ depends on $N$ and satisfies the inequality
-	\[
-	\frac{(r+1)N^\alpha-1}{(2r+3)N^\alpha}\leq \frac{t_1}{2t_{12}} \leq \frac{(r+1)N^\alpha}{(2r+3)N^\alpha-4}.
-	\]
-	We put $s = \frac{r+1}{2r+3}$, and observe that $s < 1/2$. Also observe that
-	\[
-	(2r+3)N^\alpha - 4\leq 2t_{12}\leq (2r+3)N^\alpha,
-	\]
-	and thus
-	\[
-	(r+1)N^\alpha \geq s\cdot 2t_{12} \geq (r+1)N^\alpha - 4s \geq t_1 - 2.
-	\]
-	It follows that $t_1 - 2 \leq \floor{s\cdot 2t_{12}} \leq t_1$, from which we conclude that
+	In the remainder of this step, we verify \eqref{6.2step3cond}. Observe that $A(\vec{c},\vec{d},t_1) \cap B(\vec{c},\vec{d},V^{top},t_1)$ can be written as a countable disjoint union: 
+	\begin{equation}\label{6.2step3disj}
+	A(\vec{c},\vec{d},t_1) \cap B(\vec{c},\vec{d},V^{top},t_1) = \bigsqcup_{(\vec{a},\vec{b})\in I} F(\vec{a},\vec{b}).
+	\end{equation}
+	Here, for $\vec{a},\vec{b}\in\mathfrak{W}_{k-1}$, $F(\vec{a},\vec{b})$ is the event that $\mathfrak{Q}(-t_1) = \vec{a}$ and $\mathfrak{Q}(t_1) = \vec{b}$, and $I$ is the collection of pairs $(\vec{a},\vec{b})$ satisfying
+	\begin{enumerate}[label = (\arabic*)]
+		
+		\item $ 0 \leq \min(a_i - c_i,\, d_i - b_i) \leq t_2 - t_1$ and $0\leq b_i-a_i \leq 2t_1$ for $1\leq i\leq k-1$,
+		
+		\item $\min(a_{k-1} + pt_1,\, b_{k-1} - pt_1) \geq (M_2+1)(2t_3)^{1/2}$,
+		
+		\item $\max(a_1 + pt_1,\, b_1 - pt_1) \leq V^{top}(2t_3)^{1/2}$.
+		
+	\end{enumerate}
+	Now let $\mathfrak{Q}^1 = (Q^1_1,\dots,Q^1_{k-1})$ and $\mathfrak{Q}^2 = (Q^2_2,\dots,Q^2_{k-1})$ denote the restrictions of $\mathfrak{Q}$ to $\llbracket -t_2,-t_1\rrbracket$ and $\llbracket t_1,t_2\rrbracket$ respectively. Then we observe that
+	\begin{equation}\label{6.2step3ind}
+	\begin{split}
+	&\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d}}_{avoid, Ber; \tilde S}\left(\mathfrak{Q}^1 = \mathfrak{L}^1, \mathfrak{Q}^2 = \mathfrak{L}^2\,\big|\,F(\vec{a},\vec{b})\right) = \mathbb{P}^{-t_2,-t_1,\vec{c},\vec{a}}_{avoid, Ber}\left(\mathfrak{Q}^1 = \mathfrak{L}^1\right) \cdot \mathbb{P}^{t_1,t_2,\vec{b},\vec{d}}_{avoid, Ber}\left(\mathfrak{Q}^2 = \mathfrak{L}^2\right).
+	\end{split}
+	\end{equation}
+	We now argue that we can choose $\delta > 0$ small enough so that
+	\begin{equation}\label{6.2step3right}
+	\mathbb{P}^{t_1,t_2,\vec{b},\vec{d}}_{avoid, Ber}\left(\max_{1\leq i\leq k-2} \big[Q^1_i(t_{12}) - Q^1_{i+1}(t_{12})\big] \geq \delta(2t_3)^{1/2}\right) \geq \frac{9}{10}.
+	\end{equation}
+	We prove this inequality using Lemma \ref{prob 20}. In order to apply this result, we first observe that since $|t_{12}-\frac{1}{2}(t_1+t_2)| \leq 1$ by \eqref{t12}, we have
 	\begin{equation}\label{Lt1Set}
-	0 \leq L_i(t_1)-L_i(s\cdot 2t_{12}) \leq 2.
+	0 \leq Q^1_i(t_{12})-Q^1_i(\tfrac{1}{2}(t_1+t_2)) \leq 1.
 	\end{equation}
 	Now applying Lemma \ref{prob 20} with $M_1,M_2=\max(V_1^t,V_1^b)$, we obtain $N_0$ and $\delta>0$ such that if $N \geq N_0$, then
 	\[
-	\pr^{-t_{12},t_{12},\vec c, \vec d}_{avoid,Ber}\Big(\min_{1\leq i\leq k-1} \big(L_i(s\cdot 2t_{12})-L_{i+1}(s\cdot 2t_{12})\big) < \delta(2t_{12})^{1/2}\Big)<\frac{1}{20}.
+	\pr^{t_1,t_2,\vec b, \vec d}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \big[Q^1_i(\tfrac{1}{2}(t_1+t_2))-Q_{i+1}(\tfrac{1}{2}(t_1+t_2))\big] < \delta(2t_2)^{1/2}\right) < 1 - \frac{3}{\sqrt{10}}.
 	\]
-	Together with \eqref{Lt1Set} and the fact that $t_2/4 < t_1 < t_{12}$, this implies that
+	Together with \eqref{Lt1Set} and the fact that $t_3/4 < t_2$, this implies that
 	\begin{equation}\label{step3delta/2}
-	\pr^{-t_{12},t_{12},\vec c, \vec d}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \big(L_i(t_1)-L_{i+1}(t_1)\big)<(\delta/2)(2t_2)^{1/2}-2\right)<\frac{1}{20}
+	\pr^{t_1,t_2,\vec b, \vec d}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \big[Q_i(t_{12})-Q_{i+1}(t_{12})\big]<(\delta/2)(2t_3)^{1/2}-1\right) < 1 - \frac{3}{\sqrt{10}}
 	\end{equation}
-	for $N\geq N_0$. Now we observe that if $N \geq \big(\frac{1+1/\delta}{r+2}\big)^{2/\alpha}$, then $(\delta/4)(2t_2)^{1/2} \leq (\delta/2)(2t_2)^{1/2} - 1$. Thus for all sufficiently large $N$, we have
+	for $N\geq N_0$. Now we observe that if $N^\alpha \geq \frac{1+8/\delta^2}{r+3}$, then $(\delta/4)(2t_3)^{1/2} \leq (\delta/2)(2t_2)^{1/2} - 1$. Thus for all sufficiently large $N$, we have
 	\[
-	\pr^{-t_{12},t_{12},\vec c, \vec d}_{avoid,Ber}\Big(\min_{1\leq i\leq k-1} \big(L_i(t_1)-L_{i+1}(t_1)\big)<(\delta/4)(2t_2)^{1/2}\Big)<\frac{1}{20}.
+	\pr^{t_1,t_2,\vec b, \vec d}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \big[Q_i(t_{12})-Q_{i+1}(t_{12})\big]<(\delta/4)(2t_3)^{1/2}\right) < 1 - \frac{3}{\sqrt{10}}.
 	\]
 	A similar argument gives us a $\tilde{\delta}>0$ such that
 	\[
-	\pr^{-t_{12},t_{12},\vec c, \vec d}_{avoid,Ber}\Big(\min_{1\leq i\leq k-2} \big(L_i(-t_1)-L_{i+1}(-t_1)\big)<(\tilde{\delta}/4)(2t_2)^{1/2}\Big)<\frac{1}{20}
+	\pr^{-t_2,-t_1,\vec c, \vec a}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \big[Q_i(-t_{12})-Q_{i+1}(-t_{12})\big]<(\tilde\delta/4)(2t_3)^{1/2}\right)<1 - \frac{3}{\sqrt{10}}.
 	\]
-	for large enough $N$. Then putting $\epsilon = \min(\delta,\tilde{\delta})/12$, we find
+	for large enough $N$. Then putting $\epsilon = \min(\delta,\tilde{\delta})/12$, \eqref{6.2step3ind} implies that
 	\[
-	\pr^{-t_{12},t_{12},\vec c, \vec d}_{avoid,Ber}\Big(\min_{1\leq i\leq k-2} \big(L_i(\pm t_1)-L_{i+1}(\pm t_1)\big)<3\epsilon(2t_2)^{1/2}\Big) < \frac{1}{20} + \frac{1}{20} = \frac{1}{10},
+	\pr^{-t_2,t_2,\vec c, \vec d}_{avoid,Ber}\left(C(\vec{c},\vec{d},\epsilon,t_{12})\,\big|\,A(\vec{c},\vec{d},t_1) \cap B(\vec{c},\vec{d},V^{top},t_1)\cap F(\vec{a},\vec{b})\right) \geq \frac{9}{10},
 	\] 
-	and the first inequality in \eqref{LemmaBP2Step3} follows.
+	and \eqref{6.2step3cond} follows from \eqref{6.2step3disj}.\\
 	
-	For the second inequality in \eqref{LemmaBP2Step3}, we observe via the second inequality in \eqref{5.8step1} that
-	\begin{align*}
-	\frac{|\tilde{B}(\vec{c},\vec{d},\epsilon)|}{|\tilde{\Omega}(\vec{c},\vec{d})|} &\geq \frac{|B(\vec{c},\vec{d},\epsilon)\cap\tilde{\Omega}(\vec{c},\vec{d})|}{|\Omega(\vec{c},\vec{d})|} \geq \frac{|B(\vec{c},\vec{d},\epsilon)|}{|\Omega(\vec{c},\vec{d})|} -\frac{|\tilde{\Omega}^c(\vec{c},\vec{d})|}{|\Omega(\vec{c},\vec{d})|} \geq \frac{9}{10} - \frac{1}{100} > \frac{4}{5}.
-	\end{align*} \\
-	
-	{\bf \raggedleft Step 4.} In this last step, we complete the proof of the lemma. Let $g=g(\epsilon,V^{top},M_2)$ be as in Lemma \ref{LemmaBP1} for the choices of $\epsilon,V^{top}$ in Steps 2 and 3, and let $h = h_1/2$, with $h_1$ as in Step 2. If $(\vec{c},\vec{d})\in E$, then it follows from \eqref{5.8step1}, \eqref{5.8step2}, and \eqref{LemmaBP2Step3} that
-	\begin{align*}
-	\frac{|\tilde{B}^c(\vec{c}, \vec{d}, \epsilon) \cup \tilde{A}^c(\vec{c}, \vec{d}) \cup \tilde{C}^c(\vec{c}, \vec{d}, V^{top}) |}{|\tilde{\Omega}(\vec{c}, \vec{d})|} &\leq \frac{|\tilde{B}^c(\vec{c}, \vec{d}, \epsilon)|}{|\tilde{\Omega}(\vec{c}, \vec{d})|} + \frac{| \tilde{A}^c(\vec{c}, \vec{d}) |}{|\tilde{\Omega}(\vec{c}, \vec{d})|} + \frac{|\tilde{C}^c(\vec{c}, \vec{d}, V^{top}) |}{|\tilde{\Omega}(\vec{c}, \vec{d})|}\\
-	&\leq \frac{1}{5} + \frac{1}{10} + \frac{1}{10} < \frac{1}{2}.
-	\end{align*}
-	In particular,
-	\begin{equation}
-	\frac{|\tilde{B}(\vec{c}, \vec{d}, \epsilon) \cap \tilde{A}(\vec{c}, \vec{d}) \cap \tilde{C}(\vec{c}, \vec{d}, V^{top}) |}{|\tilde{\Omega}(\vec{c}, \vec{d})|} \geq  \frac{1}{2},
+	{\bf \raggedleft Step 4.} In this step, we prove that
+	\begin{equation}\label{6.2step4}
+	\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\big(D(\vec{c},\vec{d},V^{top},\epsilon,t_1) \big) \geq \frac{1}{2}\left(1 - 3\sum_{n=1}^\infty e^{-\epsilon^2 n^2/2p(1-p)}\right)^{k-1}.
 	\end{equation}
-	for all large $N$, independent of $\vec{c},\vec{d}$. That is, we have for all $(\vec{c}, \vec{d}) \in E$ that
-	$$\mathbb{P}_{avoid, Ber}^{-t_{12}, t_{12}, \vec{c}, \vec{d}, \infty, \tilde{\ell}_{bot}} ( G) \geq \frac{1}{2},$$
-	where $G$ is the event that
+	We will argue that
+	\begin{equation}\label{6.2step4sep}
+	\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\left(D(\vec{c},\vec{d},V^{top},\epsilon,t_1) \,\big|\,D(\vec c, \vec d, \epsilon,t_{12})\right) \geq \left(1 - 3\sum_{n=1}^\infty e^{-\epsilon^2 n^2/2p(1-p)}\right)^{k-1}.
+	\end{equation}
+	Then \eqref{LemmaBP2Step3} implies \eqref{6.2step4}.
+	
+	To prove \eqref{6.2step4sep} we first observe that we can write
+	\begin{equation}\label{6.2step4disj}
+	D(\vec c, \vec d, \epsilon,t_{12}) = \bigsqcup_{(\vec{a},\vec{b})\in J} G(\vec{a},\vec{b}).
+	\end{equation}
+	Here, for $\vec{a},\vec{b}\in\mathfrak{W}_{k-1}$, $G(\vec{a},\vec{b})$ is the event that $\mathfrak{Q}(-t_{12}) = \vec{a}$ and $\mathfrak{Q}(t_{12}) = \vec{b}$, and $I$ is the collection of $(\vec{a},\vec{b})$ satisfying
+	\begin{enumerate}[label = (\arabic*)]
+		
+		\item $ 0 \leq \min(a_i - c_i,\, d_i - b_i) \leq t_2 - t_{12}$ and $0\leq b_i-a_i \leq 2t_{12}$ for $1\leq i\leq k-1$,
+		
+		\item $\min(a_{k-1} + pt_1,\, b_{k-1} - pt_1) \geq (M_2+1)(2t_3)^{1/2}$,
+		
+		\item $\max(a_1 + pt_1,\, b_1 - pt_1) \leq V^{top}(2t_3)^{1/2}$,
+		
+		\item $\min(a_i-a_{i+1}, \, b_i-b_{i+1}) \geq 3\epsilon(2t_3)^{1/2}$ for $1\leq i\leq k-2$.
+		
+	\end{enumerate}
+	By the Schur Gibbs property (see Definition \ref{DefSGP}) we have
+	\begin{equation}\label{6.2step4cond}
+	\begin{split}
+	&\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\left(D(\vec{c},\vec{d},V^{top},\epsilon,t_1) \,\big|\,G(\vec{a},\vec{b})\right) = \mathbb{P}^{-t_{12},t_{12},\vec{a},\vec{b},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\left(\tilde D(V^{top},\epsilon,t_1)\right) \geq \\
+	&\mathbb{P}^{-t_{12},t_{12},\vec{a},\vec{b}}_{Ber}\left(\tilde D(V^{top},\epsilon,t_1)\cap \{Q_1\geq\cdots\geq Q_{k-1}\geq\ell_{bot}\}\right).
+	\end{split}
+	\end{equation}
+	where the event $\tilde{D}$ is defined in the same way as $D$ for paths on $[-t_{12},t_{12}]$. For any $(\vec{a},\vec{b})\in J$, we observe that the event in the second line of \eqref{6.2step4cond} occurs as long as each curve $Q_i$ remains within a distance of $\epsilon(2t_3)^{1/2}$ from the straight line segment connecting $a_i$ and $b_i$ on $[-t_{12},t_{12}]$, for $1\leq i\leq k-2$. By the same argument in the proof of Lemma \ref{CurveSeparation}, the probability of this event is bounded below by the expression on the right in \eqref{6.2step4sep}. Thus \eqref{6.2step4cond} and \eqref{6.2step4disj} imply \eqref{6.2step4sep}.\\
+	
+	{\bf \raggedleft Step 5.} In this last step, we complete the proof of the lemma. Let $g=g(\epsilon,V^{top},M_2)$ be as in Lemma \ref{LemmaBP1} for the choices of $\epsilon,V^{top}$ in Steps 2 and 3, and let
+	\[
+	h = \frac{h_1}{2}\left(1-3\sum_{n=1}^\infty e^{-\epsilon^2 n^2/2p(1-p)}\right)^{k-1}
+	\]
+	with $h_1$ as in Step 2. By \eqref{6.2step4} we have that if $(\vec{c},\vec{d})\in E$, then
+	$$\mathbb{P}_{avoid, Ber;S}^{-t_2, t_2, \vec{c}, \vec{d}, \infty, \ell_{bot}} ( H) \geq \frac{h}{h_1},$$
+	where $H$ is the event that
 	
 	\begin{enumerate}
-		\item $V^{top} (2t_2)^{1/2} \geq L_1(-t_1) + p t_1 \geq L_{k-1}(-t_1) + pt_1 \geq (M_2 + 1) (2t_2)^{1/2}$;
-		\item $V^{top} (2t_2)^{1/2} \geq L_1(t_1) - p t_1 \geq L_{k-1}(t_1) - pt_1 \geq (M_2 + 1) (2t_2)^{1/2}$; 
-		\item $L_i(-t_1) -L_{i+1}(-t_1) \geq 3\epsilon (2t_2)^{1/2}$ and $L_i(t_1) -L_{i+1}(t_1)  \geq 3 \epsilon (2t_2)^{1/2}$ for $i = 1, \dots, k-2$.
+		\item $V^{top} (2t_3)^{1/2} \geq Q_1(-t_1) + p t_1 \geq Q_{k-1}(-t_1) + pt_1 \geq (M_2 + 1) (2t_2)^{1/2}$,
+		\item $V^{top} (2t_3)^{1/2} \geq Q_1(t_1) - p t_1 \geq Q_{k-1}(t_1) - pt_1 \geq (M_2 + 1) (2t_3)^{1/2}$,
+		\item $Q_i(-t_1) - Q_{i+1}(-t_1) \geq 3\epsilon (2t_2)^{1/2}$ and $Q_i(t_1) - Q_{i+1}(t_1)  \geq 3 \epsilon (2t_2)^{1/2}$ for $i = 1, \dots, k-2$.
 	\end{enumerate}
-	Let $F$ denote the event appearing in \eqref{eqnRT2}. Then we can write $F = \bigsqcup_{(\vec{c},\vec{d})\in E} F(\vec{c},\vec{d})$, where $F(\vec{c},\vec{d})$ is the event that $\tilde{L}(-t_{12}) = \vec{c}$, $\tilde{L}(t_{12}) = \vec{d}$. It follows from Lemma \ref{LemmaBP2} that
+	Let $Y$ denote the event appearing in \eqref{eqnRT2}. Then we can write $Y = \bigsqcup_{(\vec{c},\vec{d})\in E} Y(\vec{c},\vec{d})$, where $Y(\vec{c},\vec{d})$ is the event that $Q(-t_2) = \vec{c}$, $Q(t_2) = \vec{d}$, and $E$ is defined in Step 2. It follows from Lemma \ref{LemmaBP2} that $\mathbb{P}_{\tilde{\mathfrak Q}}(Y) \geq h_1$. Using the Schur Gibbs property (Definition \ref{DefSGP}) we conclude that
 	\begin{align*}
-	&\mathbb{P}_{\tilde{\mathfrak{L}}}(G) \geq \mathbb{P}_{\tilde{\mathfrak{L}}}(G\cap F) = \sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{L}}}(F(\vec{c},\vec{d})) \mathbb{P}_{\tilde{\mathfrak{L}}}(G\,|\,F(\vec{c},\vec{d})) =\\
-	&\sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{L}}}(F(\vec{c},\vec{d})) \mathbb{P}^{-t_{12},t_{12},\vec{c},\vec{d},\infty,\tilde{\ell}_{bot}}_{avoid,Ber}(G) \geq \frac{1}{2}\sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{L}}}(F(\vec{c},\vec{d})) = \frac{1}{2}\mathbb{P}_{\tilde{\mathfrak{L}}}(F) \geq \frac{1}{2}h_1
+	&\mathbb{P}_{\tilde{\mathfrak{Q}}}(H) \geq \mathbb{P}_{\tilde{\mathfrak{Q}}}(H\cap F) = \sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(F(\vec{c},\vec{d}))\cdot \mathbb{P}_{\tilde{\mathfrak{Q}}}(H\,|\,F(\vec{c},\vec{d})) =\\
+	&\sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(F(\vec{c},\vec{d}))\cdot \mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}(H) \geq \frac{h}{h_1}\sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(F(\vec{c},\vec{d})) = \frac{h}{h_1}\,\mathbb{P}_{\tilde{\mathfrak{Q}}}(Y) \geq h
 	\end{align*}
 	for large $N$. Now Lemma \ref{LemmaBP1} implies \eqref{eqn57}, completing the proof.
 \end{proof}
