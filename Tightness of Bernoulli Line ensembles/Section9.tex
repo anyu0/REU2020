@@ -11,7 +11,13 @@ This section will be divided into $6$ subsections. In Section \ref{DefMainRes}, 
 \subsection{Definitions and Main Results}{\label{DefMainRes}}
 We start by introducing some helpful notations.
 \begin{definition}\label{DefScaled}
-	Fix $p,t\in(0,1)$, $k\in\mathbb{N}$, $\vec{a}$, $\vec{b}\in \mathbb{W}_{k}$ are two vectors in Weyl chamber defined in Definition \ref{DefAvoidingLaw}. Suppose that $\vec{x}^{T}=(x_{1}^{T},\cdots,x_{k}^{T})$ and $\vec{y}^{T}=(y_{1}^{T},\cdots,y_{k}^{T})$ are two sequence of $k$-dimensional vectors with integer entries such that $$\lim_{T\rightarrow\infty}\frac{x_{i}^{T}}{\sqrt{T}}=a_{i} \text{ and } \lim_{T\rightarrow\infty}\frac{y_{i}^{T}-pT}{\sqrt{T}}=b_{i}$$ for $i=1,\dots,k$. Define the sequence of random $k$-dimensional vectors $Z^{T}$ by $$Z^{T}=\big(\frac{L_{1}(tT)-ptT}{\sqrt{T}},\cdots,\frac{L_{k}(tT)-ptT}{\sqrt{T}}\big),$$ where $(L_{1},\cdots,L_{k})$ is $\mathbb{P}^{0,T,\vec{x}^{T},\vec{y}^{T}}_{avoid,Ber}$-distributed.
+	Fix $p,t\in(0,1)$, $k\in\mathbb{N}$, $\vec{a}$, $\vec{b}\in \mathbb{W}_{k}$ are two vectors in Weyl chamber defined in Definition \ref{DefAvoidingLaw}. Suppose that $\vec{x}^{T}=(x_{1}^{T},\cdots,x_{k}^{T})$ and $\vec{y}^{T}=(y_{1}^{T},\cdots,y_{k}^{T})$ are two sequence of $k$-dimensional vectors with integer entries such that $$\lim_{T\rightarrow\infty}\frac{x_{i}^{T}}{\sqrt{T}}=a_{i} \text{ and } \lim_{T\rightarrow\infty}\frac{y_{i}^{T}-pT}{\sqrt{T}}=b_{i}$$ for $i=1,\dots,k$. Define the sequence of random $k$-dimensional vectors $Z^{T}$ by 
+	\begin{align}{\label{ZTandL}}
+		\begin{split}
+		Z^{T}=\big(\frac{L_{1}(tT)-ptT}{\sqrt{T}},\cdots,\frac{L_{k}(tT)-ptT}{\sqrt{T}}\big)
+	\end{split}
+	\end{align}
+	where $(L_{1},\cdots,L_{k})$ is $\mathbb{P}^{0,T,\vec{x}^{T},\vec{y}^{T}}_{avoid,Ber}$-distributed.
 \end{definition}
 
 We introduce some constants below
@@ -80,17 +86,16 @@ we can prove that $H(\vec{z})$ in (\ref{PreDensity17}) is non-negative and integ
 \end{lemma}
 Now we are ready to state our second main result, which gives the weak convergence of $Z^{T}$ when $\vec{a}$ and $\vec{b}$ have collided values.
 \begin{proposition}{\label{WeakConvCollide}}
-Assume the same notation as in the Definition \ref{DefScaled} and suppose vectors $\vec{a}_{0}$, $\vec{b}_{0}$ has the form in (\ref{Block}). Then, the random vector $Z^{T}$ converges weakly to a continuous distribution with the density in (\ref{Density17}).
+Assume the same notation as in the Definition \ref{DefScaled} and suppose vectors $\vec{a}_{0}$, $\vec{b}_{0}$ has the form in (\ref{Block}). Then, the random vector $Z^{T}$ converges weakly to a continuous distribution with density in (\ref{Density17}).
 \end{proposition}
 
 \subsection{Skew Schur polynomials and distribution of avoiding Bernoulli line ensembles}{\label{SkewSchurPoly}}
 We give some definitions and elementary results regarding skew Schur polynomials first, which are mainly from \cite[Chapter 1]{Mac}.
-\begin{definition}{\label{DefPar}} \emph{Partition, Interlaced, Tableau}
+\begin{definition}{\label{DefPar}} \emph{Partition, Interlaced}
 \begin{enumerate}
 	\item A \emph{partition} is any infinite sequence $\lambda=(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{r}, \cdots)$ of non-negative integers in decreasing order $\lambda_{1}\geq \lambda_{2}\geq \cdots\geq \lambda_{r}\geq \cdots$ and containing only finitely many non-zero terms. The non-zero $\lambda_{i}$ are called \emph{parts} of $\lambda$, and the sum of the parts is the \emph{weight} of $\lambda$, denoted by $|\lambda|$.
 	\item Suppose $\lambda$ and $\mu$ are two partitions, we denote $\lambda\supset\mu$ if $\lambda_{i}\geq \mu_{i}$ for all $i\in \mathbb{Z}^{+}$, and we can define a new partition $\lambda-\mu=(\lambda_{1}-\mu_{1},\lambda_{2}-\mu_{2},\cdots)$.
 	\item Partitions $\lambda=(\lambda_{1}, \lambda_{2},\cdots)$ and $\mu=(\mu_{1}, \mu_{2},\cdots)$ are call \emph{interlaced}, denoted by $\mu\preceq \lambda$, if $\lambda_1\geq \mu_1\geq \lambda_2\geq \mu_2\geq\cdots$. By definition, if $\mu\preceq\lambda$, then $\mu\subset\lambda$.
-	\item A \emph{tableau} $T=(\lambda^{0}, \lambda^{1}, \cdots \lambda^{r})$ is a sequence of partitions such that $\lambda^{0}\subset\lambda^{1}\subset \cdots\subset \lambda^{r}$.
 \end{enumerate}
 \end{definition}
 
@@ -124,14 +129,14 @@ Next, we introduce Skew Schur Polynomial based on \cite[Chapter 1, (5.4), (5.11)
 
 Based on the above preparation, we are ready to state the following lemma giving the distribution of avoiding Bernoulli line ensembles at time $\lfloor tT \rfloor$.
 \begin{lemma}{\label{BerDist}}
-Assume the same notations as in Section \ref{DefMainRes}, denote $m=\lfloor tT \rfloor$, $n=T-\lfloor tT \rfloor$ and $T=m+n$. Then, the avoiding Bernoulli line ensemble at time $m$ has the following distribution: 
+Assume the same notations as in Section \ref{DefMainRes}, denote $m=\lfloor tT \rfloor$, $n=T-\lfloor tT \rfloor$. Then, the avoiding Bernoulli line ensemble at time $m$ has the following distribution: 
 \begin{align}{\label{ProbMassFunc}}
 \mathbb{P}(L_{1}(m) = \lambda_{1}, \cdots, L_{k}(m) = \lambda_{k})=\frac{s_{\lambda/\mu}(1^{m})\cdot s_{\kappa/\lambda}(1^{n})}{s_{\kappa/\mu}(1^{T})}	
 \end{align}
 where $\lambda_{1}\geq\lambda_{2}\geq\cdots\geq\lambda_{k}$ are positive integers, $s_{\lambda/\mu}$ denote skew Schur polynomials and they are specialized in all parameters equal to $1$. The $\mu$ partition is just the vector $\vec{x}^{T}$ and the $\kappa$ partition should be $\vec{y}^{T}$.
 \end{lemma}
 \begin{remark}
-	Here we let $\lambda_{1}>\lambda_{2}>\cdots>\lambda_{k}$ be positive integers, althought they could potentially be negative. However, we can shift all the endpoints up such that all possible $\lambda_{i}$ are positive. Also, in the proof we treat finite dimensional vectors as partitions because as long as we add infinitely many zeros at their ends we can and make them  ``partitions'' in Definition \ref{DefPar}.
+	Here we let $\lambda_{1}\geq\lambda_{2}\geq\cdots\geq\lambda_{k}$ be positive integers, although they could potentially be negative. However, we can shift all the endpoints up such that all possible $\lambda_{i}$ are positive. Also, in the proof we treat finite dimensional vectors as partitions because as long as we add infinitely many zeros at their ends we can and make them  ``partitions'' in Definition \ref{DefPar}.
 \end{remark}
 \begin{proof} Let $\Omega(0,T,\vec{x}^T, \vec{y}^T)$ be the set of all non-intersecting Bernoulli line ensembles from $\vec{x}^T$ to $\vec{y}^T$. For each line ensemble $\mathfrak{B}\in \Omega(0,T,\bar x^T,\bar y^T)$ with $\mathfrak B=(B_1,...,B_k)$, we may define $\lambda^{i}(\mathfrak B):=(B_1(i),B_2(i),...,B_k(i))$, where $1 \leq i\leq T$ is an integer. The $\lambda^{i}(\mathfrak{B})$ form partitions since by the definition of avoiding Bernoulli line ensembles, we have the inequality $B_\alpha(i)\geq B_\beta(i)$ if $\alpha<\beta$. Now we claim that partitions $\lambda^{i}(\mathfrak{B})$, $1\leq i \leq T$ are interlaced. By definition of Bernoulli random walk, we have $B_{\alpha}(i+1)=B_{\alpha}(i)+\xi$ and $B_{\alpha+1}(i+1)=B_{\alpha+1}(i)+\eta$, where $\xi$, $\eta\in\{0,1\}$, so $B_{\alpha}(i+1)\geq B_{\alpha}(i)$. If $B_{\alpha}(i)\geq B_{\alpha+1}(i)+1$, then $B_{\alpha}(i)\geq B_{\alpha+1}(i+1)$; If $B_{\alpha}(i)=B_{\alpha+1}(i)$, in order to assure $B_{\alpha}(i+1)\geq B_{\alpha+1}(i+1)$, $\xi$ and $\eta$ have to be $0$ or $1$ at the same time, or $\xi=1$ and $\eta=0$, all of which deduce that $B_{\alpha}(i)\geq B_{\alpha+1}(i+1)$. Therefore,
 \[B_{\alpha+1}(i+1)\leq B_\alpha(i)\leq B_\alpha(i+1)\]
@@ -142,7 +147,7 @@ Now, let us define the set
 Now, if we take $f:\Omega(0,T,\bar x^T, \bar y ^T)\to TB_{\kappa/\mu}^T$ with $f(\mathfrak{B})= (\lambda_0(\mathfrak{B}),\cdots \lambda_T(\mathfrak{B}))$. We find that this function is in fact a bijection. 
 
 First, to show injectivity, suppose that there are two Bernoulli line ensembles, $\mathfrak{B}, \widetilde{\mathfrak{B}}\in \Omega(0,T,\bar x^T, \bar y ^T)$ such that $\mathfrak{B}\neq \widetilde{\mathfrak{B}}$.
-Bernoulli line ensembles are determined by their values at integer times, so this would imply that there exists some $(q,r)$ such that $0\leq r\leq T$, $0\leq q \leq k$ and $B_q(r)\neq \widetilde{\mathfrak{B}}_q(r)$ where $B_q$ and $\widetilde{B}_q$ are components of $\mathfrak{B}$ and $\widetilde{\mathfrak{B}}$ respectively. 
+Bernoulli line ensembles are determined by their values at integer times, so this would imply that there exists some $(q,r)$ such that $0\leq r\leq T$, $0\leq q \leq k$ and $B_q(r)\neq \widetilde{B}_q(r)$ where $B_q$ and $\widetilde{B}_q$ are components of $\mathfrak{B}$ and $\widetilde{\mathfrak{B}}$ respectively. 
 This implies that $\lambda^r(\mathfrak B)\neq \lambda^r(\widetilde{\mathfrak{B}})$, so we have injectivity. 
 
 Now, surjectivity follows since for any $\bar\lambda=(\lambda^0,...,\lambda^T)$ we may define $\mathfrak{B}(\bar{\lambda})=(B_1(\bar\lambda),...,B_k(\bar\lambda))$ where $B_r(\bar\lambda)(i)=\lambda^i_r$ where $\lambda^i_r$ is the $r$\textit{-th} entry of $\lambda^i$. The restrictions on $TB_{\kappa/\mu}^T$ ensure that each $\mathfrak{B}(\bar\lambda)\in \Omega(0,T,\bar x^T,\bar y^T)$, and so $f(\mathfrak B(\bar{\lambda}))=(\lambda^0,\cdots \lambda^T)$ by the definition $\mathfrak{B}(\bar\lambda)$. 
@@ -157,83 +162,90 @@ Therefore, we conclude that
 \end{align*} where $\lambda=(\lambda_{1},\cdots,\lambda_{k})$ is a partition such that $\vec{x}^{T}\preceq\lambda\preceq\vec{y}^{T}$.
 \end{proof}
 
-\subsection{Proof of Proposition \ref{WeakConvDistinct}}{\label{ProofProp1}} In this section, we prove Proposition \ref{WeakConvDistinct} assuming the validity of Lemma \ref{LemmaDensity}. First,we show that the limiting function of probability mass function (\ref{ProbMassFunc}) in Lemma \ref{BerDist} is exactly the function in (\ref{Density}). We then use Lemma \ref{LemmaDensity} to show that the limiting function is a probability density function. Finally, we prove that the random vector $Z^{T}$ weakly converges to the density (\ref{Density}).
-
-We start with finding the asymptotic behavior of skew Schur polynomials in (\ref{ProbMassFunc}). By the Jacob-Trudi formula (\ref{J-TFormula}), we only need to find the asymptotic formula for complete symmetric functions. The result is stated as the following lemma.
-
-\begin{lemma}
-	Assume the same notation as in Section \ref{SkewSchurPoly}. We then have the following asymptotic formula
+By Jacob-Trudi formula (\ref	{J-TFormula}) and Lemma \ref	{BerDist}, we further get
+\begin{align}{\label{BerDistJT}}
+	\begin{split}
+		\pr(L_1(m)=\lambda_1,\cdots, L_k(m)=\lambda_k)=\frac{\det\left[h_{\lambda_{i}-x_{j}^{T}+j-i}(1^{m})\right]_{i,j=1}^{k}\cdot\det\left[h_{y_{i}^{T}-\lambda_{j}+j-i}(1^{n})\right]_{i,j=1}^{k}}{\det\left[h_{y_{i}^{T}-x_{j}^{T}+j-i}(1^{T})\right]_{i,j=1}^{k}}
+	\end{split}
+\end{align}
+\subsection{Proof of Proposition \ref{WeakConvDistinct}}{\label{ProofProp1}} In this section, we prove Proposition \ref{WeakConvDistinct} assuming the validity of Lemma \ref{LemmaDensity}. We start with finding the asymptotic formula for probability mass function (\ref{BerDistJT}), and it is equivalent to find the asymptotic formula for complete symmetric functions $h_{\lambda_{i}-x_{j}^{T}+j-i}(1^{m})$, $h_{y_{i}^{T}-\lambda_{j}+j-i}(1^{n})$ and $h_{y_{i}^{T}-x_{j}^{T}+j-i}(1^{T})$. By the definition of random vector $Z^{T}$ in (\ref{ZTandL}), we find that 
+\begin{align}
+	\left\{Z^{T}_{1}=z_1,\cdots, Z^{T}_{k}=z_k\right\}\equiv\left\{L_{1}(tT)=\lambda_1,\cdots,L_{k}(tT)=\lambda_k\right\}
+\end{align}
+where $\lambda_{i}=z_{i}\sqrt{T}+ptT$ for $i\in\{1,\cdots,k\}$. In addition, $x_{i}^{T}\sim a_{i}\sqrt{T}+o\left(\sqrt{T}\right)$ and $y_{i}^{T}\sim b_{i}\sqrt{T}+pT+o\left(\sqrt{T}\right)$ by Definition \ref{DefScaled}. Therefore, we have
 \begin{align}
 \begin{split}
-	& h_{\lambda_{i}-x^{T}_{j}+j-i}(1^{\lfloor tT \rfloor})=\sqrt{2\pi}^{-1}\sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}\cdot\text{Exp}\bigg\{((p+1)tT)\log((p+1)tT)-(ptT)\log(ptT)\\
-	& -(tT)\log(tT)+(-i+j)\log(\frac{p+1}{p})-\log(p+1)+(z_{i}-a_{j})\sqrt{T}\cdot \log(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^{2}}{p(p+1)t}+o(1)\bigg\}
+	\lambda_{i}-x_{j}^{T}+j-i&=pm+O\left(T^{1/2}\right),\ y_{i}^{T}-\lambda_{j}+j-i=pn+O\left(T^{1/2}\right)\\
+	&y_{i}^{T}-x_{j}^{T}+j-i=pT+O\left(T^{1/2}\right)
 \end{split}
 \end{align}
-where $S_{1}(p,t,T)=((p+1)tT)\log((p+1)tT)-(ptT)\log(ptT)-(tT)\log(tT)$.
+Thus, we only need to consider the complete symmetric functions in the form $h_{N}(1^{n})$, where $N=pn+x\sqrt{n}$ and $x\in[-R,R]$ is bounded. In this case, we have the following lemma giving the asymptotic behavior of $h_{N}(1^{n})$.
+\begin{lemma}
+	Suppose that $p\in(0,1)$ and $R>0$ are given. Suppose that $x\in[-R,R]$ and $N=pn+\sqrt{n}x$ is an integer. Then 
+\begin{align}
+\begin{split}{\label{AsympForh}}
+&h_{N}(1^{n})=(\sqrt{2\pi})^{-1}\cdot \exp\left(-\frac{x^2}{2(1+p)p}\right)\cdot \exp\left(N\log(\frac{1+p}{p})\right)\cdot \exp\left(O(n^{-1/2})\right)\\
+& \exp\left(n\log(1+p)-(1/2)\log n-(1/2)\log(p(1+p))\right)
+\end{split}
+\end{align}
+where the constant in the big $O$ notation depends on $p$ and $R$ alone. Moreover, there exist positive constants $C,c>0$ depending on $p$ alone such that for all large enough $n\in\mathbb{N}$ and $N\in[0,(1+p)n]$
+\begin{align}{\label{hbounded}}
+	h_{N}(1^n)\leq C\cdot \exp\left(N\log((1+p)p)+n\log(1+p)-(1/2)\log n\right)\cdot \exp\left(-cn^{-1}(N-pn)^2\right).
+\end{align}
 \end{lemma}
+\begin{remark}
+	Notice that when $R>0$ is fixed, $N\in[pn-R\sqrt{n},pn+R\sqrt{n}]$. However, we specify the range of $N$ by $[0,(1+p)n]$. First, it is because when $N<0$ the complete symmetric function $h_{N}(1^{n})$ would be zero by Definition \ref{CompSymFunc} and the situation becomes trivial. Second, when $n$ is sufficiently large, the interval $[0,(1+p)n]$ will contain $[pn-R\sqrt{n},pn+R\sqrt{n}]$, so it's sufficient to consider the case when $N\in[0,(1+p)n]$.
+\end{remark}
 \begin{proof}
-We first compute the first determinant in the numerator. Using the identity for complete symmetric functions(\cite[Example 1, Section I.2]{Mac}) that $h_r(1^n)=\binom{n+r-1}{r}$, we get the resulting equation 
-\begin{align}{\label{h}}
-h_{\lambda_i-x_j^T+j-i}(1^{\floor{tT}})&=\frac{(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!}{(\lambda_{i}-x_{j}^{T}-i+j)!(\lfloor tT \rfloor -1)!}
+\textbf{Step 1.} In this step we prove (\ref	{AsympForh}). Using the formula for complete symmetric function (\ref{CompSymFunc}), we obtain
+\begin{align}{\label{CompSymFactorial}}
+	h_{N}(1^n)=\frac{(N+n-1)!}{N!(n-1)!}
 \end{align}
-We have the following Stirling's formula \cite{stirling}, 
+
+We have the following Stirling's formula \cite{stirling} that for $n\geq 1$
 $$n!=\sqrt{2\pi n}n^ne^{-n}e^{r_{n}}\text{, where }\frac{1}{12n+1}<r_{n}<\frac{1}{12n}$$
-Write $K=\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1$ and apply the above Stirling's formula to get
-\begin{align*}
-K!=\sqrt{2\pi}\sqrt{K}\cdot e^{K\log K-K+r_{K}}
-\end{align*}
-Additionally, since $\lambda_{i}=\lfloor z_{i}\sqrt{T}+ptT\rfloor$ and $x_{i}^{T}= a_{i}\sqrt{T}+o(\sqrt{T})$, we get \[K=\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1= (z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1+o(\sqrt{T})\]
-\begin{align*}
-	\log K&=\log\left(1+\frac{-i+j-1}{(z_{i}-a_{j})\sqrt{T}+(p+1)tT}+o(\frac{1}{\sqrt{T}})\right)+\log((z_{i}-a_{j})\sqrt{T}+(p+1)tT)\\
-	&=\frac{-i+j-1}{(z_{i}-a_{j})\sqrt{T}+(p+1)tT}+\log((z_{i}-a_{j})\sqrt{T}+(p+1)tT)+o(\frac{1}{\sqrt{T}})
-\end{align*}
-where the constant in little $o$ notation only depends on $A,p$ and does not depend on $T$.
-Next, we compute $K\log K$:
-\begin{align*}
-K\log K &=\left(-i+j-1\right) + \left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)\\&+(-i+j-1)\log\left((p+1)tT\right)+o(\sqrt{T})
-\end{align*}
-Now we further compute the term $\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)$. Notice that
-\begin{align*}
-	\log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)&= \log\left((p+1)tT\right)+\log\left(1+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}\right)\\
-	&= \log((p+1)tT)+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{(p+1)^{2}t^{2}T}+o(\frac{1}{T})
-\end{align*}
-Then, 
-\begin{align*}
-	& \left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \log\left((z_{i}-a_{j})\sqrt{T}+(p+1)tT\right)\\
-	&=\left[(z_{i}-a_{j})\sqrt{T}+(p+1)tT\right]\cdot \left[\log((p+1)tT)+\frac{z_{i}-a_{j}}{(p+1)t\sqrt{T}}-\frac{1}{2}\frac{(z_{i}-a_{j})^2}{(p+1)^{2}t^{2}T}+o(\frac{1}{T})\right]\\
-	&=\left((p+1)tT)\log((p+1)tT\right)+(z_{i}-a_{j})\sqrt{T}\cdot \log((p+1)tT)+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}+o(1)
-\end{align*}
-Therefore, we find that $(\lambda_{i}-x_{j}^{T}-i+j+\lfloor tT \rfloor -1)!=$
-\begin{equation}{\label{factorial1}}
+Applying the Stirling formula to equation (\ref{CompSymFactorial}) implies that
+\begin{align}{\label{hStirling}}
 \begin{split}
-	\sqrt{2\pi}\sqrt{(p+1)tT}\cdot \text{Exp}&\{(-i+j-1) + ((p+1)tT)\log((p+1)tT)+(z_{i}-a_{j})\sqrt{T}\cdot ((p+1)tT)\\
-	&+(z_{i}-a_{j})\sqrt{T}-\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{(p+1)t}+(-i+j-1)\log((p+1)tT)\\&-\left((z_{i}-a_{j})\sqrt{T} + (p+1)tT-i+j-1\right)+o(1)\}
+	& h_{N}(1^n)=\frac{\exp\left( (N+n-1/2)\log(N+n-1)-(n-1/2)\log(n-1)-(N+1/2)\log(N)+O(n^{-1}) \right)}{\sqrt{2\pi}}\\
+	& = (\sqrt{2\pi})^{-1}\cdot \exp\left((N+n-1/2)\log\left(\frac{N+n-1}{(1+p)n}\right)-(n-1/2)\log(n-1)-(N+1/2)\log\left(\frac{N}{pn}\right)\right)\\
+	&\cdot \exp\left((N+n-1/2)\log((1+p)n)-(N+1/2)\log(pn)+O\left(n^{-1}\right)\right).
 \end{split}
-\end{equation}
-
-Similarly, $(\lambda_{i}-x_{j}^{T}-i+j)!=$
-\begin{align}{\label{factorial2}}
-\begin{split}
-\sqrt{2\pi}\sqrt{ptT}\cdot \text{Exp}&\{(-i+j) + (ptT)\log(ptT)+(z_{i}-a_{j})\sqrt{T}\cdot \log(ptT)+(z_{i}-a_{j})\sqrt{T}\\
-& +\frac{1}{2}\cdot\frac{(z_{i}-a_{j})^2}{pt}+(-i+j)\log(ptT)-((z_{i}-a_{j})\sqrt{T} + ptT-i+j)+o(1)\}	
-\end{split}
-\end{align} and the final term:
-\begin{align}{\label{factorial3}}
-	(\lfloor tT \rfloor-1)!= \sqrt{2\pi}\sqrt{tT}\cdot \text{Exp}\{(tT)\log(tT)-1-\log(tT)+o(1)\}
 \end{align}
-Plugging (\ref{factorial1}), (\ref{factorial2}) and (\ref{factorial3}) into equation (\ref{h}) we get $h_{\lambda_{i}-x^{T}_{j}+j-i}(1^{\lfloor tT \rfloor})=$
+
+Denote $\Delta=\sqrt{n}x$, and we now use the Taylor expansion of the logarithm and the expression for $N$ to get
 \begin{align*}
-	\sqrt{2\pi}^{-1} & \sqrt{\frac{p+1}{pt}}\sqrt{T}^{-1}\cdot\text{Exp}\bigg\{((p+1)tT)\log((p+1)tT)-(ptT)\log(ptT)-(tT)\log(tT)\\
-	& +(-i+j)\log(\frac{p+1}{p})-\log(p+1)+(z_{i}-a_{j})\sqrt{T}\cdot \log(\frac{p+1}{p})-\frac{1}{2}\frac{(z_{i}-a_{j})^{2}}{p(p+1)t}+o(1)\bigg\}
+	\log\left(\frac{N+n-1}{(1+p)n}\right)&=\log\left(\frac{pn+\Delta+n-1}{(1+p)n}\right)=\log\left(1+\frac{\Delta-1}{(1+p)n}\right)\\
+	& = \frac{\Delta-1}{(1+p)n}-\frac{1}{2}\frac{\Delta^2}{n^2(1+p)^{2}}+O\left(n^{-3/2}\right)
 \end{align*}
-where the constant in little $o$ notation only depends on $A,p$ and does not depend on $T$.
-\end{proof}
+Analogously, we have $$\log\left(\frac{N}{pn}\right)=\log\left(1+\frac{\Delta}{pn}\right)=\frac{\Delta}{pn}-\frac{1}{2}\frac{\Delta^2}{p^2 n^2}+O\left(n^{-3/2}\right)$$
+Plugging the two equations above to equation (\ref{hStirling}) we get
+\begin{align*}
+	& h_{N}(1^n)=(\sqrt{2\pi e})^{-1}\cdot \exp\left(\frac{\Delta(N+n)}{(1+p)n}-\frac{1}{2}\frac{\Delta^{2}(N+n)}{n^2(1+p)^2}\right)\exp\left(-\frac{\Delta N}{pn}+\frac{1}{2}\frac{\Delta^2 N}{p^2 n^2}\right)\\
+	& \cdot \exp\left((N+n-1/2)\log((1+p)n)-(n-1/2)\log(n-1)-(N+1/2)\log(pn)+O(n^{-1/2})\right)
+\end{align*}
 
-\subsection{Multi-indices and multivariate functions}\label{multivar}
+We next observe that 
+$$\frac{\Delta(N+n)}{(1+p)n}-\frac{\Delta N}{pn}=\Delta\left(\frac{(1+p)n+\Delta}{(1+p)n}-\frac{pn+\Delta}{pn}\right)=-\frac{\Delta^2}{(1+p)pn}$$
+ and $$-\frac{1}{2}\frac{\Delta^2(N+n)}{n^2(1+p)^2}+\frac{1}{2}\frac{\Delta^2N}{p^2 n^2}=-\frac{\Delta^2}{2n}\left(\frac{N+n}{(1+p)^2n}-\frac{N}{p^2n}\right)=\frac{\Delta^2}{2(1+p)pn}+O\left(n^{-1/2}\right)$$
+Combining the above we conclude that 
+\begin{align}{\label{hfinal}}
+\begin{split}
+	& h_{N}(1^n)=(\sqrt{2\pi e})^{-1}\cdot \exp\left(-\frac{\Delta^2}{2(1+p)pn}\right)\cdot\exp\left(N\log\left(\frac{1+p}{p}\right)\right)\cdot\exp\left(O\left(n^{-1/2}\right)\right)\\
+	&\cdot \exp\left((n-1/2)\log((1+p)n)-(n-1/2)\log(n-1)-(1/2)\log(pn)\right).
+\end{split}
+\end{align}
+We finally observe that 
+\begin{align*}
+\begin{split}
+	& (n-1/2)\log((1+p)n)-(n-1/2)\log(n-1)-(1/2)\log(pn)=(n-1/2)\log(1+p)\\
+	& +(n-1/2)\log n-(n-1/2)\log(n)-(n-1/2)\log(1-n^{-1})-(1/2)\log p-(1/2)\log n\\
+	& = n\log(1+p)+1-(1/2)\log n -(1/2)\log(p(1+p))+O\left(n^{-1}\right)
+\end{split}
+\end{align*}
+and putting this in (\ref{hfinal}) we arrive at (\ref{AsympForh}).\\
+\textbf{Step 2.} In this step we prove (\ref{hbounded}).
 
-\subsection{Proof of Proposition \ref{WeakConvCollide}}{\label{ProofProp2}}
-\subsection{Proof of Lemma \ref{LemmaDensity} and Lemma \ref{Integrable}}{\label{Pf2Lemma}}
-The following lemma helps us to prove Proposition \ref{WeakConvDistinct}. It shows the asymptotic formula for the distribution of avoiding Bernoulli line ensembles at time $\lfloor tT \rfloor$. 
 \begin{lemma}{\label{PointConvLemma}}
 	Let $\mathbb{W}_{k}^{o}$ denote the open Weyl chamber in $\mathbb{R}^{N}$:
 $$\mathbb{W}_{N}^{o}=\{(x_{1},\cdots,x_{k})\in\mathbb{R}^{N}:x_{1}>x_{2}>\cdots>x_{k}\}$$ Fix a real number $A>0$, $p,t\in(0,1)$, take $z=(z_{1},\cdots,z_{k})\in\mathbb{W}_{k}^{o}$ such that $A>z_{1}>\cdots>z_{k}>-A$. Choose sufficiently large $T_{0}$ such that $ptT_{0}-A\sqrt{T_{0}}\geqslant 1$, then for $T\geqslant T_{0}$, define $\lambda_{i}(T)=\lfloor z_{i}\sqrt{T}+ptT\rfloor\geqslant 1$ for $i=1,\cdots,k$. Denote $P_{T}(z)=(\sqrt{T})^{k}\pr(L_1(\lfloor tT\rfloor)=\lambda_1(T),\cdots, L_k(\lfloor tT\rfloor)=\lambda_k(T))$, then we have for almost every $z\in[-A,A]^{k}$:
@@ -341,7 +353,7 @@ $$1\leq \sum_{i=1}^{N_{n}}\int_{R_{i}}\rho(z)dz+1/n=\int_{\bigcup_{i=1}^{N_{n}}R
 due to (\ref{ConvOnRect}) and the fact that $\rho(z)$ integrates to $0$ over the boundary of rectangles. Finally, let $n\rightarrow\infty$. We then have $\int_{\mathbb{W}_{k}^{o}}\rho(z)dz\geq 1$ by the monotone convergence theorem and conclude that $\rho(z)$ is a density.
 \end{proof}
 
-Next we are going to prove Proposition \ref{WeakConvCollide}. Before that, we first introduce some notations and results about multivariate functions.
+\subsection{Multi-indices and multivariate functions}\label{multivar} In this step, we first introduce some notations and results about multivariate functions.
 
 Suppose $\sigma = (\sigma_{1},\cdots,\sigma_{n})$ is a multi-index of \emph{length} $n$. In our context, we require $\sigma_{1},\cdots,\sigma_{n}$ be all non-negative integers(some of them might be equal). We define $|\sigma|=\sum_{i=1}^{n}\sigma_{i}$ as the \emph{order} of $\sigma$. Suppose $\tau=(\tau_{1},\cdots,\tau_{n})$ is another multi-index of length $n$. We say $\tau\leqslant \sigma$ if $\tau_{i}\leqslant \sigma_{i}$ for $i=1,\cdots,n$. We say $\tau<\sigma$ if $\tau\leqslant \sigma$ and there exists at least one index $i$ such that $\tau_{i}<\sigma_{i}$. Then, define the partial derivative with respect to the multi-index $\sigma$:
 $$D^{\sigma}f(x_{1},\cdots,x_{n})=\frac{\partial^{|\sigma|}f(x_{1},\cdots,x_{n})}{\partial x_{1}^{\sigma_{1}}\partial x_{2}^{\sigma_{2}}\cdots \partial x_{n}^{\sigma_{n}}}$$ We have the general Leibniz rule:
@@ -355,6 +367,8 @@ In the equation, $\sigma!=\sigma_{1}!\sigma_{2}!\cdots\sigma_{n}!$ is the factor
 
 We also need some knowledge about \emph{permutation}. Suppose $s_{n}$ is a permutation of $n$ non-negative integers, for example $\{1,\cdots,n\}$, and $s_{n}(i)$ represents the $i$-$th$ element in the permutation $s_{n}$. We define \emph{the number of inversions} of $s_{n}$ by $I(s_{n})=\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}\mathbbm{1}_{\{s_{n}(i)>s_{n}(j)\}}$. For example, the permutation $s_{n}=(1,\cdots,n)$ has $0$ number of inversions, while the permutation $s_{5}=(3,2,5,1,4)$ has number of inversions $5(2+1+2+0+0)$. Define the sign of permutation $s_{n}$ by $sgn(s_{n})=(-1)^{I(s_{n})}$. For instance, $sgn((1,\cdots,n))=1$ and $sgn(s_{5})=-1$ in the previous example.
 
+\subsection{Proof of Proposition \ref{WeakConvCollide}}{\label{ProofProp2}}
+Next we are going to prove Proposition \ref{WeakConvCollide}. Before that, 
 Then, we introduce some notations associated with Proposition \ref{WeakConvCollide} in order to better discuss the problem. Recall that
 \begin{align*}
 	&\vec{a}_{0}=(\underbrace{\alpha_{1},\cdots,\alpha_{1}}_{m_{1}},\cdots,\underbrace{\alpha_{p},\cdots,\alpha_{p}}_{m_{p}})\\
@@ -465,7 +479,7 @@ Since $H(\vec{z})$ is integrable, we can define the constant $Z_{\vec{a}_{0},\ve
 	\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})=Z_{\vec{a}_{0},\vec{b}_{0}}^{-1}\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\mathbbm{1}_{\{z_1>z_2>\cdots>z_{k}\}}
 \end{align}
 is a density because it's non-negative and integrates to $1$ over $\mathbb{R}^{k}$.\\
-\textbf{Step 3. }Denote $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$ as the random vector $Z^{T}$ associated with vectors $\vec{a}_{0}$ and $b_{0}$, and in this step we prove it weakly converges to the continuous distribution with the density $\rho_{\vec{a}_{0},\vec{b}_{0}}(z)$ we just constructed in (\ref{NewDensity}). Suppose $\mathfrak{L}_{+}^{T}$ is an avoiding Bernoulli line ensemble starting with $\vec{x}^{T}_{+}$ and ending with $\vec{y}^{T}_{+}$ and follows the distribution $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T}_{+},\vec{y}^{T}_{+}}$. The vectors $\vec{x}^{T}_{+}$ and $\vec{y}^{T}_{+}$ are two signatures of length $k$ that satisfies the following:\\
+\textbf{Step 3. }Denote $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$ as the random vector $Z^{T}$ associated with vectors $\vec{a}_{0}$ and $b_{0}$, and in this step we prove it weakly converges to the continuous distribution with density $\rho_{\vec{a}_{0},\vec{b}_{0}}(z)$ we just constructed in (\ref{NewDensity}). Suppose $\mathfrak{L}_{+}^{T}$ is an avoiding Bernoulli line ensemble starting with $\vec{x}^{T}_{+}$ and ending with $\vec{y}^{T}_{+}$ and follows the distribution $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T}_{+},\vec{y}^{T}_{+}}$. The vectors $\vec{x}^{T}_{+}$ and $\vec{y}^{T}_{+}$ are two signatures of length $k$ that satisfies the following:\\
 (\romannumeral 1)$$\lim_{T\rightarrow\infty}\frac{\vec{x}^{T}_{+}}{\sqrt{T}}=\vec{A}_{\epsilon,+},\quad \lim_{T\rightarrow\infty}\frac{\vec{y}^{T}_{+}-pT1_{k}}{\sqrt{T}}=\vec{B}_{\epsilon,+}$$
 (\romannumeral 2) $\vec{x}^{T}_{+}\geqslant \vec{x}^{T}$, $\vec{y}^{T}_{+}\geqslant \vec{y}^{T}$, which means the endpoints of the newly constructed line ensembles dominate the original ones. This can be achieved due to the limiting behavior of $\vec{x}^{T}_{+}$ and $\vec{y}^{T}_{+}$ and the construction of $\vec{A}_{\epsilon,+}$ and $\vec{B}_{\epsilon,+}$.
 Analogously, we construct another avoiding Bernoulli line ensemble $\mathfrak{L}_{-}^{T}$ with endpoints $\vec{x}^{T}_{-}$ and $\vec{y}^{T}_{-}$ and distribution $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T}_{-},\vec{y}^{T}_{-}}$ such that $\lim_{T\rightarrow\infty}\frac{\vec{x}^{T}_{-}}{\sqrt{T}}=\vec{A}_{\epsilon,-},\quad \lim_{T\rightarrow\infty}\frac{\vec{y}^{T}_{-}-pT1_{k}}{\sqrt{T}}=\vec{B}_{\epsilon,-}$, and $\vec{x}^{T}_{-}\leqslant \vec{x}^{T}$, $\vec{y}^{T}_{-}\leqslant \vec{y}^{T}$.\\
@@ -508,3 +522,5 @@ Therefore, we conclude
 \end{align*}
 Since $\rho_{\epsilon,+}(z)\mathbbm{1}_{R}dz\leqslant\rho_{\epsilon,+}(z)dz$ is bounded by an integrable function, by Dominated Convergence Theorem we have: $$\lim_{\epsilon\downarrow 0}\int_{R}\rho_{\epsilon,+}(z)dz=\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz$$ Analogously, we can get $\lim_{\epsilon\downarrow 0}\int_{R}\rho_{\epsilon,-}(z)dz=\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz$ and we proved the statement (\ref{WeakConvConclude}), which completes the proof.
 \end{proof}
+
+\subsection{Proof of Lemma \ref{LemmaDensity} and Lemma \ref{Integrable}}{\label{Pf2Lemma}}
