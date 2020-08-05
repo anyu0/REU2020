@@ -11,7 +11,7 @@ This section will be divided into $6$ subsections. In Section \ref{DefMainRes}, 
 \subsection{Definitions and Main Results}{\label{DefMainRes}}
 We start by introducing some helpful notations.
 \begin{definition}\label{DefScaled}
-	Fix $p,t\in(0,1)$, $k\in\mathbb{N}$, $\vec{a}$, $\vec{b}\in \mathbb{W}_{k}$ are two vectors in Weyl chamber defined in Definition \ref{DefAvoidingLaw}. Suppose that $\vec{x}^{T}=(x_{1}^{T},\cdots,x_{k}^{T})$ and $\vec{y}^{T}=(y_{1}^{T},\cdots,y_{k}^{T})$ are two sequence of $k$-dimensional vectors with integer entries such that $$\lim_{T\rightarrow\infty}\frac{x_{i}^{T}}{\sqrt{T}}=a_{i} \text{ and } \lim_{T\rightarrow\infty}\frac{y_{i}^{T}-pT}{\sqrt{T}}=b_{i}$$ for $i=1,\dots,k$. Define the sequence of random $k$-dimensional vectors $Z^{T}$ by 
+	Fix $p,t\in(0,1)$, $k\in\mathbb{N}$, $\vec{a}$, $\vec{b}\in \mathbb{W}_{k}$ are two vectors in Weyl chamber defined in Definition \ref{DefAvoidingLaw}. Suppose that $\vec{x}^{T}=(x_{1}^{T},\cdots,x_{k}^{T})$ and $\vec{y}^{T}=(y_{1}^{T},\cdots,y_{k}^{T})$ are two sequences of $k$-dimensional vectors in $\mathfrak{W}_{k}$ such that $$\lim_{T\rightarrow\infty}\frac{x_{i}^{T}}{\sqrt{T}}=a_{i} \text{ and } \lim_{T\rightarrow\infty}\frac{y_{i}^{T}-pT}{\sqrt{T}}=b_{i}$$ for $i=1,\dots,k$. Define the sequence of random $k$-dimensional vectors $Z^{T}$ by 
 	\begin{align}{\label{ZTandL}}
 		\begin{split}
 		Z^{T}=\big(\frac{L_{1}(tT)-ptT}{\sqrt{T}},\cdots,\frac{L_{k}(tT)-ptT}{\sqrt{T}}\big)
@@ -32,12 +32,7 @@ and define the function $\rho(z_{1},\cdots, z_{k})\equiv\rho(\vec{z})$ as the fo
 	\rho(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot \mathbbm{1}_{\{z_{1}>\cdots >z_{k}\}}\cdot \det\big[e^{c_{1}(t,p)a_{i}z_{j}}\big]_{i,j=1}^{k}\det\big[e^{c_{2}(t,p)b_{i}z_{j}}\big]_{i,j=1}^{k}\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}
 \end{align}
 
-We can prove that the function $\rho(z)$ defined in (\ref{Density}) is a density function, meaning that it is non-negative and integrates to $1$ over $\mathbb{R}^{k}$. Since this is an important ingredient of our results, we isolate it in the following lemma and will prove it in Section \ref{Pf2Lemma}.
-\begin{lemma}{\label{LemmaDensity}}
-	The function $\rho(z_{1},\cdots,z_{k})$ defined in (\ref{Density}) is a probability density function.
-\end{lemma}
-
-Now we are ready to state our first main result, which gives the limiting distribution when vectors $\vec{a}$ and $\vec{b}$ contain distinct values.
+We will prove that the function $\rho(z)$ defined in (\ref{Density}) is a probability density function, meaning that it is non-negative and integrates to $1$ over $\mathbb{R}^{k}$. Since this is an important ingredient of our results, we isolate it as Lemma \ref{PfDensity} and will prove it in Section \ref{Pf2Lemma}. For now, we assume that $\rho(\vec{z})$ in (\ref{Density}) is a density so that we can state our first main result in the following, which gives the limiting distribution of $Z^{T}$ when vectors $\vec{a}$ and $\vec{b}$ contain distinct values.
 
 \begin{proposition}{\label{WeakConvDistinct}}
 Assume the same notation as in the Definition \ref{DefScaled}. When $a_{1}> \cdots > a_{k}$ and $b_{1}> \cdots > b_{k}$ are all distinct, the random vector $Z^{T}$ converges weakly to a continuous distribution with the density in (\ref{Density}).	
@@ -77,13 +72,11 @@ Then define the function
 \begin{align}{\label{PreDensity17}}
 	H(\vec{z})=\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}
 \end{align}
-we can prove that $H(\vec{z})$ in (\ref{PreDensity17}) is non-negative and integrable over $\mathbb{R}^{k}$, which is formalized in the following lemma:
-\begin{lemma}{\label{Integrable}}
-	The function $H(\vec{z})$ is non-negative and integrable over $\mathbb{R}^{k}$. Thus, we can define the constant $Z_{0}=\int_{\mathbb{R}^{k}}H(\vec{z})\mathbbm{1}_{\{z\in\mathbb{W}_{k}\}}dz<\infty$, and define the following density function:
+we can prove that $H(\vec{z})$ in (\ref{PreDensity17}) is non-negative and integrable over $\mathbb{R}^{k}$,so that we can multiply it with the normalized constant $Z_{0}=\int_{\mathbb{R}^{k}}H(\vec{z})\mathbbm{1}_{\{z_1>\cdots>z_{k}\}}dz<\infty$ and make it a probability density function:
 \begin{align}{\label{Density17}}
-\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})=\frac{1}{Z_{0}}\cdot\mathbbm{1}_{\{z_{1}>\cdots> z_{k}\}}\cdot \varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}	
+\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})=\frac{1}{Z_{0}}\cdot\mathbf{1}_{\{z_{1}>\cdots> z_{k}\}}\cdot \varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}	
 \end{align}
-\end{lemma}
+
 Now we are ready to state our second main result, which gives the weak convergence of $Z^{T}$ when $\vec{a}$ and $\vec{b}$ have collided values.
 \begin{proposition}{\label{WeakConvCollide}}
 Assume the same notation as in the Definition \ref{DefScaled} and suppose vectors $\vec{a}_{0}$, $\vec{b}_{0}$ has the form in (\ref{Block}). Then, the random vector $Z^{T}$ converges weakly to a continuous distribution with density in (\ref{Density17}).
@@ -107,7 +100,7 @@ We give some definitions and elementary results regarding skew Schur polynomials
 	 where $m_{\lambda}=x_1^{\lambda_1}x_2^{\lambda_2}\cdots$ is the monomial with parts of partition $\lambda$ as corresponding powers. For $r<0$, we  define $h_r$ to be zero. In particular, when $x_1=x_2=\cdots=x_n=1$, $x_{n+1}=x_{n+2}=\cdots=0$, $h_r$ is just the number of partitions that have weight $r$ and $n$ nonzero parts. Thus, we have: 
 	 \begin{align}
 	 	h_{r}(1^{n})=\binom{r+n-1}{r}
-	 \end{align}
+	 \end{align}m
 \end{definition}
 
 Next, we introduce Skew Schur Polynomial based on \cite[Chapter 1, (5.4), (5.11), (5.12)]{Mac}.
@@ -168,7 +161,21 @@ By Jacob-Trudi formula (\ref	{J-TFormula}) and Lemma \ref	{BerDist}, we further 
 		\pr(L_1(m)=\lambda_1,\cdots, L_k(m)=\lambda_k)=\frac{\det\left[h_{\lambda_{i}-x_{j}^{T}+j-i}(1^{m})\right]_{i,j=1}^{k}\cdot\det\left[h_{y_{i}^{T}-\lambda_{j}+j-i}(1^{n})\right]_{i,j=1}^{k}}{\det\left[h_{y_{i}^{T}-x_{j}^{T}+j-i}(1^{T})\right]_{i,j=1}^{k}}
 	\end{split}
 \end{align}
-\subsection{Proof of Proposition \ref{WeakConvDistinct}}{\label{ProofProp1}} In this section, we prove Proposition \ref{WeakConvDistinct} assuming the validity of Lemma \ref{LemmaDensity}. We start with finding the asymptotic formula for probability mass function (\ref{BerDistJT}), and it is equivalent to find the asymptotic formula for complete symmetric functions $h_{\lambda_{i}-x_{j}^{T}+j-i}(1^{m})$, $h_{y_{i}^{T}-\lambda_{j}+j-i}(1^{n})$ and $h_{y_{i}^{T}-x_{j}^{T}+j-i}(1^{T})$. By the definition of random vector $Z^{T}$ in (\ref{ZTandL}), we find that 
+\subsection{Proof of Proposition \ref{WeakConvDistinct}}{\label{ProofProp1}} In this section, we first prove Lemma \ref{PfDensity} which claims the function in (\ref{Density}) is a density and then prove the weak convergence result in Proposition \ref{WeakConvDistinct}. The fact that (\ref{Density}) is a density is formulated in the following lemma.
+
+\begin{lemma}{\label{PfDensity}}
+	Assume the same notations as in Section \ref{DefMainRes}. Denote the function 
+	\begin{align}
+		\widetilde{\rho}(z_1,\cdots,z_k)=\mathbf{1}_{\{z_1>z_2>\cdots>z_k\}}\det\left[e^{c_{1}(t,p)a_i z_j}\right]_{i,j=1}^{k}\cdot\det\left[e^{c_{2}(t,p)b_i z_j}\right]_{i,j=1}^{k}\cdot\prod_{i=1}^{k}e^{-c_3(t,p)z_{i}^{2}}
+	\end{align}
+	Then $\widetilde{\rho}(z_1,\cdots,z_k)\geq 0$ for all $\vec{z}=(z_1,\cdots,z_k)\in\mathbb{R}^{k}$ and $\widetilde{\rho}(z_1,\cdots,z_k)>0$ if $z_1>z_2>\cdots>z_k$. Moreover, the function $\widetilde{\rho}$ is integrable on $\mathbb{R}^{k}$ and we have
+	\begin{align}
+		\int_{\mathbb{R}^{k}}\widetilde{\rho}(z_1,\cdots,z_k)dz_1\cdots dz_k=Z
+	\end{align}
+	where the constant $Z$ is defined in (\ref{WCconst}), thus implying the function $\rho(\vec{z})$ in (\ref{Density}) is a density.
+\end{lemma}
+
+We start with finding the asymptotic formula for probability mass function (\ref{BerDistJT}), and it is equivalent to find the asymptotic formula for complete symmetric functions $h_{\lambda_{i}-x_{j}^{T}+j-i}(1^{m})$, $h_{y_{i}^{T}-\lambda_{j}+j-i}(1^{n})$ and $h_{y_{i}^{T}-x_{j}^{T}+j-i}(1^{T})$. By the definition of random vector $Z^{T}$ in (\ref{ZTandL}), we find that 
 \begin{align}
 	\left\{Z^{T}_{1}=z_1,\cdots, Z^{T}_{k}=z_k\right\}\equiv\left\{L_{1}(tT)=\lambda_1,\cdots,L_{k}(tT)=\lambda_k\right\}
 \end{align}
@@ -245,7 +252,76 @@ We finally observe that
 \end{align*}
 and putting this in (\ref{hfinal}) we arrive at (\ref{AsympForh}).\\
 \textbf{Step 2.} In this step we prove (\ref{hbounded}).
+\end{proof}
 
+Before proving Lemma \ref{PfDensity}, we need to introduce another result regarding the non-vanishing of determinant.
+
+\begin{lemma}{\label{NonVanish}}
+	Suppose the vector $\vec{m}=(m_1,\cdots,m_p)$ satisfies $k=\sum_{i=1}^{p}m_{i}=\sum_{j=1}^{q}n_{j}$, then the following determinant
+\[ U= \det
+	\left[ \begin{array}{ccc}
+		(z_{j}^{i-1}e^{\alpha_{1}z_{j}})_{\substack{i=1,\cdots,m_{1}\\j=1,\cdots,k}}\\
+	\vdots\\
+	(z_{j}^{i-1}e^{\alpha_{p}z_{j}})_{\substack{i=m_1+\cdots+m_{p-1}+1,\\ \cdots ,m_{1}+\cdots +m_{p} \\j=1,\cdots,k}}
+	\end{array}
+	\right]
+\]
+is non-zero for any $(z_{1},\cdots,z_{k})$ whose elements are distinct.
+\end{lemma}
+
+\begin{proof} We claim that, the following equation with respect to $\vec{z}$:
+$$(\xi_{1}+\xi_{2}z+\cdots+\xi_{m_1}z^{m_{i}-1})e^{\alpha_{1}z}+\cdots(\xi_{m_{1}+\cdots+m_{p-1}+1}+\cdots+\xi_{k}z^{m_{p}-1})e^{\alpha_{p}z}=0$$ has at most $(k-1)$ distinct roots, where $\sum_{i=1}^{p}m_i=k$ and $(\xi_{1},\cdots,\xi_{k})\in\mathbb{R}^{k}$ is non-zero.\\
+Denote the above determinant by $\det\Bigl[\begin{smallmatrix} v_{1}\\\vdots\\ v_{k} \end{smallmatrix}\Bigr]$. If this claim holds, we can conclude that we cannot find non-zero $(\xi_{1},\cdots,\xi_{k})\in\mathbb{R}^{k}$ such that $\xi_{1}v_{1}+\cdots+\xi_{k}v_{k}=0$. Thus, the $k$ row vectors of the determinant are linear independent and the determinant is non-zero. Then we prove the claim by induction on $k$.\\
+$1^{\circ}$ If $k=2$, the equation is $(\xi_{1}+\xi_{2}z)e^{\alpha_{1}z}=0$ or $\xi_{1}e^{\alpha_{1}z}+\xi_{2}e^{\alpha_{2}z}=0$, where $\xi_{1},\xi_{2}\in\mathbb{R}$ cannot be zero at the same time. Then, it's easy to see that the equation has at most $1$ root in two scenarios.\\
+$2^{\circ}$ Suppose the claim holds for $k\leqslant n$.\\
+$3^{\circ}$ When $k=n+1$, we have the equation $$(\xi_{1}+\xi_{2}z+\cdots+\xi_{m_1}z^{m_{i}-1})e^{\alpha_{1}z}+\cdots(\xi_{m_{1}+\cdots+m_{p-1}+1}+\cdots+\xi_{k}z^{m_{p}-1})e^{\alpha_{p}z}=0$$ but now $\sum_{i=1}^{p}m_{i}=n+1$. WLOG, suppose $(\xi_{1},\cdots,\xi_{m_{1}})$ has a non-zero element and $\xi_{\ell}$ is the first non-zero element. Notice that the above equation has the same roots as the following one:
+$$F(z)=(\xi_{\ell}z^{\ell-1}+\cdots+\xi_{m_1}z^{m_1-1})+\cdots+(\xi_{m_1+\cdots+m_{p-1}+1}+\cdots+\xi_{k}z^{m_{p}-1})e^{(\alpha_{p}-\alpha_{1})z}=0$$
+Assume it has at least $(n+1)$ distinct roots $\eta_{1}<\eta_{2}<\cdots<\eta_{n+1}$. Then $F^{\prime}(z)=0$ has at least $n$ distinct roots $\delta_{1}<\cdots<\delta_{n}$ such that $\eta_{1}<\delta_{1}<\eta_{2}<\cdots<\delta_{n}<\eta_{n+1}$, by Rolle's Theorem. Actually, $F^{\prime}(z)=(\xi_{\ell}(\ell-1))z^{\ell-2}+\cdots+\xi_{m_1}(m_1-1)z^{m_{1}-2})+\cdots+[\xi_{m_1+\cdots+m_{p-1}+1}^{\prime}+\cdots+\xi_{k}^{\prime}z^{m_{p}-1})]e^{(\alpha_{p}-\alpha_{1})z}=0$
+where $\xi_{m_1+\cdots+m_{p-1}+1}^{\prime}$ and $\xi_{k}^{\prime}$ are coefficients that can be calculated. This equation has at most $(m_1-1)+m_2+\cdots+m_{p}-1=n-1$ roots by $2^{\circ}$, which leads to a contradiction. Therefore, our claim holds and we proved Lemma \ref{NonVanish}.
+\end{proof}
+
+Now, we are ready to prove Lemma \ref{PfDensity}.
+\begin{proof}[Proof of Lemma \ref{PfDensity}] For clarity we split the proof into several steps.\\
+\textbf{Step 1. }In this step we show that $\widetilde{\rho}(z_1,\cdots,z_{k})\geq 0$ and $\widetilde{\rho}(z_1,\cdots,z_k)>0$ if $z_1>z_2>\cdots>z_k$. Because of the indicator function in $\widetilde{\rho(\vec{z})}$, we know $\widetilde{\rho}(z_1,\cdots,z_{k})=0$ unless $z_1>\cdots>z_k$. Therefore, it suffices to show that 
+\begin{align}{\label{RhoPositive}}
+\widetilde{\rho}(z_1,\cdots,z_k)>0 \text{ if } z_{1}>\cdots>z_k	
+\end{align}
+Fix $\vec{z}\in\mathbb{R}^{k}$ such that $z_1>\cdots>z_k$. Suppose that $T_{0}\in\mathbb{N}$ is sufficiently large so that for $T\geq T_{0}$ we have
+$$z_{k}\sqrt{T}+ptT\geq a_1\sqrt{T}+k+1 \text{ and } b_{k}\sqrt{T}+pT\geq z_{1}\sqrt{T}+ptT+k+1,$$ which ensures that $\lambda_{i}-x^{T}_{j}+j-i$ and $y^{T}_{i}-\lambda_{j}+j-i$ are positive. For a signature $\nu$ of length $k$ we define
+\begin{align}
+	A_{\nu}(T)=s_{\nu/\vec{x}}(1^{m})\cdot s_{\vec{y}/\nu}(1^{n}),\text{ where } m=\lfloor tT \rfloor \text{ and } n=T-m
+\end{align} 
+\begin{align}{\label{DefBLambda}}
+\begin{split}
+	& B_{\nu}(T)=(\sqrt{2\pi})^{k}\exp\left(-kT\log(1+p)+k\log T +(k/2)\log(p(1+p))\right)\\
+	& \cdot \exp\left(-\log\left(\frac{1+p}{p}\right)\sum_{i=1}^{k}(y_{i}^{T}-x_{i}^{T})\right)\cdot A_{\nu}(T)
+\end{split}
+\end{align}
+We claim that
+\begin{align}{\label{BLambda}}
+	\lim_{T\rightarrow\infty} B_{\lambda}(T)=\widetilde{\rho}(z_1,\cdots,z_k)\cdot (2\pi p(p+1)t(1-t))^{-k/2}\cdot\prod_{i=1}^{k}\exp(-c_1(t,p)a_i^{2}-c_2(t,p)b_i^2)
+\end{align}
+We prove (\ref{BLambda}) in Step 2 below. For now we assume its validity and conclude the proof of (\ref{RhoPositive}). In fact, since $B_{\lambda}(T)\geq 0$ for all $T\geq T_{0}$ we see from (\ref{DefBLambda}) that $\widetilde{\rho}(z_1,\cdots,z_k)\geq 0$. Also, by Lemma \ref{NonVanish} we know that $\widetilde{\rho}(z_1,\cdots,z_{k})\neq 0$ so (\ref{RhoPositive}) holds.\\
+\textbf{Step 2.} In this step we prove the claim (\ref{BLambda}) in Step 1. From the Jacob-Trudi formula for skew Schur polynomials (\ref{J-TFormula}) and Lemma \ref{AsympForh} we have
+\begin{align}
+	\begin{split}
+		& s_{\lambda/\vec{x}}(1^{m})=\det\left[\exp\left(-\frac{(\lambda_{i}-x_{j}^{T}+j-i-pm)^{2}}{2(1+p)pm}\right)\exp(O\left( T^{-1/2}\right)\right]\cdot (\sqrt{2\pi})^{-k}\cdot\\
+		& \exp\left(km\log(1+p)-(k/2)\log m-(k/2)\log(p(1+p))+\log\left(\frac{1+p}{p}\right)\sum_{i=1}^{k}(\lambda_{i}-x^{T}_{i})\right)
+	\end{split}
+\end{align}
+\begin{align}
+	\begin{split}
+		& s_{\vec{y}/\lambda}(1^{n})=\det\left[\exp\left(-\frac{(\vec{y}-x_{j}^{T}+j-i-pm)^{2}}{2(1+p)pm}\right)\exp(O\left( T^{-1/2}\right)\right]\cdot (\sqrt{2\pi})^{-k}\cdot\\
+		& \exp\left(km\log(1+p)-(k/2)\log m-(k/2)\log(p(1+p))+\log\left(\frac{1+p}{p}\right)\sum_{i=1}^{k}(\lambda_{i}-x^{T}_{i})\right)
+	\end{split}
+\end{align}
+\begin{align}
+	\begin{split}
+		& s_{\lambda/\vec{x}}(1^{m})=\det\left[\exp\left(-\frac{(\lambda_{i}-x_{j}^{T}+j-i-pm)^{2}}{2(1+p)pm}\right)\exp(O\left( T^{-1/2}\right)\right]\cdot (\sqrt{2\pi})^{-k}\cdot\\
+		& \exp\left(km\log(1+p)-(k/2)\log m-(k/2)\log(p(1+p))+\log\left(\frac{1+p}{p}\right)\sum_{i=1}^{k}(\lambda_{i}-x^{T}_{i})\right)
+	\end{split}
+\end{align}
+\end{proof}
 \begin{lemma}{\label{PointConvLemma}}
 	Let $\mathbb{W}_{k}^{o}$ denote the open Weyl chamber in $\mathbb{R}^{N}$:
 $$\mathbb{W}_{N}^{o}=\{(x_{1},\cdots,x_{k})\in\mathbb{R}^{N}:x_{1}>x_{2}>\cdots>x_{k}\}$$ Fix a real number $A>0$, $p,t\in(0,1)$, take $z=(z_{1},\cdots,z_{k})\in\mathbb{W}_{k}^{o}$ such that $A>z_{1}>\cdots>z_{k}>-A$. Choose sufficiently large $T_{0}$ such that $ptT_{0}-A\sqrt{T_{0}}\geqslant 1$, then for $T\geqslant T_{0}$, define $\lambda_{i}(T)=\lfloor z_{i}\sqrt{T}+ptT\rfloor\geqslant 1$ for $i=1,\cdots,k$. Denote $P_{T}(z)=(\sqrt{T})^{k}\pr(L_1(\lfloor tT\rfloor)=\lambda_1(T),\cdots, L_k(\lfloor tT\rfloor)=\lambda_k(T))$, then we have for almost every $z\in[-A,A]^{k}$:
@@ -296,7 +372,6 @@ In conclusion, $P_{T}(z)=(\sqrt{T})^{k}\cdot\pr(L_1(\lfloor tT\rfloor)=\lambda_1
 	&Z=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot e^{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}}\cdot e^{c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}}\det\left(e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right)_{i,j=1}^{k}
 \end{align*}
 (\romannumeral 2) We now discuss boundedness. By the Equation \ref{PointConv} we just derived, $P_{T}(z)=\rho(z)\cdot\exp\{o(1)\}$ on the compact set $[-A,A]^{k}$, where the constant in little $o$ notation only depends on $A,p$. Since the continuous function $\rho(z)$ is bounded on $[-A,A]^{k}$, and $\exp\{o(1)\}$ is uniformly bounded on $[-A,A]^{k}$, we conclude that $P_{T}(z)$ is bounded as well.
-\end{proof}
 \end{proof}
 We are now ready to prove Proposition \ref{WeakConvDistinct}.
 \begin{proof}[Proof of Proposition \ref{WeakConvDistinct}]
@@ -366,7 +441,7 @@ We also have the Taylor expansion for multi-variable functions:
 $$f(x_{1},\cdots,x_{n})=\sum_{|\sigma|\leqslant r}\frac{1}{\sigma!}D^{\sigma}f(\vec{x}_{0})(\vec{x}-\vec{x}_{0})^{\sigma}+R_{r+1}(\vec{x},\vec{x}_{0})$$ 
 In the equation, $\sigma!=\sigma_{1}!\sigma_{2}!\cdots\sigma_{n}!$ is the factorial with respect to the multi-index $\sigma$, $\vec{x}_{0}=(x_{1}^{0},\cdots,x_{n}^{0})$ is a constant vector at which we expands the function $f$, $(\vec{x}-\vec{x}_{0})^{\sigma}$ stands for $(x_{1}-x_{1}^{0})^{\sigma_{1}}\cdots(x_{n}-x_{n}^{0})^{\sigma_{n}}$, and $$R_{r+1}(\vec{x},\vec{x}_{0})=\sum_{\sigma:|\sigma|=r+1}\frac{1}{\sigma!}D^{\sigma}f(\vec{x}_{0}+\theta(\vec{x}-\vec{x}_{0}))(\vec{x}-\vec{x}_{0})^{\sigma}$$ is the remainder, where $\theta\in (0,1)$(\cite[Theorem 3.18 \& Corollary 3.19]{CJ}).
 
-We also need some knowledge about \emph{permutation}. Suppose $s_{n}$ is a permutation of $n$ non-negative integers, for example $\{1,\cdots,n\}$, and $s_{n}(i)$ represents the $i$-$th$ element in the permutation $s_{n}$. We define \emph{the number of inversions} of $s_{n}$ by $I(s_{n})=\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}\mathbbm{1}_{\{s_{n}(i)>s_{n}(j)\}}$. For example, the permutation $s_{n}=(1,\cdots,n)$ has $0$ number of inversions, while the permutation $s_{5}=(3,2,5,1,4)$ has number of inversions $5(2+1+2+0+0)$. Define the sign of permutation $s_{n}$ by $sgn(s_{n})=(-1)^{I(s_{n})}$. For instance, $sgn((1,\cdots,n))=1$ and $sgn(s_{5})=-1$ in the previous example.
+We also need some knowledge about \emph{permutation}. Suppose $s_{n}$ is a permutation of $n$ non-negative integers, for example $\{1,\cdots,n\}$, and $s_{n}(i)$ represents the $i$-$th$ element in the permutation $s_{n}$. We define \emph{the number of inversions} of $s_{n}$ by $I(s_{n})=\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}\mathbf{1}_{\{s_{n}(i)>s_{n}(j)\}}$. For example, the permutation $s_{n}=(1,\cdots,n)$ has $0$ number of inversions, while the permutation $s_{5}=(3,2,5,1,4)$ has number of inversions $5(2+1+2+0+0)$. Define the sign of permutation $s_{n}$ by $sgn(s_{n})=(-1)^{I(s_{n})}$. For instance, $sgn((1,\cdots,n))=1$ and $sgn(s_{5})=-1$ in the previous example.
 
 \subsection{Proof of Proposition \ref{WeakConvCollide}}{\label{ProofProp2}}
 Next we are going to prove Proposition \ref{WeakConvCollide}. Before that, 
@@ -383,32 +458,6 @@ and it's not difficult to see that they are all smooth multi-variable functions 
 
 The last thing before we formally prove Proposition \ref{WeakConvCollide} is to introduce the following lemmas about the non-vanishing of the determinants.
 
-\begin{lemma}{\label{NonVanish}}
-	Suppose $\sigma_{a}=(\sigma_{1}^{a},\cdots,\sigma_{k}^{a})$ and $\sigma_{b}=(\sigma_{1}^{b},\cdots,\sigma_{k}^{b})$ are two multi-indices of length $k$. We divide them into $p$ and $q$ parts according to the shape of $\vec{a}_{0}$ and $\vec{b}_{0}$ as mentioned before: $\sigma_{a}=(\sigma^{(1)}_{a},\sigma^{(2)}_{a},\cdots,\sigma^{(p)}_{a})$, $\sigma_{b}=(\sigma^{(1)}_{b},\sigma^{(2)}_{b},\cdots,\sigma^{(q)}_{b})$. Denote 
-	\begin{align*}
-	f(a_{1},\cdots,a_{k})\equiv f(\vec{a})&=\det[e^{a_{i}z_{j}}]_{i,j=1}^{k},\quad g(b_{1},\cdots,b_{k})\equiv g(\vec{b})=\det[e^{b_{i}z_{j}}]_{i,j=1}^{k}
-\end{align*} where we ignore the constants $c_{1}(t,p)$ and $c_{2}(t,p)$ temporarily for simplicity. Suppose $S_{m_i}$ is the set of all permutations of $\{0,1,\cdots,m_{i}-1\}$. If $\sigma_{a}^{(i)}\in S_{m_i}$ for $i=1,\cdots,p$, then 
-\[ D^{\sigma_{a}}f(\vec{a}_{0})= \det
-	\left[ \begin{array}{ccc}
-		(z_{j}^{\sigma_{i}^{a}}e^{\alpha_{1}z_{j}})_{\substack{i=1,\cdots,m_{1}\\j=1,\cdots,k}}\\
-	\vdots\\
-	(z_{j}^{\sigma_{i}^{a}}e^{\alpha_{p}z_{j}})_{\substack{i=m_1+\cdots+m_{p-1}+1,\\ \cdots ,m_{1}+\cdots +m_{p} \\j=1,\cdots,k}}
-	\end{array}
-	\right]
-\]
-is non-zero for any $(z_{1},\cdots,z_{k})$ whose elements are distinct. Analogous result also holds for $D^{\sigma_{b}}g(\vec{b}_{0})$.
-\end{lemma}
-
-\begin{proof}Since $f(\vec{a})$ is actually a determinant and its $i$-$th$ row only depends on the variable $a_{i}$, taking derivative of $f(\vec{a})$ with respect to $a_{i}$ is taking derivative of every entries in the $i$-$th$ row, and we can get the determinant above. Next, we prove that it is non-zero. WLOG, we can assume $\sigma_{a}^{(i)}=\{0,1,\cdots,m_{i}-1\}$, because the determinant will only change by $-1$ when $\sigma_{a}^{(i)}$ is replaced by other permutations in $S_{m_i}$. We claim that, the following equation with respect to $z$:
-$$(\xi_{1}+\xi_{2}z+\cdots+\xi_{m_1}z^{m_{i}-1})e^{\alpha_{1}z}+\cdots(\xi_{m_{1}+\cdots+m_{p-1}+1}+\cdots+\xi_{k}z^{m_{p}-1})e^{\alpha_{p}z}=0$$ has at most $(k-1)$ distinct roots, where $\sum_{i=1}^{p}m_i=k$ and $(\xi_{1},\cdots,\xi_{k})\in\mathbb{R}^{k}$ is non-zero.\\
-Denote the above determinant by $\det\Bigl[\begin{smallmatrix} v_{1}\\\vdots\\ v_{k} \end{smallmatrix}\Bigr]$. If this claim holds, we can conclude that we cannot find non-zero $(\xi_{1},\cdots,\xi_{k})\in\mathbb{R}^{k}$ such that $\xi_{1}v_{1}+\cdots+\xi_{k}v_{k}=0$. Thus, the $k$ row vectors of the determinant are linear independent and the determinant is non-zero. Then we prove the claim by induction on $k$.\\
-$1^{\circ}$ If $k=2$, the equation is $(\xi_{1}+\xi_{2}z)e^{\alpha_{1}z}=0$ or $\xi_{1}e^{\alpha_{1}z}+\xi_{2}e^{\alpha_{2}z}=0$, where $\xi_{1},\xi_{2}\in\mathbb{R}$ cannot be zero at the same time. Then, it's easy to see that the equation has at most $1$ root in two scenarios.\\
-$2^{\circ}$ Suppose the claim holds for $k\leqslant n$.\\
-$3^{\circ}$ When $k=n+1$, we have the equation $$(\xi_{1}+\xi_{2}z+\cdots+\xi_{m_1}z^{m_{i}-1})e^{\alpha_{1}z}+\cdots(\xi_{m_{1}+\cdots+m_{p-1}+1}+\cdots+\xi_{k}z^{m_{p}-1})e^{\alpha_{p}z}=0$$ but now $\sum_{i=1}^{p}m_{i}=n+1$. WLOG, suppose $(\xi_{1},\cdots,\xi_{m_{1}})$ has a non-zero element and $\xi_{\ell}$ is the first non-zero element. Notice that the above equation has the same roots as the following one:
-$$F(z)=(\xi_{\ell}z^{\ell-1}+\cdots+\xi_{m_1}z^{m_1-1})+\cdots+(\xi_{m_1+\cdots+m_{p-1}+1}+\cdots+\xi_{k}z^{m_{p}-1})e^{(\alpha_{p}-\alpha_{1})z}=0$$
-Assume it has at least $(n+1)$ distinct roots $\eta_{1}<\eta_{2}<\cdots<\eta_{n+1}$. Then $F^{\prime}(z)=0$ has at least $n$ distinct roots $\delta_{1}<\cdots<\delta_{n}$ such that $\eta_{1}<\delta_{1}<\eta_{2}<\cdots<\delta_{n}<\eta_{n+1}$, by Rolle's Theorem. Actually, $F^{\prime}(z)=(\xi_{\ell}(\ell-1))z^{\ell-2}+\cdots+\xi_{m_1}(m_1-1)z^{m_{1}-2})+\cdots+[\xi_{m_1+\cdots+m_{p-1}+1}^{\prime}+\cdots+\xi_{k}^{\prime}z^{m_{p}-1})]e^{(\alpha_{p}-\alpha_{1})z}=0$
-where $\xi_{m_1+\cdots+m_{p-1}+1}^{\prime}$ and $\xi_{k}^{\prime}$ are coefficients that can be calculated. This equation has at most $(m_1-1)+m_2+\cdots+m_{p}-1=n-1$ roots by $2^{\circ}$, which leads to a contradiction. Therefore, our claim holds and we proved Lemma \ref{NonVanish}.
-\end{proof}
 \begin{remark}{\label{DefLambda}}
 Denote the set $\Lambda_{a}=\{\sigma_{a}=(\sigma_{a}^{(1)},\cdots,\sigma_{a}^{(p)}):\sigma_{a}^{(i)}\in S_{m_{i}}, i=1,\cdots,p\}$, and we have if $\sigma_{a}\in \Lambda_{a}$, then $D^{\sigma_{a}}f(\vec{a}_{0})$ is non-zero. Similarly, if $\sigma^{(j)}_{b}\in S_{n_j}$ for $j=1,\cdots,q$, then $D^{\sigma_{b}}g(\vec{b})$ is non-zero, and define $\Lambda_{b}=\{\sigma_{b}=(\sigma_{b}^{(1)},\cdots,\sigma_{b}^{(q)}):\sigma_{b}^{(j)}\in S_{n_{j}}, j=1,\cdots,q\}$.
 \end{remark}
@@ -476,8 +525,8 @@ Similarly, we can find index $i_2$ and $j_{2}$ such that $|\varphi(\vec{b}_{0},\
 \end{align*}
 The right hand side is integrable over $\mathbb{R}^{k}$ because the exponential terms have power of some quadratic functions with negative quadratic coefficients. Thus, $H(\vec{z})$ is integrable.
 
-Since $H(\vec{z})$ is integrable, we can define the constant $Z_{\vec{a}_{0},\vec{b}_{0}}=\int_{\mathbb{R}^{k}}H(\vec{z})\mathbbm{1}_{\{z_1>z_2>\cdots>z_{k}\}}dz<\infty$ and the function \begin{align}{\label{NewDensity}}
-	\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})=Z_{\vec{a}_{0},\vec{b}_{0}}^{-1}\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\mathbbm{1}_{\{z_1>z_2>\cdots>z_{k}\}}
+Since $H(\vec{z})$ is integrable, we can define the constant $Z_{\vec{a}_{0},\vec{b}_{0}}=\int_{\mathbb{R}^{k}}H(\vec{z})\mathbf{1}_{\{z_1>z_2>\cdots>z_{k}\}}dz<\infty$ and the function \begin{align}{\label{NewDensity}}
+	\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})=Z_{\vec{a}_{0},\vec{b}_{0}}^{-1}\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\mathbf{1}_{\{z_1>z_2>\cdots>z_{k}\}}
 \end{align}
 is a density because it's non-negative and integrates to $1$ over $\mathbb{R}^{k}$.\\
 \textbf{Step 3. }Denote $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$ as the random vector $Z^{T}$ associated with vectors $\vec{a}_{0}$ and $b_{0}$, and in this step we prove it weakly converges to the continuous distribution with density $\rho_{\vec{a}_{0},\vec{b}_{0}}(z)$ we just constructed in (\ref{NewDensity}). Suppose $\mathfrak{L}_{+}^{T}$ is an avoiding Bernoulli line ensemble starting with $\vec{x}^{T}_{+}$ and ending with $\vec{y}^{T}_{+}$ and follows the distribution $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T}_{+},\vec{y}^{T}_{+}}$. The vectors $\vec{x}^{T}_{+}$ and $\vec{y}^{T}_{+}$ are two signatures of length $k$ that satisfies the following:\\
