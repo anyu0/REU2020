@@ -70,9 +70,11 @@ We also state the following result regarding the distribution of the maximum of 
 
 \begin{lemma}\label{BBmax}
 	Fix $p\in (0,1)$, and let $B^\sigma$ be a Brownian bridge of variance $\sigma^2 = p(1-p)$ on $[0,1]$. Then for any $C,T> 0$ we have
-	\[
-	\mathbb{P}\left(\max_{s\in[0,T]} B^\sigma_{s/T} \geq C\right) = \exp\left( - \frac{2C^2}{p(1-p)}\right) \quad \mathrm{and} \quad \mathbb{P}\left(\max_{s\in[0,T]} \big| B^\sigma_{s/T} \big| \geq C\right) = 2\sum_{n=1}^\infty \exp\left(-\frac{2n^2C^2}{p(1-p)}\right).
-	\]
+	\begin{equation}\label{BBmaxeq}
+	\begin{split}
+	&\mathbb{P}\left(\max_{s\in[0,T]} B^\sigma_{s/T} \geq C\right) = \exp\left( - \frac{2C^2}{p(1-p)}\right), \\ &\mathbb{P}\left(\max_{s\in[0,T]} \big| B^\sigma_{s/T} \big| \geq C\right) = 2\sum_{n=1}^\infty (-1)^{n-1} \exp\left(-\frac{2n^2C^2}{p(1-p)}\right).
+	\end{split}
+	\end{equation}
 	In particular,
 	\begin{equation}\label{sepBd}
 	\mathbb{P}\left(\max_{s\in[0,T]} \big|B^\sigma_{s/T}\big| \geq C\right) \leq 2\exp\left( - \frac{2C^2}{p(1-p)}\right).
@@ -84,7 +86,7 @@ We also state the following result regarding the distribution of the maximum of 
 	\begin{align*}
 	\mathbb{P}\left( \max_{s\in[0,T]} B^\sigma_{s/T} \geq C \right) &= \mathbb{P}\left( \max_{t\in[0,1]} B^1_t \geq C/\sigma \right) = e^{-2(C/\sigma)^2} = e^{-2C^2/p(1-p)}.
 	\end{align*}
-	The second equality follows from \cite[Proposition 12.3.3]{Dudley}. The other equality follows in the same way from \cite[Proposition 12.3.4]{Dudley}.
+	The second equality follows from \cite[Proposition 12.3.3]{Dudley}. This proves the first equality in \eqref{BBmaxeq}. The second equality follows in the same way from \cite[Proposition 12.3.4]{Dudley}.
 	
 	Lastly, to prove \eqref{sepBd}, observe that since $B^\sigma_t$ has mean 0, $B^\sigma_t$ and $-B^\sigma_t$ have the same distribution. It follows from the first equality above that
 	\begin{align*}
@@ -319,7 +321,7 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	\] 
 	Then we can find $W_5 = W_5(p,C,K)$ so that for $T\geq W_5$,
 	\begin{equation}\label{SepBound1}
-	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}(E) \geq \left(\frac{1}{2} - \sum_{n=1}^\infty e^{-n^2C^2/8p(1-p)}\right)^{k-1}.
+	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}(E) \geq \left(\frac{1}{2} - \sum_{n=1}^\infty (-1)^{n-1} e^{-n^2C^2/8p(1-p)}\right)^{k-1}.
 	\end{equation}
 	Moreover if $C \geq \sqrt{8p(1-p)\log 3}$, then we have
 	\begin{equation}\label{SepBound2}
@@ -346,7 +348,7 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	& \mathbb{P}_i\Big(\sup_{s\in[0,T]} |\sqrt{T}B^{\sigma}_{s/T}| > C\sqrt{T}/4\Big) + \mathbb{P}_i\Big(\Delta(T,z_i) > C\sqrt{T}/4\Big).
 	\end{split}
 	\end{equation}
-	By Lemma \ref{BBmax}, the first term in the second line of \eqref{SepCheb} is equal to $2\sum_{n=1}^\infty e^{-n^2C^2/8p(1-p)}$. For the second term, condition (3) in the hypothesis and Corollary \ref{Cheb} give an upper bound of $\frac{1}{2} - \sum_{n=1}^\infty e^{-n^2C^2/8p(1-p)}$ for sufficiently large $N$ depending on $p,C,K$, but independent of $i$. Adding these two terms and referring to \eqref{SepEst} proves \eqref{SepBound1}.
+	By Lemma \ref{BBmax}, the first term in the second line of \eqref{SepCheb} is equal to $2\sum_{n=1}^\infty (-1)^{n-1} e^{-n^2C^2/8p(1-p)}$. For the second term, condition (3) in the hypothesis and Corollary \ref{Cheb} give an upper bound of $\frac{1}{2} - \sum_{n=1}^\infty (-1)^{n-1} e^{-n^2C^2/8p(1-p)}$ for sufficiently large $N$ depending on $p,C,K$, but independent of $i$. Adding these two terms and referring to \eqref{SepEst} proves \eqref{SepBound1}.
 	
 	Now suppose $C\geq\sqrt{8p(1-p)\log 3}$. By \eqref{sepBd} in Lemma \ref{BBmax}, the first term in the second line of \eqref{SepCheb} is bounded above by bounded above by $2e^{-C^2/8p(1-p)}$. For the same choice of $N$ as above, the second term is $<e^{-C^2/8p(1-p)}$. The assumption on $C$ implies that $1-3e^{-C^2/8p(1-p)}\geq 0$, and now combining \eqref{SepCheb} and \eqref{SepEst} proves \eqref{SepBound2}.
 \end{proof}

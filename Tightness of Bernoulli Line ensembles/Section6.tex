@@ -94,7 +94,7 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	
 	Observe by the rightmost inequalities in conditions (1) and (2) in the hypothesis, as well as condition (1) in Lemma \ref{LemmaAP1}, that $\ell_{bot}$ lies a distance of at least $2\epsilon(2t_3)^{1/2} \geq 2\epsilon(2t_1)^{1/2}$ uniformly below the line segment connecting $a_{k-1}$ and $b_{k-1}$. Also note that (1) and (2) imply $|b_i-a_i-2pt_1| \leq (V^{top} - M_2-2\epsilon)(2t_3)^{1/2} \leq 2(V^{top} - M_2)(2t_3)^{1/2}$ for each $i$. Lastly noting (3), we see that the conditions of Lemma \ref{CurveSeparation} are satisfied with $C = 2\epsilon$. This implies \eqref{eqnRT}, with
 	\[
-	g = \left( \frac{1}{2} - \sum_{n=1}^\infty e^{-\epsilon^2n^2/2p(1-p)}\right)^{k-1}.
+	g = \left( \frac{1}{2} - \sum_{n=1}^\infty (-1)^{n-1} e^{-\epsilon^2n^2/2p(1-p)}\right)^{k-1}.
 	\]
 	
 \end{proof}
@@ -368,11 +368,11 @@ t_{12} = \left\lfloor \frac{t_1+t_2}{2}\right\rfloor.
 	
 	{\bf \raggedleft Step 4.} In this step, we find $\bar{N}_3$ so that
 	\begin{equation}\label{6.2step4}
-	\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\big(D(\vec{c},\vec{d},V^{top},\epsilon,t_1) \big) \geq \frac{1}{2}\left(\frac{1}{2} - \sum_{n=1}^\infty e^{-\epsilon^2 n^2/2p(1-p)}\right)^{k-1}
+	\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\big(D(\vec{c},\vec{d},V^{top},\epsilon,t_1) \big) \geq \frac{1}{2}\left(\frac{1}{2} - \sum_{n=1}^\infty (-1)^{n-1} e^{-\epsilon^2 n^2/2p(1-p)}\right)^{k-1}
 	\end{equation}
 	for $N\geq\bar{N}_3$. We will find $\tilde{N}_9$ so that for $N\geq\tilde{N}_9$,
 	\begin{equation}\label{6.2step4sep}
-	\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\left(D(\vec{c},\vec{d},V^{top},\epsilon,t_1) \,\big|\,D(\vec c, \vec d, V^{top}, \epsilon,t_{12})\right) \geq \left(\frac{1}{2} - \sum_{n=1}^\infty e^{-\epsilon^2 n^2/2p(1-p)}\right)^{k-1}.
+	\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\left(D(\vec{c},\vec{d},V^{top},\epsilon,t_1) \,\big|\,D(\vec c, \vec d, V^{top}, \epsilon,t_{12})\right) \geq \left(\frac{1}{2} - \sum_{n=1}^\infty (-1)^{n-1} e^{-\epsilon^2 n^2/2p(1-p)}\right)^{k-1}.
 	\end{equation}
 	Then \eqref{LemmaBP2Step3} implies \eqref{6.2step4} for $N\geq\bar{N}_3 = \max(\bar{N}_2,\tilde{N}_9)$.
 	
@@ -403,7 +403,7 @@ t_{12} = \left\lfloor \frac{t_1+t_2}{2}\right\rfloor.
 	
 	{\bf \raggedleft Step 5.} In this last step, we complete the proof of the lemma, fixing the constants $g$ and $h$ as well as $N_5$. Let $g=g(\epsilon,V^{top},M_2)$ be as in Lemma \ref{LemmaBP1} for the choices of $\epsilon,V^{top}$ in Steps 2 and 3, let
 	\[
-	h = \frac{h_1}{2}\left(\frac{1}{2} - \sum_{n=1}^\infty e^{-\epsilon^2 n^2/2p(1-p)}\right)^{k-1}
+	h = \frac{h_1}{2}\left(\frac{1}{2} - \sum_{n=1}^\infty (-1)^{n-1} e^{-\epsilon^2 n^2/2p(1-p)}\right)^{k-1}
 	\]
 	with $h_1$ as in Step 2, and let $N_5 = \max(\bar{N}_0,\bar{N}_1,\bar{N}_2,\bar{N}_3,N_7)$, with $N_7$ as in Lemma \ref{LemmaBP2}. In the following we assume that $N\geq N_7$. By \eqref{6.2step4} we have that if $(\vec{c},\vec{d})\in E$, then
 	$$\mathbb{P}_{avoid, Ber;S}^{-t_2, t_2, \vec{c}, \vec{d}, \infty, \ell_{bot}} ( H) \geq \frac{h}{h_1},$$
