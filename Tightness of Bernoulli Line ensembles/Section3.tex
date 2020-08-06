@@ -319,9 +319,9 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	\] 
 	Then we can find $W_5 = W_5(p,C,K)$ so that for $T\geq W_5$,
 	\begin{equation}\label{SepBound1}
-	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}(E) \geq \left(1 - 3\sum_{n=1}^\infty e^{-n^2C^2/8p(1-p)}\right)^{k-1}.
+	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}(E) \geq \left(\frac{1}{2} - \sum_{n=1}^\infty e^{-n^2C^2/8p(1-p)}\right)^{k-1}.
 	\end{equation}
-	In particular, if $C \geq \sqrt{8p(1-p)\log 3}$, then we have
+	Moreover if $C \geq \sqrt{8p(1-p)\log 3}$, then we have
 	\begin{equation}\label{SepBound2}
 	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}(E) \geq \left(1 - 3e^{-C^2/8p(1-p)}\right)^{k-1}.
 	\end{equation}
@@ -346,7 +346,7 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	& \mathbb{P}_i\Big(\sup_{s\in[0,T]} |\sqrt{T}B^{\sigma}_{s/T}| > C\sqrt{T}/4\Big) + \mathbb{P}_i\Big(\Delta(T,z_i) > C\sqrt{T}/4\Big).
 	\end{split}
 	\end{equation}
-	By Lemma \ref{BBmax}, the first term in the second line of \eqref{SepCheb} is equal to $2\sum_{n=1}^\infty e^{-n^2C^2/8p(1-p)}$. For the second term, condition (3) in the hypothesis and Corollary \ref{Cheb} give an upper bound of $\sum_{n=1}^\infty e^{-n^2C^2/8p(1-p)}$ for sufficiently large $N$ depending on $p,C,K$, but independent of $i$. Adding these two terms and referring to \eqref{SepEst} proves \eqref{SepBound1}.
+	By Lemma \ref{BBmax}, the first term in the second line of \eqref{SepCheb} is equal to $2\sum_{n=1}^\infty e^{-n^2C^2/8p(1-p)}$. For the second term, condition (3) in the hypothesis and Corollary \ref{Cheb} give an upper bound of $\frac{1}{2} - \sum_{n=1}^\infty e^{-n^2C^2/8p(1-p)}$ for sufficiently large $N$ depending on $p,C,K$, but independent of $i$. Adding these two terms and referring to \eqref{SepEst} proves \eqref{SepBound1}.
 	
 	Now suppose $C\geq\sqrt{8p(1-p)\log 3}$. By \eqref{sepBd} in Lemma \ref{BBmax}, the first term in the second line of \eqref{SepCheb} is bounded above by bounded above by $2e^{-C^2/8p(1-p)}$. For the same choice of $N$ as above, the second term is $<e^{-C^2/8p(1-p)}$. The assumption on $C$ implies that $1-3e^{-C^2/8p(1-p)}\geq 0$, and now combining \eqref{SepCheb} and \eqref{SepEst} proves \eqref{SepBound2}.
 \end{proof}
