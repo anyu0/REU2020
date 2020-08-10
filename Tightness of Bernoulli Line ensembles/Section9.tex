@@ -317,6 +317,121 @@ Taking the limit $T\rightarrow\infty$ in (\ref{BLambdafinal}), and noticing the 
 \end{align*}
 we get (\ref{BLambda}).
 \end{proof}
+
+\textbf{Step 3.} In this step, we prove that $\tilde{\rho}(z_1, \dots, z_k)$ is integrable. We use the formula
+$$\det \left[ A_{i,j}\right]_{i,j = 1}^k = \sum_{\sigma \in S_k} (-1)^{\sigma} \cdot \prod_{i = 1}^k A_{i, \sigma(i)}$$
+so that with the triangle inequality we see that
+\begin{equation}\label{Q1}
+\left|\tilde{\rho}(z_1, \dots, z_k) \right| \leq (k!)^2 \cdot \prod_{i = 1}^k e^{C |z_i| -c_3(t,p) z_i^2},
+\end{equation}
+with $C= \sum_{i = 1}^k c_1(t,p) |a_i| + c_2(t,p)|b_i|$. The right hand side of (\ref{Q1}) is integrable because of the square in the exponential, so by domination, we conclude that the same is true for $\tilde{\rho}$. 
+
+Therefore, 
+$$Z := \int_{\mathbb{R}^k}   \tilde{\rho}(z_1, \dots, z_k)d z_1 \cdots dz_k$$
+is finite, so to conclude the lemma it suffices to show that 
+\begin{equation}\label{S3}
+Z = (2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}  e^{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}}\cdot e^{c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}}\det\left[e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right]_{i,j=1}^{k},
+\end{equation}
+which we do in the steps below.\
+
+\textbf{Step 4.}
+From the branching relations for skew Schur polynomials we know that 
+\begin{equation}\label{Q2}
+\begin{split}
+&\sum_{\nu \in \mathsf{Sign}_k} \frac{ B_\nu(T)}{T^{k/2}} = (\sqrt{2\pi})^{k}  \cdot \exp \left( - k T \log (1+p)  + (k/2) \log T + (k/2) \log [p(1+p)]  \right) \times \\
+& \exp \left( -\log [(1+p) /p] \sum_{i = 1}^k (\kappa_i - \lambda_i)  \right) \cdot s_{\kappa / \lambda} (1^T) ,
+\end{split}
+\end{equation}
+where $\mathsf{Sign}_k$ is the set of signatures of length $k$. Combining this with 
+\begin{equation}\label{R3}
+\begin{split}
+&s_{\kappa / \lambda} (1^T) = \det \left[ \exp \left( - \frac{[\kappa_i - \lambda_j - i + j - p T]^2}{2(1+p)pT} \right)   \exp \left( O(T^{-1/2}) \right) \right] \cdot  (\sqrt{2\pi})^{-k}  \cdot\\
+&\exp \left( k T \log (1+p)  -(k/2) \log T - (k/2) \log [p(1+p)] + \log [(1+p) /p] \sum_{i = 1}^k (\kappa_i - \lambda_i)  \right),
+\end{split}
+\end{equation}
+we see that
+\begin{equation}\label{Q3}
+\begin{split}
+&\lim_{T \rightarrow \infty} \sum_{\nu \in \mathsf{Sign}_k} \frac{ B_\nu(T)}{T^{k/2}} = \det\left[e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right]_{i,j=1}^{k}.
+\end{split}
+\end{equation}
+For a signature $\nu \in \mathsf{Sign}_k$ and $T \in \mathbb{N}$ we let $Q_\nu(T)$  be the cube $[\nu_1T^{-1/2} - t \sqrt{T}, (\nu_1 + 1) T^{-1/2}- t \sqrt{T} )\times \cdots \times [\nu_kT^{-1/2} - t \sqrt{T}, (\nu_k + 1) T^{-1/2} - t \sqrt{T} )$. Also, let 
+\begin{equation}\label{Q4}
+f_T(z) = \sum_{\nu \in \mathsf{Sign}_k} B_{\nu}(T) \cdot {\bf 1}_{ Q_\nu(T) }(z),
+\end{equation}
+and observe that 
+\begin{equation}\label{Q5}
+\sum_{\nu \in \mathsf{Sign}_k} \frac{ B_\nu(T)}{T^{k/2}}  = \int_{\mathbb{R}^k} f_T(z) dz,
+\end{equation}
+be the step function $f_T$, where $dz$ represents the usual Lebesgue measure on $\mathbb{R}^k$.
+
+From 
+\begin{equation}\label{R4}
+\begin{split}
+&B_\mu(T) = (2\pi)^{-k/2} \cdot \exp \left( -(k/2) \left[ \log [p(1+p)] + \log[ t(1-t)] \right] + O(T^{-1}) \right)  \times \\
+& \det \left[ \exp \left( - \frac{[z_i - a_j]^2}{2(1+p)pt} + O(T^{-1/2}) \right) \right] \det \left[ \exp \left( - \frac{[b_i - z_j]^2}{2(1+p)p(1-t)} +O(T^{-1/2}) \right) \right]  .
+\end{split}
+\end{equation}
+we know that for almost every $(z_1, \dots, z_k) \in \mathbb{R}^k$, 
+\begin{equation}\label{Q6}
+\lim_{T \rightarrow \infty} f_T(z_1, \dots,z_k) = \tilde{\rho}(z_1, \dots,z_k)  \cdot (2\pi p(p+1)t(1-t))^{-\frac{k}{2}} \cdot \prod_{i = 1}^k \exp \left( - c_1(t,p) a_i^2  -  c_2(t,p) b_i^2  \right).
+\end{equation}
+We now claim that there is a non-negative integrable function $g$ on $\mathbb{R}^k$ s.t. for large enough $T$,
+\begin{equation}\label{Q7}
+|f_T(z_1, \dots,z_k)| \leq |g(z_1, \dots,z_k)|.
+\end{equation}
+For now we assume the validity of (\ref{Q7}) and conclude the proof of (\ref{S3}). We will prove (\ref{Q7}) in Step 4.\\
+
+Consider a dominating function $g$ as in (\ref{Q7}). Then from (\ref{Q6}) and the dominating convergence theorem we know that 
+\begin{equation}\label{Q8}
+\lim_{T \rightarrow \infty} \int_{\mathbb{R}^k} f_T(z)dz = \int_{\mathbb{R}^k} \tilde{\rho}(z_1, \dots,z_k)  \cdot (2\pi p(p+1)t(1-t))^{-\frac{k}{2}} \cdot \prod_{i = 1}^k \exp \left( - c_1(t,p) a_i^2  -  c_2(t,p) b_i^2  \right).
+\end{equation}
+Combining (\ref{Q8}), (\ref{Q5}) and (\ref{Q3}) we then have that
+\begin{equation*}
+\det\left[e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right]_{i,j=1}^{k}= \int_{\mathbb{R}^k} \tilde{\rho}(z_1, \dots,z_k)  \cdot (2\pi p(p+1)t(1-t))^{-\frac{k}{2}} \cdot \prod_{i = 1}^k \exp \left( - c_1(t,p) a_i^2  -  c_2(t,p) b_i^2  \right),
+\end{equation*}
+which gives us (\ref{S3}).\\
+
+\textbf{Step 5.}
+We now construct an integrable function $g$ that satisfies (\ref{Q7}). Fix $\nu \in \mathsf{Sign}_k$. Then if 
+If $\nu_i \geq \lambda_i + n + 1$ or $\nu_i < \lambda_i$ for some $i \in \{1, \dots, k\}$ it follows that $s_{\nu/\lambda}(1^n) = 0$. Similarly, if $\kappa_i \geq \nu_i + m + 1$ or $\kappa_i < \nu_i$ for some $i \in \{1, \dots, k\}$ it follows that $s_{\kappa/\nu}(1^m) = 0$. Hence $B_\nu(T) = 0$ unless  
+$$n \geq \nu_i - \lambda_i \geq 0 \mbox{ and } m \geq \kappa_i - \nu_i \geq 0 \mbox{ for all $i \in \{1, \dots, k\}$},$$ so that for all large enough $T$ we have  
+\begin{equation}\label{V1}
+B_\nu(T) = 0, \mbox{ unless }|\nu_i - \lambda_j + j - i| \leq (1+p)n \mbox{ and } |\kappa_i - \nu_j +j - i| \leq (1+p)m 
+\end{equation}
+for all $i,j \in \{1, \dots, k\}$.
+
+From the definition of $B_\nu(T)$ and using (\ref{JTA}), we see that
+\begin{equation}\label{V2}
+\begin{split}
+&B_\nu(T)  = C_T \cdot \det \left[ H(\nu_i - \lambda_j + j - i, n)  \right]_{i,j = 1}^k \cdot \det \left[ H(\kappa_i - \nu_j + j - i, m) \right]_{i,j = 1}^k, \mbox{ where }\\
+&H(N,n) = h_N(1^n) \cdot \exp \left(- \log [(1+p) /p]N - n \log (1+p) + (1/2) \log n \right), \mbox{ and } \\
+&C_T = (\sqrt{2\pi})^{k} [p(1+p)]^{k/2} \cdot \exp \left( k \log T - (k/2) \log n - (k/2) \log m  \right).
+\end{split}
+\end{equation}
+We note that $C_T$ is uniformly bounded for all large enough $T$.
+
+From (\ref{EqHUB}) we know that there exist constants $C_1, c_1 > 0$ s.t. for large enough $T$ and $N_1 \in [0, (1+p)n]$ and $N_2 \in [0, (1+p)m]$ we get
+\begin{equation}\label{V3}
+H(N_1,n) \leq C_1 \exp\left( - c_1n^{-1}(N_1-pn)^2 \right) \mbox{ and }H(N_2,m) \leq C_1 \exp\left( - c_1m^{-1}(N_2-pm)^2 \right).
+\end{equation}
+Note that since $h_r = 0$ for $r<0$ we also know that (\ref{V3}) is true for all $N_1 \in [-(1+p)n, (1+p)n]$
+and $N_2 \in [-(1+p)m, (1+p)m]$. From (\ref{V1}), (\ref{V2}) and (\ref{V3}) it then follows that for all $\nu \in \mathsf{Sign}_k$ and $T$ sufficiently large
+\begin{equation}\label{V4}
+\begin{split}
+&0 \leq B_\nu(T) \leq \tilde{C} \sum_{\sigma \in S_k} \sum_{\tau \in S_k} {\bf 1} \{|\nu_i - \lambda_j + j - i| \leq (1+p)n \} \cdot   {\bf 1} \{ |\kappa_i - \nu_j +j - i| \leq (1+p)m \}   \\
+&\exp\left( - \tilde{c} T^{-1}[ (\nu_i - \sqrt{T}a_{\sigma(i)} -ptT)^2 + (\sqrt{T}b_i - \nu_{\tau(i)}+ ptT)^2]  \right),
+\end{split}
+\end{equation}
+with $\tilde{c}, \tilde{C} > 0$ dependend on $p, t, k$ but not on $T$, for sufficiently large $T$.
+
+In particular, we have that if $z \in \mathbb{R}^k$ then either $z \not \in Q_\nu(T)$ for any $\nu \in \mathsf{Sign}_k$ so that $f_T(z) = 0$ or $z \in Q_\nu(T)$ for some $\nu \in \mathsf{Sign}_k$ and then 
+(\ref{V4}) implies 
+\begin{equation}\label{V5}
+0 \leq f_T(z) \leq C \sum_{\sigma \in S_k} \sum_{\tau \in S_k}  \exp\left( - c[ (z_i - a_{\sigma(i)})^2 + (b_i - z_{\tau(i)})^2]  \right),
+\end{equation}
+with $C, c > 0$ dependend on $p, t, k$ but not on $T$, if $T$ is sufficiently large. Thus, (\ref{Q7}) holds with $g$ equal to the right side of (\ref{V5}), which we note is integrable.
+
 \begin{corollary}{\label{BerDistLim}}
 	Assume the same notation as in Lemma \ref{BerDist}. Fix $R>0$, take any $(z_1,\cdots,z_k)\in[-R,R]^k$ such that $\lambda_{i}=z_i\sqrt{T}+ptT$ are integers for $i\in\{1,\cdots,k\}$. Define
 	\begin{equation*}
@@ -357,7 +472,7 @@ we get (\ref{BLambda}).
 	\end{equation}
 	Notice that the determinants in (\ref{hTfinal}) are continuous function of $z$, so they are all bounded on the compact set $[-R,R]^{k}$. Plus, $o(1)$ is uniformly bounded on $[-R,R]^{k}$. Therefore, $h_{T}(z)$ is bounded over $[-R,R]^has k$
 \end{proof}
-Before proving Lemma \ref{PfDensity}, we need to introduce another result regarding the non-vanishing of determinant.
+Before proving Lemma \ref{PfDensity}, we need to introduce another result regarding the non-vanishing of the determinant.
 
 \begin{lemma}{\label{NonVanish}}
 	Suppose the vector $\vec{m}=(m_1,\cdots,m_p)$ satisfies $k=\sum_{i=1}^{p}m_{i}$, and $\alpha_1>\alpha_2>\cdots>\alpha_p$. Then the following determinant
