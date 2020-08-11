@@ -146,7 +146,52 @@ for each $m\geq 1$. Writing $K = \bigcap_{m=1}^\infty \pi_m^{-1}(K_m)$, it follo
 To conclude tightness of $\{\mathcal{L}_i^n\}$, it suffices to prove that $K = \bigcap_{m=1}^\infty \pi_m^{-1}(K_m)$ is sequentially compact in $C(\Lambda)$. We argue by diagonalization. Let $\{f_n\}$ be a sequence in $K$, so that $f_n|_{[a_m,b_m]} \in K_m$ for every $m,n$. Since $K_1$ is compact, there is a sequence $\{n_{1,k}\}$ of natural numbers such that the subsequence $\{f_{n_{1,k}}|_{[a_1,b_1]}\}_k$ converges in $C([a_1,b_1])$. Since $K_2$ is compact, we can take a further subsequence $\{n_{2,k}\}$ of $\{n_{1,k}\}$ so that $\{f_{n_{2,k}}|_{[a_2,b_2]}\}_k$ converges in $C([a_2,b_2])$. Continuing in this manner, we obtain sequences $\{n_{1,k}\} \supseteq \{n_{2,k}\} \supseteq\cdots$ so that $\{f_{n_{m,k}}|_{[a_m,b_m]}\}_k$ converges in $C([a_m,b_m])$ for all $m$. Writing $n_k = n_{k,k}$, it follows that the sequence $\{f_{n_k}\}$ converges uniformly on each $[a_m,b_m]$. If $K$ is any compact subset of $C(\Lambda)$, then $K\subset [a_m,b_m]$ for some $m$, and hence $\{f_{n_k}\}$ converges uniformly on $K$. Therefore $\{f_{n_k}\}$ is a convergent subsequence of $\{f_n\}$.
 
 \end{proof}
-
+\subsection{Proof of Lemma \ref{LemmaWD}} 
+	\begin{proof}
+		We will construct a candidate $\mathfrak{B}$ of $\Omega_{avoid}(T_0,T_1,\vec x,\vec y, f,g)$ with the conditions of \ref{LemmaWD} assumed. Construct the ensemble $\mathfrak{B}$ in the following manner. Denote $B_0=f$ and $B_{k+1}=g$ with $x_0=f(T_0)$ and $y_0=f(T_1)$. By Condition (3) of Lemma \ref{LemmaWD} we know $x_0\geq x_1$ and $y_0\geq y_1$. Then let $B_j(T_0)=x_j$ for all $j\in \llbracket 1,k\rrbracket$ and then for all $i\in \llbracket T_0, T_{1}-1\rrbracket$ we have \begin{equation}\label{MaxEns}
+		B_j(i+1)=\begin{cases}
+		B_j(i)+1 & \text{if } B_j(i)+1\leq \min\{B_{j-1}(i+1),y_j\}\\
+		B_j(i) &\text{Else.}
+		\end{cases}
+		\end{equation} This definition is well-defined, since we may find $B_1$ depending solely on the predetermined $f$, and then inductively find $B_j$ since $B_{j-1}$ has been determined by the previous curves in $\mathfrak{B}$.
+		
+		In order to verify that this candidate ensemble $\mathfrak{B}$ is an element of $\Omega_{avoid}(T_0,T_1,\vec x,\vec y,f,g)$, three properties must be ensured:
+		\begin{equation}\label{nonEmpCond}
+		\begin{split}
+		\text{(a) } &\mathfrak{B}(T_0)=\vec x\text{ and }\mathfrak{B}(T_1)=\vec y\\
+		\text{(b) } &f(i)\geq B_1(i)\geq \cdots \geq B_k(i)\geq g(i)\text{ for all }i\in \llbracket T_0,T_1\rrbracket\\
+		\text{(c) } &B_{j}(i+1)-B_j(i)\in \{0,1\}\text{ for all }i\in \llbracket T_0,T_1-1\rrbracket\text{ and }j\in \llbracket 1,k\rrbracket
+		\end{split}
+		\end{equation} Property (c) follows directly from Definition \ref{MaxEns}, since $B_{j}(i+1)=B_j(i)$ or $B_{j}(i+1)=B_j(i)+1$, and hence $B_j(i+1)-B_j(i)\in \{0,1\}$. The remainder of the proof will be broken up into two steps, the first step proving property (a), and the second proving Property (b).\\\\
+		\noindent\textbf{Step 1:}\\
+		We know by definition that $\mathfrak{B}(T_0)=\vec x$, and we claim that $\mathfrak{B}(T_1)=\vec y$. We will show this claim inductively on $j$: We trivially know the claim is true for $j=0$, since $y_0=f(T_1)$ is given. Then suppose that $B_j(T_1)=x_j$ holds upto $j=n-1$. First, we know by definition that $B_{n}(i+1)=B_{n}(i)$ if either $B_{n}(i)=y_{n}$ or $B_{n}(i)+1>B_{n}(i+1)$.  Suppose that for some $i_0\in \llbracket{T_0,T_1}\rrbracket$ we have $B_n(i_0)=B_n(i_0+1)$.
+		
+		If $B_{n}(i_0)=B_{n}(i_0+1)$ because $B_{n}(i_0)=y_n$, then $B_n(T_1)=y_n$ since 
+		\begin{equation*}y_n=B_n(i_0)=B_n(i_0+1)=\dots=B_n(T_1)\end{equation*}
+		and then the claim is true, namely that $B_n(T_1)=y_n$, and so induction holds.
+		
+		Then, for the other case, when $B_n(i_0)=B_{n}(i_0+1)$ because $B_{n}(i_0)+1>B_{n-1}(i_0+1)$, we first need to prove that $B_j(i)\leq B_{j-1}(i)$ for $j\in \llbracket 1,k\rrbracket$ for any $i\in \llbracket T_0,T_1\rrbracket$. We know this is true for $T_0$ since $x_0\geq x_1\geq \cdots \geq x_k$. Then, inductively we know that if $B_j(i)\leq B_{j-1}(i)$, $B_j(i+1)=B_j(i)$ or $B_j(i)+1$. In the first case, $B_j(i+1)=B_j(i)\leq B_{j-1}(i)\leq B_j(i)$ by property (3) of \ref{nonEmpCond}. Then, if $B_j(i+1)=B_j(i)+1$ implies $B_j(i+1)\leq B_j(i+1)$ by equation \ref{MaxEns}. Hence, we know that for $i\in \llbracket T_0,T_1\rrbracket$\begin{equation}\label{NonEmpPartialIneq}
+		f(i)\geq B_1(i)\geq \cdots \geq B_k(i)
+		\end{equation}
+		Therefore, we know that $B_n(i_0)=B_n(i_0+1)$ and $B_n(i_0)+1>B_{n-1}(i_0+1)$, which implies $B_n(i)=B_{n-1}(i)$. This implies that if we denote $i_1$ as the least $i$ such that $B_{n-1}(i_1)=y_n$ then \begin{equation*}
+		B_n(i)=B_{n-1}(i)\text{ for all }i\in \llbracket i_0, i_1\rrbracket
+		\end{equation*} We know that there exists such an $i_1\in \llbracket{T_0,T_1}\rrbracket$ because where $i_1$ is the first $i$ such that $B_{n-1}(i_1)=y_n$, since if $B_{n-1}(i+1)=B_{n-1}(i)$ then $B_n(i)+1=B_{n-1}(i)+1>B_{n-1}(i+1)$ by $\ref{MaxEns}$, the definition of $\mathfrak{B}$. Therefore we know $B_n(i+1)=B_n(i)=B_{n-1}(i)=B_{n-1}(i+1)$.
+		
+		If $B_{n-1}(i+1)=B_n(i)+1$ then $B_n(i)+1\leq B_{n-1}(i+1)$ by \ref{MaxEns} so $B_n(i+1)=B_{n-1}(i+1)$ therefore inductively until $B_n$ cannot increase above $y_n$, we know $B_n(i)=B_{n-1}(i)$. Because we know that there is some $i_1$ such that $B_{n-1}(i_1)=y_n$, and hence $B_n(i_1)=y_n$ we get $B_n(T_1)=y_n$ and the claim that $B_n(T_1)=y_n$ is true if there exists some $i_0$ such that $B_n(i_0)=B_n(i_0+1)$
+		
+		Finally, assume that there exists no such $i_0$ that $B_n(i_0)=B_n(i_0+1)$. Then conversely $B_{n}(i)+1\leq B_{n}(i+1)$ for all $i$, then we know that $B_{n}(i+1)=B_{n}(i)+1$ for all $i$ unless $B_{n}(i)=y_{n}$ by \ref{MaxEns}. Therefore, until $B_{n}(i)=y_{n}$, we have $B_{n}(i+s)=B_{n}(i)+s$ hence $B_{n}(T_0+y_{n}-x_{n})=B_{n}(T_0)+y_{n}-x_{n}=y_{n}$. By the inequality in condition (1) of \ref{LemmaWD}, we have the following inequalities:
+		\begin{equation}\begin{split}
+		&T_1-T_0\geq y_{n}-x_{n}\geq 0 \\
+		&T_0\leq T_0+y_{n}-x_{n}\\
+		&T_1\geq T_0+y_{n}-x_{n}\end{split}\end{equation} so $T_0+y_{n}-x_{n}\in \llbracket T_0,T_1\rrbracket$ and so $B_n(T_0+y_{n}-x_n)B_{n}(T_1)=y_{n}$. This means whether or not $i_0$ exists, the induction holds and therefore we know that for all $j$ we have $B_j(T_1)=y_j$, so we know that $\mathfrak{B}(T_0)=\vec x$ and $\mathfrak{B}(T_1)=\vec y$ which concludes Step 1, proving Property (a) of \ref{nonEmpCond}.
+		
+		\textbf{Step 2:} Now all that is left to verify avoidance, or Property (b) of $\ref{nonEmpCond}$. In equation \ref{NonEmpPartialIneq}, we already found that 
+		\begin{equation*}
+		f(i)\geq B_1(i)\geq \cdots \geq B_k(i)
+		\end{equation*} so we must only prove that $B_{k}(i)\geq g(i)$ for all $i$. Suppose that $g(i)>B_k(i)$ for some $i\in \llbracket T_0,T_1\rrbracket$. Since $g(T_0)<B_k(T_0)=x_k$ by Condition (3) in Lemma $\ref{LemmaWD}$, we know that there exists some point $i_0$ such that $g(i_0)=B_k(i_0)$ and $g(i_0+1)>B_k(i_0+1)$. In particular, since $g$ and $B_k$ can each only increase by $1$, this implies $B_k(i_0)=B_k(i_0+1)$. This implies either $B_k(i_0)=y_k$ or $B_k(i_0)+1>B_{k-1}(i_0+1)$. If $B_k(i_0)=y_k$ then since $g(i_0+1)\leq y_k$ by Condition (3) of Lemma \ref{LemmaWD}, there is a contradiction. 
+		
+		Therefore, it must be the case that $B_k(i)+1>B_{k-1}(i+1)$. Then we find that for any $j\in \llbracket 1,k\rrbracket$ we know that $B_j(i)+1>B_{j-1}(i+1)$ implies $B_j(i_0)=B_{j-1}(i_0)$ since $B_j(i_0)=B_j(i_0+1)$ and $B_{j-1}(i_0)\geq B_j(i_0)$ . This can be applied to each $j$ to find that $g(i_0)=f(i_0)$ and $g(i_0+1)>f(i_0+1)$, which we assumed not to be the case. Therefore, we know that $g\leq B_k$ and so we have proven property (3), implying that if the three conditions in the statement of Lemma \ref{LemmaWD} are met then we know $\mathfrak{B}\in \Omega_{avoid}(T_0,T_1,\vec x,\vec y, f,g)$ and so $\Omega_{avoid}(T_0,T_1,\vec x,\vec y, f,g)$ is non-empty.
+	\end{proof}
 
 \subsection{Proof of Lemmas \ref{MCLxy} and \ref{MCLfg}}
 
