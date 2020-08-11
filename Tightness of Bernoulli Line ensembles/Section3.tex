@@ -197,7 +197,7 @@ If $M_1, M_2 = 0$ then Lemma \ref{LemmaHalfS4} states that if a Bernoulli bridge
 \begin{lemma}\label{LemmaMinFreeS4} Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $y,z\in \mathbb{Z}$ such that $T \geq y,z \geq 0$, and suppose that $\ell_y,\ell_z$ have distributions $\mathbb{P}^{0,T,0,y}_{Ber}$, $\mathbb{P}^{0,T,0,z}_{Ber}$ respectively. Let $M > 0$ and $\epsilon > 0$ be given. Then we can find $W_1=W_1(M,p, \epsilon) \in \mathbb{N}$ and $A=A(M,p, \epsilon) > 0$ such that for $T \geq W_1$, $ y \geq p T -  MT^{1/2}$, $z \leq pT + MT^{1/2}$ we have
 \begin{equation}\label{minFree1S4}
 \begin{split}
-&\mathbb{P}^{0,T,0,y}_{Ber}\left( \inf_{s \in [ 0, T]}\big[ \ell_y(s) -  ps \big] \leq -AT^{1/2} \right) \leq \epsilon, \\ &\mathbb{P}^{0,T,0,z}_{Ber}\left( \sup_{s \in [ 0, T]}\big[ \ell_z(s) -  ps \big] \geq AT^{1/2} \right) \leq \epsilon.
+&\mathbb{P}^{0,T,0,y}_{Ber}\left( \inf_{s \in [ 0, T]}\big[ \ell_y(s) -  ps \big] \leq -AT^{1/2} \right) \leq \epsilon, \\ &\mathbb{P}^{0,T,0,z}_{Ber}\,\bigg( \sup_{s \in [ 0, T]}\big[ \ell_z(s) -  ps \big] \geq AT^{1/2} \bigg) \leq \epsilon.
 \end{split}
 \end{equation}
 \end{lemma}
@@ -356,15 +356,15 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	Observe that condition (1) simply states that $\ell_{bot}$ lies a distance of at least $C\sqrt{T}$ uniformly below the line segment connecting $x_{k-1}$ and $y_{k-1}$. Thus (1) and (2) imply that $E$ occurs if each curve $L_i$ remains within a distance of $C\sqrt{T}/2$ from the line segment connecting $x_i$ and $y_i$. As in Theorem \ref{KMT}, let $\mathbb{P}_i$ be probability measures supporting random variables $\ell^{(T,z_i)}$ with laws $\mathbb{P}^{0,T,0,z_i}_{Ber}$. Then
 	\begin{equation}\label{SepEst}
 	\begin{split}
-	& \mathbb{P}^{0, T,\vec{x},\vec{y}}_{Ber} (E) \geq \mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber} \Big(\sup_{s\in[0,T]} \big|L_i(s) - x_i - (z_i/T)s\big| \leq C\sqrt{T}/2, \;1\leq i\leq k-1\Big) =\\
-	&\prod_{i=1}^{k-1}\Big[ \mathbb{P}^{0,T,0,z_i}_{Ber} \Big(\sup_{s\in[0,T]} \big|L_i(s+rN^\alpha) - (z_i/T)s\big| \leq C\sqrt{T}/2\Big)\Big] =\\
-	&\prod_{i=1}^{k-1}\Big[ 1 - \mathbb{P}_i\Big(\sup_{s\in[0,T]} \big|\ell^{(T,z_i)} - (z_i/T)s\big| > C\sqrt{T}/2\Big)\Big]. \end{split}
+	& \mathbb{P}^{0, T,\vec{x},\vec{y}}_{Ber} (E) \geq \mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber} \left(\sup_{s\in[0,T]} \big|L_i(s) - x_i - (z_i/T)s\big| \leq C\sqrt{T}/2, \;1\leq i\leq k-1\right) =\\
+	&\prod_{i=1}^{k-1}\left[ \mathbb{P}^{0,T,0,z_i}_{Ber} \left(\sup_{s\in[0,T]} \big|L_i(s+rN^\alpha) - (z_i/T)s\big| \leq C\sqrt{T}/2\right)\right] =\\
+	&\prod_{i=1}^{k-1}\left[ 1 - \mathbb{P}_i\left(\sup_{s\in[0,T]} \big|\ell^{(T,z_i)} - (z_i/T)s\big| > C\sqrt{T}/2\right)\right]. \end{split}
 	\end{equation}
 	In the third line, we used the fact that $L_1,\dots,L_{k-1}$ are independent from each other under $\mathbb{P}^{0,T,0,z_i}_{Ber}$. Let $B^{\sigma,i}$ be the Brownian bridge with variance $\sigma^2 = p(1-p)$ coupled with $\ell^{(T,z_i)}$ given by Theorem \ref{KMT}. Then we have
 	\begin{equation}\label{SepCheb}
 	\begin{split}
-	&\mathbb{P}_i \Big(\sup_{s\in[0,T]} \big|\ell^{(T,z_i)}(s) - (z_i/T)s\big| > C\sqrt{T}/2\Big) \leq \\
-	& \mathbb{P}_i\Big(\sup_{s\in[0,T]} |\sqrt{T}B^{\sigma}_{s/T}| > C\sqrt{T}/4\Big) + \mathbb{P}_i\Big(\Delta(T,z_i) > C\sqrt{T}/4\Big).
+	&\mathbb{P}_i \left(\sup_{s\in[0,T]} \big|\ell^{(T,z_i)}(s) - (z_i/T)s\big| > C\sqrt{T}/2\right) \leq \\
+	& \mathbb{P}_i\left(\sup_{s\in[0,T]} |\sqrt{T}B^{\sigma}_{s/T}| > C\sqrt{T}/4\right) + \mathbb{P}_i\left(\Delta(T,z_i) > C\sqrt{T}/4\right).
 	\end{split}
 	\end{equation}
 	By Lemma \ref{BBmax}, the first term in the second line of \eqref{SepCheb} is equal to $2\sum_{n=1}^\infty (-1)^{n-1} e^{-n^2C^2/8p(1-p)}$. Moreover, condition (3) in the hypothesis and Corollary \ref{Cheb} allow us to find $W_5$ depending on $p,C,K$ but not on $i$ so that the last probability in \eqref{SepCheb} is bounded above by $\frac{1}{2} - \sum_{n=1}^\infty (-1)^{n-1} e^{-n^2C^2/8p(1-p)}$ for $T\geq W_5$. Adding these two terms and referring to \eqref{SepEst} proves \eqref{SepBound1}.
@@ -427,13 +427,13 @@ S}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ as in Definition \ref{DefAvoidingLawBer}. 
 	Let $\mathbb{P}$ be a probability space suporting a random variable $\ell^{(T,z)}$ with law $\mathbb{P}^{0,T,0,z}$ coupled with a Brownian bridge $B^\sigma$ with variance $\sigma^2$, as in Theorem \ref{KMT}. Then the last probability in brackets is bounded below by
 	\begin{equation}\label{19BB}
 	\begin{split}
-	& \mathbb{P}^{0,T,0,z}_{Ber}\Big(\big|\ell(T/2)-pT/2-(M+M_1+5)\sqrt{T}\big|\leq 2\sqrt{T} - 5\quad\mathrm{and}\\
+	& \mathbb{P}^{0,T,0,z}_{Ber}\bigg(\big|\ell(T/2)-pT/2-(M+M_1+5)\sqrt{T}\big|\leq 2\sqrt{T} - 5\quad\mathrm{and}\\
 	&\qquad\qquad\qquad \sup_{s\in[0,T/2]}\Big|\ell(s)-ps-\frac{M+M_1+5}{\sqrt{T}/2}\,s\Big| \leq 3\sqrt{T} - 1 \quad\mathrm{and}\\
-	&\qquad\qquad\qquad \sup_{s\in[T/2,T]}\Big|\ell(s)-ps-(M+M_1+5)\sqrt{T}+\frac{M+M_1+5}{\sqrt{T}/2}(s-T/2)\Big| \leq 3\sqrt{T} - 1 \Big) \geq\\
-	& \mathbb{P}\Big(\big|\sqrt{T}\,B^\sigma_{1/2} - (M+M_1+5)\sqrt{T}\big|\leq \sqrt{T} \quad\mathrm{and}\\
+	&\qquad\qquad\qquad \sup_{s\in[T/2,T]}\Big|\ell(s)-ps-(M+M_1+5)\sqrt{T}+\frac{M+M_1+5}{\sqrt{T}/2}(s-T/2)\Big| \leq 3\sqrt{T} - 1 \bigg) \geq\\
+	& \mathbb{P}\bigg(\big|\sqrt{T}\,B^\sigma_{1/2} - (M+M_1+5)\sqrt{T}\big|\leq \sqrt{T} \quad\mathrm{and}\\
 	&\qquad\qquad\qquad\sup_{s\in[0,T/2]}\Big|\sqrt{T}\,B^\sigma_{s/T}-(M+M_1+5)\sqrt{T}\cdot\frac{s}{T/2}\Big| \leq 2\sqrt{T}\quad\mathrm{and}\\
-	&\qquad\qquad\qquad \sup_{s\in[T/2,T]}\Big|\sqrt{T}\,B^\sigma_{s/T}-(M+M_1+5)\sqrt{T}\cdot\frac{T-s}{T/2}\Big| \leq 2\sqrt{T} \Big)\\
-	&\qquad\qquad\qquad -  \mathbb{P}\Big(\Delta(T,z) > \sqrt{T}/2\Big).
+	&\qquad\qquad\qquad \sup_{s\in[T/2,T]}\Big|\sqrt{T}\,B^\sigma_{s/T}-(M+M_1+5)\sqrt{T}\cdot\frac{T-s}{T/2}\Big| \leq 2\sqrt{T} \bigg)\\
+	&\qquad\qquad\qquad -  \mathbb{P}\left(\Delta(T,z) > \sqrt{T}/2\right).
 	\end{split}
 	\end{equation}
 	Note that $B^\sigma_{1/2}$ is a centered Gaussian random variable with variance $p(1-p)/4 = \sigma^2(1/2)(1-1/2)$. Writing $\xi = B^\sigma_{1/2}$, it follows from Lemma \ref{2bridges} that there exist independent Brownian bridges $B^1,B^2$ with variance $\sigma^2/2$ so that $B^\sigma_s$ has the same law as $\frac{s}{T/2}\xi + B^1_{2s/T}$ for $s\in[0,T/2]$ and $\frac{T-s}{T/2}\xi + B^2_{(2s-T)/T}$ for $s\in[T/2,T]$. The first term in the last expression in \eqref{19BB} is thus equal to
@@ -451,71 +451,61 @@ S}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ as in Definition \ref{DefAvoidingLawBer}. 
 	
 \end{proof}
 \begin{lemma}\label{prob17}
-Fix $p,t\in(0,1)$, $k\in\mathbb{N}$, $\vec a$, $\vec b\in W_k$.  Suppose that $\vec{x}^{T}=(x_{1}^{T},\cdots,x_{k}^{T})$ and $\vec{y}^{T}=(y_{1}^{T},\cdots,y_{k}^{T})$ are two sequence of $k$-dimensional vectors with integer entries such that for $i\in \llbracket 1,k\rrbracket$, $$\lim_{T\rightarrow\infty}\frac{x_{i}^{T}}{\sqrt{T}}=a_{i} \text{ and } \lim_{T\rightarrow\infty}\frac{y_{i}^{T}-pT}{\sqrt{T}}=b_{i}$$ and define the sequence of random $k$-dimensional vectors $Z^{T}$ by $$Z^{T}=\big(\frac{L_{1}(tT)-ptT}{\sqrt{T}},\cdots,\frac{L_{k}(tT)-ptT}{\sqrt{T}}\big),$$ where $(L_{1},\cdots,L_{k})$ is $\mathbb{P}^{0,T,\vec{x}^{T},\vec{y}^{T}}_{avoid,Ber}$-distributed. When $a_i=a_{i+1}$ or $b_{j}=b_{j+1}$ for any entries of $\vec a$ and $\vec b$, we write
+Fix $p,t\in(0,1)$, $k\in\mathbb{N}$, $\vec a, \vec b\in W_k$.  Suppose that $\vec{x}^{T}=(x_{1}^{T},\cdots,x_{k}^{T})$ and $\vec{y}^{T}=(y_{1}^{T},\cdots,y_{k}^{T})$ are two sequence of $k$-dimensional vectors with integer entries such that for $i\in \llbracket 1,k\rrbracket$, $$\lim_{T\rightarrow\infty}\frac{x_{i}^{T}}{\sqrt{T}}=a_{i} \quad \text{and} \quad \lim_{T\rightarrow\infty}\frac{y_{i}^{T}-pT}{\sqrt{T}}=b_{i}.$$  Let $(L_1,\dots,L_k)$ have law $\mathbb{P}^{0,T,\vec{x}^{T},\vec{y}^{T}}_{avoid,Ber}$, and define the sequence $\{Z^T\}$ of random $k$-dimensional vectors by $$Z^{T}=\left(\frac{L_{1}(tT)-ptT}{\sqrt{T}},\cdots,\frac{L_{k}(tT)-ptT}{\sqrt{T}}\right).$$ When $a_i=a_{i+1}$ or $b_{j}=b_{j+1}$ for any $i,j\in\llbracket 1,k\rrbracket$ we write
 \begin{equation*}\begin{split}
-\vec{a}&=(a_{1},\cdots,a_{k})=(\underbrace{\alpha_{1},\cdots,\alpha_{1}}_{m_{1}},\cdots,\underbrace{\alpha_{p},\cdots,\alpha_{p}}_{m_{p}})\\
-\vec{b}&=(b_{1},\cdots,b_{k})=(\underbrace{\beta_{1},\cdots,\beta_{1}}_{n_{1}},\cdots,\underbrace{\beta_{q},\cdots,\beta_{q}}_{n_{q}})
+\vec{a}&=(a_{1},\dots,a_{k})=(\underbrace{\alpha_{1},\dots,\alpha_{1}}_{m_{1}},\dots,\underbrace{\alpha_{p},\dots,\alpha_{p}}_{m_{p}}),\\
+\vec{b}&=(b_{1},\dots,b_{k})=(\underbrace{\beta_{1},\dots,\beta_{1}}_{n_{1}},\dots,\underbrace{\beta_{q},\dots,\beta_{q}}_{n_{q}}),
 \end{split}
 \end{equation*}
-where $\alpha_{1}>\alpha_{2}>\cdots>\alpha_{p}$, $\beta_{1}>\beta_{2}>\cdots>\beta_{q}$ and $\sum_{i=1}^{p}m_{i}=\sum_{i=1}^{q}n_{i}=k$. Then, the random vector $Z^{T}$ converges weakly to a random variable $\hat Z$ with the density $$\rho_{\vec{a},\vec{b}}(z_{1},\cdots,z_{k})=\frac{1}{Z_{\vec{a},\vec{b}}}\cdot \varphi(\vec{a},\vec{z},\vec{m})\psi(\vec{b},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\mathbbm{1}_{\{z_{1}>\cdots> z_{k}\}}$$ where $\vec{m}=(m_{1},\cdots,m_{k})$, $\vec{n}=(n_{1},\cdots,n_{k})$, $c_{1},c_{2},c_{3}$ are constants depending on $p,t$ as given in Proposition \ref{WeakConvDistinct} , $Z_{\vec a,\vec b}$ is a constant depending on $p,t,\vec{a},\vec{b}$ such that $\rho_{\vec{a},\vec{b}}(z_{1},\cdots,z_{k})$ integrates to $1$ over $\mathbb{R}^{k}$, and $\varphi(\vec{a},\vec{z},\vec{m})$ and $\psi(\vec{b},\vec{z},\vec{n})$ are determinants:
-\begin{equation*}
-\varphi(\vec{a},\vec{z},\vec{m})= \det
-\left[ \begin{array}{ccc}
-((c_{1}(t,p)z_{j})^{i-1}e^{c_{1}(t,p)\alpha_{1}z_{j}})_{\substack{i=1,\cdots,m_{1}\\j=1,\cdots,k}}\\
+where $\alpha_{1}>\dots>\alpha_{p}$, $\beta_{1}>\dots>\beta_{q}$ and $\sum_{i=1}^{p}m_{i}=\sum_{i=1}^{q}n_{i}=k$. Then as $T\to\infty$, $Z^{T}$ converges weakly to a random vector $\hat Z$ with density $$\rho_{\vec{a},\vec{b}}(z_{1},\dots,z_{k})=\frac{1}{Z_{\vec{a},\vec{b}}}\cdot \varphi(\vec{a},\vec{z},\vec{m})\psi(\vec{b},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}z_{i}^{2}}\mathbf{1}_{\{z_{1}>\cdots> z_{k}\}}.$$ Here, $\vec{m}=(m_{1},\dots,m_{k})$, $\vec{n}=(n_{1},\dots,n_{k})$, $c_{1},c_{2},c_{3}$ are constants depending on $p,t$, $Z_{\vec a,\vec b}$ is a normalization constant depending on $p,t,\vec{a},\vec{b}$, and $\varphi(\vec{a},\vec{z},\vec{m}), \psi(\vec{b},\vec{z},\vec{n})$ are determinants:
+\begin{align*}
+\varphi(\vec{a},\vec{z},\vec{m}) &= \det
+\begin{bmatrix}
+\left((c_{1}z_{j})^{i-1}e^{c_{1}\alpha_{1}z_{j}}\right)_{1\leq i \leq m_1, \, 1\leq j \leq k}\\
 \vdots\\
-((c_{2}(t,p)z_{j})^{i-1}e^{c_{1}(t,p)\alpha_{p}z_{j}})_{\substack{i=1,\cdots,m_{p} \\j=1,\cdots,k}}
-\end{array}
-\right]
-\end{equation*}
-\begin{equation*}
-\psi(\vec{b},\vec{z},\vec{n})= \det
-\left[ \begin{array}{ccc}
-((c_{2}(t,p)z_{j})^{i-1}e^{c_{2}(t,p)\beta_{1}z_{j}})_{\substack{i=1,\cdots,n_{1}\\j=1,\cdots,k}}\\
+\left((c_{1}z_{j})^{i-1}e^{c_{1}\alpha_{p}z_{j}}\right)_{1 \leq i \leq m_p, \, 1\leq j\leq k}
+\end{bmatrix}, \\
+\psi(\vec{b},\vec{z},\vec{n}) &= \det
+\begin{bmatrix}
+\left((c_{2}z_{j})^{i-1}e^{c_{2}\beta_{1}z_{j}}\right)_{1\leq i \leq n_1, \, 1\leq j \leq k}\\
 \vdots\\
-((c_{2}(t,p)z_{j})^{i-1}e^{c_{2}(t,p)\beta_{q}z_{j}})_{\substack{i=1,\cdots, n_{q} \\j=1,\cdots,k}}
-\end{array}
-\right]
-\end{equation*} 
+\left((c_{2}z_{j})^{i-1}e^{c_{2}\beta_{q}z_{j}}\right)_{1 \leq i \leq n_q, \, 1\leq j\leq k}
+\end{bmatrix}.
+\end{align*} 
 \end{lemma}
-Proof of this lemma will be postponed until the appendix, in propositions \ref{WeakConvDistinct} and \ref{WeakConvCollide}
+Proof of this lemma will be postponed until Section \ref{Section9}, in particular in Propositions \ref{WeakConvDistinct} and \ref{WeakConvCollide}.
 \begin{lemma}\label{prob 20}
-Fix $p,t\in (0,1)$ and $ k\in \mathbb{N}$. Suppose that $\vec x^T=(x_1^T,\cdots x_k^T)$ and $\vec y^T=(y_1^T,\cdots , y_k^T)$ is a sequence of $k$-dimensional vectors with integer entries such that $T\geq y_i^T-x_i^T\geq 0$ for $i\in \llbracket 1,k\rrbracket$. Show that for any $M_1,M_2>0$ and $\epsilon>0$ there exists $T_0\in\mathbb{N}$ and $\delta>0$ depending on $p,k,M_1,M_2$ such that if $T\geq T_0$, $\abs*{x_i^T}\leq M_1\sqrt{T}$ and $\abs*{y_i^T-pT}\leq M_2\sqrt{T}$ then 
+Fix $p,t\in (0,1)$ and $ k\in \mathbb{N}$. Suppose that $\vec x\,^T=(x_1^T,\dots, x_k^T)$, $\vec y\,^T=(y_1^T,\dots , y_k^T)$ are elements of $\mathfrak{W}_k$ such that $T\geq y_i^T-x_i^T\geq 0$ for $i\in \llbracket 1,k\rrbracket$. Then for any $M_1,M_2>0$ and $\epsilon>0$ there exists $W_7\in\mathbb{N}$ and $\delta>0$ depending on $p,k,M_1,M_2$ such that if $T\geq W_7$, $|x_i^T|\leq M_1\sqrt{T}$ and $|y_i^T-pT|\leq M_2\sqrt{T}$, then 
 \[
-\pr^{0,T,\vec x^T, \vec y^T}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \left[L_i(tT)-L_{i+1}(tT)\right]<\delta\sqrt{T}\right)<\epsilon
+\pr^{0,T,\vec x^T, \vec y^T}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \big[L_i(tT)-L_{i+1}(tT)\big]<\delta\sqrt{T}\right)<\epsilon.
 \]
 \end{lemma}
 \begin{proof}
-	We prove the claim by contradiction:
-	suppose there exists $M_1,M_2,\epsilon>0$ such that for any $T_0\in \mathbb{N}$ and $\delta>0$ there exists some $T\geq T_0$ such that \[
-	\pr^{0,T,\vec x^T,\vec y^T}_{avoid, Ber}\left(\min_{1\leq i\leq k-1}\left[L_i(tT)-L_{i+1}(tT)\right]<\delta\sqrt{T}\right)\geq \epsilon
-	\]
-	Therefore, we can obtain sequences $T_n$, $\delta_n>0$, $T_n\uparrow \infty$, $\delta_n\downarrow 0$ such that for all $n$, we have  
+	We prove the claim by contradiction. Suppose there exist $M_1,M_2,\epsilon>0$ such that for any $T_0\in \mathbb{N}$ and $\delta>0$ there exists some $T\geq T_0$ with
 	\[
-	\pr^{0,T,\vec x^{T_n},\vec y^{T_n}}_{avoid, Ber}\left(\min_{1\leq i\leq k-1}\left[\frac{L_i(tT_n)-L_{i+1}(tT_n)}{\sqrt{T_n}}\right]<\delta_n\right)\geq \epsilon
+	\pr^{0,T,\vec x^T,\vec y^T}_{avoid, Ber}\left(\min_{1\leq i\leq k-1}\left[L_i(tT)-L_{i+1}(tT)\right]<\delta\sqrt{T}\right)\geq \epsilon.
 	\]
-	As $\abs*{x_i^{T_n}}<M_1\sqrt{T_n}$, $\abs*{y_i^{T_n}-pT_n}\leq M_2\sqrt{T_n}$ we know that there exists some subsequence $T_{n_m}$ such that $\lim_{m\to\infty} \frac{x^{T_{n_m}}}{\sqrt{T_{n_m}}}\to \vec x$ 
-	and 
-	$\lim_{m\to\infty}\frac{y^{T_{n_m}}-pT}{\sqrt{T_{n_m}}}\to \vec y$ 
-	by the Bolzano-Weierstrass theorem \cite[Theorem 3.6]{Rudin}, as these sequences lie in compact intervals. Denote $$Z_i^m:=\frac{L_i(tT_{n_m})-ptT}{\sqrt{T_{n_m}}}.$$ Then, if we fix $\tilde\delta>0$, because $\delta_n\downarrow 0$, there exists some $M$ such that $m>M$ implies $\delta_m<\tilde\delta$. For such $m>M$, we have 
+	Then we can obtain sequences $T_n$, $\delta_n>0$, $T_n \nearrow \infty$, $\delta_n \searrow 0$, such that for all $n$ we have  
+	\[
+	\pr^{0,T,\vec x\,^{T_n},\vec y\,^{T_n}}_{avoid, Ber}\left(\min_{1\leq i\leq k-1}\left[\frac{L_i(tT_n)-L_{i+1}(tT_n)}{\sqrt{T_n}}\right]<\delta_n\right)\geq \epsilon.
+	\]
+	Since $|x_i^{T_n}|<M_1\sqrt{T_n}$ and $|y_i^{T_n}-pT_n|\leq M_2\sqrt{T_n}$ for $1\leq i\leq k$, the sequences $\{\vec{x}\,^{T_n}/\sqrt{T_n}\}$, $\{(\vec{y}\,^{T_n}-pT_n)/\sqrt{T_n}\}$ are bounded in $\mathbb{R}^k$. It follows that there is a subsequence $\{T_{n_m}\}$ such that \[
+	\frac{\vec{x}\,^{T_{n_m}}}{\sqrt{T_{n_m}}} \longrightarrow \vec x, \quad
+	\frac{\vec{y}\,^{T_{n_m}}-pT_{n_m}}{\sqrt{T_{n_m}}} \longrightarrow \vec y
+	\] 
+	as $m\to\infty$ (see \cite[Theorem 3.6]{Rudin}). Denote $$Z_i^m =\frac{L_i(tT_{n_m})-ptT_{n_m}}{\sqrt{T_{n_m}}}.$$ Fix $\tilde{\delta} > 0$ and choose $M$ large enough so that if $m\geq M$ then $\delta_m < \tilde{\delta}$. Then for $m\geq M$ we have
 	\begin{equation}\label{prob20inf}
-	\epsilon\leq \liminf_{m\to\infty}\pr\left(\min_{1\leq i\leq k-1}Z_i^m-Z_{i+1}^m<\delta_{n_m}\right)\leq \liminf_{m\to\infty}\pr\left(\min_{1\leq i\leq k-1}Z_i^m-Z_{i+1}^m\leq\tilde\delta\right)
+	\epsilon\leq \liminf_{m\to\infty}\pr\left(\min_{1\leq i\leq k-1} \big[Z_i^m-Z_{i+1}^m\big] < \delta_{n_m}\right) \leq \liminf_{m\to\infty}\pr\left(\min_{1\leq i\leq k-1} \big[ Z_i^m-Z_{i+1}^m\big] \leq\tilde\delta\right).
 	\end{equation}
-	Now, if we apply the results of Lemma \ref{prob17}, we that the vector $(Z_1^m,\cdots, Z_k^m)$ converges weakly to some random vector $\hat Z$ with probability density function $\rho$ as defined previously in \ref{prob17}, the definitions of which we will state in a few lines, when  they are needed.
-	Because this sequence has weak convergence we may apply portmanteau's lemma with the closed set $K=[0,\tilde\delta]$ to find 
+	Now by Lemma \ref{prob17}, $(Z_1^m,\dots, Z_k^m)$ converges weakly to a random vector $\hat Z$. It follows from the portmanteau theorem, \cite[Theorem 3.2.11]{Durrett}, applied with the closed set $K=[0,\tilde\delta]$ that
 	\begin{equation}\label{prob20sup}
-	\limsup_{m\to\infty }\pr\left(\min_{1\leq i\leq k-1}Z_i^m-Z_{i+1}^m\in K\right)\leq \pr\left(\min_{1\leq i\leq k-1}\hat Z_i-\hat Z_{i+1}\in K\right)
+	\limsup_{m\to\infty }\pr\left(\min_{1\leq i\leq k-1} \big[Z_i^m-Z_{i+1}^m\big]\in K\right)\leq \pr\left(\min_{1\leq i\leq k-1} \big[\hat Z_i-\hat Z_{i+1}\big]\in K\right).
 	\end{equation}
-	Combining (\ref{prob20inf}) and (\ref{prob20sup}), we arrive at the inequality
-	\begin{equation}\label{eq:limsupinf}
-	\epsilon\leq \liminf_{m\to\infty}\pr\left(\min_{1\leq i\leq k-1} Z_i^m-Z_{i+1}^m\leq \tilde\delta\right)\leq \pr\left(\min_{1\leq i\leq k-1} \hat Z_i-\hat Z_{i+1}\tilde\delta\right)
-	\end{equation}
-	and so by (\ref{eq:limsupinf}) and countable subadditivity,
+	Combining (\ref{prob20inf}) and (\ref{prob20sup}), we obtain
 	\begin{equation}\label{eq:ineq}
-	\epsilon\leq \pr\left(\min_{1\leq i\leq k-1} \hat Z_i-\hat Z_{i+1}\leq\tilde\delta\right)\leq \sum_{i=1}^{k-1}\pr\left(\hat Z_i-\hat Z_{i+1}\leq \tilde\delta\right)
+	\epsilon\leq \pr\left(\min_{1\leq i\leq k-1} \big[\hat Z_i-\hat Z_{i+1}\big]\leq\tilde\delta\right)\leq \sum_{i=1}^{k-1}\pr\left(\hat Z_i-\hat Z_{i+1}\leq \tilde\delta\right).
 	\end{equation}
-	
-	Since $\tilde\delta$ is arbitrary, this inequality holds for any $\tilde\delta>0$. 
-	In order to pick a sufficient $\delta'$ to find a contradiction, we will now state the definition of $\rho$, as found in \ref{prob17}: 
+	This inequality holds for any $\tilde{\delta} > 0$. In order to pick a sufficient $\delta'$ to find a contradiction, we will now state the definition of $\rho$, as found in \ref{prob17}: 
 	\[\rho(z_1,\cdots ,z_k)=\frac{1}{Z_{\vec a, \vec b}}\cdot \varphi(\vec a, \vec z, \vec n)\cdot \psi(\vec b, \vec z, \vec n)\prod_{i=1}^{k}e^{\frac{-z_i^2}{t(1-t)}}
 	\]
 	with $\vec z_i\in W_k^\circ$ where we have the functions and constant
