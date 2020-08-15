@@ -158,23 +158,23 @@ If $M_1, M_2 = 0$ then Lemma \ref{LemmaHalfS4} states that if a Bernoulli bridge
 	Define $A = \lfloor M_1T^{1/2}\rfloor$ and $B = \lfloor pT + M_2 T^{1/2}\rfloor$. Then since $A\leq x$ and $B\leq y$, it follows from Lemma 3.1 that there is a probability space with measure $\mathbb{P}_0$ supporting random variables $L_1$ and $L_2$, whose laws under $\mathbb{P}_0$ are $\mathbb{P}^{0,T,A,B}_{Ber}$ and $\mathbb{P}^{0,T,x,y}_{Ber}$ respectively, and $\mathbb{P}_0$-a.s. we have $L_1\leq L_2$. Thus
 	\begin{equation}\label{HalfS4MC}
 	\begin{split}
-	&\mathbb{P}^{0,T,x,y}_{Ber}\Big( \ell(s)  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \Big) =\\
-	& \mathbb{P}_0\Big( L_2(s)  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \Big) \geq\\
-	&\mathbb{P}_0\Big( L_1(s)  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \Big) =\\
-	&\mathbb{P}^{0,T,A,B}_{Ber}\Big( \ell(s)  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \Big).
+	&\mathbb{P}^{0,T,x,y}_{Ber}\left( \ell(s)  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \right) =\\
+	& \mathbb{P}_0\left( L_2(s)  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \right) \geq\\
+	&\mathbb{P}_0\left( L_1(s)  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \right) =\\
+	&\mathbb{P}^{0,T,A,B}_{Ber}\left( \ell(s)  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \right).
 	\end{split}
 	\end{equation}
-	Since upright paths on $\llbracket 0,T\rrbracket \times \llbracket A,B\rrbracket$ are equivalent to upright paths on $\llbracket 0,T\rrbracket \times \llbracket 0, B-A\rrbracket$ shifted vertically by $A$, the last line of \eqref{HalfS4MC} is equal to
+	Since the uniform distribution on upright paths on $\llbracket 0,T\rrbracket \times \llbracket A,B\rrbracket$ is the same as that on upright paths on $\llbracket 0,T\rrbracket \times \llbracket 0, B-A\rrbracket$ shifted vertically by $A$, the last line of \eqref{HalfS4MC} is equal to
 	\[
 	\mathbb{P}^{0,T,0,B-A}_{Ber}\left( \ell(s) + A  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \right).
 	\]
-	Now we consider the coupling provided by Theorem \ref{KMT}. We have another probability space $(\Omega,\mathcal{F},\mathbb{P})$ supporting a random variable $\ell^{(T,B-A)}$ whose law under $\mathbb{P}$ is $\mathbb{P}^{0,T,0,B-A}_{Ber}$ as well as a Brownian bridge $B^\sigma$. We have 
+	Now we employ the coupling provided by Theorem \ref{KMT}. We have another probability space $(\Omega,\mathcal{F},\mathbb{P})$ supporting a random variable $\ell^{(T,B-A)}$ whose law under $\mathbb{P}$ is $\mathbb{P}^{0,T,0,B-A}_{Ber}$ as well as a Brownian bridge $B^\sigma$ coupled with $\ell^{(T,B-A)}$. We have 
 	\begin{equation}\label{HalfS4split}
 	\begin{split}
 	&\mathbb{P}^{0,T,0,B-A}_{Ber}\left( \ell(s) + A  \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \right) =\\
 	& \mathbb{P}\left( \ell^{(T,B-A)}(s) + A \geq \frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \right) =\\
 	& \mathbb{P}\bigg( \left[\ell^{(T,B-A)}(s) - \sqrt{T} B^\sigma_{s/T} - \frac{s}{T}\cdot(B-A)\right] + \sqrt{T}B^\sigma_{s/T} \geq \\
-	&\qquad\qquad -A-\frac{s}{T}\cdot(B-A) +\frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \bigg).
+	&\qquad -A-\frac{s}{T}\cdot(B-A) +\frac{T-s}{T} \cdot M_1 T^{1/2} + \frac{s}{T} \cdot \big(p T + M_2 T^{1/2}\big) - T^{1/4} \bigg).
 	\end{split}
 	\end{equation}
 	Recalling the definitions of $A$ and $B$, we can rewrite the quantity in the last line of \eqref{HalfS4split} and bound by
@@ -309,9 +309,9 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	\begin{equation}\label{MOCbound}
 	\begin{split}
 	& w\big(f^{\ell^{(T,y)}},\delta\big) = T^{-1/2} \sup_{s,t\in[0,1],\, |s-t|\leq\delta} \Big| \ell^{(T,y)}(sT) - psT - \ell^{(T,y)}(tT) + ptT \Big| \leq\\
-	&T^{-1/2} \sup_{s,t \in [0,1], \, |s-t| \leq \delta} \Big(\big| \sqrt{T}\,B^\sigma_s + sy - psT - \sqrt{T}\,B^\sigma_t - ty + ptT \big| +\\
-	&\qquad \qquad \quad \big|\sqrt{T}\,B^\sigma_s + sy - \ell^{(T,y)}(sT)\big| + \big|\sqrt{T}\,B^\sigma_t + ty - \ell^{(T,y)}(tT)\big|\Big) \leq\\
-	& \sup_{s,t \in [0,1], \, |s-t| \leq \delta} \Big| B^\sigma_s - B^\sigma_t + T^{-1/2} (y-pT)(s-t)\Big| + 2T^{-1/2}\Delta(T,y) \leq\\
+	&T^{-1/2} \sup_{s,t \in [0,1], \, |s-t| \leq \delta} \bigg(\left| \sqrt{T}\,B^\sigma_s + sy - psT - \sqrt{T}\,B^\sigma_t - ty + ptT \right| +\\
+	&\qquad \qquad \left|\sqrt{T}\,B^\sigma_s + sy - \ell^{(T,y)}(sT)\right| + \left|\sqrt{T}\,B^\sigma_t + ty - \ell^{(T,y)}(tT)\right|\bigg) \leq\\
+	& \sup_{s,t \in [0,1], \, |s-t| \leq \delta} \left| B^\sigma_s - B^\sigma_t + T^{-1/2} (y-pT)(s-t)\right| + 2T^{-1/2}\Delta(T,y) \leq\\
 	& w\big(B^\sigma,\delta\big) + M\delta + 2T^{-1/2}\Delta(T,y).
 	\end{split}
 	\end{equation}
@@ -401,46 +401,45 @@ S}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ as in Definition \ref{DefAvoidingLawBer}. 
 	Let us write $K_i = pT/2 + M\sqrt{T}+(10(k-i)-5)\lceil\sqrt{T}\rceil$ for $1\leq i\leq k$. Note $K_i$ is the midpoint of $pT/2 + M\sqrt{T} + 10(k-i-1)\lceil\sqrt{T}\rceil$ and $pT/2 + M\sqrt{T}+10(k-i)\lceil\sqrt{T}\rceil$. Let $E$ denote the event that the following conditions hold for $1\leq i\leq k$:
 	\begin{enumerate}[label=(\arabic*)]
 		
-		\item $\big| Q_i(T/2) - pT/2 - M\sqrt{T} - (10(k-i)-5)\lceil\sqrt{T}\rceil \big| \leq 2\lceil\sqrt{T}\rceil$,
+		\item $\left| Q_i(T/2) - pT/2 - M\sqrt{T} - (10(k-i)-5)\lceil\sqrt{T}\rceil \right| \leq 2\lceil\sqrt{T}\rceil$,
 		
 		\item $\sup_{s\in[0,T/2]} \Big|Q_i(s)-x_i'-\dfrac{K_i-x_i'}{T/2}\,s\Big| \leq 3\sqrt{T}$,
 		
 		\item $\sup_{s\in[T/2,T]} \Big|Q_i(s)-K_i-\dfrac{y_i'-K_i}{T/2}(s-T/2)\Big| \leq 3\sqrt{T}$.
 		
 	\end{enumerate}
-	The first condition requires in particular that $Q_k(T/2)-pT/2 \geq M\sqrt{T}$, and also that $Q_i(T/2)-Q_{i+1}(T/2)\geq 6\sqrt{T}$ for each $i$. The second and third conditions require that each curve $Q_i$ remain within a distance of $3\sqrt{T}$ of the graph of the piecewise linear function on $[0,T]$ passing through the points $(0,x_1')$, $(T/2,K_i)$, and $(T,y_i')$. We observe that
+	The first condition implies in particular that $Q_k(T/2)-pT/2 \geq M\sqrt{T}$, and also that $Q_i(T/2)-Q_{i+1}(T/2)\geq 6\sqrt{T}$ for each $i$. The second and third conditions require that each curve $Q_i$ remain within a distance of $3\sqrt{T}$ of the graph of the piecewise linear function on $[0,T]$ passing through the points $(0,x_1')$, $(T/2,K_i)$, and $(T,y_i')$. We observe that
 	\[
 	\mathbb{P}^{0,T,\vec{x}\,',\vec{y}\,'}_{avoid, Ber; S} \left(Q_k(T/2) - ptT \geq M\sqrt{T}\right) \geq \mathbb{P}^{0,T,\vec{x}\,',\vec{y}\,'}_{avoid, Ber; S}(E) \geq \mathbb{P}^{0,T,\vec{x}\,',\vec{y}\,'}_{Ber}(E).
 	\]
 	The second inequality follows since the event $E$ implies that $Q_1(s)\geq\cdots\geq Q_k(s)$ for all $s\in\llbracket 0,T \rrbracket$. Write $z=y_k'-x_k'$. Then we have
 	\begin{equation}\label{19gibbs}
 	\begin{split}
-	\mathbb{P}^{0,T,\vec{x}\,',\vec{y}\,'}_{Ber}(E) &= \bigg[\mathbb{P}^{0,T,0,z}_{Ber}\bigg(\big|\ell(T/2)-pT/2-M\sqrt{T}-5\lceil\sqrt{T}\rceil+x_1'\big|\leq 2\lceil\sqrt{T}\rceil \quad\mathrm{and}\\
-	&\qquad\qquad\qquad \sup_{s\in[0,T/2]}\Big|\ell(s) - \frac{K_1-x_1'}{T/2}\,s\Big| \leq 3\sqrt{T}\quad\mathrm{and}\\
-	&\qquad\qquad\qquad \sup_{s\in[T/2,T]}\Big|\ell(s)-(K_1-x_1')-\frac{y_1'-K_1}{T/2}(s-T/2)\Big| \leq 3\sqrt{T}\bigg) \bigg]^k.
+	\mathbb{P}^{0,T,\vec{x}\,',\vec{y}\,'}_{Ber}(E) &= \bigg[\mathbb{P}^{0,T,0,z}_{Ber}\bigg(\left|\ell(T/2)-pT/2-M\sqrt{T}-5\lceil\sqrt{T}\rceil+x_1'\right|\leq 2\lceil\sqrt{T}\rceil \quad\mathrm{and}\\
+	&\qquad\qquad \sup_{s\in[0,T/2]}\left|\ell(s) - \frac{K_1-x_1'}{T/2}\,s\right| \leq 3\sqrt{T}\quad\mathrm{and}\\
+	&\qquad\qquad \sup_{s\in[T/2,T]}\left|\ell(s)-(K_1-x_1')-\frac{y_1'-K_1}{T/2}(s-T/2)\right| \leq 3\sqrt{T}\bigg) \bigg]^k.
 	\end{split}
 	\end{equation}
 \begin{figure}
 	\includegraphics[scale=0.6]{graphics/Lemma320.jpg}
 	\caption{Sketch of the argument for Lemma \ref{prob19}: We use Lemma \ref{MCLxy} to lower the entry and exit data $\vec{x},\vec{y}$ of the curves to $\vec x\,'$ and $\vec y\,'$. The event $E$ occurs when each curve lies within the blue bounding lines shown in the figure. We then use strong coupling with Brownian bridges via Theorem \ref{KMT} and bound the probability of the bridges remaining within the blue windows.}
 \end{figure}
-	Let $\mathbb{P}$ be a probability space suporting a random variable $\ell^{(T,z)}$ with law $\mathbb{P}^{0,T,0,z}$ coupled with a Brownian bridge $B^\sigma$ with variance $\sigma^2$, as in Theorem \ref{KMT}. Then the last probability in brackets is bounded below by
+	Let $\mathbb{P}$ be a probability space supporting a random variable $\ell^{(T,z)}$ with law $\mathbb{P}^{0,T,0,z}$ coupled with a Brownian bridge $B^\sigma$ with variance $\sigma^2$, as in Theorem \ref{KMT}. Then the expression in \eqref{19gibbs} is bounded below by
 	\begin{equation}\label{19BB}
 	\begin{split}
-	& \mathbb{P}^{0,T,0,z}_{Ber}\bigg(\big|\ell(T/2)-pT/2-(M+M_1+5)\sqrt{T}\big|\leq 2\sqrt{T} - 5\quad\mathrm{and}\\
-	&\qquad\qquad\qquad \sup_{s\in[0,T/2]}\Big|\ell(s)-ps-\frac{M+M_1+5}{\sqrt{T}/2}\,s\Big| \leq 3\sqrt{T} - 1 \quad\mathrm{and}\\
-	&\qquad\qquad\qquad \sup_{s\in[T/2,T]}\Big|\ell(s)-ps-(M+M_1+5)\sqrt{T}+\frac{M+M_1+5}{\sqrt{T}/2}(s-T/2)\Big| \leq 3\sqrt{T} - 1 \bigg) \geq\\
-	& \mathbb{P}\bigg(\big|\sqrt{T}\,B^\sigma_{1/2} - (M+M_1+5)\sqrt{T}\big|\leq \sqrt{T} \quad\mathrm{and}\\
-	&\qquad\qquad\qquad\sup_{s\in[0,T/2]}\Big|\sqrt{T}\,B^\sigma_{s/T}-(M+M_1+5)\sqrt{T}\cdot\frac{s}{T/2}\Big| \leq 2\sqrt{T}\quad\mathrm{and}\\
-	&\qquad\qquad\qquad \sup_{s\in[T/2,T]}\Big|\sqrt{T}\,B^\sigma_{s/T}-(M+M_1+5)\sqrt{T}\cdot\frac{T-s}{T/2}\Big| \leq 2\sqrt{T} \bigg)\\
-	&\qquad\qquad\qquad -  \mathbb{P}\left(\Delta(T,z) > \sqrt{T}/2\right).
+	& \mathbb{P}^{0,T,0,z}_{Ber}\bigg(\left|\ell(T/2)-pT/2-(M+M_1+5)\sqrt{T}\right|\leq 2\sqrt{T} - 5\quad\mathrm{and}\\
+	&\qquad \sup_{s\in[0,T/2]}\left|\ell(s)-ps-\frac{M+M_1+5}{\sqrt{T}/2}\,s\right| \leq 3\sqrt{T} - 1 \quad\mathrm{and}\\
+	&\qquad \sup_{s\in[T/2,T]}\left|\ell(s)-ps-(M+M_1+5)\sqrt{T}+\frac{M+M_1+5}{\sqrt{T}/2}(s-T/2)\right| \leq 3\sqrt{T} - 1 \bigg) \geq\\
+	& \mathbb{P}\bigg(\left|\sqrt{T}\,B^\sigma_{1/2} - (M+M_1+5)\sqrt{T}\right|\leq \sqrt{T} \quad\mathrm{and}\\
+	&\qquad\sup_{s\in[0,T/2]}\left|\sqrt{T}\,B^\sigma_{s/T}-(M+M_1+5)\sqrt{T}\cdot\frac{s}{T/2}\right| \leq 2\sqrt{T}\quad\mathrm{and}\\
+	&\qquad \sup_{s\in[T/2,T]}\left|\sqrt{T}\,B^\sigma_{s/T}-(M+M_1+5)\sqrt{T}\cdot\frac{T-s}{T/2}\right| \leq 2\sqrt{T} \bigg) -  \mathbb{P}\left(\Delta(T,z) > \sqrt{T}/2\right).
 	\end{split}
 	\end{equation}
 	Note that $B^\sigma_{1/2}$ is a centered Gaussian random variable with variance $p(1-p)/4 = \sigma^2(1/2)(1-1/2)$. Writing $\xi = B^\sigma_{1/2}$, it follows from Lemma \ref{2bridges} that there exist independent Brownian bridges $B^1,B^2$ with variance $\sigma^2/2$ so that $B^\sigma_s$ has the same law as $\frac{s}{T/2}\xi + B^1_{2s/T}$ for $s\in[0,T/2]$ and $\frac{T-s}{T/2}\xi + B^2_{(2s-T)/T}$ for $s\in[T/2,T]$. The first term in the last expression in \eqref{19BB} is thus equal to
 	\begin{equation}\label{prob19split}
 	\begin{split}
-	&\mathbb{P}\bigg(|\xi - (M+M_1+5)|\leq 1 \quad\mathrm{and} \sup_{s\in[0,T/2]}\Big|B^1_{s/T}-(M+M_1+5-\xi)\cdot\frac{s}{T/2}\Big| \leq 2 \quad \mathrm{and}\\
-	&\qquad\qquad\qquad  \sup_{s\in[T/2,T]}\Big|B^2_{(2s-T)/T}-(M+M_1+5-\xi)\cdot\frac{T-s}{T/2}\Big| \leq 2 \bigg) \geq \\
+	&\mathbb{P}\bigg(|\xi - (M+M_1+5)|\leq 1 \quad\mathrm{and} \sup_{s\in[0,T/2]}\left|B^1_{s/T}-(M+M_1+5-\xi)\cdot\frac{s}{T/2}\right| \leq 2 \quad \mathrm{and}\\
+	&\qquad  \sup_{s\in[T/2,T]}\left|B^2_{(2s-T)/T}-(M+M_1+5-\xi)\cdot\frac{T-s}{T/2}\right| \leq 2 \bigg) \geq \\
 	& \mathbb{P}\bigg(|\xi - (M+M_1+5)|\leq 1 \quad\mathrm{and} \sup_{s\in[0,T/2]}\big|B^1_{2s/T}\big| \leq 1 \qquad \mathrm{and}\quad \sup_{s\in[T/2,T]}\big|B^2_{(2s-T)/T}\big| \leq 1 \bigg) =\\
 	& \mathbb{P}\Big(|\xi-(M+M_1+5)|\leq 1\Big)\cdot \mathbb{P}\bigg(\sup_{s\in[0,T/2]} \big|B^1_{2s/T}\big|\leq 1\bigg)\cdot \mathbb{P}\bigg(\sup_{s\in[0,T/2]} \big|B^2_{(2s-T)/T}\big|\leq 1\bigg) \geq\\
 	& \left(1-2e^{-4/p(1-p)}\right)^2 \int_{M+M_1+4}^{M+M_1+6} \frac{e^{-2\xi^2/p(1-p)}}{\sqrt{\pi p(1-p)/2}}\,d\xi \geq\\
@@ -454,7 +453,7 @@ S}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ as in Definition \ref{DefAvoidingLawBer}. 
 We now state a weak convergence result, whose proof we postpone until Section \ref{Section9}, in particular in Propositions \ref{WeakConvDistinct} and \ref{WeakConvCollide}.
 
 \begin{lemma}\label{prob17}
-Fix $p,t\in(0,1)$, $k\in\mathbb{N}$, $\vec a, \vec b\in \mathfrak{W}_k$.  Suppose that $\vec{x}^{T}=(x_{1}^{T},\dots,x_{k}^{T})$ and $\vec{y}^{T}=(y_{1}^{T},\dots,y_{k}^{T})$ are two sequences in $\mathfrak{W}_k$ such that for $i\in \llbracket 1,k\rrbracket$, $$\lim_{T\rightarrow\infty}\frac{x_{i}^{T}}{\sqrt{T}}=a_{i} \quad \text{and} \quad \lim_{T\rightarrow\infty}\frac{y_{i}^{T}-pT}{\sqrt{T}}=b_{i}.$$  Let $(Q_1,\dots,Q_k)$ have law $\mathbb{P}^{0,T,\vec{x}^{T},\vec{y}^{T}}_{avoid,Ber}$, and define the sequence $\{Z^T\}$ of random $k$-dimensional vectors by $$Z^{T}=\left(\frac{Q_{1}(tT)-ptT}{\sqrt{T}},\cdots,\frac{Q_{k}(tT)-ptT}{\sqrt{T}}\right).$$ Then as $T\to\infty$, $Z^{T}$ converges weakly to a random vector $\hat Z$ on $\mathbb{R}^k$ with a probability density $\rho$.
+Fix $p,t\in(0,1)$, $k\in\mathbb{N}$, $\vec a, \vec b\in \mathfrak{W}_k$.  Suppose that $\vec{x}^{T}=(x_{1}^{T},\dots,x_{k}^{T})$ and $\vec{y}^{T}=(y_{1}^{T},\dots,y_{k}^{T})$ are two sequences in $\mathfrak{W}_k$ such that for $i\in \llbracket 1,k\rrbracket$, $$\lim_{T\rightarrow\infty}\frac{x_{i}^{T}}{\sqrt{T}}=a_{i} \quad \text{and} \quad \lim_{T\rightarrow\infty}\frac{y_{i}^{T}-pT}{\sqrt{T}}=b_{i}.$$  Let $(Q_1^T,\dots,Q_k^T)$ have law $\mathbb{P}^{0,T,\vec{x}^{T},\vec{y}^{T}}_{avoid,Ber}$, and define the sequence $\{Z^T\}$ of random $k$-dimensional vectors by $$Z^{T}=\left(\frac{Q_{1}^T(tT)-ptT}{\sqrt{T}},\dots,\frac{Q_{k}^T(tT)-ptT}{\sqrt{T}}\right).$$ Then as $T\to\infty$, $Z^{T}$ converges weakly to a random vector $\hat Z$ on $\mathbb{R}^k$ with a probability density $\rho$ supported on $W_k^\circ$.
 \end{lemma}
 
 The convergence result in Lemma \ref{prob17} allows us to prove the following lemma, which roughly states that if the entrance and exit data of a sequence of avoiding Bernoulli line ensembles remain in compact windows, then with high probability the curves of the ensemble will remain separated from one another at each point by some small positive distance.
