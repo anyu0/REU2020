@@ -6,7 +6,7 @@
 
 The goal of this section is to establish the weak convergence of scaled avoiding Bernoulli line ensemble. We consider the $\llbracket 1,k\rrbracket$-indexed line ensembles with distribution given by $\mathbb{P}^{0,T,\vec{x},\vec{y},\infty,-\infty}_{avoid,Ber}$ in the sense of Definition \ref{DefAvoidingLawBer}. Recall that this is just the law of $k$ independent Bernoulli random walks that have been conditioned to start from $\vec{x}=(x_{1},\dots,x_{k})$ at time $0$ and and at $\vec{y}=(y_1,\cdots,y_{k})$ at time $T$ and are always ordered. Here $\vec{x}$, $\vec{y}\in\mathfrak{W}_{k}$ satisfy $T\geq y_{i}-x_{i}\geq 0$ for $i=1,\dots,k$. We will drop the infinities and simply write $\mathbb{P}^{0,T,\vec{x},\vec{y}}_{avoid,Ber}$ for the measure.
 
-This section will be divided into $5$ subsections. In Section \ref{DefMainRes}, we introduce some definitions and formulate the precise statements of two main results we want to prove as Proposition \ref{WeakConvDistinct} and Proposition \ref{WeakConvCollide}. In Section \ref{SkewSchurPoly}, we introduce some fundamental knowledge about Skew Schur Polynomials and give the distribution of avoiding Bernoulli line ensembles at integer time through Skew Schur Polynomials as Lemma \ref{BerDist}. In Section \ref{ProofProp1}, we will prove our first main result Proposition \ref{WeakConvDistinct}. In Section \ref{multivar} we introduce some notations and results about multi-indices and multivariate functions which paves the way for proof of Proposition \ref{WeakConvCollide}. Section \ref{ProofProp2} will prove our second main result Proposition \ref{WeakConvCollide}.
+This section will be divided into $5$ subsections. In Section \ref{DefMainRes}, we introduce some definitions and formulate the precise statements of two main results we want to prove as Proposition \ref{WeakConvDistinct} and Proposition \ref{WeakConvCollide}. In Section \ref{SkewSchurPoly}, we introduce some fundamental knowledge about Skew Schur Polynomials and give the distribution of avoiding Bernoulli line ensembles at integer times through Skew Schur Polynomials as Lemma \ref{BerDist}. In Section \ref{ProofProp1}, we will prove our first main result Proposition \ref{WeakConvDistinct}. In Section \ref{multivar} we introduce some notations and results about multi-indices and multivariate functions which paves the way for proof of Proposition \ref{WeakConvCollide}. Section \ref{ProofProp2} will prove our second main result Proposition \ref{WeakConvCollide}.
 
 \subsection{Definitions and Main Results}{\label{DefMainRes}}
 We start by introducing some helpful notations.
@@ -23,13 +23,13 @@ We start by introducing some helpful notations.
 We also introduce some constants below
 \begin{align}{\label{WCconst}}
 	\begin{split}
-	&c_{1}(p,t)=\frac{1}{p(p+1)t}, \quad c_{2}(p,t)=\frac{1}{p(p+1)(1-t)}, \quad c_{3}(p,t)=\frac{1}{2p(p+1)t(1-t)}\\
-	&Z=(2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}\cdot e^{\frac{c_{1}(t,p)}{2}\sum_{i=1}^{k}a_{i}^{2}}\cdot e^{\frac{c_{2}(t,p)}{2}\sum_{i=1}^{k}b_{i}^{2}}\det\left[e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right]_{i,j=1}^{k}
+	&c_{1}(p,t)=\frac{1}{p(1-p)t}, \quad c_{2}(p,t)=\frac{1}{p(1-p)(1-t)}, \quad c_{3}(p,t)=\frac{1}{2p(1-p)t(1-t)}\\
+	&Z=(2\pi)^{\frac{k}{2}}(p(1-p)t(1-t))^{\frac{k}{2}}\cdot e^{\frac{c_{1}(t,p)}{2}\sum_{i=1}^{k}a_{i}^{2}}\cdot e^{\frac{c_{2}(t,p)}{2}\sum_{i=1}^{k}b_{i}^{2}}\det\left[e^{-\frac{1}{2p(1-p)}(b_{i}-a_{j})^{2}}\right]_{i,j=1}^{k}
 	\end{split}
 \end{align}
 and define the function $\rho(z_{1},\cdots, z_{k})\equiv\rho(\vec{z})$ as the following:
 \begin{align}{\label{Density}}
-	\rho(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot \mathbbm{1}_{\{z_{1}>\cdots >z_{k}\}}\cdot \det\big[e^{c_{1}(t,p)a_{i}z_{j}}\big]_{i,j=1}^{k}\det\big[e^{c_{2}(t,p)b_{i}z_{j}}\big]_{i,j=1}^{k}\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}
+	\rho(z_{1},\cdots,z_{k})=\frac{1}{Z}\cdot \mathbf{1}_{\{z_{1}>\cdots >z_{k}\}}\cdot \det\big[e^{c_{1}(t,p)a_{i}z_{j}}\big]_{i,j=1}^{k}\det\big[e^{c_{2}(t,p)b_{i}z_{j}}\big]_{i,j=1}^{k}\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}
 \end{align}
 
 We will prove that the function $\rho(z)$ defined in (\ref{Density}) is a probability density function, meaning that it is non-negative and integrates to $1$ over $\mathbb{R}^{k}$. Since this is an important ingredient of our results, we isolate it as Lemma \ref{PfDensity} and will prove it in Section \ref{ProofProp1}. For now, we assume that $\rho(\vec{z})$ in (\ref{Density}) is a density so that we can state our first main result in the following, which gives the limiting distribution of $Z^{T}$ when vectors $\vec{a}$ and $\vec{b}$ contain distinct values.
@@ -41,12 +41,12 @@ Assume the same notation as in the Definition \ref{DefScaled}. When $a_{1}> \cdo
 Proposition \ref{WeakConvDistinct} states the result when $\vec{a}$ and $\vec{b}$ consist of distinct values. When the values in $\vec{a}$ and $\vec{b}$ start to collide, the three determinants in the density function (\ref{Density}) will vanish(one in constant $Z$ in equation (\ref{WCconst}) and the other two are in the expression of equation (\ref{Density})). In the following, we are going to formulate the result under this new situation. We will construct a modified density function and the random vector $Z^{T}$ will weakly converge to this new density function.
 
 Suppose vectors $\vec{a}$ and $\vec{b}$ cluster as the following:
-\begin{align}{\label{Block}}
+\begin{equation}{\label{Block}}
 \begin{split}
 	&\vec{a}=(a_{1},\cdots,a_{k})=(\underbrace{\alpha_{1},\cdots,\alpha_{1}}_{m_{1}},\cdots,\underbrace{\alpha_{p},\cdots,\alpha_{p}}_{m_{p}})\\
 	&\vec{b}=(b_{1},\cdots,b_{k})=(\underbrace{\beta_{1},\cdots,\beta_{1}}_{n_{1}},\cdots,\underbrace{\beta_{q},\cdots,\beta_{q}}_{n_{q}})
 \end{split}
-\end{align}
+\end{equation}
 where $\alpha_{1}>\alpha_{2}>\cdots>\alpha_{p}$, $\beta_{1}>\beta_{2}>\cdots>\beta_{q}$ and $\sum_{i=1}^{p}m_{i}=\sum_{i=1}^{q}n_{i}=k$. Denote $\vec{m}=(m_{1},\cdots,m_{p})$, $\vec{n}=(n_{1},\cdots,n_{q})$ and define two determinants $\varphi(\vec{a},\vec{z},\vec{m})$ and $\psi(\vec{b},\vec{z},\vec{n})$ below:
 \begin{equation}{\label{TwoDet}}
 \begin{split}
@@ -72,9 +72,9 @@ Then define the function
 \begin{align}{\label{PreDensity17}}
 	H(\vec{z})=\varphi(\vec{a},\vec{z},\vec{m})\psi(\vec{b},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}
 \end{align}
-we can prove that $H(\vec{z})$ in (\ref{PreDensity17}) is non-negative and integrable over $\mathbb{R}^{k}$, so that we can multiply it with the normalized constant $Z_{c}=\int_{\mathbb{R}^{k}}H(z)\cdot\mathbf{1}_{\{z_1>\cdots>z_{k}\}}dz<\infty$ (the subscript $c$ is for ``collide'') and make it a probability density function:
+we can prove that $H(\vec{z})$ in (\ref{PreDensity17}) is non-negative and integrable over $\mathbb{R}^{k}$, so that we can multiply it with the normalizingm constant $Z_{c}=\int_{\mathbb{R}^{k}}H(z)\cdot\mathbf{1}_{\{z_1>\cdots>z_{k}\}}dz<\infty$ (the subscript $c$ is for ``collide'') and make it a probability density function:
 \begin{align}{\label{Density17}}
-\rho_{c}(z_{1},\cdots,z_{k})=\frac{1}{Z_{0}}\cdot\mathbf{1}_{\{z_{1}>\cdots> z_{k}\}}\cdot \varphi(\vec{a},\vec{z},\vec{m})\psi(\vec{b},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}	
+\rho_{c}(z_{1},\cdots,z_{k})=\frac{1}{Z_{0}}\cdot\mathbf{1}_m{\{z_{1}>\cdots> z_{k}\}}\cdot \varphi(\vec{a},\vec{z},\vec{m})\psi(\vec{b},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}	
 \end{align}
 
 Now we are ready to state our second main result, which gives the weak convergence of $Z^{T}$ when $\vec{a}$ and $\vec{b}$ have collided values.
@@ -84,30 +84,43 @@ Assume the same notation as in the Definition \ref{DefScaled} and suppose vector
 
 \subsection{Skew Schur polynomials and distribution of avoiding Bernoulli line ensembles}{\label{SkewSchurPoly}}
 First, We give some definitions and elementary results regarding skew Schur polynomials, which are mainly based on \cite[Chapter 1]{Mac}.
-\begin{definition}{\label{DefPar}} \emph{Partition, Interlaced}
+\begin{definition}{\label{DefPar}} \emph{Partition, Interlaced, Conjugate}
 \begin{enumerate}
-	\item A \emph{partition} is any infinite sequence $\lambda=(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{r}, \cdots)$ of non-negative integers in decreasing order $\lambda_{1}\geq \lambda_{2}\geq \cdots\geq \lambda_{r}\geq \cdots$ and containing only finitely many non-zero terms. The non-zero $\lambda_{i}$ are called \emph{parts} of $\lambda$, and the sum of the parts is the \emph{weight} of $\lambda$, denoted by $|\lambda|$.
+	\item A \emph{partition} is an infinite sequence $\lambda=(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{r}, \cdots)$ of non-negative integers in decreasing order $\lambda_{1}\geq \lambda_{2}\geq \cdots\geq \lambda_{r}\geq \cdots$ and containing only finitely many non-zero terms. The non-zero $\lambda_{i}$ are called \emph{parts} of $\lambda$, the number of parts is called the \emph{length} of the partition $\lambda$, denoted by $l(\lambda)$, and the sum of the parts is the \emph{weight} of $\lambda$, denoted by $|\lambda|$.
 	\item Suppose $\lambda$ and $\mu$ are two partitions, we denote $\lambda\supset\mu$ if $\lambda_{i}\geq \mu_{i}$ for all $i\in \mathbb{Z}^{+}$, and we can define a new partition $\lambda-\mu=(\lambda_{1}-\mu_{1},\lambda_{2}-\mu_{2},\cdots)$.
-	\item Partitions $\lambda=(\lambda_{1}, \lambda_{2},\cdots)$ and $\mu=(\mu_{1}, \mu_{2},\cdots)$ are call \emph{interlaced}, denoted by $\mu\preceq \lambda$, if $\lambda_1\geq \mu_1\geq \lambda_2\geq \mu_2\geq\cdots$. By definition, if $\mu\preceq\lambda$, then $\mu\subset\lambda$.
+	\item Partitions $\lambda=(\lambda_{1}, \lambda_{2},\cdots)$ and $\mu=(\mu_{1}, \mu_{2},\cdots)$ are call \emph{interlaced}, denoted by $\mu\preceq \lambda$, if $\lambda_1\geq \mu_1\geq \lambda_2\geq \mu_2\geq\cdots$.
+	\item The \emph{conjugate} of a partition $\lambda$ is the partition $\lambda^{\prime}$ such that
+	\begin{equation*}
+		\lambda^{\prime}_{i}=\max_{j\geq 1}\{j:\lambda_{j}\geq i\}
+	\end{equation*}
+	In particular, $\lambda_{1}^{\prime}=l(\lambda)$ and $\lambda_{1}=l(\lambda^{\prime})$. For example, the conjugate of $(5441)$ is $(43331)$.
 \end{enumerate}
 \end{definition}
 
-\begin{definition} \emph{Complete Symmetric Function}{\label{CompSymFunc}}\\
-	For each $r\in\mathbb{N}$ the $r$-th \emph{complete symmetric function} $h_{r}$ is the sum of all monomials of total degree $r$ in the variables $x_1, x_2, \cdots$ so that
+According to Definition \ref{DefPar}, we directly get that if $\mu\subset \lambda$ then $l(\lambda)\geq l(\mu)$ and $l(\lambda^{\prime})\geq l(\mu^{\prime})$. Also, $\mu\preceq\lambda$ implies $\mu\subset\lambda$. We can also derive the following corollary that is not very immediate.
+\begin{corollary}{\label{Cortranspar}}
+	If $\mu\preceq\lambda$ are interlaced, then $\lambda^{\prime}_{i}-\mu^{\prime}_{i}=0\text{ or }1$ for every $i\geq 1,$.
+\end{corollary}
+\begin{proof}
+	By definition, $\lambda^{\prime}_{i}=\max\{j:\lambda_{j}\geq i\}$ and $\mu^{\prime}_{i}=\max\{j:\mu_{j}\geq i\}$. Since $\mu\preceq\lambda$ are interlaced, we have $\lambda_{j}\geq \mu_{j}\geq \lambda_{j+1}$ for every $j\geq 1$, where the first inequality $\lambda_{j}\geq \mu_{j}$ directly implies $\lambda^{\prime}_{i}\geq \mu^{\prime}_{i}$. Suppose there exists an $i$ such that $\lambda^{\prime}_{i}-\mu^{\prime}_{i}\geq 2$. Then, by definition of $\mu^{\prime}_{i}$ and $\lambda^{\prime}_{i}$ we have $\lambda_{\lambda_{i}^{\prime}}\geq i$ and $\mu_{\mu_{i}^{\prime}+1}<i$. When $\lambda^{\prime}_{i}-\mu^{\prime}_{i}\geq 2$, we have $\lambda_{\mu^{\prime}_{i}+2}\geq \lambda_{\lambda_{i}^{\prime}}\geq i>\mu_{\mu_{i}^{\prime}+1}$, which contradicts the fact that $\mu\preceq\lambda$ are interlaced. Therefore, we conclude that $\lambda^{\prime}_{i}-\mu^{\prime}_{i}$ can only be $0$ or $1$.
+\end{proof}
+\begin{definition} \emph{Elementary Symmetric Function}{\label{ElemSymFunc}}\\
+	For each integer $r\geq 0$, the $r$-th \emph{elementary symmetric function} $e_{r}$ is the sum of all products of $r$ distinct variables $x_i$, so that $e_0=1$ and
 	\begin{align}
-		h_{r}=\sum_{|\lambda|=r}m_{\lambda}
+		e_{r}=\sum_{i_1<i_2<\cdots<i_r}x_{i_1}x_{i_2}\cdots x_{i_r}
 	\end{align}
-	 where $m_{\lambda}=x_1^{\lambda_1}x_2^{\lambda_2}\cdots$ is the monomial with parts of partition $\lambda$ as corresponding powers. For $r<0$, we  define $h_r$ to be zero. In particular, when $x_1=x_2=\cdots=x_n=1$, $x_{n+1}=x_{n+2}=\cdots=0$, $h_r$ is just the number of partitions that have weight $r$ and at most $n$ nonzero parts. Thus, we have: 
-	 \begin{align}
-	 	h_{r}(1^{n})=\binom{r+n-1}{r}
-	 \end{align}
+	for $r\geq 1$. For $r<0$, we define $e_r$ to be zero. In particular, when $x_1=x_2=\cdots=x_n=1$, $x_{n+1}=x_{n+2}=\cdots=0$, $e_r$ is just the binomial coefficient when $0\leq r\leq n$:
+	 \begin{equation*}
+	 	e_{r}(1^{n})=\binom{n}{r}
+	 \end{equation*}
+	 	and $e_r=0$ when $r>n$.
 \end{definition}
 
-Next, we introduce Skew Schur Polynomial based on \cite[Chapter 1, (5.4), (5.11), (5.12)]{Mac}.
+Next, we introduce Skew Schur Polynomial based on \cite[Chapter 1, (5.5), (5.11), (5.12)]{Mac}.
 \begin{definition} \emph{Skew Schur Polynomial, Jacob-Trudi Formula}{\label{DefSkewSchurPoly}}
 \begin{enumerate}
-	\item Suppose $\mu\preceq\lambda$ are two interlaced partitions, then the \emph{skew Schur polynomial} $s_{\lambda/\mu}$ with single variable $x$ is defined by $s_{\lambda/\mu}(x)=x^{|\lambda-\mu|}$. If $\mu$ and $\lambda$ are not interlaced, we define $s_{\lambda/\mu}(x)=0$.
-	\item Suppose $\lambda\supset\mu$ are two partitions, define the \emph{skew Schur polynomial} $s_{\lambda/\mu}$ with respect to variables $x_1, x_2, \cdots, x_{n}$ by
+	\item Suppose $\mu\subset\lambda$ are partitions. If $\mu\preceq\lambda$ are interlaced, then the \emph{skew Schur polynomial} $s_{\lambda/\mu}$ with single variable $x$ is defined by $s_{\lambda/\mu}(x)=x^{|\lambda-\mu|}$. Otherwise, we define $s_{\lambda/\mu}(x)=0$.
+	\item Suppose $\mu\subset\lambda$ are two partitions, define the \emph{skew Schur polynomial} $s_{\lambda/\mu}$ with respect to variables $x_1, x_2, \cdots, x_{n}$ by
 	\begin{align}
 		s_{\lambda/\mu}(x_1,\cdots,x_n)=\sum_{(\nu)}\prod_{i=1}^{n}s_{\nu^{i}/\nu^{i-1}}(x_i)=\sum_{(\nu)}\prod_{i=1}^{n}x_{i}^{|\nu^{i}-\nu^{i-1}|}
 	\end{align}
@@ -117,11 +130,11 @@ Next, we introduce Skew Schur Polynomial based on \cite[Chapter 1, (5.4), (5.11)
 			s_{\kappa/\mu}=\sum_{\lambda}s_{\kappa/\lambda}\cdot s_{\lambda/\mu}
 		\end{split}
 	\end{equation}
-	\item We also have the following \emph{Jacob-Trudi Formula}\cite[Chapter 1, (5.4)]{Mac} for the skew Schur polynomial:
-	\begin{align}{\label{J-TFormula}}
-		s_{\lambda/\mu}=\det\left(h_{\lambda_{i}-\mu_{j}-i+j}\right)_{1\leq i,j\leq n}
-	\end{align}
-	where $h_r$ is the complete symmetric function in Definition \ref{CompSymFunc}.
+	\item We also have the following \emph{Jacob-Trudi Formula}\cite[Chapter 1, (5.5)]{Mac} for the skew Schur polynomial:
+	\begin{equation}{\label{J-TFormula}}
+		s_{\lambda/\mu}=\det\left(e_{\lambda_{i}^{\prime}-\mu_{j}^{\prime}-i+j}\right)_{1\leq i,j\leq m}
+	\end{equation}
+	where $m\geq l(\lambda^{\prime})$, and $e_r$ is the elementary symmetric function in Definition \ref{ElemSymFunc}.
 \end{enumerate}
 \end{definition}
 
@@ -129,44 +142,53 @@ Based on the above preparation, we are ready to state the following lemma giving
 \begin{lemma}{\label{BerDist}}
 Assume the same notations as in Section \ref{DefMainRes}, denote $m=\lfloor tT \rfloor$, $n=T-\lfloor tT \rfloor$. Then, the avoiding Bernoulli line ensemble at time $m$ has the following distribution: 
 \begin{align}{\label{ProbMassFunc}}
-\mathbb{P}(L_{1}(m) = \lambda_{1}, \cdots, L_{k}(m) = \lambda_{k})=\frac{s_{\lambda/\mu}(1^{m})\cdot s_{\kappa/\lambda}(1^{n})}{s_{\kappa/\mu}(1^{T})}	
+\mathbb{P}_{avoid, Ber}^{0,T,\vec{x}^{T},\vec{y}^{T}}(L_{1}(m) = \lambda_{1}, \cdots, L_{k}(m) = \lambda_{k})=\frac{s_{\lambda^{\prime}/\mu^{\prime}}(1^{m})\cdot s_{\kappa^{\prime}/\lambda^{\prime}}(1^{n})}{s_{\kappa^{\prime}/\mu^{\prime}}(1^{T})}	
 \end{align}
 where $\lambda_{1}\geq\lambda_{2}\geq\cdots\geq\lambda_{k}$ are positive integers, $s_{\lambda/\mu}$ denote skew Schur polynomials and they are specialized in all parameters equal to $1$. The $\mu$ partition is just the vector $\vec{x}^{T}$ and the $\kappa$ partition should be $\vec{y}^{T}$.
 \end{lemma}
 \begin{remark}
 	Here we let $\lambda_{1}\geq\lambda_{2}\geq\cdots\geq\lambda_{k}$ be positive integers, although they could potentially be negative. However, we can shift all the endpoints up such that all possible $\lambda_{i}$ are positive. Also, in the proof we treat finite dimensional vectors as partitions because as long as we add infinitely many zeros at their ends we can and make them  ``partitions'' in Definition \ref{DefPar}.
 \end{remark}
-\begin{proof} Let $\Omega(0,T,\vec{x}^T, \vec{y}^T)$ be the set of all non-intersecting Bernoulli line ensembles from $\vec{x}^T$ to $\vec{y}^T$. For each line ensemble $\mathfrak{B}\in \Omega(0,T,\vec x^T,\vec y^T)$ with $\mathfrak B=(B_1,...,B_k)$, we may define $\lambda^{i}(\mathfrak B):=(B_1(i),B_2(i),...,B_k(i))$, where $1 \leq i\leq T$ is an integer. The $\lambda^{i}(\mathfrak{B})$ form partitions since by the definition of avoiding Bernoulli line ensembles, we have the inequality $B_\alpha(i)\geq B_\beta(i)$ if $\alpha<\beta$. Now we claim that partitions $\lambda^{i}(\mathfrak{B})$, $1\leq i \leq T$ are interlaced. By definition of Bernoulli random walk, we have $B_{\alpha}(i+1)=B_{\alpha}(i)+\xi$ and $B_{\alpha+1}(i+1)=B_{\alpha+1}(i)+\eta$, where $\xi$, $\eta\in\{0,1\}$, so $B_{\alpha}(i+1)\geq B_{\alpha}(i)$. If $B_{\alpha}(i)\geq B_{\alpha+1}(i)+1$, then $B_{\alpha}(i)\geq B_{\alpha+1}(i+1)$; If $B_{\alpha}(i)=B_{\alpha+1}(i)$, in order to assure $B_{\alpha}(i+1)\geq B_{\alpha+1}(i+1)$, $\xi$ and $\eta$ have to be $0$ or $1$ at the same time, or $\xi=1$ and $\eta=0$, all of which deduce that $B_{\alpha}(i)\geq B_{\alpha+1}(i+1)$. Therefore,
-\[B_{\alpha+1}(i+1)\leq B_\alpha(i)\leq B_\alpha(i+1)\]
-and $\lambda^{1}(\mathfrak{B})\preceq\cdots\preceq\lambda^{T}(\mathfrak{B})$ are interlaced. Note that when $i=0,T$, we get $\lambda^0(\mathfrak{B})=\bar x^T$ and $\lambda^T(\mathfrak{B})=\bar y^T$.
-
-Now, let us define the set 
+\begin{proof} Let $\Omega(0,T,\vec{x}^T, \vec{y}^T)$ be the set of all avoiding Bernoulli line ensembles from $\vec{x}^T$ to $\vec{y}^T$ and define the set 
 \[TB_{\lambda/\mu}^T:=\{(\lambda^0,...,\lambda^T)\mid \lambda^0=\mu, \lambda^T=\lambda, \lambda^i\preceq\lambda^{i+1}\text{ for }i=0,\cdots,T-1\}\] 
-Now, if we take $f:\Omega(0,T,\bar x^T, \bar y ^T)\to TB_{\kappa/\mu}^T$ with $f(\mathfrak{B})= (\lambda^0(\mathfrak{B}),\cdots \lambda^T(\mathfrak{B}))$. We find that this function is in fact a bijection. 
-
-First, to show injectivity, suppose that there are two Bernoulli line ensembles, $\mathfrak{B}, \widetilde{\mathfrak{B}}\in \Omega(0,T,\bar x^T, \bar y ^T)$ such that $\mathfrak{B}\neq \widetilde{\mathfrak{B}}$.
-Bernoulli line ensembles are determined by their values at integer times, so this would imply that there exists some $(q,r)$ such that $0\leq r\leq T$, $0\leq q \leq k$ and $B_q(r)\neq \widetilde{B}_q(r)$ where $B_q$ and $\widetilde{B}_q$ are components of $\mathfrak{B}$ and $\widetilde{\mathfrak{B}}$ respectively. 
-This implies that $\lambda^r(\mathfrak B)\neq \lambda^r(\widetilde{\mathfrak{B}})$, so we have injectivity. 
-
-Now, we prove surjectivity. For any $\bar\lambda=(\lambda^0,...,\lambda^T)$ we may define a Bernoulli line ensemble by $\mathfrak{B}(\bar\lambda)=(B_1(\bar\lambda),...,B_k(\bar\lambda))$ where $B_r(\bar\lambda)(i)=\lambda^i_r$ and $\lambda^i_r$ is the $r$\textit{-th} entry of $\lambda^i$. The restrictions on $TB_{\kappa/\mu}^T$ ensure that each $\mathfrak{B}(\bar\lambda)\in \Omega(0,T,\bar x^T,\bar y^T)$, and so $f(\mathfrak B(\bar{\lambda}))=(\lambda^0,\cdots \lambda^T)$ by the definition $\mathfrak{B}(\bar\lambda)$. 
-
-Applying the result regarding the relationship between number of sequences of interlaced partitions and skew Schur polynomial (Definition \ref{DefSkewSchurPoly}, (2)), we have $\lvert TB_{\lambda/\mu}^T\rvert =s_{\lambda/\mu}(1^T)$.
-
-Therefore, we conclude that 
+From the result regarding the relationship between number of sequences of interlaced partitions and skew Schur polynomials (Definition \ref{DefSkewSchurPoly}, (2)), we have $\lvert TB_{\lambda/\mu}^T\rvert =s_{\lambda/\mu}(1^T)$. In the rest of the proof, we want to establish the fact that there is a bijection between $\Omega(0,T,\vec{x}^{T},\vec{y}^{T})$ and $TB_{\kappa^{\prime}/\mu^{\prime}}^{T}$, Then, since $\mathbb{P}_{avoid, Ber}^{0,T,\vec{x}^{T},\vec{y}^{T}}$ puts uniform measure on the set $\Omega(0,T,\vec{x}^{T},\vec{y}^{T})$, we conclude
 \begin{align*}
-\pr(L_1(m)=\lambda_1,\cdots, L_k(m)=\lambda_k)
-=&{}\frac{\lvert \Omega(0, m, \vec{x}^T, \lambda)\rvert\cdot \lvert \Omega(m, T, \lambda, \vec{y}^T)\rvert}{\lvert \Omega(0, T, \vec{x}^T, \vec{y}^T)\rvert}\\
-=&{}\frac{s_{\lambda/\vec{x}^T}(1^{m})\cdot s_{\vec{y}^T/\lambda}(1^{n})}{s_{\vec{y}^T/\vec{x}^T}(1^T)}
-\end{align*} where $\lambda=(\lambda_{1},\cdots,\lambda_{k})$ is a partition such that $\vec{x}^{T}\subset\lambda\subset\vec{y}^{T}$.
+\pr_{avoid,Ber}^{0,T,\vec{x}^{T},\vec{y}^{T}}(L_1(m)=\lambda_1,\cdots, L_k(m)=\lambda_k)
+=&\frac{\lvert \Omega(0, m, \vec{x}^T, \lambda)\rvert\cdot \lvert \Omega(m, T, \lambda, \vec{y}^T)\rvert}{\lvert \Omega(0, T, \vec{x}^T, \vec{y}^T)\rvert}\\
+=&\frac{s_{\lambda^{\prime}/\mu^{\prime}}(1^{m})\cdot s_{\kappa^{\prime}/\lambda^{\prime}}(1^{n})}{s_{\kappa^{\prime}/\mu^{\prime}}(1^T)}
+\end{align*} where $\lambda=(\lambda_{1},\cdots,\lambda_{k})$ is a partition such that $\vec{x}^{T}\subset\lambda\subset\vec{y}^{T}$, thus finishing the proof.
+
+Now we prove that there exists a bijection $f:\Omega(0,T,\vec{x}^T,\vec{y}^{T})\rightarrow TB_{\kappa^{\prime}/\mu^{\prime}}^{T}$. For each line ensemble $\mathfrak{L}\in \Omega(0,T,\vec x^T,\vec y^T)$ with $\mathfrak{L}=(L_1,\cdots,L_k)$, we define a $k$-dimensional vector $\lambda^{i}(\mathfrak{L}):=(\lambda_{1}^{i},\lambda_{2}^{i},...,\lambda_{k}^{i})$, where $0 \leq i\leq T$ is an integer and $\lambda_{\alpha}^{i}=L_{\alpha}(i)$. In the following discussion we drop $\mathfrak{L}$ and briefly write $\lambda^{i}$. We claim that their conjugates $(\lambda^{i})^{\prime}$ form interlaced partitions:
+\begin{equation}{\label{LambdaInterlaced}}
+	(\lambda^{0})^{\prime}\preceq(\lambda^{1})^{\prime}\preceq\cdots\preceq(\lambda^{T})^{\prime}
+\end{equation}
+We first explain that $(\lambda^{i})^{\prime}$ is a partition for every $i=0,\cdots,T$. Actually, it simply follows from that $(\lambda^{i}_{\alpha})^{\prime}=\max\{j:\lambda_{j}^{i}\geq \alpha\}\geq \max\{j:\lambda_{j}^{i}\geq \alpha+1\}=(\lambda^{i}_{\alpha+1})^{\prime}$. Now we prove (\ref{LambdaInterlaced}), which requires us to show
+\begin{equation*}
+	(\lambda^{i+1}_{\alpha})^{\prime}\geq (\lambda^{i}_{\alpha})^{\prime}\geq (\lambda^{i+1}_{\alpha+1})^{\prime}\text{, for every } i=0,\cdots, T-1 \text{ and }\alpha=1,\cdots, k-1 
+\end{equation*}
+By the definition of Bernoulli random walk, we have $\lambda_{j}^{i+1}\geq\lambda_{j}^{i}\geq\lambda_{j}^{i+1}-1$. Therefore, we have 
+\begin{equation*}
+	\max\{j:\lambda_{j}^{i+1}\geq \alpha\}\geq\max\{j:\lambda_{j}^{i}\geq \alpha\}\geq\max\{j:\lambda_{j}^{i+1}\geq \alpha+1\}
+\end{equation*}
+and this is exactly (\ref{LambdaInterlaced}).
+Therefore, we have defined a function $f:\Omega(0,T,\bar x^T, \bar y ^T)\to TB_{\kappa^{\prime}/\mu^{\prime}}^T$ by
+\begin{equation}
+	f(\mathfrak{L})=\left((\lambda^{0})^{\prime},\cdots,(\lambda^{T})^{\prime}\right)
+\end{equation}
+
+Next, we prove the function $f$ is in fact a bijection. First, to show injectivity, suppose that there are two Bernoulli line ensembles, $\mathfrak{L}, \widetilde{\mathfrak{L}}\in \Omega(0,T,\bar x^T, \bar y ^T)$ such that $\mathfrak{L}\neq \widetilde{\mathfrak{L}}$.
+Bernoulli line ensembles are determined by their values at integer times, so this would imply that there exists some $(q,r)$ such that $0\leq r\leq T$, $0\leq q \leq k$ and $L_q(r)\neq \widetilde{L}_q(r)$ where $L_q$ and $\widetilde{L}_q$ are components of $\mathfrak{L}$ and $\widetilde{\mathfrak{L}}$ respectively. This implies that $\left(\lambda^r(\mathfrak{L})\right)^{\prime}\neq \left(\lambda^r(\widetilde{\mathfrak{L}})\right)^{\prime}$, so we have injectivity. 
+
+Now, we prove surjectivity. For any sequence of interlaced partitions $\bar\lambda=(\lambda^0,\cdots,\lambda^T)$ satisfying $(\lambda^{0})^{\prime}=\vec{x}^{T}$ and $(\lambda^{T})^{\prime}=\vec{y}^{T}$, we claim that $(\lambda^{0})^{\prime},\ (\lambda^{1})^{\prime},\cdots, (\lambda^{T})^{\prime}$ consist of an avoiding Bernoulli line ensemble in $\Omega(0,T,\vec{x}^{T},\vec{y}^{T})$ by letting $L_{\alpha}(i)=(\lambda_{\alpha}^{i})^{\prime}$. Applying Corollary \ref{Cortranspar}, we have $L_{\alpha}(i+1)-L_{\alpha}(i)$ can only be $0$ or $1$, thus $L_{\alpha}(i)$, $0\leq i\leq T$ is a Bernoulli random walk for every $1\leq \alpha\leq k$. In addition, by using $\lambda_{\alpha}^{i}\geq \lambda_{\alpha+1}^{i}$ we get $(\lambda_{\alpha}^{i})^{\prime}\geq (\lambda_{\alpha+1}^{i})^{\prime}$, which indicates that $k$ Bernoulli random walks avoid each other. Therefore, we proved the surjectivity and complete the proof.
 \end{proof}
 
 By Jacob-Trudi formula (\ref	{J-TFormula}) and Lemma \ref	{BerDist}, we further get
 \begin{align}{\label{BerDistJT}}
 	\begin{split}
-		\pr(L_1(m)=\lambda_1,\cdots, L_k(m)=\lambda_k)=\frac{\det\left[h_{\lambda_{i}-x_{j}^{T}+j-i}(1^{m})\right]_{i,j=1}^{k}\cdot\det\left[h_{y_{i}^{T}-\lambda_{j}+j-i}(1^{n})\right]_{i,j=1}^{k}}{\det\left[h_{y_{i}^{T}-x_{j}^{T}+j-i}(1^{T})\right]_{i,j=1}^{k}}
+		\pr(L_1(m)=\lambda_1,\cdots, L_k(m)=\lambda_k)=\frac{\det\left[e_{\lambda_{i}-\mu_{j}+j-i}(1^{m})\right]_{i,j=1}^{k}\cdot\det\left[e_{\kappa_{i}-\lambda_{j}+j-i}(1^{n})\right]_{i,j=1}^{k}}{\det\left[e_{\kappa_{i}-\mu_{j}+j-i}(1^{T})\right]_{i,j=1}^{k}}
 	\end{split}
 \end{align}
-
+where $\mu_{i}=\vec{x}^{T}_{i}$ and $\kappa_{i}=\vec{y}^{T}_{i}$.
 \subsection{Proof of Proposition \ref{WeakConvDistinct}}{\label{ProofProp1}} In this section, we first prove prove that the function in (\ref{Density}) is a density and then prove the weak convergence result in Proposition \ref{WeakConvDistinct}. The fact that (\ref{Density}) is a density is formulated in the following lemma.
 
 \begin{lemma}{\label{PfDensity}}
@@ -181,11 +203,11 @@ By Jacob-Trudi formula (\ref	{J-TFormula}) and Lemma \ref	{BerDist}, we further 
 	where the constant $Z$ is defined in (\ref{WCconst}), thus implying the function $\rho(\vec{z})$ in (\ref{Density}) is a density.
 \end{lemma}
 
-To prove Lemma \ref{PfDensity}, we are going to find the asymptotic formula of the probability mass function (\ref{BerDistJT}) and its relationship with function $\widetilde{\rho}$ in (\ref{rhotilde}). By Jacob-Trudi formula, we only need to find the asymptotic formula for complete symmetric functions $h_{\lambda_{i}-x_{j}^{T}+j-i}(1^{m})$, $h_{y_{i}^{T}-\lambda_{j}+j-i}(1^{n})$ and $h_{y_{i}^{T}-x_{j}^{T}+j-i}(1^{T})$. By the definition of random vector $Z^{T}$ in (\ref{ZTandL}), we find that 
+To prove Lemma \ref{PfDensity}, we are going to find the asymptotic formula of the probability mass function (\ref{BerDistJT}) and its relationship with function $\widetilde{\rho}$ in (\ref{rhotilde}). By Jacob-Trudi formula, we only need to find the asymptotic formula for elementary symmetric functions $e_{\lambda_{i}-x_{j}^{T}+j-i}(1^{m})$, $e_{y_{i}^{T}-\lambda_{j}+j-i}(1^{n})$ and $e_{y_{i}^{T}-x_{j}^{T}+j-i}(1^{T})$. By the definition of random vector $Z^{T}$ in (\ref{ZTandL}), we find that 
 \begin{align}
 	\left\{Z^{T}_{1}=z_1,\cdots, Z^{T}_{k}=z_k\right\}\equiv\left\{L_{1}(tT)=\lambda_1,\cdots,L_{k}(tT)=\lambda_k\right\}
 \end{align}
-where $\lambda_{i}=z_{i}\sqrt{T}+ptT$ are integers for $i\in\{1,\cdots,k\}$. In addition, $x_{i}^{T}\sim a_{i}\sqrt{T}+o\left(\sqrt{T}\right)$ and $y_{i}^{T}\sim b_{i}\sqrt{T}+pT+o\left(\sqrt{T}\right)$ by Definition \ref{DefScaled}. Therefore, we have
+where $\lambda_{i}=z_{i}\sqrt{T}+ptT$ are integers for $i=1,\cdots,k$. In addition, $x_{i}^{T}= a_{i}\sqrt{T}+o\left(\sqrt{T}\right)$ and $y_{i}^{T}= b_{i}\sqrt{T}+pT+o\left(\sqrt{T}\right)$ by Definition \ref{DefScaled}. Therefore, we have
 \begin{equation}{\label{3N}}
 \begin{split}
 	&\lambda_{i}-x_{j}^{T}+j-i=pm+(z_i-a_j)\sqrt{T}+o\left(T^{1/2}\right),\\ 
@@ -193,73 +215,136 @@ where $\lambda_{i}=z_{i}\sqrt{T}+ptT$ are integers for $i\in\{1,\cdots,k\}$. In 
 	& y_{i}^{T}-x_{j}^{T}+j-i=pT+(b_i-a_j)\sqrt{T}+o\left(T^{1/2}\right)
 \end{split}
 \end{equation}
-Thus, we only need to consider the complete symmetric functions in the form $h_{N}(1^{n})$, where $N=pn+x\sqrt{n}$ and $x\in[-R,R]$ is bounded. In this case, we have the following lemma giving the asymptotic behavior of $h_{N}(1^{n})$.
+Thus, we only need to consider the elementary symmetric functions in the form $e_{N}(1^{n})$, where $N=pn+x\sqrt{n}$ and $x\in[-R,R]$ is bounded. In this case, we have the following lemma giving the asymptotic behavior of $e_{N}(1^{n})$.
 \begin{lemma}{\label{Limh}}
 	Suppose that $p\in(0,1)$ and $R>0$ are given. Suppose that $x\in[-R,R]$ and $N=pn+\sqrt{n}x$ is an integer. Then 
 \begin{equation}
 	\begin{split}{\label{AsympForh}}
-&h_{N}(1^{n})=(\sqrt{2\pi})^{-1}\cdot \exp\left(-\frac{x^2}{2(1+p)p}\right)\cdot \exp\left(N\log(\frac{1+p}{p})\right)\cdot \exp\left(O(n^{-1/2})\right)\\
-& \cdot\exp\left(n\log(1+p)-(1/2)\log n-(1/2)\log(p(1+p))\right)
+&e_{N}(1^{n})=(\sqrt{2\pi})^{-1}\cdot \exp\left(-\frac{x^2}{2(1-p)p}\right)\cdot \exp\left(N\log\left(\frac{1-p}{p}\right)\right)\cdot \exp\left(O(n^{-1/2})\right)\\
+& \cdot\exp\left(-n\log(1-p)-(1/2)\log n-(1/2)\log\left(p(1-p)\right)\right)
 \end{split}
 \end{equation}
-where the constant in the big $O$ notation depends on $p$ and $R$ alone. Moreover, there exist positive constants $C,c>0$ depending on $p$ alone such that for all large enough $n\in\mathbb{N}$ and $N\in[0,(1+p)n]$
-\begin{equation}{\label{hbounded}}
-	h_{N}(1^n)\leq C\cdot \exp\left(N\log(p(1+p))+n\log(1+p)-(1/2)\log n\right)\cdot \exp\left(-cn^{-1}(N-pn)^2\right).
+where the constant in the big $O$ notation depends on $p$ and $R$ alone. Moreover, there exist positive constants $C,c>0$ depending on $p$ alone such that for all large enough $n\in\mathbb{N}$ and $N\in[0,n]$,
+\begin{equation}{\label{ebounded}}
+	e_{N}(1^n)\leq C\cdot \exp\left(N\log\frac{1-p}{p}-n\log(1-p)-(1/2)\log n\right)\cdot \exp\left(-cn^{-1}(N-pn)^2\right).
 \end{equation}
 \end{lemma}
 \begin{remark}
-	Notice that when $R>0$ is fixed, $N\in[pn-R\sqrt{n},pn+R\sqrt{n}]$. However, we specify the range of $N$ by $[0,(1+p)n]$. First, it is because when $N<0$ the complete symmetric function $h_{N}(1^{n})$ would be zero by Definition \ref{CompSymFunc} and the situation becomes trivial. Second, when $n$ is sufficiently large, the interval $[0,(1+p)n]$ will contain $[pn-R\sqrt{n},pn+R\sqrt{n}]$, so it's sufficient to consider the case when $N\in[0,(1+p)n]$.
+	Notice that when $R>0$ is fixed, $N\in[pn-R\sqrt{n},pn+R\sqrt{n}]$. However, we specify the range of $N$ by $[0,n]$. First, it is because when $N<0$ or $N>n$ the elementary symmetric function $e_{N}(1^{n})$ would be zero by Definition \ref{ElemSymFunc} and the situation becomes trivial. Second, when $n$ is sufficiently large, the interval $[0,n]$ will cover $[pn-R\sqrt{n},pn+R\sqrt{n}]$, so it's sufficient to consider the case when $N\in[0,n]$.
 \end{remark}
 \begin{proof}[Proof of Lemma \ref{Limh}]
 For clarity the proof is split into several steps.\\
-\textbf{Step 1.} In this step we prove (\ref	{AsympForh}). Using the formula for complete symmetric function (\ref{CompSymFunc}), we obtain
-\begin{align}{\label{CompSymFactorial}}
-	h_{N}(1^n)=\frac{(N+n-1)!}{N!(n-1)!}
+\textbf{Step 1.} In this step we prove (\ref	{AsympForh}). Using the formula for elementary symmetric function (\ref{ElemSymFunc}), we obtain
+\begin{align}{\label{ElemSymFactorial}}
+	e_{N}(1^n)=\frac{n!}{N!(n-N)!}
 \end{align}
 
 We have the following Stirling's formula \cite{stirling} that for $n\geq 1$
-$$n!=\sqrt{2\pi n}n^ne^{-n}e^{r_{n}}\text{, where }\frac{1}{12n+1}<r_{n}<\frac{1}{12n}$$
-Applying the Stirling's formula to equation (\ref{CompSymFactorial}) implies that
-\begin{align}{\label{hStirling}}
+\begin{equation}{\label{Stirling}}
+	n!=\sqrt{2\pi n}n^ne^{-n}e^{r_{n}}\text{, where }\frac{1}{12n+1}<r_{n}<\frac{1}{12n}
+\end{equation}
+Applying the Stirling's formula to equation (\ref{ElemSymFactorial}) implies that
+\begin{equation}{\label{hStirling}}
 \begin{split}
-	& h_{N}(1^n)=\frac{\exp\left( (N+n-1/2)\log(N+n-1)-(n-1/2)\log(n-1)-(N+1/2)\log(N)+O(n^{-1}) \right)}{\sqrt{2\pi}}\\
-	& = (\sqrt{2\pi})^{-1}\cdot \exp\left((N+n-1/2)\log\left(\frac{N+n-1}{(1+p)n}\right)-(n-1/2)\log(n-1)-(N+1/2)\log\left(\frac{N}{pn}\right)\right)\\
-	&\cdot \exp\left((N+n-1/2)\log((1+p)n)-(N+1/2)\log(pn)+O\left(n^{-1}\right)\right).
+	& e_{N}(1^n)=\frac{\exp\left( (n+1/2)\log n-(N+1/2)\log N-(n-N+1/2)\log(n-N)+O\left(n^{-1}\right) \right)}{\sqrt{2\pi}}\\
+	& = (\sqrt{2\pi})^{-1}\cdot \exp\left((n+1/2)\log n -(N+1/2)\log \frac{N}{pn}-(n-N+1/2)\log \frac{n-N}{(1-p)n}\right)\\
+	&\cdot \exp\left(-(N+1/2)\log(pn)-(n-N+1/2)\log((1-p)n)+O\left(n^{-1}\right)\right).
 \end{split}
-\end{align}
+\end{equation}
 
-Denote $\Delta=\sqrt{n}x$, and we now use the Taylor expansion of the logarithm and the expression for $N$ to get
-\begin{align*}
-	\log\left(\frac{N+n-1}{(1+p)n}\right)&=\log\left(\frac{pn+\Delta+n-1}{(1+p)n}\right)=\log\left(1+\frac{\Delta-1}{(1+p)n}\right)\\
-	& = \frac{\Delta-1}{(1+p)n}-\frac{1}{2}\frac{\Delta^2}{n^2(1+p)^{2}}+O\left(n^{-3/2}\right)
-\end{align*}
-Analogously, we have $$\log\left(\frac{N}{pn}\right)=\log\left(1+\frac{\Delta}{pn}\right)=\frac{\Delta}{pn}-\frac{1}{2}\frac{\Delta^2}{p^2 n^2}+O\left(n^{-3/2}\right)$$
+Denote $\Delta=\sqrt{n}x=O\left(n^{-1/2}\right)$, and we now use the Taylor expansion of the logarithm and the expression for $N$ to get
+\begin{equation*}
+	\log \frac{N}{pn}=\log\left(1+\frac{\Delta}{pn}\right) = \frac{\Delta}{pn}-\frac{1}{2}\frac{\Delta^2}{p^2 n^2}+O\left(n^{-3/2}\right)
+\end{equation*}
+Analogously, we have 
+\begin{equation*}
+\log \frac{n-N}{(1-p)n} =\log\left(1-\frac{\Delta}{(1-p)n}\right)=-\frac{\Delta}{(1-p)n}-\frac{1}{2}\frac{\Delta^2}{(1-p)^2 n^2}+O\left(n^{-3/2}\right)	
+\end{equation*}
+
 Plugging the two equations above to equation (\ref{hStirling}) we get
-\begin{align*}
-	& h_{N}(1^n)=(\sqrt{2\pi e})^{-1}\cdot \exp\left(\frac{\Delta(N+n)}{(1+p)n}-\frac{1}{2}\frac{\Delta^{2}(N+n)}{n^2(1+p)^2}\right)\exp\left(-\frac{\Delta N}{pn}+\frac{1}{2}\frac{\Delta^2 N}{p^2 n^2}\right)\\
-	& \cdot \exp\left((N+n-1/2)\log((1+p)n)-(n-1/2)\log(n-1)-(N+1/2)\log(pn)+O(n^{-1/2})\right)
-\end{align*}
+\begin{equation}{\label{eN}}
+\begin{split}
+	& e_{N}(1^n)= (\sqrt{2\pi})^{-1}\cdot \exp\left(-(N+1/2)\left[\frac{\Delta}{pn}-\frac{1}{2}\frac{\Delta^2}{p^2 n^2}+O\left(n^{-3/2}\right)\right]\right)\\
+	& \cdot \exp\left(-(n-N+1/2)\left[-\frac{\Delta}{(1-p)n}-\frac{1}{2}\frac{\Delta^2}{(1-p)^2 n^2}+O\left(n^{-3/2}\right)\right]\right)\\
+	& \cdot \exp\left((n+1/2)\log n-(N+1/2)\log (pn)-(n-N+1/2)\log((1-p)n)+O\left(n^{-1}\right)\right)
+\end{split}
+\end{equation}
 
 We next observe that 
-$$\frac{\Delta(N+n)}{(1+p)n}-\frac{\Delta N}{pn}=\Delta\left(\frac{(1+p)n+\Delta}{(1+p)n}-\frac{pn+\Delta}{pn}\right)=-\frac{\Delta^2}{(1+p)pn}$$
- and $$-\frac{1}{2}\frac{\Delta^2(N+n)}{n^2(1+p)^2}+\frac{1}{2}\frac{\Delta^2N}{p^2 n^2}=-\frac{\Delta^2}{2n}\left(\frac{N+n}{(1+p)^2n}-\frac{N}{p^2n}\right)=\frac{\Delta^2}{2(1+p)pn}+O\left(n^{-1/2}\right)$$
-Combining the above we conclude that 
-\begin{align}{\label{hfinal}}
+\begin{equation}{\label{eNComp}}
+	\begin{split}
+		&-\frac{\Delta(N+1/2)}{pn}+\frac{(n-N+1/2)\Delta}{(1-p)n}=-\frac{\Delta^{2}}{p(1-p)n}+O\left(n^{-1/2}\right)\\
+		 &\frac{\Delta^2(N+1/2)}{2n^2 p^2}+\frac{\Delta^2 (n-N+1/2)}{2(1-p)^2 n^2}=\frac{\Delta^2}{2p(1-p)n}+O\left(n^{-1/2}\right)\\
+		&(n+1/2)\log n-(N+1/2)\log (pn)-(n-N+1/2)\log((1-p)n)=\\
+		&N\log \frac{1-p}{p}-\frac{1}{2}\log p(1-p)-1/2\log n-n\log(1-p) 
+	\end{split}
+\end{equation}
+Plugging (\ref{eNComp}) into (\ref{eN}) we arrive at (\ref{AsympForh}).\\
+\textbf{Step 2.} In this step we prove (\ref{ebounded}). If $N=0$ or $n$ we know that $e_{N}(1^n)=1$ and then (\ref{ebounded}) is easily seen to hold with $C=1$ and any $c\in\left(0,\min(-\log p, -\log(1-p))\right)$. Thus it suffices to consider the case when $N\in[1,n-1]$ and in the sequel we also assume that $n\geq 2$.
+
+Combining (\ref{ElemSymFactorial}) and (\ref{Stirling}) we conclude that 
+\begin{equation}{\label{Inequlh}}
+	e_{N}(1^n)\leq \exp\left((n+1/2)\log n-(N+1/2)\log N-(n-N+1/2)\log (n-N)\right)
+\end{equation}
+From (\ref{Inequlh}) we get for all large enough $n$ that
+\begin{equation*}
 \begin{split}
-	& h_{N}(1^n)=(\sqrt{2\pi e})^{-1}\cdot \exp\left(-\frac{\Delta^2}{2(1+p)pn}\right)\cdot\exp\left(N\log\left(\frac{1+p}{p}\right)\right)\cdot\exp\left(O\left(n^{-1/2}\right)\right)\\
-	&\cdot \exp\left((n-1/2)\log((1+p)n)-(n-1/2)\log(n-1)-(1/2)\log(pn)\right).
+	&\phi_{n}:=\log\left[e_{N}(1^n)\cdot\exp\left(-N\log((1-p)/p)+n\log(1-p)+(1/2)\log n\right)\right]\\
+	&\leq (n+\frac{1}{2})\log n-(N+\frac{1}{2})\log N-(n-N+\frac{1}{2})\log (n-N)-N\log\frac{1-p}{p}+n\log(1-p)+\frac{1}{2}\log n\\
+	& =(n+1/2)\log n-(N+1/2)\log \frac{N}{pn}-(N+1/2)\log (pn)-(n-N+1/2)\log\frac{n-N}{(1-p)n}\\
+	& -(n-N+1/2)\log((1-p)n)-N\log\frac{1-p}{p}+n\log(1-p)+(1/2)\log n\\
+	&=-(N+\frac{1}{2})\log\frac{N}{pn}-(n-N+\frac{1}{2})\log\frac{n-N}{(1-p)n}-\frac{1}{2}\log \left(p(1-p)\right)\\
+	& =(pn+\Delta+1/2)\log \left(1+\frac{\Delta}{pn}\right)-((1-p)n-\Delta+1/2)\log\left(1-\frac{\Delta}{(1-p)n}\right)-\frac{1}{2}\log \left(p(1-p)\right)\\
+	&\leq C_{1}+\psi_{n}(\Delta)
 \end{split}
-\end{align}
-We finally observe that 
-\begin{align*}
+\end{equation*}
+where $C_{1}>0$ is sufficiently large depending on $p$ alone and
+\begin{equation}
+	\psi_{n}(s)=-(pn+s+1/2)\log\left(1+\frac{s}{pn}\right)-((1-p)n-s+1/2)\log\left(1-\frac{s}{(1-p)n}\right)
+\end{equation}
+where $s\in [-pn+1,(1-p)n-1]$. We claim that we can find positive constants $C_2>0$ and $c>0$ such that for all $n$ sufficiently large and $s\in[-pn+1,(1-p)n-1]$ we have
+\begin{equation}{\label{psinbounded}}
+	\psi_{n}(s)\leq C_2-cn^{-1}s^{2}
+\end{equation}
+We prove (\ref{psinbounded}) in the steps below. For now we assume its validity and conclude the proof of (\ref{ebounded}).
+In view of $\phi_{n}\leq C_1+\psi_{n}(s)$ and (\ref{psinbounded}) we know that
+\begin{equation*}
+	e_{N}(1^n)\leq \exp\left(C_1+C_2+N\log((1-p)/p)-n\log(1-p)-(1/2)\log n\right)\cdot\exp(-cn^{-1}(N-pn)^2),
+\end{equation*}
+which proves (\ref{ebounded}) with $C=e^{C_1+C_2}$.\\
+\textbf{Step 3.} In this step we prove (\ref{psinbounded}) in the case $s\in[0,n]$. A direct computation gives
+\begin{equation}{\label{CompDerivative}}
 \begin{split}
-	& (n-1/2)\log((1+p)n)-(n-1/2)\log(n-1)-(1/2)\log(pn)=(n-1/2)\log(1+p)\\
-	& +(n-1/2)\log n-(n-1/2)\log(n)-(n-1/2)\log(1-n^{-1})-(1/2)\log p-(1/2)\log n\\
-	& = n\log(1+p)+1-(1/2)\log n -(1/2)\log(p(1+p))+O\left(n^{-1}\right)
+	& \psi_{n}^{\prime}(s)=-\log\left(1+\frac{t}{pn}\right)+\log\left(1-\frac{t}{(1-p)n}\right)+\frac{1}{2}\cdot\frac{1}{pn+t}+\frac{1}{2}\cdot\frac{1}{(1-p)n-t}\\
+	& \psi_{n}^{\prime\prime}(s)=\frac{(n+1)\cdot s^2+(2p-1)n(n+1)\cdot s+p(p-1)n^2(n+1)+(1/2)n^2}{(pn+s)^2((1-p)n-s)^2}
 \end{split}
-\end{align*}
-and putting this in (\ref{hfinal}) we arrive at (\ref{AsympForh}).\\
-\textbf{Step 2.} In this step we prove (\ref{hbounded}).
+\end{equation}
+Notice that the numerator of $\psi_{n}^{\prime\prime}(s)$ is a quadratic function and its minimum is at $x_{min}=-\frac{(2p-1)n(n+1)}{2(n+1)}=(-p+1/2)n$, which is the midpoint of the interval $[-pn+1,(1-p)n-1]$. Thus, the numerator reaches its maximum at either of the two endpoints of the interval $[-pn+1,(1-p)n-1]$. The denominator is the square of a parabola that reaches its minimum also at the endpoints of the interval $[-pn+1,(1-p)n-1]$. Therefore, we conclude that 
+\begin{equation}{\label{psi2primebounded}}
+\begin{split}
+	& \psi_{n}^{\prime\prime}(s)\leq \psi_{n}^{\prime\prime}(-pn+1)=\psi_{n}^{\prime\prime}((1-p)n-1)=\frac{-\frac{1}{2}n^2+1}{(n-1)^2}=-\frac{1}{2} -\frac{1}{n-1}+\frac{1}{2}\cdot\frac{1}{(n-1)^2}\\
+	& \leq -\frac{1}{2}\cdot\frac{1}{n-1}\leq -\frac{1}{2n}=-2cn^{-1}
+\end{split}
+\end{equation}
+where $c=1/4$. Next, we prove (\ref{ebounded}) under two cases when $s\in[-pn+1,0]$ and $s\in [0,(1-p)n-1]$, respectively. \\
+$1^{\circ}$ When $s\in[-pn+1,0]$, by the fundamental theorem of calculus and (\ref{psi2primebounded}) we get 
+\begin{equation*}
+	\psi_{n}^{\prime}(s)=\psi_{n}^{\prime}(0)-\int_{s}^{0}\psi_{n}^{\prime\prime}(y)dy\geq \psi_{n}^{\prime}(0)-(-s)(-2cn^{-1})=\frac{2p-1}{2p(1-p)n}-2cn^{-1}s,
+\end{equation*}
+and a second application of the same argument yields for $s\in[-pn+1,0]$
+\begin{equation*}
+	\psi_{n}(s)=\psi_{n}(0)-\int_{s}^{0}\psi_{n}^{\prime}(y)dy\leq -\int_{t}^{0}\left(\frac{2p-1}{2p(1-p)n}-2cn^{-1}y\right) dy=\frac{(2p-1)s}{2p(1-p)n}-cn^{-1}s^2,
+\end{equation*}
+When $p\leq 1/2$, $\frac{(2p-1)s}{2p(1-p)n}\leq \frac{(2p-1)pn}{2p(1-p)n}=\frac{1-2p}{2(1-p)}$, so (\ref{psinbounded}) gets proved with $C_{2}=\frac{1-2p}{2(1-p)}$. When $p>1/2$, (\ref{psinbounded}) gets proved $C_{2}=0$.\\
+$2^{\circ}$ When $s\in[0,(1-p)n-1]$, similarly using the fundamental theorem of calculus and (\ref{psi2primebounded}) we get 
+\begin{equation*}
+	\psi_{n}^{\prime}(s)=\psi_{n}^{\prime}(0)+\int_{0}^{s}\psi_{n}^{\prime\prime}(y)dy\leq =\frac{2p-1}{2p(1-p)n}-2cn^{-1}s,
+\end{equation*}
+and a second application of the same argument yields for $s\in[0,(1-p)n-1]$
+\begin{equation*}
+	\psi_{n}(s)=\psi_{n}(0)+\int_{0}^{s}\psi_{n}^{\prime}(y)dy\leq \frac{(2p-1)s}{2p(1-p)n}-cn^{-1}s^2,
+\end{equation*}
+When $p\geq 1/2$, $\frac{(2p-1)s}{2p(1-p)n}\leq \frac{(2p-1)(1-p)n}{2p(1-p)n}=\frac{2p-1}{2p}$, so (\ref{psinbounded}) gets proved with $C_{2}=\frac{2p-1}{2p}$. When $p<1/2$, (\ref{psinbounded}) gets proved $C_{2}=0$. Combining cases $1^{\circ}$ and $2^{\circ}$ we complete the proof.
 \end{proof}
 
 Based on Lemma \ref{Limh}, we introduce the following lemma computing quantities $A_\lambda(T)$ and $B_{\lambda}(T)$ which help us to find the asymptotic behavior of probability mass function (\ref{BerDistJT}) and its relationship with $\widetilde{\rho}$.
@@ -267,17 +352,17 @@ Based on Lemma \ref{Limh}, we introduce the following lemma computing quantities
 	Assume the same notation as in Section \ref{DefMainRes} and Section \ref{SkewSchurPoly}. Fix $\vec{z}\in\mathbb{R}^{k}$ such that $z_1>\cdots>z_k$. Suppose that $T_{0}\in\mathbb{N}$ is sufficiently large so that for $T\geq T_{0}$ we have
 $$z_{k}\sqrt{T}+ptT\geq a_1\sqrt{T}+k+1 \text{ and } b_{k}\sqrt{T}+pT\geq z_{1}\sqrt{T}+ptT+k+1,$$ which ensures that $\lambda_{i}-x^{T}_{j}+j-i$ and $y^{T}_{i}-\lambda_{j}+j-i$ in (\ref{3N}) are positive. Then, for a signature $\lambda$ of length $k$ we define
 \begin{align}{\label{DefALambda}}
-	A_{\lambda}(T)=s_{\lambda/\vec{x}^T}(1^{m})\cdot s_{\vec{y}^T/\lambda}(1^{n}),\text{ where } m=\lfloor tT \rfloor \text{ and } n=T-m
+	A_{\lambda}(T)=s_{\lambda^{\prime}/\mu^{\prime}}(1^{m})\cdot s_{\kappa^{\prime}/\lambda^{\prime}}(1^{n}),\text{ where } m=\lfloor tT \rfloor \text{, } n=T-m\text{, }\mu=\vec{x}^{T}\text{, }\kappa=\vec{y}^{T}
 \end{align} 
 \begin{align}{\label{DefBLambda}}
 \begin{split}
-	& B_{\lambda}(T)=(\sqrt{2\pi})^{k}\exp\left(-kT\log(1+p)+k\log T +(k/2)\log(p(1+p))\right)\\
-	& \cdot \exp\left(-\log\left(\frac{1+p}{p}\right)\sum_{i=1}^{k}(y_{i}^{T}-x_{i}^{T})\right)\cdot A_{\lambda}(T)
+	& B_{\lambda}(T)=(\sqrt{2\pi})^{k}\cdot\exp\left(kT\log(1-p)+k\log T +(k/2)\log(p(1-p))\right)\\
+	& \cdot \exp\left(-\log\left(\frac{1-p}{p}\right)\sum_{i=1}^{k}(y_{i}^{T}-x_{i}^{T})\right)\cdot A_{\lambda}(T)
 \end{split}
 \end{align}
 We claim that
 \begin{align}{\label{BLambda}}
-	\lim_{T\rightarrow\infty} B_{\lambda}(T)=\widetilde{\rho}(z_1,\cdots,z_k)\cdot (2\pi p(p+1)t(1-t))^{-\frac{k}{2}}\cdot\prod_{i=1}^{k}\exp\left(-\frac{c_1(t,p)a_i^{2}+c_2(t,p)b_i^2}{2}\right)
+	\lim_{T\rightarrow\infty} B_{\lambda}(T)=\widetilde{\rho}(z_1,\cdots,z_k)\cdot (2\pi p(1-p)t(1-t))^{-\frac{k}{2}}\cdot\prod_{i=1}^{k}\exp\left(-\frac{c_1(t,p)a_i^{2}+c_2(t,p)b_i^2}{2}\right)
 \end{align}
 \end{lemma}
 \begin{proof}
@@ -285,155 +370,41 @@ We claim that
 From the Jacob-Trudi formula for skew Schur polynomials (\ref{J-TFormula}) and Lemma \ref{Limh} we have
 \begin{align}{\label{SkewSchur1}}
 	\begin{split}
-		& s_{\lambda/\vec{x}}(1^{m})=\det\left[\exp\left(-\frac{(\lambda_{i}-x_{j}^{T}+j-i-pm)^{2}}{2(1+p)pm}\right)\exp\left(O\left( T^{-1/2}\right)\right)\right]\cdot (\sqrt{2\pi})^{-k}\cdot\\
-		& \exp\left(km\log(1+p)-(k/2)\log m-(k/2)\log(p(1+p))+\log\left(\frac{1+p}{p}\right)\sum_{i=1}^{k}(\lambda_{i}-x^{T}_{i})\right)
+		& s_{\lambda^{\prime}/\mu^{\prime}}(1^{m})=\det\left[\exp\left(-\frac{(\lambda_{i}-x_{j}^{T}+j-i-pm)^{2}}{2(1-p)pm}\right)\exp\left(O\left( T^{-1/2}\right)\right)\right]\cdot (\sqrt{2\pi})^{-k}\cdot\\
+		& \exp\left(-km\log(1-p)-(k/2)\log m-(k/2)\log(p(1-p))+\log\left(\frac{1-p}{p}\right)\sum_{i=1}^{k}(\lambda_{i}-x^{T}_{i})\right)
 	\end{split}
 \end{align}
 \begin{align}{\label{SkewSchur2}}
 	\begin{split}
-		& s_{\vec{y}/\lambda}(1^{n})=\det\left[\exp\left(-\frac{(y_i-x_{j}^{T}+j-i-pn)^{2}}{2(1+p)pn}\right)\exp\left(O\left( T^{-1/2}\right)\right)\right]\cdot (\sqrt{2\pi})^{-k}\cdot\\
-		& \exp\left(kn\log(1+p)-(k/2)\log n-(k/2)\log(p(1+p))+\log\left(\frac{1+p}{p}\right)\sum_{i=1}^{k}(\lambda_{i}-x^{T}_{i})\right)
+		& s_{\kappa^{\prime}/\lambda^{\prime}}(1^{n})=\det\left[\exp\left(-\frac{(y_i^{T}-\lambda_{j}+j-i-pn)^{2}}{2(1-p)pn}\right)\exp\left(O\left( T^{-1/2}\right)\right)\right]\cdot (\sqrt{2\pi})^{-k}\cdot\\
+		& \exp\left(-kn\log(1-p)-(k/2)\log n-(k/2)\log(p(1-p))+\log\left(\frac{1-p}{p}\right)\sum_{i=1}^{k}(y_{i}^{T}-\lambda_{i})\right)
 	\end{split}
 \end{align}
 \begin{align}{\label{SkewSchur3}}
 	\begin{split}
-		& s_{\vec{y}^T/\vec{x}^{T}}(1^{T})=\det\left[\exp\left(-\frac{(y_{i}^{T}-x_{j}^{T}+j-i-pT)^{2}}{2(1+p)pT}\right)\exp\left(O\left( T^{-1/2}\right)\right)\right]\cdot (\sqrt{2\pi})^{-k}\cdot\\
-		& \exp\left(kT\log(1+p)-(k/2)\log T-(k/2)\log(p(1+p))+\log\left(\frac{1+p}{p}\right)\sum_{i=1}^{k}(y_{i}^{T}-x^{T}_{i})\right)
+		& s_{\kappa^{\prime}/\mu^{\prime}}(1^{T})=\det\left[\exp\left(-\frac{(y_{i}^{T}-x_{j}^{T}+j-i-pT)^{2}}{2(1-p)pT}\right)\exp\left(O\left( T^{-1/2}\right)\right)\right]\cdot (\sqrt{2\pi})^{-k}\cdot\\
+		& \exp\left(-kT\log(1-p)-(k/2)\log T-(k/2)\log(p(1-p))+\log\left(\frac{1-p}{p}\right)\sum_{i=1}^{k}(y_{i}^{T}-x^{T}_{i})\right)
 	\end{split}
 \end{align}
 where the constants in the big $O$ notation are uniform as $z_{i}$ vary over compact subsets of $\mathbb{R}$. Combining (\ref{SkewSchur2}), (\ref{SkewSchur1}) and (\ref{3N}) we see that
 \begin{align}{\label{BLambdafinal}}
 	\begin{split}
-		B_{\lambda}&(T)=(2\pi)^{-k/2}\cdot\exp(-(k/2)\log(p(1+p))+\log(t(1-t))+O(T^{-1}))\\
-		& \cdot \det\left[\exp\left(-\frac{(z_i-a_j)^2}{2p(1+p)t}+O(T^{-1/2})\right)\right]\cdot\det\left[\exp\left(-\frac{(b_i-z_j)^2}{2p(1+p)(1-t)}+O(T^{-1/2})\right)\right]
+		B_{\lambda}&(T)=(2\pi)^{-k/2}\cdot\exp(-(k/2)\log(p(1-p))-(k/2)\log(t(1-t))+O(T^{-1}))\\
+		& \cdot \det\left[\exp\left(-\frac{(z_i-a_j)^2}{2p(1-p)t}+O(T^{-1/2})\right)\right]\cdot\det\left[\exp\left(-\frac{(b_i-z_j)^2}{2p(1-p)(1-t)}+O(T^{-1/2})\right)\right]
 	\end{split}
 \end{align}
 Taking the limit $T\rightarrow\infty$ in (\ref{BLambdafinal}), and noticing the identities
 \begin{align*}
 	\begin{split}
-		\det\left[\exp\left(-\frac{(z_{i}-a_j)^2}{2p(1+p)t}\right)\right]=\det\left[e^{c_1(t,p)a_i z_j}\right]_{i,j=1}^{k}\cdot \prod_{i=1}^{k}\exp\left(-\frac{c_1(t,p)}{2}(a_i^2+z_i^2)\right)\text{, and}\\
-		\det\left[\exp\left(-\frac{(b_{i}-z_j)^2}{2p(1+p)(1-t)}\right)\right]=\det\left[e^{c_2(t,p)b_i z_j}\right]_{i,j=1}^{k}\cdot \prod_{i=1}^{k}\exp\left(-\frac{c_2(t,p)}{2}(b_i^2+z_i^2)\right)
+		\det\left[\exp\left(-\frac{(z_{i}-a_j)^2}{2p(1-p)t}\right)\right]=\det\left[e^{c_1(t,p)a_i z_j}\right]_{i,j=1}^{k}\cdot \prod_{i=1}^{k}\exp\left(-\frac{c_1(t,p)}{2}(a_i^2+z_i^2)\right)\text{, and}\\
+		\det\left[\exp\left(-\frac{(b_{i}-z_j)^2}{2p(1-p)(1-t)}\right)\right]=\det\left[e^{c_2(t,p)b_i z_j}\right]_{i,j=1}^{k}\cdot \prod_{i=1}^{k}\exp\left(-\frac{c_2(t,p)}{2}(b_i^2+z_i^2)\right)
 	\end{split}
 \end{align*}
 we get (\ref{BLambda}).
 \end{proof}
-
-\textbf{Step 3.} In this step, we prove that $\tilde{\rho}(z_1, \dots, z_k)$ is integrable. We use the formula
-$$\det \left[ A_{i,j}\right]_{i,j = 1}^k = \sum_{\sigma \in S_k} (-1)^{\sigma} \cdot \prod_{i = 1}^k A_{i, \sigma(i)}$$
-so that with the triangle inequality we see that
-\begin{equation}\label{Q1}
-\left|\tilde{\rho}(z_1, \dots, z_k) \right| \leq (k!)^2 \cdot \prod_{i = 1}^k e^{C |z_i| -c_3(t,p) z_i^2},
-\end{equation}
-with $C= \sum_{i = 1}^k c_1(t,p) |a_i| + c_2(t,p)|b_i|$. The right hand side of (\ref{Q1}) is integrable because of the square in the exponential, so by domination, we conclude that the same is true for $\tilde{\rho}$. 
-
-Therefore, 
-$$Z := \int_{\mathbb{R}^k}   \tilde{\rho}(z_1, \dots, z_k)d z_1 \cdots dz_k$$
-is finite, so to conclude the lemma it suffices to show that 
-\begin{equation}\label{S3}
-Z = (2\pi)^{\frac{k}{2}}(p(p+1)t(1-t))^{\frac{k}{2}}  e^{c_{1}(t,p)\sum_{i=1}^{k}a_{i}^{2}}\cdot e^{c_{2}(t,p)\sum_{i=1}^{k}b_{i}^{2}}\det\left[e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right]_{i,j=1}^{k},
-\end{equation}
-which we do in the steps below.\
-
-\textbf{Step 4.}
-From the branching relations for skew Schur polynomials we know that 
-\begin{equation}\label{Q2}
-\begin{split}
-&\sum_{\nu \in \mathsf{Sign}_k} \frac{ B_\nu(T)}{T^{k/2}} = (\sqrt{2\pi})^{k}  \cdot \exp \left( - k T \log (1+p)  + (k/2) \log T + (k/2) \log [p(1+p)]  \right) \times \\
-& \exp \left( -\log [(1+p) /p] \sum_{i = 1}^k (\kappa_i - \lambda_i)  \right) \cdot s_{\kappa / \lambda} (1^T) ,
-\end{split}
-\end{equation}
-where $\mathsf{Sign}_k$ is the set of signatures of length $k$. Combining this with 
-\begin{equation}\label{R3}
-\begin{split}
-&s_{\kappa / \lambda} (1^T) = \det \left[ \exp \left( - \frac{[\kappa_i - \lambda_j - i + j - p T]^2}{2(1+p)pT} \right)   \exp \left( O(T^{-1/2}) \right) \right] \cdot  (\sqrt{2\pi})^{-k}  \cdot\\
-&\exp \left( k T \log (1+p)  -(k/2) \log T - (k/2) \log [p(1+p)] + \log [(1+p) /p] \sum_{i = 1}^k (\kappa_i - \lambda_i)  \right),
-\end{split}
-\end{equation}
-we see that
-\begin{equation}\label{Q3}
-\begin{split}
-&\lim_{T \rightarrow \infty} \sum_{\nu \in \mathsf{Sign}_k} \frac{ B_\nu(T)}{T^{k/2}} = \det\left[e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right]_{i,j=1}^{k}.
-\end{split}
-\end{equation}
-For a signature $\nu \in \mathsf{Sign}_k$ and $T \in \mathbb{N}$ we let $Q_\nu(T)$  be the cube $[\nu_1T^{-1/2} - t \sqrt{T}, (\nu_1 + 1) T^{-1/2}- t \sqrt{T} )\times \cdots \times [\nu_kT^{-1/2} - t \sqrt{T}, (\nu_k + 1) T^{-1/2} - t \sqrt{T} )$. Also, let 
-\begin{equation}\label{Q4}
-f_T(z) = \sum_{\nu \in \mathsf{Sign}_k} B_{\nu}(T) \cdot {\bf 1}_{ Q_\nu(T) }(z),
-\end{equation}
-and observe that 
-\begin{equation}\label{Q5}
-\sum_{\nu \in \mathsf{Sign}_k} \frac{ B_\nu(T)}{T^{k/2}}  = \int_{\mathbb{R}^k} f_T(z) dz,
-\end{equation}
-be the step function $f_T$, where $dz$ represents the usual Lebesgue measure on $\mathbb{R}^k$.
-
-From 
-\begin{equation}\label{R4}
-\begin{split}
-&B_\mu(T) = (2\pi)^{-k/2} \cdot \exp \left( -(k/2) \left[ \log [p(1+p)] + \log[ t(1-t)] \right] + O(T^{-1}) \right)  \times \\
-& \det \left[ \exp \left( - \frac{[z_i - a_j]^2}{2(1+p)pt} + O(T^{-1/2}) \right) \right] \det \left[ \exp \left( - \frac{[b_i - z_j]^2}{2(1+p)p(1-t)} +O(T^{-1/2}) \right) \right]  .
-\end{split}
-\end{equation}
-we know that for almost every $(z_1, \dots, z_k) \in \mathbb{R}^k$, 
-\begin{equation}\label{Q6}
-\lim_{T \rightarrow \infty} f_T(z_1, \dots,z_k) = \tilde{\rho}(z_1, \dots,z_k)  \cdot (2\pi p(p+1)t(1-t))^{-\frac{k}{2}} \cdot \prod_{i = 1}^k \exp \left( - c_1(t,p) a_i^2  -  c_2(t,p) b_i^2  \right).
-\end{equation}
-We now claim that there is a non-negative integrable function $g$ on $\mathbb{R}^k$ s.t. for large enough $T$,
-\begin{equation}\label{Q7}
-|f_T(z_1, \dots,z_k)| \leq |g(z_1, \dots,z_k)|.
-\end{equation}
-For now we assume the validity of (\ref{Q7}) and conclude the proof of (\ref{S3}). We will prove (\ref{Q7}) in Step 4.\\
-
-Consider a dominating function $g$ as in (\ref{Q7}). Then from (\ref{Q6}) and the dominating convergence theorem we know that 
-\begin{equation}\label{Q8}
-\lim_{T \rightarrow \infty} \int_{\mathbb{R}^k} f_T(z)dz = \int_{\mathbb{R}^k} \tilde{\rho}(z_1, \dots,z_k)  \cdot (2\pi p(p+1)t(1-t))^{-\frac{k}{2}} \cdot \prod_{i = 1}^k \exp \left( - c_1(t,p) a_i^2  -  c_2(t,p) b_i^2  \right).
-\end{equation}
-Combining (\ref{Q8}), (\ref{Q5}) and (\ref{Q3}) we then have that
-\begin{equation*}
-\det\left[e^{-\frac{1}{2p(p+1)}(b_{i}-a_{j})^{2}}\right]_{i,j=1}^{k}= \int_{\mathbb{R}^k} \tilde{\rho}(z_1, \dots,z_k)  \cdot (2\pi p(p+1)t(1-t))^{-\frac{k}{2}} \cdot \prod_{i = 1}^k \exp \left( - c_1(t,p) a_i^2  -  c_2(t,p) b_i^2  \right),
-\end{equation*}
-which gives us (\ref{S3}).\\
-
-\textbf{Step 5.}
-We now construct an integrable function $g$ that satisfies (\ref{Q7}). Fix $\nu \in \mathsf{Sign}_k$. Then if 
-If $\nu_i \geq \lambda_i + n + 1$ or $\nu_i < \lambda_i$ for some $i \in \{1, \dots, k\}$ it follows that $s_{\nu/\lambda}(1^n) = 0$. Similarly, if $\kappa_i \geq \nu_i + m + 1$ or $\kappa_i < \nu_i$ for some $i \in \{1, \dots, k\}$ it follows that $s_{\kappa/\nu}(1^m) = 0$. Hence $B_\nu(T) = 0$ unless  
-$$n \geq \nu_i - \lambda_i \geq 0 \mbox{ and } m \geq \kappa_i - \nu_i \geq 0 \mbox{ for all $i \in \{1, \dots, k\}$},$$ so that for all large enough $T$ we have  
-\begin{equation}\label{V1}
-B_\nu(T) = 0, \mbox{ unless }|\nu_i - \lambda_j + j - i| \leq (1+p)n \mbox{ and } |\kappa_i - \nu_j +j - i| \leq (1+p)m 
-\end{equation}
-for all $i,j \in \{1, \dots, k\}$.
-
-From the definition of $B_\nu(T)$ and using (\ref{JTA}), we see that
-\begin{equation}\label{V2}
-\begin{split}
-&B_\nu(T)  = C_T \cdot \det \left[ H(\nu_i - \lambda_j + j - i, n)  \right]_{i,j = 1}^k \cdot \det \left[ H(\kappa_i - \nu_j + j - i, m) \right]_{i,j = 1}^k, \mbox{ where }\\
-&H(N,n) = h_N(1^n) \cdot \exp \left(- \log [(1+p) /p]N - n \log (1+p) + (1/2) \log n \right), \mbox{ and } \\
-&C_T = (\sqrt{2\pi})^{k} [p(1+p)]^{k/2} \cdot \exp \left( k \log T - (k/2) \log n - (k/2) \log m  \right).
-\end{split}
-\end{equation}
-We note that $C_T$ is uniformly bounded for all large enough $T$.
-
-From (\ref{EqHUB}) we know that there exist constants $C_1, c_1 > 0$ s.t. for large enough $T$ and $N_1 \in [0, (1+p)n]$ and $N_2 \in [0, (1+p)m]$ we get
-\begin{equation}\label{V3}
-H(N_1,n) \leq C_1 \exp\left( - c_1n^{-1}(N_1-pn)^2 \right) \mbox{ and }H(N_2,m) \leq C_1 \exp\left( - c_1m^{-1}(N_2-pm)^2 \right).
-\end{equation}
-Note that since $h_r = 0$ for $r<0$ we also know that (\ref{V3}) is true for all $N_1 \in [-(1+p)n, (1+p)n]$
-and $N_2 \in [-(1+p)m, (1+p)m]$. From (\ref{V1}), (\ref{V2}) and (\ref{V3}) it then follows that for all $\nu \in \mathsf{Sign}_k$ and $T$ sufficiently large
-\begin{equation}\label{V4}
-\begin{split}
-&0 \leq B_\nu(T) \leq \tilde{C} \sum_{\sigma \in S_k} \sum_{\tau \in S_k} {\bf 1} \{|\nu_i - \lambda_j + j - i| \leq (1+p)n \} \cdot   {\bf 1} \{ |\kappa_i - \nu_j +j - i| \leq (1+p)m \}   \\
-&\exp\left( - \tilde{c} T^{-1}[ (\nu_i - \sqrt{T}a_{\sigma(i)} -ptT)^2 + (\sqrt{T}b_i - \nu_{\tau(i)}+ ptT)^2]  \right),
-\end{split}
-\end{equation}
-with $\tilde{c}, \tilde{C} > 0$ dependend on $p, t, k$ but not on $T$, for sufficiently large $T$.
-
-In particular, we have that if $z \in \mathbb{R}^k$ then either $z \not \in Q_\nu(T)$ for any $\nu \in \mathsf{Sign}_k$ so that $f_T(z) = 0$ or $z \in Q_\nu(T)$ for some $\nu \in \mathsf{Sign}_k$ and then 
-(\ref{V4}) implies 
-\begin{equation}\label{V5}
-0 \leq f_T(z) \leq C \sum_{\sigma \in S_k} \sum_{\tau \in S_k}  \exp\left( - c[ (z_i - a_{\sigma(i)})^2 + (b_i - z_{\tau(i)})^2]  \right),
-\end{equation}
-with $C, c > 0$ dependend on $p, t, k$ but not on $T$, if $T$ is sufficiently large. Thus, (\ref{Q7}) holds with $g$ equal to the right side of (\ref{V5}), which we note is integrable.
-
+The following corollary of Lemma \ref{ALambdaBLambda} gives the connection between the probability mass function in (\ref{BerDist}) and the probability density function in (\ref{Density}).
 \begin{corollary}{\label{BerDistLim}}
-	Assume the same notation as in Lemma \ref{BerDist}. Fix $R>0$, take any $(z_1,\cdots,z_k)\in[-R,R]^k$ such that $\lambda_{i}=z_i\sqrt{T}+ptT$ are integers for $i\in\{1,\cdots,k\}$. Define
+	Assume the same notation as in Lemma \ref{BerDist}. Fix $R>0$, take any $(z_1,\cdots,z_k)\in[-R,R]^k$ such that $\lambda_{i}=z_i\sqrt{T}+ptT$ are integers for $i=1,\cdots,k$. Define function $h_{T}(z)$ on $\mathbb{R}^{k}$:
 	\begin{equation*}
 		\begin{split}
 			h_{T}(z)=(\sqrt{T})^k\mathbb{P}(L_{1}(m)=\lambda_1,\cdots,L_k(m)=\lambda_k)
@@ -452,27 +423,27 @@ with $C, c > 0$ dependend on $p, t, k$ but not on $T$, if $T$ is sufficiently la
 	\begin{equation}{\label{BerDistCor}}
 		\begin{split}
 			& \mathbb{P}(L_{1}(m)=\lambda_1,\cdots,L_k(m)=\lambda_k)\\
-			& =Z_{T}\cdot \frac{\det\left[\exp\left(-\frac{(z_{i}-a_j)^2}{2p(1+p)t}\right)\right]\cdot\det\left[\exp\left(-\frac{(b_{i}-z_j)^2}{2p(1+p)(1-t)}\right)\right]}{\det\left[\exp\left(-\frac{(b_{i}-a_j)^2}{2p(1+p)}\right)\right]}\cdot \exp(o(1))
+			& =Z_{T}\cdot \frac{\det\left[\exp\left(-\frac{(z_{i}-a_j)^2}{2p(1-p)t}\right)\right]\cdot\det\left[\exp\left(-\frac{(b_{i}-z_j)^2}{2p(1-p)(1-t)}\right)\right]}{\det\left[\exp\left(-\frac{(b_{i}-a_j)^2}{2p(1-p)}\right)\right]}\cdot \exp(o(1))
 		\end{split}
 	\end{equation}
 	where 
 	\begin{equation}{\label{ZT}}
 		\begin{split}
-			Z_{T}&=(\sqrt{2\pi})^{-k}\exp\left(km\log(1+p)-(k/2)\log m-(k/2)\log(p(1+p))\right)\\
-			&\cdot \exp\left(kn\log(1+p)-(k/2)\log n-(k/2)\log(p(1+p))\right)\\
-			& \cdot \exp\left(-kT\log(1+p)+(k/2)\log T+(k/2)\log(p(1+p))\right)\\
-			&=(\sqrt{2\pi})^{-k}\exp\left(-(k/2)\log(p(1+p)t(1-t))-(k/2)\log T\right)=\left(2\pi p(1+p)t(1-t)\right)^{-k/2}
+			Z_{T}&=(\sqrt{2\pi})^{-k}\exp\left(-km\log(1-p)-(k/2)\log m-(k/2)\log(p(1-p))\right)\\
+			&\cdot \exp\left(-kn\log(1-p)-(k/2)\log n-(k/2)\log(p(1-p))\right)\\
+			& \cdot \exp\left(kT\log(1-p)+(k/2)\log T+(k/2)\log(p(1-p))\right)\\
+			&=(\sqrt{2\pi})^{-k}\exp\left(-(k/2)\log(p(1-p)t(1-t) \right)=\left(2\pi p(1-p)t(1-t)\right)^{-k/2}
 		\end{split}
 	\end{equation}
 	Plugging (\ref{ZT}) into (\ref{BerDistCor}) we conclude (\ref{hT}). In addition, we have
 	\begin{equation}{\label{hTfinal}}
 		\begin{split}
-			h_{T}(z_1,\cdots,z_k)=\frac{\det\left[\exp\left(-\frac{(z_{i}-a_j)^2}{2p(1+p)t}\right)\right]\cdot\det\left[\exp\left(-\frac{(b_{i}-z_j)^2}{2p(1+p)(1-t)}\right)\right]}{(2\pi p(1+p)t(1-t))^{k/2}\det\left[\exp\left(-\frac{(b_{i}-a_j)^2}{2p(1+p)}\right)\right]}\cdot \exp(o(1))
+			h_{T}(z_1,\cdots,z_k)=\frac{\det\left[\exp\left(-\frac{(z_{i}-a_j)^2}{2p(1-p)t}\right)\right]\cdot\det\left[\exp\left(-\frac{(b_{i}-z_j)^2}{2p(1-p)(1-t)}\right)\right]}{(2\pi p(1-p)t(1-t))^{k/2}\det\left[\exp\left(-\frac{(b_{i}-a_j)^2}{2p(1-p)}\right)\right]}\cdot \exp(o(1))
 		\end{split}
 	\end{equation}
-	Notice that the determinants in (\ref{hTfinal}) are continuous function of $z$, so they are all bounded on the compact set $[-R,R]^{k}$. Plus, $o(1)$ is uniformly bounded on $[-R,R]^{k}$. Therefore, $h_{T}(z)$ is bounded over $[-R,R]^has k$
+	Notice that the determinants in (\ref{hTfinal}) are continuous function of $z$, so they are all bounded on the compact set $[-R,R]^{k}$. Plus, $o(1)$ is uniformly bounded on $[-R,R]^{k}$. Therefore, $h_{T}(z)$ is bounded over $[-R,R]^k$.m
 \end{proof}
-Before proving Lemma \ref{PfDensity}, we need to introduce another result regarding the non-vanishing of the determinant.
+Before proving Lemma \ref{PfDensity}, we need to introduce another result regarding the non-vanishing of determinant.
 
 \begin{lemma}{\label{NonVanish}}
 	Suppose the vector $\vec{m}=(m_1,\cdots,m_p)$ satisfies $k=\sum_{i=1}^{p}m_{i}$, and $\alpha_1>\alpha_2>\cdots>\alpha_p$. Then the following determinant
@@ -508,7 +479,7 @@ Choose $T_{0}$ as we did in Lemma \ref{ALambdaBLambda} and assume $T\geq T_{0}$.
 \textbf{Step 2.} In this step we prove that $\widetilde{\rho}(z_1,\cdots,z_k)$ is integrable. Using the formula $$\det\left[A_{i,j}\right]_{i,j=1}^{k}=\sum_{\sigma\in S_{k}}(-1)^{\sigma}\cdot\prod_{i=1}^{k}A_{i,\sigma(i)}$$ and the triangle inequality we see that 
 \begin{equation}{\label{Det1bounded}}
 	\begin{split}
-		& \left|\det\left[e^{c_1(t,p)a_i z_j}\right]_{i,j=1}^{k}\right|\leq\sum_{\sigma\in S_k}\prod_{j=1}^{k}\left|e^{c_1(t,p)a_{\sigma(j)}z_{j}}\right|\leq \sum_{\sigma\in S_k}\prod_{j=1}^{k}e^{c_1(t,p)\left(\sum_{i=1}^{k}|a_i|\right)\cdot|z_j|}\\
+		& \left|\det\left[e^{c_1(t,p)a_i z_j}\right]_{i,j=1}^{k}\right|\leq\sum_{\sigma\in S_k}\prod_{j=1}^{k}e^{c_1(t,p)a_{\sigma(j)}z_{j}}\leq \sum_{\sigma\in S_k}\prod_{j=1}^{k}e^{c_1(t,p)\left(\sum_{i=1}^{k}|a_i|\right)\cdot|z_j|}\\
 		& \leq (k!)\prod_{i=1}^{k}e^{C_1|z_j|}\text{, where $C_{1}=\sum_{i=1}^{k}c_1(t,p)|a_i|$}
 	\end{split}
 \end{equation}
@@ -519,30 +490,30 @@ Analogously, define the constant $C_2=\sum_{i=1}^{k}c_2(t,p)|b_i|$ and we have
 Plugging (\ref{Det1bounded}) and (\ref{Det2bounded}) into the expression of $\widetilde{\rho}$ we have 
 \begin{align}{\label{Dominate}}
 	|\widetilde{\rho}(z_1,\cdots,z_k)|\leq (k!)^2\cdot\prod_{i=1}^{k}e^{C|z_i|-c_3(t,p)z_i^2}
-\end{align} where $C=\sum_{i=1}^{k}c_1(t,p)|a_i|+c_2(t,p)|b_{i}|$. Since the right side of (\ref{Dominate}) is integrable (because of the square in the exponential) we conclude that $\widetilde{\rho}$ is also integrable by domination.\\
+\end{align} where $C=C_{1}+C_{2}$. Since the right side of (\ref{Dominate}) is integrable (because of the square in the exponential) we conclude that $\widetilde{\rho}$ is also integrable by domination.\\
 \textbf{Step 3. }In this step, we prove (\ref{NormCons}) and conclude Lemma \ref{PfDensity}. Using the branching relations for skew Schur polynomials (\ref{Branch}) we know that
 \begin{align}{\label{BranchRelation}}
 	\begin{split}
-		& \sum_{\lambda\in\mathfrak{W}_{k}}\frac{B_{\lambda}(T)}{T^{k/2}}=(\sqrt{2\pi})^k\cdot\exp(-kT\log(1+p)+(k/2)\log T+(k/2)\log p(1+p))\\ & \cdot \exp\left(-\log\left(\frac{1+p}{p}\right)\sum_{i=1}^{k}(y_{i}^{T}-x_{i}^{T})\right)\cdot s_{\vec{y}^T/\vec{x}^T}(1^{T})
+		& \sum_{\lambda\in\mathfrak{W}_{k}}\frac{B_{\lambda}(T)}{T^{k/2}}=(\sqrt{2\pi})^k\cdot\exp(kT\log(1-p)+(k/2)\log T+(k/2)\log p(1-p))\\ & \cdot \exp\left(-\log\left(\frac{1-p}{p}\right)\sum_{i=1}^{k}(y_{i}^{T}-x_{i}^{T})\right)\cdot s_{\kappa^{\prime}/\mu^{\prime}}(1^{T})
 	\end{split}
 \end{align}
 Plugging (\ref{3N}) and (\ref{SkewSchur3}) into (\ref{BranchRelation}) we conclude
 \begin{align}{\label{LimSum}}
-	\lim_{T\rightarrow\infty}\sum_{\lambda\in\mathfrak{W}_{k}}\frac{B_{\lambda}(T)}{T^{k/2}}=\det\left[e^{-\frac{1}{2p(1+p)}(b_i-a_j)^2}\right]_{i,j=1}^{k}
+	\lim_{T\rightarrow\infty}\sum_{\lambda\in\mathfrak{W}_{k}}\frac{B_{\lambda}(T)}{T^{k/2}}=\det\left[e^{-\frac{1}{2p(1-p)}(b_i-a_j)^2}\right]_{i,j=1}^{k}
 \end{align}
 For a signature $\lambda\in\mathfrak{W}_{k}$ and $T\in\mathbb{N}$ we define $Q_{\lambda}(T)$ to be the cube $[\lambda_{1}T^{-1/2}-pt\sqrt{T},(\lambda_{1}+1)T^{-1/2}-pt\sqrt{T}]\times \cdots\times[\lambda_{k}T^{-1/2}-pt\sqrt{T},(\lambda_{k}+1)T^{-1/2}-pt\sqrt{T}]$ with Lebesgue measure $T^{-k/2}$. In addition, we define the simple function $f_{T}$ through
 \begin{align}
-	f_{T}(z)=\sum_{\lambda\in\mathfrak{W}_{k}}B_{\lambda}(T)\cdot\mathbf{1}_{Q_{\lambda}(T)}(z)
+	f_{T}(z)=\sum_{\lambda\in\mathfrak{W}_{k}}B_{\lambda}(T)\cdot\mathbf{1}_{Q_{\lambda}(T)}(z)\cdot \mathbf{1}_{\mathbb{W}_{k}^{o}}(z)
 \end{align}
 and observe that 
 \begin{align}{\label{IntSimpleFunc}}
-	\sum_{\lambda\in\mathfrak{W}_{k}}\frac{B_{\lambda}(T)}{T^{k/2}}=\int_{\mathbb{R}^{k}}f_{T}(\vec{z})dz
+	\sum_{\lambda\in\mathfrak{W}_{k}}\frac{B_{\lambda}(T)}{T^{k/2}}=\int_{\mathbb{R}^{k}}f_{T}(z)dz
 \end{align}
 where $dz$ represents the usual Lebesgue measure on $\mathbb{R}^{k}$.
 
-In view of (\ref{BLambdafinal}) we know that for almost every $z=(z_1,\cdots,z_k)\in\mathbb{R}^{k}$ we have 
+In view of (\ref{BLambda}) we know that for almost every $z=(z_1,\cdots,z_k)\in\mathbb{R}^{k}$ we have 
 \begin{align}{\label{PointwiseConvfT}}
-	\lim_{T\rightarrow\infty}f_{T}(z)=\widetilde{\rho}(z)\cdot(2\pi p(1+p)t(1-t))^{-\frac{k}{2}}\cdot\prod_{i=1}^{k}\exp\left(-\frac{c_1(t,p)a_i^2+c_2(t,p)b_i^2}{2}\right).
+	\lim_{T\rightarrow\infty}f_{T}(z)=\widetilde{\rho}(z)\cdot(2\pi p(1-p)t(1-t))^{-\frac{k}{2}}\cdot\prod_{i=1}^{k}\exp\left(-\frac{c_1(t,p)a_i^2+c_2(t,p)b_i^2}{2}\right).
 \end{align}
 We claim that there exists a non-negative integrable function $g$ on $\mathbb{R}^{k}$ such that if $T$ is large enough 
 \begin{align}{\label{Dominatefg}}
@@ -553,36 +524,36 @@ We will prove (\ref{Dominatefg}) in Step 4 below. For now we assume its validity
 From (\ref{PointwiseConvfT}) and the dominated convergence theorem with dominating function $g$ as in (\ref{Dominatefg}) we know that
 \begin{equation}
 	\begin{split}{\label{LimIntfT}}
-	\lim_{T\rightarrow\infty}\int_{\mathbb{R}^{k}}f_T(z)dz=\int_{\mathbb{R}^k}\widetilde{\rho}(z)dz \cdot(2\pi p(1+p)t(1-t))^{-\frac{k}{2}}\cdot\prod_{i=1}^{k}\exp\left(-\frac{c_{1}(t,p)a_i^2+c_2(t,p)b_i^2}{2}\right)
+	\lim_{T\rightarrow\infty}\int_{\mathbb{R}^{k}}f_T(z)dz=\int_{\mathbb{R}^k}\widetilde{\rho}(z)dz \cdot(2\pi p(1-p)t(1-t))^{-\frac{k}{2}}\cdot\prod_{i=1}^{k}\exp\left(-\frac{c_{1}(t,p)a_i^2+c_2(t,p)b_i^2}{2}\right)
 \end{split}
 \end{equation}
 Combining (\ref{LimIntfT}), (\ref{LimSum}) and (\ref{IntSimpleFunc}) we conclude that
 \begin{equation}
 	\begin{split}
-		\det\left[e^{-\frac{1}{2p(1+p)}(b_i-a_j)^2}\right]_{i,j=1}^{k}=\int_{\mathbb{R}^k}\widetilde{\rho}(z)dz\cdot(2\pi p(1+p)t(1-t))^{-\frac{k}{2}}\cdot\prod_{i=1}^{k}\exp\left(-\frac{c_1(t,p)a_i^2+c_2(t,p)b_i^2}{2}\right).
+		\det\left[e^{-\frac{1}{2p(1-p)}(b_i-a_j)^2}\right]_{i,j=1}^{k}=\int_{\mathbb{R}^k}\widetilde{\rho}(z)dz\cdot(2\pi p(1-p)t(1-t))^{-\frac{k}{2}}\cdot\prod_{i=1}^{k}\exp\left(-\frac{c_1(t,p)a_i^2+c_2(t,p)b_i^2}{2}\right).
 	\end{split}
 \end{equation}
 which clearly establishes (\ref{NormCons}).\\
-\textbf{Step 5. }In this step we demonstrate an integrable function $g$ that satisfies (\ref{Dominatefg}). Let us fix $\lambda\in\mathfrak{W}_k$. If $\lambda_i\geq x_{i}^T+m+1$ or $\lambda_i<x_i^T$ for some $i\in\{1,2,\cdots,k\}$ we know that $s_{\lambda/\vec{x}^T}(1^m)=0$ because there is no interlaced sequence of partitions between $\vec{x}^T$ and $\lambda$. Similarly, if $y_{i}^T\geq \lambda_i+n+1$ or $y_{i}^T< \lambda_i$ for some $i\in\{1,2,\cdots,k\}$, we have $s_{\vec{y}^T/\lambda}(1^n)=0$. We conclude that $B_{\lambda}(T)=0$ unless
+\textbf{Step 4. }In this step we demonstrate an integrable function $g$ that satisfies (\ref{Dominatefg}). Let us fix $\lambda\in\mathfrak{W}_k$. If $\lambda_i\geq x_{i}^{T}+m+1$ or $\lambda_i<\mu_{i}$ for some $i\in\{1,2,\cdots,k\}$ we know that $s_{\lambda^{\prime}/\mu^{\prime}}(1^m)=0$ because there is no avoiding Bernoulli ensembles starting with $\mu$ and ending with $\lambda$. Similarly, if $y_{i}^T\geq \lambda_i+n+1$ or $y_{i}^T< \lambda_i$ for some $i\in\{1,2,\cdots,k\}$, we have $s_{\kappa^{\prime}/\lambda^{\prime}}(1^n)=0$. We conclude that $B_{\lambda}(T)=0$ unless
 $$m\geq \lambda_i-x^{T}_i\geq 0\text{ and } n\geq y^{T}_i-\lambda_i\geq 0\text{ for all } i\in\{1,\cdots,k\}$$
 which implies that for all large enough $T$ we have
 \begin{equation}{\label{BLambda0unless}}
 	\begin{split}
-		B_{\lambda}(T)=0 \text{, unless }|\lambda_{i}-x_{j}^T+j-i|\leq (1+p)m \text{ and }|y_{i}^T-\lambda_{j}+j-i|\leq (1+p)m
+		B_{\lambda}(T)=0 \text{, unless }|\lambda_{i}-x_{j}^T+j-i|\leq (1+p)m \text{ and }|y_{i}^T-\lambda_{j}+j-i|\leq (1+p)n
 	\end{split}
 \end{equation}
-for all $i,j\in\{1,\cdots, k\}$. This is because when $T$ is sufficiently large,
-\begin{equation}
+for all $i,j\in\{1,\cdots, k\}$. This is because if there exist $i,j$ such that $(1+p)m<|\lambda_i-x^{T}_{j}+j-i|$, then we have 
+\begin{equation*}
 	\begin{split}
 		(1+p)m<|\lambda_i-x^{T}_{j}+j-i|\leq \lambda_1-x^{T}_k+k-1=(\lambda_1-\lambda_k)+(\lambda_k-x^{T}_k)+k-1
 	\end{split}
-\end{equation}
-implies $\lambda_{k}-x_k^T>m$ and similar result holds for $y_{i}^T-\lambda_{j}+j-i$. Using the definition of $A_{\lambda}(T)$ and $B_{\lambda}(T)$ we know that
+\end{equation*}
+When $T$ is sufficiently large, the above inequality implies $\lambda_{k}-x_k^T>m$ so that $B_{\lambda}(T)=0$, and similar result holds for $y_{i}^T-\lambda_{j}+j-i$, which justifies (\ref{BLambda0unless}). Using the definition of $A_{\lambda}(T)$ and $B_{\lambda}(T)$ we know that
 \begin{equation}{\label{BHC}}
 	\begin{split}
-		& B_{\lambda}(T)=C_{T}\cdot \det[H(\lambda_i-x_j^{T}+j-i,m)]_{i,j=1}^{k}\cdot\det[H(y_i^{T}-\lambda_j+j-i,n)]_{i,j=1}^{k}\text{, where}\\
-		& H(N,n)=h_{N}(1^n)\cdot\exp\left(-N\log\left(\frac{1+p}{p}\right)-n\log(1+p)+(1/2)\log n\right)\text{, and}\\
-		& C_T=(\sqrt{2\pi})^k (p(1+p))^{k/2}\cdot\exp(k\log T-(k/2)\log n-(k/2)\log m).
+		& B_{\lambda}(T)=C_{T}\cdot \det[E(\lambda_i-x_j^{T}+j-i,m)]_{i,j=1}^{k}\cdot\det[E(y_i^{T}-\lambda_j+j-i,n)]_{i,j=1}^{k}\text{, where}\\
+		& E(N,n)=e_{N}(1^n)\cdot\exp\left(-N\log\left(\frac{1-p}{p}\right)+n\log(1-p)+(1/2)\log n\right)\text{, and}\\
+		& C_T=(\sqrt{2\pi})^k (p(1-p))^{k/2}\cdot\exp(k\log T-(k/2)\log n-(k/2)\log m).
 	\end{split}
 \end{equation}
 Notice that $C_{T}$ is uniformly bounded for all $T$ large enough, because
@@ -593,22 +564,22 @@ Notice that $C_{T}$ is uniformly bounded for all $T$ large enough, because
 \end{equation}
 and $O\left(T^{-1}\right)$ is uniformly bounded.
 
-In view of (\ref{hbounded}) we know that we can find constants $C_1$, $c_1>0$ such that for all large enough $T$ and $N_{1}\in[0,(1+p)m]$ and $N_2\in[0,(1+p)n]$ we have 
+In view of (\ref{ebounded}) we know that we can find constants $C_1$, $c_1>0$ such that for all large enough $T$ and $N_{1}\in[0,m]$ and $N_2\in[0,n]$ we have 
 \begin{equation}{\label{H1H2}}
 	\begin{split}
-		H(N_1,m)\leq C_1\exp(-c_1 m^{-1}(N_1-pm)^2) \text{ and } H(N_2,n)\leq C_1\exp(-c_1 n^{-1}(N_2-pn)^2)
+		E(N_1,m)\leq C_1\exp(-c_1 m^{-1}(N_1-pm)^2) \text{ and } E(N_2,n)\leq C_1\exp(-c_1 n^{-1}(N_2-pn)^2)
 	\end{split}
 \end{equation}
-Observe that since $h_{r}=0$ for $r<0$ so we know that (\ref{H1H2}) also holds for all $N_1\in[-(1+p)m,(1+p)m]$ and $N_2\in[-(1+p)n,(1+p)n]$. Combining (\ref{BLambda0unless}), (\ref{BHC}) and (\ref{H1H2}) we see that for all $\lambda\in\mathfrak{W}_k$ and $T$ sufficiently large
+Observe that since $e_{r}(1^{n})=0$ for $r>n$ so we know that (\ref{H1H2}) also holds for all $N_1\in[-(1+p)m,(1+p)m]$ and $N_2\in[-(1+p)n,(1+p)n]$. Combining (\ref{BLambda0unless}), (\ref{BHC}) and (\ref{H1H2}) we see that for all $\lambda\in\mathfrak{W}_k$ and $T$ sufficiently large
 \begin{equation}{\label{BLambdaBounded}}
 	\begin{split}
 		0\leq B_{\lambda}(T)\leq \widetilde{C}\sum_{\sigma\in S_{k}}\sum_{\tau\in S_{k}}\mathbf{1}\{|\lambda_i-x_j^{T}+j-i|\leq(1+p)m\}\cdot\mathbf{1}\{|y_{i}^{T}-\lambda_{j}+j-i|\leq(1+p)n\}\\
-		\cdot \exp\left(-\widetilde{c}T^{-1}[(\lambda_i-\sqrt{T}a_{\sigma(i)}-ptT)^2+(\sqrt{T}b_{i}-\lambda_{\tau(i)}+ptT)^2]\right)
+		\cdot \exp\left(-\widetilde{c}T^{-1}\left[(\lambda_i-\sqrt{T}a_{\sigma(i)}-ptT)^2+(\sqrt{T}b_{i}-\lambda_{\tau(i)}+ptT)^2\right]\right)
 	\end{split}
 \end{equation}
 where $\widetilde{c}$, $\widetilde{C}>0$ depend on $p,t,k$ but not on $T$ provided that it is sufficiently large.
 
-In particular, we see that if $z\in\mathbb{R}^{k}$ then either $z\not\in Q_{\lambda}(T)$ for any $\lambda\in\mathfrak{W}_{k}$ in which case $f_{T}(z)=0$ or $z\in Q_{\lambda}(T)$ for some $\lambda\in\mathfrak{W}_k$ in which case (\ref{BLambdaBounded}) implies
+In particular, we see that if $z\in\mathbb{R}^{k}$ then either $z\not\in Q_{\lambda}(T)$ for any $\lambda\in\mathfrak{W}_{k}$ in which case $f_{T}(z)=0$ or $z\in Q_{\lambda}(T)$ for some $\lambda\in\mathfrak{W}_k$ in which case (\ref{BLambdaBounded}) and (\ref{3N}) imply
 \begin{equation}{\label{DominatefT}}
 	\begin{split}
 		0\leq f_T(z)\leq C\sum_{\sigma\in S_{k}}\sum_{\tau\in S_{k}}\exp\left(-c((z_i-a_{\sigma(i)})^2+(b_i-z_{\tau(i)})^2)\right)
@@ -632,7 +603,7 @@ which implies that:
 	&\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in O)\geq\liminf_{T\rightarrow\infty}\mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in O\cap\mathbb{W}_{k}^{o})\\
 	&\geq \int_{\mathbb{W}_{k}^{o}\cap O}\rho(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}= \int_{O}\rho(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}
 \end{align*}
-The second inequality uses the above result (\ref{WeakConv}), since $\mathbb{W}_{k}^{o}\cap O$ is an open set in $\mathbb{W}_{k}^{o}$. The last equality is because $\rho(z)$ is zero outside $\mathbb{W}_{k}^{o}$. The rest of the proof will be divided into $4$ steps. In Step 1, we prove that weak convergence holds on every closed rectangle. In Step 2, we prove the inequality (\ref{WeakConv}) by writing open set as countable union of almost disjoint rectangles. \\
+The second inequality uses the above result (\ref{WeakConv}), since $\mathbb{W}_{k}^{o}\cap O$ is an open set in $\mathbb{W}_{k}^{o}$. The last equality is because $\rho(z)$ is zero outside $\mathbb{W}_{k}^{o}$. The rest of the proof will be divided into $2$ steps. In Step 1, we prove that weak convergence holds on every closed rectangle. In Step 2, we prove the inequality (\ref{WeakConv}) by writing open set as countable union of almost disjoint rectangles. \\
 \noindent \textbf{Step 1. }In this step, we establish the following result:\\
 For any closed rectangle $R=[u_{1},v_{1}]\times [u_{2},v_{2}]\times\cdots\times[u_{k},v_{k}]\in\mathbb{W}_{k}^{o}$, 
 \begin{align}
@@ -648,7 +619,10 @@ Define $m_{i}^{T}=\lceil u_{i}\sqrt{T}+ptT\rceil$ and $M_{i}^{T}=\lfloor v_{i}\s
 &=\sum_{\lambda_{1}=m_{1}^{T}}^{M_{1}^{T}}\dots\sum_{\lambda_{k}=m_{k}^{T}}^{M_{k}^{T}}(\sqrt{T})^{-k}\cdot(\sqrt{T})^{k}\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1},\dots,L_{k}(\lfloor tT \rfloor)=\lambda_{k})
 \end{align*}
 
-Find sufficiently large $A$ such that $R\subset[-A,A]^{k}$, for example, $A=1+\max_{1\leq i\leq k}|a_{i}|+\max_{1\leq i\leq k}|b_{i}|$. Define $h_{T}(z_{1},\cdots,z_{k})$ as a simple function on $\mathbb{R}^{k}$: When $(z_{1},\cdots,z_{k})\in R$, it takes value $(\sqrt{T})^{k}\cdot\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1},\cdots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}) $ if there exist $\lambda_{1},\cdots,\lambda_{k}$ such that $\lambda_{i}\leq z_{i}\sqrt{T}+ptT<\lambda_{i}(T)+1$; It takes value $0$ otherwise, when $(z_{1},\cdots,z_{k})\notin R$.  Since the Lebesgue measure of the set $\{z:\lambda_{i}\leq z_{i}\sqrt{T}+ptT<\lambda_{i}+1,i=1,\cdots,k\}$ is $(\sqrt{T})^{-k}$, the above probability can be further written as an integral of simple functions $h_{T}(z_{1},\cdots,z_{k})$:
+Find sufficiently large $A$ such that $R\subset[-A,A]^{k}$, for example, $A=1+\max_{1\leq i\leq k}|a_{i}|+\max_{1\leq i\leq k}|b_{i}|$. Define $h_{T}(z_{1},\cdots,z_{k})$ as a simple function on $\mathbb{R}^{k}$: When $(z_{1},\cdots,z_{k})\in R$, it takes value $(\sqrt{T})^{k}\cdot\mathbb{P}(L_{1}(\lfloor tT \rfloor)=\lambda_{1},\cdots,L_{k}(\lfloor tT \rfloor)=\lambda_{k}) $ if there exist integers $\lambda_{1}\geq \cdots\geq\lambda_{k}$ such that $\lambda_{i}\leq z_{i}\sqrt{T}+ptT<\lambda_{i}+1$; It takes value $0$ otherwise, when $(z_{1},\cdots,z_{k})\notin R$.  Since the Lebesgue measure of the set $\{z:\lambda_{i}\leq z_{i}\sqrt{T}+ptT<\lambda_{i}+1,i=1,\cdots,k\}=\left[\lambda_1 T^{-1/2}-pt\sqrt{T
+},(\lambda_1+1) T^{-1/2}-pt\sqrt{T
+}\right)\times \cdots\times\left[\lambda_k T^{-1/2}-pt\sqrt{T
+},(\lambda_k+1) T^{-1/2}-pt\sqrt{T}\right)$ is $(\sqrt{T})^{-k}$, the above probability can be further written as an integral of simple functions $h_{T}(z_{1},\cdots,z_{k})$:
 \begin{align*}
 \mathbb{P}((Z_{1}^{T},\cdots,Z_{k}^{T})\in R)&=\int_{[-A,A]^{k}}h_{T}(z_{1},\cdots,z_{k})dz_{1}\cdots dz_{k}
 \end{align*}
@@ -666,147 +640,209 @@ By Corollary \ref{BerDistLim}, the function $h_{T}(z_{1},\cdots,z_{k})$ pointwis
 The last line uses the monotone convergence theorem since the when we let $\epsilon\downarrow 0$ and $n\uparrow\infty$ the indicator function $\mathbf{1}_{\bigcup_{i=1}^{n}R_{i}^{\epsilon}}$ is monotonically increasing, and converges to $\mathbf{1}_{U}$. Thus, we have proved the inequality (\ref{WeakConv}). By Lemma \ref{PfDensity}, $\rho(z)$ is a probability density function, thus implying the weak convergence of $Z^{T}$.
 \end{proof}
 
-\subsection{Multi-indices and multivariate functions}\label{multivar} In this step, we introduce some notations and results about multivariate functions and permutations.
+\label{multivar} In this step, we introduce some notations and results about multivariate functions and permutations.
 
-Suppose $\sigma = (\sigma_{1},\cdots,\sigma_{n})$ is a multi-index of \emph{length} $n$. In our context, we require $\sigma_{1},\cdots,\sigma_{n}$ be all non-negative integers(some of them might be equal). We define $|\sigma|=\sum_{i=1}^{n}\sigma_{i}$ as the \emph{order} of $\sigma$. Suppose $\tau=(\tau_{1},\cdots,\tau_{n})$ is another multi-index of length $n$. We say $\tau\leq\leq \sigma$ if $\tau_{i}\leq \sigma_{i}$ for $i=1,\cdots,n$. We say $\tau<\sigma$ if $\tau\leq \sigma$ and there exists at least one index $i$ such that $\tau_{i}<\sigma_{i}$. Then, define the partial derivative with respect to the multi-index $\sigma$:
+Suppose $\sigma = (\sigma_{1},\cdots,\sigma_{n})$ is a multi-index of \emph{length} $n$. In our context, we require $\sigma_{1},\cdots,\sigma_{n}$ be all non-negative integers(some of them might be equal). We define $|\sigma|=\sum_{i=1}^{n}\sigma_{i}$ as the \emph{order} of $\sigma$. Suppose $\tau=(\tau_{1},\cdots,\tau_{n})$ is another multi-index of length $n$. We say $\tau\leq\sigma$ if $\tau_{i}\leq \sigma_{i}$ for $i=1,\cdots,n$. We say $\tau<\sigma$ if $\tau\leq \sigma$ and there exists at least one index $i$ such that $\tau_{i}<\sigma_{i}$. Then, define the partial derivative with respect to the multi-index $\sigma$:
 $$D^{\sigma}f(x_{1},\cdots,x_{n})=\frac{\partial^{|\sigma|}f(x_{1},\cdots,x_{n})}{\partial x_{1}^{\sigma_{1}}\partial x_{2}^{\sigma_{2}}\cdots \partial x_{n}^{\sigma_{n}}}$$ We have the general Leibniz rule:
 \begin{align*}
 	D^{\sigma}(fg)=\sum_{\tau\leq\sigma}\binom{\sigma}{\tau}D^{\tau}f\cdot D^{\sigma-\tau}g
 \end{align*}
 where $\binom{\sigma}{\tau}=\frac{\sigma_{1}!\cdots\sigma_{n}!}{\tau_{1}!\cdots\tau_{n}!(\sigma_{1}-\tau_{1})!\cdots(\sigma_{n}-\tau_{n})!}$.\\
 We also have the Taylor expansion for multi-variable functions:
-$$f(x_{1},\cdots,x_{n})=\sum_{|\sigma|\leq r}\frac{1}{\sigma!}D^{\sigma}f(\vec{x}_{0})(\vec{x}-\vec{x}_{0})^{\sigma}+R_{r+1}(\vec{x},\vec{x}_{0})$$ 
+\begin{equation}{\label{MultiTaylor}}
+	f(x_{1},\cdots,x_{n})=\sum_{|\sigma|\leq r}\frac{1}{\sigma!}D^{\sigma}f(\vec{x}_{0})(\vec{x}-\vec{x}_{0})^{\sigma}+R_{r+1}(\vec{x},\vec{x}_{0})
+\end{equation}
+ 
 In the equation, $\sigma!=\sigma_{1}!\sigma_{2}!\cdots\sigma_{n}!$ is the factorial with respect to the multi-index $\sigma$, $\vec{x}_{0}=(x_{1}^{0},\cdots,x_{n}^{0})$ is a constant vector at which we expands the function $f$, $(\vec{x}-\vec{x}_{0})^{\sigma}$ stands for $(x_{1}-x_{1}^{0})^{\sigma_{1}}\cdots(x_{n}-x_{n}^{0})^{\sigma_{n}}$, and $$R_{r+1}(\vec{x},\vec{x}_{0})=\sum_{\sigma:|\sigma|=r+1}\frac{1}{\sigma!}D^{\sigma}f(\vec{x}_{0}+\theta(\vec{x}-\vec{x}_{0}))(\vec{x}-\vec{x}_{0})^{\sigma}$$ is the remainder, where $\theta\in (0,1)$(\cite[Theorem 3.18 \& Corollary 3.19]{CJ}).
 
 We also need some knowledge about \emph{permutation}. Suppose $s_{n}$ is a permutation of $n$ non-negative integers, for example $\{1,\cdots,n\}$, and $s_{n}(i)$ represents the $i$-$th$ element in the permutation $s_{n}$. We define \emph{the number of inversions} of $s_{n}$ by $I(s_{n})=\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}\mathbf{1}_{\{s_{n}(i)>s_{n}(j)\}}$. For example, the permutation $s_{n}=(1,\cdots,n)$ has $0$ number of inversions, while the permutation $s_{5}=(3,2,5,1,4)$ has number of inversions $5(2+1+2+0+0)$. Define the sign of permutation $s_{n}$ by $sgn(s_{n})=(-1)^{I(s_{n})}$. For instance, $sgn((1,\cdots,n))=1$ and $sgn(s_{5})=-1$ in the previous example.
 
 \subsection{Proof of Proposition \ref{WeakConvCollide}}{\label{ProofProp2}}
-Next we are going to prove Proposition \ref{WeakConvCollide}. Before that, 
-Then, we introduce some notations associated with Proposition \ref{WeakConvCollide} in order to better discuss the problem. Recall that
-\begin{align*}
-	&\vec{a}_{0}=(\underbrace{\alpha_{1},\cdots,\alpha_{1}}_{m_{1}},\cdots,\underbrace{\alpha_{p},\cdots,\alpha_{p}}_{m_{p}})\\
-	&\vec{b}_{0}=(\underbrace{\beta_{1},\cdots,\beta_{1}}_{n_{1}},\cdots,\underbrace{\beta_{q},\cdots,\beta_{q}}_{n_{q}})
-\end{align*}
-where $\alpha_{1}>\alpha_{2}>\cdots>\alpha_{p}$, $\beta_{1}>\beta_{2}>\cdots>\beta_{q}$ and $\sum_{i=1}^{p}\alpha_{i}=\sum_{i=1}^{q}\beta_{i}=k$. Denote $\vec{a}=(a_{1},\cdots,a_{k})$, $\vec{b}=(b_{1},\cdots,b_{k})$. Also denote $\vec{a}^{(1)}=(a_{1},\cdots,a_{m_1})$, $\vec{a}^{(2)}=(a_{m_{1}+1},\cdots,a_{m_1+m_2})$, $\cdots$, $\vec{a}^{(p)}=(a_{m_1+\cdots+m_{p-1}+1},\cdots, a_{m_1+\cdots+m_{p}})$ and $\vec{a}=(\vec{a}^{(1)},\cdots,\vec{a}^{(p)})$. That is, we divide the vector $\vec{a}$ into $p$ blocks according to the shape of $\vec{a_{0}}$. Similarly, we write $\vec{b}=(b^{(1)},\cdots,b^{(q)})$ according to the shape of $\vec{b}_{0}$. We will keep using similar notations in the following discussion, when we need to divide the vector according to the shape of $\vec{a}_{0}$ and $\vec{b}_{0}$. Next, denote
-\begin{align*}
-	f(a_{1},\cdots,a_{k})\equiv f(\vec{a})&=\det[e^{c_1(t,p)a_{i}z_{j}}]_{i,j=1}^{k},\quad g(b_{1},\cdots,b_{k})\equiv g(\vec{b})=\det[e^{c_2(t,p)b_{i}z_{j}}]_{i,j=1}^{k}
-\end{align*} 
-and it's not difficult to see that they are all smooth multi-variable functions with respect to corresponding vectors. In addition, $\lim\limits_{\vec{a}\rightarrow\vec{a}_{0}}f(\vec{a})=0$ and $\lim\limits_{\vec{b}\rightarrow\vec{b}_{0}}g(\vec{b})=0$. 
-
-The last thing before we formally prove Proposition \ref{WeakConvCollide} is to introduce the following lemmas about the non-vanishing of the determinants.
-
-\begin{remark}{\label{DefLambda}}
-Denote the set $\Lambda_{a}=\{\sigma_{a}=(\sigma_{a}^{(1)},\cdots,\sigma_{a}^{(p)}):\sigma_{a}^{(i)}\in S_{m_{i}}, i=1,\cdots,p\}$, and we have if $\sigma_{a}\in \Lambda_{a}$, then $D^{\sigma_{a}}f(\vec{a}_{0})$ is non-zero. Similarly, if $\sigma^{(j)}_{b}\in S_{n_j}$ for $j=1,\cdots,q$, then $D^{\sigma_{b}}g(\vec{b})$ is non-zero, and define $\Lambda_{b}=\{\sigma_{b}=(\sigma_{b}^{(1)},\cdots,\sigma_{b}^{(q)}):\sigma_{b}^{(j)}\in S_{n_{j}}, j=1,\cdots,q\}$.
-\end{remark}
+Based on the notation in Section \ref{multivar}, we are going to prove Proposition \ref{WeakConvCollide} in this section. We assume vectors $\vec{a}_{0}$, $\vec{b}_{0}$ cluster in the way described in (\ref{Block}):
+\begin{equation}{\label{a0b0}}
+\begin{split}
+	&\vec{a}_{0}=(a_{1},\cdots,a_{k})=(\underbrace{\alpha_{1},\cdots,\alpha_{1}}_{m_{1}},\cdots,\underbrace{\alpha_{p},\cdots,\alpha_{p}}_{m_{p}})\\
+	&\vec{b}_{0}=(b_{1},\cdots,b_{k})=(\underbrace{\beta_{1},\cdots,\beta_{1}}_{n_{1}},\cdots,\underbrace{\beta_{q},\cdots,\beta_{q}}_{n_{q}})
+\end{split}
+\end{equation}
+and $$\lim_{T\rightarrow\infty}\frac{\vec{x}^{T}}{\sqrt{T}}=\vec{a}_0,\ \lim_{T\rightarrow\infty}\frac{\vec{y}^{T}-pT1_{k}}{\sqrt{T}}=\vec{b}_0$$
+Let $\vec{a}=(a_{1},\cdots,a_{k})$ and $\vec{b}=(b_{1},\cdots,b_{k})$ denote two vectors in $\mathbb{W}_{k}^{o}$ so they contain distinct elements. We also denote $\vec{a}^{(1)}=(a_{1},\cdots,a_{m_1})$, $\cdots$, $\vec{a}^{(p)}=(a_{m_1+\cdots+m_{p-1}+1},\cdots, a_{m_1+\cdots+m_{p}})$ and $\vec{a}=(\vec{a}^{(1)},\cdots,\vec{a}^{(p)})$. That is, we divide the vector $\vec{a}$ into $p$ blocks according to the shape of $\vec{a}_0$. Similarly, we write $\vec{b}=(b^{(1)},\cdots,b^{(q)})$ according to the shape of $\vec{b}_0$. We will keep using similar notations in the following discussion, when we need to divide the vector according to the shape of $\vec{a}_0$ and $\vec{b}_0$. Next, denote
+\begin{equation}{\label{fagb}}
+	f(\vec{a},\vec{z})=\det[e^{c_1(t,p)a_{i}z_{j}}]_{i,j=1}^{k},\ g(\vec{b},\vec{z})=\det[e^{c_2(t,p)b_{i}z_{j}}]_{i,j=1}^{k}
+\end{equation}
+and it's not difficult to see that they are all smooth multi-variable functions with respect to corresponding vectors because of the exponentials. In addition, $\lim\limits_{\vec{a}\rightarrow\vec{a}_{0}}f(\vec{a},\vec{z})=0$ and $\lim\limits_{\vec{b}\rightarrow\vec{b}_{0}}g(\vec{b},\vec{z})=0$. However, when we taking derivatives with respect to $\vec{a}$ and $\vec{b}$, at some point we can get a non-zero derivative. The following lemma gives the minimal order of derivatives such that $D^{\sigma}f(\vec{a}_0,\vec{z})$ and $D^{\sigma}g(\vec{b}_0,\vec{z})$ are non-zero, where $f(\vec{a},\vec{z})$ and $g(\vec{b},\vec{z})$ are defined in (\ref{fagb}).
 
 \begin{lemma}{\label{MinOrder}}
-The smallest order of $\sigma_{a}$ that makes the partial derivative $D^{\sigma_{a}}f(\vec{a}_{0})$ non-zero is $u=\sum_{i=1}^{p}\sum_{j=0}^{m_{i}-1}j=\sum_{i=1}^{p}\frac{m_{i}(m_{i}-1)}{2}$. Similarly, $v=\sum_{j=1}^{q}\frac{n_{j}(n_{j}-1)}{2}$ is the smallest order of $\sigma_{b}$ that makes $D^{\sigma_{b}}f(\vec{b}_{0})$ non-zero.
+Assume the same notations as in (\ref{a0b0}) and $\vec{z}\in\mathbb{W}_{k}^{o}$. Then, the smallest order of $\sigma_{a}$ that makes the partial derivative $D^{\sigma_{a}}f(\vec{a}_{0},\vec{z})$ non-zero is $u=\sum_{i=1}^{p}\frac{m_{i}(m_{i}-1)}{2}$. Similarly, $v=\sum_{j=1}^{q}\frac{n_{j}(n_{j}-1)}{2}$ is the smallest order of $\sigma_{b}$ that makes $D^{\sigma_{b}}f(\vec{b}_{0},\vec{z})$ non-zero.
 \end{lemma}
 \begin{proof}
-	If the order of derivative is less than $u$, then there exists a $i\in\{1,\cdots,p\}$ such that $\sigma_{a}^{(i)}$ contains two equal elements, and the determinant $D^{\sigma_{a}}f(\vec{a}_{0})$ would have two equal rows, thus equal to zero. If the order of derivative is $u$, then when $\sigma_{a}\in\Lambda_{a}$, $D^{\sigma_{a}}f(\vec{a}_{0})$ is non-zero by Lemma \ref{NonVanish}. Thus, Lemma \ref{MinOrder} holds.
-\end{proof}
-
+	If the order of derivative is less than $u$, then there exists an $i\in\{1,\cdots,p\}$ such that $\sigma_{a}^{(i)}$ contains two equal elements $<m_i-1$, and the determinant $D^{\sigma_{a}}f(\vec{a}_{0},\vec{z})$ would have two equal rows, thus equal to zero. Suppose $s_{n}$ is the set of all permutations of $\{0,1,\cdots,n-1\}$. Then, if $\sigma_{a}=\left(\sigma^{(1)}_a,\cdots,\sigma^{(p)}_a\right)$ and $\sigma^{(i)}_a\in s_{m_i}$, $D^{\sigma_{a}}f(\vec{a}_{0},\vec{z})$ is non-zero by Lemma \ref{NonVanish}. In this case, the order of $\sigma_{a}$ is $\sum_{i=1}^{p}\sum_{j=1}^{m_i-1}j=\sum_{i=1}^{p}\frac{m_i(m_i-1)}{2}=u$. Analogous result also holds for $D^{\sigma_b}g(\vec{b}_0,\vec{z})$ and we conclude Lemma \ref{MinOrder}.
+	\end{proof}
+\begin{remark}{\label{Lambdaa}}
+	Denote the set 
+	\begin{equation}
+		\Lambda_{a}=\{\sigma_{a}=\left(\sigma_{a}^{(1)},\cdots,\sigma_{a}^{(p)}\right):\sigma_{a}^{(i)}\in S_{m_i},\ i=1,\cdots, p\}
+	\end{equation}
+	Then we have if $\sigma_{a}\in\Lambda_a$, then $D^{\sigma_a}f(\vec{a}_0,\vec{z})$ is non-zero.
+\end{remark}
 Finally, we give the proof for Proposition \ref{WeakConvCollide}. 
-\begin{proof}[Proof of Proposition \ref{WeakConvCollide}] For clarity, the proof will be split into $3$ steps. In Step 1, we use multi-variate Taylor expansion to find the speed of convergence of $f(\vec{a})$ and $g(\vec{b})$ to zero. In Step 2, we construct a new density function based on Step 1, and we will prove that $Z^{T}$ weakly converges to the this newly constructed density in Step 3. In Step 3, we use monotone coupling lemma to prove the weak convergence.\\
-\textbf{Step 1. }In this step, we estimate the converging speed of $f(\vec{a})$. Take $\epsilon\in (0,k^{-1}\min\limits_{1\leq i\leq p-1}(\alpha_{i}-\alpha_{i+1}))$ and construct the following vectors:
+\begin{proof}[Proof of Proposition \ref{WeakConvCollide}] For clarity, the proof will be split into $3$ steps. In Step 1, we use multi-variate Taylor expansion to find the speed of convergence of $f(\vec{a},\vec{z})$ and $g(\vec{b},\vec{z})$ to zero, when $\vec{a}\rightarrow\vec{a}_0$ and $\vec{b}\rightarrow\vec{b}_0$. In Step 2, we construct a new density function based on Step 1, and we will prove that $Z^{T}$ weakly converges to the this newly constructed density in Step 3. In Step 3, we use monotone coupling lemma to ``squeeze'' the probability and prove the weak convergence.\\
+\textbf{Step 1. }In this step, we find the converging speed of $f(\vec{a},\vec{z})$ when $\vec{a}\rightarrow\vec{a}_0$. Take $\epsilon\in (0,k^{-1}\min\limits_{1\leq i\leq p-1}(\alpha_{i}-\alpha_{i+1}))$ and construct the following vectors:
 \begin{align*}
 	\vec{A}_{\epsilon,+}&=(\alpha_{1}+m_{1}\epsilon, \alpha_{1}+(m_{1}-1)\epsilon,\cdots,\alpha_{1}+\epsilon,\cdots,\alpha_{p}+m_{p}\epsilon,\cdots,\alpha_{p}+\epsilon)\\
 	\vec{A}_{\epsilon,-}&=(\alpha_{1}-\epsilon, \alpha_{1}-2\epsilon,\cdots,\alpha_{1}-m_{1}\epsilon,\cdots,\alpha_{p}-\epsilon,\cdots,\alpha_{p}-m_{p}\epsilon)
 \end{align*}
-That is, the vector $\vec{A}_{\epsilon,+}(\text{resp. }\vec{A}_{\epsilon,-})$ upwardly(resp. downwardly) spreads out the vector $\vec{a}_{0}$ such that $\vec{A}_{\epsilon,+}(\text{resp. }\vec{A}_{\epsilon,-})$ has distinct elements. In addition, when $\epsilon\downarrow 0$, we have $\vec{A}_{\epsilon,\pm}$ converges to $\vec{a}_{0}$. The main result of this step is the following:
-\begin{align}{\label{ConvSpeed}}
-	\lim_{\epsilon\downarrow 0}\epsilon^{-u}f(\vec{A}_{\epsilon,\pm})=\varphi(\vec{a}_{0},\vec{z},\vec{m})
+That is, the vector $\vec{A}_{\epsilon,+}(\text{resp. }\vec{A}_{\epsilon,-})$ upwardly(resp. downwardly) spreads out the vector $\vec{a}_{0}$ such that $\vec{A}_{\epsilon,+}(\text{resp. }\vec{A}_{\epsilon,-})$ has distinct elements. By the choice of $\epsilon$, the elements of $\vec{A}_{\epsilon,+}$ and $\vec{A}_{\epsilon,-}$ are strictly ordered. In addition, when $\epsilon\downarrow 0$, the vector $\vec{A}_{\epsilon,\pm}$ converges to $\vec{a}_{0}$. The main result of this step is the following:
+\begin{align}{\label{ConvSpeedA}}
+	\lim_{\epsilon\downarrow 0}\epsilon^{-u}f(\vec{A}_{\epsilon,\pm},\vec{z})=\varphi(\vec{a}_{0},\vec{z},\vec{m})
 \end{align}
-where $u=\sum_{i=1}^{p}\frac{m_{i}(m_{i}-1)}{2}$ in Lemma \ref{MinOrder}, $\vec{m}=(m_{1},\cdots,m_{p})$, and $\varphi(\vec{a}_{0},\vec{z},\vec{m})$ is a non-zero function associated with $\vec{a}_{0}$ and $\vec{m}$.
+where $u=\sum_{i=1}^{p}\frac{m_{i}(m_{i}-1)}{2}$ in Lemma \ref{MinOrder}, $\vec{m}=(m_{1},\cdots,m_{p})$, and $\varphi(\vec{a}_{0},\vec{z},\vec{m})$ defined in (\ref{TwoDet}). Additionally, $\varphi(\vec{a}_{0},\vec{z},\vec{m})$ is non-zero because of Lemma \ref{NonVanish}.
 
-To prove this result, we first expand the function $f(\vec{a})$ to the order of $u$ at $\vec{a}_{0}$:
-\begin{align*}
-	f(\vec{a})&=\sum_{|\sigma_{a}|\leq u}\frac{D^{\sigma_{a}}f(\vec{a}_{0})}{\sigma_{a}!}(\vec{a}-\vec{a}_{0})^{\sigma_{a}}+R_{u+1}(\vec{a},\vec{a}_{0})\\
-	&= \sum_{\sigma_{a}\in \Lambda_{a}}\frac{D^{\sigma_{a}}f(\vec{a}_{0})}{\sigma_{a}!}(\vec{a}-\vec{a}_{0})^{\sigma_{a}}+R_{u+1}(\vec{a},\vec{a}_{0})
-\end{align*} 
-where the $R_{u+1}(\vec{a},\vec{a}_{0})=\sum_{\sigma_{a}:|\sigma_{a}|=u+1}\frac{1}{\sigma_{a}!}D^{\sigma_{a}}f(\vec{a}_{0}+\theta(\vec{a}-\vec{a}_{0}))(\vec{a}-\vec{a}_{0})^{\sigma_{a}}$, $\theta\in(0,1)$ is the remainder. The second equality results from Lemma \ref{MinOrder}, since it indicates that all the terms of order less than $u$ are zero, and for the terms of order $u$, they are non-zero only when $\sigma_{a}\in\Lambda_{a}$.
+To prove this result, we first keep $\vec{z}$ fixed and expand the function $f(\vec{a},\vec{z})$ to the order of $u$ at $\vec{a}_{0}$ using multi-variate Taylor expansion (\ref{MultiTaylor}):
+\begin{equation}{\label{Expandf}}
+	\begin{split}
+		f(\vec{a},\vec{z})&=\sum_{|\sigma_{a}|\leq u}\frac{D^{\sigma_{a}}f(\vec{a}_{0},\vec{z})}{\sigma_{a}!}(\vec{a}-\vec{a}_{0})^{\sigma_{a}}+R_{u+1}(\vec{a},\vec{a}_{0},\vec{z})\\
+	&= \sum_{\sigma_{a}\in \Lambda_{a}}\frac{D^{\sigma_{a}}f(\vec{a}_{0},\vec{z})}{\sigma_{a}!}(\vec{a}-\vec{a}_{0})^{\sigma_{a}}+R_{u+1}(\vec{a},\vec{a}_{0},\vec{z})
+	\end{split}
+\end{equation}
+where 
+\begin{equation}{\label{remainder}}
+	R_{u+1}(\vec{a},\vec{a}_{0},\vec{z})=\sum_{\sigma_{a}:|\sigma_{a}|=u+1}\frac{1}{\sigma_{a}!}D^{\sigma_{a}}f(\vec{a}_{0}+\theta(\vec{a}-\vec{a}_{0}),\vec{z})(\vec{a}-\vec{a}_{0})^{\sigma_{a}}\text{, }\theta\in(0,1)
+\end{equation} 
+is the remainder and $\Lambda_{a}$ is defined in remark \ref{Lambdaa}. The second equality in (\ref{Expandf}) results from Lemma \ref{MinOrder}, since it indicates that all the terms of order less than $u$ are zero, and for the terms of order $u$, they are non-zero only when $\sigma_{a}\in\Lambda_{a}$.
 
-Consider the first term. Denote $sgn(\sigma_{a}^{(i)})$ as the sign of the permutation $\sigma_{a}^{(i)}\in S_{m_i}$, and define the sign of $\sigma_{a}$ by: $sgn(\sigma_{a})=\prod_{i=1}^{p}sgn(\sigma_{a}^{(i)})$. Denote $\sigma_{a}^{\star}=(\sigma_{a}^{(1)\star},\cdots,\sigma_{a}^{(p)\star})$, where $\sigma_{a}^{(i)\star}=(0,1,\cdots,m_i-1)$. Thus, $\sigma_{a}^{\star}$ is a special element in $\Lambda_{a}$ and $sgn(\sigma_{a}^{\star})=1$ because $\sigma_{a}^{(1)\star},\cdots,\sigma_{a}^{(p)\star}$ all have $0$ number of inversions. Notice that for any $\sigma_{a}\in\Lambda_{a}$, we have $D^{\sigma_{a}}f(\vec{a}_{0})=sgn(\sigma_{a})\cdot D^{\sigma_{a}^{\star}}f(\vec{a}_{0})$ by the property of determinant. Then we obtain:
-\begin{align*}
+Consider the first term in the second line of (\ref{Expandf}). Denote $sgn(\sigma_{a}^{(i)})$ as the sign of the permutation $\sigma_{a}^{(i)}\in S_{m_i}$, and define the sign of $\sigma_{a}$ by: $sgn(\sigma_{a})=\prod_{i=1}^{p}sgn(\sigma_{a}^{(i)})$. Denote $\sigma_{a}^{\star}=\left(\sigma_{a}^{(1)\star},\cdots,\sigma_{a}^{(p)\star}\right)$, where $\sigma_{a}^{(i)\star}=(0,1,\cdots,m_i-1)$. Thus, $\sigma_{a}^{\star}$ is a special element in $\Lambda_{a}$ and $sgn(\sigma_{a}^{\star})=1$ because $\sigma_{a}^{(1)\star},\cdots,\sigma_{a}^{(p)\star}$ all have $0$ number of inversions. Notice that for any $\sigma_{a}\in\Lambda_{a}$, we have $D^{\sigma_{a}}f(\vec{a}_{0},\vec{z})=sgn(\sigma_{a})\cdot D^{\sigma_{a}^{\star}}f(\vec{a}_{0},\vec{z})$ by the property of determinant. Then we obtain:
+\begin{equation*}
 	\sum_{\sigma_{a}\in\Lambda_{a}}\frac{1}{\sigma_{a}!}D^{\sigma_{a}}f(\vec{a}_{0})(\vec{a}-\vec{a}_{0})^{\sigma_{a}}=\frac{D^{\sigma_{a}^{\star}}f(\vec{a}_{0})}{\prod_{i=1}^{p}(m_{i}-1)!}\sum_{\sigma_{a}\in\Lambda_{a}}(\vec{a}-\vec{a}_{0})^{\sigma_{a}}\cdot sgn(\sigma_{a})
-\end{align*}
+\end{equation*}
+
 Notice that 
 \begin{align*}
-	\sum_{\sigma_{a}\in\Lambda_{a}}(\vec{a}-\vec{a}_{0})^{\sigma_{a}}\cdot sgn(\sigma_{a})&=\prod_{i=1}^{p}\Big[\sum_{\sigma_{a}^{(i)}\in S_{m_i}}(\vec{a}^{(i)}-\vec{a}_{0}^{(i)})^{\sigma_{a}^{(i)}}\cdot sgn(\sigma_{a}^{(i)})\Big]\\
+	\sum_{\sigma_{a}\in\Lambda_{a}}(\vec{a}-\vec{a}_{0})^{\sigma_{a}}\cdot sgn(\sigma_{a})&=\prod_{i=1}^{p}\left(\sum_{\sigma_{a}^{(i)}\in S_{m_i}}(\vec{a}^{(i)}-\vec{a}_{0}^{(i)})^{\sigma_{a}^{(i)}}\cdot sgn(\sigma_{a}^{(i)})\right)\\
 	&=\prod_{i=1}^{p}\Delta_{m_i}(a_{1}^{(i)}-\alpha_{i},a_{2}^{(i)}-\alpha_{i},\cdots,a_{m_i}^{(i)}-\alpha_{i})\equiv\prod_{i=1}^{p}\Delta_{m_i}^{a}
 \end{align*}
-where $\Delta_{n}(x_{1},x_{2},\cdots,x_{n})$ is the Vandermonde Determinant, $a_{j}^{(i)}=a_{m_{1}+\cdots+m_{i-1}+j}$ is the $j$-$th$ element of $\vec{a}^{(i)}$, and the last equality holds by the definition of determinant and Vandermonde Determinant. Now replace $\vec{a}$ with $\vec{A}_{\epsilon,+}$, we get the Vandermonde determinant $\Delta_{m_{i}}^{a}$ is actually $(m_{i}-1)!\cdot\epsilon^{\frac{1}{2}m_{i}(m_{i}-1)}$. Therefore, we have: $$\sum_{\sigma_{a}\in\Lambda_{a}}\frac{1}{\sigma_{a}!}D^{\sigma_{a}}f(\vec{a}_{0})(\vec{a}-\vec{a}_{0})^{\sigma_{a}}=D^{\sigma_{a}^{\star}}f(\vec{a}_{0})\cdot\epsilon^{u}$$
+where $\Delta_{n}(x_{1},x_{2},\cdots,x_{n})$ is the Vandermonde Determinant, $a_{j}^{(i)}=a_{m_{1}+\cdots+m_{i-1}+j}$ is the $j$-$th$ element of $\vec{a}^{(i)}$, and the last line holds by the expansion formula of determinant and definition of Vandermonde Determinant. Now replace $\vec{a}$ with $\vec{A}_{\epsilon,+}$, we get the Vandermonde determinant $\Delta_{m_{i}}^{a}$ is actually $(m_{i}-1)!\cdot\epsilon^{\frac{1}{2}m_{i}(m_{i}-1)}$. Therefore, we have: 
+\begin{equation}{\label{FirstTerm}}
+	\sum_{\sigma_{a}\in\Lambda_{a}}\frac{1}{\sigma_{a}!}D^{\sigma_{a}}f(\vec{a}_{0},\vec{z})(\vec{a}-\vec{a}_{0})^{\sigma_{a}}=D^{\sigma_{a}^{\star}}f(\vec{a}_{0},\vec{z})\cdot\epsilon^{u}
+\end{equation}
 
-Now we consider the remainder $R_{u+1}(\vec{A}_{\epsilon,+},\vec{a}_{0})$. Since $D^{\sigma_{a}}f(\vec{a})$ is a continuous function of vector $\vec{a}$, we have that the quantity $D^{\sigma_{a}^{\star}}f(\vec{a}_{0}+\theta(\vec{a}-\vec{a}_{0}))$ can be bounded by a constant $M(\vec{a},\vec{a}_{0})$. In addition, $\sigma_{a}!$ only have finitely many possible outcomes when its order is $u+1$, thus $\frac{1}{\sigma_{a}!}$ can be bounded by a constant $N(u)$. Also, $|(\vec{A}_{\epsilon,+}-\vec{a}_{0})|^{\sigma_{a}}\leq (\max_{1\leq i\leq p}m_{i}\cdot \epsilon)^{u+1}$. Therefore,
-\begin{align*}
-	|R_{u+1}(\vec{A}_{\epsilon,+},\vec{a}_{0})|\leq N\cdot M \cdot (\max_{1\leq i\leq p}m_{i}\cdot \epsilon)^{u+1}
-\end{align*}
-and this indicates that $R_{u+1}(\vec{A}_{\epsilon,+},\vec{a}_{0})$ is $O(\epsilon^{u+1})$, where the constant in Big $O$ notation only depends on $\vec{a}_{0}$, $\vec{a}$, $\vec{m}$ and $u$ and does not depend on $\epsilon$. Therefore, we conclude that 
-$$\lim_{\epsilon\downarrow 0}\epsilon^{-u}f(\vec{A}_{\epsilon,+})=D^{\sigma_{a}^{\star}}f(\vec{a}_{0})$$
-By Lemma \ref{NonVanish}, $D^{\sigma_{a}^{\star}}f(\vec{a}_{0})$ is non-zero. Thus, we find the limit function $\varphi(\vec{a}_{0},\vec{z},\vec{m})=D^{\sigma_{a}^{\star}}f(\vec{a}_{0})$, and its expression can be found in Lemma \ref{NonVanish}. Following similar procedure we can prove $\lim_{\epsilon\downarrow 0}\epsilon^{-u}f(\vec{A}_{\epsilon,-})=D^{\sigma_{a}^{\star}}f(\vec{a}_{0})$ also holds, and we established the equation (\ref{ConvSpeed}).
+Since the $i$-th row of determinant $f(\vec{a},\vec{z})$ only depends on one variable $a_{i}$ if we fix $\vec{z}$, taking derivative of $f(\vec{a},\vec{z})$ with respect to $a_i$ is actually taking derivatives of entries in the $i$-th row of $f(\vec{a},\vec{z})$ and let other rows stay unchanged. Therefore, we observe that $D^{\sigma_{a}^{\star}}f(\vec{a}_0,\vec{z})$ is exactly the determinant $\varphi(\vec{a}_{0},\vec{z},\vec{m})$ defined in (\ref{TwoDet}) and by Lemma \ref{NonVanish}, $D^{\sigma_{a}^{\star}}f(\vec{a}_{0},\vec{z})$ is non-zero.
 
-We can construct vectors $\vec{B}_{\epsilon,\pm}$ analogously, which spread out from vector $\vec{b}_{0}$ upward and downward, and get similar results for $g(\vec{B}_{\epsilon,\pm})$ and then we have:
-$$\lim_{\epsilon\downarrow 0}\epsilon^{-v}f(\vec{B}_{\epsilon,\pm})=D^{\sigma_{b}^{\star}}g(\vec{b}_{0})\equiv\psi(\vec{b}_{0},\vec{z},\vec{n})$$
-where $v=\sum_{i=1}^{q}\frac{n_{i}(n_{i}-1)}{2}$ in Lemma \ref{MinOrder}, $\vec{n}=(n_{1},\cdots,n_{q})$ and the expression of non-zero function $\psi(\vec{b}_{0},\vec{z},\vec{n})$ can be found by Lemma \ref{NonVanish}.\\
+Next, we consider the remainder $R_{u+1}(\vec{A}_{\epsilon,+},\vec{a}_{0},\vec{z})$ in (\ref{remainder}). Suppose $\sigma_{a}$ is a permutation of order $u+1$. First notice that the terms in the sum in the remainder is non-zero only when there exist an $i\in\{1,\cdots,p\}$ such that $\sigma_{a}^{(i)}=(0,1,\cdots,m_i-2,m_i)$ and for $j\neq i$, $\sigma_{a}^{(j)}\in S_{m_j}$. Otherwise, the terms are zero because the determinant $D^{\sigma_{a}}f(\vec{a}_0,\vec{z})$ will have at least two equal lines. Therefore, there are only finitely many non-zero terms in the sum, and we denote the number of non-zero terms by $N$, which only depends on $\vec{m}$. Second, we observe that $\sigma_{a}!$ only has finitely many possible outcomes when its order is $u+1$, thus $\frac{1}{\sigma_{a}!}$ can be bounded by a constant $M$ only depending on $\vec{m}$. Third, by the construction of $\vec{A}_{\epsilon,+}$ we have
+\begin{equation}{\label{vecAbounded}}
+	|(\vec{A}_{\epsilon,+}-\vec{a}_{0})|^{\sigma_{a}}\leq (\max_{1\leq i\leq p}m_{i}\cdot \epsilon)^{u+1}
+\end{equation} 
+for every $\sigma_{a}$ such that $\sigma_a=u+1$. Finally, denote vector $\vec{A}_\theta=\vec{a}_{0}+\theta(\vec{A}_{\epsilon,+}-\vec{a}_0)=(A_{1,\theta},\cdots,A_{k,\theta})$. Following similar approach as in (\ref{Det1bounded}), combined with the form of $D^{\sigma_a}f(\vec{a}_0,\vec{z})$, we have
+\begin{equation}{\label{Dsigmafbounded}}
+	\begin{split}
+		\left|D^{\sigma_a}f(\vec{A}_{\theta},\vec{z})\right|&\leq (k!)\left((\max_{1\leq i\leq p}|z_i|)^{u+1}\right)\prod_{j=1}^{k}e^{c_1(t,p)\left(\sum_{i=1}^{k}|A_{i,\theta}|\right)|z_j|}\\
+		&\leq (k!)(|z_1|+|z_k|)^{u+1}\prod_{j=1}^{k}e^{c_{1}(t,p)\cdot k\cdot (\max_{1\leq i\leq p}m_i)\cdot\epsilon\cdot|z_j|}\\
+		&\leq (k!)(|z_1|+|z_k|)^{u+1}\prod_{j=1}^{k}e^{C_1|z_j|}
+	\end{split}
+\end{equation}
+when $\epsilon<1$, and the constant $C_1=c_1(t,p)\cdot k\cdot(\max_{1\leq i\leq p}m_i)$.
+
+Combining (\ref{Dsigmafbounded}), (\ref{vecAbounded}) and the fact that $\frac{1}{\sigma_a!}$ is bounded by a constant $M(\vec{m})$, we have
+\begin{equation}{\label{RemainderBounded}}
+	|R_{u+1}(\vec{A}_{\epsilon,+},\vec{a}_{0},\vec{z})|\leq N\cdot M \cdot (k!)(|z_1|+|z_k|)^{u+1}\exp\left(C_1\sum_{j=1}^{k}|z_j|\right)(\max_{1\leq i\leq p}m_{i}\cdot \epsilon)^{u+1}
+\end{equation}
+which indicates that $R_{u+1}(\vec{A}_{\epsilon,+},\vec{a}_{0},\vec{z})$ is $O(\epsilon^{u+1})$, where the constant in big $O$ notation only depends on $\vec{a}_{0}$, $\vec{A}_{\epsilon,+}$ and $\vec{m}$ and does not depend on $\epsilon$. Therefore, we conclude from (\ref{Expandf}), (\ref{FirstTerm}) and the fact that $R_{u+1}(\vec{A}_{\epsilon,+},\vec{a}_{0},\vec{z})$ is $o(\epsilon^{u})$ that:
+$$\lim_{\epsilon\downarrow 0}\epsilon^{-u}f(\vec{A}_{\epsilon,+},\vec{z})=D^{\sigma_{a}^{\star}}f(\vec{a}_{0},\vec{z})$$
+
+Analogously, we can prove $\lim_{\epsilon\downarrow 0}\epsilon^{-u}f(\vec{A}_{\epsilon,-},\vec{z})=D^{\sigma_{a}^{\star}}f(\vec{a}_0,\vec{z})$ also holds and we complete the proof of (\ref{ConvSpeedA}). We can construct vectors $\vec{B}_{\epsilon,\pm}$ similarly, which spread out from vector $\vec{b}_{0}$ upward and downward, and get similar results for $g(\vec{B}_{\epsilon,\pm},\vec{z})$ and then we have:
+\begin{equation}{\label{ConvSpeedB}}
+		\lim_{\epsilon\downarrow 0}\epsilon^{-v}f(\vec{B}_{\epsilon,\pm},\vec{z})=D^{\sigma_{b}^{\star}}g(\vec{b}_{0},\vec{z})\equiv\psi(\vec{b}_{0},\vec{z},\vec{n})
+\end{equation}
+where $v=\sum_{i=1}^{q}\frac{n_{i}(n_{i}-1)}{2}$ in Lemma \ref{MinOrder}, $\vec{n}=(n_{1},\cdots,n_{q})$ and the non-zero function $\psi(\vec{b}_{0},\vec{z},\vec{n})$ is defined in (\ref{TwoDet}).\\
 \textbf{Step 2. }In this step, we mainly prove the following result:
+\begin{equation}
+	\text{The function } H(\vec{z})=\varphi(\vec{a}_{0},\vec{z},\vec{m})\cdot\psi(\vec{b}_{0},\vec{z},\vec{n})\cdot\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\text{ is integrable over } \mathbb{R}^{k}.
+\end{equation}
 
-The function of $\vec{z}$ $$H(\vec{z})=\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}$$ is integrable over $\mathbb{R}^{k}$.
-
-For simplicity, we ignore the constants $c_{1}$, $c_{2}$, $c_{3}$ temporarily and prove the function $H(\vec{z})$ without those constants is integrable. It's not difficult to see $H(\vec{z})$ is still integrable when adding those constants. Notice that $\varphi(\vec{a}_{0},\vec{z},\vec{m})$ is a determinant whose expression is given in Lemma \ref{NonVanish}. Suppose $z_{j_1}^{i_1-1}e^{a_{i_1}z_{j_1}}$ is the entry that has the largest absolute value. Then 
-\begin{align*}
-	|\varphi(\vec{a}_{0},\vec{z},\vec{m})|\leq k!|z_{j_{1}}^{i_{1}-1}e^{a_{i_1}z_{j_1}}|^{k}=k!|z_{j_1}^{k(i_1-1)}|e^{ka_{i_1}z_{j_1}}
-\end{align*}
-Similarly, we can find index $i_2$ and $j_{2}$ such that $|\varphi(\vec{b}_{0},\vec{z},\vec{n})|\leq k!|z_{j_2}^{k(i_2-1)}|e^{kb_{i_2}z_{j_2}}$. Then, we get 
-\begin{align*}
-	|H(\vec{z})|\leq (k!)^{2}\big[\prod_{j\neq j_1,j_2}e^{-z_{j}^{2}}|z_{j_1}^{k(i_1-1)}z_{j_2}^{k(i_2-1)}|\big]e^{ka_{i_1}z_{j_1}-z_{j_1}^2}e^{kb_{i_2}z_{j_2}-z_{j_2}^{2}}
-\end{align*}
-The right hand side is integrable over $\mathbb{R}^{k}$ because the exponential terms have power of some quadratic functions with negative quadratic coefficients. Thus, $H(\vec{z})$ is integrable.
-
-Since $H(\vec{z})$ is integrable, we can define the constant $Z_{\vec{a}_{0},\vec{b}_{0}}=\int_{\mathbb{R}^{k}}H(\vec{z})\mathbf{1}_{\{z_1>z_2>\cdots>z_{k}\}}dz<\infty$ and the function \begin{align}{\label{NewDensity}}
-	\rho_{\vec{a}_{0},\vec{b}_{0}}(z_{1},\cdots,z_{k})=Z_{\vec{a}_{0},\vec{b}_{0}}^{-1}\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}\mathbf{1}_{\{z_1>z_2>\cdots>z_{k}\}}
-\end{align}
+Notice that $\varphi(\vec{a}_{0},\vec{z},\vec{m})$ and $\psi(\vec{b}_{0},\vec{z},\vec{n})$ are two determinants whose expression are given in (\ref{TwoDet}), and they are positive when $\vec{z}\in\mathbb{W}_{k}^{o}$ because of (\ref{ConvSpeedA}) and (\ref{ConvSpeedB}). Following similar approach as in (\ref{Dsigmafbounded}) we can find
+\begin{equation}{\label{phipsibounded}}
+	\begin{split}
+		&\varphi(\vec{a}_0,\vec{z},\vec{m})\leq (k!)\left(|z_1|+|z_k|\right)^{u}\prod_{j=1}^{k}e^{c_1(t,p)\cdot\left(\sum_{i=1}^{p}|\alpha_{i}|m_i\right)|z_j|},\\ 
+		&\psi(\vec{b}_0,\vec{z},\vec{n})\leq (k!)\left(|z_1|+|z_k|\right)^{v}\prod_{j=1}^{k}e^{c_2(t,p)\cdot\left(\sum_{i=1}^{q}|\beta_{i}|n_i\right)|z_j|},
+	\end{split}
+\end{equation}
+when $z_1>z_2>\cdots>z_k$. Therefore,
+\begin{equation}
+	H(\vec{z})\leq (k!)^2\cdot \left(|z_1|+|z_k|\right)^{u+v}\cdot\prod_{i=1}^{k}e^{C|z_i|-c_3(t,p)\cdot z_{i}^2}
+\end{equation}
+where $C=c_1(t,p)\cdot\sum_{i=1}^{p}|\alpha_{i}|m_i+c_2(t,p)\cdot\sum_{i=1}^{q}|\beta_{i}|n_i$. The right hand side is integrable over $\mathbb{R}^{k}$ because of the quadratic terms in the exponential. Thus, $H(\vec{z})$ is integrable and we can define the constant $Z_{c}=\int_{\mathbb{R}^{k}}H(z)\mathbf{1}_{\{z_1>z_2>\cdots>z_{k}\}}dz<\infty$ and the function 
+\begin{equation}{\label{NewDensity}}
+\rho_{c}(z_{1},\cdots,z_{k})=Z_{c}^{-1}\cdot\mathbf{1}_{\{z_1>z_2>\cdots>z_{k}\}}\cdot\varphi(\vec{a}_{0},\vec{z},\vec{m})\cdot\psi(\vec{b}_{0},\vec{z},\vec{n})\cdot\prod_{i=1}^{k}e^{-c_{3}(t,p)z_{i}^{2}}
+\end{equation}
 is a density because it's non-negative and integrates to $1$ over $\mathbb{R}^{k}$.\\
-\textbf{Step 3. }Denote $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$ as the random vector $Z^{T}$ associated with vectors $\vec{a}_{0}$ and $b_{0}$, and in this step we prove it weakly converges to the continuous distribution with density $\rho_{\vec{a}_{0},\vec{b}_{0}}(z)$ we just constructed in (\ref{NewDensity}). Suppose $\mathfrak{L}_{+}^{T}$ is an avoiding Bernoulli line ensemble starting with $\vec{x}^{T}_{+}$ and ending with $\vec{y}^{T}_{+}$ and follows the distribution $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T}_{+},\vec{y}^{T}_{+}}$. The vectors $\vec{x}^{T}_{+}$ and $\vec{y}^{T}_{+}$ are two signatures of length $k$ that satisfies the following:\\
-(\romannumeral 1)$$\lim_{T\rightarrow\infty}\frac{\vec{x}^{T}_{+}}{\sqrt{T}}=\vec{A}_{\epsilon,+},\quad \lim_{T\rightarrow\infty}\frac{\vec{y}^{T}_{+}-pT1_{k}}{\sqrt{T}}=\vec{B}_{\epsilon,+}$$
-(\romannumeral 2) $\vec{x}^{T}_{+}\geq \vec{x}^{T}$, $\vec{y}^{T}_{+}\geq \vec{y}^{T}$, which means the endpoints of the newly constructed line ensembles dominate the original ones. This can be achieved due to the limiting behavior of $\vec{x}^{T}_{+}$ and $\vec{y}^{T}_{+}$ and the construction of $\vec{A}_{\epsilon,+}$ and $\vec{B}_{\epsilon,+}$.
-Analogously, we construct another avoiding Bernoulli line ensemble $\mathfrak{L}_{-}^{T}$ with endpoints $\vec{x}^{T}_{-}$ and $\vec{y}^{T}_{-}$ and distribution $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T}_{-},\vec{y}^{T}_{-}}$ such that $\lim_{T\rightarrow\infty}\frac{\vec{x}^{T}_{-}}{\sqrt{T}}=\vec{A}_{\epsilon,-},\quad \lim_{T\rightarrow\infty}\frac{\vec{y}^{T}_{-}-pT1_{k}}{\sqrt{T}}=\vec{B}_{\epsilon,-}$, and $\vec{x}^{T}_{-}\leq \vec{x}^{T}$, $\vec{y}^{T}_{-}\leq \vec{y}^{T}$.\\
+\textbf{Step 3. }Denote $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$ as the random vector $Z^{T}$ in Definition \ref{DefScaled} associated with vectors $\vec{a}_{0}$ and $\vec{b}_{0}$, and in this step we prove it weakly converges to the continuous distribution with density $\rho_{c}(z)$ we just constructed in (\ref{NewDensity}). Suppose $\mathfrak{L}_{+}^{T}$ is an avoiding Bernoulli line ensemble starting with $\vec{x}^{T}_{+}=\left(x^{T}_{+,1},\cdots,x^{T}_{+,k}\right)$ and ending with $\vec{y}^{T}_{+}=\left(y^{T}_{+,1},\cdots,y^{T}_{+,k}\right)$ and follows the distribution $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T}_{+},\vec{y}^{T}_{+}}$. The vectors $\vec{x}^{T}_{+}$ and $\vec{y}^{T}_{+}$ are two signatures of length $k$ that satisfies the following:
+\begin{enumerate}
+	\item Let $1_{k}$ denote the vector $(1,1,\cdots,1)$ of length $k$, then \begin{equation}{\label{Lim}}
+		\lim_{T\rightarrow\infty}\frac{\vec{x}^{T}_{+}}{\sqrt{T}}=\vec{A}_{\epsilon,+},\quad \lim_{T\rightarrow\infty}\frac{\vec{y}^{T}_{+}-pT1_{k}}{\sqrt{T}}=\vec{B}_{\epsilon,+}
+	\end{equation}
+\item $x^{T}_{+,i}\geq x^{T}_i$, $y^{T}_{+,i}\geq y^{T}_i$, for $i=1,\cdots, k$, which means the endpoints of the newly constructed line ensembles dominate the original ones. 
+\end{enumerate}
+This can be achieved due to the limiting behavior of $\vec{x}^{T}_{+}$ and $\vec{y}^{T}_{+}$ and the fact that $\vec{A}_{\epsilon,+}$ and $\vec{B}_{\epsilon,+}$ dominate $\vec{a}_0$ and $\vec{b}_0$.
+Analogously, we construct another avoiding Bernoulli line ensemble $\mathfrak{L}_{-}^{T}$ with endpoints $\vec{x}^{T}_{-}$ and $\vec{y}^{T}_{-}$ and distribution $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T}_{-},\vec{y}^{T}_{-}}$ such that $\lim_{T\rightarrow\infty}\frac{\vec{x}^{T}_{-}}{\sqrt{T}}=\vec{A}_{\epsilon,-},\quad \lim_{T\rightarrow\infty}\frac{\vec{y}^{T}_{-}-pT1_{k}}{\sqrt{T}}=\vec{B}_{\epsilon,-}$, and $x^{T}_{-,i}\leq x^{T}_{i}$, $y^{T}_{-,i}\leq y^{T}_{i}$ for $i=1,\cdots,k$.
+
 Since now $\vec{A}_{\epsilon,+}$, $\vec{A}_{\epsilon,-}$, $\vec{B}_{\epsilon, +}$, $\vec{B}_{\epsilon,-}$ have distinct elements, we can apply the results in Proposition \ref{WeakConvDistinct} and conclude the weak convergence:
 $$Z^{T}_{\vec{A}_{\epsilon,+}, \vec{B}_{\epsilon, +}}\Rightarrow \rho_{\epsilon,+}(z),\quad Z^{T}_{\vec{A}_{\epsilon,-}, \vec{B}_{\epsilon, -}}\Rightarrow \rho_{\epsilon,-}(z)$$
-where $Z^{T}_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}$ and $Z^{T}_{\vec{A}_{\epsilon,-},\vec{B}_{\epsilon,-}}$ are obtained by scaling the line ensembles $\mathfrak{L}_{+}^{T}$, and $\mathfrak{L}_{-}^{T}$, $\rho_{\epsilon,+}(z)$ and $\rho_{\epsilon,-}(z)$ are densities which are obtained by plugging $\vec{A}_{\epsilon,+}$, $\vec{B}_{\epsilon,+}$ and $\vec{A}_{\epsilon,-}$, $\vec{B}_{\epsilon,-}$ into the formula of $\rho(z)$ in Proposition \ref{WeakConvDistinct}.
+where $Z^{T}_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}$ and $Z^{T}_{\vec{A}_{\epsilon,-},\vec{B}_{\epsilon,-}}$ are obtained by scaling the line ensembles $\mathfrak{L}_{+}^{T}$ and $\mathfrak{L}_{-}^{T}$ through Definition \ref{DefScaled}, $\rho_{\epsilon,+}(z)$ and $\rho_{\epsilon,-}(z)$ are densities which are obtained by plugging $\vec{A}_{\epsilon,+}$, $\vec{B}_{\epsilon,+}$ and $\vec{A}_{\epsilon,-}$, $\vec{B}_{\epsilon,-}$ into the formula of $\rho(z)$ in (\ref{Density}).
 
-In order to prove the weak convergence of $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$, it is sufficient to prove for any $R=(-\infty,u_{1}]\times(-\infty,u_{2}]\times\cdots\times(-\infty,u_{k}]$, where $u_{i}\in\mathbb{R}$, we have $$\lim_{T\rightarrow\infty}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)=\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz$$
-Actually, by Lemma \ref{MCLxy}, we can construct a sequence of probability spaces $(\Omega_{T},\mathcal{F}_{T},\mathbb{P}_{T})_{T\geq 1}$ such that for each $T\in\mathbb{Z}^{+}$, we have random variables $\mathfrak{L}_{+}^{T}$ and $\mathfrak{L}^{T}$ have law $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T}_{+},\vec{y}^{T}_{+}}$, and $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T},\vec{y}^{T}}$ under measure $\mathbb{P}_{T}$, respectively. Also, we have $\mathfrak{L}_{+}^{T}(i,r)\geq \mathfrak{L}^{T}(i,r)$ with probability $1$, where $\mathfrak{L}_{+}^{T}(i,r)$(resp., $\mathfrak{L}^{T}(i,r)$) is the value of the $i$-$th$ up-right path of $\mathfrak{L}_{+}^{T}$(resp., $\mathfrak{L}^{T}$) at $r\in\llbracket 0,T\rrbracket$. Similarly, we can construct another sequence of probability spaces $(\Omega_{T}^{\prime},\mathcal{F}_{T}^{\prime},\mathbb{Q}_{T})_{T\geq 1}$ such that for each $T\in\mathbb{Z}^{+}$, we have random variables $\mathfrak{L}_{-}^{T}$ and $\mathfrak{L}^{T}$ have law $\mathbb{P}_{avoid,Ber}^{0,T,\vec{x}^{T}_{-},\vec{y}^{T}_{-}}$, and $\mathbb{P}_{avoid,Ber}^{0,T,\vec{x}^{T},\vec{y}^{T}}$ under measure $\mathbb{Q}_{T}$, respectively, along with $\mathbb{Q}_{T}(\mathfrak{L}_{-}^{T}(i,r)\leq \mathfrak{L}^{T}(i,r), i=1,\cdots, k, r\in\llbracket 0,T\rrbracket)=1$.
+In order to prove the weak convergence of $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$, it is sufficient to prove for any $R=(-\infty,u_{1}]\times(-\infty,u_{2}]\times\cdots\times(-\infty,u_{k}]$, where $u_{i}\in\mathbb{R}$, we have 
+\begin{equation}
+	\lim_{T\rightarrow\infty}\mathbb{P}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)=\int_{R}\rho_{c}(z)dz
+\end{equation}
+Actually, by Lemma \ref{MCLxy}, we can construct a sequence of probability spaces $(\Omega_{T},\mathcal{F}_{T},\mathbb{P}_{T})_{T\geq 1}$ such that for each $T\in\mathbb{Z}^{+}$, we have random variables $\mathfrak{L}_{+}^{T}$ and $\mathfrak{L}^{T}$ have law $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T}_{+},\vec{y}^{T}_{+}}$, and $\mathbb{P}_{Avoid,Ber}^{0,T,\vec{x}^{T},\vec{y}^{T}}$ under measure $\mathbb{P}_{T}$, respectively. Also, we have $\mathfrak{L}_{+}^{T}(i,r)\geq \mathfrak{L}^{T}(i,r)$ with probability $1$, where $\mathfrak{L}_{+}^{T}(i,r)$(resp., $\mathfrak{L}^{T}(i,r)$) is the value of the $i$-$th$ up-right path of $\mathfrak{L}_{+}^{T}$(resp., $\mathfrak{L}^{T}$) at $r\in\llbracket 0,T\rrbracket$. Similarly, we can construct another sequence of probability spaces $(\Omega_{T}^{\prime},\mathcal{F}_{T}^{\prime},\mathbb{Q}_{T})_{T\geq 1}$ such that for each $T\in\mathbb{Z}^{+}$, we have random variables $\mathfrak{L}_{-}^{T}$ and $\mathfrak{L}^{T}$ have law $\mathbb{P}_{avoid,Ber}^{0,T,\vec{x}^{T}_{-},\vec{y}^{T}_{-}}$, and $\mathbb{P}_{avoid,Ber}^{0,T,\vec{x}^{T},\vec{y}^{T}}$ under measure $\mathbb{Q}_{T}$, respectively, along with $\mathbb{Q}_{T}\left(\mathfrak{L}_{-}^{T}(i,r)\leq \mathfrak{L}^{T}(i,r), i=1,\cdots, k, r\in\llbracket 0,T\rrbracket\right)=1$.
 
 Therefore, we have that under measure $\mathbb{P}_{T}$ and $\mathbb{Q}_{T}$:
-$$\mathbb{P}_{T}(Z^{T}_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}\in R)\leq \mathbb{P}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R),\quad \mathbb{Q}_{T}(Z^{T}_{\vec{A}_{\epsilon,-},\vec{B}_{\epsilon,-}}\in R)\geq \mathbb{Q}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)$$
-Take $liminf$ and $limsup$ on both side of the first and second inequality respectively, we get
+\begin{equation}{\label{MClemmaPQ}}
+	\mathbb{P}_{T}(Z^{T}_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}\in R)\leq \mathbb{P}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R),\quad \mathbb{Q}_{T}(Z^{T}_{\vec{A}_{\epsilon,-},\vec{B}_{\epsilon,-}}\in R)\geq \mathbb{Q}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)
+\end{equation}
+Take limit-infimum and limit-supremum on both sides of the first and second inequality in (\ref{MClemmaPQ}) respectively, we get
 \begin{align}{\label{TwoIneq}}
 \int_{R}\rho_{\epsilon,+}(z)dz\leq \liminf_{T\rightarrow\infty}\mathbb{P}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R),\quad \int_{R}\rho_{\epsilon,-}(z)dz\geq \limsup_{T\rightarrow\infty}\mathbb{Q}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)
 \end{align}
-because of the weak convergence of $Z^{T}_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}$ and $Z^{T}_{\vec{A}_{\epsilon,-},\vec{B}_{\epsilon,-}}$. Since the distribution of $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$ under measure $\mathbb{P}_{T}$ and $\mathbb{Q}_{T}$ are the same, we can combine the above two inequalities (\ref{TwoIneq}) and get
+because of the weak convergence of $Z^{T}_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}$ and $Z^{T}_{\vec{A}_{\epsilon,-},\vec{B}_{\epsilon,-}}$. Since the distribution of $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$ under measure $\mathbb{P}_{T}$ and $\mathbb{Q}_{T}$ are the same, we can combine the above two inequalities in (\ref{TwoIneq}) and get
 \begin{align}{\label{Squeezing}}
 \int_{R}\rho_{\epsilon,+}(z)dz\leq \liminf_{T\rightarrow\infty}\mathbb{P}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)\leq\limsup_{T\rightarrow\infty}\mathbb{P}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)\leq\int_{R}\rho_{\epsilon,-}(z)dz	
 \end{align}
 
 The rest of the proof establishes the following statement:
 \begin{align}{\label{WeakConvConclude}}
-\lim_{\epsilon\downarrow 0}\int_{R}\rho_{\epsilon,+}(z)dz=\lim_{\epsilon\downarrow 0}\int_{R}\rho_{\epsilon,-}(z)dz=\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz
+\lim_{\epsilon\downarrow 0}\int_{R}\rho_{\epsilon,+}(z)dz=\lim_{\epsilon\downarrow 0}\int_{R}\rho_{\epsilon,-}(z)dz=\int_{R}\rho_{c}(z)dz
 \end{align}
-and thereby concluding $$\lim_{T\rightarrow\infty}\mathbb{P}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)=\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz$$ by letting $\epsilon\downarrow 0$ in the inequality (\ref{Squeezing}), and we prove the weak convergence of $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$.
+and thereby concluding $$\lim_{T\rightarrow\infty}\mathbb{P}_{T}(Z^{T}_{\vec{a}_{0},\vec{b}_{0}}\in R)=\int_{R}\rho_{c}(z)dz$$ by letting $\epsilon\downarrow 0$ in the inequality (\ref{Squeezing}), and we prove the weak convergence of $Z^{T}_{\vec{a}_{0},\vec{b}_{0}}$.
 
-To prove the statement (\ref{WeakConvConclude}), first notice that
-\begin{align*}
-	Z_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}&=\int_{\mathbb{R}^{k}}f(\vec{a},\vec{z})g(\vec{b},\vec{z})\prod_{i=1}^{k}e^{-c_{3}(t,p)z^{2}_{i}}dz\\
-	&=\int_{\mathbb{R}^{k}}\big[\epsilon^{u+v}\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})+o(\epsilon^{u+v})\big]\prod_{i=1}^{k}e^{-c_{3}(t,p)z^{2}_{i}}dz\\
-	&=\epsilon^{u+v}\int_{\mathbb{R}^{k}}\big[\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})+o(1)\big]\prod_{i=1}^{k}e^{-c_{3}(t,p)z^{2}_{i}}dz\\
-\end{align*}
-Then, we get
-$$\lim_{\epsilon\downarrow 0} \epsilon^{-(u+v)} Z_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}=\lim_{\epsilon\downarrow 0}\int_{\mathbb{R}^{k}}\big[\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})+o(1)\big]\prod_{i=1}^{k}e^{-c_{3}(t,p)z^{2}_{i}}dz=Z_{\vec{a}_{0},\vec{b}_{0}}$$
-by definition of the constant $Z_{\vec{a}_{0},\vec{b}_{0}}$.
+The rest of the proof intends to establish (\ref{WeakConvConclude}). By (\ref{Expandf}), (\ref{FirstTerm}) and (\ref{RemainderBounded}), we have when $\epsilon<1$:
+\begin{equation}{\label{fbounded}}
+\epsilon^{-u}f(\vec{A}_{\epsilon,+},\vec{z})\leq\varphi(\vec{a}_0,\vec{z},\vec{m})+\widetilde{C}_1\cdot(|z_1|+|z_k|)^{u+1}\cdot e^{C_{1}\cdot\sum_{j=1}^{k}|z_{j}|}\equiv F(\vec{z})
+\end{equation}
+where the constants $\widetilde{C}_{1}=N(\vec{m})\cdot M(\vec{m})\cdot(k!)\cdot\left(\max_{1\leq i\leq p}m_i\right)$, $C_1=c_1(t,p)\cdot k\cdot (\max_{1\leq i\leq p} m_i)$ only depend on $\vec{m}$. Analogously, we can find constants $\widetilde{C}_2$ and $C_2$ only depending on $\vec{n}$ such that 
+\begin{equation}{\label{gbounded}}
+\epsilon^{-v}f(\vec{B}_{\epsilon,+},\vec{z})\leq\varphi(\vec{b}_0,\vec{z},\vec{n})+\widetilde{C}_2\cdot(|z_1|+|z_k|)^{v+1}\cdot e^{C_{2}\cdot\sum_{j=1}^{k}|z_{j}|}\equiv G(\vec{z})
+\end{equation}
+Therefore, we obtain 
+\begin{equation}{\label{fgbounded}}
+	\epsilon^{-(u+v)}f(\vec{A}_{\epsilon,+},\vec{z})g(\vec{B}_{\epsilon,+},\vec{z})\prod_{i=1}^{k}e^{-c_{3}(t,p)z^{2}_{i}}\leq F(\vec{z})G(\vec{z})\prod_{i=1}^{k}e^{-c_3(t,p)z^2_i}
+\end{equation}
+and the right hand side of (\ref{fgbounded}) is integrable because of the quadratic terms in the exponential. Let $Z_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}$ be the normalizing constant in the density (\ref{Density}) when $\vec{a}$ and $\vec{b}$ equal to $\vec{A}_{\epsilon,+}$ and $\vec{B}_{\epsilon,+}$. Then, we have
+
+\begin{equation}
+\begin{split}
+	\lim_{\epsilon\downarrow 0}\epsilon^{-(u+v)}Z_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}&=\lim_{\epsilon\downarrow 0}\int_{\mathbb{W}_{k}^{o}}\left(\epsilon^{-u}f(\vec{A}_{\epsilon,+},\vec{z})\right)\left(\epsilon^{-v}g(\vec{B}_{\epsilon,+},\vec{z})\right)\prod_{i=1}^{k}e^{-c_{3}(t,p)z^{2}_{i}}dz\\
+	&=\int_{\mathbb{W}_{k}^{o}}\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})\prod_{i=1}^{k}e^{-c_{3}(t,p)z^{2}_{i}}dz=Z_c
+\end{split}
+\end{equation}
+where the second equality uses dominated convergence theorem with the dominating function being the right hand side of (\ref{fgbounded}) as well as results (\ref{ConvSpeedA}) and (\ref{ConvSpeedB}), and the last equality is due to (\ref{NewDensity}) which gives the definition of $Z_c$.
 Therefore, we conclude
-\begin{align*}
-	\lim_{\epsilon\downarrow 0}\rho_{\epsilon,+}(z)=\lim_{\epsilon\downarrow 0}(\epsilon^{-(u+v)}Z_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}})(\epsilon^{u}f(\vec{a},\vec{z}))(\epsilon^{v}g(\vec{b},\vec{z}))=Z_{\vec{a},\vec{b}_{0}}\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})=\rho_{\vec{a}_{0},\vec{b}_{0}}(z)
-\end{align*}
-Since $\rho_{\epsilon,+}(z)\mathbbm{1}_{R}dz\leq\rho_{\epsilon,+}(z)dz$ is bounded by an integrable function, by Dominated Convergence Theorem we have: $$\lim_{\epsilon\downarrow 0}\int_{R}\rho_{\epsilon,+}(z)dz=\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz$$ Analogously, we can get $\lim_{\epsilon\downarrow 0}\int_{R}\rho_{\epsilon,-}(z)dz=\int_{R}\rho_{\vec{a}_{0},\vec{b}_{0}}(z)dz$ and we proved the statement (\ref{WeakConvConclude}), which completes the proof.
+\begin{equation}
+	\begin{split}
+		& \lim_{\epsilon\downarrow 0}Z_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}^{-1}\cdot f(\vec{a},\vec{z})\cdot g(\vec{b},\vec{z})=\lim_{\epsilon\downarrow 0}\left(\epsilon^{u+v}Z_{\vec{A}_{\epsilon,+},\vec{B}_{\epsilon,+}}^{-1}\right)\cdot \left(\epsilon^{-u}f(\vec{a},\vec{z})\right)\cdot\left(\epsilon^{-v}g(\vec{b},\vec{z})\right)\\
+		&=Z_{c}^{-1}\varphi(\vec{a}_{0},\vec{z},\vec{m})\psi(\vec{b}_{0},\vec{z},\vec{n})
+	\end{split}
+\end{equation}
+which implies $\rho_{\epsilon,+}(z)$ pointwise converges to $\rho_{c}(z)$ when $\epsilon\downarrow 0$.
+Since $\rho_{\epsilon,+}(z)\mathbf{1}_{R}\leq\rho_{\epsilon,+}(z)$ is bounded by an integrable function, by Dominated Convergence Theorem we have: $$\lim_{\epsilon\downarrow 0}\int_{R}\rho_{\epsilon,+}(z)dz=\int_{R}\rho_{c}(z)dz$$ Analogously, we can get $\lim_{\epsilon\downarrow 0}\int_{R}\rho_{\epsilon,-}(z)dz=\int_{R}\rho_{c}(z)dz$ and we proved the statement (\ref{WeakConvConclude}), which completes the proof.
 \end{proof}
 
