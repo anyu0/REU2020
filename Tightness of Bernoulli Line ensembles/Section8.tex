@@ -193,6 +193,191 @@ To conclude tightness of $\{\mathcal{L}_i^n\}$, it suffices to prove that $K = \
 		Therefore, it must be the case that $B_k(i)+1>B_{k-1}(i+1)$. Then we find that for any $j\in \llbracket 1,k\rrbracket$ we know that $B_j(i)+1>B_{j-1}(i+1)$ implies $B_j(i_0)=B_{j-1}(i_0)$ since $B_j(i_0)=B_j(i_0+1)$ and $B_{j-1}(i_0)\geq B_j(i_0)$ . This can be applied to each $j$ to find that $g(i_0)=f(i_0)$ and $g(i_0+1)>f(i_0+1)$, which we assumed not to be the case. Therefore, we know that $g\leq B_k$ and so we have proven property (3), implying that if the three conditions in the statement of Lemma \ref{LemmaWD} are met then we know $\mathfrak{B}\in \Omega_{avoid}(T_0,T_1,\vec x,\vec y, f,g)$ and so $\Omega_{avoid}(T_0,T_1,\vec x,\vec y, f,g)$ is non-empty.
 	\end{proof}
 
+\subsection{Proof of Theorem \ref{PropTightGood} (ii)}
+
+\begin{definition}\label{scaledRW}
+	Let $a,b\in N^{-\alpha}\mathbb{Z}$ with $a<b$ and $x,y\in N^{-\alpha/2}\mathbb{Z}$ satisfy $0\leq y-x \leq (b-a)N^{\alpha/2}$. We define $\mathbb{P}^{a,b,x,y}_{free,N}$ to be the law of the $C([a,b])$-valued random variable $Y$ given by
+	\[
+	Y(t) = \frac{x + N^{-\alpha/2}\ell^{((b-a)N^\alpha,\,(y-x)N^{\alpha/2}))}_{(t-a)N^\alpha} - ptN^{\alpha/2}}{\sqrt{p(1-p)}}, \quad t\in [a,b],
+	\]
+	where $\ell^{(T,z)}$ denotes the random variable with law $\mathbb{P}^{0,T,0,z}_{Ber}$.
+\end{definition}
+
+\begin{lemma}\label{scaledRWbb}
+	Let $x,y,a,b\in \mathbb{R}$ with $a<b$, and let $a_N,b_N\in N^{-\alpha}\mathbb{Z}$, $x^N,y^N \in N^{-\alpha/2}\mathbb{Z}$ be sequences with $a_N \leq a$, $b_N\geq b$, and $|y^N-x^N| \leq (b_N-a_N)N^{\alpha/2}$. Suppose $a_N\to a$, $b_N\to b$. Write $\tilde{x}^N = (x^N - pa_NN^{\alpha/2})/\sqrt{p(1-p)}$, $\tilde{y}^N = (y^N - pb_NN^{\alpha/2})/\sqrt{p(1-p)}$, and assume $\tilde{x}^N \to x$, $\tilde{y}^N\to y$ as $N\to\infty$. Let $Y^N$ be a sequence of random variables with laws $\mathbb{P}^{a_N,b_N,x^N,y^N}_{free,N}$, and let $Z^N = Y^N|_{[a,b]}$. Then the law of $Z^N$ converges weakly to $\mathbb{P}^{a,b,x,y}_{free}$ as $N\to\infty$.
+\end{lemma}
+
+\begin{proof}
+	Let us write $z^N = (y^N-x^N)N^{\alpha/2}$ and $T_N = (b_N-a_N)N^\alpha$. Let $\tilde{B}$ be a standard Brownian bridge on $[0,1]$, and define $C([a,b])$-valued random variables $B^N$, $B$ via
+	\begin{align*}
+	B^N(t) &= \sqrt{b_N-a_N}\cdot\tilde{B}\left(\frac{t-a_N}{b_N-a_N}\right) + \frac{t-a_N}{b_N-a_N}\cdot \tilde{y}^N + \frac{b_N-t}{b_N-a_N}\cdot \tilde{x}^N,\\
+	B(t) &= \sqrt{b-a}\cdot \tilde{B}\left(\frac{t-a}{b-a}\right) + \frac{t-a}{b-a}\cdot y + \frac{b-t}{b-a}\cdot x.
+	\end{align*}
+	We observe that $B$ has law $\mathbb{P}^{a,b,x,y}_{free}$ and $B^N\implies B$ as $N\to\infty$. By \cite[Theorem 3.1]{Billing}, to show that $Z^N\implies B$, it suffices to find a sequence of probability spaces supporting $Y^N,B^N$ so that
+	\begin{equation}\label{scaledRWweak}
+	\rho(B^N,Y^N) = \sup_{t\in[a_N,b_N]} |B^N(t) - Y^N(t)| \implies 0 \quad \mathrm{as} \quad N\to\infty.
+	\end{equation}
+	It follows from Theorem \ref{KMT} that for each $N\in\mathbb{N}$ there is a probability space supporting $B^N$ and $Y^N$, as well as constants $C,a',\alpha' > 0$, such that
+	\begin{equation}\label{scaledRWcheb}
+	\ex\left[e^{a'\Delta(N,x^N,y^N)}\right] \leq Ce^{\alpha'\log N} e^{|z^N-pT_N|^2/N^\alpha},
+	\end{equation}
+	where $\Delta(N,x^N,y^N) = \sqrt{p(1-p)}\,N^{\alpha/2}\rho(B^N,Y^N)$. Since $(z^N - pT_N)N^{-\alpha/2} \to \sqrt{p(1-p)}\,(y-x)$ by assumption, there exist $N_0\in\mathbb{N}$ and $A>0$ so that $|z-pT_N| \leq AN^{\alpha/2}$ for $N\geq N_0$. Then for $\epsilon > 0$ and $N\geq N_0$, Chebyshev's inequality and \eqref{scaledRWcheb} give
+	\[
+	\mathbb{P}(\rho(B^N,Y^N) > \epsilon) \leq C e^{-a'\epsilon\sqrt{p(1-p)}\, N^{\alpha/2}}e^{\alpha'\log N} e^{A^2}.
+	\]
+	The right hand side tends to 0 as $N\to\infty$, implying \eqref{scaledRWweak}.
+\end{proof}
+
+\begin{definition}\label{scaledavoid}
+	Let $a,b\in N^{-\alpha}\mathbb{Z}$ with $a<b$ and fix $k\in\mathbb{N}$. For $i\in\llbracket 1,k\rrbracket$ let $\ell^{(N,z),i}$ denote iid random variables with laws $\mathbb{P}^{0,N,0,z}_{Ber}$. Let $\vec{x},\vec{y}\in(N^{-\alpha/2}\mathbb{Z})^k$ satisfy $0\leq y_i-x_i \leq (b-a)N^{\alpha/2}$ for $i\in\llbracket 1,k\rrbracket$. We define the $\llbracket 1,k\rrbracket$-indexed line ensemble $\mathcal{Y}^N$ by
+	\[
+	\mathcal{Y}^N_i(t) = \frac{x_i + N^{-\alpha/2}\ell^{((b-a)N^\alpha,\,(y_i-x_i)N^{\alpha/2})),i}_{(t-a)N^\alpha} - ptN^{\alpha/2}}{\sqrt{p(1-p)}}, \quad i\in\llbracket 1,k\rrbracket, t\in [a,b].
+	\]
+	We let $\mathbb{P}^{a,b,\vec{x},\vec{y}}_{free,N}$ denote the law of $\mathcal{Y}^N$. Suppose $\vec{x},\vec{y}\in (N^{-\alpha/2}\mathbb{Z})\cap W_k^\circ$ and $f : [a,b] \to (-\infty,\infty]$, $g:[a,b]\to [-\infty,\infty)$ are continuous functions. We define the probability measure $\mathbb{P}^{a,b,\vec{x},\vec{y},f,g}_{avoid,N}$ to be $\mathbb{P}^{a,b,\vec{x},\vec{y}}_{free,N}$ conditioned on the event
+	\[
+	E = \{f(r) \geq \mathcal{Y}^N_1(r) \geq \cdots \geq \mathcal{Y}^N_k(r) \geq g(r) \mbox{ for } r\in[a,b]\}.
+	\]
+	This measure is well-defined if $E$ is nonempty.
+\end{definition}
+
+\begin{lemma}\label{scaledavoidBB}
+	Fix $k\in\mathbb{N}$ and $a,b\in\mathbb{R}$ with $a<b$, and let $f:[a-1,b+1]\to(-\infty,\infty]$, $g:[a-1,b+1]\to[-\infty,\infty)$ be continuous functions such that $f(t) > g(t)$ for all $t\in[a-1,b+1]$. Let $\vec{x},\vec{y}\in W_k^\circ$ be such that $f(a) > x_1$, $f(b) > y_1$, $g(a) < x_k$, and $g(b) < y_k$. Let $a_N = \lfloor aN^\alpha\rfloor N^{-\alpha}$ and $b_N = \lceil bN^\alpha\rceil N^{-\alpha}$, and let $f_N : [a-1,b+1]\to(-\infty,\infty]$ and $g_N : [a-1,b+1]\to[-\infty,\infty)$ be continuous functions such that $f_N\to f$ and $g_N\to g$ uniformly on $[a-1,b+1]$. Lastly, let $\vec{x}\,^N, \vec{y}\,^N \in (N^{-\alpha/2}\mathbb{Z})^k \cap W_k^\circ$, write $\tilde{x}^N_i = (x_i^N - pa_N N^{\alpha/2})/\sqrt{p(1-p)}$, $\tilde{x}^N_i = (x_i^N - pa_N N^{\alpha/2})/\sqrt{p(1-p)}$, and suppose that $\tilde{x}^N_i \to x_i$ and $\tilde{y}^N_i \to y_i$ as $N\to\infty$ for each $i\in\llbracket 1,k\rrbracket$. Then there exists $N_0 \in \mathbb{N}$ so that $\mathbb{P}^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N,f_N,g_N}_{avoid,N}$ is well-defined for $N\geq N_0$. Moreover, if $\mathcal{Y}^N$ have laws $\mathbb{P}^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N,f_N,g_N}_{avoid,N}$ and $\mathcal{Z}^N = \mathcal{Y}^N|_{\Sigma\times[a,b]}$, then the law of $\mathcal{Z}^N$ converges weakly to $\mathbb{P}^{a,b,\vec{x},\vec{y},f,g}_{avoid}$ as $N\to\infty$.
+\end{lemma}
+
+\begin{proof}
+	We prove the two statements of the lemma in two steps.\\
+	
+	\noindent\textbf{Step 1. } In this step we fix $N_0 \in \mathbb{N}$ so that $\mathbb{P}^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N,f_N,g_N}_{avoid,N}$ is well-defined for $N\geq N_0$. Observe that we can choose $\epsilon > 0$ and continuous functions $h_1,\dots,h_k : [a,b]\to\mathbb{R}$ depending on $a,b,\vec{x},\vec{y},f,g$ with $h_i(a) = x_i$, $h_i(b)=y_i$ for $i\in\llbracket 1,k\rrbracket$, such that if $u_i:[a,b]\to\mathbb{R}$ are continuous functions with $\rho(u_i,h_i) = \sup_{x\in[a,b]} |u_i(x)-h_i(x)| < \epsilon$, then
+	\begin{equation}\label{scaledavoidwindow}
+	f(x) - \epsilon > u_1(x) + \epsilon > u_1(x) - \epsilon > \cdots > u_k(x) + \epsilon > u_k(x) - \epsilon > g(x) + \epsilon
+	\end{equation}
+	for all $x\in[a,b]$. By Lemma \ref{Spread}, we have
+	\begin{equation}\label{BBwindow}
+	\mathbb{P}^{a,b,\vec{x},\vec{y}}_{free}(\rho(\mathcal{Q}_i,h_i) > \epsilon \mbox{ for } i\in\llbracket 1,k\rrbracket) > 0.
+	\end{equation}
+	Since $y_i^N - x_i^N - p(b_N-a_N)N^{\alpha/2} \to \sqrt{p(1-p)}\,(y_i-x_i)$ as $N\to\infty$ for $i\in\llbracket 1,k\rrbracket$ and $p<1$, we can find $N_1\in\mathbb{N}$ so that for $N\geq N_1$, $|y_i^N-x_i^N| \leq (b_N-a_N)N^{\alpha/2}$. It follows from Lemma \ref{scaledRWbb} that if $\mathcal{Y}^N$ have laws $\mathbb{P}^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N}_{free,N}$ for $N\geq N_1$ and $\mathcal{Z}^N = \mathcal{Y}^N|_{\Sigma\times[a,b]}$, then the law of $\mathcal{Z}^N$ converges weakly to $\mathbb{P}^{a,b,\vec{x},\vec{y}}_{avoid}$. In view of \eqref{BBwindow} we can then find $N_2$ so that if $N \geq \max(N_1,N_2)$ then
+	\[
+	\mathbb{P}^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N}_{free,N}(\rho(\mathcal{Q}_i,h_i) > \epsilon \mbox{ for } i\in\llbracket 1,k\rrbracket) > 0.
+	\]
+	We now choose $N_3$ so that $\sup_{x\in[a-1,b+1]}|f(x)-f_N(x)| < \epsilon/4$ and $\sup_{x\in[a-1,b+1]}|g(x)-g_N(x)| < \epsilon/4$. If $f=\infty$ (resp. $g=-\infty$), we interpret this to mean that $f_N=\infty$ (resp. $g_N=-\infty$). We take $N_4$ large enough so that if $N\geq N_4$ and $|x-y|\leq N^{-\alpha/2}$ then $|f(x)-f(y)|<\epsilon/4$ and $|g(x)-g(y)|<\epsilon/4$. Lastly, we choose $N_5$ so that $N_5^{-\alpha} < \epsilon/4$. Then for $N\geq N_0 = \max(N_1,N_2,N_3,N_4,N_5)$, we have
+	\[
+	\{\rho(\mathcal{Q}_i,h_i) > \epsilon \mbox{ for } i\in\llbracket 1,k\rrbracket\} \subset \{f_N \geq \mathcal{Y}^N_1 \geq \cdots \geq \mathcal{Y}^N_k \geq g_N \mbox{ on } [a_N,b_N]\}.
+	\]
+	By \eqref{BBwindow}, this implies that $\mathbb{P}^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N,f_N,g_N}_{avoid,N}$ is well-defined.\\
+	
+	\noindent\textbf{Step 2. } In this step we prove that $\mathcal{Z}^N \implies \mathbb{P}^{a,b,\vec{x},\vec{y},f,g}_{avoid}$, with $\mathcal{Z}^N$ defined in the statement of the lemma. We write $\Sigma = \llbracket 1,k\rrbracket$, $\Lambda = [a,b]$, and $\Lambda_N = [a_N,b_N]$. It suffices to show that for any bounded continuous function $F : C(\Sigma\times\Lambda)\to\mathbb{R}$ we have
+	\begin{equation}\label{scaledavoidweak}
+	\lim_{N\to\infty} \ex[F(\mathcal{Z}^N)] = \ex[F(\mathcal{Q})],
+	\end{equation}
+	where $\mathcal{Q}$ has law $\mathbb{P}^{a,b,\vec{x},\vec{y},f,g}_{avoid}$.
+	
+	We define the functions $H_{f,g} : C(\Sigma\times\Lambda)\to\mathbb{R}$ and $H^N_{f,g}:C(\Sigma\times\Lambda_N)\to\mathbb{R}$ by
+	\begin{align*}
+	H_{f,g}(\mathcal{L}) &= \mathbf{1}\{f > \mathcal{L}_1 > \cdots > \mathcal{L}_k > g \mbox{ on } \Lambda\},\\
+	H^N_{f,g}(\mathcal{L}^N) &= \mathbf{1}\{f \geq \mathcal{L}^N_1 \geq \cdots \geq \mathcal{L}^N_k \geq g \mbox{ on } \Lambda_N\}.
+	\end{align*}
+	Then we observe that for $N\geq N_0$,
+	\begin{equation}\label{scaledavoidcond}
+	\ex[F(\mathcal{Z}^N)] = \frac{\ex[F(\mathcal{L}^N|_{\Sigma\times[a,b]})H_{f,g}^N(\mathcal{L}^N)]}{\ex[H_{f,g}^N(\mathcal{L}^N)]},
+	\end{equation}
+	where $\mathcal{L}^N$ has law $\mathbb{P}^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N}_{free,N}$. By our choice of $N_0$ in Step 1, the denominator in \eqref{scaledavoidcond} is positive for all $N\geq N_0$. Similarly, we have
+	\begin{equation}\label{BBavoidcond}
+	\ex[F(\mathcal{Q})] = \frac{\ex[F(\mathcal{L})H_{f,g}(\mathcal{L})]}{\ex[H_{f,g}(\mathcal{L})]}, 
+	\end{equation}
+	where $\mathcal{L}$ has law $\mathbb{P}^{a,b,\vec{x},\vec{y}}_{free}$. From \eqref{scaledavoidcond} and \eqref{BBavoidcond}, we see that to prove \eqref{scaledavoidweak} it suffices to show that for any bounded continuous function $F:C(\Sigma\times\Lambda)\to\mathbb{R}$,
+	\begin{equation}\label{scaledBBex}
+	\lim_{N\to\infty}\ex[F(\mathcal{L}^N|_{\Sigma\times[a,b]})H_{f,g}^N(\mathcal{L}^N)] = \ex[F(\mathcal{L})H_{f,g}(\mathcal{L})].
+	\end{equation}
+	By Lemma \ref{scaledRWbb}, $\mathcal{L}^N|_{\Sigma\times[a,b]} \implies \mathcal{L}$ as $N\to\infty$. Since $C(\Sigma\times\Lambda)$ is separable, the Skorohod representation theorem \cite[Theorem 6.7]{Billing} gives a probability space $(\Omega,\mathcal{F},\mathbb{P})$ supporting $C(\Sigma\times\Lambda_N)$-valued random variables $\mathcal{L}^N$ with laws $\mathbb{P}^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N}_{free,N}$ and a $C(\Sigma\times\Lambda)$-valued random variable $\mathcal{L}$ with law $\mathbb{P}^{a,b,\vec{x},\vec{y}}_{free}$ such that $\mathcal{L}^N|_{\Sigma\times[a,b]}\to\mathcal{L}$ uniformly on compact sets, pointwise on $\Omega$. Here we rely on the fact that $a_N,b_N$ are respectively the largest element of $N^{-\alpha}\mathbb{Z}$ less than $a$ and the smallest element greater than $b$, so that $\mathcal{L}^N|_{\Sigma\times[a,b]}$ uniquely determines $\mathcal{L}^N$ on $[a_N,b_N]$.
+	
+	Define the events
+	\begin{align*}
+	E_1 &= \{\omega : f > \mathcal{L}_1(\omega) > \cdots > \mathcal{L}_k(\omega) > g \mbox{ on } [a,b]\},\\
+	E_2 &= \{\omega : \mathcal{L}_i(\omega)(r) < \mathcal{L}_{i+1}(\omega)(r) \mbox{ for some } i\in\llbracket 0,k\rrbracket \mbox{ and } r\in[a,b]\},
+	\end{align*}
+	where in the definition of $E_2$ we use the convention $\mathcal{L}_0 = f$, $\mathcal{L}_{k+1} = g$. The continuity of $F$ implies that $F(\mathcal{L}^N|_{\Sigma\times[a,b]})H^N_{f_N,g_N}(\mathcal{L}^N) \to F(\mathcal{L})$ on the event $E_1$, and $F(\mathcal{L}^N|_{\Sigma\times[a,b]})H^N_{f_N,g_N}(\mathcal{L}^N)\to 0$ on the event $E_2$. By Lemma \ref{NoTouch} we have $\mathbb{P}(E_1 \cup E_2) = 1$, so $\mathbb{P}$-a.s. we have $F(\mathcal{L}^N|_{\Sigma\times[a,b]})H^N_{f_N,g_N}(\mathcal{L}^N) \to F(\mathcal{L})H_{f,g}(\mathcal{L})$. The bounded convergence theorem then implies \eqref{scaledBBex}, completing the proof of \eqref{scaledavoidweak}.
+\end{proof}
+
+\begin{lemma}\label{inftydistinct}
+	Let $f^\infty = \{f^\infty_i\}_{i=1}^{k-1}$ denote the weak limit of a subsequence of $f^N = \{f^N_i\}_{i=1}^{k-1}$. Then for any $s\in\mathbb{R}$, we have $f^\infty(s) = (f_1^\infty(s),\dots,f_{k-1}^\infty(s)) \in W^\circ_{k-1}$, $\mathbb{P}$-a.s.
+\end{lemma}
+
+\begin{proof}
+	Without loss of generality we may assume that $f^N \implies f^\infty$ as $N\to\infty$. By the Skorohod representation theorem, there is a probability space $(\Omega,\mathcal{F},\mathbb{P})$ supporting random variables $\mathcal{X}^N$ and $\mathcal{X}$ with the laws of $f^N$ and $f^\infty$ respectively, such that $\mathcal{X}^N \to \mathcal{X}$ uniformly on compact sets as $N\to\infty$, pointwise on all of $\Omega$. In particular, $\mathcal{X}^N(s) \to \mathcal{X}(s)$. We have $f^N_i(s) = N^{-\alpha/2}(L^N_i(s) - psN^\alpha) + \lambda s^2$, so $\mathcal{X}^N_i(s) = N^{-\alpha/2}(\mathcal{L}^N_i(s) - psN^\alpha) + \lambda s^2$, where $\mathcal{L}^N$ has the law of $L^N$.
+	
+	Assume for a contradiction that $\mathcal{X}_i(s) = \mathcal{X}_{i+1}(s)$ for some $i\in\llbracket 1,k-2\rrbracket$. Then given $\delta>0$, we can find $N$ large enough so that $\mathcal{X}_i^N(s) - \mathcal{X}^N_{i+1}(s) < \delta$, hence $\mathcal{L}_i^N(s) - \mathcal{L}^N_{i+1}(s) < \delta N^{\alpha/2}$. 
+\end{proof}
+
+We now give the proof of Theorem \ref{PropTightGood} (ii).
+
+\begin{proof}
+	We will write $\Sigma = \llbracket 1,k\rrbracket$. Let us write $\mathcal{Y}^N = (Y^N_1,\dots,Y^N_{k-1})$ with $Y^N_i(s) = N^{-\alpha/2}(L^N_i(sN^\alpha)-psN^\alpha)/\sqrt{p(1-p)}$. We may assume without loss of generality that $\mathcal{Y}^N \implies \mathcal{L}^\infty$ as $N\to\infty$. Fix a set $K = \llbracket k_1,k_2\rrbracket \subseteq \llbracket 1, k-2\rrbracket$ and $a,b\in\mathbb{R}$ with $a<b$. We also fix a bounded Borel-measurable function $F:C(K\times[a,b])\to\mathbb{R}$. We must show that $\mathbb{P}$-a.s.,
+	\begin{equation}\label{BGPcondex}
+	\ex[F(\mathcal{L}^\infty|_{K\times[a,b]})\,|\,\mathcal{F}_{ext}(K\times(a,b))] = \ex^{a,b,\vec{x},\vec{y},f,g}_{avoid}[F(\mathcal{Q})],
+	\end{equation}
+	where $\vec{x} = (f^\infty_{k_1}(a),\dots,f^\infty_{k_2}(a))$, $\vec{y} = (f^\infty_{k_1}(b),\dots,f^\infty_{k_2}(b))$, $f=f^\infty_{k_1-1}$ (with $f^\infty_0 = +\infty$), and $g=f^\infty_{k_2+1}$. We prove \eqref{BGPcondex} in two steps.\\
+	
+	\noindent\textbf{Step 1. } Fix $m\in\mathbb{N}$, $n_1,\dots,n_m\in\Sigma$, $t_1,\dots,t_m\in\mathbb{R}$, $h_1,\dots,h_m : \mathbb{R}\to\mathbb{R}$ bounded continuous functions. Define $S = \{i\in\llbracket 1,m\rrbracket : n_i \in K, t_i \in [a,b]\}$. In this step we prove that
+	\begin{equation}\label{BBcondexsplit}
+	\ex\left[\prod_{i=1}^m h_i(f^\infty_{n_i}(t_i))\right] = \ex\left[\prod_{s\notin S} h_s(f^\infty_{n_s}(t_s))\cdot\ex^{a,b,\vec{x},\vec{y},f,g}_{avoid}\left[\prod_{s\in S} h_s(Q_{n_s}(t_s))\right]\right].
+	\end{equation}
+	By assumption, we have
+	\begin{equation}\label{BGPweak}
+	\lim_{N\to\infty}\ex\left[\prod_{i=1}^m h_i(Y^N_{n_i}(t_i))\right] = \ex\left[\prod_{i=1}^m h_i(f^\infty_{n_i}(t_i))\right].
+	\end{equation}
+	We define the sequences $a_N = \lfloor aN^\alpha\rfloor N^{-\alpha}$, $b_N = \lceil bN^\alpha\rceil N^{-\alpha}$, $\vec{x}\,^N = (L_{k_1}^N(a_N),\dots,L_{k_2}^N(a_N))$, $\vec{y}\,^N = (L_{k_1}^N(b_N),\dots,L_{k_2}^N(b_N))$, $f_N = Y_{k_1-1}^N$ (where $Y_0 = +\infty$), $g_N = Y_{k_2+1}^N$. Since $a_N \to a$, $b_N\to b$, we may choose $N_0$ sufficiently large so that if $N\geq N_0$, then $t_s < a_N$ or $t_s > b_N$ for all $s\notin S$ with $n_s \in K$. By the Schur Gibbs property, we see that the law of $\mathcal{Y}^N|_{K\times[a,b]}$ conditioned on the $\sigma$-algebra $\mathcal{F} = \sigma\left(Y^N_{k_1-1}, Y^N_{k_2+1}, Y^N_{k_1}(a_N), Y^N_{k_1}(b_N),\dots,Y^N_{k_2}(a_N),Y^N_{k_2}(b_N)\right)$ is precisely $\mathbb{P}^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N,f_N,g_N}_{avoid,N}$. Therefore
+	\begin{equation}\label{BBschur}
+	\ex\left[\prod_{i=1}^m h_i(Y^N_{n_i}(t_i))\right] = \ex\left[\prod_{s\notin S} h_s(Y^N_{n_s}(t_s))\cdot\ex^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N,f_N,g_N}_{avoid,N}\left[\prod_{s\in S} h_s(Z^N_{n_s-k_1+1}(t_s))\right]\right].
+	\end{equation}
+	
+	Now by Lemma \ref{inftydistinct}, we have $\mathbb{P}$-a.s. that $\vec{x}\,^N,\vec{y}\,^N\in W_{k_2-k_1+1}^\circ$. By the Skorohod representation theorem, there is a probability space $(\Omega,\mathcal{F},\mathbb{P})$ supporting random variables with the laws of $\mathcal{Y}^N$, $\mathcal{L}^\infty$ (which we denote by the same symbols), such that $\mathcal{Y}^N \to \mathcal{L}^\infty$ uniformly on compact sets at every point of $\Omega$. In particular, $f_N\to f = f^\infty_{k_2+1}$ and $g_N\to g = f^\infty_{k_1-1}$ uniformly on $[a-1,b+1]\supseteq [a_N,b_N]$, and $\vec{x}\,^N - pa_N N^{\alpha/2}\to\vec{x}$, $\vec{y}\,^N-pb_N N^{\alpha/2}\to\vec{y}$. It follows from Lemma \ref{scaledavoidBB} that 
+	\begin{equation}\label{BGPNweak}
+	\lim_{N\to\infty} \ex^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N,f_N,g_N}_{avoid,N}\left[\prod_{s\in S} h_s(Z^N_{n_s-k_1+1}(t_s))\right] = \ex^{a,b,\vec{x},\vec{y},f,g}_{avoid}\left[\prod_{s\in S} h_s(Q_{n_s}(t_s))\right].
+	\end{equation}
+	Lastly, the continuity of the $h_i$ implies that
+	\begin{equation}\label{BGPuniform}
+	\lim_{N\to\infty}\prod_{s\notin S} h_s(Y_{n_s}^N(t_s)) = \prod_{s\notin S} h_s(f^\infty_{n_s}(t_s)).
+	\end{equation}
+	Combining \eqref{BGPweak}, \eqref{BBschur}, \eqref{BGPNweak}, and \eqref{BGPuniform} and applying the bounded convergence theorem proves \eqref{BBcondexsplit}.\\
+	
+	\noindent\textbf{Step 2. } In this step we prove \eqref{BGPcondex} as a consequence of \eqref{BBcondexsplit}. We For $n\in\mathbb{N}$ we define piecewise linear functions
+	\[
+	\chi_n(x,r) = \begin{cases}
+	0, & x > r + 1/n,\\
+	1-n(x-r), & x\in[r,r+1/n],\\
+	1, & x < r.
+	\end{cases}
+	\]
+	We fix $m_1,m_2\in\mathbb{N}$, $n^1_1,\dots,n^1_{m_1},n^2_1,\dots,n^2_{m_2}\in\Sigma$, $t^1_1,\dots,t^1_{m_1},t^2_1,\dots,t^2_{m_2}\in\mathbb{R}$ such that $(n^1_i,t^1_i)\notin K\times[a,b]$ and $(n^2_i,t^2_i)\in K\times[a,b]$ for all $i$. Then \eqref{BBcondexsplit} implies that
+	\[
+	\ex\left[\prod_{i=1}^{m_1} \chi_n(f_{n_i^1}^\infty(t_i^1),a_i)\prod_{i=1}^{m_2}\chi_n(f_{n_i^2}^\infty(t_i^2),b_i)\right] = \ex\left[\prod_{i=1}^{m_1} \chi_n(f_{n_i^1}^\infty(t_i^1),a_i)\ex^{a,b,\vec{x},\vec{y},f,g}_{avoid}\left[\prod_{i=1}^{m_2} \chi_n(Q_{n_i^2}(t_i^2),b_i)\right]\right].
+	\]
+	Letting $n\to\infty$, we have $\chi_n(x,r)\to \chi(x,r)=\mathbf{1}_{x\leq r}$, and the bounded convergence theorem implies that
+	\[
+	\ex\left[\prod_{i=1}^{m_1} \chi(f_{n_i^1}^\infty(t_i^1),a_i)\prod_{i=1}^{m_2}\chi(f_{n_i^2}^\infty(t_i^2),b_i)\right] = \ex\left[\prod_{i=1}^{m_1} \chi(f_{n_i^1}^\infty(t_i^1),a_i)\ex^{a,b,\vec{x},\vec{y},f,g}_{avoid}\left[\prod_{i=1}^{m_2} \chi(Q_{n_i^2}(t_i^2),b_i)\right]\right].
+	\]
+	Let $\mathcal{H}$ denote the space of bounded Borel measurable functions $H:C(K\times[a,b])\to\mathbb{R}$
+	\begin{equation}\label{BGPH}
+	\ex\left[\prod_{i=1}^{m_1} \chi(f_{n_i^1}^\infty(t_i^1),a_i)H(\mathcal{L}^\infty|_{K\times[a,b]})\right] = \ex\left[\prod_{i=1}^{m_1} \chi(f_{n_i^1}^\infty(t_i^1),a_i)\ex^{a,b,\vec{x},\vec{y},f,g}_{avoid}\left[H(\mathcal{Q})\right]\right].
+	\end{equation}
+	The above shows that $\mathcal{H}$ contains all functions $\mathbf{1}_A$ for sets $A$ contained in the $\pi$-system $\mathcal{A}$ consisting of sets of the form
+	\[
+	\{h\in C(K\times[a,b]) : h(n_i^2,t_i^2) \leq b_i \mbox{ for } i\in\llbracket 1,m_2\rrbracket\}.
+	\]
+	We note that $\mathcal{H}$ is closed under linear combinations simply by linearity of expectation, and if $H_n\in\mathcal{H}$ are nonnegative bounded measurable functions converging monotonically to a bounded function $H$, then $H\in\mathcal{H}$ by the monotone convergence theorem. Thus by the monotone class theorem \cite[Theorem 5.2.2]{Durrett}, $\mathcal{H}$ contains all bounded $\sigma(\mathcal{A})$-measurable functions. Since the finite dimensional sets in $\mathcal{A}$ generate the full Borel $\sigma$-algebra $\mathcal{C}_K$ (see for instance \cite[Lemma 3.1]{DimMat}), we have in particular that $F\in\mathcal{H}$.
+	
+	Now let $\mathcal{B}$ denote the collection of sets $B\in\mathcal{F}_{ext}(K\times(a,b))$ such that
+	\begin{equation}\label{BGPB}
+	\ex[\mathbf{1}_B \cdot F(\mathcal{L}^\infty|_{K\times[a,b]})] = \ex[\mathbf{1}_B \cdot \ex^{a,b,\vec{x},\vec{y},f,g}_{avoid}[F(\mathcal{Q})]].
+	\end{equation}
+	We observe that $\mathcal{B}$ is a $\lambda$-system. Indeed, since \eqref{BGPH} holds for $H=F$, taking $a_i,b_i\to\infty$ and applying the bounded convergence theorem shows that \eqref{BGPB} holds with $\mathbf{1}_B = 1$. Thus if $B\in\mathcal{B}$ then $B^c\in\mathcal{B}$ since $\mathbf{1}_{B^c} = 1-\mathbf{1}_B$. If $B_1,B_2,\dots\in\mathcal{B}$ are pairwise disjoint and $B=B_1\cup B_2\cup\cdots$, then $\mathbf{1}_B = \mathbf{1}_{B_1} + \mathbf{1}_{B_2} + \cdots$, and it follows from the monotone convergence theorem that $B\in\mathcal{B}$. Moreover, \eqref{BGPH} with $H=F$ implies that $\mathcal{B}$ contains the $\pi$-system $P$ of sets of the form
+	\[
+	\{h\in C(\Sigma\times\mathbb{R}) : h(n_i,t_i) \leq a_i \mbox{ for } i \in\llbracket 1,m_1\rrbracket, \mbox{ where } (n_i,t_i)\notin K\times(a,b)\}.
+	\]
+	By the $\pi$-$\lambda$ theorem \cite[Theorem 2.1.6]{Durrett} it follows that $\mathcal{B}$ contains $\sigma(P) = \mathcal{F}_{ext}(K\times(a,b))$. Thus \eqref{BGPB} holds for all $B\in\mathcal{F}_{ext}(K\times(a,b))$. It is not hard to show that $\ex^{a,b,\vec{x},\vec{y},f,g}_{avoid}[F(\mathcal{Q})]$ is $\mathcal{F}_{ext}(K\times(a,b))$-measurable (see \cite[Lemma 3.4]{DimMat}). Therefore \eqref{BGPcondex} follows from the definition of conditional expectation.
+	
+\end{proof}
+
 \subsection{Proof of Lemmas \ref{MCLxy} and \ref{MCLfg}}
 
 We will prove the following lemma, of which the two lemmas are immediate consequences. In particular, Lemma \ref{MCLxy} is the special case when $g^b = g^t$, and Lemma \ref{MCLfg} is the case when $\vec{x} = \vec{x}\,'$ and $\vec{y} = \vec{y}\,'$. We argue in analogy to \cite[Lemma 5.6]{DimMat}.
