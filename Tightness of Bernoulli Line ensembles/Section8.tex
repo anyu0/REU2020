@@ -299,7 +299,7 @@ To conclude tightness of $\{\mathcal{L}_i^n\}$, it suffices to prove that $K = \
 \end{proof}
 
 \begin{lemma}\label{BBcross0}
-	Fix any $T>0$ and $y\in\mathbb{R}$, and let $Q$ denote a random variable with law $\mathbb{P}^{0,T,0,y}_{avoid}$. Define the event $C = \{\inf_{s\in[0,T]} Q(s) < 0\}$. Then $\mathbb{P}^{0,T,0,y}_{avoid}(C) = 1$.
+	Fix any $T>0$ and $y\in\mathbb{R}$, and let $Q$ denote a random variable with law $\mathbb{P}^{0,T,0,y}_{free}$. Define the event $C = \{\inf_{s\in[0,T]} Q(s) < 0\}$. Then $\mathbb{P}^{0,T,0,y}_{free}(C) = 1$.
 \end{lemma}
 
 \begin{proof}
@@ -322,7 +322,21 @@ To conclude tightness of $\{\mathcal{L}_i^n\}$, it suffices to prove that $K = \
 	Therefore $\mathbb{P}(\tau = 0) = 1$.
 	
 \end{proof}	
-
+\begin{lemma}\label{BBDif}
+Let $a,b,x_1,y_1,x_2,y_2,\in \R$ with $a<b$. Let $B_1(t)$, $B_2(t)$ be independent Brownian bridges as defined in equation \ref{BBDef} on $(C[a,b],\mathcal{C})$. Then $B=B_1(t)-B_2(t)$ is itself a Brownian bridge on $(C[a,b],\mathcal{C})$.
+\end{lemma}
+\begin{proof}
+Because $B_1(t)$, and $B_2(t)$ are Brownian bridges, they are defined as \begin{equation*}
+B_i(t)=(b-a)^{1/2}\cdot \tilde{B_i}\left(\frac{t-a}{b-a}\right)+\left(\frac{b-t}{b-a}\right)\cdot x_i+\left(\frac{t-a}{b-a}\right)\cdot y_i
+\end{equation*} with $\tilde{B_i}(t)=W^i_t-tW^i_1$ for independent Brownian motions $W^1_t$ and $W^2_t$. Taking the difference $B_1(t)-B_2(t)$ yields
+\begin{equation}\label{BBdifeq}
+B_1(t)-B_2(t)=(b-a)^{1/2}\cdot(\tilde{B_1}-\tilde{B_2})\left(\frac{t-a}{b-a}\right)+\left(\frac{b-t}{b-a}\right)\cdot (x_1-x_2)+\left(\frac{t-a}{b-a}\right)\cdot (y_1-y_2)
+\end{equation}
+Now let $\tilde{t}:=\frac{t-a}{b-a}$ and consider that  $\tilde B_1-\tilde B_2(\tilde t)=W^1_{\tilde{t}}-W^2_{\tilde{t}}-\tilde{t}(W^1_1-W^2_1)$. Because $W^1_{\tilde t}$ and $W^2_{\tilde{t}}$ are each normal processes with equal variance and mean $0$, $W^1_{\tilde{t}}-W^2_{\tilde{t}}$ is itself a brownian motion. This implies that $\tilde{B_1}-\tilde{B_2}(\tilde t)$ is itself a brownian bridge $\tilde B$, and hence equation \ref{BBdifeq} can be rewritten as \begin{equation*}
+B_1(t)-B_2(t)=(b-a)^{1/2}\cdot\tilde{B}\left(\frac{t-a}{b-a}\right)+\left(\frac{b-t}{b-a}\right)\cdot (x_1-x_2)+\left(\frac{t-a}{b-a}\right)\cdot (y_1-y_2)
+\end{equation*}
+and hence the difference of the two Brownian bridges is a Brownian bridge from $x_1-x_2$ to $y_1-y_2$ on the interval $[a,b]$ and the lemma is true. 
+\end{proof}
 \begin{lemma}\label{inftydistinct}
 	For any $s\in\mathbb{R}$, we have $\mathcal{L}^\infty(s) = (f_1^\infty(s),\dots,f_{k-1}^\infty(s)) \in W^\circ_{k-1}$, $\mathbb{P}$-a.s.
 \end{lemma}
@@ -330,9 +344,13 @@ To conclude tightness of $\{\mathcal{L}_i^n\}$, it suffices to prove that $K = \
 \begin{proof}
 	Without loss of generality we may assume that $\mathcal{L}^N$ is the weak limit of $(f^N - \lambda s^2)/\sqrt{p(1-p)}$ as $N\to\infty$. By the Skorohod representation theorem, there is a probability space $(\Omega,\mathcal{F},\mathbb{P})$ supporting random variables $\mathcal{X}^N$ and $\mathcal{X}$ with the laws of $f^N$ and $f^\infty$ respectively, such that $\mathcal{X}^N \to \mathcal{X}$ uniformly on compact sets as $N\to\infty$, pointwise on all of $\Omega$. In particular, $\mathcal{X}^N(s) \to \mathcal{X}(s)$. We have $f^N_i(s) = N^{-\alpha/2}(L^N_i(sN^\alpha) - psN^\alpha) + \lambda s^2$, so $\mathcal{X}^N_i(s) = N^{-\alpha/2}(\mathcal{L}^N_i(sN^\alpha) - psN^\alpha)/\sqrt{p(1-p)}$, where $\mathcal{L}^N$ has the law of $L^N$.
 	
-	Suppose that $\mathcal{X}_i(s) = \mathcal{X}_{i+1}(s)$ for some $i\in\llbracket 1,k-2\rrbracket$. Then we have $\mathcal{X}_i^N(s) - \mathcal{X}^N_{i+1}(s) \to 0$, i.e., $N^{-\alpha/2}(\mathcal{L}_i^N(sN^\alpha) - \mathcal{L}^N_{i+1}(sN^\alpha))\to 0$ as $N\to\infty$. Let us write $a = \lfloor sN^\alpha\rfloor$, $b = a + \lfloor 2N^\alpha\rfloor$ and $x^N = \mathcal{L}_i^N(a) - \mathcal{L}_{i+1}^N(a)$, $y^N = \mathcal{L}_i^N(b) - \mathcal{L}_{i+1}^N(b)$. Then $N^{-\alpha/2}x^N\to 0$. Observe that if $Q_i,Q_{i+1}$ are independent Bernoulli bridges with laws $\mathbb{P}^{a,b,\mathcal{L}_i^N(a),\mathcal{L}_i^N(b)}_{Ber}$ and $\mathbb{P}^{a,b,\mathcal{L}_{i+1}^N(a),\mathcal{L}_{i+1}^N(b)}_{Ber}$, then the difference $Q_i - Q_{i+1}$ has the law of a symmetric random walk bridge $\ell$ taking values in $\{-1,0,1\}$, from $(a,x^N)$ to $(b,y^N)$. Let us denote the law of $N^{-\alpha/2}\ell$ by $\mathbb{P}^{a,b,x^N,y^N}_{Sym}$. By a similar argument to that in Lemma \ref{scaledRWbb} (see \cite[Lemma 5.3]{DimMat}), we observe that $\mathbb{P}^{a,b,x,y}_{Sym}$ converges weakly to the law of a Brownian bridge $B$ from $(s,0)$ to $(s+2,y)$ as $N\to\infty$. With probability one, $B$ crosses 0 infinitely often on intervals of the form $[s,s+\eta]$, $\eta > 0$. Thus given $\delta > 0$, we can choose $N$ large enough so that the probability of $N^{-\alpha/2}\ell$ remaining above 0 on $[a,b]$ is less than $\delta$. Thus for large enough $N$ we have
+	Suppose that $\mathcal{X}_i(s) = \mathcal{X}_{i+1}(s)$ for some $i\in\llbracket 1,k-2\rrbracket$. Then we have $\mathcal{X}_i^N(s) - \mathcal{X}^N_{i+1}(s) \to 0$, i.e., $N^{-\alpha/2}(\mathcal{L}_i^N(sN^\alpha) - \mathcal{L}^N_{i+1}(sN^\alpha))\to 0$ as $N\to\infty$. Let us write $a = \lfloor sN^\alpha\rfloor$, $b = a + \lfloor 2N^\alpha\rfloor$ and $x^N = \mathcal{L}_i^N(a) - \mathcal{L}_{i+1}^N(a)$, $y^N = \mathcal{L}_i^N(b) - \mathcal{L}_{i+1}^N(b)$. Then $N^{-\alpha/2}x^N\to 0$. Observe that if $Q_i,Q_{i+1}$ are independent Bernoulli bridges with laws $\mathbb{P}^{a,b,\mathcal{L}_i^N(a),\mathcal{L}_i^N(b)}_{Ber}$ and $\mathbb{P}^{a,b,\mathcal{L}_{i+1}^N(a),\mathcal{L}_{i+1}^N(b)}_{Ber}$, then define $\ell=Q_i - Q_{i+1}$, which is a random walk bridge taking values in $\{-1,0,1\}$, from $(a,x^N)$ to $(b,y^N)$. Let us denote the law of $\frac{N^{-\alpha/2}\ell}{\sqrt{p(1-p)}}$ by $\mathbb{P}^{a,b,x^N,y^N}_{dif}$.
+	
+	Note that from \ref{scaledRWbb}, $\frac{x+N^{-\alpha/2}Q_{i+1}-ptN^\alpha}{\sqrt{p(1-p)}}$ and $\frac{x+N^{-\alpha/2}Q_i-ptN^\alpha}{\sqrt{p(1-p)}}$ each weakly converge to the law of Brownian bridges, $B^1$ and $B^2$ and hence their difference, $\frac{N^{-a/2}(Q_i-Q_{i+1})}{\sqrt{p(p-1)}}$, or $\frac{N^{-\alpha/2}\ell}{\sqrt{p(1-p)}}$ weakly converges to the difference of two independent Brownian bridges, $B^1-B^2$. 
+	By Lemma \ref{BBDif}, this difference is itself a Brownian bridge, and therefore $\mathbb{P}^{a,b,x^N,y^N}_{dif}$ weakly converges to the law of a Brownian bridge 
+	$B$ from $(s,0)$ to $(s+2,y)$ as $N\to\infty$. With probability one, $B$ crosses 0 infinitely often on intervals of the form $[s,s+\eta]$, $\eta > 0$ by Lemma \ref{BBcross0}. Thus given $\delta > 0$, we can choose $N$ large enough so that the probability of $N^{-\alpha/2}\ell$ remaining above 0 on $[a,b]$ is less than $\delta$. Thus for large enough $N$ we have
 	\begin{equation}\label{collideAP}
-		\mathbb{P}\left(f_i^\infty(s) = f_{i+1}^\infty(s)\right) \leq \mathbb{P}\left(\mathbb{P}^{a,b,x^N,y^N}_{Sym}(\ell \geq 0) < \delta\right) \leq \mathbb{P}\left(Z(a,b,\mathcal{L}^N(a),\mathcal{L}^N(b),\infty,\mathcal{L}^N_k) < \delta\right).
+		\mathbb{P}\left(f_i^\infty(s) = f_{i+1}^\infty(s)\right) \leq \mathbb{P}\left(\mathbb{P}^{a,b,x^N,y^N}_{dif}(\ell \geq 0) < \delta\right) \leq \mathbb{P}\left(Z(a,b,\mathcal{L}^N(a),\mathcal{L}^N(b),\infty,\mathcal{L}^N_k) < \delta\right).
 	\end{equation}
 	Here, $Z$ denotes the acceptance probability. This is the probability that $k-1$ independent Bernoulli bridges $Q_1,\dots,Q_{k-1}$ on $[a,b]$ with entrance and exit data $\mathcal{L}^N(a)$ and $\mathcal{L}^N(b)$ do not cross one another or $\mathcal{L}_k^N$. The last inequality follows because $\ell$ has the law of the difference of $Q_i$ and $Q_{i+1}$, and the acceptance probability is bounded above by the probability that $Q_i$ and $Q_{i+1}$ do not cross, i.e., that $Q_i - Q_{i+1} \geq 0$. By Proposition \ref{PropMain}, given $\epsilon > 0$ we can choose $\delta$ so that the probability on the right in \eqref{collideAP} is $<\epsilon$. We conclude that
 	\[
