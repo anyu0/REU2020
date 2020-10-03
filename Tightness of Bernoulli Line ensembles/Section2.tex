@@ -172,24 +172,6 @@ $$E_S  = \left\{ f(r) \geq B_1(r) \geq B_2(r) \geq \cdots \geq B_k(r) \geq g(r) 
 The above definition is well-posed if there exist $B_i \in \Omega(T_0,T_1,x_i,y_i)$ for $i = 1, \dots, k$ that satisfy the conditions in $E_S$ (i.e. if the set of such up-right paths is not empty). We will denote by $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g; S)$ the set of collections of $k$ up-right paths that satisfy the conditions in $E_S$ and then the distribution on $\mathfrak{Q}$ is simply the uniform measure on $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g; S)$. We denote the probability distribution of $\mathfrak{Q}$ as $\mathbb{P}_{avoid, Ber;S}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ and write $\mathbb{E}_{avoid, Ber; S}^{T_0, T_1, \vec{x}, \vec{y}, f, g}$ for the expectation with respect to this measure. If $S = \llbracket T_0,T_1\rrbracket$, we write $\Omega_{avoid}(T_0,T_1,\vec{x},\vec{y},f,g)$, $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$, and $\mathbb{E}_{avoid, Ber}^{T_0, T_1, \vec{x}, \vec{y}, f, g}$. If $f=+\infty$ and $g=-\infty$, we write $\Omega_{avoid}(T_0,T_1,\vec{x},\vec{y})$, $\mathbb{P}^{T_0, T_1, \vec{x},\vec{y}}_{avoid, Ber}$, and $\mathbb{E}^{T_0, T_1, \vec{x},\vec{y}}_{avoid, Ber}$.
 \end{definition}
 
-The following definition introduces a rescaled form of the measures in the previous definition, giving a measure on rescaled Bernoulli random walks.
-
-\begin{definition}\label{scaledRW}
-	Let $a,b\in N^{-\alpha}\mathbb{Z}$ with $a<b$ and $x,y\in N^{-\alpha/2}\mathbb{Z}$ satisfy $0\leq y-x \leq (b-a)N^{\alpha/2}$. Let $\ell^{(T,z)}$ denote a random variable with law $\mathbb{P}^{0,T,0,z}_{Ber}$ as in Definition \ref{DefAvoidingLawBer}. We define $\mathbb{P}^{a,b,x,y}_{free,N}$ to be the law of the $C([a,b])$-valued random variable $Y$ given by
-	\[
-	Y(t) = \frac{x + N^{-\alpha/2}\ell^{((b-a)N^\alpha,\,(y-x)N^{\alpha/2}))}_{(t-a)N^\alpha} - ptN^{\alpha/2}}{\sqrt{p(1-p)}}, \quad t\in [a,b].
-	\]
-	Now for $i\in\llbracket 1,k\rrbracket$, let $\ell^{(N,z),i}$ denote iid random variables with laws $\mathbb{P}^{0,N,0,z}_{Ber}$. Let $\vec{x},\vec{y}\in(N^{-\alpha/2}\mathbb{Z})^k$ satisfy $0\leq y_i-x_i \leq (b-a)N^{\alpha/2}$ for $i\in\llbracket 1,k\rrbracket$. We define the $\llbracket 1,k\rrbracket$-indexed line ensemble $\mathcal{Y}^N$ by
-	\[
-	\mathcal{Y}^N_i(t) = \frac{x_i + N^{-\alpha/2}\ell^{((b-a)N^\alpha,\,(y_i-x_i)N^{\alpha/2})),i}_{(t-a)N^\alpha} - ptN^{\alpha/2}}{\sqrt{p(1-p)}}, \quad i\in\llbracket 1,k\rrbracket, t\in [a,b].
-	\]
-	We let $\mathbb{P}^{a,b,\vec{x},\vec{y}}_{free,N}$ denote the law of $\mathcal{Y}^N$. Suppose $\vec{x},\vec{y}\in (N^{-\alpha/2}\mathbb{Z})\cap W_k^\circ$ and $f : [a,b] \to (-\infty,\infty]$, $g:[a,b]\to [-\infty,\infty)$ are continuous functions. We define the probability measure $\mathbb{P}^{a,b,\vec{x},\vec{y},f,g}_{avoid,N}$ to be $\mathbb{P}^{a,b,\vec{x},\vec{y}}_{free,N}$ conditioned on the event
-	\[
-	E = \{f(r) \geq \mathcal{Y}^N_1(r) \geq \cdots \geq \mathcal{Y}^N_k(r) \geq g(r) \mbox{ for } r\in[a,b]\}.
-	\]
-	This measure is well-defined if $E$ is nonempty.
-	
-\end{definition}
 
 It will be useful to formulate simple conditions under which $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g)$ is non-empty and thus $\mathbb{P}_{avoid, Ber}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ well-defined. Note that $\Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f, g; S) \supseteq \Omega_{avoid}(T_0, T_1, \vec{x}, \vec{y}, f,g)$ for any $S\subseteq\llbracket T_0, T_1\rrbracket$, so $\mathbb{P}_{avoid, Ber; S}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ is also well-defined in this case. We accomplish this in the following lemma, whose proof is postponed until Section \ref{Section8}, specifically subsection \ref{LemmaWDProof}.
 

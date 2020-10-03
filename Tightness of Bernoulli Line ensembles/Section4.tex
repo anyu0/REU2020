@@ -204,9 +204,28 @@ Combining (\ref{RT1}), (\ref{RT2}) and (\ref{RT3}) we conclude (\ref{Abound2}), 
 
 \subsection{Proof of Theorem \ref{PropTightGood} (ii)}
 
-Here we prove that the random variable $\mathcal{L}^\infty$ defined in statement (ii) of Theorem \ref{PropTightGood} possesses the partial Brownian Gibbs property. We first state two lemmas which will be used in the proof. We postpone the proofs of these two lemmas to Section \ref{BGPapp}. 
+In this section we fix a subsequential limit $\mathcal{L}^\infty$ of the sequence $\tilde{\mathbb{P}}_N$ as in the statement of Theorem \ref{PropTightGood}, and we prove that $\mathcal{L}^\infty$ possesses the partial Brownian Gibbs property. We first give a definition of measures on scaled free and avoiding Bernoulli random walks. These measures will appear when we apply the Schur Gibbs property to the scaled line ensembles $f^N$.
 
-The first lemma proves weak convergence of sequences of the rescaled avoiding random walk measures in Definition \ref{scaledRW}. It states roughly that if the data of these measures converge, then the measures converge weakly to the law of avoiding Brownian bridges with the limiting data.
+\begin{definition}\label{scaledRW}
+	Let $a,b\in N^{-\alpha}\mathbb{Z}$ with $a<b$ and $x,y\in N^{-\alpha/2}\mathbb{Z}$ satisfy $0\leq y-x \leq (b-a)N^{\alpha/2}$. Let $\ell^{(T,z)}$ denote a random variable with law $\mathbb{P}^{0,T,0,z}_{Ber}$ as in Definition \ref{DefAvoidingLawBer}. We define $\mathbb{P}^{a,b,x,y}_{free,N}$ to be the law of the $C([a,b])$-valued random variable $Y$ given by
+	\[
+	Y(t) = \frac{x + N^{-\alpha/2}\ell^{((b-a)N^\alpha,\,(y-x)N^{\alpha/2}))}_{(t-a)N^\alpha} - ptN^{\alpha/2}}{\sqrt{p(1-p)}}, \quad t\in [a,b].
+	\]
+	Now for $i\in\llbracket 1,k\rrbracket$, let $\ell^{(N,z),i}$ denote iid random variables with laws $\mathbb{P}^{0,N,0,z}_{Ber}$. Let $\vec{x},\vec{y}\in(N^{-\alpha/2}\mathbb{Z})^k$ satisfy $0\leq y_i-x_i \leq (b-a)N^{\alpha/2}$ for $i\in\llbracket 1,k\rrbracket$. We define the $\llbracket 1,k\rrbracket$-indexed line ensemble $\mathcal{Y}^N$ by
+	\[
+	\mathcal{Y}^N_i(t) = \frac{x_i + N^{-\alpha/2}\ell^{((b-a)N^\alpha,\,(y_i-x_i)N^{\alpha/2})),i}_{(t-a)N^\alpha} - ptN^{\alpha/2}}{\sqrt{p(1-p)}}, \quad i\in\llbracket 1,k\rrbracket, t\in [a,b].
+	\]
+	We let $\mathbb{P}^{a,b,\vec{x},\vec{y}}_{free,N}$ denote the law of $\mathcal{Y}^N$. Suppose $\vec{x},\vec{y}\in (N^{-\alpha/2}\mathbb{Z})\cap W_k^\circ$ and $f : [a,b] \to (-\infty,\infty]$, $g:[a,b]\to [-\infty,\infty)$ are continuous functions. We define the probability measure $\mathbb{P}^{a,b,\vec{x},\vec{y},f,g}_{avoid,N}$ to be $\mathbb{P}^{a,b,\vec{x},\vec{y}}_{free,N}$ conditioned on the event
+	\[
+	E = \{f(r) \geq \mathcal{Y}^N_1(r) \geq \cdots \geq \mathcal{Y}^N_k(r) \geq g(r) \mbox{ for } r\in[a,b]\}.
+	\]
+	This measure is well-defined if $E$ is nonempty.
+	
+\end{definition}
+
+Next, we state two lemmas whose proofs we postpone to Section \ref{BGPapp}. 
+
+The first lemma proves weak convergence of the scaled avoiding random walk measures in Definition \ref{scaledRW}. It states roughly that if the data of these measures converge, then the measures converge weakly to the law of avoiding Brownian bridges with the limiting data.
 
 \begin{lemma}\label{scaledavoidBB}
 	Fix $k\in\mathbb{N}$ and $a,b\in\mathbb{R}$ with $a<b$, and let $f:[a-1,b+1]\to(-\infty,\infty]$, $g:[a-1,b+1]\to[-\infty,\infty)$ be continuous functions such that $f(t) > g(t)$ for all $t\in[a-1,b+1]$. Let $\vec{x},\vec{y}\in W_k^\circ$ be such that $f(a) > x_1$, $f(b) > y_1$, $g(a) < x_k$, and $g(b) < y_k$. Let $a_N = \lfloor aN^\alpha\rfloor N^{-\alpha}$ and $b_N = \lceil bN^\alpha\rceil N^{-\alpha}$, and let $f_N : [a-1,b+1]\to(-\infty,\infty]$ and $g_N : [a-1,b+1]\to[-\infty,\infty)$ be continuous functions such that $f_N\to f$ and $g_N\to g$ uniformly on $[a-1,b+1]$. Lastly, let $\vec{x}\,^N, \vec{y}\,^N \in (N^{-\alpha/2}\mathbb{Z})^k \cap W_k^\circ$, write $\tilde{x}^N_i = (x_i^N - pa_N N^{\alpha/2})/\sqrt{p(1-p)}$, $\tilde{y}^N_i = (y_i^N - pb_N N^{\alpha/2})/\sqrt{p(1-p)}$, and suppose that $\tilde{x}^N_i \to x_i$ and $\tilde{y}^N_i \to y_i$ as $N\to\infty$ for each $i\in\llbracket 1,k\rrbracket$. Then there exists $N_0 \in \mathbb{N}$ so that $\mathbb{P}^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N,f_N,g_N}_{avoid,N}$ is well-defined for $N\geq N_0$. Moreover, if $\mathcal{Y}^N$ have laws $\mathbb{P}^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N,f_N,g_N}_{avoid,N}$ and $\mathcal{Z}^N = \mathcal{Y}^N|_{\Sigma\times[a,b]}$, then the law of $\mathcal{Z}^N$ converges weakly to $\mathbb{P}^{a,b,\vec{x},\vec{y},f,g}_{avoid}$ as $N\to\infty$.
@@ -218,7 +237,7 @@ The next lemma shows that at any given point, the values of the $k-1$ curves in 
 	For any $s\in\mathbb{R}$, we have $\mathcal{L}^\infty(s) = (f_1^\infty(s),\dots,f_{k-1}^\infty(s)) \in W^\circ_{k-1}$, $\mathbb{P}$-a.s.
 \end{lemma}
 
-Using these two lemmas, we now give the Theorem \ref{PropTightGood} (ii).
+Using these two lemmas, we now give the proof of Theorem \ref{PropTightGood} (ii).
 
 \begin{proof}
 	We will write $\Sigma = \llbracket 1,k\rrbracket$. Let us write $\mathcal{Y}^N = (Y^N_1,\dots,Y^N_{k-1})$ with $Y^N_i(s) = N^{-\alpha/2}(L^N_i(sN^\alpha)-psN^\alpha)/\sqrt{p(1-p)}$. We may assume without loss of generality that $\mathcal{Y}^N \implies \mathcal{L}^\infty$ as $N\to\infty$. Fix a set $K = \llbracket k_1,k_2\rrbracket \subseteq \llbracket 1, k-2\rrbracket$ and $a,b\in\mathbb{R}$ with $a<b$. We also fix a bounded Borel-measurable function $F:C(K\times[a,b])\to\mathbb{R}$. We must show that $\mathbb{P}$-a.s.,
