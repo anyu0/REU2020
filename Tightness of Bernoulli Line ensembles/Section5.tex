@@ -6,7 +6,7 @@
 
 In this section we prove Lemmas \ref{PropSup} and \ref{PropSup2} and we assume the same notation as in the statements of these lemmas. In particular, we assume that $k \in \mathbb{N}$, $k \geq 2$, $p \in (0,1)$, $\alpha, \lambda > 0$ are all fixed and 
 \begin{equation*}
-\big\{\mathfrak{L}^N = (L^N_1,L^N_2, \dots, L^N_k)\big\}_{N=1}^{\infty},
+	\big\{\mathfrak{L}^N = (L^N_1,L^N_2, \dots, L^N_k)\big\}_{N=1}^{\infty},
 \end{equation*}
 is an $(\alpha,p,\lambda)$-good sequence of $\llbracket 1, k\rrbracket$-indexed Bernoulli line ensembles as in Definition \ref{Def1} that are all defined on a probability space with measure $\mathbb{P}$. The proof of Lemma \ref{PropSup} is given in Section \ref{Section5.1} and Lemma \ref{PropSup2} is proved in Section \ref{Section5.2}.
 
@@ -25,11 +25,11 @@ $$G(M) = \Bigg\{\sup_{s\in[0,s_4]} \big[L_1^N(s) - ps \big] \geq (6r+22)(2r+10)^
 
 If $\epsilon > 0$ is as in the statement of the lemma, we note by (\ref{globalParabola}) that we can find $M$ and $\tilde{N}_1$ sufficiently large so that if $N \geq \tilde{N}_1$ we have 
 \begin{equation}\label{4.2EFbounds}
-\mathbb{P}(E(M)) < \epsilon/4 \mbox{ and } \mathbb{P}(F(M)) < \epsilon/12.
+	\mathbb{P}(E(M)) < \epsilon/4 \mbox{ and } \mathbb{P}(F(M)) < \epsilon/12.
 \end{equation}
 In the remainder of this step we show that the event $G(M) \setminus E(M)$ can be written as a {\em countable disjoint union} of certain events, i.e. we show that
 \begin{equation}\label{WR3}
-\bigsqcup\limits_{(a,b,s,\ell_{top},\ell_{bot}) \in D(M)}  E(a,b,s,\ell_{top},\ell_{bot}) = G(M) \setminus E(M),
+	\bigsqcup\limits_{(a,b,s,\ell_{top},\ell_{bot}) \in D(M)}  E(a,b,s,\ell_{top},\ell_{bot}) = G(M) \setminus E(M),
 \end{equation}
 where the sets $E(a,b,s,\ell_{top},\ell_{bot})$ and $D(M)$ are described below. 
 
@@ -49,39 +49,39 @@ On the intersection of $E(a,b,s,\ell_{top},\ell_{bot})$ and $E(\tilde{a},\tilde{
 
 {\raggedleft \bf Step 2.} In this step we prove that  we can find an $N_2$ so that for $N \geq N_2$
 \begin{equation}\label{WR1}
-\mathbb{P}\left( \sup_{s \in [0,t_3] }\big[ L^N_1(s) - p s \big] \geq  (6r+22)(2r+10)^{1/2}(M+1)N^{\alpha/2} \right) \leq \mathbb{P}(G(M)) < \epsilon/2.
+	\mathbb{P}\left( \sup_{s \in [0,t_3] }\big[ L^N_1(s) - p s \big] \geq  (6r+22)(2r+10)^{1/2}(M+1)N^{\alpha/2} \right) \leq \mathbb{P}(G(M)) < \epsilon/2.
 \end{equation}
 A similar argument, which we omit, proves the same inequality with $[-t_3,0]$ in place of $[0,t_3]$ and then the statement of the lemma holds for all $N\geq N_2$, with $R_1 = (6r+22)(2r+10)^{1/2}(M+1)$.
 
 We claim that we can find $\tilde{N}_2 \in \mathbb{N}$ sufficiently large so that if $N \geq \tilde{N}_2$ and $(a,b,s,\ell_{top},\ell_{bot})\in D(M)$ satisfies $\mathbb{P}( E(a,b,s,\ell_{top},\ell_{bot})) > 0$ then we have
 \begin{equation}\label{WR7}
-\mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}\left(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\right) \geq \frac{1}{3}.
+	\mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}\left(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\right) \geq \frac{1}{3}.
 \end{equation}
 We will prove (\ref{WR7}) in Step 3. For now we assume its validity and conclude the proof of (\ref{WR1}).\\
 
 Let $(a,b,s,\ell_{top},\ell_{bot})\in D(M)$ be such that $\mathbb{P}( E(a,b,s,\ell_{top},\ell_{bot})) > 0$. By the Schur Gibbs property, see Definition \ref{DefSGP}, we have for any $\ell_0\in\Omega(-s_4,s,a,b)$ that
 \begin{equation}\label{WR9}
-\mathbb{P}\left(L_1^N\llbracket -s_4,s \rrbracket = \ell_0\,|\,E(a,b,s,\ell_{top}, \ell_{bot}) \right) = \mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}(\ell = \ell_0),
+	\mathbb{P}\left(L_1^N\llbracket -s_4,s \rrbracket = \ell_0\,|\,E(a,b,s,\ell_{top}, \ell_{bot}) \right) = \mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}(\ell = \ell_0),
 \end{equation}
 where $L_1^N\llbracket -s_4,s \rrbracket$ denotes the restriction of $L_1^N$ to the set $\llbracket -s_4,s \rrbracket$.
 
 Combining (\ref{WR7}) and (\ref{WR9}) we get for $N \geq \tilde{N}_2$
 \begin{equation}\label{WR10}
-\begin{split}
-&\mathbb{P}\left( L_1^N(-s_3) > -ps_3 + MN^{\alpha/2} \vert E(a,b,s, \ell_{top}, \ell_{bot})\right) = \\
-&\mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}\left(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\right) \geq \frac{1}{3}.
-\end{split}
+	\begin{split}
+		&\mathbb{P}\left( L_1^N(-s_3) > -ps_3 + MN^{\alpha/2} \vert E(a,b,s, \ell_{top}, \ell_{bot})\right) = \\
+		&\mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}\left(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\right) \geq \frac{1}{3}.
+	\end{split}
 \end{equation}
 
 It follows from (\ref{WR10}) that for $N \geq \tilde{N}_2$ we have
 \begin{equation}\label{WR11}
-\begin{split}
-& \epsilon/12 > \mathbb{P}(F(M)) \geq \sum_{\substack{(a,b,s,\ell_{top}, \ell_{bot})\in D(M), \\ \mathbb{P}(E(a,b,s, \ell_{top}, \ell_{bot})) > 0}} \mathbb{P}\left(F(M)\cap E(a,b,s, \ell_{top}, \ell_{bot})\right) = \\
-&\sum_{\substack{(a,b,s,\ell_{top}, \ell_{bot})\in D(M), \\ \mathbb{P}(E(a,b,s, \ell_{top}, \ell_{bot})) > 0}} \hspace{-5mm} \mathbb{P}\left( L_1^N(-s_3) > -ps_3 + MN^{\alpha/2} \vert  E(a,b,s,\ell_{top}, \ell_{bot}) \right )\mathbb{P}\left(E(a,b,s,\ell_{top}, \ell_{bot}) \right) \geq \\
-& \sum_{\substack{(a,b,s,\ell_{top}, \ell_{bot})\in D(M), \\ \mathbb{P}(E(a,b,s, \ell_{top}, \ell_{bot})) > 0}} \frac{1}{3} \cdot \mathbb{P}\left(E(a,b,s,\ell_{top}, \ell_{bot}) \right)  =  \frac{1}{3} \cdot \mathbb{P}(G(M)\setminus E(M)),
-\end{split}
+	\begin{split}
+		& \epsilon/12 > \mathbb{P}(F(M)) \geq \sum_{\substack{(a,b,s,\ell_{top}, \ell_{bot})\in D(M), \\ \mathbb{P}(E(a,b,s, \ell_{top}, \ell_{bot})) > 0}} \mathbb{P}\left(F(M)\cap E(a,b,s, \ell_{top}, \ell_{bot})\right) = \\
+		&\sum_{\substack{(a,b,s,\ell_{top}, \ell_{bot})\in D(M), \\ \mathbb{P}(E(a,b,s, \ell_{top}, \ell_{bot})) > 0}} \hspace{-5mm} \mathbb{P}\left( L_1^N(-s_3) > -ps_3 + MN^{\alpha/2} \vert  E(a,b,s,\ell_{top}, \ell_{bot}) \right )\mathbb{P}\left(E(a,b,s,\ell_{top}, \ell_{bot}) \right) \geq \\
+		& \sum_{\substack{(a,b,s,\ell_{top}, \ell_{bot})\in D(M), \\ \mathbb{P}(E(a,b,s, \ell_{top}, \ell_{bot})) > 0}} \frac{1}{3} \cdot \mathbb{P}\left(E(a,b,s,\ell_{top}, \ell_{bot}) \right)  =  \frac{1}{3} \cdot \mathbb{P}(G(M)\setminus E(M)),
+	\end{split}
 \end{equation}
-where in the last equality we used (\ref{WR3}). From (\ref{4.2EFbounds}) and (\ref{WR11}) we have for $N \geq N_2 = \max(\tilde{N}_1, \tilde{N}_2)$  that 
+where in the last equality we used (\ref{WR3}). From (\ref{4.2EFbounds}) and (\ref{WR11}) we have for $N \geq N_2 = \max(\tilde{N}_1, \tilde{N}_2)$  
 $$\mathbb{P}(G(M)) \leq \mathbb{P}(E(M)) + \mathbb{P}(G(M)\setminus E(M))< \epsilon/4 + \epsilon/4,$$
 which proves (\ref{WR1}).\\
 
@@ -90,15 +90,15 @@ which proves (\ref{WR1}).\\
 $$\mathbb{P}^{-s_4,s,a,b,\infty,\ell_{bot}}_{avoid, Ber}\left(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\right) \geq \mathbb{P}^{-s_4,s,a,b}_{ Ber}\left(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\right),$$
 and so it suffices to show that 
 \begin{equation}\label{WT0}
-\mathbb{P}^{-s_4,s,a,b}_{Ber}\left(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\right) \geq \frac{1}{3}.
+	\mathbb{P}^{-s_4,s,a,b}_{Ber}\left(\ell(-s_3) > -ps_3 + MN^{\alpha/2}\right) \geq \frac{1}{3}.
 \end{equation}
 
 One directly observes that
 \begin{equation}\label{WT2}
-\begin{split}
-&\mathbb{P}^{-s_4,s,a,b}_{Ber}\left( \ell(-s_3) > -ps_3 + MN^{\alpha/2}\right) = \mathbb{P}^{0,s+s_4,0,b-a}_{Ber}\left(\ell(s_4-s_3) + a \geq -ps_3 + MN^{\alpha/2}\right) \geq\\
-& \mathbb{P}^{0,s+s_4,0,b-a}_{Ber}\left(\ell(s_4-s_3) \geq p(s_4-s_3) + 2MN^{\alpha/2}\right),
-\end{split}
+	\begin{split}
+		&\mathbb{P}^{-s_4,s,a,b}_{Ber}\left( \ell(-s_3) > -ps_3 + MN^{\alpha/2}\right) = \mathbb{P}^{0,s+s_4,0,b-a}_{Ber}\left(\ell(s_4-s_3) + a \geq -ps_3 + MN^{\alpha/2}\right) \geq\\
+		& \mathbb{P}^{0,s+s_4,0,b-a}_{Ber}\left(\ell(s_4-s_3) \geq p(s_4-s_3) + 2MN^{\alpha/2}\right),
+	\end{split}
 \end{equation}
 where the inequality follows from the assumption in (2) that $a+ps_4 \geq -MN^{\alpha/2}$. Moreover, since $b-ps \geq (6r+22)(2r+10)^{1/2}(M+1)N^{\alpha/2}$ and $a+ps_4 \leq MN^{\alpha/2}$, we have 
 $$b-a \geq p(s+s_4) + (6r+21)(2r+10)^{1/2}(M+1)N^{\alpha/2} \geq p(s+s_4) + (6r+21)(M+1)(s+s_4)^{1/2}.$$
@@ -106,15 +106,15 @@ The second inequality follows since $s+s_4 \leq 2s_4 \leq (2r+10)N^{\alpha}$.
 
 It follows from Lemma \ref{LemmaHalfS4} with $M_1 = 0$, $M_2 = (6r+21)(M+1)$ that for sufficiently large $N$
 \begin{equation}\label{WT3}
-\mathbb{P}^{0,s+s_4,0,b-a}_{Ber}\Big(\ell(s_4-s_3) \geq \frac{s_4-s_3}{s+s_4}[p(s+s_4) + M_2 (s+s_4)^{1/2}] - (s+s_4)^{1/4}\Big) \geq 1/3.
+	\mathbb{P}^{0,s+s_4,0,b-a}_{Ber}\Big(\ell(s_4-s_3) \geq \frac{s_4-s_3}{s+s_4}[p(s+s_4) + M_2 (s+s_4)^{1/2}] - (s+s_4)^{1/4}\Big) \geq 1/3.
 \end{equation}
 
 Note that $\frac{s_4-s_3}{s+s_4} \geq \frac{N^\alpha }{(2r+10)N^\alpha} = \frac{1}{2r+10}$ and so for all $N \in \mathbb{N}$ we have
 \begin{equation}\label{WT4}
-\begin{split}
-& \frac{s_4-s_3}{s+s_4}[p(s+s_4) + M_2 (s+s_4)^{1/2}] - (s+s_4)^{1/4} \geq \\
-& p(s_4-s_3) + \frac{(6r+21)(M+1) (s+s_4)^{1/2}}{2r+10}  - (s+s_4)^{1/4} \geq p(s_4-s_3) + 2MN^{\alpha/2}.
-\end{split}
+	\begin{split}
+		& \frac{s_4-s_3}{s+s_4}[p(s+s_4) + M_2 (s+s_4)^{1/2}] - (s+s_4)^{1/4} \geq \\
+		& p(s_4-s_3) + \frac{(6r+21)(M+1) (s+s_4)^{1/2}}{2r+10}  - (s+s_4)^{1/4} \geq p(s_4-s_3) + 2MN^{\alpha/2}.
+	\end{split}
 \end{equation}
 Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find $\tilde{N}_2 \in \mathbb{N}$ such that if $N \geq \tilde{N}_2$ we have (\ref{WT0}). This suffices for the proof.
 
@@ -124,275 +124,327 @@ Combining (\ref{WT2}), (\ref{WT3}) and (\ref{WT4}) we conclude that we can find 
 %
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Proof of Lemma \ref{PropSup2}}\label{Section5.2}
-
-	We begin by proving the following important lemma, which allows us to prevent the curve $L_{k-1}^N$ from falling too low on a large enough interval.
+We begin by proving the following important lemma, which shows that it is unlikely that the curve $L_{k-1}^N$ falls uniformly very low on a large interval.
+\begin{lemma}\label{21}
+	Under the same conditions as in Lemma \ref{PropSup2} the following holds. For any $r,\epsilon>0$ there exist $R>0$ and $N_5 \in \mathbb{N}$ such that for all $N\geq N_5$
+	\begin{equation}\label{E21}
+		\mathbb{P}\left(\sup_{x\in[r,R]} \left(L_{k-1}^N(xN^\alpha) - pxN^\alpha\right) \leq -(\lambda R^2 + \phi(\epsilon/16) + 1)N^{\alpha/2}\right) < \epsilon,
+	\end{equation}
+	where $\lambda, \phi$ are as in the definition of an $(\alpha,p,\lambda)$-good sequence of line ensembles, see Definition \ref{Def1}. The same statement holds if $[r,R]$ is replaced with $[-R,-r]$ and the constants $N_5, R$ depend on $\epsilon, r$ as well as the parameters $\alpha, p, \lambda, k$ and the functions $\phi, \psi$ from Definition \ref{Def1}. 
+\end{lemma}
+\begin{proof}
+	Before we go into the proof we give an informal description of the main ideas. The key to this lemma is the parabolic shift implicit in the definition of an $(\alpha,p,\lambda)$-good sequence. This shift requires that the deviation of the top curve $L_1^N$ from the line of slope $p$ to appear roughly parabolic. On the event in equation (\ref{E21}) we have that the $(k-1)$-th curve dips very low uniformly on the interval $[r,R]$ and we will argue that on this event the top $k-2$ curves essentially do not feel the presence of the $(k-1)$-th curve. After a careful analysis using the monotone coupling lemmas from Section \ref{Section3.1} we will see that the latter statement implies that the curve $L_1^N$ behaves like a free bridge between its end-points that have been slighly raised. Consequently, we would expect the midpoint $L_1^N \left( N^{\alpha} (R+r)/2 \right)$ to be close (on scale $N^{\alpha/2}$) to $[L_1^N(rN^{\alpha}) + L^N_1(RN^{\alpha})]/2.$ However, with high probability $[L_1^N(rN^{\alpha}) + L^N_1(RN^{\alpha})]/2$ lies much lower than the inverted parabola $-\lambda(R+r)^2 N^{\alpha/2}/4 $ (due to the concavity of the latter), and so it is very unlikely for $L_1^N \left( N^{\alpha} (R+r)/2 \right)$ to be near it by our assumption. The latter would imply that the event in (\ref{E21}) is itself unlikely, since conditional on it an unlikely event suddenly became likely. 
 	
-	\begin{lemma}\label{21}
-		Fix $p\in (0,1)$, $k\in\mathbb{N}$, and $\alpha,\lambda > 0$. Suppose that $\mathfrak{L}^N = (L_1^N, \dots, L_k^N)$ is a $(\alpha,p,\lambda)$-good sequence of $\llbracket 1, k\rrbracket$-indexed Bernoulli line ensembles. Then for any $r,\epsilon>0$, there exist $R>0$ and $N_5 \in \mathbb{N}$ such that for all $N\geq N_5$,
-		\[
-		\mathbb{P}\left(\max_{x\in[r,R]} \left(L_{k-1}^N(xN^\alpha) - pxN^\alpha\right) \leq -(\lambda R^2 + \phi(\epsilon/16))N^{\alpha/2}\right) < \epsilon.
-		\]
-		The same statement holds if $[r,R]$ is replaced with $[-R,-r]$.
-	\end{lemma}
-
-	\begin{remark}
-		The key to this lemma is the parabolic shift implicit in the definition of an $(\alpha,p,\lambda)$-good sequence. This requires the deviation of the top curve from the line of slope $p$ to appear roughly parabolic. Using monotone coupling, we separate the curves of the ensemble so that $L_1^N$ is nearly independent of the other curves. Then we would expect the value of $L_1^N$ at the midpoint of $r$ and $R$ to be close to the midpoint of the straight line segment connecting two points of the parabola. But the parabola is convex, so for large enough $R$ this violates the one-point tightness assumpion at $(R+r)/2$.
-	\end{remark}
+	We proceed to fill in the details of the above sketch of the proof in the following steps. In total there are six steps and we will only prove the statement of the lemma for the interval $[r,R]$, since the argument for $[-R,-r]$ is very similar. \\
 	
-	\begin{proof}
-		
-		For clarity we split this proof into five steps. The proof of the analogous statement with $[r,R]$ replaced by $[-R,-r]$ is very similar. In particular, only trivial modifications to Steps 4 and 5 are necessary. In the first step we introduce notation that will be used in the proof of the lemma in the subsequent steps.\\
-		
-		\noindent\textbf{Step 1.} Fix $r>0$. Note that for any $R>r$,
-		\[
-		\max_{r\leq x\leq R} \big(L_{k-1}^N(xN^\alpha) - pxN^\alpha\big) \geq \max_{\lceil r\rceil \leq x \leq R} \big(L_{k-1}^N(xN^\alpha) - pxN^\alpha\big).
-		\]
-		Thus by replacing $r$ with $\lceil r\rceil$, we can assume that $r\in\mathbb{Z}$. Define constants
-		\begin{align}
-		C &= \sqrt{ 8p(1-p) \log\frac{3}{1-(11/12)^{1/(k-2)}}}\,,\label{21Cdef}\\
-		R_0 &= \frac{2}{\lambda}\left(Ck+\sqrt{C^{2}k^{2}+2\lambda\phi(\epsilon/16)}\right) + r + 1. \label{21Rdef}
-		\end{align}
-		Note that $R_0\geq r$. We define $R = \lceil R_0\rceil + \mathbf{1}_{\lceil R_0\rceil + r\;\mathrm{odd}}$, so that $R\geq R_0$ and the midpoint $(R+r)/2$ are integers. In the following, we always assume $N$ is large enough so that $\psi(N) > R$, hence $L_i^N$ are defined at $RN^\alpha$ for $1\leq i\leq k$. We may do so by the second condition in the definition of an $(\alpha,p,\lambda)$-good sequence (see Definition \ref{Def1}). Define events
-		\begin{equation}\label{21AB}
+	\noindent\textbf{Step 1.} We begin by specifying the choice of $R$ in the statement of the lemma, fixing some notation and making a few simplifying assumptions. 
+	
+	Fix $r , \epsilon > 0$ as in the statement of the lemma. Note that for any $R>r$,
+	$$\sup_{r\leq x\leq R} \big(L_{k-1}^N(xN^\alpha) - pxN^\alpha\big) \geq \sup_{\lceil r\rceil \leq x \leq R} \big(L_{k-1}^N(xN^\alpha) - pxN^\alpha\big).$$
+	Thus by replacing $r$ with $\lceil r\rceil$, we can assume that $r\in\mathbb{Z}$, which we do in the sequel. Notice that by our assumption that $\mathfrak{L}^N$ is $(\alpha, p,\lambda)$-good we know that (\ref{E21}) holds trivially if $k = 2$ (with the right side of (\ref{E21}) being any number greater than $\epsilon/16$ and in particular $\epsilon$) and so in the sequel we assume that $k \geq 3$. 
+	
+	Define constants
+	\begin{equation}\label{21Cdef}
+		C = \sqrt{ 8p(1-p) \log\frac{3}{1-(11/12)^{1/(k-2)}}},
+	\end{equation}
+	and $R_0 > r$ sufficiently large so that for $R \geq R_0$ and $N \in \mathbb{N}$ we have
+	\begin{equation}\label{21Rdef2}
+		\frac{\lambda(R-r)^2}{4} \geq  2\phi(\epsilon/16) + 2 + k \lceil C  \lceil RN^{\alpha} \rceil -  \lfloor rN^{\alpha} \rfloor \rceil N^{-\alpha/2}.
+	\end{equation}
+	We define $R = \lceil R_0\rceil + \mathbf{1}_{\lceil R_0\rceil + r\;\mathrm{odd}}$, so that $R\geq R_0$ and the midpoint $(R+r)/2$ are integers. This specifies our choice of $R$ and for convenience we denote $m = (R+r)/2$. 
+	
+	In the following, we always assume $N$ is large enough so that $\psi(N) > R$, hence $L_i^N$ are defined at $RN^\alpha$ for $1\leq i\leq k$. We may do so by the second condition in the definition of an $(\alpha,p,\lambda)$-good sequence (see Definition \ref{Def1}). \\
+	
+	With the choice of $R$ as above we define the events
+	\begin{equation}\label{21AB}
 		\begin{split}
-		A &= \left\{L_1^N\left(\frac{R+r}{2}\,N^\alpha\right) - pN^\alpha\,\frac{R+r}{2} + \lambda\left(\frac{R+r}{2}\right)^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2}\right\},\\
-		B &= \left\{\max_{x\in[r,R]} \left(L_{k-1}^N(xN^\alpha) - pxN^\alpha\right) \leq -(\lambda R^2 + \phi(\epsilon/16)) N^{\alpha/2} \right\}.
+			A &= \left\{L_1^N\left(mN^{\alpha}\right) - pm N^\alpha  + \lambda m^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2}\right\},\\
+			B &= \left\{\sup_{x\in[r,R]} \left(L_{k-1}^N(xN^\alpha) - pxN^\alpha\right) \leq -[\lambda R^2 + \phi(\epsilon/16) + 1] N^{\alpha/2} \right\}.
 		\end{split}
-		\end{equation}
-		We will argue in the subsequent steps that we can find $N_5\in\mathbb{N}$ so that for all $N\geq N_5$,
-		\begin{equation}\label{21Bbound}
+	\end{equation}
+	The goal of the lemma is to prove that we can find $N_5\in\mathbb{N}$ so that for all $N\geq N_5$
+	\begin{equation}\label{21Bbound}
 		\mathbb{P}(B) < \epsilon,
-		\end{equation}
-		which will prove the lemma. Let $F$ denote the subset of $B$ for which the inequalities
-		\begin{equation}\label{21x1y1}
+	\end{equation}
+	which we accomplish in the steps below.\\
+	
+	\noindent\textbf{Step 2.} In this step we introduce some notation that will be used throughout the next steps. Let $\gamma = \lfloor rN^{\alpha} \rfloor$ and $\Gamma = \lceil RN^{\alpha} \rceil$. We also define the event
+	\begin{equation}\label{21x1y1}
 		\begin{split}
-		& N^{-\alpha/2}\left|L_1^N(rN^\alpha) - prN^\alpha + \lambda r^2N^{\alpha/2}\right| < \phi(\epsilon/16),\\
-		& N^{-\alpha/2}\left|L_1^N(RN^\alpha) - pRN^\alpha + \lambda R^2N^{\alpha/2}\right| < \phi(\epsilon/16)
+			& F = \left\{ \sup_{s \in \{\gamma,  \Gamma\}} \left|L_1^N(s) - ps + \lambda s^2N^{-\alpha/2}\right|< [\phi(\epsilon/16) + 1] N^{\alpha/2} \right\}.
 		\end{split}
-		\end{equation}
-		hold. In the remainder of this step we show that $F$ can be written as a \textit{countable disjoint union} of the form
-		\begin{equation}\label{21F}
-		F = \bigsqcup_{(\vec{x},\vec{y},\ell_{bot})\in D} \left( F \cap E(\vec{x},\vec{y},\ell_{bot})\right),
-		\end{equation} 
-		with the sets $E(\vec{x},\vec{y},\ell_{bot})$ and $D$
-		defined in the following.
-		
-		For $\vec{x},\vec{y}\in\mathfrak{W}_{k-2}$, $z_1,z_2\in\mathbb{Z}$, and $\ell_{bot}\in\Omega(rN^\alpha,RN^\alpha,z_1,z_2)$, let $E(\vec{x},\vec{y},\ell_{bot})$ denote the event that $L_i^N(rN^\alpha) = x_i$ and $L_i^N(RN^\alpha)=y_i$ for $1\leq i\leq k-2$, and $L_{k-1}^N$ agrees with $\ell_{bot}$ on $[rN^\alpha,RN^\alpha]$. Let $D$ denote the set of triples $(\vec{x},\vec{y},\ell_{bot})$ satisfying
-		\begin{enumerate}[label=(\arabic*)]
-			
-			\item $0\leq y_i - x_i \leq (R-r)N^\alpha$ for $1\leq i\leq k-2$,
-			
-			\item $N^{-\alpha/2}|x_1 - prN^\alpha + \lambda r^2N^{\alpha/2}| < \phi(\epsilon/16)$ and $N^{-\alpha/2}|y_1-pRN^\alpha + \lambda R^2N^{\alpha/2}| < \phi(\epsilon/16)$,
-			
-			\item $z_1\leq x_{k-2}$, $z_2\leq y_{k-2}$, and $\ell_{bot} \in \Omega(rN^\alpha,RN^\alpha,z_1,z_2)$.
-			
-		\end{enumerate}
-		Then $D$ is countable, since there are finitely many integers $x_i,y_i$ satisfying (1), countably many $z_1,z_2\in\mathbb{Z}$ satisfying (3), and at most finitely many $\ell_{bot}$ satisfying (3) for each choice of $z_1,z_2$. Moreover, the $E(\vec{x},\vec{y},\ell_{bot})$ are pairwise disjoint, and the three conditions together show that $F = \bigcup_{(\vec{x},\vec{y},\ell_{bot})\in D} (F\cap E(\vec{x},\vec{y},\ell_{bot}))$. This proves \eqref{21F}.\\
-		
-		\noindent\textbf{Step 2.} We will argue in the following steps that we can find $\tilde{N}_0$ so that for $N\geq \tilde{N}_0$ we have
-		\begin{equation}\label{21AEbound}
-		\mathbb{P}(A\,|\, F\cap E(\vec{x},\vec{y},\ell_{bot})) > 1/4
-		\end{equation}
-		uniformly in $\vec{x},\vec{y},\ell_{bot}$. In this step, we prove \eqref{21Bbound} assuming this fact. 
-		
-		It follows from \eqref{21F} and \eqref{21AEbound} that for $N\geq\tilde{N}_0$,
-		\begin{align*}
-		&\mathbb{P}(A\,|\,F) = \sum_{(\vec{x},\vec{y},\ell_{bot})\in D} \frac{\mathbb{P}(A\,|\,F\cap E(\vec{x},\vec{y},\ell_{bot}))\mathbb{P}(F\cap E(\vec{x},\vec{y},\ell_{bot}))}{\mathbb{P}(F)} \geq \\ &\frac{1}{4}\cdot\frac{\sum_{(\vec{x},\vec{y},\ell_{bot})\in D} \mathbb{P}(F\cap E(\vec{x},\vec{y},\ell_{bot}))}{\mathbb{P}(F)} = \frac{1}{4}.
-		\end{align*}
-		From the third condition in the definition of an $(\alpha,p,\lambda)$-good sequence, Definition \ref{Def1}, we can find $\tilde{N}_1$ so that $\mathbb{P}(A) < \epsilon/8$ for $N\geq\tilde{N}_1$. Hence
-		\[
-		\mathbb{P}(F) = \frac{\mathbb{P}(A\cap F)}{\mathbb{P}(A\,|\,F)} \leq 4\mathbb{P}(A) < \epsilon/2.
-		\]
-		Lastly, we can find $\tilde{N}_2$ so that for $N\geq\tilde{N}_2$, the two inequalities in \eqref{21x1y1} hold with probability $>1-\epsilon/2$. We conclude that
-		\[
-		\mathbb{P}(B) \leq \mathbb{P}(F) + \epsilon/2 \leq \epsilon
-		\]
-		for $N\geq N_5 = \max(\tilde{N}_0,\tilde{N}_1,\tilde{N}_2)$.\\
-		
-		\noindent\textbf{Step 3.} We will now prove \eqref{21AEbound}, assuming results from Steps 3 and 4 below. We first note that by Lemma \ref{MCLxy}, if we raise the curves at the endpoints $rN^\alpha,RN^\alpha$, then the probability of the event $A$ will decrease. In particular, let us write
-		\begin{equation}\label{21xybar}
-		\overline{x} = \lceil prN^\alpha - (\lambda r^2 - \phi(\epsilon/16))N^{\alpha/2}\,\rceil, \quad \overline{y} = \lceil pRN^\alpha - (\lambda R^2 - \phi(\epsilon/16))N^{\alpha/2}\,\rceil,
-		\end{equation} 
-		and $T = (R-r)N^\alpha$, and define $\vec{x}\,',\vec{y}\,'\in\mathfrak{W}_{k-2}$ by
-		\begin{equation*}
-		x_i' = \overline{x} + (k-1-i)\lceil C\sqrt{T}\,\rceil, \quad
-		y_i' = \overline{y} + (k-1-i)\lceil C\sqrt{T}\,\rceil.
-		\end{equation*}
-		Note that $x_i' \geq \overline{x} \geq x_1 \geq x_i$ for each $i$ by condition (2) above. Furthermore, $x_i' - x_{i+1}' \geq C\sqrt{T}$. The same observations hold for $y_i'$. Using the Schur Gibbs property (Definition \ref{DefSGP}) and Lemma \ref{MCLxy}, we have
-		\begin{equation}\label{21xyest}
+	\end{equation}
+	In the remainder of this step we show that $F \cap B$ can be written as a \textit{countable disjoint union}
+	\begin{equation}\label{21F}
+		F \cap B = \bigsqcup_{(\vec{x},\vec{y},\ell_{bot})\in D}  E(\vec{x},\vec{y},\ell_{bot}),
+	\end{equation} 
+	where the sets $E(\vec{x},\vec{y},\ell_{bot})$ and $D$ are defined below.
+	
+	For $\vec{x},\vec{y}\in\mathfrak{W}_{k-2}$, $z_1,z_2\in\mathbb{Z}$, and $\ell_{bot}\in\Omega(\gamma, \Gamma ,z_1,z_2)$, let $E(\vec{x},\vec{y},\ell_{bot})$ denote the event that $L_i^N(\gamma) = x_i$ and $L_i^N(\Gamma)=y_i$ for $1\leq i\leq k-2$, and $L_{k-1}^N$ agrees with $\ell_{bot}$ on $[\gamma, \Gamma]$. Let $D$ denote the set of triples $(\vec{x},\vec{y},\ell_{bot})$ satisfying
+	\begin{enumerate}[label=(\arabic*)]
+		\item $0\leq y_i - x_i \leq \Gamma - \gamma$ for $1\leq i\leq k-2$,
+		\item $|x_1 - p\gamma + \lambda \gamma^2 N^{-3\alpha/2}| < \phi(\epsilon/16) N^{\alpha/2}$ and $|y_1- p \Gamma  + \lambda \Gamma^2N^{-3\alpha/2}| < \phi(\epsilon/16)N^{\alpha/2}$,
+		\item $z_1\leq x_{k-2}$, $z_2\leq y_{k-2}$, and $\ell_{bot} \in \Omega(\gamma , \Gamma,z_1,z_2)$,
+		\item $\sup_{x \in [r, R]} [\ell_{bot}(x N^{\alpha}) - pxN^{\alpha} ] \leq -[\lambda R^2 + \phi(\epsilon/16) + 1]N^{\alpha/2}$.
+	\end{enumerate}
+	It is clear that $D$ is countable, the events $E(\vec{x},\vec{y},\ell_{bot})$ are pairwise disjoint for different elements in $D$ and (\ref{21F}) is satisfied. \\
+	
+	
+	\noindent\textbf{Step 3.} We claim that we can find $\tilde{N}_0$ so that for $N\geq \tilde{N}_0$ we have
+	\begin{equation}\label{21AEbound}
+		\mathbb{P}(A| E(\vec{x},\vec{y},\ell_{bot})) \geq 1/4
+	\end{equation}
+	for all $(\vec{x}, \vec{y}, \ell_{bot}) \in D$ such that $\mathbb{P}(E(\vec{x},\vec{y},\ell_{bot})) > 0$. We will prove (\ref{21AEbound}) in the steps below. In this step we assume its validity and conclude the proof of (\ref{21Bbound}). \\
+	
+	It follows from \eqref{21F} and \eqref{21AEbound} that for $N\geq\tilde{N}_0$ and $\mathbb{P}(F\cap B) > 0$ we have
+	\begin{equation*}
 		\begin{split}
-		&\mathbb{P}(A\,|\,F\cap E(\vec{x},\vec{y},\ell_{bot})) = \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x},\vec{y},\infty,\ell_{bot}}_{avoid,Ber} (A\,|\,F) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,',\infty,\ell_{bot}}_{avoid,Ber} (A\,|\,F) \geq \\
-		&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(\tilde{A}\cap\left\{L_1 \geq \cdots \geq L_{k-2} \geq \ell_{bot}\right\}\,\big|\,\tilde F\right) \geq \\
-		&\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \big(\tilde A\,\big|\,\tilde F\big) - \left( 1 - \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(L_1 \geq \cdots \geq L_{k-2} \geq \ell_{bot}\,\big|\,\tilde F\right)\right). 
+			&\mathbb{P}(A|F \cap B) = \sum_{(\vec{x},\vec{y},\ell_{bot})\in D, \mathbb{P}(E(\vec{x},\vec{y},\ell_{bot}))) > 0} \frac{\mathbb{P}(A| E(\vec{x},\vec{y},\ell_{bot})\mathbb{P}( E(\vec{x},\vec{y},\ell_{bot}))}{\mathbb{P}(F \cap B)} \geq \\
+			& \frac{1}{4}\cdot\frac{\sum_{(\vec{x},\vec{y},\ell_{bot})\in D, \mathbb{P}(E(\vec{x},\vec{y},\ell_{bot}))) > 0} \mathbb{P}( E(\vec{x},\vec{y},\ell_{bot}))}{\mathbb{P}(F\cap B)} = \frac{1}{4}.
 		\end{split}
-		\end{equation}
-		Here, we have written $(L_1,\dots,L_{k-2})$ for the line ensemble with law $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}$, and we define the events $\tilde A$, $\tilde F$ in the same way as $A$, $F$ in Step 1 but replacing $L_1^N, L_{k-1}^N$ with $L_1, \ell_{bot}$. In Step 4, we will find $\tilde{N}_0$ so that for $N\geq\tilde{N}_0$, 
-		\begin{align}
-		& \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \big(\tilde A\,\big|\,\tilde F \big) \geq 1/3, \label{21 1/3}\\
-		& \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(L_1 \geq \cdots \geq L_{k-2} \geq \ell_{bot}\,\big|\,\tilde F \right) \geq 11/12 \label{21 1/12},
-		\end{align}
-		independent of $\vec{x},\vec{y},\ell_{bot}$. Then \eqref{21xyest} implies $\mathbb{P}(A\,|\,F\cap E(\vec{x},\vec{y},\ell_{bot})) \geq 1/3 - 1/12 = 1/4$ for $N\geq\tilde{N}_0$, proving \eqref{21AEbound}.\\
-		
-		\noindent\textbf{Step 4.} In this step we prove \eqref{21 1/3}. A very similar argument proves the same inequality if $[r,R]$ is replaced by $[-R,-r]$ in the definition of $B$. 
-		
-		Let $\ell$ be the random variable with law $\mathbb{P}^{rN^\alpha,RN^\alpha,x_1',y_1'}_{Ber}$, and define $\tilde{A}_\ell$ in the same way as $A$ in \eqref{21AB} but with $L_1^N$ replaced by $\ell$. Since $L_1,\dots,L_{k-2},\ell_{bot}$ are independent under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}$, and the event $\tilde A$ in \eqref{21xyest} depends only on $L_1$, we have
-		\begin{equation}\label{21indep}
-		\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}\big(\tilde A\,\big|\,\tilde F \big) = \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber}\big(\tilde{A}_\ell\big).
-		\end{equation} 
-		With $\overline{x},\overline{y}$ as in \eqref{21xybar}, write $\overline{z} = \overline{y}-\overline{x}$. We have
-		\begin{equation} \label{21convex}
+	\end{equation*}
+	
+	From the third condition in the definition of an $(\alpha,p,\lambda)$-good sequence, see Definition \ref{Def1}, we can find $\tilde{N}_1$ so that $\mathbb{P}(A) < \epsilon/8$ for $N\geq\tilde{N}_1$. Hence if $N \geq \max(\tilde{N}_1, \tilde{N}_2)$ and $\mathbb{P}(F\cap B) > 0$ we have
+	\begin{equation}\label{NM1}
+		\mathbb{P}(F \cap B) = \frac{\mathbb{P}(A\cap F \cap B)}{\mathbb{P}(A|F \cap B)} \leq 4\mathbb{P}(A) < \epsilon/2.
+	\end{equation} 
+	Lastly, by the same condition in Definition \ref{Def1} we can find $\tilde{N}_2$ so that for $N\geq\tilde{N}_2$ we have
+	\begin{equation}\label{NM2}
+		\mathbb{P}(F^c) = 2 \cdot \epsilon/8 = \epsilon/4.
+	\end{equation}
+	In deriving (\ref{NM2}) we used the fact that $|L_1^N(\gamma)  - L_1^N(rN^{\alpha})| \leq 1$, $|L_1^N(\Gamma)  - L_1^N(RN^{\alpha})| \leq 1$ and $p \in [0,1]$. Combining (\ref{NM1}) and (\ref{NM2}) we conclude that if $N \geq N_5 = \max(\tilde{N}_0, \tilde{N}_1, \tilde{N_2})$
+	$$\mathbb{P}(B) \leq \mathbb{P}(F\cap B) + \mathbb{P}(F^c) \leq \epsilon/2 + \epsilon/4 < \epsilon,$$
+	which proves (\ref{21Bbound}).\\
+	
+	\noindent\textbf{Step 4.} In this step we prove \eqref{21AEbound}. We define $\vec{x}\,',\vec{y}\,'\in\mathfrak{W}_{k-2}$ through
+	\begin{equation}\label{21xybar}
 		\begin{split}
-		& \mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} \big(\tilde A_\ell\big)
-		= \mathbb{P}^{0,T,x_1',y_1'}_{Ber} \left(\ell(T/2) - pN^\alpha \frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2}\right) =\\
-		& \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\left(\ell(T/2) - pN^\alpha\frac{R+r}{2} + \lambda\Big(\frac{R+r}{2}\Big)^2 N^{\alpha/2} < -\big(\phi(\epsilon/16) + (k-2)\lceil C\sqrt{R-r}\,\rceil\big)N^{\alpha/2}\right) \geq\\
-		& \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\left(\ell(T/2) - \frac{\overline{x} + \overline{y}}{2} < \Big( \lambda\Big(\frac{R^2+r^2}{2}\Big) - \lambda\Big(\frac{R+r}{2}\Big)^2 - Ck\sqrt{R-r} - 2\phi(\epsilon/16)\Big)N^{\alpha/2}\right) = \\
-		&\mathbb{P}^{0,T,0,\overline{z}}_{Ber}\left(\ell(T/2) - \overline{z}/2 < \gamma\sqrt{T}\right).
+			&x_i' = \overline{x} + (k-1-i)\lceil C\sqrt{T}\,\rceil, \quad y_i' = \overline{y} + (k-1-i)\lceil C\sqrt{T}\,\rceil \mbox{ for $i = 1, \dots, k-2$ with } \\
+			&\overline{x} = \lceil  p\gamma  - \lambda \gamma^2 N^{-3\alpha/2} + [\phi(\epsilon/16) + 1]N^{\alpha/2} \rceil, \hspace{1mm} \overline{y} = \lceil p \Gamma - \lambda \Gamma^2 N^{-3\alpha/2} + [\phi(\epsilon/16) + 1]N^{\alpha/2} \rceil,
 		\end{split}
-		\end{equation}
-		The inequality in the second last line follows from the definitions of $\overline{x},\overline{y}$, and in the last line, we have shifted the domain and written $\gamma$ for the constant multiplying $N^{\alpha/2}$ in the previous line, divided by $\sqrt{R-r}$. We claim that our choice of $R_0$ in \eqref{21Rdef} and the fact that $R\geq R_0$ imply that $\gamma > 0$. To see this observe that
-		\[
-		\frac{R^2+r^2}{2} - \left(\frac{R+r}{2}\right)^2 = \frac{R^2 + r^2-2rR}{4} = \frac{(R-r)^2}{4}
-		\]
-		for fixed $r$, and thus since $R-r \geq R_0-r > 1$,
-		\begin{align*}
-		&\gamma\sqrt{R-r} = \frac{\lambda}{4}(R-r)^2 - Ck\sqrt{R-r} - 2\phi(\epsilon/16) > \frac{\lambda}{4}(R_0-r)^2 - Ck(R_0-r) - 2\phi(\epsilon/16) \geq 0.
-		\end{align*} 
-		The last inequality is easily checked by computing the zeros of the quadratic function in $R_0$.
-		
-		Now by Theorem \ref{KMT}, there is a probability measure $\tilde{\mathbb{P}}$ supporting a random variable $\ell^{(T,\overline{z})}$ with law $\mathbb{P}^{0,T,0,\overline{z}}_{Ber}$ and a Brownian bridge $B^\sigma$ with variance $\sigma^2 = p(1-p)$. Then the probability in the last line of \eqref{21convex} is equal to
-		\begin{align*}
-		& \tilde{\mathbb{P}}\left( \ell^{(T,\overline{z})}(T/2) - \overline{z}/2 < \gamma\sqrt{T}\right) = \tilde{\mathbb{P}}\left(\left[\ell^{(T,\overline{z})}(T/2) - \overline{z}/2 - \sqrt{T}B^\sigma_{1/2}\right] + \sqrt{T}B^\sigma_{1/2} < \gamma\sqrt{T}\right) \geq \\
-		& \tilde{\mathbb{P}}\left(\sqrt{T}B^\sigma_{1/2} < 0\quad\mathrm{and}\quad \Delta(T,\overline{z}) < \gamma\sqrt{T}\right) \geq \frac{1}{2} - \tilde{\mathbb{P}}\left(\Delta(T,\overline{z}) \geq \gamma\sqrt{T}\right).
-		\end{align*}
-		Here, $\Delta(T,\overline{z})$ is as defined in \eqref{KMTeq}. Observe that
-		\begin{equation}\label{21zpT}
-		\frac{|\overline{z} - pT|^2}{T} \leq \frac{(\lambda(R^2-r^2) N^{\alpha/2} + 1)^2}{(R-r)N^\alpha} \leq 4\lambda^2(R+r)^2(R-r).
-		\end{equation}
-		Thus Corollary \ref{Cheb} gives us $\tilde{N}_0$ such that $\mathbb{P}(\Delta(T,\overline{z})\geq \gamma\sqrt{T})<1/6$ for $N\geq \tilde{N}_0$. This gives a lower bound on $\mathbb{P}^{rN^\alpha, RN^\alpha,x_1',y_1'}_{Ber} (A)$ of $1/2 - 1/6 = 1/3$ as desired.\\
-		
-		\noindent\textbf{Step 5.} In this last step, we prove \eqref{21 1/12} for $N\geq \tilde{N}_0$, after possibly enlarging $\tilde{N}_0$ from Step 4. The argument with $[-R,-r]$ in place of $[r,R]$ is essentially the same. 
-		
-		Note that on the event $\tilde F$, $\ell_{bot}$ lies uniformly below the line segment $\overline{\ell}_{bot}$  on $[rN^\alpha,RN^\alpha]$ connecting the points $\overline{x}$ and $\overline{y}$ defined in \eqref{21xybar}. This segment in turn lies uniformly at a distance of at least $C\sqrt{T}$ below the segment connecting $x'_{k-2} \geq \overline{x} + C\sqrt{T}$ and $y'_{k-2} \geq \overline{y} + C\sqrt{T}$. Moreover, the endpoints of all adjacent curves are at least $C\sqrt{T}$ apart. Since $L_1,\dots,L_{k-2},\overline \ell_{bot}$ are independent of $\tilde F$ under $\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber}$, we have 
-		\[
-		\mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(L_1 \geq \cdots \geq L_{k-2} \geq \ell_{bot} \,\big|\,\tilde F \right) \geq \mathbb{P}^{rN^\alpha, RN^\alpha,\vec{x}\,',\vec{y}\,'}_{Ber} \left(L_1 \geq \cdots \geq L_{k-2} \geq \overline \ell_{bot}\right).
-		\]
-		In view of \eqref{21zpT}, we see from Lemma \ref{CurveSeparation} that we can enlarge $\tilde{N}_0$ depending on $\lambda, r, R, C$ so that for $N\geq\tilde{N}_0$, the probability on right is bounded below by
-		\[
-		\left(1-3e^{-C^2/8p(1-p)}\right)^{k-2}.
-		\]
-		Our choice of $C$ in \eqref{21Cdef} implies that this quantity is at least 11/12, proving \eqref{21 1/12}.
-		
-	\end{proof}
+	\end{equation} 
+	where $C$ is as in (\ref{21Cdef}) and $T = \Gamma - \gamma$. Note that for any $(\vec{x}, \vec{y}, \ell_{bot}) \in D$ we have
+	$$x_i' \geq \overline{x} \geq x_1 \geq x_i \mbox{ and }y_i' \geq \overline{y} \geq y_1 \geq y_i$$
+	for each $i = 1, \dots, k-2$. Furthermore, 
+	$$x_i' - x_{i+1}' \geq C\sqrt{T} \mbox{ and }y_i' - y_{i+1}' \geq C\sqrt{T}$$
+	for all $i = 1, \dots, k-2$ with the convention $x_{k-1}' = \overline{x}$ and $y_{k-1}' = \overline{y}$. \\
+	
+	We claim that we can find $\tilde{N}_0$ so that for all $N\geq\tilde{N}_0$ and $(\vec{x}, \vec{y}, \ell_{bot}) \in D$ such that $\mathbb{P}(E(\vec{x},\vec{y},\ell_{bot})) > 0$ we have $\prod_{i = 1}^{k-2} |\Omega(\gamma, \Gamma, x_i', y_i')| \geq |\Omega_{avoid}(\gamma, \Gamma, \vec{x}', \vec{y}', \infty, \ell_{bot})| \geq 1$ and moreover we have
+	\begin{equation}\label{21 1/3}
+		\mathbb{P}^{\gamma, \Gamma,\vec{x}',\vec{y}'}_{Ber} \left(  Q_1\left(mN^{\alpha}\right) - pm N^\alpha  + \lambda m^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2}  \right) \geq 1/3,
+	\end{equation}
+	\begin{equation}\label{21 1/12}
+		\mathbb{P}^{\gamma, \Gamma,\vec{x}',\vec{y}'}_{Ber} \left( Q_1 \geq \cdots \geq Q_{k-1} \right) \geq 11/12,
+	\end{equation}
+	where $\mathfrak{Q} = (Q_1, \dots, Q_{k-2})$ is $\mathbb{P}^{\gamma, \Gamma,\vec{x}',\vec{y}'}_{Ber}$-distributed and we used the convention that $Q_{k-1} = \ell_{bot}$. We prove (\ref{21 1/3}) and (\ref{21 1/12}) in the steps below. In this step we assume their validity and conclude the proof of (\ref{21AEbound}).\\
+	
+	Observe that for any $(\vec{x}, \vec{y}, \ell_{bot}) \in D$ such that $\mathbb{P}(E(\vec{x},\vec{y},\ell_{bot})) > 0$ we the following tower of inequalities provided that $N \geq \tilde{N}_0$
+	\begin{equation}\label{21xyest}
+		\begin{split}
+			&\mathbb{P}(A| E(\vec{x},\vec{y},\ell_{bot})) = \mathbb{P}^{\gamma, \Gamma,\vec{x},\vec{y},\infty,\ell_{bot}}_{avoid,Ber} \left( Q_1\left(mN^{\alpha}\right) - pm N^\alpha  + \lambda m^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2} \right) \geq  \\
+			& \mathbb{P}^{\gamma, \Gamma,\vec{x}',\vec{y}',\infty,\ell_{bot}}_{avoid,Ber} \left( Q_1\left(mN^{\alpha}\right) - pm N^\alpha  + \lambda m^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2} \right) = \\
+			&\frac{\mathbb{P}^{\gamma, \Gamma,\vec{x}',\vec{y}'}_{Ber} \left( \{ Q_1\left(mN^{\alpha}\right) - pm N^\alpha  + \lambda m^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2} \} \cap \{Q_1 \geq \cdots \geq Q_{k-1} \} \right) }{\mathbb{P}^{\gamma, \Gamma,\vec{x}',\vec{y}'}_{Ber} \left( Q_1 \geq \cdots \geq Q_{k-1} \right) }.
+		\end{split}
+	\end{equation}
+	Let us elaborate on (\ref{21xyest}) briefly. The condition that $\mathbb{P}(E(\vec{x},\vec{y},\ell_{bot})) > 0$ is required to ensure that the probabilities on the first line of (\ref{21xyest}) are well-defined and $N \geq \tilde{N}_0$ ensures that all other probabilities are also well-defined. The equality on the first line of (\ref{21xyest}) follows from the definition of $A$ and the Schur Gibbs property, see Definition \ref{DefSGP}, and $\mathfrak{Q} = (Q_1, \dots, Q_{k-2})$ is $\mathbb{P}^{\gamma, \Gamma,\vec{x},\vec{y},\infty,\ell_{bot}}_{avoid,Ber} $-distributed. The inequality in the first line of (\ref{21xyest}) follows from  Lemma \ref{MCLxy}, while the equality in the second line follows from Definition \ref{DefAvoidingLawBer}, and now $\mathfrak{Q} = (Q_1, \dots, Q_{k-2})$ is $\mathbb{P}^{\gamma, \Gamma,\vec{x}',\vec{y}'}_{Ber}$-distributed with the convention that $Q_{k-1} = \ell_{bot}$. 
+	
+	Combining (\ref{21 1/3}), (\ref{21 1/12}) and (\ref{21xyest}) we conclude that 
+	$$\mathbb{P}(A| E(\vec{x},\vec{y},\ell_{bot}))  \geq 1/3- 1/12 = 1/4,$$
+	which proves (\ref{21AEbound}).\\
+	
+	\noindent\textbf{Step 5.} In this step we prove \eqref{21 1/3}. We observe that since $\mathbb{P}(E(\vec{x},\vec{y},\ell_{bot})) > 0$ we know that $|\Omega_{avoid}(\gamma, \Gamma, \vec{x}, \vec{y}, \infty, \ell_{bot})| \geq 1$ and then we conclude from Lemma \ref{LemmaWD} that there exist $\hat{N}_1 \in \mathbb{N}$ such that for $N \geq \hat{N}_1$ we have $|\Omega_{avoid}(\gamma, \Gamma, \vec{x}', \vec{y}', \infty, \ell_{bot})| \geq 1$.
+	
+	Below $\ell$ will be used for a generic random variable with law $\mathbb{P}^{\cdot,\cdot,\cdot,\cdot}_{Ber}$, where the boundary data changes from line to line. With $\overline{x},\overline{y}$ as in \eqref{21xybar}, write $\overline{z} = \overline{y}-\overline{x}$ and recall that $T = \Gamma - \gamma$. Then
+	\begin{equation} \label{21convex}
+		\begin{split}
+			& \mathbb{P}^{\gamma, \Gamma,x_1',y_1'}_{Ber} \left(\ell\left(mN^{\alpha}\right) - pm N^\alpha  + \lambda m^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2}  \right) = \\
+			& \mathbb{P}^{0,T,x_1',y_1'}_{Ber} \left(\ell(T/2) - pm N^\alpha  + \lambda m^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2}\right) =\\
+			& \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\left(\ell(T/2) - pm N^\alpha  + \lambda m^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2} - (k-2)\lceil C\sqrt{T}\rceil\right) \geq\\
+			& \mathbb{P}^{0,T,\overline{x},\overline{y}}_{Ber}\left(\ell(T/2)   - \frac{\overline{x} + \overline{y}}{2}  <  \lambda \left(\frac{\gamma^2 + \Gamma^2}{2 N^{3\alpha/2}} \right)-[2\phi(\epsilon/16) + 1 +  \lambda m^2]N^{\alpha/2} - k \lceil C\sqrt{T} \rceil\right) = \\
+			&\mathbb{P}^{0,T,0,\overline{z}}_{Ber}\left(\ell(T/2) - \overline{z}/2 < \lambda \left(\frac{\gamma^2 + \Gamma^2}{2 N^{3\alpha/2}} \right)-[2\phi(\epsilon/16) + 1 +  \lambda m^2]N^{\alpha/2} - k \lceil C\sqrt{T} \rceil\right).
+		\end{split}
+	\end{equation}
+	The equalities in (\ref{21convex}) follow from shifting the boundary data of the curve $\ell$, while the inequality on the third line follows from the definition of $\overline{x},\overline{y}$ as in \eqref{21xybar}.
+	
+	From our choice of $R$ in Step 1 and the definition of $\gamma, \Gamma$ we know that 
+	$$\lambda \frac{\gamma^2+\Gamma^2}{2N^{2\alpha}} -  \lambda m^2 \geq \lambda \frac{(R-r)^2}{4} - \frac{r\lambda}{N^{\alpha}} \geq 2\phi(\epsilon/16) + 2 + k \lceil C\sqrt{T} \rceil N^{-\alpha/2}- \frac{r\lambda}{N^{\alpha}} .$$
+	$$ .$$
+	The last inequality and (\ref{21convex}) imply 
+	\begin{equation} \label{22convex}
+		\begin{split}
+			& \mathbb{P}^{\gamma, \Gamma,x_1',y_1'}_{Ber} \left(\ell\left(mN^{\alpha}\right) - pm N^\alpha  + \lambda m^2 N^{\alpha/2} < -\phi(\epsilon/16)N^{\alpha/2}  \right) \geq \\
+			&\mathbb{P}^{0,T,0,\overline{z}}_{Ber}\left(\ell(T/2) - \overline{z}/2 < N^{\alpha/2} -  r\lambda N^{-\alpha/2} \right).
+		\end{split}
+	\end{equation}
+	
+	Let $\tilde{\mathbb{P}}$ be the probability measure on the space afforded by Theorem \ref{KMT}, supporting a random variable $\ell^{(T,\overline{z})}$ with law $\mathbb{P}^{0,T,0,\overline{z}}_{Ber}$ and a Brownian bridge $B^\sigma$ with variance $\sigma^2 = p(1-p)$. Then the probability in the last line of \eqref{21convex} is equal to
+	\begin{equation} \label{23convex}
+		\begin{split}
+			&\mathbb{P}^{0,T,0,\overline{z}}_{Ber}\left(\ell(T/2) - \overline{z}/2 < N^{\alpha/2} -  r\lambda N^{-\alpha/2} \right) = \tilde{\mathbb{P}} \left( \ell^{(T,\overline{z})}(T/2) - \overline{z}/2 <N^{\alpha/2} -  r\lambda N^{-\alpha/2}    \right) \geq \\
+			& \tilde{\mathbb{P}} \left( \sqrt{T}B^\sigma_{1/2} < 0 \mbox{ and }\Delta(T,\overline{z}) <N^{\alpha/2} -  r\lambda N^{-\alpha/2}     \right) \geq \frac{1}{2} - \tilde{\mathbb{P}} \left( \Delta(T,\overline{z}) \geq N^{\alpha/2} -  r\lambda N^{-\alpha/2} \right),
+		\end{split}
+	\end{equation}
+	where we recall that $\Delta(T,\overline{z})$ is as in \eqref{KMTeq}. Since as $N \rightarrow \infty$ we have 
+	\begin{equation*}
+		T \sim (R-r) N^{\alpha} \mbox{ and }\frac{|\overline{z} - pT|^2}{T} \sim (R+r),
+	\end{equation*}
+	we conclude from Lemma \ref{Cheb} that there exists $\hat{N}_2 \in \mathbb{N}$ such that if $N \geq \max(\hat{N}_1, \hat{N}_2)$ we have
+	\begin{equation} \label{24convex}
+		\begin{split}
+			\tilde{\mathbb{P}} \left( \Delta(T,\overline{z}) \geq N^{\alpha/2} -  r\lambda N^{-\alpha/2} \right) \leq \frac{1}{6}.
+		\end{split}
+	\end{equation}
+	Combining (\ref{22convex}), (\ref{23convex}) and (\ref{24convex}) we obtain \eqref{21 1/3}. \\
+	
+	
+	\noindent\textbf{Step 6.} In this last step, we prove \eqref{21 1/12}. Let $\overline{\ell}_{bot}$ be the straight segment connecting $\overline{x}$ and $\overline{y}$, defined in \eqref{21xybar}. By construction, we have that there is $\hat{N}_3 \in \mathbb{N}$ such that if $N \geq \hat{N}_3$ we have for any $(\vec{x}, \vec{y}, \ell_{bot}) \in D$ that $\ell_{bot}$ lies uniformly below the line segment $\overline{\ell}_{bot}$, which in turn lies at least $C \sqrt{T}$ below the straight segment connecting $x_{k-2}'$ and $y_{k-2}'$. If $\hat{N}_1$ is as in Step 5 we conclude from Lemma \ref{CurveSeparation} that there exists $\hat{N}_4 \in \mathbb{N}$ such that if $N \geq \max(\hat{N}_1, \hat{N}_3, \hat{N}_4)$ and $\mathbb{P}(E(\vec{x},\vec{y},\ell_{bot})) > 0$ 
+	\begin{equation}\label{21UP}
+		\mathbb{P}^{\gamma, \Gamma,\vec{x}',\vec{y}'}_{Ber} \left( Q_1 \geq \cdots \geq Q_{k-1} \right) \geq \left(1-3e^{-C^2/8p(1-p)}\right)^{k-2} = \frac{11}{12}.
+	\end{equation}
+	where the condition that $N \geq \hat{N}_1 $ is included to ensure that the probability $\mathbb{P}^{\gamma, \Gamma,\vec{x}',\vec{y}'}_{Ber} $ is well-defined. In deriving (\ref{21UP}) we also used (\ref{21Cdef}), which implies
+	$$C = \sqrt{ 8p(1-p) \log\frac{3}{1-(11/12)^{1/(k-2)}}} \geq \sqrt{8p(1-p) \log 3}.$$
+	We see that (\ref{21UP}) implies (\ref{21 1/12}), which concludes the proof of the lemma.
+\end{proof}
 
-	We now prove Lemma \ref{PropSup2}. We exploit Lemma \ref{21} in order to find two points on intervals $[r,R]$ and $[-R,-r]$ where $L_{k-1}^N(xN^\alpha)$ cannot be too low. After separating the curves in order to treat $L_{k-1}^N$ as a free Bernoulli bridge as in the previous argument, we employ Lemma \ref{LemmaMinFreeS4} to bound the deviation of $L_{k-1}^N$ below the line of slope $p$.
+
+In the remainder of this section we use Lemma \ref{21} to prove Lemma \ref{PropSup2}.
+\begin{proof} (Lemma \ref{PropSup2}) For clarity we split the proof into five steps.\\ 
 	
-	\begin{proof} We split the proof into four steps for clarity. In the first step we introduce notation to be used in the latter steps.\\
+	\noindent\textbf{Step 1.} In this step we specify the choice of $R_2$ in the statement of the lemma and introduce some notation that will be used in the proof of the lemma, which is given in Steps 2,3 and 4 below. Throughout we fix $r, \epsilon > 0$. Define the constant
+	\begin{equation}\label{4.3Cdef}
+		C_1 = \sqrt{16p(1-p)\log\frac{3}{1-2^{-1/(k-1)}}}.
+	\end{equation}
+	Let $R > r + 3$, $M > 0$ and $\tilde{N}_1 \in \mathbb{N}$ be such that for $N \geq \tilde{N}_1$ we have that the event
+	\begin{equation}\label{S5EventB}
+		B = \left\{ \sup_{x\in [r+3, R] \cup [-R,-r-3]} \big(L^N_{k-1}(xN^\alpha) - pxN^\alpha\big) \geq -MN^{\alpha/2} \right\}
+	\end{equation}
+	satisfies 
+	\begin{equation}\label{S5EventBineq}
+		\mathbb{P} \left( B\right) \geq 1 - \epsilon/2.
+	\end{equation}
+	Such a choice of $R, M, \tilde{N}_1$ is possible by Lemma \ref{21}.
 	
-	\noindent\textbf{Step 1.} Define events
-		\[
-		A = \left\{\inf_{s \in [ -t_3, t_3 ]}\big(L^N_{k-1}(s) - p s \big) \leq - R_2N^{\alpha/2}\right\},
-		\]
-		\[
-		B = \left\{ \max_{x\in [r+3, R] \cup [-R,-r-3]} \big(L^N_{k-1}(xN^\alpha) - pxN^\alpha\big) > -MN^{\alpha/2} \right\}.
-		\]
-		Here, we define $M,R$ via Lemma \ref{21}, taking $R$ large enough so that with $M = \lambda R^2 + \phi(\epsilon/64)$, we have 
-		\begin{equation}\label{4.3Bbound}
-		\mathbb{P}(B) \geq 1 - \epsilon/2
-		\end{equation} 
-		for $N$ larger than some $\tilde{N}_0$.
-		Lastly, define the constant
-		\begin{equation}\label{4.3Cdef}
-		C = \sqrt{16p(1-p)\log\frac{3}{1-2^{-1/(k-1)}}}.
-		\end{equation}
-		In the following steps, we will find $N_4\in\mathbb{N}$ and $R_2 > 0$ depending on $M,C,k,r,\epsilon$ so that 
-		\begin{equation}\label{4.3Abound}
-		\mathbb{P}(A) < \epsilon
-		\end{equation}
-		for $N\geq N_4$, which will prove the lemma. In particular, we specify $R_2$ in Step 3.
-		
-		In the remainder of this step, we prove that $B$ can be written as a \textit{countable disjoint union} of the form
-		\begin{equation}\label{4.3disj}
-		B = \bigsqcup_{(a,b,\vec{x},\vec{y},\ell_{bot})\in D} E(a,b,\vec{x},\vec{y},\ell_{bot}),
-		\end{equation}
-		where the sets $D$ and $E(a,b,\vec{x},\vec{y},\ell_{bot})$ are defined below.
-		
-		For $0<a,b\in\mathbb{Z}$, $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$, $z_1,z_2\in\mathbb{Z}$, and $\ell_{bot}\in\Omega(-a,b,z_1,z_2)$, we define $E(a,b,\vec{x},\vec{y},\ell_{bot})$ to be the event that $L_i^N(-a) = x_i$ and $L_i^N(b) = y_i$ for $1\leq i\leq k-1$, and $L_k^N$ agrees with $\ell_{bot}$ on $[-a,b]$. Let $D$ be the collection of tuples $(a,b,\vec{x},\vec{y},\ell_{bot})$ satisfying 
-		\begin{enumerate}[label=(\arabic*)]
-			
-			\item $a,b\in[(r+3)N^\alpha,RN^\alpha]$.
-			
-			\item $0 \leq y_i - x_i \leq b+a$, $x_{k-1} + pa > - MN^{\alpha/2}$, and $y_{k-1} - pb > - MN^{\alpha/2}$.
-			
-			\item If $c,d\in\mathbb{Z}$, $c > a$, and $d > b$, then $L_{k-1}^N(-c) + pc \leq -MN^{\alpha/2}$ and $L_{k-1}^N(d) - pd \leq -MN^{\alpha/2}$,
-			
-			\item $z_1\leq x_{k-1}$, $z_2\leq y_{k-1}$, and $\ell_{bot}\in\Omega(-a,b,z_1,z_2)$.
-			
-		\end{enumerate} 
-		Since there are finitely many integers $a,b$ satisfying (1), countably many $x_i,y_i$ and $z_1,z_2$ satisfying (2) and (4), and finitely many $L_i^N,\ell_{bot}$ satisfying (3) and (4) given $a,b,x_i,y_i,z_1,z_2$, we see that $D$ is countable. The four conditions together imply that $B = \bigcup_{(a,b,\vec{x},\vec{y},\ell_{bot})\in D} E(a,b,\vec{x},\vec{y},\ell_{bot})$.
-		
-		To see that the $E(a,b,\vec{x},\vec{y},\ell_{bot})$ are pairwise disjoint for $(a,b,\vec{x},\vec{y},\ell_{bot})\in D$, observe that on the intersection of $E(a,b,\vec{x},\vec{y},\ell_{bot})$ and $E(\tilde a,\tilde b,\tilde{\vec{x}},\tilde{\vec{y}},\tilde{\ell}_{bot})$, conditions (2) and (3) imply that $a=\tilde{a}$ and $b=\tilde{b}$. We then conclude from the definition of $E(a,b,\vec{x},\vec{y},\ell_{bot})$ that $\vec{x}=\tilde{\vec{x}}$, $\vec{y} = \tilde{\vec{y}}$, and $\ell_{bot} = \tilde{\ell}_{bot}$. This proves \eqref{4.3disj}.\\
-		
-		\noindent\textbf{Step 2.} We will prove in the steps below that we can find $\tilde{N}_1$ and $R_2$ so that for $N\geq\tilde{N}_1$,
-		\begin{equation}\label{4.3AEbound}
-		\mathbb{P}(A\,|\,E(a,b,\vec{x},\vec{y},\ell_{bot})) < \epsilon/2
-		\end{equation}
-		uniformly in $a,b,\vec{x},\vec{y},\ell_{bot}$. In this step, we prove \eqref{4.3Abound} assuming this fact.
-		
-		By \eqref{4.3AEbound} and \eqref{4.3disj}, we obtain
-		\begin{align*}
-		&\mathbb{P}(A \cap B) = \sum_{(a,b,\vec{x},\vec{y},\ell_{bot})\in D} \mathbb{P}(A\,|\,E(a,b,\vec{x},\vec{y},\ell_{bot}))\mathbb{P}(E(a,b,\vec{x},\vec{y},\ell_{bot})) \leq\\
-		& \frac{\epsilon}{2}\sum_{(a,b,\vec{x},\vec{y},\ell_{bot})\in D} \mathbb{P}(E(a,b,\vec{x},\vec{y},\ell_{bot})) \leq \frac{\epsilon}{2}
-		\end{align*}
-		for $N\geq\tilde{N}_1$. It follows from \eqref{4.3Bbound} that
-		\begin{equation*}
-		\mathbb{P}(A) \leq \mathbb{P}(A\cap B) + \epsilon/2 < \epsilon
-		\end{equation*}
-		for $N\geq N_4 = \max(\tilde{N}_0,\tilde{N}_1)$.\\
-		
-		\noindent\textbf{Step 3.} We next prove \eqref{4.3AEbound}, assuming results from Steps 3 below. Define $\vec{x}\,',\vec{y}\,' \in \mathfrak{W}_{k-1}$ by
-		\begin{align*}
-		x_i' &= \lfloor - pa - MN^{\alpha/2}\rfloor - (i-1)\lceil CN^{\alpha/2}\rceil,\\
-		y_i' &= \lfloor pb - MN^{\alpha/2}\rfloor - (i-1)\lceil CN^{\alpha/2}\rceil.
-		\end{align*}  
-		Observe that by condition (2) above, $x_i'\leq -pa - MN^{\alpha/2} \leq x_{k-1} \leq x_i$, and similarly for $\vec{y}$. It follows from the Schur Gibbs property (see Definition \ref{DefSGP}) and Lemmas \ref{MCLxy} and \ref{MCLfg} that
-		\begin{equation}\label{4.3main}
+	Let us set 
+	$$s^-_1 = \lceil - R \cdot N^{\alpha} \rceil, \hspace{2mm} s^-_2 =  \lfloor -(r+3) \cdot N^{\alpha} \rfloor, \hspace{2mm} s^+_1 = \lceil (r+3) \cdot N^{\alpha} \rceil, \hspace{2mm} s^+_2 =  \lfloor R \cdot N^{\alpha} \rfloor,$$
+	and for $a \in \llbracket s_1^-, s_2^- \rrbracket$ and $b \in \llbracket s_1^+, s_2^+ \rrbracket$ we define $\vec{x}\,',\vec{y}\,' \in \mathfrak{W}_{k-1}$ by
+	\begin{equation}\label{S5Boundary}
 		\begin{split}
-		&\mathbb{P}(A\,|\,E(a,b,\vec{x},\vec{y},\ell_{bot})) \leq \mathbb{P}\left( \inf_{s\in[-a, b]} \left(L_{k-1}^N(s) - ps\right) \leq -R_2N^{\alpha/2}\, \big| \, E(a,b,\vec{x},\vec{y},\ell_{bot}) \right) = \\
-		&\mathbb{P}^{-a,b, \vec{x}, \vec{y},\infty,\ell_{bot}}_{avoid, Ber} \left( \inf_{s\in[-a, b]} \left(Q_{k-1}(s) - ps\right) \leq -R_2N^{\alpha/2} \right) \leq\\
-		& \mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{avoid, Ber} \left( \inf_{s\in[0,a+b]} \big(Q_{k-1}(s) - ps\big) \leq -R_2N^{\alpha/2} \right) \leq \\
-		&\frac{\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber} \left( \inf_{s\in[0,a+b]} \big(L_{k-1}(s) - ps\big) \leq -R_2 N^{\alpha/2} \right)}{\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1})}.
+			x_i' &= \lfloor pa - MN^{\alpha/2}\rfloor - (i-1)\lceil C_1N^{\alpha/2}\rceil,\\
+			y_i' &= \lfloor pb - MN^{\alpha/2}\rfloor - (i-1)\lceil C_1N^{\alpha/2}\rceil,
 		\end{split}
-		\end{equation}
-		In Step 3 below, we will find $\tilde{N}_1$ and $R_2 > 0$ such that the numerator and denominator in the last line are $<\epsilon/4$ and $\geq1/2$ for $N\geq\tilde{N}_1$. It then follows that the first expression in \eqref{4.3main} is bounded above by $\epsilon/2$, proving \eqref{4.3AEbound}.\\
-		
-		\noindent\textbf{Step 4.} In this step, we fix $R_2 > 0$ and $\tilde{N}_1$ so that for $N\geq\tilde{N}_1$, we have
-		\begin{align}
+	\end{equation}  
+	for $i = 1, \dots, k-1$. We will write $\vec{z} = \vec{y}' - \vec{x}'$, and we note that $z_{k-1} \geq p (b-a) -1$ and also $2RN^{\alpha} \geq b-a \geq 2(r+3) N^{\alpha}$. The latter and Lemma \ref{LemmaMinFreeS4} imply that there exists $R_2 > 0$ and $\tilde{N}_2 \in \mathbb{N}$ such that if $N \geq \tilde{N}_2$ we have
+	\begin{equation}\label{S5DefR2}
+		\mathbb{P}^{0, b - a, 0, z_{k-1}}_{Ber} \left( \inf_{s\in[0,b-a]} \big(\ell(s) - ps\big) \leq -(R_2 - M - C_1k) N^{\alpha/2} \right) < \epsilon/4.
+	\end{equation}
+	This fixes our choice of $R_2$ in the statement of the lemma. \\
+	
+	With the above choice of $R_2$ we define the event
+	\begin{equation}\label{S5EventA}
+		A = \left\{\inf_{s \in [ -t_3, t_3 ]}\big[L^N_{k-1}(s) - p s \big] \leq - R_2N^{\alpha/2}\right\},
+	\end{equation}
+	and then to prove the lemma it suffices to show that there exists $N_4 \in \mathbb{N}$ such that for $N \geq N_4$ 
+	\begin{equation}\label{4.3Abound}
+		\mathbb{P}(A) < \epsilon
+	\end{equation}
+	
+	
+	\noindent\textbf{Step 2.} In this step, we prove that the event $B$ from (\ref{S5EventB}) can be written as a \textit{countable disjoint union} of the form
+	\begin{equation}\label{4.3disj}
+		B = \bigsqcup_{(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+)\in D} E(a,b,\vec{x},\vec{y},\ell_{bot},\ell_{top}^-, \ell_{top}^+),
+	\end{equation}
+	where the set $D$ and events $E(a,b,\vec{x},\vec{y},\ell_{bot},\ell_{top}^-, \ell_{top}^+)$ are defined below.
+	
+	For $a \in \llbracket s_1^-, s_2^- \rrbracket$ and $b \in \llbracket s_1^+, s_2^+ \rrbracket$, $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$, $z_1,z_2,z_1^-, z_2^+\in\mathbb{Z}$, $\ell_{bot} \in \Omega(a, b, z_1, z_2)$, $\ell_{top}^- \in \Omega(s_1^-, a, z_1^-, x_{k-1})$ , $\ell_{top}^+ \in \Omega(b, s_2^+, y_{k-1}, z_2^+)$ we define $E(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+)$ to be the event that $L_i^N(a) = x_i$ and $L_i^N(b) = y_i$ for $1\leq i\leq k-1$, and $L_k^N$ agrees with $\ell_{bot}$ on $\llbracket a,b \rrbracket$, $L_{k-1}^N$ agrees with $\ell_{top}^-$ on $\llbracket s_1^-, a \rrbracket$ and with $\ell_{top}^+$ on $\llbracket b, s_2^+ \rrbracket$.
+	
+	
+	We also let $D$ be the collection of tuples $(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+)$ satisfying:
+	\begin{enumerate}[label=(\arabic*)]
+		\item $a \in \llbracket s_1^-, s_2^- \rrbracket$, $b \in \llbracket s_1^+, s_2^+ \rrbracket$;
+		\item $\vec{x}, \vec{y} \in \mathfrak{W}_{k-1}$, $0 \leq y_i - x_i \leq b- a$, $x_{k-1} - pa > - MN^{\alpha/2}$, and $y_{k-1} - pb > - MN^{\alpha/2}$;
+		\item if $c \in \llbracket s_1^-, s_2^- \rrbracket \cap (- \infty, a)$ then $\ell_{top}^-(c) - pc \leq -MN^{\alpha/2}$;
+		\item if $d \in \llbracket s_1^+, s_2^+ \rrbracket \cap (b, \infty)$ then $\ell_{top}^+(d) - pd\geq -MN^{\alpha/2}$;
+		\item $z_1\leq x_{k-1}$, $z_2\leq y_{k-1}$, and $\ell_{bot}\in\Omega(a,b,z_1,z_2)$.
+	\end{enumerate} 
+	It is clear that $D$ is countable, and that 
+	$$B = \bigcup_{(a,b,\vec{x},\vec{y},\ell_{bot})\in D} E(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+),$$
+	so to prove (\ref{4.3disj}) it suffices to show that the events $E(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+)$ are pairwise disjoint. Observe that on the intersection of $E(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+)$ and $E(\tilde a,\tilde b,\tilde{\vec{x}},\tilde{\vec{y}},\tilde{\ell}_{bot}, \tilde{\ell}_{top}^-, \tilde{\ell}_{top}^+)$, conditions (2) and (3) imply that $a = \tilde{a}$, while conditions (2) and (4) that $b = \tilde{b}$. Afterwards, we conclude that $\vec{x}=\tilde{\vec{x}}$, $\vec{y} = \tilde{\vec{y}}$, $\ell_{bot} = \tilde{\ell}_{bot}$, $\ell_{top}^- = \tilde{\ell}^-_{top}$ and $\ell_{top}^+ = \tilde{\ell}^+_{top}$, confirming \eqref{4.3disj}.\\
+	
+	
+	\noindent\textbf{Step 3.} In this step we prove (\ref{4.3Abound}). We claim that we can find $\tilde{N}_3 \in \mathbb{N}$ such that if $N \geq \tilde{N}_3$ and $(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+) \in D$ is such that $\mathbb{P} \left( E(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+) \right) > 0$ we have
+	\begin{equation}\label{4.3AEbound}
+		\mathbb{P}(A\,|\,E(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+)) < \epsilon/2.
+	\end{equation}
+	We will prove (\ref{4.3AEbound}) in the steps below. Here we assume its validity and conclude the proof of (\ref{4.3Abound}).\\
+	
+	If $N \geq \max ( \tilde{N}_1, \tilde{N}_2, \tilde{N}_3)$ we have in view of \eqref{4.3disj} and \eqref{4.3AEbound} that 
+	\begin{equation*}
+		\begin{split}
+			&\mathbb{P}(A) \leq \mathbb{P}(A \cap B) + \mathbb{P}(B^c) =\mathbb{P}(B^c) +  \sum_{\substack{(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+)\in D\\ \mathbb{P} \left( E(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+) \right) > 0}}  \mathbb{P}(A|E(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+)) \times \\
+			&\mathbb{P}(E(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+)) \leq \mathbb{P}(B^c) + \frac{\epsilon}{2}\sum_{\substack{(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+)\in D\\ \mathbb{P} \left( E(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+) \right) > 0}}  \mathbb{P}(E(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+)) =\\
+			&\mathbb{P}(B^c) + \frac{\epsilon}{2}\cdot  \mathbb{P}(B) < \epsilon,
+		\end{split}
+	\end{equation*}
+	where in the last inequality we used (\ref{S5EventBineq}). The above inequality clearly implies (\ref{4.3Abound}).\\
+	
+	\noindent\textbf{Step 4.} In this step we prove \eqref{4.3AEbound}. We claim that there exists $\tilde{N}_4 \in \mathbb{N}$ such that if $N \geq \tilde{N}_4$, $a \in \llbracket s_1^-, s_2^- \rrbracket$ and $b \in \llbracket s_1^+, s_2^+ \rrbracket$ we have that $\prod_{i = 1}^{k-1} |\Omega(a, b,x_i', y_i')| \geq 1$ and
+	\begin{equation}\label{S5T1}
+		\mathbb{P}^{a, b, \vec{x}', \vec{y}'}_{Ber}(Q_1 \geq \cdots \geq Q_{k-1}) \geq \frac{1}{2},
+	\end{equation}
+	where $\mathfrak{Q} = (Q_1, \dots, Q_{k-1})$ is $\mathbb{P}^{a, b, \vec{x}', \vec{y}'}_{Ber}$-distributed and we recall that $\vec{x}'$, $\vec{y}'$ were defined in (\ref{S5Boundary}).
+	We will prove (\ref{S5T1}) in Step 5 below. Here we assume its validity and conclude the proof of (\ref{4.3AEbound}).\\
+	
+	
+	Observe that by condition (2) in Step 2, we have that $x_i'\leq pa - MN^{\alpha/2} \leq x_{k-1} \leq x_i$, and similarly $y_i' \leq pb - MN^{\alpha/2} \leq y_{k-1} \leq y_i$ for $i = 1, \dots, k-1$. From this observation we conclude that if $N \geq \tilde{N}_4$ is sufficiently large and $(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+) \in D$ is such that $\mathbb{P} \left( E(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+) \right) > 0$ we have
+	\begin{equation}\label{4.3main}
+		\begin{split}
+			&\mathbb{P}(A|E(a,b,\vec{x},\vec{y},\ell_{bot},\ell_{top}^-, \ell_{top}^+)) \leq \\
+			&\mathbb{P}\left( \inf_{s\in[a, b]} \left(L_{k-1}^N(s) - ps\right) \leq -R_2N^{\alpha/2}\, \big| \, E(a,b,\vec{x},\vec{y},\ell_{bot},\ell_{top}^-, \ell_{top}^+) \right) = \\
+			&\mathbb{P}^{a,b, \vec{x}, \vec{y},\infty,\ell_{bot}}_{avoid, Ber} \left( \inf_{s\in[a, b]} \left(Q_{k-1}(s) - ps\right) \leq -R_2N^{\alpha/2} \right) \leq\\
+			& \mathbb{P}^{a, b, \vec{x}', \vec{y}'}_{avoid, Ber} \left( \inf_{s\in[a,b]} \big(Q_{k-1}(s) - ps\big) \leq -R_2N^{\alpha/2} \right) = \\
+			&\frac{\mathbb{P}^{a, b, \vec{x}', \vec{y}'}_{Ber} \left( \{ \inf_{s\in[a,b]} \big(Q_{k-1}(s) - ps\big) \leq -R_2 N^{\alpha/2} \}  \cap \{ Q_1 \geq \cdots \geq Q_{k-1} \} \right)}{\mathbb{P}^{a, b, \vec{x}\,', \vec{y}\,'}_{Ber}(Q_1 \geq \cdots \geq Q_{k-1})} \leq \\
+			&\frac{\mathbb{P}^{a, b, \vec{x}', \vec{y}'}_{Ber} \left( \inf_{s\in[a,b]} \big(Q_{k-1}(s) - ps\big) \leq -R_2 N^{\alpha/2} \right)}{\mathbb{P}^{a, b, \vec{x}\,', \vec{y}\,'}_{Ber}(Q_1 \geq \cdots \geq Q_{k-1})}.
+		\end{split}
+	\end{equation}
+	Let us elaborate on (\ref{4.3main}) briefly. The first inequality in (\ref{4.3main}) follows from the definition of $A$ and the fact that $a \leq -t_3$ while $b \geq t_3$ by construction. The condition $\mathbb{P} \left( E(a,b,\vec{x},\vec{y},\ell_{bot}, \ell_{top}^-, \ell_{top}^+) \right) > 0$ ensures that the first three probabilities in (\ref{4.3main}) are all well-defined. The equality on the second line follows from the Schur Gibbs property and the inequality on the third line follows from Lemmas \ref{MCLxy} and \ref{MCLfg} since $x_i' \leq x_i$ and $y_i' \leq y_i$ by construction. To ensure that the probability in the fourth line is well-defined (and hence Lemmas \ref{MCLxy} and \ref{MCLfg} are applicable) it suffices to assume that $N \geq \tilde{N}_4$, in view of Lemma \ref{LemmaWD}. The equality on the fourth line follows from the definition of $\mathbb{P}^{a, b, \vec{x}', \vec{y}'}_{avoid, Ber} $, see Definition \ref{DefAvoidingLawBer} and the last inequality is trivial.\\
+	
+	By our choice of $R_2$, see (\ref{S5DefR2}), we know that there is $\tilde{N}_5 \in \mathbb{N}$ such that if $N \geq \tilde{N}_5$
+	\begin{equation}\label{4.3main2}
+		\begin{split}
+			&\mathbb{P}^{a, b, \vec{x}', \vec{y}'}_{Ber} \left( \inf_{s\in[a,b]} \big(Q_{k-1}(s) - ps\big) \leq -R_2 N^{\alpha/2} \right) = \\
+			&\mathbb{P}^{0, b-a, 0, z_{k-1}}_{Ber} \left( \inf_{s\in[0,b-a]} \big(\ell(s) - ps\big) \leq -R_2 N^{\alpha/2} - x_{k-1}'\right) \leq \\
+			&\mathbb{P}^{0, b-a, 0, z_{k-1}}_{Ber} \left( \inf_{s\in[0,b-a]} \big(\ell(s) - ps\big) \leq -(R_2 - M - C_1k) N^{\alpha/2} \right) < \epsilon/4.
+		\end{split}
+	\end{equation}
+	Combining (\ref{S5T1}), (\ref{4.3main}) and (\ref{4.3main}) we conclude that for $N \geq \tilde{N}_3 = \max(\tilde{N}_4, \tilde{N}_5)$ we have
+	$$\mathbb{P}(A|E(a,b,\vec{x},\vec{y},\ell_{bot},\ell_{top}^-, \ell_{top}^+)) < 2 \cdot \epsilon/4 = \epsilon/2,$$
+	which implies (\ref{4.3AEbound}).\\
+	
+	\noindent\textbf{Step 5.} In this final step we prove (\ref{S5T1}).
+	
+	Lastly, we prove that we can enlarge $\tilde{N}_1$ so that \eqref{4.3intersect} holds for $N\geq\tilde{N}_1$. Write $a = a'N^\alpha, b = b'N^\alpha$, and $T = a+b = (a'+b')N^\alpha$. Also let $C' = C/\sqrt{a'+b'}$ with $C$ as in \eqref{4.3Cdef}, so that $x_i' - x_{i+1}' \geq CN^{\alpha/2} = C'\sqrt{T}$ and likewise for $y_i'$. Note that $|z_{k-1}-pT| \leq 1$. It follows from Lemma \ref{CurveSeparation}, applied with $\ell_{bot} = -\infty$ and $C'$ in place of $C$, that for $T$ larger than some $T_0$, 
+	\begin{equation}\label{4.3avoid}
+		\begin{split}
+			& \mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1}) = \mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1}) \geq\\ & \left(1 - 3e^{-(C')^2/8p(1-p)}\right)^{k-1} \geq \left(1 - 3e^{-C^2/16p(1-p)R}\right)^{k-1}.
+		\end{split}
+	\end{equation}
+	Here, we used the fact that $a'+b' \leq 2R$, hence $C' \geq C/\sqrt{2R}$. The constant $T_0$ depends in particular on $C'$, hence possibly on $a+b$. Referring to the proofs of Lemmas \ref{CurveSeparation} and \ref{Cheb}, we see that the dependency of $T_0$ on $C'$ amounts to requiring that $e^{-C'\sqrt{T_0}}$ be sufficiently small. But $C' \geq C/\sqrt{2R}$, so for this it suffices to choose $T_0$ depending on $C$ and $R$. Moreover, $T\geq 2rN^\alpha$, so as long as $\tilde{N}_1 \geq (T_0/2r)^{1/\alpha}$, we have the bound in \eqref{4.3avoid} for $N\geq\tilde{N}_1$ independent $a,b,\vec{x},\vec{y}$. Our choice of $C$ in \eqref{4.3Cdef} ensures that the expression on the right in \eqref{4.3avoid} is at least $1/2$, proving \eqref{4.3intersect}.
+	
+	
+	In this step, we fix $R_2 > 0$ and $\tilde{N}_1$ so that for $N\geq\tilde{N}_1$, we have
+	\begin{align}
 		&\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber} \left( \inf_{s\in[0,a+b]} \big(L_{k-1}(s) - ps\big) \leq -R_2 N^{\alpha/2} \right) < \epsilon/4, \label{4.3free}\\
 		&\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1}) \geq 1/2. \label{4.3intersect}
-		\end{align}
-		Let us first prove \eqref{4.3free}. Writing $\vec{z} = \vec{y}\,' - \vec{x}\,'$, and using the fact that $L_1,\dots,L_{k-1}$ are independent under $\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}$, we can rewrite the left hand side of \eqref{4.3free} as
-		\begin{equation}\label{4.3R2}
+	\end{align}
+	Let us first prove \eqref{4.3free}. Writing $\vec{z} = \vec{y}\,' - \vec{x}\,'$, and using the fact that $L_1,\dots,L_{k-1}$ are independent under $\mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}$, we can rewrite the left hand side of \eqref{4.3free} as
+	\begin{equation}\label{4.3R2}
 		\begin{split}
-		& \mathbb{P}^{0, a+b, x_{k-1}', y_{k-1}'}_{Ber} \left( \inf_{s\in[0,a+b]} \big(\ell(s) - p(s-a)\big) \leq -R_2 N^{\alpha/2} \right) =\\
-		&\mathbb{P}^{0, a+b, 0, z_{k-1}}_{Ber} \left( \inf_{s\in[0,a+b]} \left(\ell(s) - ps + pa - \lceil pa + MN^{\alpha/2}\rceil - (k-2)\lceil CN^{\alpha/2}\rceil\right) \leq -R_2 N^{\alpha/2} \right) \leq \\
-		& \mathbb{P}^{0, a+b, 0, z_{k-1}}_{Ber} \left( \inf_{s\in[0,a+b]} \big(\ell(s) - ps\big) \leq -(R_2 - M - Ck) N^{\alpha/2} \right).
+			& \mathbb{P}^{0, a+b, x_{k-1}', y_{k-1}'}_{Ber} \left( \inf_{s\in[0,a+b]} \big(\ell(s) - p(s-a)\big) \leq -R_2 N^{\alpha/2} \right) =\\
+			&\mathbb{P}^{0, a+b, 0, z_{k-1}}_{Ber} \left( \inf_{s\in[0,a+b]} \left(\ell(s) - ps + pa - \lceil pa + MN^{\alpha/2}\rceil - (k-2)\lceil CN^{\alpha/2}\rceil\right) \leq -R_2 N^{\alpha/2} \right) \leq \\
+			& \mathbb{P}^{0, a+b, 0, z_{k-1}}_{Ber} \left( \inf_{s\in[0,a+b]} \big(\ell(s) - ps\big) \leq -(R_2 - M - Ck) N^{\alpha/2} \right).
 		\end{split}
-		\end{equation}
-		In the first line, we have implicitly shifted the domain of the paths from $[-a,b]$ to $[0,a+b]$. Since $z_k\geq p(a+b)$, Lemma \ref{LemmaMinFreeS4} allows us to find $R_2>0$ depending on $M,C,k,r,\epsilon$ so that this probability is $<\epsilon/4$ as long as $a+b$ is larger than some constant $W_1$. Since $a+b \geq 2rN^\alpha$, so it suffices to take $\tilde{N}_1 \geq (W_1/2r)^{1/\alpha}$. Thus we obtain \eqref{4.3free}, \textit{independent} of $a,b,\vec{x},\vec{y}$.
-		
-		Lastly, we prove that we can enlarge $\tilde{N}_1$ so that \eqref{4.3intersect} holds for $N\geq\tilde{N}_1$. Write $a = a'N^\alpha, b = b'N^\alpha$, and $T = a+b = (a'+b')N^\alpha$. Also let $C' = C/\sqrt{a'+b'}$ with $C$ as in \eqref{4.3Cdef}, so that $x_i' - x_{i+1}' \geq CN^{\alpha/2} = C'\sqrt{T}$ and likewise for $y_i'$. Note that $|z_{k-1}-pT| \leq 1$. It follows from Lemma \ref{CurveSeparation}, applied with $\ell_{bot} = -\infty$ and $C'$ in place of $C$, that for $T$ larger than some $T_0$, 
-		\begin{equation}\label{4.3avoid}
-		\begin{split}
-		& \mathbb{P}^{-a, b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1}) = \mathbb{P}^{0, a+b, \vec{x}\,', \vec{y}\,'}_{Ber}(L_1 \geq \cdots \geq L_{k-1}) \geq\\ & \left(1 - 3e^{-(C')^2/8p(1-p)}\right)^{k-1} \geq \left(1 - 3e^{-C^2/16p(1-p)R}\right)^{k-1}.
-		\end{split}
-		\end{equation}
-		Here, we used the fact that $a'+b' \leq 2R$, hence $C' \geq C/\sqrt{2R}$. The constant $T_0$ depends in particular on $C'$, hence possibly on $a+b$. Referring to the proofs of Lemmas \ref{CurveSeparation} and \ref{Cheb}, we see that the dependency of $T_0$ on $C'$ amounts to requiring that $e^{-C'\sqrt{T_0}}$ be sufficiently small. But $C' \geq C/\sqrt{2R}$, so for this it suffices to choose $T_0$ depending on $C$ and $R$. Moreover, $T\geq 2rN^\alpha$, so as long as $\tilde{N}_1 \geq (T_0/2r)^{1/\alpha}$, we have the bound in \eqref{4.3avoid} for $N\geq\tilde{N}_1$ independent $a,b,\vec{x},\vec{y}$. Our choice of $C$ in \eqref{4.3Cdef} ensures that the expression on the right in \eqref{4.3avoid} is at least $1/2$, proving \eqref{4.3intersect}.
-		
-	\end{proof}
+	\end{equation}
 	
 	
 	
-
-		
-	
-	
+\end{proof}

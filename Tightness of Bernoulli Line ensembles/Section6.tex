@@ -92,7 +92,7 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 
 \begin{proof}
 	
-	Observe by the rightmost inequalities in conditions (1) and (2) in the hypothesis, as well as condition (1) in Lemma \ref{LemmaAP1}, that $\ell_{bot}$ lies a distance of at least $2\epsilon(2t_3)^{1/2} \geq 2\epsilon(2t_1)^{1/2}$ uniformly below the line segment connecting $a_{k-1}$ and $b_{k-1}$. Also note that (1) and (2) imply $|b_i-a_i-2pt_1| \leq (V^{top} - M_2-2\epsilon)(2t_3)^{1/2} \leq 2(V^{top} - M_2)(2t_3)^{1/2}$ for each $i$. Lastly noting (3), we see that the conditions of Lemma \ref{CurveSeparation} are satisfied with $C = 2\epsilon$. This implies \eqref{eqnRT}, with
+	Observe by the rightmost inequalities in conditions (1) and (2) in the hypothesis, as well as condition (1) in Lemma \ref{LemmaAP1}, that $\ell_{bot}$ lies a distance of at least $2\epsilon(2t_3)^{1/2} \geq 2\epsilon(2t_1)^{1/2}$ uniformly below the line segment connecting $a_{k-1}$ and $b_{k-1}$. Also note that (1) and (2) imply $|b_i-a_i-2pt_1| \leq (V^{top} - M_2-2\epsilon)(2t_3)^{1/2}$ for each $i$. Lastly noting (3), we see that the conditions of Lemma \ref{CurveSeparation} are satisfied with $C = 2\epsilon$. This implies \eqref{eqnRT}, with
 	\[
 	g = \left( \frac{1}{2} - \sum_{n=1}^\infty (-1)^{n-1} e^{-\epsilon^2n^2/2p(1-p)}\right)^{k-1}.
 	\]
@@ -151,7 +151,7 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	\end{equation}
 	Using \eqref{5.10Ebound}, \eqref{5.10split}, and \eqref{5.10fourth}, we conclude that
 	\[
-	\mathbb{P}^{-t_3,t_3,\vec{x},\vec{y}}_{avoid, Ber}\left(\tilde{Q}_{k-1}(\pm t_2) \mp pt_2 \geq (2t_3)^{1/2}V_1^b\right) \geq \frac{A}{16}\exp\left(-\frac{2k(K_1+M_1+6)^2}{p(1-p)}\right)
+	\mathbb{P}^{-t_3,t_3,\vec{x},\vec{y}}_{avoid, Ber;S}\left(\tilde{Q}_{k-1}(\pm t_2) \mp pt_2 \geq (2t_3)^{1/2}V_1^b\right) \geq \frac{A}{16}\exp\left(-\frac{2k(K_1+M_1+6)^2}{p(1-p)}\right)
 	\]
 	for $N\geq N_7 = \max(\tilde{N}_0,\tilde{N}_1,\tilde{N}_2)$. In combination with \eqref{5.10MC}, this proves \eqref{5.10bound1} with $h_1 = A/16$ as in \eqref{5.10const}.\\
 	
@@ -178,10 +178,8 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	\end{equation}
 	It follows from our choice of $V_1^b$ and $K_1 = 2(2r+5)V_1^b$ in \eqref{5.10const}, as well as \eqref{2r+5}, that 
 	\begin{align*}
-	\frac{t_2}{t_3}\,\tilde{x} + \frac{t_3-t_2}{t_3}\,\tilde{z} - (2t_3)^{1/4} &= -pt_2 - C(k-1)(2t_3)^{1/2} - \frac{t_2}{t_3}\,M_1(2t_3)^{1/2} + \frac{t_3-t_2}{t_3}\,K_1(2t_3)^{1/2} - (2t_3)^{1/4}\\ 
-	&\geq -pt_2 - Ck(2t_3)^{1/2} - M_1(2t_3)^{1/2} + \frac{1}{2r+5}\,K_1(2t_3)^{1/2}\\
-	&= -pt_2 + (M_1 + Ck + 2(M_2+R))(2t_3)^{1/2}\\
-	&> -pt_2 + (2t_3)^{1/2}V_1^b.
+	&\frac{t_2}{t_3}\,\tilde{x} + \frac{t_3-t_2}{t_3}\,\tilde{z} - (2t_3)^{1/4} = -pt_2 - C(k-1)(2t_3)^{1/2} - \frac{t_2}{t_3}\,M_1(2t_3)^{1/2} + \frac{t_3-t_2}{t_3}\,K_1(2t_3)^{1/2} - (2t_3)^{1/4} \geq \\ &-pt_2 - Ck(2t_3)^{1/2} - M_1(2t_3)^{1/2} + \frac{1}{2r+5}\,K_1(2t_3)^{1/2} =  -pt_2 + (M_1 + Ck + 2(M_2+R))(2t_3)^{1/2}>\\
+	& -pt_2 + (2t_3)^{1/2}V_1^b.
 	\end{align*}
 	For the first inequality, we used the fact that $t_2/t_3 < 1$, and we assumed that $\tilde{N}_3$ is sufficiently large so that $C(k-1)(2t_3)^{1/2} + (2t_3)^{1/4} \leq Ck(2t_3)^{1/2}$ for $N\geq\tilde{N}_3$. Using \eqref{5.10third1}, we conclude for $N\geq\tilde{N}_3$ that
 	\begin{equation}\label{5.10third2}
@@ -205,8 +203,8 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	\end{align*}
 	Note that $x_i'' \geq x_1 \geq x_i$ and $x_i''-x_{i+1}'' \geq C(2t_3)^{1/2}$, and likewise for $y_i''$. Moreover, $\ell_{bot}$ lies a distance of at least $C(2t_3)^{1/2}$ uniformly below the line segment connecting $x_{k-1}''$ and $y_{k-1}''$. By Lemma \ref{MCLxy} we have
 	\begin{align*}
-	\mathbb{P}_{\tilde{\mathfrak{Q}}}\left(\tilde{Q}_1(\pm t_2) \mp pt_2 > (2t_3)^{1/2}V_1^t\right) &\leq \mathbb{P}^{-t_3,t_3,\vec{x}\,'',\vec{y}\,'',\infty,\ell_{bot}}_{avoid,Ber;S}\left(\sup_{s\in[-t_3,t_3]} \big[\tilde{Q}_1(s)-ps\big] \geq (2t_3)^{1/2}V_1^t\right)\\
-	&\leq \frac{\mathbb{P}^{-t_3,t_3,x_1'',y_1''}_{Ber}\left(\sup_{s\in[-t_3,t_3]} \big[\tilde{L}_1(s)-ps\big] \geq (2t_3)^{1/2}V_1^t\right)}{\mathbb{P}^{-t_3,t_3,\vec{x}\,'',\vec{y}\,''}_{Ber}\left(\tilde{L}_1\geq\cdots\geq\tilde{L}_{k-1}\geq\ell_{bot}\right)}.
+	&\mathbb{P}_{\tilde{\mathfrak{Q}}}\left(\tilde{Q}_1(\pm t_2) \mp pt_2 > (2t_3)^{1/2}V_1^t\right) \leq \mathbb{P}^{-t_3,t_3,\vec{x}\,'',\vec{y}\,'',\infty,\ell_{bot}}_{avoid,Ber;S}\left(\sup_{s\in[-t_3,t_3]} \big[\tilde{Q}_1(s)-ps\big] \geq (2t_3)^{1/2}V_1^t\right)\leq\\
+	& \frac{\mathbb{P}^{-t_3,t_3,x_1'',y_1''}_{Ber}\left(\sup_{s\in[-t_3,t_3]} \big[\tilde{L}_1(s)-ps\big] \geq (2t_3)^{1/2}V_1^t\right)}{\mathbb{P}^{-t_3,t_3,\vec{x}\,'',\vec{y}\,''}_{Ber}\left(\tilde{L}_1\geq\cdots\geq\tilde{L}_{k-1}\geq\ell_{bot}\right)}.
 	\end{align*}
 	In the numerator in the second line, we used the fact that the curves $\tilde{L}_1,\dots,\tilde{L}_{k-1}$ are independent under $\mathbb{P}^{-t_3,t_3,x_1'',y_1''}_{Ber}$, and the event in the parentheses depends only on $\tilde{L}_1$. By Lemma \ref{LemmaMinFreeS4}, since $\min(x_1'' + pt_3, \, y_1'' - pt_3) \leq (M_1+C(k-1))(2t_3)^{1/2}$, we can choose $V_1^t > V_1^b$ as well as $\tilde{N}_5$ large enough so that the numerator is bounded above by $h_1/2$ for $N\geq\tilde{N}_5$. Since $|y_i'' - x_i'' - 2pt_3| \leq 1$, our choice of $C$ and Lemma \ref{CurveSeparation} give a $\tilde{N}_6$ so that the denominator is at least $11/12$ for $N\geq\tilde{N}_6$. This gives an upper bound of $12/11\cdot h_1/2 < h_1/2$ in the above as long as $N_7\geq\max(\tilde{N}_5,\tilde{N}_6)$, proving \eqref{5.10bound2}.
 	
@@ -354,11 +352,11 @@ t_{12} = \left\lfloor \frac{t_1+t_2}{2}\right\rfloor.
 	\end{equation}
 	Now applying Lemma \ref{prob 20} with $M_1 = V_1^t$, $M_2 = V^{top}$, we obtain $\tilde{N}_7$ and $\delta>0$ such that if $N \geq \tilde{N}_7$, then
 	\[
-	\pr^{-t_2,-t_1,\vec c, \vec a}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \big[Q^1_i(-\tfrac{1}{2}(t_1+t_2))-Q_{i+1}(-\tfrac{1}{2}(t_1+t_2))\big] < \delta(t_2-t_1)^{1/2}\right) < 1 - \frac{3}{\sqrt{10}}.
+	\pr^{-t_2,-t_1,\vec c, \vec a}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \big[Q^1_i(-\tfrac{1}{2}(t_1+t_2))-Q_{i+1}^1(-\tfrac{1}{2}(t_1+t_2))\big] < \delta(t_2-t_1)^{1/2}\right) < 1 - \frac{3}{\sqrt{10}}.
 	\]
 	Together with \eqref{Lt1Set} and the fact that $t_3/4 < t_2-t_1$, this implies that
 	\begin{equation}\label{step3delta/2}
-	\pr^{t_1,t_2,\vec b, \vec d}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \big[Q_i^1(-t_{12})-Q_{i+1}^1(-t_{12})\big]<(\delta/2)(2t_3)^{1/2}-1\right) < 1 - \frac{3}{\sqrt{10}}
+	\pr^{-t_2,-t_1,\vec c, \vec a}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \big[Q_i^1(-t_{12})-Q_{i+1}^1(-t_{12})\big]<(\delta/2)(2t_3)^{1/2}-1\right) < 1 - \frac{3}{\sqrt{10}}
 	\end{equation}
 	for $N\geq \tilde{N}_7$. Now we observe that as long as $\tilde{N}_7^\alpha \geq \frac{1+8/\delta^2}{r+3}$, then $(\delta/4)(2t_3)^{1/2} \leq (\delta/2)(2t_2)^{1/2} - 1$ for $N\geq\tilde{N}_7$. This implies \eqref{6.2step3right}. A similar argument gives us a $\tilde{\delta}>0$ such that
 	\[
