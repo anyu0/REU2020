@@ -66,7 +66,7 @@ We will use the following simple corollary of Theorem \ref{KMT} to compare Berno
 	The conclusion is now immediate.
 \end{proof}
 
-We also state the following result regarding the distribution of the maximum of a Brownian bridge, which follows from formulas in \cite[Chapter 12]{Dudley}.
+We also state the following result regarding the distribution of the maximum of a Brownian bridge, which follows from formulas in \cite[Section 12.3]{Dudley}.
 
 \begin{lemma}\label{BBmax}
 	Fix $p\in (0,1)$, and let $B^\sigma$ be a Brownian bridge of variance $\sigma^2 = p(1-p)$ on $[0,1]$. Then for any $C,T> 0$ we have
@@ -144,7 +144,7 @@ We state one more lemma about Brownian bridges, which allows us to decompose a b
 	This proves \eqref{covar} in all cases.
 \end{proof}
 
-Below we list six lemmas about Bernoulli bridges. We provide a brief informal explanation of what each result says after it is stated. All six lemmas are proved in a similar fashion. For the first four lemmas one observes that the event whose probability is being estimated is monotone in $\ell$. This allows by Lemmas \ref{MCLxy} and \ref{MCLfg} to replace $x,y$ in the statements of the lemmas with the extreme values of the ranges specified in each. Once the choice of $x$ and $y$ is fixed one can use our strong coupling results, Theorem \ref{KMT} and Corollary \ref{Cheb}, to reduce each of the lemmas to an analogous one involving a Brownian bridge with some prescribed variance. The latter statements are then easily confirmed as one has exact formulas for Brownian bridges, such as Lemma \ref{BBmax}.\\
+Below we list four lemmas about Bernoulli bridges. We provide a brief informal explanation of what each result says after it is stated. All six lemmas are proved in a similar fashion. For the first two lemmas one observes that the event whose probability is being estimated is monotone in $\ell$. This allows us by Lemmas \ref{MCLxy} and \ref{MCLfg} to replace $x,y$ in the statements of the lemmas with the extreme values of the ranges specified in each. Once the choice of $x$ and $y$ is fixed one can use our strong coupling results, Theorem \ref{KMT} and Corollary \ref{Cheb}, to reduce each of the lemmas to an analogous one involving a Brownian bridge with some prescribed variance. The latter statements are then easily confirmed as one has exact formulas for Brownian bridges, such as Lemma \ref{BBmax}.\\
 
 \begin{lemma}\label{LemmaHalfS4} Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $x, y\in \mathbb{Z}$ such that $T \geq y-x \geq 0$, and suppose that $\ell$ has distribution $\mathbb{P}^{0,T,x,y}_{Ber}$. Let $M_1, M_2 \in \mathbb{R}$ be given. Then we can find $W_0 = W_0(p,M_2 - M_1) \in \mathbb{N}$ such that for $T \geq W_0$, $x \geq M_1 T^{1/2}$, $y \geq pT + M_2 T^{1/2}$ and $s \in [0,T]$ we have
 \begin{equation}\label{halfEq1S4}
@@ -225,73 +225,11 @@ If $M_1, M_2 = 0$ then Lemma \ref{LemmaHalfS4} states that if a Bernoulli bridge
 	If we replace $B$ with $\lceil pT + MT^{1/2} \rceil$ and change signs and inequalities where appropriate, then the same argument proves the second inequality in \eqref{minFree1S4}.
 \end{proof}
 
-\begin{lemma}\label{LemmaTailS4}Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $x, y\in \mathbb{Z}$ such that $T \geq y-x \geq 0$, and suppose that $\ell$ has distribution $\mathbb{P}^{0,T,x,y}_{Ber}$. Let $M_1,M_2 > 0$ be given. Then we can find $W_2 = W_2(M_1,M_2,p) \in \mathbb{N}$ such that for $T \geq W_2$, $ x \geq -M_1T^{1/2}$, $ y \geq pT -  M_1T^{1/2}$ and $t\in(0,1)$ we have
-\begin{equation}\label{halfEq2S4}
-\mathbb{P}^{0,T,x,y}_{Ber}\left( \ell(tT)  \geq t(M_2T^{1/2} + pT) - T^{1/4} \right) \geq (1/2) (1 - \Phi^{v}(M_1 + M_2) ),
-\end{equation}
-where $\Phi^{v}$ is the cumulative distribution function  of a Gaussian random variable with mean $0$ and variance $v = pt(1-p)(1-t)$.
-\end{lemma}
-\begin{remark} Lemma \ref{LemmaTailS4} states that  if a Bernoulli bridge $\ell$ is started from $(0,x)$ and terminates at $(T,y)$ with these points not significantly lower than the straight line of slope $p$, then at any point in the open interval $(0,T)$, $\ell$ would lie well above the straight line of slope $p$ at least with some quantifiably tiny probability.
-\end{remark}
-\begin{proof}
-	By Lemma \ref{MCLxy}, we have
-	\begin{align*}
-	\mathbb{P}^{0,T,x,y}_{Ber}\bigg( \ell( tT )  \geq t(M_2T^{1/2} + p T) - T^{1/4} \bigg) &\geq \mathbb{P}^{0,T,0,B-A}_{Ber}\bigg( \ell( tT ) + A  \geq t(M_2T^{1/2} + p T) - T^{1/4} \bigg)\\
-	&= \mathbb{P}\bigg( \ell^{(T,B-A)}( tT ) + A  \geq t(M_2T^{1/2} + p T) - T^{1/4} \bigg),
-	\end{align*}
-	with $A = \lfloor -M_1T^{1/2}\rfloor$, $B = \lfloor pT-M_1T^{1/2}\rfloor$, and $\mathbb{P}$, and $\ell^{(T,B-A)}$ provided by Theorem \ref{KMT}. If $B^\sigma$ is as in the theorem, we can rewrite the expression on the second line as
-	\begin{align*}
-	& \mathbb{P}\bigg( \big[\ell^{(T,B-A)}( tT ) -\sqrt{T}\,B^\sigma_t - t(B-A)\big] + \sqrt{T}\,B^\sigma_t \geq -A - t(B-A) + t(M_2T^{1/2} + p T) - T^{1/4} \bigg).
-	\end{align*}
-	We have
-	\begin{align*}
-	-A - t(B-A) + t(M_2T^{1/2} + p T) - T^{1/4} & \leq M_1T^{1/2} + 1 - t(pT-1) + t(M_2T^{1/2} + p T) - T^{1/4}\\
-	&\leq (M_1 + M_2)T^{1/2} - T^{1/4} + 2.
-	\end{align*}
-	Thus the probability in question is bounded below by
-	\begin{align*}
-	& \mathbb{P}\bigg( \big[\ell^{(T,B-A)}( tT ) -\sqrt{T}\,B^\sigma_t - t(B-A)\big] + \sqrt{T}\,B^\sigma_t  \geq (M_1 + M_2)T^{1/2} - T^{1/4} + 2 \bigg)\\
-	\geq \; & \mathbb{P}\bigg( \sqrt{T}\,B^\sigma_t \geq (M_1 + M_2)T^{1/2} \quad \mathrm{and} \quad \Delta(T,B-A) < T^{1/4} - 2 \bigg)\\
-	\geq \; & \mathbb{P}\big( B^\sigma_t \geq M_1 + M_2 \big) - \mathbb{P}\big( \Delta(T,B-A) \geq T^{1/4} - 2 \big).
-	\end{align*}
-	Note that $B^\sigma_t = \sigma(W_t - tW_1)$ for a standard Brownian motion $W$ on $[0,1]$. Thus $B^\sigma_t$ is Gaussian with mean 0 and variance $\sigma^2(t-t^2) = p(1-p)t(1-t) = v$. In particular, the first term in the last line is equal to
-	\[
-	1 - \Phi^v(M_1+M_2),
-	\]
-	where $\Phi^v$ is the cdf for a Gaussian random variable with mean 0 and variance $v$. By Corollary \ref{Cheb}, since $|B-A-pT| \leq 1$, we can choose $W_2$ depending on $M_1,M_2$, and $p$ so that the second term is less than 1/2 the first term for $T\geq W_2$. This proves \eqref{halfEq2S4}.
-\end{proof}
-
-
-\begin{lemma}\label{LemmaAwayS4} Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $x, y\in \mathbb{Z}$ such that $T \geq y-x \geq 0$, and suppose that $\ell$ has distribution $\mathbb{P}^{0,T,x,y}_{Ber}$. Then we can find $W_3 = W_3(p) \in \mathbb{N}$ such that for $T \geq W_3$, $ x \geq T^{1/2}$, $ y \geq pT +  T^{1/2}$
-\begin{equation}\label{awayS4}
-\mathbb{P}^{0,T,x,y}_{Ber}\Big( \inf_{s \in [0,T]} \big( \ell(s) -ps \big)+ T^{1/4} \geq 0 \Big) \geq \frac{1}{2} \left(1 - \exp\left(-\frac{2}{p(1-p)}\right)\right).
-\end{equation}
-\end{lemma}
-\begin{remark} 
-Lemma \ref{LemmaAwayS4} states that  if a Bernoulli bridge $\ell$ is started from $(0,x)$ and terminates at $(T,y)$ with $(0,x)$ and $(T,y)$ well above the line of slope $p$ then at least with some positive probability $\ell$ will not fall significantly below the line of slope $p$.
-\end{remark}
-\begin{proof}
-	By Lemma \ref{MCLxy},
-	\begin{align*}
-	& \mathbb{P}^{0,T,x,y}_{Ber}\Big( \inf_{s \in [0,T]} \big( \ell(s) -ps \big)+ T^{1/4} \geq 0 \Big) \\
-	\geq \; & \mathbb{P}^{0,T,0,B-A}_{Ber}\Big( \inf_{s \in [0,T]} \big( \ell(s) + A -ps \big)+ T^{1/4} \geq 0 \Big)\\
-	= \; & \mathbb{P}\Big( \inf_{s \in [0,T]} \big( \ell^{(T,B-A)}(s) -ps \big) \geq - T^{1/4} - A \Big)\\
-	\geq \; & \mathbb{P}\Big( \inf_{s \in [0,T]} \big( \ell^{(T,B-A)}(s) - \frac{s}{T}\cdot(B-A) \big) \geq - T^{1/4} - T^{1/2} + 2 \Big),
-	\end{align*}
-	with $A = \lfloor T^{1/2}\rfloor$, $B = \lfloor pT + T^{1/2}\rfloor$, and $\mathbb{P}$, and $\ell^{(T,B-A)}$ as in Theorem \ref{KMT}. In the last line, we used the facts that $|A-T^{1/2}|\leq 1$ and $|p-(B-A)/T|\leq 1$. With $B^\sigma$ as in the theorem, the last line is bounded below by
-	\begin{align*}
-	&\mathbb{P}\Big( \inf_{s\in[0,T]} \sqrt{T}\,B^\sigma_{s/T} \geq - T^{1/2} \quad \mathrm{and} \quad \Delta(T,B-A) < T^{1/2} - 2 \Big)\\
-	\geq \; & 1- \exp\left(-\frac{2}{p(1-p)}\right) - \mathbb{P}\Big( \Delta(T,B-A) \geq T^{1/2} - 2 \Big).
-	\end{align*}
-	In the second line, we used Lemma \ref{BBmax}. Since $|B-A-pT| \leq 1$, Corollary \ref{Cheb} allows us choose $W_3$ large enough depending on $p$ so that this term is less than $\frac{1}{2}(1-e^{-2/p(1-p)})$ for $T\geq W_3$. This implies \eqref{awayS4}.
-\end{proof}
-
-
-We need the following definition for our next result. For a function $f \in C([a,b])$ we define its {\em modulus of continuity} by
+We need the following definition for our next result. For a function $f \in C([a,b])$ we define its {\em modulus of continuity} for $\delta > 0$ by
 \begin{equation}\label{MOCS4}
 w(f,\delta) = \sup_{\substack{x,y \in [a,b]\\ |x-y| \leq \delta}} |f(x) - f(y)|.
 \end{equation}
-\begin{lemma}\label{MOCLemmaS4}Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $y\in \mathbb{Z}$ such that $T \geq y \geq 0$, and suppose that $\ell$ has distribution $\mathbb{P}^{0,T,0,y}_{Ber}$. For each positive $M$, $\epsilon$ and $\eta$, there exist a $\delta(\epsilon, \eta, M) > 0$ and $W_4 = W_4(M, p, \epsilon, \eta) \in \mathbb{N}$ such that  for $T \geq W_4$ and $|y - pT| \leq MT^{1/2}$ we have
+\begin{lemma}\label{MOCLemmaS4}Fix $p \in (0,1)$, $T \in \mathbb{N}$ and $y\in \mathbb{Z}$ such that $T \geq y \geq 0$, and suppose that $\ell$ has distribution $\mathbb{P}^{0,T,0,y}_{Ber}$. For each positive $M$, $\epsilon$ and $\eta$, there exist a $\delta(\epsilon, \eta, M) > 0$ and $W_2 = W_2(M, p, \epsilon, \eta) \in \mathbb{N}$ such that  for $T \geq W_2$ and $|y - pT| \leq MT^{1/2}$ we have
 \begin{equation}\label{MOCeqS4}
 \mathbb{P}^{0,T,0,y}_{Ber}\left( w\big({f^\ell},\delta\big) \geq \epsilon \right) \leq \eta,
 \end{equation}
@@ -322,7 +260,7 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	&\mathbb{P}\left( w\big(B^\sigma,\delta\big) + M\delta \geq \epsilon/2 \right) + \mathbb{P}\left( \Delta(T,y) \geq \epsilon\, T^{1/2}/4 \right).
 	\end{split}
 	\end{equation}
-	Corollary \ref{Cheb} gives us a $W_4$ large enough depending on $M,p,\epsilon,\eta$ so that the second term in the second line of \ref{MOCsplit} is $\leq\eta/2$ for $T\geq W_4$. Since $B^\sigma$ is a.s. uniformly continuous on the compact interval $[0,1]$, $w(B^\sigma,\delta) \to 0$ as $\delta\to 0$. Thus we can find $\delta_0>0$ small enough depending on $\epsilon,\eta$ so that $w(B^\sigma,\delta_0) < \epsilon/4$ with probability at least $1-\eta/2$. Then with $\delta = \min(\delta_0, \epsilon/4M)$, the first term in the second line of \eqref{MOCsplit} is $\leq\eta/2$ as well. This implies \eqref{MOCeqS4}.
+	Corollary \ref{Cheb} gives us a $W_2$ large enough depending on $M,p,\epsilon,\eta$ so that the second term in the second line of \ref{MOCsplit} is $\leq\eta/2$ for $T\geq W_2$. Since $B^\sigma$ is a.s. uniformly continuous on the compact interval $[0,1]$, $w(B^\sigma,\delta) \to 0$ as $\delta\to 0$. Thus we can find $\delta_0>0$ small enough depending on $\epsilon,\eta$ so that $w(B^\sigma,\delta_0) < \epsilon/4$ with probability at least $1-\eta/2$. Then with $\delta = \min(\delta_0, \epsilon/4M)$, the first term in the second line of \eqref{MOCsplit} is $\leq\eta/2$ as well. This implies \eqref{MOCeqS4}.
 \end{proof}
 
 \begin{lemma}\label{CurveSeparation} Fix $T\in\mathbb{N}$, $p\in (0,1)$, $C,K>0$, and $a,b\in \mathbb{Z}$ such that $\Omega(0,T,a,b)$ is nonempty. Let $\ell_{bot} \in \Omega(0,T,a,b)$. Suppose $\vec{x},\vec{y}\in\mathfrak{W}_{k-1}$, $k\geq 2$, are such that $T \geq y_i - x_i \geq 0$ for $1\leq i\leq k-1$. Write $\vec{z} = \vec{y} - \vec{x}$, and suppose that
@@ -338,11 +276,11 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	Let $\mathfrak{L} = (L_1,\dots,L_{k-1})$ be a line ensemble with law $\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}$, and let $E$ denote the event 
 	\[ E=\left\{L_1(s)\geq \cdots \geq L_{k-1}(s)\geq \ell_{bot}(s) \; \mathrm{for} \; s\in [0,T]\right\}.
 	\] 
-	Then we can find $W_5 = W_5(p,C,K)$ so that for $T\geq W_5$,
+	Then we can find $W_3 = W_3(p,C,K)$ so that for $T\geq W_3$,
 	\begin{equation}\label{SepBound1}
 	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}(E) \geq \left(\frac{1}{2} - \sum_{n=1}^\infty (-1)^{n-1} e^{-n^2C^2/8p(1-p)}\right)^{k-1}.
 	\end{equation}
-	Moreover if $C \geq \sqrt{8p(1-p)\log 3}$, then for $T\geq W_5$ we have
+	Moreover if $C \geq \sqrt{8p(1-p)\log 3}$, then for $T\geq W_3$ we have
 	\begin{equation}\label{SepBound2}
 	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{Ber}(E) \geq \left(1 - 3e^{-C^2/8p(1-p)}\right)^{k-1}.
 	\end{equation}
@@ -367,9 +305,9 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 	& \mathbb{P}_i\left(\sup_{s\in[0,T]} |\sqrt{T}B^{\sigma}_{s/T}| > C\sqrt{T}/4\right) + \mathbb{P}_i\left(\Delta(T,z_i) > C\sqrt{T}/4\right).
 	\end{split}
 	\end{equation}
-	By Lemma \ref{BBmax}, the first term in the second line of \eqref{SepCheb} is equal to $2\sum_{n=1}^\infty (-1)^{n-1} e^{-n^2C^2/8p(1-p)}$. Moreover, condition (3) in the hypothesis and Corollary \ref{Cheb} allow us to find $W_5$ depending on $p,C,K$ but not on $i$ so that the last probability in \eqref{SepCheb} is bounded above by $\frac{1}{2} - \sum_{n=1}^\infty (-1)^{n-1} e^{-n^2C^2/8p(1-p)}$ for $T\geq W_5$. Adding these two terms and referring to \eqref{SepEst} proves \eqref{SepBound1}.
+	By Lemma \ref{BBmax}, the first term in the second line of \eqref{SepCheb} is equal to $2\sum_{n=1}^\infty (-1)^{n-1} e^{-n^2C^2/8p(1-p)}$. Moreover, condition (3) in the hypothesis and Corollary \ref{Cheb} allow us to find $W_3$ depending on $p,C,K$ but not on $i$ so that the last probability in \eqref{SepCheb} is bounded above by $\frac{1}{2} - \sum_{n=1}^\infty (-1)^{n-1} e^{-n^2C^2/8p(1-p)}$ for $T\geq W_3$. Adding these two terms and referring to \eqref{SepEst} proves \eqref{SepBound1}.
 	
-	Now suppose $C\geq\sqrt{8p(1-p)\log 3}$. By \eqref{sepBd} in Lemma \ref{BBmax}, the first term in the second line of \eqref{SepCheb} is bounded above by bounded above by $2e^{-C^2/8p(1-p)}$. After possibly enlarging $W_5$ from above, the second term is $<e^{-C^2/8p(1-p)}$ for $T\geq W_5$. The assumption on $C$ implies that $1-3e^{-C^2/8p(1-p)}\geq 0$, and now combining \eqref{SepCheb} and \eqref{SepEst} proves \eqref{SepBound2}.
+	Now suppose $C\geq\sqrt{8p(1-p)\log 3}$. By \eqref{sepBd} in Lemma \ref{BBmax}, the first term in the second line of \eqref{SepCheb} is bounded above by bounded above by $2e^{-C^2/8p(1-p)}$. After possibly enlarging $W_3$ from above, the second term is $<e^{-C^2/8p(1-p)}$ for $T\geq W_3$. The assumption on $C$ implies that $1-3e^{-C^2/8p(1-p)}\geq 0$, and now combining \eqref{SepCheb} and \eqref{SepEst} proves \eqref{SepBound2}.
 \end{proof}
 
 
@@ -377,12 +315,12 @@ Lemma \ref{MOCLemmaS4} states that if $\ell$ is a Bernoulli bridge that is start
 % Section 3.3
 %
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\subsection{Properties of avoiding Bernoulli line ensembles}\label{Section3.3}  In this section we derive several results about avoiding Bernoulli line ensembles, which are Bernoulli line ensembles with law $\mathbb{P}_{avoid, Ber;
+\subsection{Properties of avoiding Bernoulli line ensembles}\label{Section3.3}  In this section we derive two results about avoiding Bernoulli line ensembles, which are Bernoulli line ensembles with law $\mathbb{P}_{avoid, Ber;
 S}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ as in Definition \ref{DefAvoidingLawBer}. The lemmas we prove only involve the case when $f(r) = \infty$ for all $r \in \llbracket T_0, T_1 \rrbracket$ and we denote the measure in this case by $\mathbb{P}_{avoid, Ber;S}^{T_0,T_1, \vec{x}, \vec{y}, \infty, g}$. A $\mathbb{P}_{avoid, Ber;S}^{T_0,T_1, \vec{x}, \vec{y}, \infty, g}$-distributed random variable will be denoted by $\mathfrak{Q} = (Q_1, \dots, Q_k)$ where $k$ is the number of up-right paths in the ensemble. As usual, if $g=-\infty$, we write $\mathbb{P}_{avoid, Ber;S}^{T_0,T_1, \vec{x}, \vec{y}}$. Our first result will rely on the two monotonicity Lemmas \ref{MCLxy} and \ref{MCLfg} as well as the strong coupling between Bernoulli bridges and Brownian bridges from Theorem \ref{KMT}, and the further results make use of the material in Section \ref{Section9}.
 
 
 \begin{lemma}\label{prob19}
-	Fix $p\in(0,1)$, $k\in\mathbb{N}$. Let $\vec{x},\vec{y}\in\mathfrak{W}_k$ be such that $T \geq y_i - x_i \geq 0$ for $i=1,\dots,k$. Then for any $M,M_1 > 0$ we can find $W_6\in\mathbb{N}$ depending on $p,k,M,M_1$ such that if $T\geq W_6$, $x_k \geq - M_1\sqrt{T}$, and $y_k \geq pT - M_1\sqrt{T}$, then for any $S\subseteq \llbracket 0,T\rrbracket$ we have
+	Fix $p\in(0,1)$, $k\in\mathbb{N}$. Let $\vec{x},\vec{y}\in\mathfrak{W}_k$ be such that $T \geq y_i - x_i \geq 0$ for $i=1,\dots,k$. Then for any $M,M_1 > 0$ we can find $W_4\in\mathbb{N}$ depending on $p,k,M,M_1$ such that if $T\geq W_4$, $x_k \geq - M_1\sqrt{T}$, and $y_k \geq pT - M_1\sqrt{T}$, then for any $S\subseteq \llbracket 0,T\rrbracket$ we have
 	\begin{equation}\label{19ineq}
 	\mathbb{P}^{0,T,\vec{x},\vec{y}}_{avoid, Ber; S}\left(Q_k(T/2) - pT/2 \geq M\sqrt{T}\right) \geq \frac{2^{k/2}\big(1-2e^{-4/p(1-p)}\big)^{2k}}{(\pi p(1-p))^{k/2}}\exp\left(-\frac{2k(M+M_1+6)^2}{p(1-p)}\right).
 	\end{equation}
@@ -450,22 +388,22 @@ S}^{T_0,T_1, \vec{x}, \vec{y}, f, g}$ as in Definition \ref{DefAvoidingLawBer}. 
 	
 \end{proof}
 
-We now state a weak convergence result, whose proof we postpone until Section \ref{Section9}, in particular in Propositions \ref{WeakConvDistinct} and \ref{WeakConvCollide}.
+We now state an important weak convergence result, whose proof occupies Section \ref{Section9}. (See Propositions \ref{WeakConvDistinct} and \ref{WeakConvCollide}.)
 
-\begin{lemma}\label{prob17}
+\begin{proposition}\label{prob17}
 Fix $p,t\in(0,1)$, $k\in\mathbb{N}$, $\vec a, \vec b\in \mathfrak{W}_k$.  Suppose that $\vec{x}^{T}=(x_{1}^{T},\dots,x_{k}^{T})$ and $\vec{y}^{T}=(y_{1}^{T},\dots,y_{k}^{T})$ are two sequences in $\mathfrak{W}_k$ such that for $i\in \llbracket 1,k\rrbracket$, $$\lim_{T\rightarrow\infty}\frac{x_{i}^{T}}{\sqrt{T}}=a_{i} \quad \text{and} \quad \lim_{T\rightarrow\infty}\frac{y_{i}^{T}-pT}{\sqrt{T}}=b_{i}.$$  Let $(Q_1^T,\dots,Q_k^T)$ have law $\mathbb{P}^{0,T,\vec{x}^{T},\vec{y}^{T}}_{avoid,Ber}$, and define the sequence $\{Z^T\}$ of random $k$-dimensional vectors by $$Z^{T}=\left(\frac{Q_{1}^T(tT)-ptT}{\sqrt{T}},\dots,\frac{Q_{k}^T(tT)-ptT}{\sqrt{T}}\right).$$ Then as $T\to\infty$, $Z^{T}$ converges weakly to a random vector $\hat Z$ on $\mathbb{R}^k$ with a probability density $\rho$ supported on $W_k^\circ$.
-\end{lemma}
+\end{proposition}
 
-The convergence result in Lemma \ref{prob17} allows us to prove the following lemma, which roughly states that if the entrance and exit data of a sequence of avoiding Bernoulli line ensembles remain in compact windows, then with high probability the curves of the ensemble will remain separated from one another at each point by some small positive distance.
+The convergence result in Lemma \ref{prob17} allows us to prove the following lemma, which roughly states that if the entrance and exit data of a sequence of avoiding Bernoulli line ensembles remain in compact windows, then with high probability the curves of the ensemble will remain separated from one another at each point by some small positive distance on scale $\sqrt{T}$.
 
 \begin{lemma}\label{prob 20}
-Fix $p,t\in (0,1)$ and $ k\in \mathbb{N}$. Suppose that $\vec x\,^T=(x_1^T,\dots, x_k^T)$, $\vec y\,^T=(y_1^T,\dots , y_k^T)$ are elements of $\mathfrak{W}_k$ such that $T\geq y_i^T-x_i^T\geq 0$ for $i\in \llbracket 1,k\rrbracket$. Then for any $M_1,M_2>0$ and $\epsilon>0$ there exists $W_7\in\mathbb{N}$ and $\delta>0$ depending on $p,k,M_1,M_2$ such that if $T\geq W_7$, $|x_i^T|\leq M_1\sqrt{T}$ and $|y_i^T-pT|\leq M_2\sqrt{T}$, then 
+Fix $p,t\in (0,1)$ and $ k\in \mathbb{N}$. Suppose that $\vec x\,^T=(x_1^T,\dots, x_k^T)$, $\vec y\,^T=(y_1^T,\dots , y_k^T)$ are elements of $\mathfrak{W}_k$ such that $T\geq y_i^T-x_i^T\geq 0$ for $i\in \llbracket 1,k\rrbracket$. Then for any $M_1,M_2>0$ and $\epsilon>0$ there exists $W_5\in\mathbb{N}$ and $\delta>0$ depending on $p,k,M_1,M_2$ such that if $T\geq W_5$, $|x_i^T|\leq M_1\sqrt{T}$ and $|y_i^T-pT|\leq M_2\sqrt{T}$, then 
 \[
 \pr^{0,T,\vec x^T, \vec y^T}_{avoid,Ber}\left(\min_{1\leq i\leq k-1} \big[Q_i(tT)-Q_{i+1}(tT)\big]<\delta\sqrt{T}\right)<\epsilon.
 \]
 \end{lemma}
 \begin{proof}
-	We prove the claim by contradiction. Suppose there exist $M_1,M_2,\epsilon>0$ such that for any $W_7\in \mathbb{N}$ and $\delta>0$ there exists some $T\geq W_7$ with
+	We prove the claim by contradiction. Suppose there exist $M_1,M_2,\epsilon>0$ such that for any $W_5\in \mathbb{N}$ and $\delta>0$ there exists some $T\geq W_5$ with
 	\[
 	\pr^{0,T,\vec x^T,\vec y^T}_{avoid, Ber}\left(\min_{1\leq i\leq k-1}\big[Q_i(tT)-Q_{i+1}(tT)\big]<\delta\sqrt{T}\right)\geq \epsilon.
 	\]
@@ -473,7 +411,8 @@ Fix $p,t\in (0,1)$ and $ k\in \mathbb{N}$. Suppose that $\vec x\,^T=(x_1^T,\dots
 	\[
 	\pr^{0,T,\vec x\,^{T_n},\vec y\,^{T_n}}_{avoid, Ber}\left(\min_{1\leq i\leq k-1}\left[\frac{Q_i(tT_n)-Q_{i+1}(tT_n)}{\sqrt{T_n}}\right]<\delta_n\right)\geq \epsilon.
 	\]
-	Since $|x_i^{T_n}|<M_1\sqrt{T_n}$ and $|y_i^{T_n}-pT_n|\leq M_2\sqrt{T_n}$ for $1\leq i\leq k$, the sequences $\{\vec{x}\,^{T_n}/\sqrt{T_n}\}$, $\{(\vec{y}\,^{T_n}-pT_n)/\sqrt{T_n}\}$ are bounded in $\mathbb{R}^k$. It follows that there is a subsequence $\{T_{n_m}\}$ such that \[
+	Since $|x_i^{T_n}|<M_1\sqrt{T_n}$ and $|y_i^{T_n}-pT_n|\leq M_2\sqrt{T_n}$ for $1\leq i\leq k$, the sequences $\{\vec{x}\,^{T_n}/\sqrt{T_n}\}$, $\{(\vec{y}\,^{T_n}-pT_n)/\sqrt{T_n}\}$ are bounded in $\mathbb{R}^k$. It follows that there exist $\vec{x},\vec{y}\in\mathbb{R}^n$ and a subsequence $\{T_{n_m}\}$ such that 
+	\[
 	\frac{\vec{x}\,^{T_{n_m}}}{\sqrt{T_{n_m}}} \longrightarrow \vec x, \quad
 	\frac{\vec{y}\,^{T_{n_m}}-pT_{n_m}}{\sqrt{T_{n_m}}} \longrightarrow \vec y
 	\] 

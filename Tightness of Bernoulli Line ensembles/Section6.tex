@@ -390,7 +390,7 @@ t_{12} = \left\lfloor \frac{t_1+t_2}{2}\right\rfloor.
 		\item $\min(a_i-a_{i+1}, \, b_i-b_{i+1}) \geq 3\epsilon(2t_3)^{1/2}$ for $1\leq i\leq k-2$.
 		
 	\end{enumerate}
-	Now let $\tilde{D}(V^{top},\epsilon,t_1)$ be the set consisting of elements of $D(\vec{c},\vec{d},V^{top},\epsilon,t_1)$ restricted to $\llbracket -t_{12},t_{12}\rrbracket$. By the Schur Gibbs property (see Definition \ref{DefSGP}) we have
+	Now let $\tilde{D}(V^{top},\epsilon,t_1)$ be the set consisting of elements of $D(\vec{c},\vec{d},V^{top},\epsilon,t_1)$ restricted to $\llbracket -t_{12},t_{12}\rrbracket$. Then we have
 	\begin{equation}\label{6.2step4cond}
 	\begin{split}
 	&\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\left(D(\vec{c},\vec{d},V^{top},\epsilon,t_1) \,\big|\,G(\vec{a},\vec{b})\right) = \mathbb{P}^{-t_{12},t_{12},\vec{a},\vec{b},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\left(\tilde D(V^{top},\epsilon,t_1)\right) \geq \\
@@ -404,7 +404,7 @@ t_{12} = \left\lfloor \frac{t_1+t_2}{2}\right\rfloor.
 	h = \frac{h_1}{2}\left(\frac{1}{2} - \sum_{n=1}^\infty (-1)^{n-1} e^{-\epsilon^2 n^2/2p(1-p)}\right)^{k-1}
 	\]
 	with $h_1$ as in Step 2, and let $N_5 = \max(\bar{N}_0,\bar{N}_1,\bar{N}_2,\bar{N}_3,N_7)$, with $N_7$ as in Lemma \ref{LemmaBP2}. In the following we assume that $N\geq N_7$. By \eqref{6.2step4} we have that if $(\vec{c},\vec{d})\in E$, then
-	$$\mathbb{P}_{avoid, Ber;S}^{-t_2, t_2, \vec{c}, \vec{d}, \infty, \ell_{bot}} ( H) \geq \frac{h}{h_1},$$
+	$$\mathbb{P}_{avoid, Ber;\tilde{S}}^{-t_2, t_2, \vec{c}, \vec{d}, \infty, \ell_{bot}} ( H) \geq \frac{h}{h_1},$$
 	where $H$ is the event that
 	
 	\begin{enumerate}
@@ -412,7 +412,7 @@ t_{12} = \left\lfloor \frac{t_1+t_2}{2}\right\rfloor.
 		\item $V^{top} (2t_3)^{1/2} \geq \tilde Q_1(t_1) - p t_1 \geq \tilde Q_{k-1}(t_1) - pt_1 \geq (M_2 + 1) (2t_3)^{1/2}$,
 		\item $\tilde Q_i(-t_1) - \tilde Q_{i+1}(-t_1) \geq 3\epsilon (2t_2)^{1/2}$ and $\tilde Q_i(t_1) - \tilde Q_{i+1}(t_1)  \geq 3 \epsilon (2t_2)^{1/2}$ for $i = 1, \dots, k-2$.
 	\end{enumerate}
-	Let $Y$ denote the event appearing in \eqref{eqnRT2}. Then we can write $Y = \bigsqcup_{(\vec{c},\vec{d})\in E} Y(\vec{c},\vec{d})$, where $Y(\vec{c},\vec{d})$ is the event that $\tilde{\mathfrak{Q}}(-t_2) = \vec{c}$, $\tilde{\mathfrak{Q}}(t_2) = \vec{d}$, and $E$ is defined in Step 2. It follows from Lemma \ref{LemmaBP2} that $\mathbb{P}_{\tilde{\mathfrak Q}}(Y) \geq h_1$. Using the Schur Gibbs property (Definition \ref{DefSGP}) we conclude that
+	Let $Y$ denote the event appearing in \eqref{eqnRT2}. Then we can write $Y = \bigsqcup_{(\vec{c},\vec{d})\in E} Y(\vec{c},\vec{d})$, where $Y(\vec{c},\vec{d})$ is the event that $\tilde{\mathfrak{Q}}(-t_2) = \vec{c}$, $\tilde{\mathfrak{Q}}(t_2) = \vec{d}$, and $E$ is defined in Step 2. It follows from Lemma \ref{LemmaBP2} that $\mathbb{P}_{\tilde{\mathfrak Q}}(Y) \geq h_1$. We conclude from the definition of $\mathbb{P}_{\tilde{\mathfrak{Q}}}$ that
 	\begin{align*}
 	&\mathbb{P}_{\tilde{\mathfrak{Q}}}(H) \geq \mathbb{P}_{\tilde{\mathfrak{Q}}}(H\cap Y) = \sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(Y(\vec{c},\vec{d}))\cdot \mathbb{P}_{\tilde{\mathfrak{Q}}}(H\,|\,Y(\vec{c},\vec{d})) =\\
 	&\sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(Y(\vec{c},\vec{d}))\cdot \mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}(H) \geq \frac{h}{h_1}\sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(Y(\vec{c},\vec{d})) = \frac{h}{h_1}\,\mathbb{P}_{\tilde{\mathfrak{Q}}}(Y) \geq h.
