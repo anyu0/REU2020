@@ -12,18 +12,18 @@
 \end{enumerate}
 
 \begin{definition}\label{TildeDef}
-	We write $S = \llbracket -t_3,-t_1\rrbracket\cup \llbracket t_1,t_3\rrbracket$, and we denote by $\mathfrak{Q} = (Q_1,\dots,Q_{k-1})$ and $\tilde{\mathfrak{Q}} = (\tilde{Q}_1, \dots, \tilde{Q}_{k-1})$ the $\llbracket 1, k-1 \rrbracket$-indexed line ensembles which are uniformly distributed on $\Omega_{avoid}(-t_3,t_3,\vec{x},\vec{y},\ell_{bot})$ and $\Omega_{avoid}(-t_3, t_3, \vec{x}, \vec{y}, \ell_{bot};S)$ respectively. We let $\mathbb{P}_{\mathfrak{Q}}$ and $\mathbb{P}_{\tilde{\mathfrak{Q}}}$ denote these uniform measures.
+	We write $S = \llbracket -t_3,-t_1\rrbracket\cup \llbracket t_1,t_3\rrbracket$, and we denote by $\mathfrak{Q} = (Q_1,\dots,Q_{k-1})$ and $\tilde{\mathfrak{Q}} = (\tilde{Q}_1, \dots, \tilde{Q}_{k-1})$ the $\llbracket 1, k-1 \rrbracket$-indexed line ensembles which are uniformly distributed on $\Omega_{avoid}(-t_3,t_3,\vec{x},\vec{y},\infty, \ell_{bot})$ and $\Omega_{avoid}(-t_3, t_3, \vec{x}, \vec{y}, \infty, \ell_{bot};S)$ respectively. We let $\mathbb{P}_{\mathfrak{Q}}$ and $\mathbb{P}_{\tilde{\mathfrak{Q}}}$ denote these uniform measures.
 \end{definition}
-In other words, $\tilde{\mathfrak{Q}}$ has the law of $k-1$ independent Bernoulli bridges that have been conditioned on not-crossing each other on the set $S$ and also staying above the graph of $\ell_{bot}$ but only on the intervals $\llbracket-t_3, -t_1\rrbracket$ and $\llbracket t_1, t_3\rrbracket$. The latter restriction means that the lines are allowed to cross on $\llbracket -t_1+1,t_1-1\rrbracket$, and  $\tilde{Q}_{k-1}$ is allowed to dip below $\ell_{bot}$ on $\llbracket -t_1+1,t_1-1\rrbracket$ as well. Essentially, the line ensemble is free on $\llbracket -t_1+1,t_1-1\rrbracket$, and avoiding on $S$.
+In other words, $\tilde{\mathfrak{Q}}$ has the law of $k-1$ independent Bernoulli bridges that have been conditioned on not-crossing each other on the set $S$ and also staying above the graph of $\ell_{bot}$ but only on the intervals $\llbracket-t_3, -t_1\rrbracket$ and $\llbracket t_1, t_3\rrbracket$. The latter restriction means that the lines are allowed to cross on $\llbracket -t_1+1,t_1-1\rrbracket$, and  $\tilde{Q}_{k-1}$ is allowed to dip below $\ell_{bot}$ on $\llbracket -t_1+1,t_1-1\rrbracket$ as well.
 
-\begin{lemma}\label{LemmaAP2} There exists $N_5 \in \mathbb{N}$ such that for $N \geq N_5$,
+\begin{lemma}\label{LemmaAP2} There exists $N_5 \in \mathbb{N}$ and constants $g,h$ such that for $N \geq N_5$ we have
 	\begin{equation}\label{eqn57}
-		\mathbb{P}_{\tilde{\mathfrak{Q}}} \left( Z\big(  -t_1, t_1, \tilde{\mathfrak{Q}}(-t_1) , \tilde{\mathfrak{Q}}(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\big)\geq g    \right) \geq h,
+		\mathbb{P}_{\tilde{\mathfrak{Q}}} \left( Z\big(  -t_1, t_1, \tilde{\mathfrak{Q}}(-t_1) , \tilde{\mathfrak{Q}}(t_1), \ell_{bot}\llbracket -t_1, t_1\rrbracket\big)\geq g    \right) \geq h.
 	\end{equation}
-	where the constants $g$ and $h$ are as in Lemma \ref{LemmaAP1}.
 \end{lemma}
-We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of this section, we give the proof of Lemma \ref{LemmaAP1}. The proof begins by evaluating the Radon-Nidokum derivative between $\pr_{\mathfrak{Q}'}$ and $\pr_{\tilde{\mathfrak{Q}}'}$. We then use this Radon-Nikodym derivative to transition between $\tilde{\mathfrak{Q}}$ in Lemma \ref{LemmaAP2} which ignores $\ell_{bot}$ on $\llbracket -(t_1-1),t_1-1\rrbracket$ and $\mathfrak{Q}$ in Lemma \ref{LemmaAP1} which avoids $\ell_{bot}$ everywhere. Then we perform some calculations to achieve the desired statement in Equation (\ref{eqn60}).
-\begin{proof}[Lemma \ref{LemmaAP1}]
+We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of this section, we give the proof of Lemma \ref{LemmaAP1}, with the constants $g$ and $h$ given by Lemma \ref{LemmaAP2}. The proof begins by evaluating the Radon-Nidokum derivative between $\pr_{\mathfrak{Q}'}$ and $\pr_{\tilde{\mathfrak{Q}}'}$. We then use this Radon-Nikodym derivative to transition between $\tilde{\mathfrak{Q}}$ in Lemma \ref{LemmaAP2} which ignores $\ell_{bot}$ on $\llbracket -(t_1-1),t_1-1\rrbracket$ and $\mathfrak{Q}$ in Lemma \ref{LemmaAP1} which avoids $\ell_{bot}$ everywhere. 
+
+\begin{proof}[Proof of Lemma \ref{LemmaAP1}]
 	
 	Let us denote by $\pr_{\mathfrak{Q}'}$ and $\pr_{\tilde{\mathfrak{Q}}'}$ the measures on $\llbracket 1, k-1\rrbracket$-indexed Bernoulli line ensembles $\mathfrak{Q}'$, $\tilde{\mathfrak{Q}}'$ on the set $S$ in Definition \ref{TildeDef} induced by the restrictions of the measures $\mathbb{P}_{\mathfrak{Q}}$, $\mathbb{P}_{\tilde{\mathfrak{Q}}}$ to $S$. Also let us write $\Omega_a(\cdot)$ for $\Omega_{avoid}(\cdot)$ for simplicity, and denote by $\Omega_a(S)$ the set of elements of $\Omega_{avoid}(-t_3,t_3,\tilde{\mathfrak{Q}}(-t_3),\tilde{\mathfrak{Q}}(t_3))$ restricted to $S$. We claim that the Radon-Nikodym derivative between these two restricted measures is given on elements $\mathfrak B$ of $\Omega_a(S)$ by \begin{equation}\label{propRadon}
 		\frac{d\pr_{\mathfrak{Q}'}}{d\pr_{\tilde{\mathfrak{Q}}'}}\left(\mathfrak B\right) = \frac{\mathbb{P}_{\mathfrak{Q}'}(\mathfrak{B})}{\mathbb{P}_{\tilde{\mathfrak{Q}}'}(\mathfrak{B})} = (Z')^{-1} Z\left(-t_1,t_1,\mathfrak{B}\left(-t_1\right),\mathfrak{B}\left(t_1\right),\ell_{bot}\llbracket -t_1,t_1\rrbracket\right),
@@ -124,7 +124,7 @@ We will prove Lemma \ref{LemmaAP2} in Section \ref{sect62}. In the remainder of 
 	\end{align}
 	Assuming the validity of the claim, we then observe that the probability in \eqref{eqnRT2} is bounded below by $2h_1 - h_1 = h_1$, proving the lemma. We will prove \eqref{5.10bound1} and \eqref{5.10bound2} in three steps.\\
 	
-	\noindent\textbf{Step 1.} In this step we prove that there exists $N_7$ so that \eqref{5.10bound1} holds for $N\geq N_7$, assuming results from Step 2 below. We condition on the value of $\tilde{\mathfrak{Q}}$ at 0 and use the Schur Gibbs property to divide $\tilde{\mathfrak{Q}}$ into two independent line ensembles on $[-t_3,0]$ and $[0,t_3]$. Observe by Lemma \ref{MCLfg} that
+	\noindent\textbf{Step 1.} In this step we prove that there exists $N_7$ so that \eqref{5.10bound1} holds for $N\geq N_7$, assuming results from Step 2 below. We condition on the value of $\tilde{\mathfrak{Q}}$ at 0 and divide $\tilde{\mathfrak{Q}}$ into two independent line ensembles on $[-t_3,0]$ and $[0,t_3]$. Observe by Lemma \ref{MCLfg} that
 	\begin{equation}\label{5.10MC}
 	\mathbb{P}_{\tilde{\mathfrak{Q}}}\left(\tilde{Q}_{k-1}(\pm t_2) \mp pt_2 \geq (2t_3)^{1/2}V_1^b\right) \geq \mathbb{P}^{-t_3,t_3,\vec{x},\vec{y}}_{avoid, Ber; S}\left(\tilde{Q}_{k-1}(\pm t_2) \mp pt_2 \geq (2t_3)^{1/2}V_1^b\right).
 	\end{equation}
@@ -298,7 +298,7 @@ t_{12} = \left\lfloor \frac{t_1+t_2}{2}\right\rfloor.
 	\end{equation}
 	In the last line, we have written $z' = d_1'' - c_1''$, and we used the fact that $c_1'' \leq -pt_2 + (V_1^t + Ck)(2t_3)^{1/2}$. By Lemma \ref{LemmaMinFreeS4}, we can find $V^{top}$ large enough depending on $V_1^t,C,k,p$ so that the probability in the third line of \eqref{6.2step3split} is at least $39/40$ for $N\geq\tilde{N}_4$. On the other hand, the above observations regarding $\vec{c}\,''$, $\vec{d}\,''$, and $\ell_{bot}$, as well as the fact that $|d_1'' - c_1'' - 2pt_2| \leq 1$, allow us to conclude from Lemma \ref{CurveSeparation} that the probability in the last line of \eqref{6.2step3split} is at least $39/40$ for $N\geq\tilde{N}_5$. This gives a lower bound of $39/40 - 1/40 = 19/20$ in \eqref{6.2step3split} for $\bar{N}_1 = \max(\tilde{N}_4,\tilde{N}_5)$ as desired.\\
 	
-	{\bf \raggedleft Step 3.} In this step, we show that with $V_1^t$ and $V_1^b$ as in Step 2, there exist $\epsilon > 0$ sufficiently small and $\bar{N}_2$ such that for $(\vec{c}, \vec{d}) \in E$ and $N\geq\bar{N}_2$, we have
+	{\bf \raggedleft Step 3.} In this step, we show that with $E$, $V_1^t$, and $V_1^b$ as in Step 2, there exist $\epsilon > 0$ sufficiently small and $\bar{N}_2$ such that for $(\vec{c}, \vec{d}) \in E$ and $N\geq\bar{N}_2$, we have
 	\begin{equation}\label{LemmaBP2Step3}
 	\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\big(D(\vec{c},\vec{d},V^{top},\epsilon,t_{12}) \big) \geq \frac{1}{2}.
 	\end{equation}
@@ -336,11 +336,11 @@ t_{12} = \left\lfloor \frac{t_1+t_2}{2}\right\rfloor.
 	&\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d}}_{avoid, Ber; \tilde S}\left(\mathfrak{Q}^1 = \mathfrak{B}^1, \mathfrak{Q}^2 = \mathfrak{B}^2\,\big|\,F(\vec{a},\vec{b})\right) = \mathbb{P}^{-t_2,-t_1,\vec{c},\vec{a}}_{avoid, Ber}\left(\mathfrak{Q}^1 = \mathfrak{B}^1\right) \cdot \mathbb{P}^{t_1,t_2,\vec{b},\vec{d}}_{avoid, Ber}\left(\mathfrak{Q}^2 = \mathfrak{B}^2\right).
 	\end{split}
 	\end{equation}
-	We now fix $(\vec{a},\vec{b})$ and argue that we can choose $\epsilon > 0$ small enough and $\tilde{N}_7$ so that for $N\geq\tilde{N}_7$,
+	We also let $\tilde{I} = \{(\vec{a},\vec{b})\in I : \pr^{-t_2,t_2,\vec c, \vec d}_{avoid,Ber;\tilde{S}}(F(\vec{a},\vec{b})) > 0\}$, and we choose $\tilde{N}_7$ so that $\tilde{I}$ is nonempty for $N\geq\tilde{N}_7$ using Lemma \ref{LemmaWD}. We now fix $(\vec{a},\vec{b})$ and argue that we can choose $\epsilon > 0$ small enough and $\tilde{N}_8$ so that for $N\geq\tilde{N}_8$,
 	\begin{equation}\label{6.2step3 9/10}
 	\pr^{-t_2,t_2,\vec c, \vec d}_{avoid,Ber;\tilde{S}}\left(C(\vec{c},\vec{d},\epsilon,t_{12})\,\big|\, F(\vec{a},\vec{b})\right) \geq \frac{9}{10}.
 	\end{equation}
-	We then choose $\tilde{N}_8$ via Lemma \ref{LemmaWD} so that the set $\tilde{I} = \{(\vec{a},\vec{b})\in I : \pr^{-t_2,t_2,\vec c, \vec d}_{avoid,Ber;\tilde{S}}(F(\vec{a},\vec{b})) > 0\}$ is nonempty. Then using \eqref{6.2step3 9/10} and summing over $\tilde{I}$ proves \eqref{6.2step3cond} for $N\geq\tilde{N}_6 = \max(\tilde{N}_7,\tilde{N}_8)$.
+	Then using \eqref{6.2step3 9/10} and \eqref{6.2step3disj} and summing over $\tilde{I}$ proves \eqref{6.2step3cond} for $N\geq\tilde{N}_6 = \max(\tilde{N}_7,\tilde{N}_8)$.
 	
 	To prove \eqref{6.2step3 9/10}, we first show that we can find $\delta > 0$ and $\tilde{N}_7$ so that
 	\begin{equation}\label{6.2step3right}
@@ -390,20 +390,20 @@ t_{12} = \left\lfloor \frac{t_1+t_2}{2}\right\rfloor.
 		\item $\min(a_i-a_{i+1}, \, b_i-b_{i+1}) \geq 3\epsilon(2t_3)^{1/2}$ for $1\leq i\leq k-2$.
 		
 	\end{enumerate}
-	Now let $\tilde{D}(V^{top},\epsilon,t_1)$ be the set consisting of elements of $D(\vec{c},\vec{d},V^{top},\epsilon,t_1)$ restricted to $\llbracket -t_{12},t_{12}\rrbracket$. Then we have
+	We let $\tilde{J} = \{(\vec{a},\vec{b})\in J : \mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}(G(\vec{a},\vec{b})) > 0\}$, and we take $\tilde{N}_9$ large enough by Lemma \ref{LemmaWD} so that $\tilde{J}\neq\varnothing$. We also let $\tilde{D}(V^{top},\epsilon,t_1)$ denote the set consisting of elements of $D(\vec{c},\vec{d},V^{top},\epsilon,t_1)$ restricted to $\llbracket -t_{12},t_{12}\rrbracket$. Then for $(\vec{a},\vec{b})\in\tilde{J}$ we have
 	\begin{equation}\label{6.2step4cond}
 	\begin{split}
 	&\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\left(D(\vec{c},\vec{d},V^{top},\epsilon,t_1) \,\big|\,G(\vec{a},\vec{b})\right) = \mathbb{P}^{-t_{12},t_{12},\vec{a},\vec{b},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}\left(\tilde D(V^{top},\epsilon,t_1)\right) \geq \\
 	&\mathbb{P}^{-t_{12},t_{12},\vec{a},\vec{b}}_{Ber}\left(\tilde D(V^{top},\epsilon,t_1)\cap \{L_1\geq\cdots\geq L_{k-1}\geq\ell_{bot}\}\right).
 	\end{split}
 	\end{equation}
-	For any $(\vec{a},\vec{b})\in J$, we observe that the event in the second line of \eqref{6.2step4cond} occurs as long as each curve $L_i$ remains within a distance of $\epsilon(2t_3)^{1/2}$ from the straight line segment connecting $a_i$ and $b_i$ on $[-t_{12},t_{12}]$, for $1\leq i\leq k-2$. By the argument in the proof of Lemma \ref{CurveSeparation}, we can find $\tilde{N}_9$ so that the probability of this event is bounded below by the expression on the right in \eqref{6.2step4sep} for $N\geq\tilde{N}_9$. If $\tilde{N}_9$ is large enough so that the set $\tilde{J}$ of $(\vec{a},\vec{b})\in J$ such that $\mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}(G(\vec{a},\vec{b})) > 0$ is nonempty, then using \eqref{6.2step4cond} and \eqref{6.2step4disj} and summing over $\tilde{J}$ implies \eqref{6.2step4sep}.\\
+	We observe that the event in the second line of \eqref{6.2step4cond} occurs as long as each curve $L_i$ remains within a distance of $\epsilon(2t_3)^{1/2}$ from the straight line segment connecting $a_i$ and $b_i$ on $[-t_{12},t_{12}]$, for $1\leq i\leq k-2$. By the argument in the proof of Lemma \ref{CurveSeparation}, we can enlarge $\tilde{N}_9$ so that the probability of this event is bounded below by the expression on the right in \eqref{6.2step4sep} for $N\geq\tilde{N}_9$. Then using \eqref{6.2step4cond} and \eqref{6.2step4disj} and summing over $\tilde{J}$ implies \eqref{6.2step4sep}.\\
 	
 	{\bf \raggedleft Step 5.} In this last step, we complete the proof of the lemma, fixing the constants $g$ and $h$ as well as $N_5$. Let $g=g(\epsilon,V^{top},M_2)$ be as in Lemma \ref{LemmaBP1} for the choices of $\epsilon,V^{top}$ in Steps 2 and 3, let
 	\[
 	h = \frac{h_1}{2}\left(\frac{1}{2} - \sum_{n=1}^\infty (-1)^{n-1} e^{-\epsilon^2 n^2/2p(1-p)}\right)^{k-1}
 	\]
-	with $h_1$ as in Step 2, and let $N_5 = \max(\bar{N}_0,\bar{N}_1,\bar{N}_2,\bar{N}_3,N_7)$, with $N_7$ as in Lemma \ref{LemmaBP2}. In the following we assume that $N\geq N_7$. By \eqref{6.2step4} we have that if $(\vec{c},\vec{d})\in E$, then
+	with $h_1$ as in Step 2, and let $N_5 = \max(\bar{N}_0,\bar{N}_1,\bar{N}_2,\bar{N}_3,N_7)$, with $N_7$ as in Lemma \ref{LemmaBP2}. In the following we assume that $N\geq N_7$. By \eqref{6.2step4} we have that if $(\vec{c},\vec{d})\in E$ and $N\geq N_5$, then
 	$$\mathbb{P}_{avoid, Ber;\tilde{S}}^{-t_2, t_2, \vec{c}, \vec{d}, \infty, \ell_{bot}} ( H) \geq \frac{h}{h_1},$$
 	where $H$ is the event that
 	
@@ -412,10 +412,10 @@ t_{12} = \left\lfloor \frac{t_1+t_2}{2}\right\rfloor.
 		\item $V^{top} (2t_3)^{1/2} \geq \tilde Q_1(t_1) - p t_1 \geq \tilde Q_{k-1}(t_1) - pt_1 \geq (M_2 + 1) (2t_3)^{1/2}$,
 		\item $\tilde Q_i(-t_1) - \tilde Q_{i+1}(-t_1) \geq 3\epsilon (2t_2)^{1/2}$ and $\tilde Q_i(t_1) - \tilde Q_{i+1}(t_1)  \geq 3 \epsilon (2t_2)^{1/2}$ for $i = 1, \dots, k-2$.
 	\end{enumerate}
-	Let $Y$ denote the event appearing in \eqref{eqnRT2}. Then we can write $Y = \bigsqcup_{(\vec{c},\vec{d})\in E} Y(\vec{c},\vec{d})$, where $Y(\vec{c},\vec{d})$ is the event that $\tilde{\mathfrak{Q}}(-t_2) = \vec{c}$, $\tilde{\mathfrak{Q}}(t_2) = \vec{d}$, and $E$ is defined in Step 2. It follows from Lemma \ref{LemmaBP2} that $\mathbb{P}_{\tilde{\mathfrak Q}}(Y) \geq h_1$. We conclude from the definition of $\mathbb{P}_{\tilde{\mathfrak{Q}}}$ that
+	Let $Y$ denote the event appearing in \eqref{eqnRT2}. Then we can write $Y = \bigsqcup_{(\vec{c},\vec{d})\in E} Y(\vec{c},\vec{d})$, where $Y(\vec{c},\vec{d})$ is the event that $\tilde{\mathfrak{Q}}(-t_2) = \vec{c}$, $\tilde{\mathfrak{Q}}(t_2) = \vec{d}$, and $E$ is defined in Step 2. If $\tilde{E} = \{(\vec{c},\vec{d})\in E : \mathbb{P}_{\tilde{\mathfrak{Q}}}(Y(\vec{c},\vec{d})) > 0\}$, we can assume by Lemma \ref{LemmaWD} that $N_5$ is large enough so that $\tilde{E}\neq\varnothing$. It follows from Lemma \ref{LemmaBP2} that $\mathbb{P}_{\tilde{\mathfrak Q}}(Y) \geq h_1$. We conclude from the definition of $\mathbb{P}_{\tilde{\mathfrak{Q}}}$ that for all $N\geq N_5$,
 	\begin{align*}
-	&\mathbb{P}_{\tilde{\mathfrak{Q}}}(H) \geq \mathbb{P}_{\tilde{\mathfrak{Q}}}(H\cap Y) = \sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(Y(\vec{c},\vec{d}))\cdot \mathbb{P}_{\tilde{\mathfrak{Q}}}(H\,|\,Y(\vec{c},\vec{d})) =\\
-	&\sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(Y(\vec{c},\vec{d}))\cdot \mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}(H) \geq \frac{h}{h_1}\sum_{(\vec{c},\vec{d})\in E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(Y(\vec{c},\vec{d})) = \frac{h}{h_1}\,\mathbb{P}_{\tilde{\mathfrak{Q}}}(Y) \geq h.
+	&\mathbb{P}_{\tilde{\mathfrak{Q}}}(H) \geq \mathbb{P}_{\tilde{\mathfrak{Q}}}(H\cap Y) = \sum_{(\vec{c},\vec{d})\in \tilde E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(Y(\vec{c},\vec{d}))\cdot \mathbb{P}_{\tilde{\mathfrak{Q}}}(H\,|\,Y(\vec{c},\vec{d})) =\\
+	&\sum_{(\vec{c},\vec{d})\in \tilde E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(Y(\vec{c},\vec{d}))\cdot \mathbb{P}^{-t_2,t_2,\vec{c},\vec{d},\infty,\ell_{bot}}_{avoid,Ber;\tilde S}(H) \geq \frac{h}{h_1}\sum_{(\vec{c},\vec{d})\in \tilde E} \mathbb{P}_{\tilde{\mathfrak{Q}}}(Y(\vec{c},\vec{d})) = \frac{h}{h_1}\,\mathbb{P}_{\tilde{\mathfrak{Q}}}(Y) \geq h.
 	\end{align*}
 	Now Lemma \ref{LemmaBP1} implies \eqref{eqn57}, completing the proof.
 \end{proof}
