@@ -140,7 +140,7 @@ Observe that if $\delta \in \left (0, \min \left(\delta_0, \epsilon \cdot (8 \la
 In (\ref{Term1}) the first equality follows from the definition of $f_i^N$, and the inequality on the second line follows from the inequality $|x^2-y^2|\leq 2r\delta$, which holds for all $x,y \in [-r,r]$ such that $|x-y| \leq \delta$. The inequality in the third line of (\ref{Term1}) follows from our assumption that $\delta <   \epsilon \cdot (8 \lambda r)^{-1}$ and the first inequality on the last line follows from the definition of $A^N_\delta$ in (\ref{Adelta}), and the fact that $t_1 \geq r N^{\alpha}$. The last inequality follows from our assumption that $\delta < \delta_0$ and (\ref{Abound}). In view of (\ref{Term1}) we conclude (\ref{S2R1}).\\
 
 {\bf \raggedleft Step 3.} In this step we prove (\ref{Abound}) and fix $\eta > 0$ in the sequel. For $\delta_1, M_1 > 0$ and $N \in \mathbb{N}$ we define the events
-\begin{equation}
+\begin{equation}\label{ESetsDef}
 \begin{split}
 E_1= \hspace{-0.5mm}\left\{\max_{1\leq j \leq k-1}\abs*{L_j^N(\pm t_1) \mp pt_1}\leq M_1N^{\alpha/2} \right\}, E_2=\hspace{-0.5mm}\left\{Z(-t_1, t_1, \vec x, \vec y, \infty, L_{k}^N\llbracket -t_1, t_1 \rrbracket)>\delta_1\right\},
 \end{split}
@@ -178,15 +178,17 @@ where $\mathfrak{Q} = (Q_1, \dots, Q_{k-1})$ is $\pr_{Ber}^{-t_1, t_1,\vec x,\ve
 & \frac{\ex_{Ber}^{-t_1,t_1,\vec x, \vec y}\left[\indic_A \cdot  \indic_{\left\{Q_1\geq\cdots\geq Q_{k-1} \geq Q_k \right\}}\right]}{Z(-t_1,t_1,\vec{x},\vec{y}, \infty, L^N_{k} \llbracket -t_1, t_1 \rrbracket)} = \int_A \frac{\indic_{\left\{Q_1\geq\cdots\geq Q_{k-1} \geq Q_k \right\}}}{Z(-t_1,t_1,\vec x, \vec y, \infty, L_{k}^N \llbracket -t_1, t_1 \rrbracket )}\,d\pr_{Ber}^{-t_1,t_1,\vec x, \vec y}.
 \end{split}
 \end{equation*}
-It follows from \eqref{tower}, \eqref{RN}, and the definition of $E_2$ that
+It follows from \eqref{tower}, \eqref{RN}, and the definition of $E_2$ in \ref{ESetsDef} that
 \begin{equation}\label{RT1}
 \begin{split}
 &\pr(A^N_\delta\cap E_1\cap E_2) =\ex\left[\indic_{E_1}\indic_{E_2} \ex_{Ber}^{-t_1, t_1,\vec x,\vec y}\left[\frac{\indic_{B^N_\delta}\cdot \indic_{\left\{Q_1\geq\cdots\geq Q_{k}\right\}}}{Z(-t_1,t_1,\vec x, \vec y, L^N_{k} \llbracket -t_1, t_1 \rrbracket)}\right]\right] \leq \\
 &\leq \ex\left[\indic_{E_1}\indic_{E_2}\ex_{Ber}^{-t_1,t_1,\vec x,\vec y}\left[\frac{\indic_{B^N_\delta}}{\delta_1}\right]\right] \leq \frac{1}{\delta_1} \ex\left[ \indic_{E_1} \cdot\pr_{Ber}^{-t_1,t_1,\vec{x}, \vec{y} }(B^N_\delta) \right],
 \end{split}
 \end{equation}
-where 
-$$B^N_\delta = \left\{\sup_{{x,y\in [-t_1,t_1], |x-y|\leq \delta N^\alpha}} \abs*{Q_i(x)-Q_i(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4\right\}.$$
+where $\delta_1$ is as in \ref{ESetsDef}, and
+\begin{equation*}
+B^N_\delta = \left\{\sup_{{x,y\in [-t_1,t_1], |x-y|\leq \delta N^\alpha}} \abs*{Q_i(x)-Q_i(y)-p(x-y)}\geq \frac{3N^{\alpha/2}\epsilon}4\right\}.
+\end{equation*}
 Notice that under $\pr_{Ber}^{-t_1,t_1,\vec{x}, \vec{y} }$ the law of $Q_i$ is precisely $\pr_{Ber}^{-t_1,t_1,x_i, y_i }$, and so we conclude that 
 \begin{equation}\label{RT2}
 \begin{split}
@@ -207,7 +209,7 @@ Combining (\ref{RT1}), (\ref{RT2}) and (\ref{RT3}) we conclude (\ref{Abound2}), 
 In this section we fix a subsequential limit $\mathcal{L}^\infty = (f_1^\infty,\dots,f_{k-1}^\infty)$ of the sequence $\tilde{\mathbb{P}}_N$ as in the statement of Theorem \ref{PropTightGood}, and we prove that $\mathcal{L}^\infty$ possesses the partial Brownian Gibbs property. Our approach is similar to that in \cite[Sections 5.1 and 5.2]{DimMat}. We first give a definition of measures on scaled free and avoiding Bernoulli random walks. These measures will appear when we apply the Schur Gibbs property to the scaled line ensembles $f^N$. 
 
 \begin{definition}\label{scaledRW}
-	Let $a,b\in N^{-\alpha}\mathbb{Z}$ with $a<b$ and $x,y\in N^{-\alpha/2}\mathbb{Z}$ satisfy $0\leq y-x \leq (b-a)N^{\alpha/2}$. Let $\ell^{(T,z)}$ denote a random variable with law $\mathbb{P}^{0,T,0,z}_{Ber}$ as in Definition \ref{DefAvoidingLawBer}. We define $\mathbb{P}^{a,b,x,y}_{free,N}$ to be the law of the $C([a,b])$-valued random variable $Y$ given by
+	Let $a,b\in N^{-\alpha}\mathbb{Z}$ with $a<b$ and $x,y\in N^{-\alpha/2}\mathbb{Z}$ satisfy $0\leq y-x \leq (b-a)N^{\alpha/2}$. Let $\ell^{(T,z)}$ denote a random variable with law $\mathbb{P}^{0,T,0,z}_{Ber}$ as before Definition \ref{DefAvoidingLawBer}. We define $\mathbb{P}^{a,b,x,y}_{free,N}$ to be the law of the $C([a,b])$-valued random variable $Y$ given by
 	\[
 	Y(t) = \frac{x + N^{-\alpha/2}\left[\ell^{((b-a)N^\alpha,\,(y-x)N^{\alpha/2}))}_{(t-a)N^\alpha} - ptN^\alpha\right]}{\sqrt{p(1-p)}}, \quad t\in [a,b].
 	\]
@@ -235,7 +237,7 @@ The next lemma shows that at any given point, the values of the $k-1$ curves in 
 	For any $s\in\mathbb{R}$, we have $\mathcal{L}^\infty(s) = (f_1^\infty(s),\dots,f_{k-1}^\infty(s)) \in W^\circ_{k-1}$, $\mathbb{P}$-a.s.
 \end{lemma}
 
-Using these two lemmas, we now give the proof of Theorem \ref{PropTightGood} (ii).
+Using these two lemmas whose proofs are postponed, we now give the proof of Theorem \ref{PropTightGood} (ii).
 
 \begin{proof}
 	We will write $\Sigma = \llbracket 1,k\rrbracket$. Let us write $\mathcal{Y}^N = (Y^N_1,\dots,Y^N_{k-1})$ with $Y^N_i(s) = N^{-\alpha/2}(L^N_i(sN^\alpha)-psN^\alpha)/\sqrt{p(1-p)}$. We may assume without loss of generality that $\mathcal{Y}^N \implies \mathcal{L}^\infty$ as $N\to\infty$. Fix a set $K = \llbracket k_1,k_2\rrbracket \subseteq \llbracket 1, k-2\rrbracket$ and $a,b\in\mathbb{R}$ with $a<b$. We also fix a bounded Borel-measurable function $F:C(K\times[a,b])\to\mathbb{R}$. It suffices to prove that $\mathbb{P}$-a.s.,
