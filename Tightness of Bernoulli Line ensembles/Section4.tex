@@ -223,7 +223,7 @@ In this section we fix a subsequential limit $\mathcal{L}^\infty = (f_1^\infty,\
 	
 \end{definition}
 
-Next, we state two lemmas whose proofs we give in Section \ref{BGPapp}. The first lemma proves weak convergence of the scaled avoiding random walk measures in Definition \ref{scaledRW}. It states roughly that if the data of these measures converge, then the measures converge weakly to the law of avoiding Brownian bridges with the limiting data.
+Next, we state two lemmas whose proofs we give in Section \ref{BGPapp}. The first lemma proves weak convergence of the scaled avoiding random walk measures in Definition \ref{scaledRW}. It states roughly that if the data of these measures converge, then the measures converge weakly to the law of avoiding Brownian bridges with the limiting data, as in Definition \ref{DefAvoidingLaw}.
 
 \begin{lemma}\label{scaledavoidBB}
 	Fix $k\in\mathbb{N}$ and $a,b\in\mathbb{R}$ with $a<b$, and let $f:[a-1,b+1]\to(-\infty,\infty]$, $g:[a-1,b+1]\to[-\infty,\infty)$ be continuous functions such that $f(t) > g(t)$ for all $t\in[a-1,b+1]$. Let $\vec{x},\vec{y}\in W_k^\circ$ be such that $f(a) > x_1$, $f(b) > y_1$, $g(a) < x_k$, and $g(b) < y_k$. Let $a_N = \lfloor aN^\alpha\rfloor N^{-\alpha}$ and $b_N = \lceil bN^\alpha\rceil N^{-\alpha}$, and let $f_N : [a-1,b+1]\to(-\infty,\infty]$ and $g_N : [a-1,b+1]\to[-\infty,\infty)$ be continuous functions such that $f_N\to f$ and $g_N\to g$ uniformly on $[a-1,b+1]$. Lastly, let $\vec{x}\,^N, \vec{y}\,^N \in (N^{-\alpha/2}\mathbb{Z})^k \cap W_k^\circ$, write $\tilde{x}^N_i = (x_i^N - pa_N N^{\alpha/2})/\sqrt{p(1-p)}$, $\tilde{y}^N_i = (y_i^N - pb_N N^{\alpha/2})/\sqrt{p(1-p)}$, and suppose that $\tilde{x}^N_i \to x_i$ and $\tilde{y}^N_i \to y_i$ as $N\to\infty$ for each $i\in\llbracket 1,k\rrbracket$. Then there exists $N_0 \in \mathbb{N}$ so that $\mathbb{P}^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N,f_N,g_N}_{avoid,N}$ is well-defined for $N\geq N_0$. Moreover, if $\mathcal{Y}^N$ have laws $\mathbb{P}^{a_N,b_N,\vec{x}\,^N,\vec{y}\,^N,f_N,g_N}_{avoid,N}$ and $\mathcal{Z}^N = \mathcal{Y}^N|_{\Sigma\times[a,b]}$, then the law of $\mathcal{Z}^N$ converges weakly to $\mathbb{P}^{a,b,\vec{x},\vec{y},f,g}_{avoid}$ as $N\to\infty$.
@@ -242,7 +242,7 @@ Using these two lemmas, we now give the proof of Theorem \ref{PropTightGood} (ii
 	\begin{equation}\label{BGPcondex}
 		\ex[F(\mathcal{L}^\infty|_{K\times[a,b]})\,|\,\mathcal{F}_{ext}(K\times(a,b))] = \ex^{a,b,\vec{x},\vec{y},f,g}_{avoid}[F(\mathcal{Q})],
 	\end{equation}
-	where $\vec{x} = (f^\infty_{k_1}(a),\dots,f^\infty_{k_2}(a))$, $\vec{y} = (f^\infty_{k_1}(b),\dots,f^\infty_{k_2}(b))$, $f=f^\infty_{k_1-1}$ (with $f^\infty_0 = +\infty$), $g=f^\infty_{k_2+1}$, and the $\sigma$-algebra $\mathcal{F}_{ext}(K\times(a,b))$ is as in Definition \ref{DefBGP}. We prove \eqref{BGPcondex} in two steps.\\
+	where $\vec{x} = (f^\infty_{k_1}(a),\dots,f^\infty_{k_2}(a))$, $\vec{y} = (f^\infty_{k_1}(b),\dots,f^\infty_{k_2}(b))$, $f=f^\infty_{k_1-1}$ (with $f^\infty_0 = +\infty$), $g=f^\infty_{k_2+1}$, the $\sigma$-algebra $\mathcal{F}_{ext}(K\times(a,b))$ is as in Definition \ref{DefBGP}, and $\mathcal{Q}$ has law $\mathbb{P}^{a,b,\vec{x},\vec{y},f,g}_{avoid}$. We prove \eqref{BGPcondex} in two steps.\\
 	
 	\noindent\textbf{Step 1. } Fix $m\in\mathbb{N}$, $n_1,\dots,n_m\in\Sigma$, $t_1,\dots,t_m\in\mathbb{R}$, and $h_1,\dots,h_m : \mathbb{R}\to\mathbb{R}$ bounded continuous functions. Define $S = \{i\in\llbracket 1,m\rrbracket : n_i \in K, t_i \in [a,b]\}$. In this step we prove that
 	\begin{equation}\label{BBcondexsplit}
